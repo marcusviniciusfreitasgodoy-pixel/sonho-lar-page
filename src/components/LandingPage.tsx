@@ -62,7 +62,7 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Vou te contar algo que ninguém no mercado imobiliário quer que você entenda melhor.
+                Vou te contar algo que ninguém no mercado imobiliário para pra refletir, pois sempre foi assim.
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
@@ -96,7 +96,7 @@ const LandingPage = () => {
                 Personal Shopper Imobiliário: <span className="text-luxury-gold">Representação 100% Sua</span>
               </h2>
               <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
-                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível.
+                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
               </p>
             </div>
 
