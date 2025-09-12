@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/721A9271.jpg";
+
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   
@@ -297,29 +298,43 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
+                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
                   Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
-                   O ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Ali percebi a dinâmica desfavorável: o corretor defendia o vendedor, não ele. Meu amigo estava exausto e pronto para pagar demais. Percebi a ausência de um defensor real para o comprador e a necessidade de mais transparência no processo.
-                  </p>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  Visitamos dezenas de propriedades. Cada corretor dizia que aquele era o melhor negócio da vida. 
-                  Cada um tentava "empurrar" o que tinha na carteira e não necessariamente o que atendia às necessidades dele. Meu amigo estava exausto, confuso e pronto para pagar 
-                  qualquer preço só para acabar com aquela tortura.
-                </p>
-                
-                <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
-                  <p className="text-lg font-semibold text-luxury-navy italic">
-                    Foi aí que percebi algo que mudou tudo...
-                  </p>
-                </div>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  Os corretores não trabalhavam para meu amigo. Eles trabalhavam para quem vendia. 
-                  Quanto mais caro ele pagasse, mais dinheiro eles ganhavam. Era como contratar o Advogado da outra parte para te defender e esperar que ele ganhe a causa pra você.
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Decidi investigar um pouco mais, mergulhando em pesquisas aprofundadas, utilizando minha experiência profissional de outros mercados que trabalhei e descobri uma diferença muito grande entre o que eles nos falavam e a realidade: imóveis anunciados por R$ 2.5 milhões eram, na realidade, concretizados por R$ 2.1 milhões. 
+                  O ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Ali percebi a dinâmica desfavorável.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Como corretor, também observei as limitações da estrutura tradicional e da remuneração de mercado, que muitas vezes me impediam de ajudar o cliente como eu gostaria.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Essa clareza interna, somada à minha nova visão, me revelou uma grande oportunidade: a de construir um serviço capaz de oferecer transações mais justas e equilibradas para todos.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Percebi que a realidade era de sobrecarga de informações, falta de transparência e a sensação de que os interesses do comprador nem sempre eram prioridade
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Com minha experiência em outros mercados, como Telecomunicações e Internet, sabia que era possível trazer uma abordagem mais sofisticada. Decidi estudar como esses processos funcionavam em outros países e vi a possibilidade de mudar essa percepção no Brasil.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Assim, nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada), fundando a Godoy Prime Realty.
+                  </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Meu compromisso é ser o guardião exclusivo dos seus interesses, com lealdade de 100% ao comprador.
                 </p>
                 
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
@@ -578,4 +593,5 @@ const LandingPage = () => {
       </footer>
     </div>;
 };
+
 export default LandingPage;
