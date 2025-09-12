@@ -137,13 +137,16 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {[{
               icon: Users,
-              title: "Executivos e Empresários de Alto Padrão",
-              description: "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de luxo na Barra."
+              title: "Executivos e Empresários",
+              description: "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de Alto Padrão na região da Barra da Tijuca."
             }, {
               icon: TrendingUp,
               title: "Investidores Experientes",
               description: "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa."
             }, {
+              icon: TrendingUp,
+              title: "Investidores Experientes",
+              description: "Pessoas que entendem que pagar por expertise especiali}, {
               icon: Award,
               title: "Compradores Exigentes",
               description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
