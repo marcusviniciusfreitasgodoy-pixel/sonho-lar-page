@@ -297,9 +297,8 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
-                   O ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Ali percebi a dinâmica desfavorável: o corretor defendia o vendedor, não ele. Meu amigo estava exausto e pronto para pagar demais. Percebi a ausência de um defensor real para o comprador e a necessidade de mais transparência no processo.
-                  </p>
+                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
+                </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Visitamos dezenas de propriedades. Cada corretor dizia que aquele era o melhor negócio da vida. 
