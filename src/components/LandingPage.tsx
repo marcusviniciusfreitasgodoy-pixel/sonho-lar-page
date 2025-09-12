@@ -57,19 +57,19 @@ const LandingPage = () => {
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
                 Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível. E ganha mais dinheiro quando você paga mais caro. 
-                Ela até pode dizer que está lutando por você, mas quer vender pelo maior preço possível.
+                Ela até pode dizer que está lutando por você, mas quer vender pelo maior preço possível. Simples Assim!
               </p>
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
                 <p className="text-lg font-semibold text-luxury-navy">
-                  Na Barra da Tijuca, essa diferença pode ser de <span className="text-luxury-gold">R$ 200 mil, 
+                  Na Barra da Tijuca, em negociações com imóveis de Alto Padrão, essa diferença pode ser de <span className="text-luxury-gold">R$ 200 mil, 
                   R$ 300 mil ou até R$ 500 mil</span> que saem direto do seu bolso.
                 </p>
               </div>
               
               <p className="text-lg text-muted-foreground">
-                Você negocia no escuro, sem saber o preço real que outros pagaram pelos mesmos imóveis. 
-                Sem acesso aos dados de transações fechadas. Sem conhecer os segredos de cada prédio.
+                Você negocia no escuro, principalmente sem saber o preço real que outros pagaram pelos mesmos imóveis. 
+                Sem acesso aos dados de transações fechadas, sem inteligência de mercado. Sem conhecer os segredos da região.
               </p>
             </div>
           </div>
