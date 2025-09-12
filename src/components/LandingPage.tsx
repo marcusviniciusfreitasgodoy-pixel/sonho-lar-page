@@ -55,10 +55,9 @@ const LandingPage = () => {
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-                O corretor que te mostra o apartamento <strong>não trabalha para você</strong>. 
-                Ele trabalha para quem vende. E ganha mais dinheiro quando você paga mais caro. 
-                É como pedir para o vendedor da loja te dar desconto... ele até pode fingir que está 
-                lutando por você, mas quer vender pelo maior preço possível.
+                A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
+                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível. E ganha mais dinheiro quando você paga mais caro. 
+                Ela até pode dizer que está lutando por você, mas quer vender pelo maior preço possível.
               </p>
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
