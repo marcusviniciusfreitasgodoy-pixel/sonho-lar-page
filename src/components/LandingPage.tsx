@@ -26,8 +26,7 @@ const LandingPage = () => {
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-              Marcus Godoy representa apenas você na compra. Sem conflito de interesses. 
-              Acesso a imóveis exclusivos que não aparecem nos sites. Negociação baseada em dados reais de mercado.
+              Marcus Godoy representa apenas você na compra. O imóvel que você quer, sem conflito de interesses e pelo preço justo. Negociação baseada Inteligência de Mercado com dados reais.
             </p>
             
             <Button variant="gold" size="xl" className="mb-4">
