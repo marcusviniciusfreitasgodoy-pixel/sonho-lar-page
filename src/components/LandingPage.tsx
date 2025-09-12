@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +6,16 @@ import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, Tre
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/721A9271.jpg";
 const LandingPage = () => {
+  const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
+  
+  const toggleCardHighlight = (cardIndex: number) => {
+    setHighlightedCards(prev => 
+      prev.includes(cardIndex) 
+        ? prev.filter(index => index !== cardIndex)
+        : [...prev, cardIndex]
+    );
+  };
+
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -198,7 +209,11 @@ const LandingPage = () => {
               title: "Representação 100% Sua",
               description: "Marcus ganha apenas quando você economiza dinheiro. É o único profissional da Barra que trabalha exclusivamente para o comprador.",
               highlight: "Zero conflito"
-            }].map((benefit, index) => <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+            }].map((benefit, index) => <Card 
+                key={index} 
+                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleCardHighlight(index)}
+              >
                   <CardContent className="p-6 text-center">
                     <div className="bg-luxury-gold rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="h-6 w-6 text-luxury-navy" />
@@ -206,7 +221,11 @@ const LandingPage = () => {
                     <Badge variant="outline" className="border-luxury-gold text-luxury-gold mb-3">
                       {benefit.highlight}
                     </Badge>
-                    <h3 className="text-lg font-bold mb-3">{benefit.title}</h3>
+                    <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
+                      highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
+                    }`}>
+                      {benefit.title}
+                    </h3>
                     <p className="text-white/80 text-sm leading-relaxed">{benefit.description}</p>
                   </CardContent>
                 </Card>)}
