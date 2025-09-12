@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
-import heroImage from "@/assets/barra-beach-hero.jpg";
+import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 const LandingPage = () => {
   return <div className="min-h-screen bg-background">
