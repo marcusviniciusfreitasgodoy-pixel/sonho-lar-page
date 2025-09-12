@@ -416,7 +416,7 @@ const LandingPage = () => {
               subtitle: "Validação & Negociação",
               price: "R$ 25.000",
               description: "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
-              features: ["Relatório de Avaliação Detalhado", "Negociação Ativa Profissional", "Blindagem Jurídica Completa", "Coordenação até entrega das chaves"],
+              features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
               cta: "Quero Proteção Básica",
               popular: false
             }, {
