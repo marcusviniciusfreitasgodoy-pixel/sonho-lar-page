@@ -353,7 +353,7 @@ const LandingPage = () => {
               step: "03",
               icon: Calculator,
               title: "Análise de Valor Real",
-              description: "Investigamos o preço justo usando dados de vendas reais da região. Você sabe exatamente quanto vale cada imóvel antes de fazer qualquer oferta."
+              description: "Investigamos e definimos o preço justo usando dados de vendas reais da região, informações de transações de Cartórios, pesquisas e estudos de mercado com ferramentas de Inteligência Artificial e outras fontes. Você sabe exatamente quanto vale cada imóvel antes de fazer qualquer oferta."
             }, {
               step: "04",
               icon: Shield,
