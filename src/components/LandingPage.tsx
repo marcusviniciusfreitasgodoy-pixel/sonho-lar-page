@@ -51,13 +51,13 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Vou te contar algo que ninguém no mercado imobiliário quer que você saiba.
+                Vou te contar algo que ninguém no mercado imobiliário quer que você entenda melhor.
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
                 Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.</strong> Elas ganham mais dinheiro quando você paga mais caro. 
-                Podem até dizer que estão lutando por você, mas o objetivo é vender pelo maior preço possível. <strong>Simples Assim!</strong>
+                Podem até dizer que estão lutando por você, mas o objetivo real é vender pelo maior preço possível. <strong>Simples Assim!</strong>
               </p> 
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
@@ -68,8 +68,8 @@ const LandingPage = () => {
               </div>
               
               <p className="text-lg text-muted-foreground">
-                Você negocia no escuro, principalmente sem saber o preço real que outros pagaram pelos mesmos imóveis. 
-                Sem acesso aos dados de transações fechadas, sem inteligência de mercado. Sem conhecer os segredos da região.
+                Você negocia no escuro, sem saber o preço real que outros pagaram pelos mesmos imóveis. 
+                Sem acesso aos dados de transações fechadas, sem inteligência de mercado e Sem conhecer os segredos da região.
               </p>
             </div>
           </div>
