@@ -130,7 +130,7 @@ const LandingPage = () => {
                 Para Quem É
               </h2>
               <p className="text-xl text-muted-foreground">
-                Projetado especialmente para compradores exigentes de alto padrão
+                Criado especialmente para compradores exigentes de alto padrão, que buscam Segurança e Tranquilidade na sua compra.
               </p>
             </div>
 
