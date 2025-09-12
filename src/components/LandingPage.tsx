@@ -35,7 +35,7 @@ const LandingPage = () => {
             </Button>
             
             <p className="text-sm text-white/80">
-              Economia média comprovada: R$ 280 mil por transação
+              Economia comprovada. Ele só ganha se você economizar
             </p>
           </div>
         </div>
