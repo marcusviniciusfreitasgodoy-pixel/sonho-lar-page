@@ -85,7 +85,7 @@ const LandingPage = () => {
                 Personal Shopper Imobiliário: <span className="text-luxury-gold">Representação 100% Sua</span>
               </h2>
               <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
-                Existe apenas uma maneira de não ser enganado nessa negociação.
+                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível.
               </p>
             </div>
 
