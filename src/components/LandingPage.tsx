@@ -358,7 +358,7 @@ const LandingPage = () => {
               step: "04",
               icon: Shield,
               title: "Negociação Blindada",
-              description: "Representamos apenas você na mesa de negociação. Usamos estratégias baseadas no perfil do vendedor para conseguir o melhor preço e condições."
+              description: "Atuamos como seu único representante. Negociamos com estratégia, usando estratégias baseadas no perfil do vendedor e dados para garantir as melhores condições, maximizando sua economia e blindando seu investimento."
             }, {
               step: "05",
               icon: CheckCircle,
