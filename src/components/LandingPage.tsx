@@ -35,7 +35,7 @@ const LandingPage = () => {
             </Button>
             
             <p className="text-sm text-white/80">
-              <strong>Economia comprovada. Ele só ganha se você economizar</strong>
+              <strong>Economia e Compromisso comprovados. Ele só ganha se você economizar</strong>
             </p>
           </div>
         </div>
