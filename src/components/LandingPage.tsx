@@ -98,7 +98,7 @@ const LandingPage = () => {
                 </p>
                 
                 <div className="space-y-4 mb-8">
-                  {["Acesso aos dados reais de vendas que nunca aparecem nos portais", "Conhece os segredos do mercado local", "Representação Exclusiva do Comprador, sem conflito de interesses"].map((item, index) => <div key={index} className="flex items-start space-x-3">
+                  {["Tenha acesso aos dados reais de vendas que nunca aparecem nos portais", "Conheça os segredos do mercado local", "Representação Exclusiva do Comprador, Sem Conflito de Interesses"].map((item, index) => <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <p className="text-luxury-navy">{item}</p>
                     </div>)}
