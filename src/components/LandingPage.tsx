@@ -297,14 +297,11 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
-                   O ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Ali percebi a dinâmica desfavorável: o corretor defendia o vendedor, não ele. Meu amigo estava exausto e pronto para pagar demais. Percebi a ausência de um defensor real para o comprador e a necessidade de mais transparência no processo.
-                  </p>
+                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
+                </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Visitamos dezenas de propriedades. Cada corretor dizia que aquele era o melhor negócio da vida. 
-                  Cada um tentava "empurrar" o que tinha na carteira e não necessariamente o que atendia às necessidades dele. Meu amigo estava exausto, confuso e pronto para pagar 
-                  qualquer preço só para acabar com aquela tortura.
+                  Como corretor, também observei as limitações da estrutura e da remuneração de mercado, que muitas vezes me impediam de ajudar o cliente como eu gostaria. Essa clareza, somada à minha nova visão, me revelou uma grande oportunidade. Decidi, então, estudar como esses processos funcionavam em outros países e percebi a possibilidade de mudar a percepção do mercado no Brasil, para que se tornasse um segmento capaz de oferecer transações mais justas e equilibradas para todos.
                 </p>
                 
                 <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
