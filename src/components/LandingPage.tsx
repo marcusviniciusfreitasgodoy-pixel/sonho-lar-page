@@ -301,7 +301,11 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Como corretor, também observei as limitações da estrutura e da remuneração de mercado, que muitas vezes me impediam de ajudar o cliente como eu gostaria. Essa clareza, somada à minha nova visão, me revelou uma grande oportunidade. Decidi, então, estudar como esses processos funcionavam em outros países e percebi a possibilidade de mudar a percepção do mercado no Brasil, para que se tornasse um segmento capaz de oferecer transações mais justas e equilibradas para todos.
+                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Com minha bagagem profissional em Telecomunicações e Internet, sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
                 </p>
                 
                 <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
