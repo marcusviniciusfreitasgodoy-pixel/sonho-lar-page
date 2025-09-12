@@ -22,7 +22,7 @@ const LandingPage = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 O Segredo dos Compradores Inteligentes
-              <span className="text-luxury-gold"> O Imóvel Que Você Quer E Sem Pagar Mais Caro</span>
+              <span className="text-luxury-gold"> O Imóvel Que Você Quer e Pelo Preço Justo</span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
