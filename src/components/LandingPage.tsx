@@ -299,8 +299,7 @@ const LandingPage = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. 
                   Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
-                  Há alguns anos, antes de entrar nesse mercado, eu estava ajudando um amigo próximo a comprar um apartamento na Barra. 
-                  Ele era um executivo bem-sucedido, mas quando se tratava de imóveis, estava perdido como qualquer um de nós.
+                  Um ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Percebi a dinâmica desfavorável: o corretor defendia o vendedor, não ele. Meu amigo estava exausto e pronto para pagar demais. Percebi a ausência de um defensor real para o comprador
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
@@ -321,7 +320,7 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Decidi pesquisar por conta própria, investiguei e me aprofundei cada vez mais e descobri casos como de Apartamentos anunciados por R$ 2,5 milhões que tinham sido vendidos por R$ 2,1 milhões na mesma localidade.
+                  Decidi investigar um pouco mais, mergulhando em pesquisas aprofundadas, utilizando minha experiência profissional de outros mercados que trabalhei e descobri uma diferença muito grande entre o que eles nos falavam e a realidade: imóveis anunciados por R$ 2.5 milhões eram, na realidade, concretizados por R$ 2.1 milhões. 
                 </p>
                 
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
