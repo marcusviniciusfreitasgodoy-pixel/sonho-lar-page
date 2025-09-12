@@ -297,8 +297,7 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. 
-                  
+                  Há alguns anos, antes de entrar nesse mercado, eu estava ajudando um amigo próximo a comprar um apartamento na Barra. Ele era um executivo bem-sucedido, mas quando se tratava de imóveis, estava perdido como qualquer pessoa comum.
                 </p>
               </p>
               <p className="text-lg leading-relaxed mb-6">
