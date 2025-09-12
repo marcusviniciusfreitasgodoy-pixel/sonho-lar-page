@@ -69,7 +69,7 @@ const LandingPage = () => {
               
               <p className="text-lg text-muted-foreground">
                 Você negocia no escuro, sem saber o preço real que outros pagaram pelos mesmos imóveis. 
-                Sem acesso aos dados de transações fechadas, sem inteligência de mercado e Sem conhecer os segredos da região.
+                Sem acesso aos dados de transações fechadas, sem inteligência de mercado e sem conhecer os segredos da região.
               </p>
             </div>
           </div>
