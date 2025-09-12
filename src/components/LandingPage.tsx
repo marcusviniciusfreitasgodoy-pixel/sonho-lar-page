@@ -39,8 +39,8 @@ const LandingPage = () => {
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Encontre Seu Imóvel dos Sonhos na Barra 
-              <span className="text-luxury-gold"> Sem Pagar Caro Demais</span>
+              O Segredo de 
+              <span className="text-luxury-gold">Comprar Imóveis na Barra</span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
