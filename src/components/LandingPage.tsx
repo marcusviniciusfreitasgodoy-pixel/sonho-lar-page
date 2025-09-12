@@ -158,19 +158,6 @@ const LandingPage = () => {
                   </CardContent>
                 </Card>)}
             </div>
-              icon: Award,
-              title: "Compradores Exigentes",
-              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
-            }].map((persona, index) => <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                      <persona.icon className="h-8 w-8 text-luxury-navy" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-foreground">{persona.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{persona.description}</p>
-                  </CardContent>
-                </Card>)}
-            </div>
           </div>
         </div>
       </section>
