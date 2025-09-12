@@ -331,7 +331,7 @@ const LandingPage = () => {
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Assim, nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada), fundando a Godoy Prime Realty.
-                  </p>
+                </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Meu compromisso é ser o guardião exclusivo dos seus interesses, com lealdade de 100% ao comprador.
