@@ -93,7 +93,7 @@ const LandingPage = () => {
               <div>
                 <p className="text-lg text-luxury-navy mb-6 leading-relaxed">
                   Ter alguém que trabalhe exclusivamente para você. Que ganhe apenas quando você economizar 
-                  dinheiro, não quando gastar mais. Marcus Godoy criou o primeiro serviço de Personal Shopper 
+                  dinheiro, não quando gastar mais. Para isso o Marcus Godoy criou o primeiro serviço de Personal Shopper 
                   Imobiliário da Barra da Tijuca.
                 </p>
                 
