@@ -406,7 +406,7 @@ const LandingPage = () => {
               {[{
               name: "Parecer Godoy Prime",
               subtitle: "Atestado de Valor",
-              price: "A partir de R$ 9.000",
+              price: "À partir de R$ 5.000",
               description: "Para quem já tem um imóvel em vista e precisa de validação independente.",
               features: ["Consulta de alinhamento estratégico", "Inspeção detalhada de Marcus Godoy", "Relatório técnico comparativo", "Pack de Conhecimento exclusivo"],
               cta: "Quero Meu Parecer",
