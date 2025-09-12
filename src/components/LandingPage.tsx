@@ -297,7 +297,7 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto como Corretor, as dores e ineficiências do processo tradicional.
+                  Tradicional de Compra e Venda de Imóveis de Alto Padrão.
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
