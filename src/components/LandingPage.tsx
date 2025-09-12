@@ -145,11 +145,11 @@ const LandingPage = () => {
               description: "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa."
             }, {
               icon: Award,
-              title: "Compradores Exigentes",
-              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
+              title: "Famílias em Busca de Conforto e Segurança",
+              description: "Que priorizam bem-estar, tranquilidade, conforto e segurança total para sua família."
             }, {
               icon: Award,
-              title: "Compradores Exigentes",
+              title: "Compradores Exigentes, Celebridades e Influenciadores",
               description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
             }].map((persona, index) =>
                 <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
