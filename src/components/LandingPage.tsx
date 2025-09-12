@@ -172,8 +172,8 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Por Que o Personal Shopper Imobiliário Marcus Godoy É 
-                <span className="text-luxury-gold"> Sua Melhor Escolha</span> na Barra
+                Por Que o Personal Shopper Imobiliário É 
+                <span className="text-luxury-gold"> Sua Melhor Escolha</span> na Barra?
               </h2>
             </div>
 
