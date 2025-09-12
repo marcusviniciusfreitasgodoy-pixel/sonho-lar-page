@@ -318,11 +318,6 @@ const LandingPage = () => {
                   Os corretores não trabalhavam para meu amigo. Eles trabalhavam para quem vendia. 
                   Quanto mais caro ele pagasse, mais dinheiro eles ganhavam. Era como contratar o Advogado da outra parte para te defender e esperar que ele ganhe a causa pra você.
                 </p>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  Decidi investigar um pouco mais, mergulhando em pesquisas aprofundadas, utilizando minha experiência profissional de outros mercados que trabalhei e descobri uma diferença muito grande entre o que eles nos falavam e a realidade: imóveis anunciados por R$ 2.5 milhões eram, na realidade, concretizados por R$ 2.1 milhões. 
-                </p>
-                
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
                   <p className="text-2xl font-bold mb-2">Meu amigo economizou R$ 380 mil naquela compra.</p>
                   <p className="text-lg">E eu descobri minha verdadeira missão: ser o primeiro profissional da Barra a representar exclusivamente o comprador, sem conflito de interesses.</p>
