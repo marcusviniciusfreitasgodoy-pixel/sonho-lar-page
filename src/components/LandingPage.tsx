@@ -39,7 +39,7 @@ const LandingPage = () => {
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Encontre Seu Imóvel dos Sonhos na Barra 
+              Descubra o Segredo dos Compradores na Barra e 
               <span className="text-luxury-gold"> Sem Pagar Caro Demais</span>
             </h1>
             
