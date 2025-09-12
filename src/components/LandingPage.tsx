@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
-import marcusProfile from "@/assets/marcus-profile.jpg";
+import marcusProfile from "@/assets/721A9271.jpg";
 const LandingPage = () => {
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
