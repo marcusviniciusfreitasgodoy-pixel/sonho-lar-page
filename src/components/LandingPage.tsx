@@ -398,7 +398,7 @@ const LandingPage = () => {
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
               </h2>
               <p className="text-xl text-white/80">
-                Escolha o nível de blindagem e suporte que sua conquista imobiliária merece
+                Escolha o nível de blindagem e suporte que sua conquista imobiliária merece. Serviços indicados apenas para imóveis à partir de R$ 1.000.000,00 na região da Barra da Tijuca.
               </p>
             </div>
 
