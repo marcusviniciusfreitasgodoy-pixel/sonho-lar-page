@@ -147,6 +147,10 @@ const LandingPage = () => {
               icon: Award,
               title: "Compradores Exigentes",
               description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
+            }, {
+              icon: Award,
+              title: "Compradores Exigentes",
+              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
             }].map((persona, index) =>
                 <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
                   <CardContent className="p-8 text-center">
