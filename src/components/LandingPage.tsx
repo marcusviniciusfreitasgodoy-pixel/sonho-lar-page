@@ -299,7 +299,8 @@ const LandingPage = () => {
                 <p className="text-lg leading-relaxed mb-6">
                   Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. 
                   
-                  Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
+                </p>
+                Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
                  O ponto de virada foi ao ajudar um amigo empresário na busca por um apartamento na Barra. Ali percebi a dinâmica desfavorável: o corretor defendia o vendedor, não ele. Meu amigo estava exausto e pronto para pagar demais. Percebi a ausência de um defensor real para o comprador e a necessidade de mais transparência no processo.
                 </p>
                 
