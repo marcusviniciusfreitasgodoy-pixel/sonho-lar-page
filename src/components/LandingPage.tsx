@@ -181,12 +181,12 @@ const LandingPage = () => {
               {[{
               icon: Calculator,
               title: "Economia Real Garantida",
-              description: "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 200 mil e R$ 500 mil por transação.",
-              highlight: "R$ 200-500k economizados"
+              description: "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 100 mil e R$ 500 mil por transação.",
+              highlight: "R$ 100-500k economizados"
             }, {
               icon: Clock,
               title: "Tempo Precioso Protegido",
-              description: "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder 40 horas desnecessárias.",
+              description: "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder horas com visitas improdutivas.",
               highlight: "40+ horas poupadas"
             }, {
               icon: Key,
@@ -224,19 +224,19 @@ const LandingPage = () => {
                 Veja Como Outros Compradores <span className="text-luxury-gold">Protegeram Seu Patrimônio</span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                Não confie apenas em nossas palavras. Veja o que quem já comprou com Marcus Godoy diz:
+                Não confie apenas em nossas palavras. Veja o que quem já comprou diz:
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {[{
-              quote: "Marcus me mostrou dados que provaram que o apartamento estava 15% acima do preço real de mercado. Economizei R$ 320 mil na negociação.",
+              quote: "O Personal Shopper Imobiliário me mostrou dados que provaram que o apartamento estava 15% acima do preço real de mercado. Economizei R$ 320 mil na negociação.",
               author: "Roberto Silva",
               role: "Empresário do Setor Financeiro",
               savings: "R$ 320.000"
             }, {
               quote: "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
-              author: "Ana Carolina Mendes",
+              author: "Ana Carolina",
               role: "Executiva de Multinacional",
               savings: "R$ 450.000"
             }].map((testimonial, index) => <Card key={index} className="border-0 shadow-luxury">
@@ -278,7 +278,7 @@ const LandingPage = () => {
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Há alguns anos, eu estava ajudando um amigo próximo a comprar um apartamento na Barra. 
+                  Há alguns anos, antes de entrar nesse mercado, eu estava ajudando um amigo próximo a comprar um apartamento na Barra. 
                   Ele era um executivo bem-sucedido, mas quando se tratava de imóveis, estava perdido como qualquer um de nós.
                 </p>
                 
@@ -296,13 +296,11 @@ const LandingPage = () => {
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Os corretores não trabalhavam para meu amigo. Eles trabalhavam para quem vendia. 
-                  Quanto mais caro ele pagasse, mais dinheiro eles ganhavam. Era como pedir para o vendedor da loja te ajudar a pechinchar.
+                  Quanto mais caro ele pagasse, mais dinheiro eles ganhavam. Era como contratar o Advogado da outra parte para te defender e esperar que ele ganhe a causa pra você.
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Decidi investigar por conta própria. Consegui acesso aos dados reais de vendas da região - 
-                  não os preços de anúncio, mas o que as pessoas realmente pagaram. A diferença era chocante. 
-                  Apartamentos anunciados por R$ 2,5 milhões eram vendidos por R$ 2,1 milhões.
+                  Decidi pesquisar por conta própria, investiguei e me aprofundei cada vez mais e descobri casos como de Apartamentos anunciados por R$ 2,5 milhões que tinham sido vendidos por R$ 2,1 milhões na mesma localidade.
                 </p>
                 
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
