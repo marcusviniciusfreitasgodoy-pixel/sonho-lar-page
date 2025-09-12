@@ -319,7 +319,6 @@ const LandingPage = () => {
                </p>
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
                   <p className="text-2xl font-bold mb-2">Meu amigo economizou R$ 380 mil naquela compra.</p>
-                  <p className="text-lg">E eu descobri minha verdadeira missão: ser o primeiro profissional da Barra a representar exclusivamente o comprador, sem conflito de interesses.</p>
                 </div>
               </div>
             </div>
