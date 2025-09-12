@@ -249,7 +249,7 @@ const LandingPage = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {[{
-              quote: "O Personal Shopper Imobiliário me mostrou dados que provaram que o apartamento estava 15% acima do preço real de mercado. Economizei R$ 320 mil na negociação.",
+              quote: "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
               author: "Roberto Silva",
               role: "Empresário do Setor Financeiro",
               savings: "R$ 320.000"
@@ -290,13 +290,15 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
-                Como Descobri o Segredo Para <span className="text-luxury-gold">Nunca Mais Pagar Caro Demais</span> Por Um Imóvel
+                O Momento da Virada <span className="text-luxury-gold">Descobri Um Novo Caminho</span> na Compra de Imóveis de Alto Padrão
               </h2>
             </div>
 
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
+                  Minha jornada para redefinir a aquisição de imóveis de alto padrão no Brasil começou com experiências pessoais e profissionais frustrantes. 
+                  Senti na pele, tanto como comprador quanto ao acompanhar amigos e familiares, as dores e ineficiências do processo tradicional.
                   Há alguns anos, antes de entrar nesse mercado, eu estava ajudando um amigo próximo a comprar um apartamento na Barra. 
                   Ele era um executivo bem-sucedido, mas quando se tratava de imóveis, estava perdido como qualquer um de nós.
                 </p>
