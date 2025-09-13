@@ -247,7 +247,7 @@ const LandingPage = () => {
                 
                 <div className="bg-white/60 rounded-xl p-6 border border-luxury-gold/30">
                   <p className="text-lg font-semibold text-luxury-navy italic">
-                    "Imagine saber exatamente quanto vale o imóvel que você quer antes mesmo de fazer a oferta. Ter acesso a propriedades exclusivas que só circulam entre especialistas. Saber a valorização real daquela região antes de investir. É como jogar pôquer vendo as cartas dos outros jogadores."
+                    "Imagine ter acesso à 100% das opções disponíveis na região, sem precisar falar com dezenas de Corretores. Saber exatamente quanto vale o imóvel que você quer antes mesmo de fazer a oferta. Ter acesso a propriedades exclusivas que só circulam entre especialistas. Saber a valorização real daquela região antes de investir. É como jogar pôquer vendo as cartas dos outros jogadores."
                   </p>
                 </div>
               </div>
