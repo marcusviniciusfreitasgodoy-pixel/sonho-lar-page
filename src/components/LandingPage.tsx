@@ -535,7 +535,7 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Interesses Alinhados:</strong>
-                    <span className="text-luxury-navy"> Meu sucesso é o seu sucesso. Meu objetivo é que o valor que você economiza seja significativamente maior do que minha remuneração, proporcionando um ganho líquido substancial.</span>
+                    <span className="text-luxury-navy"> Meu sucesso é o seu sucesso. Meu objetivo é que o valor economizado seja significativamente maior do que minha remuneração, proporcionando um ganho líquido substancial para você..</span>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
