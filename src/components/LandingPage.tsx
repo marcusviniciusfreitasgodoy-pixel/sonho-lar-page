@@ -330,7 +330,7 @@ const LandingPage = () => {
             }, {
               icon: Key,
               title: "Acesso aos Melhores Negócios",
-              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes dispníveis na região, sem precisar falar com dezenas de Corretores.",
+              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes disponíveis na região e sem precisar falar com dezenas de Imobiliárias e Corretores.",
               highlight: "Ofertas exclusivas e Economia de tempo"
             }, {
               icon: Shield,
