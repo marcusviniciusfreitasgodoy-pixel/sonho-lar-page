@@ -408,7 +408,7 @@ const LandingPage = () => {
               subtitle: "Atestado de Valor",
               price: "À partir de R$ 5.000",
               description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas. Garanta um investimento sólido e sem surpresas.",
-              features: ["Consulta de alinhamento estratégico", "Inspeção detalhada de Marcus Godoy", "Relatório técnico comparativo", "Pack de Conhecimento exclusivo"],
+              features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo (m² e preço máximo recomendado).", "Pack de Conhecimento exclusivo"],
               cta: "Quero Meu Parecer",
               popular: false
             }, {
