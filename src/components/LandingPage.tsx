@@ -516,7 +516,7 @@ const LandingPage = () => {
               </h3>
               
               <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
-                Sua decisão é respaldada por uma Garantia robusta, formalizada em contrato assinado. Todos os nossos compromissos de ética, fidelidade e defesa intransigente de seus interesses estão assegurados neste documento.
+                Sua decisão é respaldada por uma Garantia robusta, formalizada em contrato. Todos os nossos compromissos de ética, fidelidade e defesa intransigente de seus interesses estão assegurados neste documento.
               </p>
               
               <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
