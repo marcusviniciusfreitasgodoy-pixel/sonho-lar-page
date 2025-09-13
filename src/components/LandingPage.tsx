@@ -194,13 +194,13 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Verdades Inconvenientes. Reflita sobre uma realidade que ninguém comenta no mercado imobiliário, mas que agora você tem opção.
+                <strong>Verdades Inconvenientes<strong> Reflita sobre uma realidade que ninguém comenta no mercado imobiliário, mas que agora você tem opção.
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
                 Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.</strong> Elas ganham mais dinheiro quando você paga mais caro. 
-                Podem até dizer que estão lutando por você, mas o objetivo real é vender pelo maior preço possível. <strong>Simples Assim!</strong> É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
+                Podem até dizer que estão lutando por você, mas o objetivo real é vender pelo maior preço possível. <strong>Simples Assim!</strong> É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?<strong>
               </p> 
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
