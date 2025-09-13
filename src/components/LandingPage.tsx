@@ -480,7 +480,7 @@ const LandingPage = () => {
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
-                Nosso Compromisso na contratação do Método Bússola Dourada: Você Só Paga se Houver Economia Real e o Processo For Excepcional.
+                Nosso Compromisso na contratação do Método Bússola Dourada: Você Só Paga se Houver Economia Real.
               </p>
               
               <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
@@ -506,7 +506,7 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Remuneração por Performance:</strong>
-                    <span className="text-luxury-navy"> Minha comissão é 100% atrelada ao seu sucesso e à economia real e significativa que eu gerar. Você só me remunera sobre o valor que eu conseguir economizar entre o preço de referência inicial do imóvel e o preço final de compra que eu negociar para você. Se não houver economia significativa, você não me paga nada!</span>
+                    <span className="text-luxury-navy"> Minha comissão é 100% atrelada ao seu sucesso e à economia real e significativa que eu gerar. Você só me remunera sobre o valor que eu conseguir economizar. Se não houver economia, você não me paga nada!</span>
                   </div>
                 </li>
               </ul>
