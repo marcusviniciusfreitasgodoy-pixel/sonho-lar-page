@@ -475,30 +475,85 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
-              <div className="bg-gradient-gold rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-10 w-10 text-luxury-navy" />
-              </div>
-              
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-luxury-navy">
-                Garantia Tripla de Resultados
+                Sua Compra de Imóvel de Luxo na Barra da Tijuca: Confiança Contratada, Economia Garantida.
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
-                Economia, Satisfação ou Dinheiro de Volta
+                Nosso Compromisso na contratação do Método Bússola Dourada: Você Só Paga se Houver Economia Real e o Processo For Excepcional.
               </p>
               
-              <p className="text-lg text-luxury-navy mb-8 leading-relaxed">
-                Se você não economizar pelo menos R$ 100.000 na negociação do seu imóvel, 
-                ou se não ficar completamente satisfeito com o processo, devolvemos 100% do valor investido no serviço.
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+                Nossa Garantia de Confiança é Inabalável:
+              </h3>
+              
+              <ul className="text-left space-y-4 mb-8">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Zero Custo Inicial:</strong>
+                    <span className="text-luxury-navy"> Você não investe absolutamente nada para iniciar nossa parceria. Meu compromisso é total e sem amarras financeiras prévias.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Foco Exclusivo no SEU Interesse:</strong>
+                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas, incluindo imóveis off-market. Minha lealdade é única e intransigente com você, o comprador.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Remuneração por Performance:</strong>
+                    <span className="text-luxury-navy"> Minha comissão é 100% atrelada ao seu sucesso e à economia real e significativa que eu gerar. Você só me remunera sobre o valor que eu conseguir economizar entre o preço de referência inicial do imóvel e o preço final de compra que eu negociar para você. Se não houver economia significativa, você não me paga nada!</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+                Esta é a Sua Prova de Valor e Alinhamento Total:
+              </h3>
+              
+              <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
+                Sua decisão é respaldada por uma garantia robusta, formalizada em contrato assinado. Todos os nossos compromissos de ética, fidelidade e defesa intransigente de seus interesses estão assegurados neste documento. Assumimos o risco, pois nossa expertise é sua maior segurança, transformando a complexidade em uma conquista prazerosa e estratégica.
               </p>
               
-              <div className="bg-luxury-navy/5 border border-luxury-navy/10 rounded-xl p-6 mb-8">
-                <p className="text-luxury-navy font-semibold">
-                  Não é apenas uma promessa. É nossa forma de provar que trabalhamos exclusivamente para você. 
-                  Assumimos todo o risco porque temos certeza absoluta de que você vai economizar muito mais 
-                  do que pagou pela consultoria.
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+                Por que esta garantia é para você?
+              </h3>
+              
+              <ul className="text-left space-y-4 mb-8">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Paz de Espírito:</strong>
+                    <span className="text-luxury-navy"> Elimine a insegurança e o desgaste de buscar um imóvel de luxo sozinho, economizando seu tempo precioso.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Interesses Alinhados:</strong>
+                    <span className="text-luxury-navy"> Meu sucesso é o seu sucesso. Meu objetivo é que o valor que você economiza seja significativamente maior do que minha remuneração, proporcionando um ganho líquido substancial.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Processo Excepcional:</strong>
+                    <span className="text-luxury-navy"> Sua jornada será guiada com excelência, discrição e eficiência, do início ao fim, culminando na aquisição perfeita e blindada.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
+                Pronto para uma aquisição imobiliária estratégica e sem preocupações? Agende agora sua consultoria inicial gratuita e descubra como podemos blindar seu investimento na Barra da Tijuca.
+              </p>
+              
+              <p className="text-sm text-luxury-text-muted mb-8 leading-relaxed text-left italic">
+                Os detalhes completos e as condições da nossa garantia e prestação de serviços, incluindo a definição de 'economia significativa' e a estrutura de remuneração, estão descritos em nosso Contrato de Personal Shopper Imobiliário, que será apresentado e discutido com você antes de qualquer compromisso formal.
+              </p>
               
               <Button variant="gold" size="xl">
                 Garantir Minha Vaga Agora
