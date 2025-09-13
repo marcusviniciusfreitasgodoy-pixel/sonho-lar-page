@@ -476,7 +476,7 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-luxury-navy">
-                Sua Compra de Imóvel de Luxo na Barra da Tijuca: Confiança Contratada, Economia Garantida.
+                Sua Compra de Imóvel na Barra da Tijuca: Confiança Contratada, Economia Garantida.
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
