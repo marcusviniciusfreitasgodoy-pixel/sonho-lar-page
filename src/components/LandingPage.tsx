@@ -414,7 +414,7 @@ const LandingPage = () => {
             }, {
               name: "Compra Blindada",
               subtitle: "Validação & Negociação",
-              price: "Sob Consulta",
+              price: "Sob Consulta - Fee de Preparação e Análise + Comissão de Sucesso",
               description: "Para clientes com imóveis já em vista, que precisam de assessoria profissional para validar o valor, negociar condições e garantir segurança contratual e documental. Evite deixar dinheiro na mesa e arriscar seu investimento.",
               features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
               cta: "Quero Proteção Básica",
