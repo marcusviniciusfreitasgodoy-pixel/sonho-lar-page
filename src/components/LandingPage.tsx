@@ -520,7 +520,7 @@ const LandingPage = () => {
               </p>
               
               <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
-                Por que esta garantia é para você?
+               Esta Garantia é para você.
               </h3>
               
               <ul className="text-left space-y-4 mb-8">
