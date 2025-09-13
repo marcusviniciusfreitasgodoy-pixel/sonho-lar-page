@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/721A9271.jpg";
@@ -220,6 +221,10 @@ const LandingPage = () => {
                     <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
                       highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
                     }`}>
+                    <h3 className={cn(
+                      "text-lg font-bold mb-3 transition-colors duration-300",
+                      highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
+                    )}>
                       {benefit.title}
                     </h3>
                     <p className="text-white/80 text-sm leading-relaxed">{benefit.description}</p>
@@ -415,7 +420,7 @@ const LandingPage = () => {
               name: "Compra Blindada",
               subtitle: "Validação & Negociação",
               price: "Fee de Preparação e Análise + Comissão no Sucesso",
-              description: "Para clientes com imóveis já em vista, que precisam de assessoria profissional para validar o valor, negociar condições e garantir segurança contratual e documental. Evite deixar dinheiro na mesa e arriscar seu investimento.",
+              description: "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
               features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
               cta: "Quero Blindar Minha Compra",
               popular: false
@@ -428,6 +433,7 @@ const LandingPage = () => {
               cta: "Sim! Quero a Bússola Dourada",
               popular: true
             }].map((plan, index) => <Card key={index} className={`relative border-0 ${plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10'}`}>
+            }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
                   {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">
                         MAIS POPULAR
@@ -437,15 +443,19 @@ const LandingPage = () => {
                   <CardContent className="p-8">
                     <div className="text-center mb-6">
                       <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-luxury-navy' : 'text-white'}`}>
+                      <h3 className={cn("text-2xl font-bold mb-2", plan.popular ? 'text-luxury-navy' : 'text-white')}>
                         {plan.name}
                       </h3>
                       <p className={`text-sm mb-4 ${plan.popular ? 'text-luxury-text-muted' : 'text-white/70'}`}>
+                      <p className={cn("text-sm mb-4", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
                         {plan.subtitle}
                       </p>
                       <div className={`text-3xl font-bold mb-2 ${plan.popular ? 'text-luxury-gold' : 'text-luxury-gold'}`}>
+                      <div className={cn("text-3xl font-bold mb-2", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')}>
                         {plan.price}
                       </div>
                       <p className={`text-sm ${plan.popular ? 'text-luxury-text-muted' : 'text-white/70'}`}>
+                      <p className={cn("text-sm", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
                         {plan.description}
                       </p>
                     </div>
@@ -453,7 +463,9 @@ const LandingPage = () => {
                     <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-3">
                           <CheckCircle className={`h-5 w-5 mt-0.5 flex-shrink-0 ${plan.popular ? 'text-luxury-gold' : 'text-luxury-gold'}`} />
+                          <CheckCircle className={cn("h-5 w-5 mt-0.5 flex-shrink-0", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')} />
                           <span className={`text-sm ${plan.popular ? 'text-luxury-navy' : 'text-white/90'}`}>{feature}</span>
+                          <span className={cn("text-sm", plan.popular ? 'text-luxury-navy' : 'text-white/90')}>{feature}</span>
                         </li>)}
                     </ul>
                     
