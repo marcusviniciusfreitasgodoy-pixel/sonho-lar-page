@@ -194,7 +194,7 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Reflita sobre uma realidade que ninguém comenta no mercado imobiliário. Só que agora você tem opção.
+                Verdades Inconvenientes. Reflita sobre uma realidade que ninguém comenta no mercado imobiliário, mas que agora você tem opção.
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
