@@ -552,7 +552,7 @@ const LandingPage = () => {
               </p>
               
               <p className="text-sm text-luxury-text-muted mb-8 leading-relaxed text-left italic">
-                Os detalhes completos e as condições da nossa garantia e prestação de serviços, incluindo a definição de 'economia significativa' e a estrutura de remuneração, estão descritos em nosso Contrato de Personal Shopper Imobiliário, que será apresentado e discutido com você antes de qualquer compromisso formal.
+                Os detalhes completos e as condições da nossa garantia, estão descritos em nosso Contrato de Personal Shopper Imobiliário, que será apresentado e discutido com você antes de qualquer compromisso formal.
               </p>
               
               <Button variant="gold" size="xl">
@@ -579,16 +579,16 @@ const LandingPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button variant="gold" size="xl">
                 <Phone className="mr-2 h-5 w-5" />
-                (21) 99999-9999
+                (21) 96407-5124
               </Button>
               <Button variant="luxury-outline" size="xl">
                 <Mail className="mr-2 h-5 w-5" />
-                marcus@godoyrealty.com.br
+                marcus@godoyprime.com.br
               </Button>
             </div>
             
             <p className="text-sm text-white/70">
-              Apenas 2 vagas disponíveis para este trimestre. Não perca sua oportunidade.
+              Apenas 6 vagas disponíveis por trimestre. Não perca sua oportunidade.
             </p>
           </div>
         </div>
@@ -619,7 +619,7 @@ const LandingPage = () => {
             </div>
             
             <p className="text-white/60 text-sm">
-              © 2024 Godoy Prime Realty. Todos os direitos reservados.
+              © 2025 Godoy Prime Realty. Todos os direitos reservados.
             </p>
           </div>
         </div>
