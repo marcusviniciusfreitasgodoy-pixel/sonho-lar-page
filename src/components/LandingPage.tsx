@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/721A9271.jpg";
+
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   
@@ -218,9 +219,6 @@ const LandingPage = () => {
                     <Badge variant="outline" className="border-luxury-gold text-luxury-gold mb-3">
                       {benefit.highlight}
                     </Badge>
-                    <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
-                      highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
-                    }`}>
                     <h3 className={cn(
                       "text-lg font-bold mb-3 transition-colors duration-300",
                       highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
@@ -427,12 +425,11 @@ const LandingPage = () => {
             }, {
               name: "Método Bússola Dourada™",
               subtitle: "Experiência Completa",
-              price: "Retainer Fee PROMOCIONALMENTE ISENTA + Comissão no Sucesso" ",
+              price: "Retainer Fee PROMOCIONALMENTE ISENTA + Comissão no Sucesso",
               description: "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência.",
               features: ["Metodologia completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
               cta: "Sim! Quero a Bússola Dourada",
               popular: true
-            }].map((plan, index) => <Card key={index} className={`relative border-0 ${plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10'}`}>
             }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
                   {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">
@@ -442,19 +439,15 @@ const LandingPage = () => {
                   
                   <CardContent className="p-8">
                     <div className="text-center mb-6">
-                      <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-luxury-navy' : 'text-white'}`}>
                       <h3 className={cn("text-2xl font-bold mb-2", plan.popular ? 'text-luxury-navy' : 'text-white')}>
                         {plan.name}
                       </h3>
-                      <p className={`text-sm mb-4 ${plan.popular ? 'text-luxury-text-muted' : 'text-white/70'}`}>
                       <p className={cn("text-sm mb-4", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
                         {plan.subtitle}
                       </p>
-                      <div className={`text-3xl font-bold mb-2 ${plan.popular ? 'text-luxury-gold' : 'text-luxury-gold'}`}>
                       <div className={cn("text-3xl font-bold mb-2", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')}>
                         {plan.price}
                       </div>
-                      <p className={`text-sm ${plan.popular ? 'text-luxury-text-muted' : 'text-white/70'}`}>
                       <p className={cn("text-sm", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
                         {plan.description}
                       </p>
@@ -462,9 +455,7 @@ const LandingPage = () => {
                     
                     <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-3">
-                          <CheckCircle className={`h-5 w-5 mt-0.5 flex-shrink-0 ${plan.popular ? 'text-luxury-gold' : 'text-luxury-gold'}`} />
                           <CheckCircle className={cn("h-5 w-5 mt-0.5 flex-shrink-0", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')} />
-                          <span className={`text-sm ${plan.popular ? 'text-luxury-navy' : 'text-white/90'}`}>{feature}</span>
                           <span className={cn("text-sm", plan.popular ? 'text-luxury-navy' : 'text-white/90')}>{feature}</span>
                         </li>)}
                     </ul>
@@ -580,4 +571,5 @@ const LandingPage = () => {
       </footer>
     </div>;
 };
+
 export default LandingPage;
