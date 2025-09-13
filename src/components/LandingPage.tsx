@@ -247,7 +247,7 @@ const LandingPage = () => {
                 
                 <div className="bg-white/60 rounded-xl p-6 border border-luxury-gold/30">
                   <p className="text-lg font-semibold text-luxury-navy italic">
-                    "Imagine ter acesso à 100% das opções disponíveis na região, sem precisar falar com dezenas de Corretores. Saber exatamente quanto vale o imóvel que você quer antes mesmo de fazer a oferta. Ter acesso a propriedades exclusivas que só circulam entre especialistas. Saber a valorização real daquela região antes de investir. É como jogar pôquer vendo as cartas dos outros jogadores."
+                    "Saber exatamente quanto vale o imóvel que você quer antes mesmo de fazer a oferta. Ter acesso a propriedades exclusivas que só circulam entre especialistas. Saber a valorização real daquela região antes de investir. É como jogar pôquer vendo as cartas dos outros jogadores."
                   </p>
                 </div>
               </div>
@@ -330,8 +330,8 @@ const LandingPage = () => {
             }, {
               icon: Key,
               title: "Acesso aos Melhores Negócios",
-              description: "Os imóveis mais interessantes nunca chegam aos portais. Acesso às oportunidades off-market exclusivas.",
-              highlight: "Ofertas exclusivas"
+              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes dispníveis na região, sem precisar falar com dezenas de Corretores.",
+              highlight: "Ofertas exclusivas e Economia de tempo"
             }, {
               icon: Shield,
               title: "Representação 100% Sua",
