@@ -414,7 +414,7 @@ const LandingPage = () => {
             }, {
               name: "Compra Blindada",
               subtitle: "Validação & Negociação",
-              price: "R$ 25.000",
+              price: "Sob Consulta",
               description: "Para clientes com imóveis já em vista, que precisam de assessoria profissional para validar o valor, negociar condições e garantir segurança contratual e documental. Evite deixar dinheiro na mesa e arriscar seu investimento.",
               features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
               cta: "Quero Proteção Básica",
@@ -422,7 +422,7 @@ const LandingPage = () => {
             }, {
               name: "Método Bússola Dourada™",
               subtitle: "Experiência Completa",
-              price: "R$ 45.000",
+              price: "Sob Consulta",
               description: "Experiência de compra fluida, estratégica e totalmente segura do início ao fim.",
               features: ["Metodologia completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
               cta: "Sim! Quero a Bússola Dourada",
