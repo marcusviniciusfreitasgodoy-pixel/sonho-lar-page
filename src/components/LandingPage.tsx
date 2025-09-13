@@ -30,7 +30,7 @@ const LandingPage = () => {
         <div className="relative z-10 container mx-auto px-6 text-center text-white">
           <div className="animate-fade-in">
             <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold bg-white/10">
-              Personal Shopper Imobiliário Exclusivo na Barra da Tijuca
+              Personal Shopper Imobiliário Exclusivo
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -39,7 +39,7 @@ const LandingPage = () => {
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-              O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e só ganha se você economizar.
+              O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e sem conflitos. Negociação baseada em Estratégia, Inteligência de Mercado, Experiência e Conhecimento da Região.
             </p>
             
             <Button variant="gold" size="xl" className="mb-4">
@@ -48,7 +48,7 @@ const LandingPage = () => {
             </Button>
             
             <p className="text-sm text-white/80">
-              <strong>Economia e Compromisso Garantidos.</strong>
+              <strong>Economia e Compromisso comprovados. Ele só ganha se você economizar</strong>
             </p>
           </div>
         </div>
@@ -433,7 +433,7 @@ const LandingPage = () => {
             }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
                   {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">
-                        MAIS ESCOLHIDO
+                        MAIS POPULAR
                       </Badge>
                     </div>}
                   
@@ -484,7 +484,7 @@ const LandingPage = () => {
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
-                Economia, Satisfação ou Você não Paga
+                Economia, Satisfação ou Dinheiro de Volta
               </p>
               
               <p className="text-lg text-luxury-navy mb-8 leading-relaxed">
