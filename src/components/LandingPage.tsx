@@ -528,7 +528,7 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Paz de Espírito:</strong>
-                    <span className="text-luxury-navy"> Elimine a insegurança e o desgaste de buscar um imóvel de Alto Padrão sozinho, economizando seu tempo precioso.</span>
+                    <span className="text-luxury-navy"> Elimine a insegurança e o desgaste de buscar um imóvel de Alto Padrão sozinho.</span>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
