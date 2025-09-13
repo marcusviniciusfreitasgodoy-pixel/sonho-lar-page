@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail } from "lucide-react";
+import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/721A9271.jpg";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const toggleCardHighlight = (cardIndex: number) => {
     setHighlightedCards(prev => 
@@ -18,9 +20,137 @@ const LandingPage = () => {
     );
   };
 
+  // Add HeyGen script to document
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rMl9w%0D%0AdWJsaWMiLCJwcmV2aWV3SW1nIjoiaHR0cHM6Ly9maWxlczIuaGV5Z2VuLmFpL2F2YXRhci92My9k%0D%0ANTJmZmExYjQ0N2Q0ZjJmOGViMTY5MTdlN2VjMjIyYV81NTg3MC9wcmV2aWV3X3RhbGtfMS53ZWJw%0D%0AIiwibmVlZFJlbW92ZUJhY2tncm91bmQiOnRydWUsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYy%0D%0AZGQ4ZjRkYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4%0D%0AMjViN2MzMmVkYTA3MSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`\\n  #heygen-streaming-embed {\\n    z-index: 9999;\\n    position: fixed;\\n    left: 40px;\\n    bottom: 40px;\\n    width: 200px;\\n    height: 200px;\\n    border-radius: 50%;\\n    border: 2px solid #fff;\\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\\n    transition: all linear 0.1s;\\n    overflow: hidden;\\n\\n    opacity: 0;\\n    visibility: hidden;\\n  }\\n  #heygen-streaming-embed.show {\\n    opacity: 1;\\n    visibility: visible;\\n  }\\n  #heygen-streaming-embed.expand {\\n    \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\\n    border: 0;\\n    border-radius: 8px;\\n  }\\n  #heygen-streaming-container {\\n    width: 100%;\\n    height: 100%;\\n  }\\n  #heygen-streaming-container iframe {\\n    width: 100%;\\n    height: 100%;\\n    border: 0;\\n  }\\n  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Cleanup function to remove script when component unmounts
+      const heygenEmbed = document.getElementById('heygen-streaming-embed');
+      if (heygenEmbed) {
+        heygenEmbed.remove();
+      }
+    };
+  }, []);
+
   return <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/Logotipo Principal.png" 
+                alt="Godoy Prime Realty" 
+                className="h-12 w-auto"
+              />
+            </div>
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="#servicos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+                Serviços
+              </a>
+              <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+                Sobre Marcus
+              </a>
+              <a href="#metodo" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+                Método
+              </a>
+              <a href="#garantias" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+                Garantias
+              </a>
+              <a href="#contato" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+                Contato
+              </a>
+            </nav>
+            
+            {/* Contact Info & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-6 text-sm">
+                <div className="flex items-center space-x-2 text-luxury-navy">
+                  <Phone className="h-4 w-4" />
+                  <span>(21) 4040-0067</span>
+                </div>
+                <div className="flex items-center space-x-2 text-luxury-navy">
+                  <MessageCircle className="h-4 w-4" />
+                  <span>(21) 99725-0515</span>
+                </div>
+              </div>
+              
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          </div>
+          
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-border bg-white">
+              <nav className="flex flex-col space-y-4">
+                <a 
+                  href="#servicos" 
+                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Serviços
+                </a>
+                <a 
+                  href="#sobre" 
+                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sobre Marcus
+                </a>
+                <a 
+                  href="#metodo" 
+                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Método
+                </a>
+                <a 
+                  href="#garantias" 
+                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Garantias
+                </a>
+                <a 
+                  href="#contato" 
+                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contato
+                </a>
+                
+                {/* Mobile Contact Info */}
+                <div className="pt-4 border-t border-border space-y-3">
+                  <div className="flex items-center space-x-2 text-luxury-navy text-sm">
+                    <Phone className="h-4 w-4" />
+                    <span>(21) 4040-0067</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-luxury-navy text-sm">
+                    <MessageCircle className="h-4 w-4" />
+                    <span>(21) 99725-0515</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url(${heroImage})`
       }}>
@@ -55,7 +185,7 @@ const LandingPage = () => {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 bg-background">
+      <section id="problema" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
@@ -90,7 +220,7 @@ const LandingPage = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-luxury-cream">
+      <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -131,7 +261,7 @@ const LandingPage = () => {
       </section>
 
       {/* Target Audience Section */}
-      <section className="py-20 bg-background">
+      <section id="publico" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -176,7 +306,7 @@ const LandingPage = () => {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="py-20 bg-luxury-navy text-white">
+      <section id="servicos" className="py-20 bg-luxury-navy text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -234,7 +364,7 @@ const LandingPage = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section className="py-20 bg-background">
+      <section id="depoimentos" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -284,7 +414,7 @@ const LandingPage = () => {
       </section>
 
       {/* Origin Story Section */}
-      <section className="py-20 bg-luxury-cream">
+      <section id="sobre" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -326,7 +456,7 @@ const LandingPage = () => {
       </section>
 
       {/* Method Section */}
-      <section className="py-20 bg-background">
+      <section id="metodo" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -390,7 +520,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-luxury-navy text-white">
+      <section id="precos" className="py-20 bg-luxury-navy text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -471,7 +601,7 @@ const LandingPage = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-20 bg-luxury-cream">
+      <section id="garantias" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
@@ -565,7 +695,7 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-white">
+      <section id="contato" className="py-20 bg-gradient-hero text-white">
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -595,35 +725,141 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-luxury-navy text-white py-12">
+      <footer className="bg-luxury-navy text-white py-16">
         <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
-              <p className="text-white/80">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
-            </div>
-            
-            <div className="flex justify-center space-x-8 mb-6">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-luxury-gold">R$ 280k</p>
-                <p className="text-sm text-white/70">Economia Média</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-luxury-gold">100%</p>
-                <p className="text-sm text-white/70">Representação Sua</p>
-              </div>
-              <div className="text-center">
-                <p className="text-2xl font-bold text-luxury-gold">0</p>
-                <p className="text-sm text-white/70">Conflito de Interesses</p>
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            {/* Company Info */}
+            <div className="md:col-span-2">
+              <div className="mb-6">
+                <img 
+                  src="/Logotipo Negativo 01.png" 
+                  alt="Godoy Prime Realty" 
+                  className="h-16 w-auto mb-4"
+                />
+                <h3 className="text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
+                <p className="text-white/80 mb-4">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Representação exclusiva do comprador em imóveis de alto padrão. 
+                  Economia garantida e transparência total em cada negociação.
+                </p>
               </div>
             </div>
             
-            <p className="text-white/60 text-sm">
-              © 2025 Godoy Prime Realty. Todos os direitos reservados.
-            </p>
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 4040-0067</p>
+                    <p className="text-white/60 text-xs">Telefone Fixo</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 99725-0515</p>
+                    <p className="text-white/60 text-xs">WhatsApp</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">marcus@godoyprime.com.br</p>
+                    <p className="text-white/60 text-xs">E-mail</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-white text-sm">Barra da Tijuca</p>
+                    <p className="text-white/60 text-xs">Rio de Janeiro - RJ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Links Úteis</h4>
+              <div className="space-y-2">
+                <a href="#servicos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Nossos Serviços
+                </a>
+                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Sobre Marcus
+                </a>
+                <a href="#metodo" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Método Bússola Dourada™
+                </a>
+                <a href="#garantias" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Garantias
+                </a>
+                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Depoimentos
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Stats Section */}
+          <div className="border-t border-white/20 pt-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">R$ 280k</p>
+                <p className="text-white/70 text-sm">Economia Média por Cliente</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">100%</p>
+                <p className="text-white/70 text-sm">Representação do Comprador</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">Zero</p>
+                <p className="text-white/70 text-sm">Conflito de Interesses</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Legal Links & Copyright */}
+          <div className="border-t border-white/20 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-white/60">
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  Política de Privacidade
+                </a>
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  Termos de Uso
+                </a>
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  LGPD
+                </a>
+              </div>
+              
+              <p className="text-white/60 text-sm text-center md:text-right">
+                © 2025 Godoy Prime Realty. Todos os direitos reservados.<br />
+                CRECI/RJ: 0000000-F
+              </p>
+            </div>
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Floating Button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <a
+          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          aria-label="Falar no WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6" />
+          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Fale no WhatsApp
+          </span>
+        </a>
+      </div>
     </div>;
 };
 
