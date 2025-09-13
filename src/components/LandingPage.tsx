@@ -169,7 +169,7 @@ const LandingPage = () => {
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-              O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e sem conflitos. Negociação baseada em Estratégia, Inteligência de Mercado, Experiência e Conhecimento da Região.
+              O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
             </p>
             
             <Button variant="gold" size="xl" className="mb-4">
@@ -178,7 +178,7 @@ const LandingPage = () => {
             </Button>
             
             <p className="text-sm text-white/80">
-              <strong>Economia e Compromisso comprovados. Ele só ganha se você economizar</strong>
+              <strong>Economia e Compromisso Garantidos.</strong>
             </p>
           </div>
         </div>
@@ -194,7 +194,7 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Vou te contar algo que ninguém no mercado imobiliário para pra refletir, pois sempre foi assim.
+                Reflita sobre uma realidade que ninguém comenta no mercado imobiliário. Só que agora você tem opção.
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
