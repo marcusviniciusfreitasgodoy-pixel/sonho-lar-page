@@ -484,7 +484,7 @@ const LandingPage = () => {
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
-                Economia, Satisfação ou Dinheiro de Volta
+                Economia, Satisfação ou Você não Paga
               </p>
               
               <p className="text-lg text-luxury-navy mb-8 leading-relaxed">
