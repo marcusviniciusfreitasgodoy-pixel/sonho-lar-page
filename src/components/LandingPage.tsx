@@ -569,7 +569,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Pronto Para Economizar <span className="text-luxury-gold">Centenas de Milhares</span> Na Sua Próxima Compra?
+              Pronto Para Economizar <span className="text-luxury-gold">Dezenas de Milhares de R$</span> Na Sua Próxima Compra?
             </h2>
             
             <p className="text-xl mb-8 text-white/90">
