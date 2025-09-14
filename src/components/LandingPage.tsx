@@ -629,7 +629,7 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Foco Exclusivo no SEU Interesse:</strong>
-                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas, incluindo imóveis off-market. Minha lealdade é única e intransigente com você, o comprador.</span>
+                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas, incluindo imóveis off-market. Minha lealdade é única com você, o comprador.</span>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -672,13 +672,13 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Processo Excepcional:</strong>
-                    <span className="text-luxury-navy"> Sua jornada será guiada com excelência, discrição e eficiência, do início ao fim, culminando na aquisição perfeita e blindada.</span>
+                    <span className="text-luxury-navy"> Sua jornada será guiada com excelência, discrição e eficiência, do início ao fim.</span>
                   </div>
                 </li>
               </ul>
               
               <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
-                Pronto para uma aquisição imobiliária estratégica e sem preocupações? Agende agora sua consultoria inicial gratuita e descubra como podemos blindar seu investimento na Barra da Tijuca.
+                Pronto para uma aquisição imobiliária estratégica e sem preocupações? Agende agora sua consultoria inicial gratuita e vamos descobrir se faz sentido pra você e também pra mim iniciarmos essa parceria.
               </p>
               
               <p className="text-sm text-luxury-text-muted mb-8 leading-relaxed text-left italic">
@@ -753,7 +753,7 @@ const LandingPage = () => {
                   <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
                   <div>
                     <p className="text-white text-sm">(21) 4040-0067</p>
-                    <p className="text-white/60 text-xs">Telefone Fixo</p>
+                    <p className="text-white/60 text-xs">Telefone</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -834,7 +834,7 @@ const LandingPage = () => {
               
               <p className="text-white/60 text-sm text-center md:text-right">
                 © 2025 Godoy Prime Realty. Todos os direitos reservados.<br />
-                CRECI/RJ: 0000000-F
+                CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
               </p>
             </div>
           </div>
