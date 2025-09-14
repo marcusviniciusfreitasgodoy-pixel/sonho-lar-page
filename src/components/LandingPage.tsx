@@ -805,7 +805,7 @@ const LandingPage = () => {
           
           {/* Stats Section */}
           <div className="border-t border-white/20 pt-8 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-2xl mx-auto">
               <div>
                 <p className="text-3xl font-bold text-luxury-gold mb-1">100%</p>
                 <p className="text-white/70 text-sm">Representação do Comprador</p>
