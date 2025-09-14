@@ -710,44 +710,44 @@ const LandingPage = () => {
             <div className="space-y-6">
               {[
                 {
-                  question: "Quanto custa o serviço?",
-                  answer: "O custo varia com o valor do imóvel. Mas é um investimento com retorno garantido: a economia na negociação sempre superará o valor da consultoria."
+                  question: "O que é um Personal Shopper Imobiliário e como a Godoy Prime Realty atua?",
+                  answer: "Um Personal Shopper Imobiliário é um profissional especializado que atua exclusivamente em nome do comprador, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor representa o vendedor, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária boutique focada 100% no cliente comprador. Nosso objetivo é encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível."
                 },
                 {
-                  question: "Há acesso a imóveis não divulgados?",
-                  answer: "Sim, nosso grande diferencial. Cerca de 40% das propriedades de alto valor na Barra circulam apenas em redes fechadas. Nós somos a ponte para essas ofertas."
+                  question: "Qual a diferença entre o serviço da Godoy Prime Realty e o de um corretor de imóveis tradicional?",
+                  answer: "A principal diferença reside na lealdade e no foco. Enquanto o corretor tradicional geralmente representa o vendedor e busca vender os imóveis de sua carteira, o Personal Shopper Imobiliário da Godoy Prime Realty trabalha exclusivamente para o comprador. Isso significa que buscamos no mercado o imóvel que melhor atenda às suas necessidades, sem conflitos de interesse, e negociamos sempre em seu benefício. Nosso compromisso é com a sua satisfação e com a sua economia, não com a venda de um estoque."
                 },
                 {
-                  question: "Como a lealdade é garantida?",
-                  answer: "Nosso modelo é único: não vendemos imóveis, somos seus representantes. Nosso sucesso é ligado à economia que geramos para você."
+                  question: "Quais são os principais benefícios de contratar um Personal Shopper Imobiliário da Godoy Prime Realty?",
+                  answer: "Contratar a Godoy Prime Realty significa ter um guardião exclusivo dos seus interesses, protegendo-o da \"Armadilha da Opulência Desorientada\". Os benefícios incluem: Economia de Tempo Precioso (eliminamos visitas improdutivas), Segurança e Transparência (due diligence completa), Acesso a Oportunidades Exclusivas (propriedades off-market), Negociação Estratégica (condições mais vantajosas), e Paz de Espírito (experiência fluida e sofisticada)."
                 },
                 {
-                  question: "Há garantia de resultado?",
-                  answer: "Sim, 100% Incondicional: se a economia mínima de R$ 100 mil não for alcançada, ou sua satisfação não for plena, seu investimento é reembolsado totalmente. Seu risco é zero."
+                  question: "Como funciona o processo de busca e aquisição de imóveis com a Godoy Prime Realty?",
+                  answer: "Nosso processo é guiado pelo exclusivo Método Bússola Dourada™, estruturado em 4 fases: 1) Alinhamento Profundo & Diagnóstico de Aspirações (O Norte Verdadeiro), 2) Curadoria Exclusiva & Prospecção Inteligente (O Mapa do Tesouro), 3) Negociação Estratégica & Blindagem Contratual (A Fortaleza Dourada), e 4) Experiência de Transição & Concierge Pós-Aquisição (A Chave de Ouro)."
                 },
                 {
-                  question: "Quanto tempo leva para achar o imóvel?",
-                  answer: "Nosso prazo máximo é 90 dias. Mas nossa curadoria eficiente faz com que muitos encontrem a propriedade em 30-45 dias."
+                  question: "Como é definida a remuneração pelo serviço de Personal Shopper Imobiliário da Godoy Prime Realty?",
+                  answer: "Nossa remuneração é baseada em um modelo de sucesso e performance, garantindo total alinhamento com seus interesses. Você não paga absolutamente nada para iniciar nossa parceria. Minha comissão é 100% atrelada à economia real e significativa que eu gerar para você na negociação do imóvel. Se não houver economia significativa, você não me paga nada! Os detalhes completos são apresentados em nosso Contrato de Prestação de Serviços."
                 },
                 {
-                  question: "O serviço é só para imóveis muito caros?",
-                  answer: "Focamos em imóveis acima de R$ 1.5 milhão na Barra. É nesse segmento que nossa expertise traz o maior valor e blindagem ao cliente."
+                  question: "Como a Godoy Prime Realty garante a discrição e a privacidade dos meus dados e da minha busca?",
+                  answer: "A discrição e a confidencialidade são pilares fundamentais do nosso serviço de alto padrão. Entendemos a importância da privacidade para nosso público. Todas as suas informações e detalhes da sua busca são tratados com a máxima segurança e profissionalismo. Nosso processo é desenhado para proteger sua identidade e suas aspirações, garantindo que sua jornada de aquisição seja conduzida com a discrição que você espera e merece."
                 },
                 {
-                  question: "Como são as negociações?",
-                  answer: "Com dados e maestria. Negociamos com base em análises precisas de mercado e no valor real do imóvel, garantindo sua força na negociação."
+                  question: "Por que confiar na Godoy Prime Realty para uma decisão de investimento tão importante?",
+                  answer: "Confiar na Godoy Prime Realty é escolher um parceiro com vasta experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o Método Bússola Dourada™, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência."
                 },
                 {
-                  question: "Posso confiar nas informações?",
-                  answer: "Sim, totalmente. Fazemos uma due diligence rigorosa em cada propriedade, dando a você um panorama completo e real."
+                  question: "O que é a \"Armadilha da Opulência Desorientada\" e como a Godoy Prime Realty me protege dela?",
+                  answer: "A \"Armadilha da Opulência Desorientada\" é o grande inimigo que impede o comprador de luxo de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente."
                 },
                 {
-                  question: "E se surgir um problema depois da compra?",
-                  answer: "Nosso processo de due diligence identifica e previne problemas antes da aquisição, garantindo uma transição sem surpresas."
+                  question: "Como posso ter certeza de que você está realmente do meu lado?",
+                  answer: "Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nosso honorário é um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo."
                 },
                 {
-                  question: "Quantos clientes são atendidos ao mesmo tempo?",
-                  answer: "Para garantir atenção exclusiva, atendemos no máximo 3 clientes por trimestre. Assim, cada projeto recebe o foco que merece."
+                  question: "Como posso iniciar minha jornada com a Godoy Prime Realty?",
+                  answer: "É simples! Basta entrar em contato conosco para agendar sua consultoria inicial gratuita. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como podemos blindar sua compra e auxiliá-lo na busca pelo seu imóvel ideal na Barra da Tijuca."
                 }
               ].map((faq, index) => (
                 <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300">
