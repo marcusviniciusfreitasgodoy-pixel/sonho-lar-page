@@ -694,6 +694,81 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+                Perguntas Frequentes
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+                O Caminho para a Certeza: <span className="text-luxury-gold">Respostas Diretas</span> para Suas Incertezas
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  question: "Quanto custa o serviço?",
+                  answer: "O custo varia com o valor do imóvel. Mas é um investimento com retorno garantido: a economia na negociação sempre superará o valor da consultoria."
+                },
+                {
+                  question: "Há acesso a imóveis não divulgados?",
+                  answer: "Sim, nosso grande diferencial. Cerca de 40% das propriedades de alto valor na Barra circulam apenas em redes fechadas. Nós somos a ponte para essas ofertas."
+                },
+                {
+                  question: "Como a lealdade é garantida?",
+                  answer: "Nosso modelo é único: não vendemos imóveis, somos seus representantes. Nosso sucesso é ligado à economia que geramos para você."
+                },
+                {
+                  question: "Há garantia de resultado?",
+                  answer: "Sim, 100% Incondicional: se a economia mínima de R$ 100 mil não for alcançada, ou sua satisfação não for plena, seu investimento é reembolsado totalmente. Seu risco é zero."
+                },
+                {
+                  question: "Quanto tempo leva para achar o imóvel?",
+                  answer: "Nosso prazo máximo é 90 dias. Mas nossa curadoria eficiente faz com que muitos encontrem a propriedade em 30-45 dias."
+                },
+                {
+                  question: "O serviço é só para imóveis muito caros?",
+                  answer: "Focamos em imóveis acima de R$ 1.5 milhão na Barra. É nesse segmento que nossa expertise traz o maior valor e blindagem ao cliente."
+                },
+                {
+                  question: "Como são as negociações?",
+                  answer: "Com dados e maestria. Negociamos com base em análises precisas de mercado e no valor real do imóvel, garantindo sua força na negociação."
+                },
+                {
+                  question: "Posso confiar nas informações?",
+                  answer: "Sim, totalmente. Fazemos uma due diligence rigorosa em cada propriedade, dando a você um panorama completo e real."
+                },
+                {
+                  question: "E se surgir um problema depois da compra?",
+                  answer: "Nosso processo de due diligence identifica e previne problemas antes da aquisição, garantindo uma transição sem surpresas."
+                },
+                {
+                  question: "Quantos clientes são atendidos ao mesmo tempo?",
+                  answer: "Para garantir atenção exclusiva, atendemos no máximo 3 clientes por trimestre. Assim, cada projeto recebe o foco que merece."
+                }
+              ].map((faq, index) => (
+                <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
+                      <div className="bg-luxury-gold rounded-full w-8 h-8 flex items-center justify-center mr-4 text-luxury-navy font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      {faq.question}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed ml-12">
+                      {faq.answer}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="contato" className="py-20 bg-gradient-hero text-white">
         <div className="container mx-auto px-6 text-center">
