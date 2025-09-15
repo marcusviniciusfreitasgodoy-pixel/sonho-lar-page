@@ -654,7 +654,7 @@ const LandingPage = () => {
             }, {
               name: "Método Bússola Dourada™",
               subtitle: "Experiência Completa",
-              price: "Retainer Fee PROMOCIONALMENTE ISENTA + Comissão no Sucesso",
+              price: "Comissão no Sucesso - Promocionalmente para esta modalidade estamos isentando a a taxa de Preparaçao e Análise",
               description: "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência.",
               features: ["Metodologia completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
               cta: "Sim! Quero a Bússola Dourada",
