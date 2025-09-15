@@ -231,6 +231,7 @@ const LandingPage = () => {
                   <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
                 </p>
                 
+                
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
                   É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
                 </p>
