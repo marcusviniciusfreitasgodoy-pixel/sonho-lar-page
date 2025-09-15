@@ -816,7 +816,7 @@ const LandingPage = () => {
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      Nossa remuneração é baseada em um modelo de <strong>sucesso e performance</strong>, garantindo total alinhamento com seus interesses. Você <strong>não paga absolutamente nada para iniciar</strong> nossa parceria. Minha comissão é 100% atrelada à <strong>economia real e significativa</strong> que eu gerar para você na negociação do imóvel. Ou seja, você só me remunera sobre o valor que eu conseguir economizar entre o preço de referência inicial do imóvel e o preço final de compra que eu negociar. <strong>Se não houver economia significativa, você não me paga nada!</strong> Os detalhes completos e a estrutura de remuneração são apresentados e formalizados em nosso Contrato de Prestação de Serviços.
+                      Nossa remuneração é baseada em um modelo de <strong>sucesso e performance</strong>, garantindo total alinhamento com seus interesses. Na contrataçao do Serviço Bússola Dourada, você <strong>não paga absolutamente nada para iniciar</strong> nossa parceria. Minha comissão é 100% atrelada à <strong>economia real e significativa</strong> que eu gerar para você na negociação do imóvel. <strong>Se não houver economia significativa, você não me paga nada!</strong> Os detalhes completos e a estrutura de remuneração são apresentados e formalizados em nosso Contrato de Prestação de Serviços.
                     </p>
                   </div>
                 </AccordionContent>
@@ -856,7 +856,7 @@ const LandingPage = () => {
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      Confiar na Godoy Prime Realty é escolher um parceiro com vasta experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o <em>Método Bússola Dourada™</em>, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência.
+                      Confiar na Godoy Prime Realty é escolher um parceiro com experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o <em>Método Bússola Dourada™</em>, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência.
                     </p>
                   </div>
                 </AccordionContent>
@@ -876,7 +876,7 @@ const LandingPage = () => {
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      A "Armadilha da Opulência Desorientada" é o grande inimigo que impede o comprador de luxo de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente, guiando você com segurança através do labirinto do mercado de luxo.
+                      A "Armadilha da Opulência Desorientada" é o grande inimigo que impede o comprador de ALto Padrão de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente, guiando você com segurança através do labirinto do mercado de luxo.
                     </p>
                   </div>
                 </AccordionContent>
@@ -896,7 +896,7 @@ const LandingPage = () => {
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nosso honorário é um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo.
+                      Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nossos honorários são um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo.
                     </p>
                   </div>
                 </AccordionContent>
