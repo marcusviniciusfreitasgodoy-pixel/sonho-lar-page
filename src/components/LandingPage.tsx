@@ -230,7 +230,6 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
