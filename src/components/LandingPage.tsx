@@ -206,4 +206,253 @@ const LandingPage = () => {
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
                 <p className="text-lg font-semibold text-luxury-navy">
-                  Na Barra da Tijuca, em negociações com imóveis de Alto Padrão, essa
+                  Na Barra da Tijuca, em negociações com imóveis de Alto Padrão, essa diferença pode ser de <span className="text-luxury-gold">R$ 200 mil, 
+                  R$ 300 mil ou até R$ 500 mil</span> que saem direto do seu bolso.
+                </p>
+              </div>
+              
+              <p className="text-lg text-muted-foreground">
+                Você negocia no escuro, sem saber o preço real que outros pagaram pelos mesmos imóveis. 
+                Sem acesso aos dados de transações fechadas, sem inteligência de mercado e sem conhecer os segredos da região. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section id="solucao" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
+                Personal Shopper Imobiliário: <span className="text-luxury-gold">Representação 100% Sua</span>
+              </h2>
+              <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
+                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-luxury-navy mb-6 leading-relaxed">
+                  Ter alguém que trabalhe exclusivamente para você. Que ganhe apenas quando você economizar dinheiro, não quando gastar mais. Para isso o Marcus Godoy criou o primeiro serviço de Personal Shopper Imobiliário real do Brasil.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  {["Tenha acesso aos dados reais de vendas que nunca aparecem nos portais", "Conheça os segredos do mercado local", "Representação Exclusiva do Comprador, Sem Conflito de Interesses"].map((item, index) => <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <p className="text-luxury-navy">{item}</p>
+                    </div>)}
+                </div>
+                
+                <div className="bg-white/60 rounded-xl p-6 border border-luxury-gold/30">
+                  <p className="text-lg font-semibold text-luxury-navy italic">
+                    "Saber exatamente quanto vale o imóvel que você quer antes mesmo de fazer a oferta. Ter acesso a propriedades exclusivas que só circulam entre especialistas. Saber a valorização real daquela região antes de investir. É como jogar pôquer vendo as cartas dos outros jogadores."
+                  </p>
+                </div>
+              </div>
+              
+              <div className="animate-float">
+                <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="rounded-2xl shadow-luxury w-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Audience Section */}
+      <section id="publico" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+                Para Quem É
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Criado especialmente para compradores exigentes de alto padrão, que buscam Segurança e Tranquilidade na sua compra.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {[{
+              icon: Users,
+              title: "Executivos e Empresários",
+              description: "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de Alto Padrão na região da Barra da Tijuca."
+            }, {
+              icon: TrendingUp,
+              title: "Investidores Experientes",
+              description: "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa."
+            }, {
+              icon: Award,
+              title: "Famílias em Busca de Conforto e Segurança",
+              description: "Que priorizam bem-estar, tranquilidade, conforto e segurança total para sua família."
+            }, {
+              icon: Award,
+              title: "Celebridades e Influenciadores",
+              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
+            }].map((persona, index) =>
+                <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
+                  <CardContent className="p-8 text-center">
+                    <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                      <persona.icon className="h-8 w-8 text-luxury-navy" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 text-foreground">{persona.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{persona.description}</p>
+                  </CardContent>
+                </Card>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition Section */}
+      <section id="servicos" className="py-20 bg-luxury-navy text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Por Que o Personal Shopper Imobiliário É 
+                <span className="text-luxury-gold"> Sua Melhor Escolha</span> na Barra?
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[{
+              icon: Calculator,
+              title: "Economia Real Garantida",
+              description: "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 100 mil e R$ 500 mil por transação.",
+              highlight: "R$ 100-500k economizados"
+            }, {
+              icon: Clock,
+              title: "Tempo Precioso Protegido",
+              description: "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder horas com visitas improdutivas.",
+              highlight: "40+ horas poupadas"
+            }, {
+              icon: Key,
+              title: "Acesso aos Melhores Negócios",
+              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes disponíveis na região e sem precisar falar com dezenas de Imobiliárias e Corretores.",
+              highlight: "Ofertas exclusivas e Economia de tempo"
+            }, {
+              icon: Shield,
+              title: "Representação 100% Sua",
+              description: "Marcus ganha apenas quando você economiza dinheiro. É o único profissional da Barra que trabalha exclusivamente para o comprador.",
+              highlight: "Zero conflito"
+            }].map((benefit, index) => <Card 
+                key={index} 
+                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleCardHighlight(index)}
+              >
+                  <CardContent className="p-6 text-center">
+                    <div className="bg-luxury-gold rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                      <benefit.icon className="h-6 w-6 text-luxury-navy" />
+                    </div>
+                    <Badge variant="outline" className="border-luxury-gold text-luxury-gold mb-3">
+                      {benefit.highlight}
+                    </Badge>
+                    <h3 className={cn(
+                      "text-lg font-bold mb-3 transition-colors duration-300",
+                      highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
+                    )}>
+                      {benefit.title}
+                    </h3>
+                    <p className="text-white/80 text-sm leading-relaxed">{benefit.description}</p>
+                  </CardContent>
+                </Card>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section id="depoimentos" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+                Veja Como Outros Compradores <span className="text-luxury-gold">Protegeram Seu Patrimônio</span>
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Não confie apenas em nossas palavras. Veja o que quem já comprou diz:
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {[{
+              quote: "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
+              author: "Roberto Silva",
+              role: "Empresário do Setor Financeiro",
+              savings: "R$ 320.000"
+            }, {
+              quote: "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
+              author: "Ana Carolina",
+              role: "Executiva de Multinacional",
+              savings: "R$ 450.000"
+            }].map((testimonial, index) => <Card key={index} className="border-0 shadow-luxury">
+                  <CardContent className="p-8">
+                    <div className="flex mb-4">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />)}
+                    </div>
+                    
+                    <blockquote className="text-lg text-foreground mb-6 italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5">
+                        Economizou {testimonial.savings}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Origin Story Section */}
+      <section id="sobre" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
+                O Momento da Virada <span className="text-luxury-gold">Descobri Um Novo Caminho</span> na Compra de Imóveis de Alto Padrão
+              </h2>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
+              <div className="prose prose-lg max-w-none text-luxury-navy">
+                <p className="text-lg leading-relaxed mb-6">
+                  Minha jornada começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto como Corretor, as dores e ineficiências do processo tradicional de Compra e Venda de Imóveis de Alto Padrão.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Com minha bagagem profissional em Telecomunicações e Internet, sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
+                </p>
+                
+                <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
+                  <p className="text-lg font-semibold text-luxury-navy italic">
+                    Percebi que a realidade era de sobrecarga de informações, falta de transparência e a sensação de que os interesses do comprador nem sempre eram prioridade
+                  </p>
+                </div>
+                
+               <p className="text-lg leading-relaxed mb-6">
+                  Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e a Godoy Prime Realty.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>;
+};
+
+export default LandingPage;
