@@ -802,7 +802,7 @@ const LandingPage = () => {
                 Perguntas Frequentes
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                O Caminho para a Certeza: <span className="text-luxury-gold">Respostas Diretas</span> para Suas Incertezas
+                <span className="text-luxury-gold">Respostas Diretas</span> para Suas Dúvidas
               </h2>
             </div>
 
