@@ -364,6 +364,75 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Por Que o Personal Shopper Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+              Por Que o Personal Shopper Imobiliário É Sua 
+              <span className="text-luxury-gold"> Melhor Escolha</span> na Barra?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Não cometa os mesmos erros que os outros compradores.
+              Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
+              resulta em perda de tempo, dinheiro e frustração.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="space-y-8">
+              <div className="bg-luxury-cream p-8 rounded-xl border-l-4 border-luxury-gold">
+                <h3 className="text-2xl font-bold mb-4 text-luxury-navy">
+                  "Não preciso desse serviços, eu posso fazer isso sozinho."
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Sim é claro que pode, mas por que fazer se tem outra opção melhor, com menos risco, 
+                  mais segura e mais barata? Nosso serviço economiza seu tempo e elimina o estresse, 
+                  permitindo que você se concentre em suas prioridades.
+                </p>
+              </div>
+
+              <div className="bg-luxury-cream p-8 rounded-xl border-l-4 border-luxury-gold">
+                <h3 className="text-2xl font-bold mb-4 text-luxury-navy">
+                  "Corretores tradicionais são suficientes?"
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Oferecemos uma consultoria personalizada e exclusiva, focada em suas necessidades 
+                  específicas e com a missão de defender somente os seus objetivos, algo que corretores 
+                  tradicionais não conseguem proporcionar, sem um conflito de interesses. 
+                  <span className="font-semibold text-luxury-navy">
+                    Lembre-se que ele ganha no valor da venda. O que isso te diz?
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-luxury-cream p-8 rounded-xl border-l-4 border-luxury-gold">
+                <h3 className="text-2xl font-bold mb-4 text-luxury-navy">
+                  "Por que pagar se o Corretor não me cobra?"
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Garantimos que o valor investido em nosso serviço é recuperado através da economia 
+                  de tempo, dinheiro e na garantia de uma compra acertada e segura. Se não for assim 
+                  você não pagará nada. 
+                  <span className="font-semibold text-luxury-gold">
+                    Quanto maior o desconto mais ganhamos.
+                  </span>
+                </p>
+              </div>
+
+              <div className="bg-gradient-luxury p-8 rounded-xl text-white text-center">
+                <h3 className="text-2xl font-bold mb-4">
+                  Agora você tem opção e a decisão é somente sua
+                </h3>
+                <div className="w-16 h-1 bg-luxury-gold mx-auto mt-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Section */}
       <section id="depoimentos" className="py-20 bg-background">
         <div className="container mx-auto px-6">
