@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
@@ -707,64 +708,220 @@ const LandingPage = () => {
               </h2>
             </div>
 
-            <div className="space-y-6">
-              {[
-                {
-                  question: "O que é um Personal Shopper Imobiliário e como a Godoy Prime Realty atua?",
-                  answer: "Um Personal Shopper Imobiliário é um profissional especializado que atua exclusivamente em nome do comprador, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor representa o vendedor, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária boutique focada 100% no cliente comprador. Nosso objetivo é encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível."
-                },
-                {
-                  question: "Qual a diferença entre o serviço da Godoy Prime Realty e o de um corretor de imóveis tradicional?",
-                  answer: "A principal diferença reside na lealdade e no foco. Enquanto o corretor tradicional geralmente representa o vendedor e busca vender os imóveis de sua carteira, o Personal Shopper Imobiliário da Godoy Prime Realty trabalha exclusivamente para o comprador. Isso significa que buscamos no mercado o imóvel que melhor atenda às suas necessidades, sem conflitos de interesse, e negociamos sempre em seu benefício. Nosso compromisso é com a sua satisfação e com a sua economia, não com a venda de um estoque."
-                },
-                {
-                  question: "Quais são os principais benefícios de contratar um Personal Shopper Imobiliário da Godoy Prime Realty?",
-                  answer: "Contratar a Godoy Prime Realty significa ter um guardião exclusivo dos seus interesses, protegendo-o da \"Armadilha da Opulência Desorientada\". Os benefícios incluem: Economia de Tempo Precioso (eliminamos visitas improdutivas), Segurança e Transparência (due diligence completa), Acesso a Oportunidades Exclusivas (propriedades off-market), Negociação Estratégica (condições mais vantajosas), e Paz de Espírito (experiência fluida e sofisticada)."
-                },
-                {
-                  question: "Como funciona o processo de busca e aquisição de imóveis com a Godoy Prime Realty?",
-                  answer: "Nosso processo é guiado pelo exclusivo Método Bússola Dourada™, estruturado em 4 fases: 1) Alinhamento Profundo & Diagnóstico de Aspirações (O Norte Verdadeiro), 2) Curadoria Exclusiva & Prospecção Inteligente (O Mapa do Tesouro), 3) Negociação Estratégica & Blindagem Contratual (A Fortaleza Dourada), e 4) Experiência de Transição & Concierge Pós-Aquisição (A Chave de Ouro)."
-                },
-                {
-                  question: "Como é definida a remuneração pelo serviço de Personal Shopper Imobiliário da Godoy Prime Realty?",
-                  answer: "Nossa remuneração é baseada em um modelo de sucesso e performance, garantindo total alinhamento com seus interesses. Você não paga absolutamente nada para iniciar nossa parceria. Minha comissão é 100% atrelada à economia real e significativa que eu gerar para você na negociação do imóvel. Se não houver economia significativa, você não me paga nada! Os detalhes completos são apresentados em nosso Contrato de Prestação de Serviços."
-                },
-                {
-                  question: "Como a Godoy Prime Realty garante a discrição e a privacidade dos meus dados e da minha busca?",
-                  answer: "A discrição e a confidencialidade são pilares fundamentais do nosso serviço de alto padrão. Entendemos a importância da privacidade para nosso público. Todas as suas informações e detalhes da sua busca são tratados com a máxima segurança e profissionalismo. Nosso processo é desenhado para proteger sua identidade e suas aspirações, garantindo que sua jornada de aquisição seja conduzida com a discrição que você espera e merece."
-                },
-                {
-                  question: "Por que confiar na Godoy Prime Realty para uma decisão de investimento tão importante?",
-                  answer: "Confiar na Godoy Prime Realty é escolher um parceiro com vasta experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o Método Bússola Dourada™, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência."
-                },
-                {
-                  question: "O que é a \"Armadilha da Opulência Desorientada\" e como a Godoy Prime Realty me protege dela?",
-                  answer: "A \"Armadilha da Opulência Desorientada\" é o grande inimigo que impede o comprador de luxo de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente."
-                },
-                {
-                  question: "Como posso ter certeza de que você está realmente do meu lado?",
-                  answer: "Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nosso honorário é um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo."
-                },
-                {
-                  question: "Como posso iniciar minha jornada com a Godoy Prime Realty?",
-                  answer: "É simples! Basta entrar em contato conosco para agendar sua consultoria inicial gratuita. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como podemos blindar sua compra e auxiliá-lo na busca pelo seu imóvel ideal na Barra da Tijuca."
-                }
-              ].map((faq, index) => (
-                <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center">
-                      <div className="bg-luxury-gold rounded-full w-8 h-8 flex items-center justify-center mr-4 text-luxury-navy font-bold text-sm">
-                        {index + 1}
-                      </div>
-                      {faq.question}
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      1
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      O que é um Personal Shopper Imobiliário e como a Godoy Prime Realty atua?
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed ml-12">
-                      {faq.answer}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Um Personal Shopper Imobiliário é um profissional especializado que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor representa o vendedor, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária <em>boutique</em> focada 100% no cliente comprador. Nosso objetivo é encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível.
                     </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      2
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Qual a diferença entre o serviço da Godoy Prime Realty e o de um corretor de imóveis tradicional?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A principal diferença reside na <strong>lealdade e no foco</strong>. Enquanto o corretor tradicional geralmente representa o vendedor e busca vender os imóveis de sua carteira, o Personal Shopper Imobiliário da Godoy Prime Realty trabalha <strong>exclusivamente para o comprador</strong>. Isso significa que buscamos no mercado o imóvel que melhor atenda às suas necessidades, sem conflitos de interesse, e negociamos sempre em seu benefício. Nosso compromisso é com a sua satisfação e com a sua economia, não com a venda de um estoque.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      3
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Quais são os principais benefícios de contratar um Personal Shopper Imobiliário da Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Contratar a Godoy Prime Realty significa ter um guardião exclusivo dos seus interesses, protegendo-o da "Armadilha da Opulência Desorientada". Os benefícios incluem:
+                    </p>
+                    <ul className="list-disc list-inside mt-3 text-muted-foreground leading-relaxed space-y-1">
+                      <li><strong>Economia de Tempo Precioso:</strong> Eliminamos visitas improdutivas e a sobrecarga de informações genéricas, apresentando apenas opções altamente qualificadas.</li>
+                      <li><strong>Segurança e Transparência:</strong> Realizamos <em>due diligence</em> completa (jurídica, financeira, estrutural) e conduzimos negociações com total clareza, evitando surpresas e custos ocultos.</li>
+                      <li><strong>Acesso a Oportunidades Exclusivas:</strong> Nossa rede de contatos e inteligência de mercado proporcionam acesso a propriedades <em>off-market</em> e <em>pocket listings</em> que não estão disponíveis ao público geral.</li>
+                      <li><strong>Negociação Estratégica:</strong> Defendemos seus interesses para obter as condições mais vantajosas, garantindo que você faça o melhor investimento possível.</li>
+                      <li><strong>Paz de Espírito:</strong> Transformamos a complexa jornada de aquisição em uma experiência fluida, sofisticada e prazerosa.</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      4
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como funciona o processo de busca e aquisição de imóveis com a Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed mb-3">
+                      Nosso processo é guiado pelo exclusivo <strong>Método Bússola Dourada™</strong>, estruturado em 4 fases estratégicas para garantir o sucesso da sua aquisição:
+                    </p>
+                    <ol className="list-decimal list-inside text-muted-foreground leading-relaxed space-y-2">
+                      <li><strong>Alinhamento Profundo & Diagnóstico de Aspirações (O Norte Verdadeiro):</strong> Uma imersão consultiva para entender seu estilo de vida, valores e aspirações, mapeando o "DNA do Comprador".</li>
+                      <li><strong>Curadoria Exclusiva & Prospecção Inteligente (O Mapa do Tesouro):</strong> Ativamos nossa inteligência de mercado e rede privilegiada para apresentar um portfólio enxuto e altamente qualificado, incluindo oportunidades <em>off-market</em>.</li>
+                      <li><strong>Negociação Estratégica & Blindagem Contratual (A Fortaleza Dourada):</strong> Representamos você com lealdade total, conduzindo negociações e coordenando a <em>due diligence</em> para proteger seus interesses.</li>
+                      <li><strong>Experiência de Transição & Concierge Pós-Aquisição (A Chave de Ouro):</strong> Facilitamos o fechamento e a transição, oferecendo acesso à nossa rede de parceiros de confiança para uma experiência completa e sem estresse.</li>
+                    </ol>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      5
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como é definida a remuneração pelo serviço de Personal Shopper Imobiliário da Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Nossa remuneração é baseada em um modelo de <strong>sucesso e performance</strong>, garantindo total alinhamento com seus interesses. Você <strong>não paga absolutamente nada para iniciar</strong> nossa parceria. Minha comissão é 100% atrelada à <strong>economia real e significativa</strong> que eu gerar para você na negociação do imóvel. Ou seja, você só me remunera sobre o valor que eu conseguir economizar entre o preço de referência inicial do imóvel e o preço final de compra que eu negociar. <strong>Se não houver economia significativa, você não me paga nada!</strong> Os detalhes completos e a estrutura de remuneração são apresentados e formalizados em nosso Contrato de Prestação de Serviços.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      6
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como a Godoy Prime Realty garante a discrição e a privacidade dos meus dados e da minha busca?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A discrição e a confidencialidade são pilares fundamentais do nosso serviço de alto padrão. Entendemos a importância da privacidade para nosso público. Todas as suas informações e detalhes da sua busca são tratados com a máxima segurança e profissionalismo. Nosso processo é desenhado para proteger sua identidade e suas aspirações, garantindo que sua jornada de aquisição seja conduzida com a discrição que você espera e merece.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      7
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Por que confiar na Godoy Prime Realty para uma decisão de investimento tão importante?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Confiar na Godoy Prime Realty é escolher um parceiro com vasta experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o <em>Método Bússola Dourada™</em>, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      8
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      O que é a "Armadilha da Opulência Desorientada" e como a Godoy Prime Realty me protege dela?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A "Armadilha da Opulência Desorientada" é o grande inimigo que impede o comprador de luxo de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente, guiando você com segurança através do labirinto do mercado de luxo.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-9" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      9
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como posso ter certeza de que você está realmente do meu lado?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nosso honorário é um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-10" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      10
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como posso iniciar minha jornada com a Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      É simples! Basta entrar em contato conosco para agendar sua <strong>consultoria inicial gratuita</strong>. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como podemos blindar sua compra e auxiliá-lo na busca pelo seu imóvel ideal na Barra da Tijuca.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
