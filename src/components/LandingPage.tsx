@@ -274,7 +274,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {[{
               icon: Users,
               title: "Executivos e Empresários",
