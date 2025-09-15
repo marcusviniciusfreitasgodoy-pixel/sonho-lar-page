@@ -189,6 +189,7 @@ const LandingPage = () => {
             </h1>
             
             <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
+             </h1>
           
             <p className="text-xl md:text-2xl mb-8 mt-16 text-white/90 max-w-4xl mx-auto">
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
@@ -221,15 +222,16 @@ const LandingPage = () => {
               
               <div className="space-y-4 md:space-y-6 mb-8">
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada 
-                  para. intermediar o negócio e vender pelo preço mais caro possível, pois assim ela e o Proprietário ganham mais.
-                </p>
-                
-                <p>
-                  <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo 
+                  Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
