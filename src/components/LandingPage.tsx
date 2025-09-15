@@ -173,7 +173,12 @@ const LandingPage = () => {
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
             </p>
             
-            <Button variant="gold" size="xl" className="mb-4">
+            <Button 
+              variant="gold" 
+              size="xl" 
+              className="mb-4 w-full sm:w-auto px-6 sm:px-10 h-12 sm:h-14 text-base sm:text-lg"
+              onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}
+            >
               Desbloquear minha Consultoria Exclusiva
               <ArrowRight className="ml-2" />
             </Button>
