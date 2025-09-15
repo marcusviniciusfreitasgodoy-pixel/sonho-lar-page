@@ -223,8 +223,9 @@ const LandingPage = () => {
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
                   A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada 
                   para. intermediar o negócio e vender pelo preço mais caro possível, pois assim ela e o Proprietário ganham mais.
-                </p>    
-                  
+                </p>
+                
+                <p>
                   <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
                 </p>
                 
