@@ -595,7 +595,7 @@ const LandingPage = () => {
               step: "05",
               icon: CheckCircle,
               title: "Fechamento Protegido",
-              description: "Coordenamos toda documentação e validação técnica. Você recebe as chaves com total segurança jurídica e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
+              description: "Coordenamos e Acompnhamos a preparação dos Contratos e processos, avaliamos toda documentação e cuidamos da validação técnica. Você recebe as chaves com total segurança e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
             }].map((step, index) => <div key={index} className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-gold rounded-full w-24 h-24 flex items-center justify-center">
