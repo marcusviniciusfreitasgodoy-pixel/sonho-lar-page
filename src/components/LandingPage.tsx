@@ -183,6 +183,10 @@ const LandingPage = () => {
                 Descubra O Segredo dos Compradores Inteligentes
             </h1>
             
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Descubra O Segredo dos Compradores Inteligentes
+            </h1>
+            
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
             </p>
