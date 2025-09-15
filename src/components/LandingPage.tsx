@@ -227,13 +227,24 @@ const LandingPage = () => {
                 <strong>Verdades Inconvenientes que ninguém te fala</strong> 
               </p>
               
-              <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-                A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
-                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.
-                  
-                </strong> Elas ganham mais dinheiro quando você paga mais caro.<strong> Simples Assim!</strong>     
-                É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
-              </p> 
+              <div className="space-y-4 md:space-y-6 mb-8">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo 
+                  Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
+                  Será?
+                </p>
+              </div>
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
                 <p className="text-lg font-semibold text-luxury-navy">
