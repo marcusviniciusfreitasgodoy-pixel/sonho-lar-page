@@ -755,9 +755,9 @@ const LandingPage = () => {
                 </h3>
               </div>
               <p className="text-luxury-text-muted leading-relaxed mb-6">
-                Garantimos que o valor investido em nosso serviço é recuperado através da 
+                Na realidade você já paga, porém de uma forma pouco transparente. Garantimos que o valor investido em nosso serviço é recuperado através da 
                 <strong> economia de tempo, dinheiro e na garantia de uma compra acertada e segura</strong>. 
-                Se não for assim você não pagará nada. <strong>Quanto maior o desconto mais ganhamos.</strong>
+                Se não for assim você não pagará nada. <strong>Quanto maior o desconto mais ganhamos.</strong> Lembre-se, se você não paga por um serviço o produto é você e dessa forma será tratado.
               </p>
               
               <div className="bg-luxury-gold/10 rounded-xl p-6 border border-luxury-gold/30">
