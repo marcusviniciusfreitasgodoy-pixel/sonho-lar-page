@@ -179,7 +179,7 @@ const LandingPage = () => {
               className="mb-4 w-full sm:w-auto px-6 sm:px-10 h-12 sm:h-14 text-base sm:text-lg"
               onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}
             >
-              Desbloquear minha Consultoria Exclusiva
+              Consultoria Exclusiva Gratuita
               <ArrowRight className="ml-2" />
             </Button>
             
