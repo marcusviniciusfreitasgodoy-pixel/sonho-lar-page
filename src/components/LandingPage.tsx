@@ -695,6 +695,84 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Objections Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-luxury-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-luxury-navy mb-6">
+              Não Cometa os Mesmos Erros
+            </h2>
+            <p className="text-lg sm:text-xl text-luxury-text-muted max-w-4xl mx-auto leading-relaxed">
+              Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
+              resulta em <span className="font-semibold text-luxury-navy">perda de tempo, dinheiro e frustração.</span>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+            {/* Objection 1 */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-luxury hover:shadow-gold transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white font-bold text-sm">✕</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-luxury-navy">
+                  "Não preciso desse serviço, eu posso fazer isso sozinho"
+                </h3>
+              </div>
+              <p className="text-luxury-text-muted leading-relaxed">
+                Sim é claro que pode, mas <strong>por que fazer se tem outra opção melhor</strong>, 
+                com menos risco, mais segura e mais barata? Nosso serviço economiza seu tempo e 
+                elimina o estresse, permitindo que você se concentre em suas prioridades.
+              </p>
+            </div>
+
+            {/* Objection 2 */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-luxury hover:shadow-gold transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white font-bold text-sm">✕</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-luxury-navy">
+                  "Corretores tradicionais são suficientes?"
+                </h3>
+              </div>
+              <p className="text-luxury-text-muted leading-relaxed">
+                Oferecemos uma <strong>consultoria personalizada e exclusiva</strong>, focada em suas 
+                necessidades específicas e com a missão de defender somente os seus objetivos, algo que 
+                corretores tradicionais não conseguem proporcionar, <strong>sem um conflito de interesses</strong>. 
+                Lembre-se que ele ganha no valor da venda. O que isso te diz?
+              </p>
+            </div>
+
+            {/* Objection 3 */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-luxury hover:shadow-gold transition-all duration-300 hover:scale-[1.02] lg:col-span-2">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white font-bold text-sm">?</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-luxury-navy">
+                  "Por que pagar se o Corretor não me cobra?"
+                </h3>
+              </div>
+              <p className="text-luxury-text-muted leading-relaxed mb-6">
+                Garantimos que o valor investido em nosso serviço é recuperado através da 
+                <strong> economia de tempo, dinheiro e na garantia de uma compra acertada e segura</strong>. 
+                Se não for assim você não pagará nada. <strong>Quanto maior o desconto mais ganhamos.</strong>
+              </p>
+              
+              <div className="bg-luxury-gold/10 rounded-xl p-6 border border-luxury-gold/30">
+                <h4 className="text-2xl sm:text-3xl font-bold text-luxury-navy text-center mb-2">
+                  Agora Você Tem Opção
+                </h4>
+                <p className="text-lg sm:text-xl text-center text-luxury-text-muted font-medium">
+                  A decisão é <span className="text-luxury-gold font-bold">somente sua</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-background">
         <div className="container mx-auto px-6">
