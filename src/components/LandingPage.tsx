@@ -223,19 +223,9 @@ const LandingPage = () => {
             </h2>
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
-              <div className="space-y-4 md:space-y-6">
-                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
-                </p>
-                
-                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
-                </p>
-                
-                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
-                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
-                </p>
-              </div>
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
+              </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
@@ -555,13 +545,10 @@ const LandingPage = () => {
                <p className="text-lg leading-relaxed mb-6">
                   Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e a Godoy Prime Realty.
                </p>
-                <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                <Button size="xl" variant="gold" className="font-semibold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-lg hover:scale-105 transition-transform w-full max-w-sm mx-auto whitespace-nowrap">
+                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                </Button>
               </div>
-            </div>
-            <div className="text-center mt-8 px-4">
-              <Button size="xl" variant="luxury" className="font-semibold text-sm md:text-base px-4 md:px-8 py-3 md:py-4 w-full max-w-sm mx-auto">
-                Quero Conhecer o Método
-              </Button>
             </div>
           </div>
         </div>
