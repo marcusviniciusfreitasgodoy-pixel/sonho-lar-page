@@ -430,7 +430,7 @@ const LandingPage = () => {
                   específicas e com a missão de defender somente os seus objetivos, algo que corretores 
                   tradicionais não conseguem proporcionar, sem um conflito de interesses. 
                   <span className="font-semibold text-luxury-navy">
-                    Lembre-se que ele ganha no valor da venda. O que isso te diz?
+                     Lembre-se que ele ganha no valor da venda. O que isso te diz?
                   </span>
                 </p>
               </div>
@@ -446,7 +446,7 @@ const LandingPage = () => {
                   de tempo, dinheiro e na garantia de uma compra acertada e segura. 
                   Se não for assim você não pagará nada. 
                   <span className="font-semibold text-luxury-gold">
-                    Quanto maior o desconto mais ganhamos.
+                     Quanto maior o desconto mais ganhamos.
                   </span>
                 </p>
               </div>
