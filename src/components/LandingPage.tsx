@@ -223,9 +223,19 @@ const LandingPage = () => {
             </h2>
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
-              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
-              </p>
+              <div className="space-y-4 md:space-y-6">
+                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
+                </p>
+                
+                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
+                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                </p>
+                
+                <p className="text-base md:text-lg lg:text-xl text-foreground leading-relaxed">
+                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
+                </p>
+              </div>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
