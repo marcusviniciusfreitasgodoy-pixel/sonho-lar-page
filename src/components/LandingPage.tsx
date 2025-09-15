@@ -403,7 +403,7 @@ const LandingPage = () => {
               Não cometa os mesmos erros que os outros
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
+              Apenas 6 vagas por Trimestre
               resulta em perda de tempo, dinheiro e frustração.
             </p>
           </div>
