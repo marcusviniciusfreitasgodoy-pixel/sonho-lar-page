@@ -260,7 +260,7 @@ const LandingPage = () => {
                 Personal Shopper Imobiliário <span className="text-luxury-gold">Representação 100% Sua</span>
               </h2>
               <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
-                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
+                Só existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
               </p>
             </div>
 
@@ -400,11 +400,9 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
-              Por Que o Personal Shopper Imobiliário É Sua 
-              <span className="text-luxury-gold"> Melhor Escolha</span> na Barra?
+              Não cometa os mesmos erros que os outros
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Não cometa os mesmos erros que os outros compradores.
               Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
               resulta em perda de tempo, dinheiro e frustração.
             </p>
