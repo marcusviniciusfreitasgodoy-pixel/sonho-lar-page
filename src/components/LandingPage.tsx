@@ -150,6 +150,35 @@ const LandingPage = () => {
         </div>
       </header>
 
+      {/* Duplicated Header Content with Less Spacing */}
+      <div className="bg-white border-b border-gray-200 py-2">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/Logotipo Principal.png" 
+                alt="Marcus Godoy Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-lg font-semibold text-luxury-navy">
+                Marcus Godoy
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#servicos" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Serviços
+              </a>
+              <a href="#como-funciona" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Como Funciona
+              </a>
+              <a href="#contato" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Contato
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
