@@ -224,7 +224,7 @@ const LandingPage = () => {
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                <strong>Verdades Inconvenientes</strong> Por que ninguém comenta sobre isso no mercado imobiliário?
+                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
