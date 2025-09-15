@@ -443,8 +443,8 @@ const LandingPage = () => {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Garantimos que o valor investido em nosso serviço é recuperado através da economia 
-                  de tempo, dinheiro e na garantia de uma compra acertada e segura. Se não for assim 
-                  você não pagará nada. 
+                  de tempo, dinheiro e na garantia de uma compra acertada e segura. 
+                  Se não for assim você não pagará nada. 
                   <span className="font-semibold text-luxury-gold">
                     Quanto maior o desconto mais ganhamos.
                   </span>
