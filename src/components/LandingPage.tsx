@@ -545,10 +545,13 @@ const LandingPage = () => {
                <p className="text-lg leading-relaxed mb-6">
                   Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e a Godoy Prime Realty.
                </p>
-                <Button size="xl" variant="gold" className="font-semibold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-lg hover:scale-105 transition-transform w-full max-w-sm mx-auto whitespace-nowrap">
-                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
-                </Button>
-              </div>
+                <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                </div>
+            </div>
+            <div className="text-center mt-8 px-4">
+              <Button size="xl" variant="luxury" className="font-semibold text-sm md:text-base px-4 md:px-8 py-3 md:py-4 w-full max-w-sm mx-auto">
+                Quero Conhecer o Método
+              </Button>
             </div>
           </div>
         </div>
