@@ -226,7 +226,9 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                  Elas ganham mais dinheiro quando você paga mais caro. 
+                  
+                  <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
