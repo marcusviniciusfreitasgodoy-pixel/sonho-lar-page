@@ -723,7 +723,7 @@ const LandingPage = () => {
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      Um Personal Shopper Imobiliário é um profissional especializado que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor representa o vendedor, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária <em>boutique</em> focada 100% no cliente comprador. Nosso objetivo é encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível.
+                      Um Personal Shopper Imobiliário é um profissional especializado que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor, após sua contratação pelo Proprietário, busca intermediar um negócio, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária <em>personalizada</em> focada 100% no cliente comprador. Nosso objetivo é Representar o Comprador e encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível.
                     </p>
                   </div>
                 </AccordionContent>
