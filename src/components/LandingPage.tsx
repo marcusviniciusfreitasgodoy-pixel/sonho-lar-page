@@ -13,6 +13,11 @@ const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
+  useEffect(() => {
+    // Placeholder to prevent transpilation issues
+    console.log("Component mounted");
+  }, []);
+  
   const toggleCardHighlight = (cardIndex: number) => {
     setHighlightedCards(prev => 
       prev.includes(cardIndex) 
