@@ -167,7 +167,6 @@ const LandingPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Descubra O Segredo dos Compradores Inteligentes
               <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
-              </span>
               <span className="text-luxury-gold text-4xl md:text-5xl">
                 Compre o Imóvel Que Você Quer e
               </span>
@@ -627,41 +626,73 @@ const LandingPage = () => {
               cta: "Quero Blindar Minha Compra",
               popular: true
             }, {
-              name: "Curadoria Premium",
-              subtitle: "Serviço Completo",
-              price: "Fee de Preparação + Comissão no Sucesso",
-              description: "Serviço completo de Personal Shopper Imobiliário. Do mapeamento até as chaves na mão. Máxima economia e segurança total.",
-              features: ["Mapeamento completo do seu DNA imobiliário", "Curadoria inteligente de imóveis", "Análise de valor real com dados exclusivos", "Negociação blindada profissional", "Fechamento protegido com segurança jurídica"],
+              name: "Personal Shopper Completo",
+              subtitle: "Busca & Aquisição Total",
+              price: "Fee de Preparação e Análise + Comissão no Sucesso",
+              description: "Serviço completo de Personal Shopper Imobiliário. Desde a busca até as chaves na mão. Para quem quer o máximo de comodidade, economia e segurança.",
+              features: ["Mapeamento completo do seu perfil e necessidades", "Curadoria exclusiva de imóveis (incluindo off-market)", "Análise completa de valor e potencial", "Negociação profissional e fechamento seguro", "Acompanhamento até entrega das chaves"],
               cta: "Quero o Serviço Completo",
               popular: false
-            }].map((plan, index) => (
-                <Card key={index} className={`border-0 shadow-luxury ${plan.popular ? 'ring-2 ring-luxury-gold' : ''}`}>
-                  <CardContent className="p-8 text-center">
-                    {plan.popular && (
-                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/10 mb-4">
-                        Mais Popular
-                      </Badge>
-                    )}
+            }].map((plan, index) => <Card key={index} className={cn(
+                "relative border-0 shadow-luxury transition-all duration-300 hover:-translate-y-2",
+                plan.popular ? "bg-gradient-gold text-luxury-navy" : "bg-white/5 text-white"
+              )}>
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-luxury-navy text-luxury-gold border-luxury-gold">
+                      Mais Escolhido
+                    </Badge>
+                  </div>
+                )}
+                
+                <CardContent className="p-8">
+                  <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className="text-luxury-gold font-semibold mb-4">{plan.subtitle}</p>
-                    <p className="text-3xl font-bold mb-4">{plan.price}</p>
-                    <p className="text-white/80 mb-6">{plan.description}</p>
-                    
-                    <ul className="text-left space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-3">
-                          <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                          <span className="text-white/90 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <Button variant="gold" className="w-full">
-                      {plan.cta}
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                    <p className={cn(
+                      "text-sm mb-4",
+                      plan.popular ? "text-luxury-navy/70" : "text-white/70"
+                    )}>
+                      {plan.subtitle}
+                    </p>
+                    <div className="text-3xl font-bold mb-4">{plan.price}</div>
+                    <p className={cn(
+                      "text-sm leading-relaxed",
+                      plan.popular ? "text-luxury-navy/80" : "text-white/80"
+                    )}>
+                      {plan.description}
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start space-x-3">
+                        <CheckCircle className={cn(
+                          "h-5 w-5 mt-0.5 flex-shrink-0",
+                          plan.popular ? "text-luxury-navy" : "text-luxury-gold"
+                        )} />
+                        <span className={cn(
+                          "text-sm",
+                          plan.popular ? "text-luxury-navy" : "text-white"
+                        )}>
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <Button 
+                    variant={plan.popular ? "default" : "outline"} 
+                    className={cn(
+                      "w-full",
+                      plan.popular 
+                        ? "bg-luxury-navy text-luxury-gold hover:bg-luxury-navy/90" 
+                        : "border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-navy"
+                    )}
+                  >
+                    {plan.cta}
+                  </Button>
+                </CardContent>
+              </Card>)}
             </div>
           </div>
         </div>
@@ -670,111 +701,199 @@ const LandingPage = () => {
       {/* Guarantees Section */}
       <section id="garantias" className="py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-              Suas <span className="text-luxury-gold">Garantias</span> de Proteção Total
-            </h2>
-            
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+                Suas <span className="text-luxury-gold">Garantias Blindadas</span>
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Assumimos todos os riscos para que você tenha total tranquilidade
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-0 shadow-luxury">
-                <CardContent className="p-8 text-center">
-                  <Shield className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-4 text-foreground">Garantia de Economia</h3>
-                  <p className="text-muted-foreground">Se não conseguirmos economia mínima de 5% do valor negociado, você não paga nossa comissão.</p>
+              {[{
+              icon: Shield,
+              title: "Garantia de Economia ou Dinheiro de Volta",
+              description: "Se não conseguirmos uma economia significativa na sua compra, você não paga nossos honorários. Simples assim."
+            }, {
+              icon: Clock,
+              title: "Garantia de Prazo",
+              description: "Cumprimos os prazos acordados ou você recebe compensação. Seu tempo é valioso e respeitamos isso."
+            }, {
+              icon: CheckCircle,
+              title: "Garantia de Satisfação Total",
+              description: "Se não ficar 100% satisfeito com nosso serviço, devolvemos seu investimento integral."
+            }, {
+              icon: Award,
+              title: "Garantia de Exclusividade",
+              description: "Trabalhamos exclusivamente para você, sem conflitos de interesse. Sua representação é nossa única prioridade."
+            }].map((guarantee, index) => <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <guarantee.icon className="h-8 w-8 text-luxury-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{guarantee.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{guarantee.description}</p>
                 </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-luxury">
-                <CardContent className="p-8 text-center">
-                  <CheckCircle className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-4 text-foreground">Garantia de Satisfação</h3>
-                  <p className="text-muted-foreground">30 dias para avaliar nosso trabalho. Se não ficar satisfeito, devolvemos 100% do investimento.</p>
-                </CardContent>
-              </Card>
+              </Card>)}
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-luxury-cream">
+      <section id="faq" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-luxury-navy">
-                Perguntas Frequentes
+                Perguntas <span className="text-luxury-gold">Frequentes</span>
               </h2>
               <p className="text-xl text-luxury-text-muted">
-                Esclarecemos suas principais dúvidas sobre o Personal Shopper Imobiliário
+                Esclarecemos suas principais dúvidas sobre nosso serviço
               </p>
             </div>
 
             <Accordion type="single" collapsible className="space-y-4">
-              {[
-                {
-                  question: "Como funciona a remuneração?",
-                  answer: "Trabalhamos com uma taxa de sucesso baseada na economia gerada. Quanto maior o desconto conseguido, maior nossa remuneração. Se não conseguirmos economia mínima de 5%, você não paga."
-                },
-                {
-                  question: "Vocês trabalham apenas na Barra da Tijuca?",
-                  answer: "Sim, nossa especialização é focada na Barra da Tijuca e região adjacente. Isso nos permite ter conhecimento profundo do mercado local e acesso às melhores oportunidades."
-                },
-                {
-                  question: "Quanto tempo demora o processo?",
-                  answer: "Depende da complexidade dos critérios e disponibilidade de imóveis. Em média, entre 30 a 90 dias desde a contratação até a entrega das chaves."
-                }
-              ].map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border border-luxury-gold/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-left hover:text-luxury-gold">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-luxury-text-muted">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              {[{
+              question: "Como funciona a remuneração do Personal Shopper?",
+              answer: "Trabalhamos com um modelo transparente: uma taxa de preparação e análise inicial, mais uma comissão de sucesso baseada na economia obtida. Quanto mais você economiza, mais ganhamos. Nossos interesses estão 100% alinhados com os seus."
+            }, {
+              question: "Qual a diferença entre vocês e um corretor tradicional?",
+              answer: "Corretores tradicionais trabalham para o vendedor e ganham mais quando você paga mais caro. Nós trabalhamos exclusivamente para você e ganhamos mais quando você economiza. Temos acesso a dados que corretores não têm e nossa única missão é defender seus interesses."
+            }, {
+              question: "Vocês trabalham apenas na Barra da Tijuca?",
+              answer: "Sim, somos especialistas exclusivos da região da Barra da Tijuca. Essa especialização nos permite ter conhecimento profundo do mercado local, acesso a oportunidades exclusivas e relacionamentos estratégicos que beneficiam nossos clientes."
+            }, {
+              question: "Qual o valor mínimo de imóvel para usar o serviço?",
+              answer: "Trabalhamos com imóveis a partir de R$ 1.000.000,00. Essa faixa de valor permite que nossa expertise gere economia significativa que justifica o investimento no serviço."
+            }, {
+              question: "Como garantem que vou economizar dinheiro?",
+              answer: "Temos acesso a dados de vendas reais, conhecimento profundo do mercado local e estratégias de negociação especializadas. Se não conseguirmos uma economia significativa, você não paga nossos honorários de sucesso."
+            }, {
+              question: "Quanto tempo leva o processo completo?",
+              answer: "Depende do serviço escolhido. Um Parecer Godoy Prime leva de 7 a 15 dias. Uma Compra Blindada pode levar de 30 a 60 dias. O Personal Shopper Completo varia conforme a complexidade da busca, mas geralmente entre 60 a 120 dias."
+            }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl border-0 shadow-sm">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-luxury-navy hover:text-luxury-gold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-luxury-text-muted leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>)}
             </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Final CTA Section */}
       <section id="contato" className="py-20 bg-luxury-navy text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Pronto para Comprar <span className="text-luxury-gold">Inteligente</span>?
+            <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold">
+              Últimas 2 Vagas Disponíveis Este Mês
+            </Badge>
+            
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Pronto Para Fazer a <span className="text-luxury-gold">Compra Mais Inteligente</span> da Sua Vida?
             </h2>
             
-            <p className="text-xl mb-12 text-white/90">
-              Agende uma conversa estratégica gratuita e descubra como economizar centenas de milhares de reais na sua próxima compra.
+            <p className="text-xl mb-8 text-white/90 leading-relaxed">
+              Não deixe que outros compradores continuem levando vantagem enquanto você paga mais caro. 
+              Agende sua consultoria estratégica gratuita e descubra quanto você pode economizar.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card className="bg-white/5 border-white/10">
-                <CardContent className="p-8 text-center">
-                  <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Telefone</h3>
-                  <p className="text-white/80">(21) 4040-0067</p>
-                </CardContent>
-              </Card>
+            <div className="space-y-4 mb-8">
+              <Button variant="gold" size="xl" className="w-full md:w-auto">
+                Agendar Minha Consultoria Gratuita
+                <ArrowRight className="ml-2" />
+              </Button>
               
-              <Card className="bg-white/5 border-white/10">
-                <CardContent className="p-8 text-center">
-                  <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
-                  <p className="text-white/80">(21) 99725-0515</p>
-                </CardContent>
-              </Card>
+              <p className="text-sm text-white/70">
+                Consultoria de 30 minutos • Sem compromisso • Totalmente gratuita
+              </p>
             </div>
             
-            <Button variant="gold" size="xl">
-              Agendar Conversa Estratégica Gratuita
-              <ArrowRight className="ml-2" />
-            </Button>
+            <div className="grid md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
+              <div className="text-center">
+                <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
+                <p className="font-semibold mb-1">Telefone</p>
+                <p className="text-white/80">(21) 4040-0067</p>
+              </div>
+              
+              <div className="text-center">
+                <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
+                <p className="font-semibold mb-1">WhatsApp</p>
+                <p className="text-white/80">(21) 99725-0515</p>
+              </div>
+              
+              <div className="text-center">
+                <MapPin className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
+                <p className="font-semibold mb-1">Localização</p>
+                <p className="text-white/80">Barra da Tijuca, RJ</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      
+      <footer className="bg-background border-t border-border py-12">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="md:col-span-2">
+                <img 
+                  src="/Logotipo Principal.png" 
+                  alt="Godoy Prime Realty" 
+                  className="h-12 w-auto mb-4"
+                />
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Personal Shopper Imobiliário exclusivo da Barra da Tijuca. 
+                  Representação 100% do comprador para imóveis de alto padrão.
+                </p>
+                <div className="flex space-x-4">
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <Phone className="h-4 w-4" />
+                    <span>(21) 4040-0067</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <MessageCircle className="h-4 w-4" />
+                    <span>(21) 99725-0515</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-4 text-foreground">Serviços</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>Parecer Godoy Prime</li>
+                  <li>Compra Blindada</li>
+                  <li>Personal Shopper Completo</li>
+                  <li>Consultoria Estratégica</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-4 text-foreground">Links Úteis</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li><a href="#sobre" className="hover:text-luxury-gold transition-colors">Sobre Marcus</a></li>
+                  <li><a href="#metodo" className="hover:text-luxury-gold transition-colors">Método</a></li>
+                  <li><a href="#garantias" className="hover:text-luxury-gold transition-colors">Garantias</a></li>
+                  <li><a href="#faq" className="hover:text-luxury-gold transition-colors">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+              <p>&copy; 2024 Godoy Prime Realty. Todos os direitos reservados.</p>
+              <p className="mt-2">Personal Shopper Imobiliário™ é marca registrada da Godoy Prime Realty.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>;
+};
+
+export default LandingPage;
