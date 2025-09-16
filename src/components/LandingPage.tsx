@@ -789,9 +789,13 @@ const LandingPage = () => {
                 Os detalhes completos e as condições da nossa garantia, estão descritos em nosso Contrato de Personal Shopper Imobiliário, que será apresentado e discutido com você antes de qualquer compromisso formal.
               </p>
               
-              <Button variant="gold" size="xl">
+              <Button 
+                variant="gold" 
+                className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold"
+                onClick={() => window.open('https://wa.me/5521999999999', '_blank')}
+              >
                 Garantir Minha Vaga Agora
-                <ArrowRight className="ml-2" />
+                <ArrowRight className="h-5 w-5" />
               </Button>
             </div>
           </div>
