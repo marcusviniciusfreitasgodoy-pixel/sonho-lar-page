@@ -369,7 +369,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
-              <span className="text-luxury-gold">Não cometa os mesmos erros de outros</span>
+              <span className="text-luxury-gold">Não cometa os mesmos erros de outros de outros compradores</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
