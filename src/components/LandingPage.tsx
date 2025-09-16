@@ -531,7 +531,7 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e a forma de remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
+                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: A miopia comercial, a falta de transparência, a falta de visão de processos aliados a remuneração tradicional, praticamente impedem o apoio ideal ao Comprador, desequilibrando o segmento e privilegiando os Vendedores. 
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
