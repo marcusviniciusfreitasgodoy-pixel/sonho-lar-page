@@ -166,9 +166,13 @@ const LandingPage = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Descubra O Segredo dos Compradores Inteligentes
+              <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
               <span className="text-luxury-gold text-4xl md:text-5xl">
-                Compre o Imóvel Que Você Quer e Pelo Preço Justo
+                Compre o Imóvel Que Você Quer e
+              </span>
               <span className="text-white text-4xl md:text-5xl">
+                Pelo Preço Justo</span>
+            </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
@@ -626,7 +630,7 @@ const LandingPage = () => {
               subtitle: "Busca & Aquisição Total",
               price: "Fee de Preparação e Análise + Comissão no Sucesso",
               description: "Serviço completo de Personal Shopper Imobiliário. Desde a busca até as chaves na mão. Para quem quer o máximo de comodidade, economia e segurança.",
-              features: ["Mapeamento completo do seu perfil e necessidades", "Curadoria exclusiva de imóveis (incluindo off-market)", "Análise completa de valor e potencial", "Negociação profissional e fechamento seguro", "Acompanhamento até entrega das chaves"],
+              features: ["Mapeamento completo do seu perfil e necessidades", "Curadoria exclusiva de imóveis (incluindo off-market)", "Análise completa de valor e potencial", "Negociação profissional e fechamento seguro", "Acompanhamento total até entrega das chaves"],
               cta: "Quero o Serviço Completo",
               popular: false
             }].map((plan, index) => <Card key={index} className={cn(
@@ -753,28 +757,28 @@ const LandingPage = () => {
 
             <Accordion type="single" collapsible className="space-y-4">
               {[{
-              question: "Como funciona a remuneração do Personal Shopper?",
-              answer: "Trabalhamos com um modelo transparente: uma taxa de preparação e análise inicial, mais uma comissão de sucesso baseada na economia obtida. Quanto mais você economiza, mais ganhamos. Nossos interesses estão 100% alinhados com os seus."
+              question: "Como funciona a cobrança do Personal Shopper Imobiliário?",
+              answer: "Trabalhamos com um modelo híbrido: uma taxa de preparação e análise inicial (que cobre nossos custos operacionais) + uma comissão de sucesso baseada na economia gerada. Quanto mais você economiza, mais ganhamos. Se não conseguirmos economia significativa, você não paga a comissão de sucesso."
             }, {
               question: "Qual a diferença entre vocês e um corretor tradicional?",
-              answer: "Corretores tradicionais trabalham para o vendedor e ganham mais quando você paga mais caro. Nós trabalhamos exclusivamente para você e ganhamos mais quando você economiza. Temos acesso a dados que corretores não têm e nossa única missão é defender seus interesses."
+              answer: "A diferença é fundamental: corretores tradicionais trabalham para o vendedor e ganham mais quando você paga mais caro. Nós trabalhamos exclusivamente para você e ganhamos mais quando você economiza. Além disso, temos acesso a dados de mercado que não estão disponíveis publicamente e uma metodologia exclusiva de análise de valor."
             }, {
               question: "Vocês trabalham apenas na Barra da Tijuca?",
-              answer: "Sim, somos especialistas exclusivos da região da Barra da Tijuca. Essa especialização nos permite ter conhecimento profundo do mercado local, acesso a oportunidades exclusivas e relacionamentos estratégicos que beneficiam nossos clientes."
+              answer: "Sim, nossa especialização é focada na região da Barra da Tijuca e adjacências (Recreio, Jacarepaguá). Essa especialização nos permite ter conhecimento profundo do mercado local, histórico de preços, tendências e oportunidades exclusivas da região."
             }, {
-              question: "Qual o valor mínimo de imóvel para usar o serviço?",
-              answer: "Trabalhamos com imóveis a partir de R$ 1.000.000,00. Essa faixa de valor permite que nossa expertise gere economia significativa que justifica o investimento no serviço."
-            }, {
-              question: "Como garantem que vou economizar dinheiro?",
-              answer: "Temos acesso a dados de vendas reais, conhecimento profundo do mercado local e estratégias de negociação especializadas. Se não conseguirmos uma economia significativa, você não paga nossos honorários de sucesso."
+              question: "Qual o valor mínimo de imóvel para contratar o serviço?",
+              answer: "Trabalhamos com imóveis a partir de R$ 1.000.000,00. Essa faixa de valor permite que nossa expertise gere economia significativa que justifique o investimento no serviço."
             }, {
               question: "Quanto tempo leva o processo completo?",
-              answer: "Depende do serviço escolhido. Um Parecer Godoy Prime leva de 7 a 15 dias. Uma Compra Blindada pode levar de 30 a 60 dias. O Personal Shopper Completo varia conforme a complexidade da busca, mas geralmente entre 60 a 120 dias."
-            }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl border-0 shadow-sm">
-                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-luxury-navy hover:text-luxury-gold">
+              answer: "Depende do serviço escolhido. O Parecer Godoy Prime leva de 7 a 15 dias. A Compra Blindada pode levar de 30 a 60 dias. O Personal Shopper Completo varia de 60 a 120 dias, dependendo da complexidade dos critérios e disponibilidade de imóveis no mercado."
+            }, {
+              question: "Vocês garantem que vou encontrar o imóvel ideal?",
+              answer: "Garantimos que você terá acesso às melhores oportunidades disponíveis no mercado, incluindo imóveis off-market. Nossa metodologia de mapeamento do DNA do cliente tem alta taxa de sucesso. Se não encontrarmos opções adequadas ao seu perfil, você não paga a comissão de sucesso."
+            }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl border border-luxury-gold/20 px-6">
+                <AccordionTrigger className="text-left text-luxury-navy hover:text-luxury-gold">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-luxury-text-muted leading-relaxed">
+                <AccordionContent className="text-luxury-text-muted leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>)}
@@ -807,27 +811,22 @@ const LandingPage = () => {
               </Button>
               
               <p className="text-sm text-white/70">
-                Consultoria de 30 minutos • Sem compromisso • Totalmente gratuita
+                Consultoria de 30 minutos • Sem compromisso • Análise gratuita do seu caso
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">Telefone</p>
-                <p className="text-white/80">(21) 4040-0067</p>
+              <div className="flex items-center justify-center space-x-3">
+                <Phone className="h-5 w-5 text-luxury-gold" />
+                <span>(21) 4040-0067</span>
               </div>
-              
-              <div className="text-center">
-                <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">WhatsApp</p>
-                <p className="text-white/80">(21) 99725-0515</p>
+              <div className="flex items-center justify-center space-x-3">
+                <MessageCircle className="h-5 w-5 text-luxury-gold" />
+                <span>(21) 99725-0515</span>
               </div>
-              
-              <div className="text-center">
-                <MapPin className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">Localização</p>
-                <p className="text-white/80">Barra da Tijuca, RJ</p>
+              <div className="flex items-center justify-center space-x-3">
+                <Mail className="h-5 w-5 text-luxury-gold" />
+                <span>contato@godoyprime.com</span>
               </div>
             </div>
           </div>
@@ -846,45 +845,39 @@ const LandingPage = () => {
                   className="h-12 w-auto mb-4"
                 />
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Personal Shopper Imobiliário exclusivo da Barra da Tijuca. 
-                  Representação 100% do comprador para imóveis de alto padrão.
+                  O primeiro Personal Shopper Imobiliário do Brasil, especializado em imóveis de alto padrão na Barra da Tijuca. 
+                  Representação exclusiva do comprador com foco em economia e segurança.
                 </p>
-                <div className="flex space-x-4">
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Phone className="h-4 w-4" />
-                    <span>(21) 4040-0067</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <MessageCircle className="h-4 w-4" />
-                    <span>(21) 99725-0515</span>
-                  </div>
+                <div className="flex items-center space-x-2 text-muted-foreground">
+                  <MapPin className="h-4 w-4" />
+                  <span>Barra da Tijuca, Rio de Janeiro - RJ</span>
                 </div>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-foreground">Serviços</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Parecer Godoy Prime</li>
-                  <li>Compra Blindada</li>
-                  <li>Personal Shopper Completo</li>
-                  <li>Consultoria Estratégica</li>
+                <h4 className="font-semibold text-foreground mb-4">Serviços</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li><a href="#precos" className="hover:text-luxury-gold transition-colors">Parecer Godoy Prime</a></li>
+                  <li><a href="#precos" className="hover:text-luxury-gold transition-colors">Compra Blindada</a></li>
+                  <li><a href="#precos" className="hover:text-luxury-gold transition-colors">Personal Shopper Completo</a></li>
                 </ul>
               </div>
               
               <div>
-                <h4 className="font-semibold mb-4 text-foreground">Links Úteis</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#sobre" className="hover:text-luxury-gold transition-colors">Sobre Marcus</a></li>
-                  <li><a href="#metodo" className="hover:text-luxury-gold transition-colors">Método</a></li>
-                  <li><a href="#garantias" className="hover:text-luxury-gold transition-colors">Garantias</a></li>
-                  <li><a href="#faq" className="hover:text-luxury-gold transition-colors">FAQ</a></li>
+                <h4 className="font-semibold text-foreground mb-4">Contato</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>(21) 4040-0067</li>
+                  <li>(21) 99725-0515</li>
+                  <li>contato@godoyprime.com</li>
                 </ul>
               </div>
             </div>
             
-            <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+            <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
               <p>&copy; 2024 Godoy Prime Realty. Todos os direitos reservados.</p>
-              <p className="mt-2">Personal Shopper Imobiliário™ é marca registrada da Godoy Prime Realty.</p>
+              <p className="text-sm mt-2">
+                Personal Shopper Imobiliário™ e Método Bússola Dourada™ são marcas registradas da Godoy Prime Realty.
+              </p>
             </div>
           </div>
         </div>
