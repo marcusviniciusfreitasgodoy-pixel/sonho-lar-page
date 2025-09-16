@@ -190,7 +190,8 @@ const LandingPage = () => {
         <div className="relative z-10 container mx-auto px-6 text-center text-white">
           <div className="animate-fade-in">
             <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold bg-white/10">
-              Personal Shopper Imobiliário Exclusivo na Barra da Tijuca
+              Personal Shopper Imobiliário
+              Exclusivo na Barra da Tijuca
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
