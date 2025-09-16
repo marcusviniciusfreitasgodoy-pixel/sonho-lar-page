@@ -13,6 +13,11 @@ const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
+  useEffect(() => {
+    // Placeholder to prevent transpilation issues
+    console.log("Component mounted");
+  }, []);
+  
   const toggleCardHighlight = (cardIndex: number) => {
     setHighlightedCards(prev => 
       prev.includes(cardIndex) 
@@ -181,10 +186,11 @@ const LandingPage = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Descubra O Segredo dos Compradores Inteligentes
-              <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
+            <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
+          
+            <p className="text-xl md:text-2xl mb-8 mt-16 text-white/90 max-w-4xl mx-auto">
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
             </p>
             
@@ -215,16 +221,15 @@ const LandingPage = () => {
               
               <div className="space-y-4 md:space-y-6 mb-8">
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo 
-                  Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada 
+                  para. intermediar o negócio e vender pelo preço mais caro possível, pois assim ela e o Proprietário ganham mais.
+                </p>
+                
+                <p>
+                  <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
-                </p>
-                
-                <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
                 </p>
                 
                 <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
