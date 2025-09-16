@@ -150,6 +150,35 @@ const LandingPage = () => {
         </div>
       </header>
 
+      {/* Duplicated Header Content with Less Spacing */}
+      <div className="bg-white border-b border-gray-200 py-2">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/Logotipo Principal.png" 
+                alt="Marcus Godoy Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-lg font-semibold text-luxury-navy">
+                Marcus Godoy
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#servicos" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Serviços
+              </a>
+              <a href="#como-funciona" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Como Funciona
+              </a>
+              <a href="#contato" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Contato
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
@@ -167,11 +196,6 @@ const LandingPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Descubra O Segredo dos Compradores Inteligentes
               <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
-              <span className="text-luxury-gold text-4xl md:text-5xl">
-                Compre o Imóvel Que Você Quer e
-              </span>
-              <span className="text-white text-4xl md:text-5xl">
-                Pelo Preço Justo</span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
@@ -195,18 +219,20 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-              Por Que muitos Compradores Pagaram <span className="text-luxury-gold">Milhares de Reais</span> a Mais Sem Saber?
+              Por Que Muitos Compradores Pagam <span className="text-luxury-gold">Milhares de Reais</span> a Mais e só Descobrem Depois?
             </h2>
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                <strong>Verdades Inconvenientes</strong> Reflita sobre uma realidade que ninguém comenta no mercado imobiliário, mas que agora você tem opção.
+                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
-                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.</strong> Elas ganham mais dinheiro quando você paga mais caro. 
-                Podem até dizer que estão lutando por você, mas o objetivo real é vender pelo maior preço possível. <strong>Simples Assim!</strong> É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
+                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.
+                  
+                </strong> Elas ganham mais dinheiro quando você paga mais caro.<strong> Simples Assim!</strong>     
+                É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
               </p> 
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
@@ -231,10 +257,10 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
-                Personal Shopper Imobiliário: <span className="text-luxury-gold">Representação 100% Sua</span>
+                Personal Shopper Imobiliário <span className="text-luxury-gold">Representação 100% Sua</span>
               </h2>
               <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
-                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
+                Só existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
               </p>
             </div>
 
@@ -374,7 +400,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
-              <span className="text-luxury-gold">Não cometa os mesmos erros de outros de outros compradores</span>
+              Não cometa os mesmos erros que os outros
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
@@ -404,7 +430,7 @@ const LandingPage = () => {
                   específicas e com a missão de defender somente os seus objetivos, algo que corretores 
                   tradicionais não conseguem proporcionar, sem um conflito de interesses. 
                   <span className="font-semibold text-luxury-navy">
-                    Lembre-se que ele ganha no valor da venda. O que isso te diz?
+                     Lembre-se que ele ganha no valor da venda. O que isso te diz?
                   </span>
                 </p>
               </div>
@@ -417,10 +443,10 @@ const LandingPage = () => {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Garantimos que o valor investido em nosso serviço é recuperado através da economia 
-                  de tempo, dinheiro e na garantia de uma compra acertada e segura. Se não for assim 
-                  você não pagará nada. 
+                  de tempo, dinheiro e na garantia de uma compra acertada e segura. 
+                  Se não for assim você não pagará nada. 
                   <span className="font-semibold text-luxury-gold">
-                    Quanto maior o desconto mais ganhamos.
+                     Quanto maior o desconto mais ganhamos.
                   </span>
                 </p>
               </div>
@@ -492,22 +518,22 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
-                O Momento da Virada <span className="text-luxury-gold">Descobri Um Novo Caminho</span> na Compra de Imóveis de Alto Padrão
+                Quando <span className="text-luxury-gold">Descobri Um Novo Caminho</span> na Compra de Imóveis de Alto Padrão?
               </h2>
             </div>
 
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha jornada começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto como Corretor, as dores e ineficiências do processo tradicional de Compra e Venda de Imóveis de Alto Padrão.
+                  Senti na pele, tanto como comprador quanto como Corretor, as dores e ineficiências do processo tradicional de Compra e Venda de Imóveis de Alto Padrão.
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
+                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e a forma de remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Com minha bagagem profissional em Telecomunicações e Internet, sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
+                  Com minha experiência profissional de outros segmentos, percebi as oportunidades e sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
                 </p>
                 
                 <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
@@ -520,7 +546,7 @@ const LandingPage = () => {
                   Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e a Godoy Prime Realty.
                </p>
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
-                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o guardião exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
                 </div>
               </div>
             </div>
@@ -569,7 +595,7 @@ const LandingPage = () => {
               step: "05",
               icon: CheckCircle,
               title: "Fechamento Protegido",
-              description: "Coordenamos toda documentação e validação técnica. Você recebe as chaves com total segurança jurídica e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
+              description: "Coordenamos e Acompnhamos a preparação dos Contratos e processos, avaliamos toda documentação e cuidamos da validação técnica. Você recebe as chaves com total segurança e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
             }].map((step, index) => <div key={index} className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-gold rounded-full w-24 h-24 flex items-center justify-center">
@@ -604,7 +630,7 @@ const LandingPage = () => {
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
               </h2>
               <p className="text-xl text-white/80">
-                Escolha o nível de blindagem e suporte que sua conquista imobiliária merece. Serviços indicados apenas para imóveis à partir de R$ 1.000.000,00 na região da Barra da Tijuca.
+                Escolha o nível de blindagem e suporte que sua busca imobiliária merece. Serviços indicados apenas para imóveis à partir de R$ 1.000.000,00 na região da Barra da Tijuca.
               </p>
             </div>
 
@@ -624,275 +650,613 @@ const LandingPage = () => {
               description: "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
               features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
               cta: "Quero Blindar Minha Compra",
-              popular: true
-            }, {
-              name: "Personal Shopper Completo",
-              subtitle: "Busca & Aquisição Total",
-              price: "Fee de Preparação e Análise + Comissão no Sucesso",
-              description: "Serviço completo de Personal Shopper Imobiliário. Desde a busca até as chaves na mão. Para quem quer o máximo de comodidade, economia e segurança.",
-              features: ["Mapeamento completo do seu perfil e necessidades", "Curadoria exclusiva de imóveis (incluindo off-market)", "Análise completa de valor e potencial", "Negociação profissional e fechamento seguro", "Acompanhamento até entrega das chaves"],
-              cta: "Quero o Serviço Completo",
               popular: false
-            }].map((plan, index) => <Card key={index} className={cn(
-                "relative border-0 shadow-luxury transition-all duration-300 hover:-translate-y-2",
-                plan.popular ? "bg-gradient-gold text-luxury-navy" : "bg-white/5 text-white"
-              )}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-luxury-navy text-luxury-gold border-luxury-gold">
-                      Mais Escolhido
-                    </Badge>
-                  </div>
-                )}
-                
-                <CardContent className="p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className={cn(
-                      "text-sm mb-4",
-                      plan.popular ? "text-luxury-navy/70" : "text-white/70"
-                    )}>
-                      {plan.subtitle}
-                    </p>
-                    <div className="text-3xl font-bold mb-4">{plan.price}</div>
-                    <p className={cn(
-                      "text-sm leading-relaxed",
-                      plan.popular ? "text-luxury-navy/80" : "text-white/80"
-                    )}>
-                      {plan.description}
-                    </p>
-                  </div>
+            }, {
+              name: "Método Bússola Dourada™",
+              subtitle: "Experiência Completa",
+              price: "Comissão no Sucesso",
+              description: "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência. Promocionalmente para esta modalidade estamos isentando a a Taxa de Preparação e Análise",
+              features: ["Metodologia completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
+              cta: "Sim! Quero a Bússola Dourada",
+              popular: true
+            }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
+                  {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">
+                        MAIS POPULAR
+                      </Badge>
+                    </div>}
                   
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className={cn(
-                          "h-5 w-5 mt-0.5 flex-shrink-0",
-                          plan.popular ? "text-luxury-navy" : "text-luxury-gold"
-                        )} />
-                        <span className={cn(
-                          "text-sm",
-                          plan.popular ? "text-luxury-navy" : "text-white"
-                        )}>
-                          {feature}
-                        </span>
+                  <CardContent className="p-8">
+                    <div className="text-center mb-6">
+                      <h3 className={cn("text-2xl font-bold mb-2", plan.popular ? 'text-luxury-navy' : 'text-white')}>
+                        {plan.name}
+                      </h3>
+                      <p className={cn("text-sm mb-4", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
+                        {plan.subtitle}
+                      </p>
+                      <div className={cn("text-3xl font-bold mb-2", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')}>
+                        {plan.price}
                       </div>
-                    ))}
-                  </div>
-                  
-                  <Button 
-                    variant={plan.popular ? "default" : "outline"} 
-                    className={cn(
-                      "w-full",
-                      plan.popular 
-                        ? "bg-luxury-navy text-luxury-gold hover:bg-luxury-navy/90" 
-                        : "border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-navy"
-                    )}
-                  >
-                    {plan.cta}
-                  </Button>
-                </CardContent>
-              </Card>)}
+                      <p className={cn("text-sm", plan.popular ? 'text-luxury-text-muted' : 'text-white/70')}>
+                        {plan.description}
+                      </p>
+                    </div>
+                    
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-3">
+                          <CheckCircle className={cn("h-5 w-5 mt-0.5 flex-shrink-0", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')} />
+                          <span className={cn("text-sm", plan.popular ? 'text-luxury-navy' : 'text-white/90')}>{feature}</span>
+                        </li>)}
+                    </ul>
+                    
+                    <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg">
+                      {plan.cta}
+                    </Button>
+                  </CardContent>
+                </Card>)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Guarantees Section */}
-      <section id="garantias" className="py-20 bg-background">
+      {/* Guarantee Section */}
+      <section id="garantias" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Suas <span className="text-luxury-gold">Garantias Blindadas</span>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-luxury-navy">
+                Sua Compra de Imóvel na Barra da Tijuca: Confiança Contratada, Economia Garantida.
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Assumimos todos os riscos para que você tenha total tranquilidade
+              
+              <p className="text-xl text-luxury-gold font-semibold mb-6">
+                Nosso Compromisso na contratação do Método Bússola Dourada: Você Só Paga se Houver Economia Real.
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[{
-              icon: Shield,
-              title: "Garantia de Economia ou Dinheiro de Volta",
-              description: "Se não conseguirmos uma economia significativa na sua compra, você não paga nossos honorários. Simples assim."
-            }, {
-              icon: Clock,
-              title: "Garantia de Prazo",
-              description: "Cumprimos os prazos acordados ou você recebe compensação. Seu tempo é valioso e respeitamos isso."
-            }, {
-              icon: CheckCircle,
-              title: "Garantia de Satisfação Total",
-              description: "Se não ficar 100% satisfeito com nosso serviço, devolvemos seu investimento integral."
-            }, {
-              icon: Award,
-              title: "Garantia de Exclusividade",
-              description: "Trabalhamos exclusivamente para você, sem conflitos de interesse. Sua representação é nossa única prioridade."
-            }].map((guarantee, index) => <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <guarantee.icon className="h-8 w-8 text-luxury-navy" />
+              
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+                Nossa Garantia de Confiança é Inabalável:
+              </h3>
+              
+              <ul className="text-left space-y-4 mb-8">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Zero Custo Inicial:</strong>
+                    <span className="text-luxury-navy"> Você não investe absolutamente nada para iniciar nossa parceria. Meu compromisso é total e sem amarras financeiras prévias.</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-foreground">{guarantee.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{guarantee.description}</p>
-                </CardContent>
-              </Card>)}
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Foco Exclusivo no SEU Interesse:</strong>
+                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas, incluindo imóveis off-market. Minha lealdade é única com você, o comprador.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Remuneração por Performance:</strong>
+                    <span className="text-luxury-navy"> Minha comissão é 100% atrelada ao seu sucesso e à economia real e significativa que eu gerar. Você só me remunera sobre o valor que eu conseguir economizar. Se não houver economia, você não me paga nada!</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+                Esta é a Sua Prova de Valor e Alinhamento Total:
+              </h3>
+              
+              <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
+                Sua decisão é respaldada por uma Garantia robusta, formalizada em contrato. Todos os nossos compromissos de ética, fidelidade e defesa intransigente de seus interesses estão assegurados neste documento.
+              </p>
+              
+              <h3 className="text-2xl font-bold mb-4 text-luxury-navy text-left">
+               Por que esta Garantia é para você?
+              </h3>
+              
+              <ul className="text-left space-y-4 mb-8">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Paz de Espírito:</strong>
+                    <span className="text-luxury-navy"> Elimine a insegurança e o desgaste de buscar um imóvel de Alto Padrão sozinho.</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Interesses Alinhados:</strong>
+                    <span className="text-luxury-navy"> Meu sucesso é o seu sucesso. Meu objetivo é que o valor economizado seja significativamente maior do que minha remuneração, proporcionando um ganho líquido substancial para você..</span>
+                  </div>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
+                  <div>
+                    <strong className="text-luxury-navy">Processo Excepcional:</strong>
+                    <span className="text-luxury-navy"> Sua jornada será guiada com excelência, discrição e eficiência, do início ao fim.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <p className="text-lg text-luxury-navy mb-8 leading-relaxed text-left">
+                Pronto para uma aquisição imobiliária estratégica e sem preocupações? Agende agora sua consultoria inicial gratuita e vamos descobrir se faz sentido pra você e também pra mim iniciarmos essa parceria.
+              </p>
+              
+              <p className="text-sm text-luxury-text-muted mb-8 leading-relaxed text-left italic">
+                Os detalhes completos e as condições da nossa garantia, estão descritos em nosso Contrato de Personal Shopper Imobiliário, que será apresentado e discutido com você antes de qualquer compromisso formal.
+              </p>
+              
+              <Button variant="gold" size="xl">
+                Garantir Minha Vaga Agora
+                <ArrowRight className="ml-2" />
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-luxury-cream">
+      <section id="faq" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-luxury-navy">
-                Perguntas <span className="text-luxury-gold">Frequentes</span>
+              <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+                Perguntas Frequentes
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+                <span className="text-luxury-gold">Respostas Diretas</span> para Suas Dúvidas
               </h2>
-              <p className="text-xl text-luxury-text-muted">
-                Esclarecemos suas principais dúvidas sobre nosso serviço
-              </p>
             </div>
 
-            <Accordion type="single" collapsible className="space-y-4">
-              {[{
-              question: "Como funciona a remuneração do Personal Shopper?",
-              answer: "Trabalhamos com um modelo transparente: uma taxa de preparação e análise inicial, mais uma comissão de sucesso baseada na economia obtida. Quanto mais você economiza, mais ganhamos. Nossos interesses estão 100% alinhados com os seus."
-            }, {
-              question: "Qual a diferença entre vocês e um corretor tradicional?",
-              answer: "Corretores tradicionais trabalham para o vendedor e ganham mais quando você paga mais caro. Nós trabalhamos exclusivamente para você e ganhamos mais quando você economiza. Temos acesso a dados que corretores não têm e nossa única missão é defender seus interesses."
-            }, {
-              question: "Vocês trabalham apenas na Barra da Tijuca?",
-              answer: "Sim, somos especialistas exclusivos da região da Barra da Tijuca. Essa especialização nos permite ter conhecimento profundo do mercado local, acesso a oportunidades exclusivas e relacionamentos estratégicos que beneficiam nossos clientes."
-            }, {
-              question: "Qual o valor mínimo de imóvel para usar o serviço?",
-              answer: "Trabalhamos com imóveis a partir de R$ 1.000.000,00. Essa faixa de valor permite que nossa expertise gere economia significativa que justifica o investimento no serviço."
-            }, {
-              question: "Como garantem que vou economizar dinheiro?",
-              answer: "Temos acesso a dados de vendas reais, conhecimento profundo do mercado local e estratégias de negociação especializadas. Se não conseguirmos uma economia significativa, você não paga nossos honorários de sucesso."
-            }, {
-              question: "Quanto tempo leva o processo completo?",
-              answer: "Depende do serviço escolhido. Um Parecer Godoy Prime leva de 7 a 15 dias. Uma Compra Blindada pode levar de 30 a 60 dias. O Personal Shopper Completo varia conforme a complexidade da busca, mas geralmente entre 60 a 120 dias."
-            }].map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl border-0 shadow-sm">
-                <AccordionTrigger className="px-6 py-4 text-left font-semibold text-luxury-navy hover:text-luxury-gold">
-                  {faq.question}
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      1
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      O que é um Personal Shopper Imobiliário e como a Godoy Prime Realty atua?
+                    </h3>
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-luxury-text-muted leading-relaxed">
-                  {faq.answer}
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Um Personal Shopper Imobiliário é um profissional especializado que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição de um imóvel. Diferente do modelo tradicional, onde o corretor, após sua contratação pelo Proprietário, busca intermediar um negócio, a Godoy Prime Realty, liderada por Marcus Godoy, oferece uma consultoria imobiliária <em>personalizada</em> focada 100% no cliente comprador. Nosso objetivo é Representar o Comprador e encontrar o imóvel perfeito que reflita seu sucesso e estilo de vida, garantindo a melhor negociação possível.
+                    </p>
+                  </div>
                 </AccordionContent>
-              </AccordionItem>)}
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      2
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Qual a diferença entre o serviço da Godoy Prime Realty e o de um corretor de imóveis tradicional?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A principal diferença reside na <strong>lealdade e no foco</strong>. Enquanto o corretor tradicional geralmente representa o vendedor e busca vender os imóveis de sua carteira, o Personal Shopper Imobiliário da Godoy Prime Realty trabalha <strong>exclusivamente para o comprador</strong>. Isso significa que buscamos no mercado o imóvel que melhor atenda às suas necessidades, sem conflitos de interesse, e negociamos sempre em seu benefício. Nosso compromisso é com a sua satisfação e com a sua economia, não com a venda de um estoque.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      3
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Quais são os principais benefícios de contratar um Personal Shopper Imobiliário da Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Contratar a Godoy Prime Realty significa ter um guardião exclusivo dos seus interesses, protegendo-o da "Armadilha da Opulência Desorientada". Os benefícios incluem:
+                    </p>
+                    <ul className="list-disc list-inside mt-3 text-muted-foreground leading-relaxed space-y-1">
+                      <li><strong>Economia de Tempo Precioso:</strong> Eliminamos visitas improdutivas e a sobrecarga de informações genéricas, apresentando apenas opções altamente qualificadas.</li>
+                      <li><strong>Segurança e Transparência:</strong> Realizamos <em>due diligence</em> completa (jurídica, financeira, estrutural) e conduzimos negociações com total clareza, evitando surpresas e custos ocultos.</li>
+                      <li><strong>Acesso a Oportunidades Exclusivas:</strong> Nossa rede de contatos e inteligência de mercado proporcionam acesso a propriedades <em>off-market</em> e <em>pocket listings</em> que não estão disponíveis ao público geral.</li>
+                      <li><strong>Negociação Estratégica:</strong> Defendemos seus interesses para obter as condições mais vantajosas, garantindo que você faça o melhor investimento possível.</li>
+                      <li><strong>Paz de Espírito:</strong> Transformamos a complexa jornada de aquisição em uma experiência fluida, sofisticada e prazerosa.</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      4
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como funciona o processo de busca e aquisição de imóveis com a Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed mb-3">
+                      Nosso processo é guiado pelo exclusivo <strong>Método Bússola Dourada™</strong>, estruturado em 4 fases estratégicas para garantir o sucesso da sua aquisição:
+                    </p>
+                    <ol className="list-decimal list-inside text-muted-foreground leading-relaxed space-y-2">
+                      <li><strong>Alinhamento Profundo & Diagnóstico de Aspirações (O Norte Verdadeiro):</strong> Uma imersão consultiva para entender seu estilo de vida, valores e aspirações, mapeando o "DNA do Comprador".</li>
+                      <li><strong>Curadoria Exclusiva & Prospecção Inteligente (O Mapa do Tesouro):</strong> Ativamos nossa inteligência de mercado e rede privilegiada para apresentar um portfólio enxuto e altamente qualificado, incluindo oportunidades <em>off-market</em>.</li>
+                      <li><strong>Negociação Estratégica & Blindagem Contratual (A Fortaleza Dourada):</strong> Representamos você com lealdade total, conduzindo negociações e coordenando a <em>due diligence</em> para proteger seus interesses.</li>
+                      <li><strong>Experiência de Transição & Concierge Pós-Aquisição (A Chave de Ouro):</strong> Facilitamos o fechamento e a transição, oferecendo acesso à nossa rede de parceiros de confiança para uma experiência completa e sem estresse.</li>
+                    </ol>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      5
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como é definida a remuneração pelo serviço de Personal Shopper Imobiliário da Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Nossa remuneração é baseada em um modelo de <strong>sucesso e performance</strong>, garantindo total alinhamento com seus interesses. Na contrataçao do Serviço Bússola Dourada, você <strong>não paga absolutamente nada para iniciar</strong> nossa parceria. Minha comissão é 100% atrelada à <strong>economia real e significativa</strong> que eu gerar para você na negociação do imóvel. <strong>Se não houver economia significativa, você não me paga nada!</strong> Os detalhes completos e a estrutura de remuneração são apresentados e formalizados em nosso Contrato de Prestação de Serviços.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      6
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como a Godoy Prime Realty garante a discrição e a privacidade dos meus dados e da minha busca?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A discrição e a confidencialidade são pilares fundamentais do nosso serviço de alto padrão. Entendemos a importância da privacidade para nosso público. Todas as suas informações e detalhes da sua busca são tratados com a máxima segurança e profissionalismo. Nosso processo é desenhado para proteger sua identidade e suas aspirações, garantindo que sua jornada de aquisição seja conduzida com a discrição que você espera e merece.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      7
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Por que confiar na Godoy Prime Realty para uma decisão de investimento tão importante?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Confiar na Godoy Prime Realty é escolher um parceiro com experiência no mercado imobiliário de alto padrão, uma visão inovadora e um compromisso inabalável com o comprador. Marcus Godoy traz uma perspectiva única, aplicando as melhores práticas de setores orientados ao cliente para elevar o padrão de atendimento. Nossa lealdade exclusiva, o <em>Método Bússola Dourada™</em>, a tecnologia integrada e a garantia de remuneração por performance asseguram que sua aquisição será estratégica, segura e alinhada aos seus mais altos padrões de exigência.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      8
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      O que é a "Armadilha da Opulência Desorientada" e como a Godoy Prime Realty me protege dela?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      A "Armadilha da Opulência Desorientada" é o grande inimigo que impede o comprador de ALto Padrão de encontrar o imóvel perfeito com tranquilidade. Ela se manifesta como sobrecarga de informações genéricas, conflito de interesses de corretores, falta de transparência, oportunidades perdidas e desgaste emocional. A Godoy Prime Realty é o antídoto direto: oferecemos clareza e foco, lealdade inquestionável, transparência total, acesso exclusivo e uma experiência premium e eficiente, guiando você com segurança através do labirinto do mercado de luxo.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-9" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      9
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como posso ter certeza de que você está realmente do meu lado?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Nossa garantia reside em nosso modelo de remuneração e na transparência de nossa atuação. Nossos honorários são um percentual sobre a economia gerada para você, o que significa que nosso sucesso está diretamente ligado ao seu. Além disso, nosso contrato detalha nosso compromisso exclusivo com seus interesses, assegurando total confidencialidade, ética e uma blindagem completa em cada passo do processo.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-10" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
+                      10
+                    </div>
+                    <h3 className="text-lg font-semibold text-luxury-navy">
+                      Como posso iniciar minha jornada com a Godoy Prime Realty?
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="pl-12">
+                    <p className="text-muted-foreground leading-relaxed">
+                      É simples! Basta entrar em contato conosco para agendar sua <strong>consultoria inicial gratuita</strong>. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como podemos blindar sua compra e auxiliá-lo na busca pelo seu imóvel ideal na Barra da Tijuca.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="contato" className="py-20 bg-luxury-navy text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold">
-              Últimas 2 Vagas Disponíveis Este Mês
-            </Badge>
-            
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Pronto Para Fazer a <span className="text-luxury-gold">Compra Mais Inteligente</span> da Sua Vida?
+      {/* CTA Section */}
+      <section id="contato" className="py-20 bg-gradient-hero text-white">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Pronto Para Economizar <span className="text-luxury-gold">Dezenas de Milhares de R$</span> Na Sua Próxima Compra?
             </h2>
             
-            <p className="text-xl mb-8 text-white/90 leading-relaxed">
-              Não deixe que outros compradores continuem levando vantagem enquanto você paga mais caro. 
-              Agende sua consultoria estratégica gratuita e descubra quanto você pode economizar.
+            <p className="text-xl mb-8 text-white/90">
+              Entre em contato agora e garanta sua vaga exclusiva para o próximo ciclo do Método Bússola Dourada™
             </p>
             
-            <div className="space-y-4 mb-8">
-              <Button variant="gold" size="xl" className="w-full md:w-auto">
-                Agendar Minha Consultoria Gratuita
-                <ArrowRight className="ml-2" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button variant="gold" size="xl">
+                <Phone className="mr-2 h-5 w-5" />
+                (21) 96407-5124
               </Button>
-              
-              <p className="text-sm text-white/70">
-                Consultoria de 30 minutos • Sem compromisso • Totalmente gratuita
-              </p>
+              <Button variant="luxury-outline" size="xl">
+                <Mail className="mr-2 h-5 w-5" />
+                marcus@godoyprime.com.br
+              </Button>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
-              <div className="text-center">
-                <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">Telefone</p>
-                <p className="text-white/80">(21) 4040-0067</p>
-              </div>
-              
-              <div className="text-center">
-                <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">WhatsApp</p>
-                <p className="text-white/80">(21) 99725-0515</p>
-              </div>
-              
-              <div className="text-center">
-                <MapPin className="h-8 w-8 text-luxury-gold mx-auto mb-3" />
-                <p className="font-semibold mb-1">Localização</p>
-                <p className="text-white/80">Barra da Tijuca, RJ</p>
-              </div>
-            </div>
+            <p className="text-sm text-white/70">
+              Apenas 6 vagas disponíveis por trimestre. Não perca sua oportunidade.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-background border-t border-border py-12">
+      <footer className="bg-luxury-navy text-white py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="md:col-span-2">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            {/* Company Info */}
+            <div className="md:col-span-2">
+              <div className="mb-6">
                 <img 
-                  src="/Logotipo Principal.png" 
+                  src="/Logotipo Negativo 01.png" 
                   alt="Godoy Prime Realty" 
-                  className="h-12 w-auto mb-4"
+                  className="h-16 w-auto mb-4"
                 />
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Personal Shopper Imobiliário exclusivo da Barra da Tijuca. 
-                  Representação 100% do comprador para imóveis de alto padrão.
+                <h3 className="text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
+                <p className="text-white/80 mb-4">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Representação exclusiva do comprador em imóveis de alto padrão. 
+                  Economia garantida e transparência total em cada negociação.
                 </p>
-                <div className="flex space-x-4">
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Phone className="h-4 w-4" />
-                    <span>(21) 4040-0067</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <MessageCircle className="h-4 w-4" />
-                    <span>(21) 99725-0515</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h4 className="font-semibold mb-4 text-foreground">Serviços</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Parecer Godoy Prime</li>
-                  <li>Compra Blindada</li>
-                  <li>Personal Shopper Completo</li>
-                  <li>Consultoria Estratégica</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-semibold mb-4 text-foreground">Links Úteis</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#sobre" className="hover:text-luxury-gold transition-colors">Sobre Marcus</a></li>
-                  <li><a href="#metodo" className="hover:text-luxury-gold transition-colors">Método</a></li>
-                  <li><a href="#garantias" className="hover:text-luxury-gold transition-colors">Garantias</a></li>
-                  <li><a href="#faq" className="hover:text-luxury-gold transition-colors">FAQ</a></li>
-                </ul>
               </div>
             </div>
             
-            <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-              <p>&copy; 2024 Godoy Prime Realty. Todos os direitos reservados.</p>
-              <p className="mt-2">Personal Shopper Imobiliário™ é marca registrada da Godoy Prime Realty.</p>
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 4040-0067</p>
+                    <p className="text-white/60 text-xs">Telefone</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 99725-0515</p>
+                    <p className="text-white/60 text-xs">WhatsApp</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">marcus@godoyprime.com.br</p>
+                    <p className="text-white/60 text-xs">E-mail</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-white text-sm">Barra da Tijuca</p>
+                    <p className="text-white/60 text-xs">Rio de Janeiro - RJ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Links Úteis</h4>
+              <div className="space-y-2">
+                <a href="#servicos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Nossos Serviços
+                </a>
+                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Sobre Marcus
+                </a>
+                <a href="#metodo" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Método Bússola Dourada™
+                </a>
+                <a href="#garantias" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Garantias
+                </a>
+                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Depoimentos
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Stats Section */}
+          <div className="border-t border-white/20 pt-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-2xl mx-auto">
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">100%</p>
+                <p className="text-white/70 text-sm">Representação do Comprador</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">Zero</p>
+                <p className="text-white/70 text-sm">Conflito de Interesses</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Legal Links & Copyright */}
+          <div className="border-t border-white/20 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-white/60">
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  Política de Privacidade
+                </a>
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  Termos de Uso
+                </a>
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  LGPD
+                </a>
+              </div>
+              
+              <p className="text-white/60 text-sm text-center md:text-right">
+                © 2025 Godoy Prime Realty. Todos os direitos reservados.<br />
+                CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
+              </p>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* HeyGen Streaming Widget */}
+      <script 
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(window){
+              const host="https://labs.heygen.com",
+                    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DYXN1YWxMb29rX3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzViMWRiN2Uy%0D%0AMDgwZjQxMDZhODViOTg3NDM3NDMwYTI0XzU1ODYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYyZGQ4ZjRk%0D%0AYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4MjViN2Mz%0D%0AMmVkYTA3MSJ9&inIFrame=1",
+                    clientWidth=document.body.clientWidth,
+                    wrapDiv=document.createElement("div");
+              wrapDiv.id="heygen-streaming-embed";
+              const container=document.createElement("div");
+              container.id="heygen-streaming-container";
+              const stylesheet=document.createElement("style");
+              stylesheet.innerHTML=\`
+                #heygen-streaming-embed {
+                  z-index: 9999;
+                  position: fixed;
+                  left: 40px;
+                  bottom: 40px;
+                  width: 200px;
+                  height: 200px;
+                  border-radius: 50%;
+                  border: 2px solid #fff;
+                  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+                  transition: all linear 0.1s;
+                  overflow: hidden;
+                  opacity: 0;
+                  visibility: hidden;
+                }
+                #heygen-streaming-embed.show {
+                  opacity: 1;
+                  visibility: visible;
+                }
+                #heygen-streaming-embed.expand {
+                  \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}
+                  border: 0;
+                  border-radius: 8px;
+                }
+                #heygen-streaming-container {
+                  width: 100%;
+                  height: 100%;
+                }
+                #heygen-streaming-container iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                }
+              \`;
+              const iframe=document.createElement("iframe");
+              iframe.allowFullscreen=!1;
+              iframe.title="Streaming Embed";
+              iframe.role="dialog";
+              iframe.allow="microphone";
+              iframe.src=url;
+              let visible=!1,initial=!1;
+              window.addEventListener("message",(e=>{
+                e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
+                  "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
+                  "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
+                  "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
+                )
+              }));
+              container.appendChild(iframe);
+              wrapDiv.appendChild(stylesheet);
+              wrapDiv.appendChild(container);
+              document.body.appendChild(wrapDiv);
+            }(globalThis);
+          `
+        }}
+      />
+
+      {/* WhatsApp Floating Button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <a
+          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          aria-label="Falar no WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6" />
+          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Fale no WhatsApp
+          </span>
+        </a>
+      </div>
     </div>;
 };
 
