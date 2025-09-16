@@ -624,4 +624,157 @@ const LandingPage = () => {
               price: "Fee de Preparação e Análise + Comissão no Sucesso",
               description: "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
               features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
-              cta: "Quero Blin
+              cta: "Quero Blindar Minha Compra",
+              popular: true
+            }, {
+              name: "Curadoria Premium",
+              subtitle: "Serviço Completo",
+              price: "Fee de Preparação + Comissão no Sucesso",
+              description: "Serviço completo de Personal Shopper Imobiliário. Do mapeamento até as chaves na mão. Máxima economia e segurança total.",
+              features: ["Mapeamento completo do seu DNA imobiliário", "Curadoria inteligente de imóveis", "Análise de valor real com dados exclusivos", "Negociação blindada profissional", "Fechamento protegido com segurança jurídica"],
+              cta: "Quero o Serviço Completo",
+              popular: false
+            }].map((plan, index) => (
+                <Card key={index} className={`border-0 shadow-luxury ${plan.popular ? 'ring-2 ring-luxury-gold' : ''}`}>
+                  <CardContent className="p-8 text-center">
+                    {plan.popular && (
+                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/10 mb-4">
+                        Mais Popular
+                      </Badge>
+                    )}
+                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                    <p className="text-luxury-gold font-semibold mb-4">{plan.subtitle}</p>
+                    <p className="text-3xl font-bold mb-4">{plan.price}</p>
+                    <p className="text-white/80 mb-6">{plan.description}</p>
+                    
+                    <ul className="text-left space-y-3 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start space-x-3">
+                          <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                          <span className="text-white/90 text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Button variant="gold" className="w-full">
+                      {plan.cta}
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantees Section */}
+      <section id="garantias" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              Suas <span className="text-luxury-gold">Garantias</span> de Proteção Total
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="border-0 shadow-luxury">
+                <CardContent className="p-8 text-center">
+                  <Shield className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-4 text-foreground">Garantia de Economia</h3>
+                  <p className="text-muted-foreground">Se não conseguirmos economia mínima de 5% do valor negociado, você não paga nossa comissão.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-luxury">
+                <CardContent className="p-8 text-center">
+                  <CheckCircle className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-4 text-foreground">Garantia de Satisfação</h3>
+                  <p className="text-muted-foreground">30 dias para avaliar nosso trabalho. Se não ficar satisfeito, devolvemos 100% do investimento.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-luxury-navy">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-xl text-luxury-text-muted">
+                Esclarecemos suas principais dúvidas sobre o Personal Shopper Imobiliário
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "Como funciona a remuneração?",
+                  answer: "Trabalhamos com uma taxa de sucesso baseada na economia gerada. Quanto maior o desconto conseguido, maior nossa remuneração. Se não conseguirmos economia mínima de 5%, você não paga."
+                },
+                {
+                  question: "Vocês trabalham apenas na Barra da Tijuca?",
+                  answer: "Sim, nossa especialização é focada na Barra da Tijuca e região adjacente. Isso nos permite ter conhecimento profundo do mercado local e acesso às melhores oportunidades."
+                },
+                {
+                  question: "Quanto tempo demora o processo?",
+                  answer: "Depende da complexidade dos critérios e disponibilidade de imóveis. Em média, entre 30 a 90 dias desde a contratação até a entrega das chaves."
+                }
+              ].map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border border-luxury-gold/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-left hover:text-luxury-gold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-luxury-text-muted">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contato" className="py-20 bg-luxury-navy text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Pronto para Comprar <span className="text-luxury-gold">Inteligente</span>?
+            </h2>
+            
+            <p className="text-xl mb-12 text-white/90">
+              Agende uma conversa estratégica gratuita e descubra como economizar centenas de milhares de reais na sua próxima compra.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="bg-white/5 border-white/10">
+                <CardContent className="p-8 text-center">
+                  <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Telefone</h3>
+                  <p className="text-white/80">(21) 4040-0067</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/5 border-white/10">
+                <CardContent className="p-8 text-center">
+                  <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+                  <p className="text-white/80">(21) 99725-0515</p>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <Button variant="gold" size="xl">
+              Agendar Conversa Estratégica Gratuita
+              <ArrowRight className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      
