@@ -21,20 +21,6 @@ const LandingPage = () => {
     );
   };
 
-  // Add HeyGen script to document
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rMl9w%0D%0AdWJsaWMiLCJwcmV2aWV3SW1nIjoiaHR0cHM6Ly9maWxlczIuaGV5Z2VuLmFpL2F2YXRhci92My9k%0D%0ANTJmZmExYjQ0N2Q0ZjJmOGViMTY5MTdlN2VjMjIyYV81NTg3MC9wcmV2aWV3X3RhbGtfMS53ZWJw%0D%0AIiwibmVlZFJlbW92ZUJhY2tncm91bmQiOnRydWUsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYy%0D%0AZGQ4ZjRkYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4%0D%0AMjViN2MzMmVkYTA3MSJ9&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`\\n  #heygen-streaming-embed {\\n    z-index: 9999;\\n    position: fixed;\\n    left: 40px;\\n    bottom: 40px;\\n    width: 200px;\\n    height: 200px;\\n    border-radius: 50%;\\n    border: 2px solid #fff;\\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\\n    transition: all linear 0.1s;\\n    overflow: hidden;\\n\\n    opacity: 0;\\n    visibility: hidden;\\n  }\\n  #heygen-streaming-embed.show {\\n    opacity: 1;\\n    visibility: visible;\\n  }\\n  #heygen-streaming-embed.expand {\\n    \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\\n    border: 0;\\n    border-radius: 8px;\\n  }\\n  #heygen-streaming-container {\\n    width: 100%;\\n    height: 100%;\\n  }\\n  #heygen-streaming-container iframe {\\n    width: 100%;\\n    height: 100%;\\n    border: 0;\\n  }\\n  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
-    document.body.appendChild(script);
-    
-    return () => {
-      // Cleanup function to remove script when component unmounts
-      const heygenEmbed = document.getElementById('heygen-streaming-embed');
-      if (heygenEmbed) {
-        heygenEmbed.remove();
-      }
-    };
-  }, []);
 
   return <div className="min-h-screen bg-background">
       {/* Header */}
@@ -150,6 +136,35 @@ const LandingPage = () => {
         </div>
       </header>
 
+      {/* Duplicated Header Content with Less Spacing */}
+      <div className="bg-white border-b border-gray-200 py-2">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/Logotipo Principal.png" 
+                alt="Marcus Godoy Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-lg font-semibold text-luxury-navy">
+                Marcus Godoy
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#servicos" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Serviços
+              </a>
+              <a href="#como-funciona" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Como Funciona
+              </a>
+              <a href="#contato" className="text-sm text-gray-600 hover:text-luxury-gold transition-colors">
+                Contato
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
@@ -190,19 +205,32 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-              Por Que Você Paga <span className="text-luxury-gold">Milhares de Reais</span> a Mais Sem Saber?
+              Por Que Muitos Compradores Pagam <span className="text-luxury-gold">Milhares de Reais</span> a Mais e só Descobrem Depois?
             </h2>
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                <strong>Verdades Inconvenientes</strong> Reflita sobre uma realidade que ninguém comenta no mercado imobiliário, mas que agora você tem opção.
+                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
               </p>
               
-              <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-                A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
-                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.</strong> Elas ganham mais dinheiro quando você paga mais caro. 
-                Podem até dizer que estão lutando por você, mas o objetivo real é vender pelo maior preço possível. <strong>Simples Assim!</strong> É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você. Será?
-              </p> 
+              <div className="space-y-4 md:space-y-6 mb-8">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo 
+                  Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  Elas ganham mais dinheiro quando você paga mais caro. <strong className="text-luxury-gold font-bold">Simples Assim!</strong>
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                  É como você contratar o Advogado da outra parte para te defender e acreditar que ele vai ganhar a causa pra você.
+                </p>
+                
+                <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium">
+                  Será?
+                </p>
+              </div>
               
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
                 <p className="text-lg font-semibold text-luxury-navy">
@@ -226,10 +254,10 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
-                Personal Shopper Imobiliário: <span className="text-luxury-gold">Representação 100% Sua</span>
+                Personal Shopper Imobiliário <span className="text-luxury-gold">Representação 100% Sua</span>
               </h2>
               <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
-                Existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
+                Só existe apenas uma maneira de ter a certeza que está fazendo a melhor negociação possível. Fuja da Intermediação e busque a Representação.
               </p>
             </div>
 
@@ -275,174 +303,11 @@ const LandingPage = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {[{
-              icon: Users,
-              title: "Executivos e Empresários",
-              description: "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de Alto Padrão na região da Barra da Tijuca."
-            }, {
-              icon: TrendingUp,
-              title: "Investidores Experientes",
-              description: "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa."
-            }, {
-              icon: Award,
-              title: "Famílias em Busca de Conforto e Segurança",
-              description: "Que priorizam bem-estar, tranquilidade, conforto e segurança total para sua família."
-            }, {
-              icon: Award,
-              title: "Celebridades e Influenciadores",
-              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
-            }].map((persona, index) =>
-                <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
-                  <CardContent className="p-8 text-center">
-                    <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                      <persona.icon className="h-8 w-8 text-luxury-navy" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-foreground">{persona.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{persona.description}</p>
-                  </CardContent>
-                </Card>)}
             </div>
           </div>
         </div>
       </section>
+    </div>;
+};
 
-      {/* Value Proposition Section */}
-      <section id="servicos" className="py-20 bg-luxury-navy text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Por Que o Personal Shopper Imobiliário É 
-                <span className="text-luxury-gold"> Sua Melhor Escolha</span> na Barra?
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{
-              icon: Calculator,
-              title: "Economia Real Garantida",
-              description: "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 100 mil e R$ 500 mil por transação.",
-              highlight: "R$ 100-500k economizados"
-            }, {
-              icon: Clock,
-              title: "Tempo Precioso Protegido",
-              description: "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder horas com visitas improdutivas.",
-              highlight: "40+ horas poupadas"
-            }, {
-              icon: Key,
-              title: "Acesso aos Melhores Negócios",
-              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes disponíveis na região e sem precisar falar com dezenas de Imobiliárias e Corretores.",
-              highlight: "Ofertas exclusivas e Economia de tempo"
-            }, {
-              icon: Shield,
-              title: "Representação 100% Sua",
-              description: "Marcus ganha apenas quando você economiza dinheiro. É o único profissional da Barra que trabalha exclusivamente para o comprador.",
-              highlight: "Zero conflito"
-            }].map((benefit, index) => <Card 
-                key={index} 
-                className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                onClick={() => toggleCardHighlight(index)}
-              >
-                  <CardContent className="p-6 text-center">
-                    <div className="bg-luxury-gold rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                      <benefit.icon className="h-6 w-6 text-luxury-navy" />
-                    </div>
-                    <Badge variant="outline" className="border-luxury-gold text-luxury-gold mb-3">
-                      {benefit.highlight}
-                    </Badge>
-                    <h3 className={cn(
-                      "text-lg font-bold mb-3 transition-colors duration-300",
-                      highlightedCards.includes(index) ? 'text-luxury-gold' : 'text-white'
-                    )}>
-                      {benefit.title}
-                    </h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{benefit.description}</p>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section id="depoimentos" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Veja Como Outros Compradores <span className="text-luxury-gold">Protegeram Seu Patrimônio</span>
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Não confie apenas em nossas palavras. Veja o que quem já comprou diz:
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {[{
-              quote: "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
-              author: "Roberto Silva",
-              role: "Empresário do Setor Financeiro",
-              savings: "R$ 320.000"
-            }, {
-              quote: "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
-              author: "Ana Carolina",
-              role: "Executiva de Multinacional",
-              savings: "R$ 450.000"
-            }].map((testimonial, index) => <Card key={index} className="border-0 shadow-luxury">
-                  <CardContent className="p-8">
-                    <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />)}
-                    </div>
-                    
-                    <blockquote className="text-lg text-foreground mb-6 italic leading-relaxed">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-semibold text-foreground">{testimonial.author}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5">
-                        Economizou {testimonial.savings}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Origin Story Section */}
-      <section id="sobre" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
-                O Momento da Virada <span className="text-luxury-gold">Descobri Um Novo Caminho</span> na Compra de Imóveis de Alto Padrão
-              </h2>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
-              <div className="prose prose-lg max-w-none text-luxury-navy">
-                <p className="text-lg leading-relaxed mb-6">
-                  Minha jornada começou com experiências pessoais e profissionais frustrantes. Senti na pele, tanto como comprador quanto como Corretor, as dores e ineficiências do processo tradicional de Compra e Venda de Imóveis de Alto Padrão.
-                </p>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: limitações de estrutura e remuneração impediam o apoio ideal ao cliente. Percebi a sobrecarga de informações, a falta de transparência e a baixa prioridade aos interesses do comprador.
-                </p>
-                
-                <p className="text-lg leading-relaxed mb-6">
-                  Com minha bagagem profissional em Telecomunicações e Internet, sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
-                </p>
-                
-                <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
-                  <p className="text-lg font-semibold text-luxury-navy italic">
-                    Percebi que a realidade era de sobrecarga de informações, falta de transparência e a sensação de que os interesses do comprador nem sempre eram prioridade
-                  </p>
-                </div>
-                
-               <p className="text-lg leading-relaxed mb-6">
-                  Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e a
+export default LandingPage;
