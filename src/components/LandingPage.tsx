@@ -470,7 +470,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Veja Como Outros Compradores <span className="text-luxury-gold">Protegeram Seu Patrimônio</span>
+                Ouça Quem Já <span className="text-luxury-gold">Protegeu Seu Patrimônio</span>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Não confie apenas em nossas palavras. Veja o que quem já comprou diz:
