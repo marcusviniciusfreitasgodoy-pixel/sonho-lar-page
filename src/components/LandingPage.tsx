@@ -473,7 +473,7 @@ const LandingPage = () => {
                 Ouça Quem Já <span className="text-luxury-gold">Protegeu Seu Patrimônio</span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                Não confie apenas em nossas palavras. Veja o que quem já comprou diz:
+                Veja o que quem já comprou diz:
               </p>
             </div>
 
