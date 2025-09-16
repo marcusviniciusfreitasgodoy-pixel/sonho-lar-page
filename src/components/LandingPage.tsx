@@ -13,11 +13,6 @@ const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  useEffect(() => {
-    // Placeholder to prevent transpilation issues
-    console.log("Component mounted");
-  }, []);
-  
   const toggleCardHighlight = (cardIndex: number) => {
     setHighlightedCards(prev => 
       prev.includes(cardIndex) 
@@ -189,6 +184,7 @@ const LandingPage = () => {
             </h1>
             
             <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
+             </h1>
           
             <p className="text-xl md:text-2xl mb-8 mt-16 text-white/90 max-w-4xl mx-auto">
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
