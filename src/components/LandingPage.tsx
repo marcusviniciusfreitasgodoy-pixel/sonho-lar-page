@@ -204,9 +204,12 @@ const LandingPage = () => {
               O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele só ganha se você economizar.
             </p>
             
-            <Button variant="gold" size="xl" className="mb-4">
+            <Button 
+              variant="gold" 
+              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105"
+            >
               Desbloquear minha Consultoria Exclusiva
-              <ArrowRight className="ml-2" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <p className="text-sm text-white/80">
