@@ -599,3 +599,27 @@ const LandingPage = () => {
               title: "Fechamento Protegido",
               description: "Coordenamos e Acompnhamos a preparação dos Contratos e processos, avaliamos toda documentação e cuidamos da validação técnica. Você recebe as chaves com total segurança e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
             }].map((step, index) => <div key={index} className="flex
+                items-start space-x-6 bg-card rounded-2xl p-8 shadow-sm hover:shadow-luxury transition-all duration-300"
+              >
+                <div className="bg-gradient-gold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <step.icon className="h-6 w-6 text-luxury-navy" />
+                </div>
+                <div>
+                  <div className="flex items-center space-x-4 mb-4">
+                    <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5 font-bold">
+                      {step.step}
+                    </Badge>
+                    <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default LandingPage;
