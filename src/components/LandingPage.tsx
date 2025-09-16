@@ -166,7 +166,6 @@ const LandingPage = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Descubra O Segredo dos Compradores Inteligentes
-              <span className="text-luxury-gold text-4xl md:text-5xl"> Compre o Imóvel Que Você Quer e Pelo Preço Justo</span>
               <span className="text-luxury-gold text-4xl md:text-5xl">
                 Compre o Imóvel Que Você Quer e
               </span>
