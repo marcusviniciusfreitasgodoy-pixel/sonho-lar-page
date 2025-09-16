@@ -540,7 +540,7 @@ const LandingPage = () => {
                 
                 <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
                   <p className="text-lg font-semibold text-luxury-navy italic">
-                    Percebi que a realidade era de sobrecarga de informações, falta de transparência e a sensação de que os interesses do comprador nem sempre eram prioridade
+                    
                   </p>
                 </div>
                 
