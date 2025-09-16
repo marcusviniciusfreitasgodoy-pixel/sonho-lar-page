@@ -369,11 +369,9 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
-              Por Que o Personal Shopper Imobiliário É Sua 
-              <span className="text-luxury-gold"> Melhor Escolha</span> na Barra?
+              <span className="text-luxury-gold">Não cometa os mesmos erros de outros</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Não cometa os mesmos erros que os outros compradores.
               Tentar encontrar o seu imóvel perfeito da maneira tradicional e antiga, frequentemente, 
               resulta em perda de tempo, dinheiro e frustração.
             </p>
