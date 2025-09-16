@@ -300,7 +300,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Para Quem É
+                É Para Quem?
               </h2>
               <p className="text-xl text-muted-foreground">
                 Criado especialmente para compradores exigentes de alto padrão, que buscam Segurança e Tranquilidade na sua compra.
