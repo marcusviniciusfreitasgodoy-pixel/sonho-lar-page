@@ -640,7 +640,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
               </h2>
               <p className="text-xl text-white/80">
-                Escolha o nível de blindagem e suporte que sua busca imobiliária merece. Serviços indicados apenas para imóveis à partir de R$ 1.000.000,00 na região da Barra da Tijuca.
+                Na Godoy Prime Realty, entendemos que adquirir um imóvel de Alto Padrão é mais que uma transação; é a materialização de um sonho, um investimento estratégico e a busca por um estilo de vida. Por isso, oferecemos serviços desenhados para suas necessidades, garantindo segurança, exclusividade e retorno. Escolha o nível de blindagem e suporte que sua busca imobiliária merece. Serviços indicados apenas para imóveis à partir de R$ 1.000.000,00 na região da Barra da Tijuca.
               </p>
             </div>
 
