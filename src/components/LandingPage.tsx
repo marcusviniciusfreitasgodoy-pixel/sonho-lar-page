@@ -629,7 +629,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
-                Últimas 2 Vagas Disponíveis
+                Últimas Vagas Disponíveis
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
@@ -643,7 +643,7 @@ const LandingPage = () => {
               {[{
               name: "Parecer Godoy Prime",
               subtitle: "Atestado de Valor",
-              price: "À partir de R$ 5.000",
+              price: "À partir de R$ 5.000,00",
               description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas. Transforme incerteza em convicção. Sua decisão será segura e inteligente, para um investimento sólido e sem surpresas.",
               features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo (m² e preço máximo recomendado).", "Pack de Conhecimento exclusivo"],
               cta: "Quero Meu Parecer",
