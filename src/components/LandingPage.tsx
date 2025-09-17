@@ -560,4 +560,15 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 </div>
                 
                <p className="text-lg leading-relaxed mb-6">
-                  Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e decidi criar a Godoy Prime
+                  Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e decidi criar a Godoy Prime Realty, focada exclusivamente em representar compradores de imóveis de alto padrão na Barra da Tijuca.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default LandingPage;
