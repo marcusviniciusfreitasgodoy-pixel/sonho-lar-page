@@ -306,13 +306,4 @@ const LandingPage = () => {
               </div>
               
               <div className="animate-float">
-                <img src={marcusProfile} alt="Marcus Godoy" className="rounded-2xl shadow-luxury w-full max-w-md mx-auto" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>;
-};
-
-export default LandingPage;
+                <img src={marcusProfile
