@@ -189,7 +189,12 @@ const LandingPage = () => {
         
         <div className="relative z-10 container mx-auto px-6 text-center text-white">
           <div className="animate-fade-in">
-            <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold bg-white/10">
+            <Button 
+              variant="gold" 
+              size="xl" 
+              className="mb-4 shadow-gold" 
+              onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}
+            >
               Personal Shopper Imobiliário
             </Badge>
             
