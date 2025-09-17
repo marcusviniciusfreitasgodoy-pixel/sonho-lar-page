@@ -710,7 +710,7 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-luxury-navy">
-                Sua Compra de Imóvel na Barra da Tijuca: Confiança Contratada, Economia Garantida.
+                Sua Compra de Imóvel na região da Barra da Tijuca: Confiança Contratada, Economia Garantida.
               </h2>
               
               <p className="text-xl text-luxury-gold font-semibold mb-6">
@@ -733,7 +733,7 @@ const LandingPage = () => {
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Foco Exclusivo no SEU Interesse:</strong>
-                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas, incluindo imóveis off-market. Minha lealdade é única com você, o comprador.</span>
+                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas. Minha lealdade é única com você, o comprador.</span>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
