@@ -556,7 +556,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                   Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e decidi criar a Godoy Prime Realty.
                </p>
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
-                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                  <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador. Na Godoy Prime Realty, entendemos que adquirir um imóvel de luxo na Barra é mais que uma transação; é a materialização de um sonho, um investimento estratégico e a busca por um estilo de vida. Por isso, oferecemos serviços desenhados para suas necessidades, garantindo segurança, exclusividade e retorno </p>
                 </div>
               </div>
             </div>
