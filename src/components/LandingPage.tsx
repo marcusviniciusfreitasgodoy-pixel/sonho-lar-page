@@ -206,10 +206,17 @@ const LandingPage = () => {
             
             <Button 
               variant="gold" 
-              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105"
+              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group"
+              asChild
             >
-              Desbloquear minha Consultoria Exclusiva
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <a
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Desbloquear minha Consultoria Exclusiva
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             
             <p className="text-sm text-white/80">
