@@ -807,6 +807,58 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
         </div>
       </section>
 
+      {/* Visão de Futuro Section */}
+      <section className="py-20 bg-gradient-to-br from-luxury-navy to-luxury-navy-light">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
+              VISÃO DE FUTURO
+            </h2>
+            <h3 className="text-2xl md:text-3xl font-semibold text-luxury-gold mb-12 text-center">
+              Seu Futuro na Barra: Uma Conquista, Não uma Busca Sem Fim.
+            </h3>
+            
+            <div className="space-y-8 text-white">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/30">
+                <p className="text-lg leading-relaxed mb-6">
+                  <strong>Imagine:</strong> em doze meses, você não busca mais. Você desfruta de sua residência de alto padrão na Barra. É o auge de uma compra estratégica e sem estresse.
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  A paisagem exclusiva é um lembrete de sua decisão inteligente. Amigos, admirados, perguntam como sua escolha foi fácil e precisa. Você sorri, sabendo que Marcus Godoy estava ao seu lado.
+                </p>
+              </div>
+              
+              <div className="bg-red-900/20 backdrop-blur-sm rounded-xl p-8 border border-red-400/30">
+                <p className="text-lg leading-relaxed mb-6">
+                  Em contraste, quem segue no processo Tradicional continua em visitas inúteis, negociações ruins e problemas pós-compra.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Sem a blindagem que você teve, sem acesso a ofertas ocultas, sem um defensor leal, o custo é enorme.
+                </p>
+              </div>
+              
+              <div className="bg-luxury-gold/20 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/50">
+                <p className="text-lg leading-relaxed mb-6">
+                  Ao invés de descobrir que pagou mais caro, seu imóvel é um ativo que já valorizou e a economia que teve na hora da compra, são a prova de uma parceria que vai além.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/30">
+                <p className="text-xl font-semibold text-luxury-gold mb-4">
+                  O Ponto de Virada É Agora:
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  Ficar parado no mercado de luxo é perder. Boas ofertas são rápidas. Sem um representante exclusivo, o risco é alto.
+                </p>
+                <p className="text-xl font-bold text-luxury-gold text-center">
+                  Onde você estará em um ano? Desfrutando de seu imóvel perfeito, ou ainda no mar de incertezas?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-background">
         <div className="container mx-auto px-6">
