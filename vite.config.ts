@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [react()],
+  plugins: [react({ jsx: 'automatic' })],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
