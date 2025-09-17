@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
-import { ArrowRight, Building2, MapPin, DollarSign, Users, Clock, CheckCircle, TrendingUp, Shield, Award, Phone, Mail, MessageCircle } from 'lucide-react';
+import marcusProfile from "@/assets/721A9271.jpg";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
@@ -207,15 +207,9 @@ const LandingPage = () => {
             <Button 
               variant="gold" 
               className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105"
-            <Button asChild variant="gold" size="xl" className="mb-4 shadow-gold">
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Desbloquear minha Consultoria Exclusiva
-                <ArrowRight className="ml-2" />
-              </a>
+            >
+              Desbloquear minha Consultoria Exclusiva
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <p className="text-sm text-white/80">
