@@ -306,4 +306,348 @@ const LandingPage = () => {
               </div>
               
               <div className="animate-float">
-                <img src={marcusProfile
+                <img 
+                  src={marcusProfile} 
+                  alt="Marcus Godoy - Personal Shopper Imobiliário" 
+                  className="w-full max-w-md mx-auto rounded-2xl shadow-luxury"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="servicos" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              Como Funciona o <span className="text-luxury-gold">Personal Shopper Imobiliário</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Um processo estruturado para garantir que você faça a melhor negociação possível
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                icon: Search,
+                title: "Análise de Mercado",
+                description: "Levantamento completo de dados de vendas, análise de preços praticados e tendências da região."
+              },
+              {
+                icon: Target,
+                title: "Busca Estratégica", 
+                description: "Acesso exclusivo a imóveis off-market e oportunidades que não chegam aos portais tradicionais."
+              },
+              {
+                icon: Calculator,
+                title: "Negociação Inteligente",
+                description: "Representação 100% sua com estratégias baseadas em dados reais de mercado."
+              }
+            ].map((service, index) => (
+              <Card key={index} className="text-center p-8 hover:shadow-luxury transition-all duration-300 hover:scale-105 border-luxury-gold/20">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-luxury-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <service.icon className="h-8 w-8 text-luxury-gold" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Marcus Section */}
+      <section id="sobre" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
+                  Sobre <span className="text-luxury-gold">Marcus Godoy</span>
+                </h2>
+                
+                <div className="space-y-6 text-lg text-luxury-navy">
+                  <p>
+                    Especialista em mercado imobiliário da Barra da Tijuca com mais de 15 anos de experiência. 
+                    Marcus desenvolveu uma metodologia única para representar exclusivamente compradores de imóveis de alto padrão.
+                  </p>
+                  
+                  <p>
+                    Criador do primeiro serviço de Personal Shopper Imobiliário do Brasil, com foco em transparência total 
+                    e representação sem conflito de interesses.
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-6 py-6">
+                    {[
+                      { number: "500+", label: "Imóveis Analisados" },
+                      { number: "R$ 50M+", label: "Em Negociações" },
+                      { number: "15+", label: "Anos de Experiência" },
+                      { number: "98%", label: "Satisfação dos Clientes" }
+                    ].map((stat, index) => (
+                      <div key={index} className="text-center">
+                        <div className="text-3xl font-bold text-luxury-gold">{stat.number}</div>
+                        <div className="text-sm text-luxury-text-muted">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="animate-float">
+                <img 
+                  src={marcusProfile} 
+                  alt="Marcus Godoy - Personal Shopper Imobiliário" 
+                  className="w-full max-w-md mx-auto rounded-2xl shadow-luxury"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Method Section */}
+      <section id="metodo" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              O Método <span className="text-luxury-gold">Godoy Prime</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Uma abordagem científica e sistemática para compra de imóveis de alto padrão
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              {[
+                {
+                  step: "01",
+                  title: "Análise de Perfil e Necessidades",
+                  description: "Entendimento profundo dos seus objetivos, orçamento e critérios específicos para o imóvel ideal."
+                },
+                {
+                  step: "02", 
+                  title: "Inteligência de Mercado",
+                  description: "Coleta e análise de dados exclusivos de transações, precificação e tendências da Barra da Tijuca."
+                },
+                {
+                  step: "03",
+                  title: "Busca Estratégica",
+                  description: "Acesso a oportunidades off-market e prospecção ativa junto a investidores e proprietários."
+                },
+                {
+                  step: "04",
+                  title: "Due Diligence Completa",
+                  description: "Análise jurídica, técnica e de valorização para garantir segurança total na aquisição."
+                },
+                {
+                  step: "05",
+                  title: "Negociação Baseada em Dados",
+                  description: "Estratégias de negociação fundamentadas em informações reais de mercado para maximizar sua economia."
+                }
+              ].map((item, index) => (
+                <Card key={index} className="p-8 border-luxury-gold/20 hover:shadow-luxury transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="flex items-start space-x-6">
+                      <div className="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl font-bold text-luxury-navy">{item.step}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-3 text-foreground">{item.title}</h3>
+                        <p className="text-muted-foreground text-lg">{item.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantees Section */}
+      <section id="garantias" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
+              Nossas <span className="text-luxury-gold">Garantias</span>
+            </h2>
+            <p className="text-xl text-luxury-text-muted max-w-3xl mx-auto">
+              Compromissos que assumimos com cada cliente para garantir resultados excepcionais
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: "Representação Exclusiva",
+                description: "100% dedicado aos seus interesses, sem conflitos com vendedores ou construtoras."
+              },
+              {
+                icon: Clock,
+                title: "Transparência Total",
+                description: "Acesso completo a todos os dados, análises e estratégias utilizadas no processo."
+              },
+              {
+                icon: Key,
+                title: "Economia Garantida",
+                description: "Se não economizar pelo menos o valor investido na consultoria, devolvemos 100% do valor pago."
+              },
+              {
+                icon: Users,
+                title: "Suporte Especializado",
+                description: "Acompanhamento completo desde a busca até a escrituração do imóvel."
+              },
+              {
+                icon: TrendingUp,
+                title: "Análise de Valorização",
+                description: "Estudo detalhado do potencial de valorização a médio e longo prazo."
+              },
+              {
+                icon: Award,
+                title: "Satisfação Garantida",
+                description: "Compromisso com a excelência e satisfação total do cliente em cada etapa."
+              }
+            ].map((guarantee, index) => (
+              <Card 
+                key={index} 
+                className={cn(
+                  "text-center p-8 hover:shadow-luxury transition-all duration-300 cursor-pointer border-2",
+                  highlightedCards.includes(index) 
+                    ? "border-luxury-gold bg-white scale-105" 
+                    : "border-luxury-gold/20 hover:border-luxury-gold/40"
+                )}
+                onClick={() => toggleCardHighlight(index)}
+              >
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-luxury-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <guarantee.icon className="h-8 w-8 text-luxury-gold" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-luxury-navy">{guarantee.title}</h3>
+                  <p className="text-luxury-text-muted">{guarantee.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+              Perguntas <span className="text-luxury-gold">Frequentes</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Esclarecemos as principais dúvidas sobre o serviço de Personal Shopper Imobiliário
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "Como funciona o pagamento do Personal Shopper Imobiliário?",
+                  answer: "O pagamento é feito apenas quando você economizar dinheiro na negociação. Nossa remuneração representa uma porcentagem da economia gerada, garantindo total alinhamento de interesses."
+                },
+                {
+                  question: "Qual é a diferença entre Personal Shopper e Corretor tradicional?",
+                  answer: "O corretor tradicional trabalha para o vendedor e ganha mais quando você paga mais caro. O Personal Shopper trabalha exclusivamente para você e só ganha quando você economiza dinheiro."
+                },
+                {
+                  question: "Vocês têm acesso a imóveis que não estão nos portais?",
+                  answer: "Sim, através da nossa rede de relacionamentos temos acesso a oportunidades off-market, imóveis em pré-lançamento e negociações diretas com investidores."
+                },
+                {
+                  question: "Quanto posso economizar utilizando este serviço?",
+                  answer: "Na Barra da Tijuca, nossos clientes economizam em média entre R$ 200 mil e R$ 500 mil em imóveis de alto padrão, através de negociações mais eficientes e acesso a melhores oportunidades."
+                },
+                {
+                  question: "O serviço é adequado para qualquer faixa de preço?",
+                  answer: "Nosso foco são imóveis de alto padrão na Barra da Tijuca, geralmente acima de R$ 2 milhões, onde nossa experiência e network proporcionam maior valor agregado."
+                },
+                {
+                  question: "Quanto tempo demora o processo de busca?",
+                  answer: "O tempo varia conforme a especificidade dos critérios, mas geralmente apresentamos as primeiras oportunidades em 15 dias e fechamos negociações em 60-90 dias."
+                }
+              ].map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border border-luxury-gold/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-luxury-gold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pt-4 pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contato" className="py-20 bg-luxury-navy text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Pronto Para <span className="text-luxury-gold">Economizar Centenas de Milhares</span>?
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Agende uma consultoria exclusiva e descubra como comprar o imóvel dos seus sonhos pelo preço justo
+            </p>
+            
+            <Button 
+              variant="gold" 
+              className="h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 mb-8"
+            >
+              Garantir Minha Vaga Agora
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-white/10 border-luxury-gold/30 text-center p-6">
+              <CardContent className="pt-6">
+                <Phone className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Telefone</h3>
+                <p className="text-white/80">(21) 4040-0067</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-luxury-gold/30 text-center p-6">
+              <CardContent className="pt-6">
+                <MessageCircle className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+                <p className="text-white/80">(21) 99725-0515</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-luxury-gold/30 text-center p-6">
+              <CardContent className="pt-6">
+                <MapPin className="h-8 w-8 text-luxury-gold mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Localização</h3>
+                <p className="text-white/80">Barra da Tijuca, RJ</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-luxury-navy-light text-white/60 text-center">
+        <div className="container mx-auto px-6">
+          <p>&copy; 2024 Marcus Godoy - Personal Shopper Imobiliário. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
