@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react()],
   plugins: [react({ jsx: 'automatic' })],
   resolve: {
     alias: {
