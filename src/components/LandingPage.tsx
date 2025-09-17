@@ -811,43 +811,43 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
       <section className="py-20 bg-gradient-to-br from-luxury-navy to-luxury-navy-light">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-luxury-gold to-luxury-gold-light bg-clip-text text-transparent">
               VISÃO DE FUTURO
             </h2>
-            <h3 className="text-2xl md:text-3xl font-semibold text-luxury-gold mb-12 text-center">
-              Seu Futuro na Barra: Uma Conquista, Não uma Busca Sem Fim.
-            </h3>
             
-            <div className="space-y-8 text-white">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/30">
-                <p className="text-lg leading-relaxed mb-6">
-                  <strong>Imagine:</strong> em doze meses, você não busca mais. Você desfruta de sua residência de alto padrão na Barra. É o auge de uma compra estratégica e sem estresse.
+            <div className="space-y-8 text-white text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold mb-6 text-luxury-gold text-center">
+                  Seu Futuro na Barra: Uma Conquista, Não uma Busca Sem Fim.
+                </h3>
+                <p className="text-lg leading-relaxed mb-6 text-center">
+                  Imagine: em doze meses, você não busca mais. Você desfruta de sua residência de alto padrão na Barra. É o auge de uma compra estratégica e sem estresse.
                 </p>
-                <p className="text-lg leading-relaxed mb-6">
+                <p className="text-lg leading-relaxed text-center">
                   A paisagem exclusiva é um lembrete de sua decisão inteligente. Amigos, admirados, perguntam como sua escolha foi fácil e precisa. Você sorri, sabendo que Marcus Godoy estava ao seu lado.
                 </p>
               </div>
               
-              <div className="bg-red-900/20 backdrop-blur-sm rounded-xl p-8 border border-red-400/30">
-                <p className="text-lg leading-relaxed mb-6">
+              <div className="bg-red-900/30 backdrop-blur-sm rounded-xl p-8 border border-red-500/50">
+                <p className="text-lg leading-relaxed mb-6 text-center">
                   Em contraste, quem segue no processo Tradicional continua em visitas inúteis, negociações ruins e problemas pós-compra.
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-center">
                   Sem a blindagem que você teve, sem acesso a ofertas ocultas, sem um defensor leal, o custo é enorme.
                 </p>
               </div>
               
               <div className="bg-luxury-gold/20 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/50">
-                <p className="text-lg leading-relaxed mb-6">
+                <p className="text-lg leading-relaxed font-medium text-center">
                   Ao invés de descobrir que pagou mais caro, seu imóvel é um ativo que já valorizou e a economia que teve na hora da compra, são a prova de uma parceria que vai além.
                 </p>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-luxury-gold/30">
-                <p className="text-xl font-semibold text-luxury-gold mb-4">
-                  O Ponto de Virada É Agora:
-                </p>
-                <p className="text-lg leading-relaxed mb-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold mb-4 text-luxury-gold text-center">
+                  O Ponto de Virada É Agora
+                </h3>
+                <p className="text-lg leading-relaxed mb-4 text-center">
                   Ficar parado no mercado de luxo é perder. Boas ofertas são rápidas. Sem um representante exclusivo, o risco é alto.
                 </p>
                 <p className="text-xl font-bold text-luxury-gold text-center">
@@ -1314,16 +1314,4 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
           href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          aria-label="Falar no WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6" />
-          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Fale no WhatsApp
-          </span>
-        </a>
-      </div>
-    </div>;
-};
-
-export default LandingPage;
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex
