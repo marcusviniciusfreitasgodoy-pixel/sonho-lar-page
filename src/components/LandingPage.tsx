@@ -244,6 +244,15 @@ const LandingPage = () => {
                 Na Barra da Tijuca, onde apartamentos custam entre <strong>R$ 2 a 8 milhões</strong>, essa diferença pode representar uma economia de <strong>R$ 200 mil a R$ 500 mil</strong> para você. É exatamente por isso que criei o serviço de Personal Shopper Imobiliário.
               </p>
               
+              <div className="mb-8">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  Você sabe o que o Corretor faz quando ele não tem o imóvel que você quer?
+                </h3>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  A Imobiliária que te mostra o imóvel não trabalha para você. Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e vender pelo preço mais caro possível.
+                </p>
+              </div>
+              
               <div className="bg-luxury-cream border border-luxury-gold/20 rounded-xl p-6 mb-8">
                 <p className="text-lg font-semibold text-luxury-navy">
                   Na Barra da Tijuca, em negociações com imóveis de Alto Padrão, essa diferença pode ser de <span className="text-luxury-gold">R$ 200 mil, 
