@@ -228,9 +228,6 @@ const LandingPage = () => {
             </h2>
             
             <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-luxury">
-              <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-                Você sabe o que o Corretor faz quando ele não tem o imóvel que você quer?
-              </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
                 <strong>Verdades Inconvenientes que ninguém te fala</strong> 
               </p>
