@@ -699,8 +699,19 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                         </li>)}
                     </ul>
                     
-                    <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg">
-                      {plan.cta}
+                    <Button 
+                      asChild
+                      variant={plan.popular ? "luxury" : "luxury-outline"} 
+                      className="w-full text-lg font-semibold animate-fade-in hover:scale-105 transition-transform duration-300" 
+                      size="lg"
+                    >
+                      <a 
+                        href="https://wa.me/5521976405124?text=Quero%20meu%20Parecer%20Godoy%20Prime"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {plan.cta}
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>)}
@@ -1243,87 +1254,4 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
           __html: `
             !function(window){
               const host="https://labs.heygen.com",
-                    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DYXN1YWxMb29rX3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzViMWRiN2Uy%0D%0AMDgwZjQxMDZhODViOTg3NDM3NDMwYTI0XzU1ODYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYyZGQ4ZjRk%0D%0AYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4MjViN2Mz%0D%0AMmVkYTA3MSJ9&inIFrame=1",
-                    clientWidth=document.body.clientWidth,
-                    wrapDiv=document.createElement("div");
-              wrapDiv.id="heygen-streaming-embed";
-              const container=document.createElement("div");
-              container.id="heygen-streaming-container";
-              const stylesheet=document.createElement("style");
-              stylesheet.innerHTML=\`
-                #heygen-streaming-embed {
-                  z-index: 9999;
-                  position: fixed;
-                  left: 40px;
-                  bottom: 40px;
-                  width: 200px;
-                  height: 200px;
-                  border-radius: 50%;
-                  border: 2px solid #fff;
-                  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
-                  transition: all linear 0.1s;
-                  overflow: hidden;
-                  opacity: 0;
-                  visibility: hidden;
-                }
-                #heygen-streaming-embed.show {
-                  opacity: 1;
-                  visibility: visible;
-                }
-                #heygen-streaming-embed.expand {
-                  \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}
-                  border: 0;
-                  border-radius: 8px;
-                }
-                #heygen-streaming-container {
-                  width: 100%;
-                  height: 100%;
-                }
-                #heygen-streaming-container iframe {
-                  width: 100%;
-                  height: 100%;
-                  border: 0;
-                }
-              \`;
-              const iframe=document.createElement("iframe");
-              iframe.allowFullscreen=!1;
-              iframe.title="Streaming Embed";
-              iframe.role="dialog";
-              iframe.allow="microphone";
-              iframe.src=url;
-              let visible=!1,initial=!1;
-              window.addEventListener("message",(e=>{
-                e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
-                  "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
-                  "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
-                  "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
-                )
-              }));
-              container.appendChild(iframe);
-              wrapDiv.appendChild(stylesheet);
-              wrapDiv.appendChild(container);
-              document.body.appendChild(wrapDiv);
-            }(globalThis);
-          `
-        }}
-      />
-
-      {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <a
-          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          aria-label="Falar no WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6" />
-          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Fale no WhatsApp
-          </span>
-        </a>
-      </div>
-    </div>;
-};
-
-export default LandingPage;
+                    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DYXN1YWxMb29rX3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzViMWRiN2Uy%0D%0AMDgwZjQxMDZhODViOTg3NDM3NDMwYTI0XzU1ODYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYyZGQ4ZjRk%0D%0AYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4MjViN2Mz%0D%0AMm
