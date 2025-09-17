@@ -534,11 +534,11 @@ const LandingPage = () => {
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Minha experiência no mercado imobiliário revelou uma realidade frustrante: A miopia comercial, a falta de transparência, a falta de visão de processos aliados a remuneração tradicional, praticamente impedem o apoio ideal ao Comprador, desequilibrando o segmento e privilegiando os Vendedores. 
+                  Minha atuação como Corretor no mercado imobiliário me revelou uma realidade frustrante: A miopia comercial, a falta de transparência, a falta de visão de processos aliados a remuneração tradicional, praticamente impedem o apoio ideal ao Comprador, desequilibrando o segmento e privilegiando os Vendedores. 
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
-                  Com minha experiência profissional de outros segmentos, percebi as oportunidades e sabia que uma abordagem mais sofisticada era possível. Esse inconformismo me levou a estudar modelos internacionais, vislumbrando um mercado imobiliário brasileiro com transações mais justas e equilibradas para você.
+                  Com minha experiência profissional de outros segmentos, percebi as oportunidades e vi que uma abordagem mais sofisticada é possível. Esse inconformismo me levou a estudar modelos internacionais, buscando oferecer soluções para o mercado imobiliário brasileiro que possibilitem uma visão mais moderna, com transações mais justas e equilibradas para o Comprador.
                 </p>
                 
                 <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
