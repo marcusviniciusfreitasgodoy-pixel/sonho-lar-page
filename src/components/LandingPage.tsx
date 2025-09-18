@@ -802,9 +802,10 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
               </p>
               
               <Button 
+                asChild
                 variant="gold" 
-                className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold"
-                onClick={() => window.open('https://wa.me/5521999999999', '_blank')}
+                size="lg" 
+                className="flex items-center gap-3 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
               >
                 Garantir Minha Vaga Agora
                 <ArrowRight className="h-5 w-5" />
@@ -1111,8 +1112,14 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button variant="gold" size="xl">
-                <Phone className="mr-2 h-5 w-5" />
-                (21) 96407-5124
+                <a 
+                  href="https://contate.me/5521964075124"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Phone className="w-6 h-6" />
+                  (21) 96407-5124
+                </a>
               </Button>
               <Button variant="luxury-outline" size="xl">
                 <Mail className="mr-2 h-5 w-5" />
