@@ -1122,10 +1122,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button variant="gold" size="xl">
-                <Phone className="mr-2 h-5 w-5" />
-                (21) 96407-5124
-              </Button>
+             
               <Button variant="luxury-outline" size="xl">
                 <Mail className="mr-2 h-5 w-5" />
                 marcus@godoyprime.com.br
