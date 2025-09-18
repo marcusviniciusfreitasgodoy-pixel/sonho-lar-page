@@ -1254,7 +1254,12 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 <a href="#" className="hover:text-luxury-gold transition-colors">
                   Política de Privacidade
                 </a>
-                <a href="#" className="hover:text-luxury-gold transition-colors">
+                <a 
+                  href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-luxury-gold transition-colors"
+                >
                   Termos de Uso
                 </a>
                 <a href="#" className="hover:text-luxury-gold transition-colors">
