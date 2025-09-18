@@ -570,7 +570,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                       variant="luxury" 
                       size="lg"
                       className="w-full sm:w-auto"
-                      onClick={() => window.open('https://calendly.com/marcusgodoy', '_blank')}
+                      onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario')}
                     >
                       Quero minha Consultoria Gratis
                     </Button>
