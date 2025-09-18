@@ -1137,7 +1137,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             </div>
             
             <p className="text-sm text-white/70">
-              Para o Método Bússola Dourada disponibilizamos apenas 6 vagas disponíveis por trimestre.
+              Para o Método Bússola Dourada disponibilizamos apenas 6 vagas por trimestre.
             </p>
           </div>
         </div>
