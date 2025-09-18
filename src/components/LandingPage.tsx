@@ -548,3 +548,13 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 </p>
                 
                 <p className="text-lg leading-relaxed mb-6">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>;
+};
+
+export default LandingPage;
