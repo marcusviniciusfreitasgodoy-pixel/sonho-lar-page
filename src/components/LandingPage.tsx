@@ -1122,10 +1122,20 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-             
-              <Button variant="luxury-outline" size="xl">
-                <Mail className="mr-2 h-5 w-5" />
-                marcus@godoyprime.com.br
+              <Button 
+                variant="luxury-outline" 
+                size="xl"
+                className="hover:scale-105 transition-transform"
+                asChild
+              >
+                <a
+                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Quero minha Consultoria Gratuíta
+                </a>
               </Button>
             </div>
             
@@ -1270,76 +1280,4 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 #heygen-streaming-embed {
                   z-index: 9999;
                   position: fixed;
-                  left: 40px;
-                  bottom: 40px;
-                  width: 200px;
-                  height: 200px;
-                  border-radius: 50%;
-                  border: 2px solid #fff;
-                  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
-                  transition: all linear 0.1s;
-                  overflow: hidden;
-                  opacity: 0;
-                  visibility: hidden;
-                }
-                #heygen-streaming-embed.show {
-                  opacity: 1;
-                  visibility: visible;
-                }
-                #heygen-streaming-embed.expand {
-                  \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}
-                  border: 0;
-                  border-radius: 8px;
-                }
-                #heygen-streaming-container {
-                  width: 100%;
-                  height: 100%;
-                }
-                #heygen-streaming-container iframe {
-                  width: 100%;
-                  height: 100%;
-                  border: 0;
-                }
-              \`;
-              const iframe=document.createElement("iframe");
-              iframe.allowFullscreen=!1;
-              iframe.title="Streaming Embed";
-              iframe.role="dialog";
-              iframe.allow="microphone";
-              iframe.src=url;
-              let visible=!1,initial=!1;
-              window.addEventListener("message",(e=>{
-                e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
-                  "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
-                  "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
-                  "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
-                )
-              }));
-              container.appendChild(iframe);
-              wrapDiv.appendChild(stylesheet);
-              wrapDiv.appendChild(container);
-              document.body.appendChild(wrapDiv);
-            }(globalThis);
-          `
-        }}
-      />
-
-      {/* WhatsApp Floating Button */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <a
-          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          aria-label="Falar no WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6" />
-          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Fale no WhatsApp
-          </span>
-        </a>
-      </div>
-    </div>;
-};
-
-export default LandingPage;
+                
