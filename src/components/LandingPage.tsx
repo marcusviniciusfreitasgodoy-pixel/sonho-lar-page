@@ -707,12 +707,12 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                     </ul>
                     
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg" asChild>
-                      <a
-                        href="https://wa.me/5521997250515?text=Quero%20saber%20mais%20sobre%20a%20Compra%20Blindada."
+                      <a 
+                        href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Saber mais sobre a Compra Blindada
+                        Quero Saber este serviço.
                       </a>
                     </Button>
                   </CardContent>
