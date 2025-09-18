@@ -1249,10 +1249,6 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
               
               <p className="text-white/60 text-sm text-center md:text-right">
                 © 2025 Godoy Prime Realty. Todos os direitos reservados.<br />
-                CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
-              </p>
-            </div>
-          </div>
         </div>
       </footer>
 
