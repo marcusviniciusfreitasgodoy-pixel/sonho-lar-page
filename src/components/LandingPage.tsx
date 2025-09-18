@@ -712,7 +712,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Quero Saber este serviço.
+                        Quero saber mais sobre este serviço.
                       </a>
                     </Button>
                   </CardContent>
