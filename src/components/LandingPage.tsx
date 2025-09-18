@@ -808,12 +808,18 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
               </p>
               
               <Button 
+                asChild
                 variant="gold" 
                 className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold"
-                onClick={() => window.open('https://wa.me/5521999999999', '_blank')}
               >
-                Garantir Minha Vaga Agora
-                <ArrowRight className="h-5 w-5" />
+                <a 
+                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Garantir Minha Vaga Agora
+                  <ArrowRight className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
