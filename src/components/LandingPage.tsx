@@ -1120,6 +1120,18 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             <p className="text-xl mb-8 text-white/90">
               Entre em contato agora e garanta sua vaga exclusiva para o próximo ciclo do Método Bússola Dourada™
             </p>
+
+            <Button asChild variant="gold" size="xl" className="group shadow-gold hover:shadow-luxury transition-all duration-300">
+              <a
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3"
+              >
+                <Mail className="w-5 h-5 group-hover:animate-bounce" />
+                Quero minha Consultoria Gratuíta
+              </a>
+            </Button>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button variant="gold" size="xl">
