@@ -822,7 +822,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 asChild
                 variant="gold" 
                 className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold"
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+              >
                 <a 
                   href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                   target="_blank"
