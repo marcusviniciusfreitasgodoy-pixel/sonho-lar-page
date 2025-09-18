@@ -703,11 +703,18 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                       {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-3">
                           <CheckCircle className={cn("h-5 w-5 mt-0.5 flex-shrink-0", plan.popular ? 'text-luxury-gold' : 'text-luxury-gold')} />
                           <span className={cn("text-sm", plan.popular ? 'text-luxury-navy' : 'text-white/90')}>{feature}</span>
+                      asChild
                         </li>)}
                     </ul>
                     
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg">
-                      {plan.cta}
+                      <a
+                        href="https://wa.me/5521997250515?text=Quero%20meu%20parecer%20Godoy%20Prime"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Quero Meu Parecer
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>)}
