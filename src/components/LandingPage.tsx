@@ -1110,4 +1110,259 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 <AccordionContent className="px-6 pb-4">
                   <div className="pl-12">
                     <p className="text-muted-foreground leading-relaxed">
-                      É simples! Basta entrar em contato conosco para agendar sua <strong>consultoria inicial gratuita</strong>. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como po
+                      É simples! Basta entrar em contato conosco para agendar sua <strong>consultoria inicial gratuita</strong>. Nesta conversa, entenderemos suas necessidades e aspirações em profundidade, e explicaremos detalhadamente como podemos blindar sua compra e auxiliá-lo na busca pelo seu imóvel ideal na Barra da Tijuca.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contato" className="py-20 bg-gradient-hero text-white">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Pronto Para Economizar <span className="text-luxury-gold">Dezenas de Milhares de R$</span> Na Sua Próxima Compra?
+            </h2>
+            
+            <p className="text-xl mb-8 text-white/90">
+              Entre em contato agora e garanta sua vaga e as condições exclusivas para o próximo ciclo do Método Bússola Dourada™
+            </p>
+
+            <Button asChild variant="gold" size="xl" className="group shadow-gold hover:shadow-luxury transition-all duration-300">
+              <a
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3"
+              >
+                <Mail className="w-5 h-5 group-hover:animate-bounce" />
+                Quero minha Consultoria Gratuíta
+              </a>
+            </Button>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            </div>
+            
+            <p className="text-sm text-white/70">
+              Para o Método Bússola Dourada as vagas são limitadas dentro do trimestre.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-luxury-navy text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            {/* Company Info */}
+            <div className="md:col-span-2">
+              <div className="mb-6">
+                <img 
+                  src="/Logotipo Negativo 01.png" 
+                  alt="Godoy Prime Realty" 
+                  className="h-16 w-auto mb-4"
+                />
+                <h3 className="text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
+                <p className="text-white/80 mb-4">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Representação exclusiva do comprador em imóveis de alto padrão. 
+                  Economia garantida e transparência total em cada negociação.
+                </p>
+              </div>
+            </div>
+            
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 4040-0067</p>
+                    <p className="text-white/60 text-xs">Telefone</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">(21) 99725-0515</p>
+                    <p className="text-white/60 text-xs">WhatsApp</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="h-4 w-4 text-luxury-gold flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm">marcus@godoyprime.com.br</p>
+                    <p className="text-white/60 text-xs">E-mail</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-white text-sm">Barra da Tijuca</p>
+                    <p className="text-white/60 text-xs">Rio de Janeiro - RJ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Links Úteis</h4>
+              <div className="space-y-2">
+                <a href="#servicos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Nossos Serviços
+                </a>
+                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Sobre Marcus
+                </a>
+                <a href="#metodo" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Método Bússola Dourada™
+                </a>
+                <a href="#garantias" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Garantias
+                </a>
+                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                  Depoimentos
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Stats Section */}
+          <div className="border-t border-white/20 pt-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-2xl mx-auto">
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">100%</p>
+                <p className="text-white/70 text-sm">Representação do Comprador</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-luxury-gold mb-1">Zero</p>
+                <p className="text-white/70 text-sm">Conflito de Interesses</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Legal Links & Copyright */}
+          <div className="border-t border-white/20 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-white/60">
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  Política de Privacidade
+                </a>
+                <a 
+                  href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-luxury-gold transition-colors"
+                >
+                  Termos de Uso
+                </a>
+                <a href="#" className="hover:text-luxury-gold transition-colors">
+                  LGPD
+                </a>
+              </div>
+              
+              <p className="text-white/60 text-sm text-center md:text-right">
+                © 2025 Godoy Prime Realty. Todos os direitos reservados.<br />
+                CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* HeyGen Streaming Widget */}
+      <script 
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(window){
+              const host="https://labs.heygen.com",
+                    url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DYXN1YWxMb29rX3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzViMWRiN2Uy%0D%0AMDgwZjQxMDZhODViOTg3NDM3NDMwYTI0XzU1ODYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYyZGQ4ZjRk%0D%0AYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4MjViN2Mz%0D%0AMmVkYTA3MSJ9&inIFrame=1",
+                    clientWidth=document.body.clientWidth,
+                    wrapDiv=document.createElement("div");
+              wrapDiv.id="heygen-streaming-embed";
+              const container=document.createElement("div");
+              container.id="heygen-streaming-container";
+              const stylesheet=document.createElement("style");
+              stylesheet.innerHTML=\`
+                #heygen-streaming-embed {
+                  z-index: 9999;
+                  position: fixed;
+                  left: 40px;
+                  bottom: 40px;
+                  width: 200px;
+                  height: 200px;
+                  border-radius: 50%;
+                  border: 2px solid #fff;
+                  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+                  transition: all linear 0.1s;
+                  overflow: hidden;
+                  opacity: 0;
+                  visibility: hidden;
+                }
+                #heygen-streaming-embed.show {
+                  opacity: 1;
+                  visibility: visible;
+                }
+                #heygen-streaming-embed.expand {
+                  \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}
+                  border: 0;
+                  border-radius: 8px;
+                }
+                #heygen-streaming-container {
+                  width: 100%;
+                  height: 100%;
+                }
+                #heygen-streaming-container iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                }
+              \`;
+              const iframe=document.createElement("iframe");
+              iframe.allowFullscreen=!1;
+              iframe.title="Streaming Embed";
+              iframe.role="dialog";
+              iframe.allow="microphone";
+              iframe.src=url;
+              let visible=!1,initial=!1;
+              window.addEventListener("message",(e=>{
+                e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&(
+                  "init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):
+                  "show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):
+                  "hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible))
+                )
+              }));
+              container.appendChild(iframe);
+              wrapDiv.appendChild(stylesheet);
+              wrapDiv.appendChild(container);
+              document.body.appendChild(wrapDiv);
+            }(globalThis);
+          `
+        }}
+      />
+
+      {/* WhatsApp Floating Button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <a
+          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          aria-label="Falar no WhatsApp"
+        >
+          <MessageCircle className="h-6 w-6" />
+          <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Fale no WhatsApp
+          </span>
+        </a>
+      </div>
+    </div>;
+};
+
+export default LandingPage;
