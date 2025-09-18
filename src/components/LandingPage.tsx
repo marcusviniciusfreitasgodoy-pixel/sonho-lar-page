@@ -244,9 +244,7 @@ const LandingPage = () => {
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                 A Imobiliária que te mostra o imóvel <strong>não trabalha para você</strong>. 
-                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.
-                  
-                </strong> Elas ganham mais dinheiro quando você paga mais caro.<strong> Simples Assim!</strong>     
+                Ela foi contratada pelo Vendedor para fazer a intermediação do negócio e <strong>vender pelo preço mais caro possível.</strong> Elas ganham mais dinheiro quando você paga mais caro. <strong>Simples Assim!</strong>
                 
               </p> 
               
@@ -547,3 +545,16 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Minha atuação como Corretor no mercado imobiliário me revelou uma realidade frustrante: A miopia comercial,
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>;
+};
+
+export default LandingPage;
