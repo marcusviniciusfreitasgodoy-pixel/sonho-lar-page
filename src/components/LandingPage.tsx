@@ -565,6 +565,16 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                </p>
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
                   <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
+                  <div className="mt-4">
+                    <Button 
+                      variant="luxury" 
+                      size="lg"
+                      className="w-full sm:w-auto"
+                      onClick={() => window.open('https://calendly.com/marcusgodoy', '_blank')}
+                    >
+                      Quero minha Consultoria Gratis
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
