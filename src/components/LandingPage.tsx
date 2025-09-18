@@ -283,10 +283,7 @@ const LandingPage = () => {
               <div>
                 <p className="text-lg text-luxury-navy mb-6 leading-relaxed">
                   Sou Marcus Godoy, criador do primeiro Personal Shopper Imobiliário do Brasil.
-                  
                   Ajudo compradores exigentes a encontrar, avaliar e negociar imóveis de alto padrão com total independência do mercado tradicional.
-                  
-                  Minha missão é simples: proteger seus interesses, seu tempo e seu investimento enquanto você conquista o imóvel que você busca e não o que querem te                     vender. 
                   
                   Para isso eu criei o primeiro serviço de Personal Shopper Imobiliário real do Brasil.
                 </p>
@@ -324,7 +321,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 É Para Quem?
               </h2>
               <p className="text-xl text-muted-foreground">
-                Criado especialmente para compradores exigentes de alto padrão, que buscam Segurança e Tranquilidade na sua compra.
+                 Minha missão é simples: proteger seus interesses, seu tempo e seu investimento enquanto você conquista o imóvel que você busca e não o que querem te                     vender. Criado especialmente para compradores exigentes de alto padrão, que buscam Segurança e Tranquilidade na sua compra.
               </p>
             </div>
 
