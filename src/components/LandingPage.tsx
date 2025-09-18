@@ -282,8 +282,8 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-lg text-luxury-navy mb-6 leading-relaxed">
-                 Eu me chamo Marcus Godoy, e a minha missão é ajudar compradores exigentes a encontrar, avaliar e negociar imóveis de alto padrão principalmente na Barra da Tijuca — protegendo seu dinheiro, seu tempo e seus interesses com total independência do mercado tradicional. 
-                 Eu não vendo imóveis: eu compro BEM para você. Ter alguém que trabalhe exclusivamente para você. Que ganhe apenas quando você economizar dinheiro, não quando gastar mais. Para isso eu criei o primeiro serviço de Personal Shopper Imobiliário real do Brasil.
+                 Eu me chamo Marcus Godoy e a minha missão é ajudar compradores exigentes a encontrar, avaliar e negociar imóveis de alto padrão principalmente na Barra da Tijuca, protegendo seu dinheiro, seu tempo e seus interesses com total independência do mercado tradicional. 
+                 Para isso eu criei o primeiro serviço de Personal Shopper Imobiliário real do Brasil.
                 </p>
                 
                 <div className="space-y-4 mb-8">
@@ -295,7 +295,7 @@ const LandingPage = () => {
                 
                 <div className="bg-white/60 rounded-xl p-6 border border-luxury-gold/30">
                   <p className="text-lg font-semibold text-luxury-navy italic">
-                    É como jogar pôquer vendo as cartas dos outros jogadores. 
+                    É como jogar pôquer vendo as cartas dos outros jogadores. Eu não vendo imóveis: eu compro BEM para você.
 
 Você terá o controle total, transformando sua compra em uma estratégia blindada.
                   </p>
