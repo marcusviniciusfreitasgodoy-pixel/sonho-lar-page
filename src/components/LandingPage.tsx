@@ -545,3 +545,16 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 
                 <p className="text-lg leading-relaxed mb-6">
                   Minha atuação como Corretor no mercado imobiliário me revelou uma realidade frustrante: A miopia comercial,
+                </p>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>;
+};
+
+export default LandingPage;
