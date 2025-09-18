@@ -239,7 +239,7 @@ const LandingPage = () => {
               
               </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                <strong>Verdades Inconvenientes que ninguém te fala</strong> 
+                <strong>Verdades Inconvenientes que ninguém te fala,</strong> e tem muito mais...
               </p>
               
               <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
