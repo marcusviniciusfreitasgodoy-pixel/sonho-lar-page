@@ -712,7 +712,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Quero Meu Parecer
+                        Saber mais sobre a Compra Blindada
                       </a>
                     </Button>
                   </CardContent>
