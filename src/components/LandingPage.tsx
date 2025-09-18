@@ -282,10 +282,9 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-lg text-luxury-navy mb-6 leading-relaxed">
-                  Sou Marcus Godoy, criador do primeiro Personal Shopper Imobiliário do Brasil.
+                  Sou Marcus Godoy, criador do primeiro Personal Shopper Imobiliário real do Brasil.
                   Ajudo compradores exigentes a encontrar, avaliar e negociar imóveis de alto padrão com total independência do mercado tradicional.
                   
-                  Para isso eu criei o primeiro serviço de Personal Shopper Imobiliário real do Brasil.
                 </p>
                 
                 <div className="space-y-4 mb-8">
