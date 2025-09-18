@@ -560,7 +560,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 </div>
                 
                <p className="text-lg leading-relaxed mb-6">
-                  Foi assim que nasceu o conceito de Personal Shopper Imobiliário™ (Bússola Dourada) e decidi criar a Godoy Prime Realty.
+                  Aproveite a condição temporária de contratação sem custos para este trimestre. Boas oportunidade acabam rápido. Lembre-se: Sem um representante exclusivo, o seu risco é alto e com um PSI o seu risco é ZERO.
                </p>
                 <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
                   <p className="text-2xl font-bold mb-2">Meu compromisso é ser o defensor exclusivo dos seus interesses e com lealdade total, buscar o equilibrio, transparência e segurança do Comprador.</p>
