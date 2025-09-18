@@ -318,46 +318,4 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 É Para Quem?
               </h2>
               <p className="text-xl text-muted-foreground">
-                Criado especificamente para compradores que querem garantir o melhor negócio.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="p-6 text-center border-luxury-gold/20">
-                <CardContent className="pt-6">
-                  <Users className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Executivos</h3>
-                  <p className="text-muted-foreground">
-                    Profissionais que valorizam tempo e querem decisões estratégicas
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-6 text-center border-luxury-gold/20">
-                <CardContent className="pt-6">
-                  <TrendingUp className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Investidores</h3>
-                  <p className="text-muted-foreground">
-                    Quem busca o melhor retorno e quer evitar armadilhas do mercado
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="p-6 text-center border-luxury-gold/20">
-                <CardContent className="pt-6">
-                  <Award className="h-12 w-12 text-luxury-gold mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Compradores Exigentes</h3>
-                  <p className="text-muted-foreground">
-                    Quem não aceita pagar mais do que o necessário por seu imóvel
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default LandingPage;
+                Cri
