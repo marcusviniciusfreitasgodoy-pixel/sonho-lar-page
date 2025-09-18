@@ -1118,7 +1118,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             </h2>
             
             <p className="text-xl mb-8 text-white/90">
-              Entre em contato agora e garanta sua vaga exclusiva para o próximo ciclo do Método Bússola Dourada™
+              Entre em contato agora e garanta sua vaga e as condições exclusivas para o próximo ciclo do Método Bússola Dourada™
             </p>
 
             <Button asChild variant="gold" size="xl" className="group shadow-gold hover:shadow-luxury transition-all duration-300">
