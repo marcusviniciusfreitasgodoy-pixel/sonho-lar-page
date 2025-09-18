@@ -572,10 +572,10 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
       </section>
 
       {/* Method Section */}
-      <section id="metodo" className="py-20 bg-gradient-to-br from-luxury-navy via-luxury-navy-light to-luxury-navy flex justify-center">
-        <div className="container mx-auto px-4 text-center">
+      <section id="metodo" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-16">
+            <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
                 Método Exclusivo
               </Badge>
