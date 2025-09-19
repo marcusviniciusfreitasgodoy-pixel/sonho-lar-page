@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
-import marcusProfile from "@/assets/721A9271.jpg";
+import marcusProfile from "@/assets/marcus-profile-new.jpg";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
