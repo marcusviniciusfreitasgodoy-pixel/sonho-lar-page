@@ -681,12 +681,12 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
               cta: "Quero Blindar Minha Compra",
               popular: false
             }, {
-              name: "Método Bússola Dourada™",
+              name: "Prime Buyer Experience™",
               subtitle: "Experiência Completa",
               price: "Comissão no Sucesso",
               description: "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência. Promocionalmente para esta modalidade estamos isentando a a Taxa de Preparação e Análise",
-              features: ["Metodologia completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
-              cta: "Sim! Quero a Bússola Dourada",
+              features: ["Jornada completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
+              cta: "Sim! Quero a Prime Buyer Experience",
               popular: true
             }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
                   {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -763,7 +763,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <strong className="text-luxury-navy">Foco Exclusivo no SEU Interesse:</strong>
-                    <span className="text-luxury-navy"> Com o Método Bússola Dourada™, realizo uma curadoria personalizada e acesso oportunidades exclusivas. Minha lealdade é única com você, o comprador.</span>
+                    <span className="text-luxury-navy"> Com a Prime Buyer Experience, realizo uma curadoria personalizada e acesso oportunidades exclusivas. Minha lealdade é única com você, o comprador.</span>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -1149,7 +1149,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             </div>
             
             <p className="text-sm text-white/70">
-              Para o Método Bússola Dourada as vagas são limitadas dentro do trimestre.
+              Para a Prime Buyer Experience as vagas são limitadas dentro do trimestre.
             </p>
           </div>
         </div>
@@ -1222,7 +1222,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                   Sobre Marcus
                 </a>
                 <a href="#metodo" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
-                  Método Bússola Dourada™
+                  Prime Buyer Experience
                 </a>
                 <a href="#garantias" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
                   Garantias
