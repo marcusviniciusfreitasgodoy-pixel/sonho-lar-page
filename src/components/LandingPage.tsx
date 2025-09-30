@@ -691,7 +691,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? 'bg-white shadow-gold scale-105' : 'bg-white/5 border-white/10')}>
                   {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">
-                        MAIS POPULAR
+                        MAIS ESCOLHIDO
                       </Badge>
                     </div>}
                   
