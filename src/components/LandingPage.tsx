@@ -511,4 +511,26 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                       {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />)}
                     </div>
                     
-                    <blockquote className="text
+                    <blockquote className="text-lg text-foreground mb-6 italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold">
+                        Economizou {testimonial.savings}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>)}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>;
+};
+
+export default LandingPage;
