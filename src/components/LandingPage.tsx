@@ -592,7 +592,7 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                 Método Exclusivo
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Como Funciona o <span className="text-luxury-gold">Método Bússola Dourada™</span>
+                Como Funciona o <span className="text-luxury-gold">Prime Buyer Experience</span>
               </h2>
               <p className="text-xl text-muted-foreground">
                 Nossa metodologia exclusiva em 5 passos para sua compra blindada
