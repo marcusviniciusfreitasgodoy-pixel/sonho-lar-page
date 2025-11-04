@@ -118,7 +118,7 @@ const LandingPage = () => {
             <div className="relative animate-slide-up">
               <div className="relative">
                 <img 
-                  src="/src/assets/marcus-profile-new.jpg" 
+                  src="/src/assets/marcus-hero.jpg" 
                   alt="Marcus Godoy - Personal Shopper Imobiliário" 
                   className="rounded-2xl shadow-luxury w-full max-w-md mx-auto"
                 />
