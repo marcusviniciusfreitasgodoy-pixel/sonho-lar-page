@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
+import godoyLogo from "@/assets/godoy-logo.png";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
@@ -44,10 +45,11 @@ const LandingPage = () => {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <img 
-                src="/Logotipo Principal.png" 
+                src={godoyLogo} 
                 alt="Godoy Prime Realty" 
-                className="h-12 w-auto"
+                className="h-12 w-12"
               />
+              <span className="text-xl font-bold text-luxury-navy">Godoy Prime Realty</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -1164,11 +1166,14 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="mb-6">
-                <img 
-                  src="/Logotipo Negativo 01.png" 
-                  alt="Godoy Prime Realty" 
-                  className="h-16 w-auto mb-4"
-                />
+                <div className="flex items-center space-x-3 mb-4">
+                  <img 
+                    src={godoyLogo} 
+                    alt="Godoy Prime Realty" 
+                    className="h-16 w-16"
+                  />
+                  <span className="text-2xl font-bold text-white">Godoy Prime Realty</span>
+                </div>
                 <h3 className="text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
                 <p className="text-white/80 mb-4">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
                 <p className="text-white/70 text-sm leading-relaxed">
