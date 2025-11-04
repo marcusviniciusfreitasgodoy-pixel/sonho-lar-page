@@ -169,7 +169,7 @@ const LandingPage = () => {
                 Descubra O Segredo dos Compradores Inteligentes
             </h1>
             <h2 className="text-3xl md:text-5xl font-semibold mb-8 leading-tight text-luxury-gold">
-              Compre o Imóvel Que Você Quer e Pelo Preço Justo
+              Economize R$ 200 mil a R$ 500 mil na Compra do Seu Imóvel de Alto Padrão na Barra da Tijuca
             </h2>
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
