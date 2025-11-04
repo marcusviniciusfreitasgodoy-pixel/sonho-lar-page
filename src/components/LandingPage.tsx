@@ -115,14 +115,13 @@ const LandingPage = () => {
               </div>
             </div>
             
-            <div className="relative animate-slide-up mb-0">
+            <div className="relative animate-slide-up">
               <div className="relative">
                 <img 
                   src="/src/assets/marcus-hero.jpg" 
                   alt="Marcus Godoy - Personal Shopper Imobiliário" 
                   className="rounded-2xl shadow-luxury w-full max-w-md mx-auto object-cover"
                 />
-                <div className="absolute bottom-4 left-4 bg-background w-32 h-16 rounded-lg"></div>
                 <div className="absolute -bottom-6 -right-6 bg-luxury-gold text-luxury-navy p-4 rounded-xl shadow-gold">
                   <Award className="w-8 h-8" />
                 </div>
