@@ -473,7 +473,7 @@ const LandingPage = () => {
             
             <div className="relative">
               <img 
-                src="/src/assets/marcus-profile.jpg" 
+                src="/src/assets/marcus-about.jpg" 
                 alt="Marcus Godoy" 
                 className="rounded-2xl shadow-luxury w-full"
               />
