@@ -567,9 +567,15 @@ Você terá o controle total, transformando sua compra em uma estratégia blinda
                       variant="luxury" 
                       size="lg"
                       className="w-full sm:w-auto"
-                      onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario')}
+                      asChild
                     >
-                      Quero minha Consultoria Gratis
+                      <a
+                        href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Quero minha Consultoria Gratis
+                      </a>
                     </Button>
                   </div>
                 </div>
