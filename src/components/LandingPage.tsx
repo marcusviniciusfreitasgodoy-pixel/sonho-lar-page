@@ -103,7 +103,12 @@ const LandingPage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="gold" size="xl" className="group">
+                <Button 
+                  variant="gold" 
+                  size="xl" 
+                  className="group"
+                  onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}
+                >
                   <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Agendar Consulta Gratuita
                 </Button>
