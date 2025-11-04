@@ -222,7 +222,8 @@ const LandingPage = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
-              Conheça os Serviços do <span className="text-luxury-gold">Personal Shopper Imobiliário</span>
+              A verdade sobre o mercado e como o{" "}
+              <span className="text-luxury-gold">Personal Shopper Imobiliário te ajuda a resolver seus problemas</span>
             </h2>
             <p className="text-xl text-luxury-text-muted mb-12">
               Descubra como posso ajudar você a fazer a melhor compra da sua vida
