@@ -8,49 +8,24 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { 
-  Building2, 
-  Shield, 
-  TrendingUp, 
-  Users, 
-  CheckCircle, 
-  Star, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Calendar,
-  DollarSign,
-  Eye,
-  Target,
-  Award,
-  Briefcase,
-  Home,
-  Play,
-  BarChart3,
-  Clock,
-  ThumbsUp
-} from "lucide-react";
-
+import { Building2, Shield, TrendingUp, Users, CheckCircle, Star, MapPin, Phone, Mail, Calendar, DollarSign, Eye, Target, Award, Briefcase, Home, Play, BarChart3, Clock, ThumbsUp } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
   email: z.string().email("Email inválido"),
   phone: z.string().min(10, "Telefone deve ter pelo menos 10 dígitos"),
-  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
+  message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres")
 });
-
 const LandingPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
-      message: "",
-    },
+      message: ""
+    }
   });
-
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     // Simular envio do formulário
@@ -59,9 +34,7 @@ const LandingPage = () => {
     setIsSubmitting(false);
     form.reset();
   };
-
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,25 +63,16 @@ const LandingPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
-              <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/10">
-                Personal Shopper Imobiliário Exclusivo da Barra da Tijuca
-              </Badge>
+              <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/10">Personal Shopper Imobiliário Exclusivo da Região da Barra da Tijuca</Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Economize <span className="text-luxury-gold">R$ 200-500mil</span> na sua próxima compra de imóvel de luxo
+                Economize <span className="text-luxury-gold">R$ 200 a 500 mil</span> na sua próxima compra de imóvel de luxo
               </h1>
               
-              <p className="text-xl text-gray-200 leading-relaxed">
-                Representação 100% sua, sem conflito de interesses. Acesso exclusivo a ofertas off-market e negociação baseada em dados reais de transações fechadas.
-              </p>
+              <p className="text-xl text-gray-200 leading-relaxed">Representação 100% sua, sem conflito de interesses. Acesso exclusivo a ofertas off-market, negociação profissional e baseada em dados reais de transações fechadas.</p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="gold" 
-                  size="xl" 
-                  className="group"
-                  onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}
-                >
+                <Button variant="gold" size="xl" className="group" onClick={() => window.open('https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario', '_blank')}>
                   <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Agendar Consulta Gratuita
                 </Button>
@@ -117,14 +81,8 @@ const LandingPage = () => {
             
             <div className="relative animate-slide-up">
               <div className="relative">
-                <img 
-                  src="/src/assets/marcus-hero.jpg" 
-                  alt="Marcus Godoy - Personal Shopper Imobiliário" 
-                  className="rounded-2xl shadow-luxury w-full max-w-md mx-auto object-cover"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-luxury-gold text-luxury-navy p-4 rounded-xl shadow-gold">
-                  <Award className="w-8 h-8" />
-                </div>
+                
+                
               </div>
             </div>
           </div>
@@ -191,14 +149,26 @@ const LandingPage = () => {
           <div className="relative w-full max-w-4xl mx-auto">
             {/* Video Container */}
             <div className="relative w-full pt-[56.25%] bg-luxury-navy-light rounded-lg overflow-hidden shadow-luxury">
-              <iframe 
+              {/* Video Placeholder - Replace with actual video */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-luxury-navy to-luxury-navy-light">
+                <button className="bg-luxury-gold text-luxury-navy p-6 rounded-full shadow-gold hover:scale-110 transition-transform duration-300 mb-4">
+                  <Play className="w-12 h-12 ml-1" />
+                </button>
+                <p className="text-white text-lg font-medium">Clique para assistir o vídeo</p>
+                <p className="text-gray-300 text-sm mt-2">Duração: 3:45 minutos</p>
+              </div>
+              
+              {/* Uncomment and replace with your actual video URL */}
+              {/* 
+               <iframe 
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/AQY1LYo-neA"
+                src="YOUR_VIDEO_URL_HERE"
                 title="Personal Shopper Imobiliário - Marcus Godoy"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>
+               ></iframe>
+               */}
             </div>
             
             {/* Video Stats */}
@@ -242,39 +212,31 @@ const LandingPage = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "100% do Seu Lado",
-                description: "Representação exclusiva do comprador, sem conflito de interesses com vendedores ou construtoras"
-              },
-              {
-                icon: Eye,
-                title: "Acesso Off-Market",
-                description: "Oportunidades exclusivas que nunca chegam ao mercado público, com descontos de até 30%"
-              },
-              {
-                icon: BarChart3,
-                title: "Dados Reais",
-                description: "Acesso a transações fechadas e análise comparativa para negociação baseada em fatos"
-              },
-              {
-                icon: Target,
-                title: "Estratégia Personalizada",
-                description: "Plano de ação customizado baseado no seu perfil, necessidades e objetivos específicos"
-              },
-              {
-                icon: DollarSign,
-                title: "Economia Garantida",
-                description: "Metodologia comprovada que já economizou milhões para nossos clientes na Barra da Tijuca"
-              },
-              {
-                icon: Award,
-                title: "Expertise Local",
-                description: "Conhecimento profundo da Barra da Tijuca, tendências de mercado e oportunidades futuras"
-              }
-            ].map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-luxury transition-shadow duration-300">
+            {[{
+            icon: Shield,
+            title: "100% do Seu Lado",
+            description: "Representação exclusiva do comprador, sem conflito de interesses com vendedores ou construtoras"
+          }, {
+            icon: Eye,
+            title: "Acesso Off-Market",
+            description: "Oportunidades exclusivas que nunca chegam ao mercado público, com descontos de até 30%"
+          }, {
+            icon: BarChart3,
+            title: "Dados Reais",
+            description: "Acesso a transações fechadas e análise comparativa para negociação baseada em fatos"
+          }, {
+            icon: Target,
+            title: "Estratégia Personalizada",
+            description: "Plano de ação customizado baseado no seu perfil, necessidades e objetivos específicos"
+          }, {
+            icon: DollarSign,
+            title: "Economia Garantida",
+            description: "Metodologia comprovada que já economizou milhões para nossos clientes na Barra da Tijuca"
+          }, {
+            icon: Award,
+            title: "Expertise Local",
+            description: "Conhecimento profundo da Barra da Tijuca, tendências de mercado e oportunidades futuras"
+          }].map((feature, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-luxury transition-shadow duration-300">
                 <CardContent className="p-8 text-center">
                   <div className="bg-luxury-gold/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                     <feature.icon className="w-8 h-8 text-luxury-gold" />
@@ -282,8 +244,7 @@ const LandingPage = () => {
                   <h3 className="text-xl font-bold text-luxury-navy mb-4">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -301,39 +262,32 @@ const LandingPage = () => {
           </div>
           
           <div className="space-y-8">
-            {[
-              {
-                step: "01",
-                title: "Análise do Perfil",
-                description: "Entendimento completo das suas necessidades, orçamento e objetivos para criar uma estratégia personalizada",
-                icon: Users
-              },
-              {
-                step: "02", 
-                title: "Inteligência de Mercado",
-                description: "Análise profunda dos dados de transações, tendências e oportunidades específicas da Barra da Tijuca",
-                icon: TrendingUp
-              },
-              {
-                step: "03",
-                title: "Curadoria Exclusiva", 
-                description: "Seleção criteriosa de imóveis que atendem ao seu perfil, incluindo oportunidades off-market",
-                icon: Eye
-              },
-              {
-                step: "04",
-                title: "Negociação Estratégica",
-                description: "Negociação baseada em dados reais com estratégias comprovadas para maximizar sua economia",
-                icon: Target
-              },
-              {
-                step: "05",
-                title: "Fechamento Seguro",
-                description: "Acompanhamento completo até a assinatura, garantindo todos os aspectos legais e documentais",
-                icon: CheckCircle
-              }
-            ].map((process, index) => (
-              <div key={index} className="flex items-start space-x-6 bg-white p-8 rounded-xl shadow-lg">
+            {[{
+            step: "01",
+            title: "Análise do Perfil",
+            description: "Entendimento completo das suas necessidades, orçamento e objetivos para criar uma estratégia personalizada",
+            icon: Users
+          }, {
+            step: "02",
+            title: "Inteligência de Mercado",
+            description: "Análise profunda dos dados de transações, tendências e oportunidades específicas da Barra da Tijuca",
+            icon: TrendingUp
+          }, {
+            step: "03",
+            title: "Curadoria Exclusiva",
+            description: "Seleção criteriosa de imóveis que atendem ao seu perfil, incluindo oportunidades off-market",
+            icon: Eye
+          }, {
+            step: "04",
+            title: "Negociação Estratégica",
+            description: "Negociação baseada em dados reais com estratégias comprovadas para maximizar sua economia",
+            icon: Target
+          }, {
+            step: "05",
+            title: "Fechamento Seguro",
+            description: "Acompanhamento completo até a assinatura, garantindo todos os aspectos legais e documentais",
+            icon: CheckCircle
+          }].map((process, index) => <div key={index} className="flex items-start space-x-6 bg-white p-8 rounded-xl shadow-lg">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center text-luxury-navy font-bold text-xl">
                     {process.step}
@@ -346,8 +300,7 @@ const LandingPage = () => {
                   </div>
                   <p className="text-gray-600 text-lg leading-relaxed">{process.description}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -365,35 +318,28 @@ const LandingPage = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Carlos Mendes",
-                role: "Empresário",
-                savings: "R$ 380.000",
-                text: "Marcus me ajudou a economizar quase 400 mil reais na compra do meu apartamento na Barra. O conhecimento dele sobre o mercado é impressionante.",
-                rating: 5
-              },
-              {
-                name: "Ana Paula Silva",
-                role: "Médica",
-                savings: "R$ 250.000", 
-                text: "Processo transparente e profissional. Consegui um apartamento incrível por um preço muito abaixo do que estava sendo oferecido no mercado.",
-                rating: 5
-              },
-              {
-                name: "Roberto Costa",
-                role: "Investidor",
-                savings: "R$ 420.000",
-                text: "A expertise do Marcus em negociação é excepcional. Ele conhece cada detalhe do mercado da Barra e isso fez toda a diferença.",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg">
+            {[{
+            name: "Carlos Mendes",
+            role: "Empresário",
+            savings: "R$ 380.000",
+            text: "Marcus me ajudou a economizar quase 400 mil reais na compra do meu apartamento na Barra. O conhecimento dele sobre o mercado é impressionante.",
+            rating: 5
+          }, {
+            name: "Ana Paula Silva",
+            role: "Médica",
+            savings: "R$ 250.000",
+            text: "Processo transparente e profissional. Consegui um apartamento incrível por um preço muito abaixo do que estava sendo oferecido no mercado.",
+            rating: 5
+          }, {
+            name: "Roberto Costa",
+            role: "Investidor",
+            savings: "R$ 420.000",
+            text: "A expertise do Marcus em negociação é excepcional. Ele conhece cada detalhe do mercado da Barra e isso fez toda a diferença.",
+            rating: 5
+          }].map((testimonial, index) => <Card key={index} className="border-0 shadow-lg">
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-luxury-gold text-luxury-gold" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-luxury-gold text-luxury-gold" />)}
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
                   <div className="border-t pt-4">
@@ -409,8 +355,7 @@ const LandingPage = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -431,29 +376,23 @@ const LandingPage = () => {
               </div>
               
               <div className="space-y-6">
-                {[
-                  {
-                    icon: Award,
-                    title: "Especialista em Alto Padrão",
-                    description: "Foco exclusivo em imóveis de luxo na Barra da Tijuca"
-                  },
-                  {
-                    icon: BarChart3,
-                    title: "R$ 50M+ em Negociações",
-                    description: "Histórico comprovado de resultados excepcionais"
-                  },
-                  {
-                    icon: Users,
-                    title: "150+ Clientes Satisfeitos",
-                    description: "98% de taxa de satisfação e recomendação"
-                  },
-                  {
-                    icon: MapPin,
-                    title: "Conhecimento Local",
-                    description: "Expertise profunda sobre a Barra da Tijuca"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                {[{
+                icon: Award,
+                title: "Especialista em Alto Padrão",
+                description: "Foco exclusivo em imóveis de luxo na Barra da Tijuca"
+              }, {
+                icon: BarChart3,
+                title: "R$ 50M+ em Negociações",
+                description: "Histórico comprovado de resultados excepcionais"
+              }, {
+                icon: Users,
+                title: "150+ Clientes Satisfeitos",
+                description: "98% de taxa de satisfação e recomendação"
+              }, {
+                icon: MapPin,
+                title: "Conhecimento Local",
+                description: "Expertise profunda sobre a Barra da Tijuca"
+              }].map((item, index) => <div key={index} className="flex items-start space-x-4">
                     <div className="bg-luxury-gold/10 p-3 rounded-lg">
                       <item.icon className="w-6 h-6 text-luxury-gold" />
                     </div>
@@ -461,8 +400,7 @@ const LandingPage = () => {
                       <h3 className="font-bold text-luxury-navy mb-1">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <Button variant="luxury" size="lg">
@@ -472,11 +410,7 @@ const LandingPage = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/src/assets/marcus-about.jpg" 
-                alt="Marcus Godoy" 
-                className="rounded-2xl shadow-luxury w-full"
-              />
+              <img src="/src/assets/marcus-profile.jpg" alt="Marcus Godoy" className="rounded-2xl shadow-luxury w-full" />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-luxury-gold">10+</div>
@@ -533,31 +467,22 @@ const LandingPage = () => {
               <div>
                 <h3 className="text-2xl font-bold text-luxury-navy mb-6">Informações de Contato</h3>
                 <div className="space-y-4">
-                  {[
-                    {
-                      icon: Phone,
-                      title: "Telefone",
-                      info: "(21) 99999-9999",
-                      action: "tel:+5521999999999"
-                    },
-                    {
-                      icon: Mail,
-                      title: "Email",
-                      info: "marcus@personalshopper.com.br",
-                      action: "mailto:marcus@personalshopper.com.br"
-                    },
-                    {
-                      icon: MapPin,
-                      title: "Localização",
-                      info: "Barra da Tijuca, Rio de Janeiro",
-                      action: "#"
-                    }
-                  ].map((contact, index) => (
-                    <a 
-                      key={index}
-                      href={contact.action}
-                      className="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
+                  {[{
+                  icon: Phone,
+                  title: "Telefone",
+                  info: "(21) 99999-9999",
+                  action: "tel:+5521999999999"
+                }, {
+                  icon: Mail,
+                  title: "Email",
+                  info: "marcus@personalshopper.com.br",
+                  action: "mailto:marcus@personalshopper.com.br"
+                }, {
+                  icon: MapPin,
+                  title: "Localização",
+                  info: "Barra da Tijuca, Rio de Janeiro",
+                  action: "#"
+                }].map((contact, index) => <a key={index} href={contact.action} className="flex items-center space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
                       <div className="bg-luxury-gold/10 p-3 rounded-lg">
                         <contact.icon className="w-6 h-6 text-luxury-gold" />
                       </div>
@@ -565,8 +490,7 @@ const LandingPage = () => {
                         <p className="font-semibold text-luxury-navy">{contact.title}</p>
                         <p className="text-gray-600">{contact.info}</p>
                       </div>
-                    </a>
-                  ))}
+                    </a>)}
                 </div>
               </div>
               
@@ -585,73 +509,47 @@ const LandingPage = () => {
                 <h3 className="text-2xl font-bold text-luxury-navy mb-6">Envie uma Mensagem</h3>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="name" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Nome Completo</FormLabel>
                           <FormControl>
                             <Input placeholder="Seu nome completo" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="email" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
                             <Input placeholder="seu@email.com" type="email" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="phone" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Telefone</FormLabel>
                           <FormControl>
                             <Input placeholder="(21) 99999-9999" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
+                    <FormField control={form.control} name="message" render={({
+                    field
+                  }) => <FormItem>
                           <FormLabel>Mensagem</FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="Conte-me sobre o tipo de imóvel que você está procurando..."
-                              className="min-h-[120px]"
-                              {...field}
-                            />
+                            <Textarea placeholder="Conte-me sobre o tipo de imóvel que você está procurando..." className="min-h-[120px]" {...field} />
                           </FormControl>
                           <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                        </FormItem>} />
                     
-                    <Button 
-                      type="submit" 
-                      variant="luxury" 
-                      size="lg" 
-                      className="w-full"
-                      disabled={isSubmitting}
-                    >
+                    <Button type="submit" variant="luxury" size="lg" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                     </Button>
                   </form>
@@ -701,8 +599,6 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
