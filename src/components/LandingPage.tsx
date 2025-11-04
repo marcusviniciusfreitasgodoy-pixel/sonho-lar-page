@@ -198,6 +198,30 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section id="video" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+              Conheça os Serviços do <span className="text-luxury-gold">Personal Shopper Imobiliário</span>
+            </h2>
+            <p className="text-xl text-luxury-text-muted mb-12">
+              Descubra como posso ajudar você a fazer a melhor compra da sua vida
+            </p>
+            
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/20">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/AQY1LYo-neA"
+                title="Serviços do Personal Shopper Imobiliário"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section id="problema" className="py-20 bg-background">
         <div className="container mx-auto px-6">
