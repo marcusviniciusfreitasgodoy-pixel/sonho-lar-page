@@ -107,10 +107,6 @@ const LandingPage = () => {
                   <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                   Agendar Consulta Gratuita
                 </Button>
-                <Button variant="luxury-outline" size="xl">
-                  <Eye className="w-5 h-5 mr-2" />
-                  Ver Portfólio
-                </Button>
               </div>
               
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
