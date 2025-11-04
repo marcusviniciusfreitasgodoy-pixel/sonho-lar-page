@@ -120,7 +120,7 @@ const LandingPage = () => {
                 <img 
                   src="/src/assets/marcus-hero.jpg" 
                   alt="Marcus Godoy - Personal Shopper Imobiliário" 
-                  className="rounded-2xl shadow-luxury w-full max-w-md mx-auto"
+                  className="rounded-2xl shadow-luxury w-full max-w-sm mx-auto aspect-square object-cover"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-luxury-gold text-luxury-navy p-4 rounded-xl shadow-gold">
                   <Award className="w-8 h-8" />
