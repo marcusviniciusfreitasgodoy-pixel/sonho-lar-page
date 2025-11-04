@@ -193,7 +193,10 @@ const LandingPage = () => {
             <div className="relative w-full pt-[56.25%] bg-luxury-navy-light rounded-lg overflow-hidden shadow-luxury">
               {/* Video Placeholder - Replace with actual video */}
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-luxury-navy to-luxury-navy-light">
-                <button className="bg-luxury-gold text-luxury-navy p-6 rounded-full shadow-gold hover:scale-110 transition-transform duration-300 mb-4">
+                <button 
+                  className="bg-luxury-gold text-luxury-navy p-6 rounded-full shadow-gold hover:scale-110 transition-transform duration-300 mb-4"
+                  onClick={() => window.open('https://youtu.be/AQY1LYo-neA', '_blank')}
+                >
                   <Play className="w-12 h-12 ml-1" />
                 </button>
                 <p className="text-white text-lg font-medium">Clique para assistir o vídeo</p>
