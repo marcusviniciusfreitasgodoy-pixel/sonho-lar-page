@@ -8,7 +8,28 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Building2, Shield, TrendingUp, Users, CircleCheck as CheckCircle, Star, MapPin, Phone, Mail, Calendar, DollarSign, Eye, Target, Award, Briefcase, Chrome as Home, Play, ChartBar as BarChart3, Clock, ThumbsUp } from "lucide-react";
+import { 
+  Building2, 
+  Shield, 
+  TrendingUp, 
+  Users, 
+  CheckCircle, 
+  Star, 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Calendar,
+  DollarSign,
+  Eye,
+  Target,
+  Award,
+  Briefcase,
+  Home,
+  Play,
+  BarChart3,
+  Clock,
+  ThumbsUp
+} from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
