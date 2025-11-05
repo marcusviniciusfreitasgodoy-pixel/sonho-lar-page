@@ -201,7 +201,7 @@ const LandingPage = () => {
               asChild
             >
               <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                href="https://wa.link/smst9d"
                 target="_blank"
                 rel="noopener noreferrer"
               >
