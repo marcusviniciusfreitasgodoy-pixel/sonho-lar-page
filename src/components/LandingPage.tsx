@@ -841,7 +841,7 @@ const LandingPage = () => {
 
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg" asChild>
                       <a
-                        href="https://wa.me/5521997250515?text=Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20Prime%20Buyer%20Experience."
+                        href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario."
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -1552,7 +1552,7 @@ const LandingPage = () => {
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-40">
         <a
-          href="https://wa.me/5521997250515?text=Olá! Gostaria de saber mais sobre o Personal Shopper Imobiliário"
+          href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario."
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
