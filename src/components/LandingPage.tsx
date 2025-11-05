@@ -841,7 +841,7 @@ const LandingPage = () => {
 
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg" asChild>
                       <a
-                        href="https://wa.me/5521997250515?text=Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20Compra%20Blindada."
+                        href="https://wa.me/5521997250515?text=Gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20Prime%20Buyer%20Experience."
                         target="_blank"
                         rel="noopener noreferrer"
                       >
