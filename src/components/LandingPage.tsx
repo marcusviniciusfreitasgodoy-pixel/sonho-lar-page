@@ -5,38 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import {
-  Shield,
-  Clock,
-  Key,
-  CircleCheck as CheckCircle,
-  Calculator,
-  Search,
-  Target,
-  Users,
-  TrendingUp,
-  Award,
-  Star,
-  ArrowRight,
-  Phone,
-  Mail,
-  Menu,
-  X,
-  MapPin,
-  MessageCircle,
-} from "lucide-react";
+import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
-
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const toggleCardHighlight = (cardIndex: number) => {
-    setHighlightedCards((prev) =>
-      prev.includes(cardIndex) ? prev.filter((index) => index !== cardIndex) : [...prev, cardIndex],
-    );
+    setHighlightedCards(prev => prev.includes(cardIndex) ? prev.filter(index => index !== cardIndex) : [...prev, cardIndex]);
   };
 
   // Add HeyGen script to document
@@ -44,7 +21,6 @@ const LandingPage = () => {
     const script = document.createElement("script");
     script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rX3B1%0D%0AYmxpYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzM0%0D%0AOGRkZjUwM2M2NTRiOWJiYmI4YmVhOWY5MjEwZWFkXzU1ODcwL3ByZXZpZXdfdGFyZ2V0LndlYnAi%0D%0ALCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiYWI2NmI1ZjNk%0D%0AYWRmNGQ1YmJkZTI3YmZiMDVhMzgwNjIiLCJ1c2VybmFtZSI6IjRiYjNhNThlMzlmNDQ4OTFiNzgy%0D%0ANWI3YzMyZWRhMDcxIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`\\n  #heygen-streaming-embed {\\n    z-index: 9999;\\n    position: fixed;\\n    left: 40px;\\n    bottom: 40px;\\n    width: 200px;\\n    height: 200px;\\n    border-radius: 50%;\\n    border: 2px solid #fff;\\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\\n    transition: all linear 0.1s;\\n    overflow: hidden;\\n\\n    opacity: 0;\\n    visibility: hidden;\\n  }\\n  #heygen-streaming-embed.show {\\n    opacity: 1;\\n    visibility: visible;\\n  }\\n  #heygen-streaming-embed.expand {\\n    \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\\n    border: 0;\\n    border-radius: 8px;\\n  }\\n  #heygen-streaming-container {\\n    width: 100%;\\n    height: 100%;\\n  }\\n  #heygen-streaming-container iframe {\\n    width: 100%;\\n    height: 100%;\\n    border: 0;\\n  }\\n  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
     document.body.appendChild(script);
-
     return () => {
       // Cleanup function to remove script when component unmounts
       const heygenEmbed = document.getElementById("heygen-streaming-embed");
@@ -53,9 +29,7 @@ const LandingPage = () => {
       }
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-6">
@@ -99,53 +73,28 @@ const LandingPage = () => {
               </div>
 
               {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors"
-                aria-label="Toggle menu"
-              >
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors" aria-label="Toggle menu">
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-border bg-white">
+          {mobileMenuOpen && <div className="md:hidden py-4 border-t border-border bg-white">
               <nav className="flex flex-col space-y-4">
-                <a
-                  href="#servicos"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#servicos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
                   Serviços
                 </a>
-                <a
-                  href="#sobre"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
                   Sobre Marcus
                 </a>
-                <a
-                  href="#metodo"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#metodo" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
                   Método
                 </a>
-                <a
-                  href="#garantias"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#garantias" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
                   Garantias
                 </a>
-                <a
-                  href="#contato"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#contato" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
                   Contato
                 </a>
 
@@ -161,19 +110,15 @@ const LandingPage = () => {
                   </div>
                 </div>
               </nav>
-            </div>
-          )}
+            </div>}
         </div>
       </header>
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
         </div>
 
@@ -195,16 +140,8 @@ const LandingPage = () => {
               só ganha se você economizar.
             </p>
 
-            <Button
-              variant="gold"
-              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group"
-              asChild
-            >
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <Button variant="gold" className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" asChild>
+              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
                 Desbloquear minha Consultoria Exclusiva
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -230,13 +167,7 @@ const LandingPage = () => {
             </p>
 
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/20">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/AQY1LYo-neA"
-                title="Serviços do Personal Shopper Imobiliário"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/AQY1LYo-neA" title="Serviços do Personal Shopper Imobiliário" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
           </div>
         </div>
@@ -304,16 +235,10 @@ const LandingPage = () => {
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  {[
-                    "Tenha acesso aos dados reais de vendas que nunca aparecem nos portais",
-                    "Conheça os segredos do mercado local",
-                    "Representação Exclusiva do Comprador, Sem Conflito de Interesses",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
+                  {["Tenha acesso aos dados reais de vendas que nunca aparecem nos portais", "Conheça os segredos do mercado local", "Representação Exclusiva do Comprador, Sem Conflito de Interesses"].map((item, index) => <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <p className="text-luxury-navy">{item}</p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 <div className="bg-white/60 rounded-xl p-6 border border-luxury-gold/30">
@@ -325,11 +250,7 @@ const LandingPage = () => {
               </div>
 
               <div className="animate-float">
-                <img
-                  src={marcusProfile}
-                  alt="Marcus Godoy - Personal Shopper Imobiliário"
-                  className="rounded-2xl shadow-luxury w-full"
-                />
+                <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="rounded-2xl shadow-luxury w-full" />
               </div>
             </div>
           </div>
@@ -350,35 +271,23 @@ const LandingPage = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {[
-                {
-                  icon: Users,
-                  title: "Executivos e Empresários",
-                  description:
-                    "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de Alto Padrão na região da Barra da Tijuca.",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Investidores Experientes",
-                  description:
-                    "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa.",
-                },
-                {
-                  icon: Award,
-                  title: "Famílias em Busca de Conforto e Segurança",
-                  description: "Que priorizam bem-estar, tranquilidade, conforto e segurança total para sua família.",
-                },
-                {
-                  icon: Award,
-                  title: "Celebridades e Influenciadores",
-                  description:
-                    "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional.",
-                },
-              ].map((persona, index) => (
-                <Card
-                  key={index}
-                  className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2"
-                >
+              {[{
+              icon: Users,
+              title: "Executivos e Empresários",
+              description: "Profissionais bem-sucedidos que valorizam tempo e querem investir com inteligência em imóveis de Alto Padrão na região da Barra da Tijuca."
+            }, {
+              icon: TrendingUp,
+              title: "Investidores Experientes",
+              description: "Pessoas que entendem que pagar por expertise especializada gera economia real e proteção patrimonial significativa."
+            }, {
+              icon: Award,
+              title: "Famílias em Busca de Conforto e Segurança",
+              description: "Que priorizam bem-estar, tranquilidade, conforto e segurança total para sua família."
+            }, {
+              icon: Award,
+              title: "Celebridades e Influenciadores",
+              description: "Quem busca exclusividade, discrição e acesso a oportunidades diferenciadas que não chegam ao mercado tradicional."
+            }].map((persona, index) => <Card key={index} className="border-0 shadow-luxury hover:shadow-gold transition-all duration-300 hover:-translate-y-2">
                   <CardContent className="p-8 text-center">
                     <div className="bg-gradient-gold rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                       <persona.icon className="h-8 w-8 text-luxury-navy" />
@@ -386,8 +295,7 @@ const LandingPage = () => {
                     <h3 className="text-xl font-bold mb-4 text-foreground">{persona.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{persona.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -405,41 +313,27 @@ const LandingPage = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: Calculator,
-                  title: "Economia Real Garantida",
-                  description:
-                    "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 100 mil e R$ 500 mil por transação.",
-                  highlight: "R$ 100-500k economizados",
-                },
-                {
-                  icon: Clock,
-                  title: "Tempo Precioso Protegido",
-                  description:
-                    "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder horas com visitas improdutivas.",
-                  highlight: "40+ horas poupadas",
-                },
-                {
-                  icon: Key,
-                  title: "Acesso aos Melhores Negócios",
-                  description:
-                    "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes disponíveis na região e sem precisar falar com dezenas de Imobiliárias e Corretores.",
-                  highlight: "Ofertas exclusivas e Economia de tempo",
-                },
-                {
-                  icon: Shield,
-                  title: "Representação 100% Sua",
-                  description:
-                    "Marcus ganha apenas quando você economiza dinheiro. É o único profissional da Barra que trabalha exclusivamente para o comprador.",
-                  highlight: "Zero conflito",
-                },
-              ].map((benefit, index) => (
-                <Card
-                  key={index}
-                  className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                  onClick={() => toggleCardHighlight(index)}
-                >
+              {[{
+              icon: Calculator,
+              title: "Economia Real Garantida",
+              description: "Você paga o preço justo, não o preço de vitrine. Economia entre R$ 100 mil e R$ 500 mil por transação.",
+              highlight: "R$ 100-500k economizados"
+            }, {
+              icon: Clock,
+              title: "Tempo Precioso Protegido",
+              description: "Suas visitas são apenas aos imóveis que realmente fazem sentido para você. Nada de perder horas com visitas improdutivas.",
+              highlight: "40+ horas poupadas"
+            }, {
+              icon: Key,
+              title: "Acesso aos Melhores Negócios",
+              description: "Os imóveis mais interessantes raramente chegam aos portais. Acesso às oportunidades off-market exclusivas e também à 100% das opçoes disponíveis na região e sem precisar falar com dezenas de Imobiliárias e Corretores.",
+              highlight: "Ofertas exclusivas e Economia de tempo"
+            }, {
+              icon: Shield,
+              title: "Representação 100% Sua",
+              description: "Marcus ganha apenas quando você economiza dinheiro. É o único profissional da Barra que trabalha exclusivamente para o comprador.",
+              highlight: "Zero conflito"
+            }].map((benefit, index) => <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 cursor-pointer" onClick={() => toggleCardHighlight(index)}>
                   <CardContent className="p-6 text-center">
                     <div className="bg-luxury-gold rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
                       <benefit.icon className="h-6 w-6 text-luxury-navy" />
@@ -447,18 +341,12 @@ const LandingPage = () => {
                     <Badge variant="outline" className="border-luxury-gold text-luxury-gold mb-3">
                       {benefit.highlight}
                     </Badge>
-                    <h3
-                      className={cn(
-                        "text-lg font-bold mb-3 transition-colors duration-300",
-                        highlightedCards.includes(index) ? "text-luxury-gold" : "text-white",
-                      )}
-                    >
+                    <h3 className={cn("text-lg font-bold mb-3 transition-colors duration-300", highlightedCards.includes(index) ? "text-luxury-gold" : "text-white")}>
                       {benefit.title}
                     </h3>
                     <p className="text-white/80 text-sm leading-relaxed">{benefit.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -536,28 +424,20 @@ const LandingPage = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  quote:
-                    "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
-                  author: "Roberto Silva",
-                  role: "Empresário do Setor Financeiro",
-                  savings: "R$ 320.000",
-                },
-                {
-                  quote:
-                    "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
-                  author: "Ana Carolina",
-                  role: "Executiva de Multinacional",
-                  savings: "R$ 450.000",
-                },
-              ].map((testimonial, index) => (
-                <Card key={index} className="border-0 shadow-luxury">
+              {[{
+              quote: "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
+              author: "Roberto Silva",
+              role: "Empresário do Setor Financeiro",
+              savings: "R$ 320.000"
+            }, {
+              quote: "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
+              author: "Ana Carolina",
+              role: "Executiva de Multinacional",
+              savings: "R$ 450.000"
+            }].map((testimonial, index) => <Card key={index} className="border-0 shadow-luxury">
                   <CardContent className="p-8">
                     <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />
-                      ))}
+                      {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />)}
                     </div>
 
                     <blockquote className="text-lg text-foreground mb-6 italic leading-relaxed">
@@ -574,8 +454,7 @@ const LandingPage = () => {
                       </Badge>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -613,9 +492,7 @@ const LandingPage = () => {
                   moderna, com transações mais justas e equilibradas para o Comprador.
                 </p>
 
-                <div className="bg-luxury-gold/10 border-l-4 border-luxury-gold p-6 my-8">
-                  <p className="text-lg font-semibold text-luxury-navy italic"></p>
-                </div>
+                
 
                 <p className="text-lg leading-relaxed mb-6">
                   Aproveite a condição temporária de contratação sem custos para este trimestre. Boas oportunidade
@@ -629,11 +506,7 @@ const LandingPage = () => {
                   </p>
                   <div className="mt-4">
                     <Button variant="luxury" size="lg" className="w-full sm:w-auto" asChild>
-                      <a
-                        href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
                         Quero minha Consultoria Gratis
                       </a>
                     </Button>
@@ -662,44 +535,32 @@ const LandingPage = () => {
             </div>
 
             <div className="space-y-12">
-              {[
-                {
-                  step: "01",
-                  icon: Search,
-                  title: "Mapeamento do Seu DNA",
-                  description:
-                    "Descobrimos exatamente o que você quer através de conversa profunda sobre seu estilo de vida. Definimos critérios precisos e eliminamos 90% das opções erradas antes mesmo de começar.",
-                },
-                {
-                  step: "02",
-                  icon: Target,
-                  title: "Curadoria Inteligente",
-                  description:
-                    "Vasculhamos o mercado completo, incluindo imóveis que nunca aparecem nos sites. Você recebe apenas 3 a 5 opções perfeitas para seu perfil, economizando dezenas de horas.",
-                },
-                {
-                  step: "03",
-                  icon: Calculator,
-                  title: "Análise de Valor Real",
-                  description:
-                    "Investigamos e definimos o preço justo usando dados de vendas reais da região, informações de transações de Cartórios, pesquisas e estudos de mercado com ferramentas de Inteligência Artificial e outras fontes. Você sabe exatamente quanto vale cada imóvel antes de fazer qualquer oferta.",
-                },
-                {
-                  step: "04",
-                  icon: Shield,
-                  title: "Negociação Blindada",
-                  description:
-                    "Atuamos como seu único representante. Negociamos com estratégia, usando estratégias baseadas no perfil do vendedor e dados para garantir as melhores condições, maximizando sua economia e blindando seu investimento.",
-                },
-                {
-                  step: "05",
-                  icon: CheckCircle,
-                  title: "Fechamento Protegido",
-                  description:
-                    "Coordenamos e Acompnhamos a preparação dos Contratos e processos, avaliamos toda documentação e cuidamos da validação técnica. Você recebe as chaves com total segurança e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado.",
-                },
-              ].map((step, index) => (
-                <div key={index} className="flex flex-col md:flex-row items-center gap-8">
+              {[{
+              step: "01",
+              icon: Search,
+              title: "Mapeamento do Seu DNA",
+              description: "Descobrimos exatamente o que você quer através de conversa profunda sobre seu estilo de vida. Definimos critérios precisos e eliminamos 90% das opções erradas antes mesmo de começar."
+            }, {
+              step: "02",
+              icon: Target,
+              title: "Curadoria Inteligente",
+              description: "Vasculhamos o mercado completo, incluindo imóveis que nunca aparecem nos sites. Você recebe apenas 3 a 5 opções perfeitas para seu perfil, economizando dezenas de horas."
+            }, {
+              step: "03",
+              icon: Calculator,
+              title: "Análise de Valor Real",
+              description: "Investigamos e definimos o preço justo usando dados de vendas reais da região, informações de transações de Cartórios, pesquisas e estudos de mercado com ferramentas de Inteligência Artificial e outras fontes. Você sabe exatamente quanto vale cada imóvel antes de fazer qualquer oferta."
+            }, {
+              step: "04",
+              icon: Shield,
+              title: "Negociação Blindada",
+              description: "Atuamos como seu único representante. Negociamos com estratégia, usando estratégias baseadas no perfil do vendedor e dados para garantir as melhores condições, maximizando sua economia e blindando seu investimento."
+            }, {
+              step: "05",
+              icon: CheckCircle,
+              title: "Fechamento Protegido",
+              description: "Coordenamos e Acompnhamos a preparação dos Contratos e processos, avaliamos toda documentação e cuidamos da validação técnica. Você recebe as chaves com total segurança e tranquilidade. Cada etapa e todos os nossos compromissos, incluindo ética, fidelidade e defesa de seus interesses, são formalmente assegurados em contrato assinado."
+            }].map((step, index) => <div key={index} className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-gold rounded-full w-24 h-24 flex items-center justify-center">
                       <step.icon className="h-12 w-12 text-luxury-navy" />
@@ -715,8 +576,7 @@ const LandingPage = () => {
                     </div>
                     <p className="text-lg text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -741,66 +601,34 @@ const LandingPage = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Parecer Godoy Prime",
-                  subtitle: "Atestado de Valor",
-                  price: "À partir de R$ 5.000,00",
-                  description:
-                    "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas. Transforme incerteza em convicção. Sua decisão será segura e inteligente, para um investimento sólido e sem surpresas.",
-                  features: [
-                    "Consulta de alinhamento estratégico",
-                    "Inspeção e Vistoria Técnica local detalhada",
-                    "Relatório comparativo com análise de mercado e parecer de preço justo (m² e preço máximo recomendado).",
-                    "Pack de Conhecimento exclusivo",
-                  ],
-                  cta: "Quero Meu Parecer",
-                  popular: false,
-                },
-                {
-                  name: "Compra Blindada",
-                  subtitle: "Validação & Negociação",
-                  price: "Fee de Preparação e Análise + Comissão no Sucesso",
-                  description:
-                    "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
-                  features: [
-                    "Relatório de Avaliação e Vistoria Detalhada do Imóvel",
-                    "Negociação Ativa Profissional",
-                    "Análise Contratual e Segurança documental completa",
-                    "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves",
-                  ],
-                  cta: "Quero Blindar Minha Compra",
-                  popular: false,
-                },
-                {
-                  name: "Prime Buyer Experience™",
-                  subtitle: "Experiência Completa",
-                  price: "Comissão no Sucesso",
-                  description:
-                    "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência. Promocionalmente para esta modalidade estamos isentando a a Taxa de Preparação e Análise",
-                  features: [
-                    "Jornada completa em 5 fases",
-                    "Acesso completo ao mercado off-market",
-                    "Concierge até entrega das chaves",
-                    "Garantia de economia mínima R$ 100k",
-                    "Suporte pós-compra por 12 meses",
-                  ],
-                  cta: "Sim! Quero a Prime Buyer Experience",
-                  popular: true,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={cn(
-                    "relative border-0",
-                    plan.popular ? "bg-white shadow-gold scale-105" : "bg-white/5 border-white/10",
-                  )}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              {[{
+              name: "Parecer Godoy Prime",
+              subtitle: "Atestado de Valor",
+              price: "À partir de R$ 5.000,00",
+              description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas. Transforme incerteza em convicção. Sua decisão será segura e inteligente, para um investimento sólido e sem surpresas.",
+              features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo (m² e preço máximo recomendado).", "Pack de Conhecimento exclusivo"],
+              cta: "Quero Meu Parecer",
+              popular: false
+            }, {
+              name: "Compra Blindada",
+              subtitle: "Validação & Negociação",
+              price: "Fee de Preparação e Análise + Comissão no Sucesso",
+              description: "Assessoria completa para validar valor, negociar e garantir segurança jurídica. Evite deixar dinheiro na mesa e arriscar seu investimento.",
+              features: ["Relatório de Avaliação e Vistoria Detalhada do Imóvel", "Negociação Ativa Profissional", "Análise Contratual e Segurança documental completa", "Coordenação e acompanhamento de todas as etapas do processo até entrega das chaves"],
+              cta: "Quero Blindar Minha Compra",
+              popular: false
+            }, {
+              name: "Prime Buyer Experience™",
+              subtitle: "Experiência Completa",
+              price: "Comissão no Sucesso",
+              description: "Para clientes que buscam uma experiência de compra fluida, estratégica e totalmente segura. Você delega toda a complexidade a um especialista com lealdade inquestionável. Ideal para quem valoriza tempo, discrição e excelência. Promocionalmente para esta modalidade estamos isentando a a Taxa de Preparação e Análise",
+              features: ["Jornada completa em 5 fases", "Acesso completo ao mercado off-market", "Concierge até entrega das chaves", "Garantia de economia mínima R$ 100k", "Suporte pós-compra por 12 meses"],
+              cta: "Sim! Quero a Prime Buyer Experience",
+              popular: true
+            }].map((plan, index) => <Card key={index} className={cn("relative border-0", plan.popular ? "bg-white shadow-gold scale-105" : "bg-white/5 border-white/10")}>
+                  {plan.popular && <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <Badge className="bg-luxury-gold text-luxury-navy font-bold px-6 py-1">MAIS POPULAR</Badge>
-                    </div>
-                  )}
+                    </div>}
 
                   <CardContent className="p-8">
                     <div className="text-center mb-6">
@@ -810,12 +638,7 @@ const LandingPage = () => {
                       <p className={cn("text-sm mb-4", plan.popular ? "text-luxury-text-muted" : "text-white/70")}>
                         {plan.subtitle}
                       </p>
-                      <div
-                        className={cn(
-                          "text-3xl font-bold mb-2",
-                          plan.popular ? "text-luxury-gold" : "text-luxury-gold",
-                        )}
-                      >
+                      <div className={cn("text-3xl font-bold mb-2", plan.popular ? "text-luxury-gold" : "text-luxury-gold")}>
                         {plan.price}
                       </div>
                       <p className={cn("text-sm", plan.popular ? "text-luxury-text-muted" : "text-white/70")}>
@@ -824,33 +647,21 @@ const LandingPage = () => {
                     </div>
 
                     <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-3">
-                          <CheckCircle
-                            className={cn(
-                              "h-5 w-5 mt-0.5 flex-shrink-0",
-                              plan.popular ? "text-luxury-gold" : "text-luxury-gold",
-                            )}
-                          />
+                      {plan.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start space-x-3">
+                          <CheckCircle className={cn("h-5 w-5 mt-0.5 flex-shrink-0", plan.popular ? "text-luxury-gold" : "text-luxury-gold")} />
                           <span className={cn("text-sm", plan.popular ? "text-luxury-navy" : "text-white/90")}>
                             {feature}
                           </span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
 
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg" asChild>
-                      <a
-                        href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." target="_blank" rel="noopener noreferrer">
                         Quero saber mais sobre este serviço.
                       </a>
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -966,11 +777,7 @@ const LandingPage = () => {
               </p>
 
               <Button asChild variant="gold" className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold">
-                <a
-                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
                   Garantir Minha Vaga Agora
                   <ArrowRight className="h-5 w-5" />
                 </a>
@@ -994,10 +801,7 @@ const LandingPage = () => {
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
-              <AccordionItem
-                value="item-1"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-1" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1023,10 +827,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-2"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-2" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1052,10 +853,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-3"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-3" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1101,10 +899,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-4"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-4" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1147,10 +942,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-5"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-5" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1176,10 +968,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-6"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-6" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1203,10 +992,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-7"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-7" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1231,10 +1017,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-8"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-8" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1259,10 +1042,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-9"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-9" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1286,10 +1066,7 @@ const LandingPage = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem
-                value="item-10"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
+              <AccordionItem value="item-10" className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                 <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
@@ -1330,18 +1107,8 @@ const LandingPage = () => {
               Dourada™
             </p>
 
-            <Button
-              asChild
-              variant="gold"
-              size="xl"
-              className="group shadow-gold hover:shadow-luxury transition-all duration-300"
-            >
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3"
-              >
+            <Button asChild variant="gold" size="xl" className="group shadow-gold hover:shadow-luxury transition-all duration-300">
+              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                 <Mail className="w-5 h-5 group-hover:animate-bounce" />
                 Quero minha Consultoria Gratuíta
               </a>
@@ -1455,12 +1222,7 @@ const LandingPage = () => {
                 <a href="#" className="hover:text-luxury-gold transition-colors">
                   Política de Privacidade
                 </a>
-                <a
-                  href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-luxury-gold transition-colors"
-                >
+                <a href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
                   Termos de Uso
                 </a>
                 <a href="#" className="hover:text-luxury-gold transition-colors">
@@ -1479,9 +1241,8 @@ const LandingPage = () => {
       </footer>
 
       {/* HeyGen Streaming Widget */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+      <script dangerouslySetInnerHTML={{
+      __html: `
             !function(window){
               const host="https://labs.heygen.com",
                     url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9DYXN1YWxMb29rX3B1YmxpYyIs%0D%0AInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzViMWRiN2Uy%0D%0AMDgwZjQxMDZhODViOTg3NDM3NDMwYTI0XzU1ODYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVk%0D%0AUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6ImYxZWQzMGYyZGQ4ZjRk%0D%0AYzI5YzdkMzUwYzg0NWU1NTMwIiwidXNlcm5hbWUiOiI0YmIzYTU4ZTM5ZjQ0ODkxYjc4MjViN2Mz%0D%0AMmVkYTA3MSJ9&inIFrame=1",
@@ -1545,27 +1306,18 @@ const LandingPage = () => {
               wrapDiv.appendChild(container);
               document.body.appendChild(wrapDiv);
             }(globalThis);
-          `,
-        }}
-      />
+          `
+    }} />
 
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-40">
-        <a
-          href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          aria-label="Falar no WhatsApp"
-        >
+        <a href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Falar no WhatsApp">
           <MessageCircle className="h-6 w-6" />
           <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Fale no WhatsApp
           </span>
         </a>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
