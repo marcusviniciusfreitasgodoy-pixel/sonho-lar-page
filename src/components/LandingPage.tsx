@@ -16,6 +16,25 @@ const LandingPage = () => {
     setHighlightedCards(prev => prev.includes(cardIndex) ? prev.filter(index => index !== cardIndex) : [...prev, cardIndex]);
   };
 
+  // Meta Pixel tracking functions
+  const trackCalendlyClick = (buttonLocation: string) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Consultoria Exclusiva',
+        button_location: buttonLocation
+      });
+    }
+  };
+
+  const trackWhatsAppClick = (buttonLocation: string) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Contact', {
+        content_name: 'WhatsApp',
+        button_location: buttonLocation
+      });
+    }
+  };
+
   // Add HeyGen script to document
   useEffect(() => {
     const script = document.createElement("script");
@@ -140,8 +159,17 @@ const LandingPage = () => {
               só ganha se você economizar.
             </p>
 
-            <Button variant="gold" className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" asChild>
-              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
+            <Button 
+              variant="gold" 
+              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" 
+              asChild
+            >
+              <a 
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => trackCalendlyClick('hero')}
+              >
                 Desbloquear minha Consultoria Exclusiva
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -506,7 +534,12 @@ const LandingPage = () => {
                   </p>
                   <div className="mt-4">
                     <Button variant="luxury" size="lg" className="w-full sm:w-auto" asChild>
-                      <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => trackCalendlyClick('sobre-marcus')}
+                      >
                         Quero minha Consultoria Gratis
                       </a>
                     </Button>
@@ -656,7 +689,12 @@ const LandingPage = () => {
                     </ul>
 
                     <Button variant={plan.popular ? "luxury" : "luxury-outline"} className="w-full" size="lg" asChild>
-                      <a href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick('planos')}
+                      >
                         Quero saber mais sobre este serviço.
                       </a>
                     </Button>
@@ -777,7 +815,12 @@ const LandingPage = () => {
               </p>
 
               <Button asChild variant="gold" className="h-10 px-6 text-sm md:h-14 md:px-10 md:text-lg font-semibold">
-                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer">
+                <a 
+                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => trackCalendlyClick('garantias')}
+                >
                   Garantir Minha Vaga Agora
                   <ArrowRight className="h-5 w-5" />
                 </a>
@@ -1108,7 +1151,13 @@ const LandingPage = () => {
             </p>
 
             <Button asChild variant="gold" size="xl" className="group shadow-gold hover:shadow-luxury transition-all duration-300">
-              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+              <a 
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-3"
+                onClick={() => trackCalendlyClick('cta-final')}
+              >
                 <Mail className="w-5 h-5 group-hover:animate-bounce" />
                 Quero minha Consultoria Gratuíta
               </a>
@@ -1311,7 +1360,14 @@ const LandingPage = () => {
 
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" aria-label="Falar no WhatsApp">
+        <a 
+          href="https://wa.me/5521997250515?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20oferecidos%20no%20site%20do%20Personal%20Shopper%20Imobiliario." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center group" 
+          aria-label="Falar no WhatsApp"
+          onClick={() => trackWhatsAppClick('floating-button')}
+        >
           <MessageCircle className="h-6 w-6" />
           <span className="absolute right-full mr-3 bg-luxury-navy text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Fale no WhatsApp
