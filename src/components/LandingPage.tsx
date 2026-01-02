@@ -797,7 +797,7 @@ const LandingPage = () => {
                   <div className="space-y-4 md:space-y-5">
                     {[
                       { label: "Lealdade", text: "Exclusiva ao comprador. Seu interesse é meu interesse.", highlight: true },
-                      { label: "Autoridade", text: "Poderes definidos em contrato. Posso negociar, propor e decidir em seu nome." },
+                      { label: "Autoridade", text: "Poderes definidos em contrato. Eu posso negociar por você, porém sempre com a sua ciência e autorização por escrito." },
                       { label: "Incentivo Financeiro", text: "Taxa de sucesso atrelada ao desconto. Quanto mais você economiza, mais eu ganho.", highlight: true },
                       { label: "Conflito de Interesse", text: "Eliminado. Meu ganho depende da sua economia." },
                       { label: "Resultado Esperado", text: "Melhor preço possível + máxima segurança jurídica." },
