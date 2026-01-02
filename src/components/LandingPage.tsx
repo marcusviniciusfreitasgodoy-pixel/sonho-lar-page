@@ -136,14 +136,14 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+      <section id="hero" className="relative min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url(${heroImage})`
       }}>
           <div className="absolute inset-0 bg-gradient-hero opacity-85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-8">
+        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-6 md:py-8">
           <div className="animate-fade-in">
             <Badge variant="outline" className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs md:text-sm">
               Personal Shopper Imobiliário
