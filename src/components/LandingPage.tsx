@@ -487,7 +487,7 @@ const LandingPage = () => {
                   <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Decisão Clara</h3>
                   <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     Você visita apenas 5-8 imóveis PRÉ-SELECIONADOS. Análise técnica já está pronta. Sua decisão é 100%
-                    baseada em fatos e dados.
+                    baseada em fatos.
                   </p>
                 </div>
               </div>
@@ -556,8 +556,7 @@ const LandingPage = () => {
                   <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Desconto Negociado</h3>
                   <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 90-360k</div>
                   <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
-                    Negociação profissional que possibilita descontos superiores aos que você consegue no modelo
-                    tradicional ou sozinho.
+                    Negociação profissional consegue 4-8% acima do que você consegue sozinho.
                   </p>
                   <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
                     Você fica com 70%
@@ -648,8 +647,7 @@ const LandingPage = () => {
             </div>
 
             <p className="text-center text-muted-foreground mt-6 md:mt-8 italic text-sm md:text-base px-2">
-              Este exemplo assume desconto de 6%. Meu objetivo é obter descontos maiores, gerando economia ainda mais
-              significativa para você.
+              Este exemplo assume desconto de 6%. Descontos maiores geram economia ainda mais significativa para você.
             </p>
           </div>
         </div>
@@ -717,7 +715,7 @@ const LandingPage = () => {
                   <li className="flex items-start gap-2 md:gap-3">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                     <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Seu Ganho:</strong> Você fica com 70% da economia que eu consigo.
+                      <strong>Seu Ganho:</strong> Você fica com 70% do delta. Eu fico com 30% do delta.
                     </span>
                   </li>
                 </ul>
@@ -805,11 +803,15 @@ const LandingPage = () => {
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Incentivo: conseguir imóvel BARATO</span>
+                      <span className="text-sm md:text-base">
+                        Incentivo: conseguir imóvel pelo preço JUSTO e mais barato do que no modelo TRADICIONAL
+                      </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Filtra e curada (você vê apenas certos)</span>
+                      <span className="text-sm md:text-base">
+                        Maior Filtro e curadoria do imóveis (você vê apenas certos)
+                      </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
@@ -848,7 +850,7 @@ const LandingPage = () => {
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <span className="text-sm md:text-base">
-                        Compradores exigentes que valorizam dados e segurança
+                        Compradores exigentes que valorizam seu tempo e buscam segurança
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
@@ -894,7 +896,7 @@ const LandingPage = () => {
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem não está pronto para decidir em 90 dias</span>
+                      <span className="text-sm md:text-base">Quem não está pronto para decidir em até 90 dias</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
