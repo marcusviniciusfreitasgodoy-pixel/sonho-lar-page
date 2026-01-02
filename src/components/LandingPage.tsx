@@ -126,7 +126,7 @@ const LandingPage = () => {
                 </div>
                 <div className="flex items-center space-x-2 text-luxury-navy">
                   <MessageCircle className="h-4 w-4" />
-                  <span>(21) 99725-0515</span>
+                  <span>(21) 96407-5124</span>
                 </div>
               </div>
 
@@ -188,11 +188,11 @@ const LandingPage = () => {
                     <span>(21) 4040-0067</span>
                   </a>
                   <a
-                    href="https://wa.me/5521997250515"
+                    href="https://wa.me/5521964075124"
                     className="flex items-center space-x-2 text-luxury-navy text-sm py-1"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    <span>(21) 99725-0515</span>
+                    <span>(21) 96407-5124</span>
                   </a>
                 </div>
               </nav>
@@ -243,7 +243,7 @@ const LandingPage = () => {
               asChild
             >
               <a
-                href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick("hero")}
@@ -1022,7 +1022,7 @@ const LandingPage = () => {
                       asChild
                     >
                       <a
-                        href="https://wa.me/5521997250515?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o"
+                        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackWhatsAppClick("precos")}
@@ -1167,7 +1167,7 @@ const LandingPage = () => {
                   </p>
                   <Button variant="gold" className="mt-4" asChild>
                     <a
-                      href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                      href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackWhatsAppClick("sobre")}
@@ -1231,7 +1231,7 @@ const LandingPage = () => {
 
               <Button asChild variant="gold" className="h-14 px-10 text-lg font-semibold">
                 <a
-                  href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                  href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick("garantias")}
@@ -1421,7 +1421,7 @@ const LandingPage = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                  href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick("cta-final")}
@@ -1437,39 +1437,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contato" className="py-20 bg-gradient-hero text-white">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Pronto Para Economizar <span className="text-luxury-gold">Dezenas de Milhares de R$</span> Na Sua Próxima
-              Compra?
-            </h2>
-
-            <p className="text-xl mb-8 text-white/90">Entre em contato agora e garanta sua vaga</p>
-
-            <Button
-              asChild
-              variant="gold"
-              size="xl"
-              className="group shadow-gold hover:shadow-luxury transition-all duration-300"
-            >
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3"
-                onClick={() => trackCalendlyClick("cta-final")}
-              >
-                <Mail className="w-5 h-5 group-hover:animate-bounce" />
-                Quero minha Consultoria Gratuíta
-              </a>
-            </Button>
-
-            <p className="text-sm text-white/70 mt-6">Vagas limitadas por trimestre.</p>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-luxury-navy text-white py-16">
@@ -1505,7 +1472,7 @@ const LandingPage = () => {
                 <div className="flex items-center space-x-3">
                   <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm">(21) 99725-0515</p>
+                    <p className="text-white text-sm">(21) 96407-5124</p>
                     <p className="text-white/60 text-xs">WhatsApp</p>
                   </div>
                 </div>
@@ -1570,7 +1537,7 @@ const LandingPage = () => {
           <div className="border-t border-white/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-white/60">
-                <a href="#" className="hover:text-luxury-gold transition-colors">
+                <a href="/privacidade" className="hover:text-luxury-gold transition-colors">
                   Política de Privacidade
                 </a>
                 <a
@@ -1581,7 +1548,7 @@ const LandingPage = () => {
                 >
                   Termos de Uso
                 </a>
-                <a href="#" className="hover:text-luxury-gold transition-colors">
+                <a href="/lgpd" className="hover:text-luxury-gold transition-colors">
                   LGPD
                 </a>
               </div>
@@ -1598,7 +1565,7 @@ const LandingPage = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/5521997250515?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
+        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
