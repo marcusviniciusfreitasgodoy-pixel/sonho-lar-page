@@ -310,6 +310,86 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* New Solution Section */}
+      <section id="solucao-nova" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+                A Solução: Personal Shopper Imobiliário
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Eu <strong className="text-luxury-navy">não vendo imóveis</strong>. Eu <strong className="text-luxury-navy">represento compradores</strong>.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+                    1
+                  </div>
+                  <h3 className="text-xl font-bold text-luxury-navy">Identifico o Imóvel EXATO</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Você não vê "opções do mercado". Você define seu critério 
+                  (localização, tamanho, acabamento, orçamento), e EU identifico 
+                  qual imóvel realmente atende isso.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+                    2
+                  </div>
+                  <h3 className="text-xl font-bold text-luxury-navy">Você Visita Apenas os Certos</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  EU visito dezenas de imóveis, faço due diligence completa 
+                  (estrutura, documentação, condomínio), e apresento apenas 
+                  aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+                    3
+                  </div>
+                  <h3 className="text-xl font-bold text-luxury-navy">Due Diligence Profissional</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Antes de você pisar no imóvel, eu já analisei estrutura, fachada, 
+                  acabamento, saúde do condomínio, regularidade de documentação, 
+                  e comparei preço com transações reais. <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+                    4
+                  </div>
+                  <h3 className="text-xl font-bold text-luxury-navy">Negociação Baseada em Dados</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Estratégia profissional, múltiplas rodadas de contra-proposta, 
+                  baseada em análise real de mercado. Meu incentivo é o desconto. 
+                  <strong className="text-luxury-navy"> Seu incentivo também.</strong>
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-luxury-navy rounded-2xl p-8 text-center">
+              <p className="text-xl md:text-2xl text-white leading-relaxed">
+                A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
