@@ -759,6 +759,87 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* For Who Section */}
+      <section id="para-quem" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+                Para Quem É / Para Quem Não É
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* For Who It Is */}
+              <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-luxury-navy mb-6 flex items-center gap-2">
+                    <CheckCircle className="h-7 w-7 text-luxury-gold" /> Para Quem É
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Compradores exigentes que valorizam dados e segurança</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Executivos que não têm tempo para visitar 30 imóveis</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Quem entende que errar custa caro</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Quem quer representação exclusiva do seu lado</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Investidores que buscam melhor preço + análise profunda</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-luxury-navy">
+                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span>Imóveis a partir de R$ 1.5M na Barra ou Recreio</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* For Who It Is Not */}
+              <Card className="bg-white border-2 border-red-200 shadow-luxury">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center gap-2">
+                    <X className="h-7 w-7 text-red-500" /> Para Quem Não É
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 text-muted-foreground">
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span>Quem quer apenas "ver opções" sem compromisso</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground">
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span>Quem busca corretor gratuito (do lado do vendedor)</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground">
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span>Quem não está pronto para decidir em 90 dias</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground">
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span>Quem acha que tempo e segurança não importam</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground">
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span>Imóveis abaixo de R$ 1.5M</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
