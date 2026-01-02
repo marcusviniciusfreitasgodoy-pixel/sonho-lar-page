@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
 import LGPD from "./pages/LGPD";
+import Confirmacao from "./pages/Confirmacao";
 import HeygenAvatar from "./components/HeygenAvatar";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/privacidade" element={<Privacidade />} />
           <Route path="/lgpd" element={<LGPD />} />
+          <Route path="/confirmacao" element={<Confirmacao />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
