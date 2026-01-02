@@ -840,6 +840,40 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Authority Section */}
+      <section id="autoridade" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-luxury-navy rounded-2xl p-8 md:p-12 shadow-luxury">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+                Experiência Profissional
+              </h3>
+              
+              <div className="space-y-6 mb-8">
+                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
+                  <Award className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                  <span><strong className="text-luxury-gold">Atuação focada</strong> em imóveis de alto padrão na Barra da Tijuca e Recreio dos Bandeirantes</span>
+                </p>
+                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
+                  <Shield className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                  <span><strong className="text-luxury-gold">Representação exclusiva</strong> do comprador em transações acima de R$ 1.5 milhão</span>
+                </p>
+                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
+                  <Target className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                  <span><strong className="text-luxury-gold">Método proprietário</strong> baseado em dados reais, curadoria técnica e negociação estratégica</span>
+                </p>
+              </div>
+
+              <div className="bg-luxury-gold/20 rounded-xl p-6 border border-luxury-gold/30">
+                <p className="text-xl md:text-2xl text-white text-center font-medium">
+                  Meu compromisso: <span className="text-luxury-gold">seu patrimônio está protegido</span>. Sua economia é real.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
