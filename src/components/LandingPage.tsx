@@ -243,10 +243,10 @@ const LandingPage = () => {
               asChild
             >
               <a
-                href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                href="https://calendly.com/godoyprimerealty"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick("hero")}
+                onClick={() => trackCalendlyClick("hero")}
               >
                 Agendar Diagnóstico (Gratuito)
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -1361,10 +1361,10 @@ const LandingPage = () => {
                   </p>
                   <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
                     <a
-                      href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                      href="https://calendly.com/godoyprimerealty"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick("sobre")}
+                      onClick={() => trackCalendlyClick("sobre")}
                     >
                       Agendar Diagnóstico Estratégico
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -1505,10 +1505,10 @@ const LandingPage = () => {
                 asChild
               >
                 <a
-                  href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
+                  href="https://calendly.com/godoyprimerealty"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("cta-final")}
+                  onClick={() => trackCalendlyClick("cta-final")}
                 >
                   Agendar Diagnóstico Estratégico (Gratuito)
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
