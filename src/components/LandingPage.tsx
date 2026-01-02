@@ -874,6 +874,44 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Final CTA Section */}
+      <section id="cta-final" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-luxury-navy rounded-2xl p-8 md:p-16 text-center shadow-luxury">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                Pronto Para Encontrar o Imóvel Certo?
+              </h2>
+              
+              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                O maior risco não é pagar por estratégia.<br />
+                <strong className="text-luxury-gold">É comprar mal achando que está seguro.</strong>
+              </p>
+
+              <Button 
+                variant="gold" 
+                className="mb-6 h-14 px-10 text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group" 
+                asChild
+              >
+                <a 
+                  href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('cta-final')}
+                >
+                  Agendar Diagnóstico Estratégico (Gratuito)
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+
+              <p className="text-white/70">
+                Conversa direta. Sem compromisso. Sem venda de imóveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
