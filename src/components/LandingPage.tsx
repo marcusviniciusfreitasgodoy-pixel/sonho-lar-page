@@ -736,6 +736,202 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Representação vs Intermediação Section */}
+      <section id="representacao" className="py-12 md:py-20 bg-gradient-to-br from-muted to-background border-b border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight max-w-5xl mx-auto">
+                Existe uma diferença legal entre intermediação e representação. Intermediação deixa você sozinho — e ganha mais se você pagar caro. Representação te protege — e ganha mais se você economizar. Ela muda tudo.
+              </h2>
+              <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4">
+                Não é semântica. É estrutural. E muda tudo — para você.
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                A maioria dos corretores usa intermediação. O PSI usa representação. 
+                E essa diferença muda completamente como você é protegido.
+              </p>
+            </div>
+
+            {/* Comparação Legal */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+              {/* Intermediação */}
+              <Card className="bg-white border-2 border-destructive/30 shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="bg-destructive/10 p-4 md:p-6 border-b-[3px] border-destructive text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">❌ Intermediação (Modelo Tradicional)</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground italic">Corretor como mediador neutro</p>
+                </div>
+                <CardContent className="p-4 md:p-6">
+                  <div className="space-y-4 md:space-y-5">
+                    {[
+                      { label: "Lealdade", text: "Equilibrada entre vendedor e comprador. Sem favor a ninguém." },
+                      { label: "Autoridade", text: "Sem poderes de decisão. Apenas facilita comunicação." },
+                      { label: "Incentivo Financeiro", text: "Comissão atrelada ao fechamento. Quanto mais caro você paga, mais o corretor ganha.", highlight: true },
+                      { label: "Conflito de Interesse", text: "Estrutural. O corretor ganha mais se você pagar mais." },
+                      { label: "Resultado Esperado", text: "Transação viabilizada. Preço: o que o mercado aceitar." },
+                    ].map((item, index) => (
+                      <div key={index} className="pb-4 border-b border-border last:border-b-0 last:pb-0">
+                        <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1 md:mb-2">{item.label}</span>
+                        <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+                <div className="bg-muted p-4 border-t border-border">
+                  <p className="text-xs md:text-sm text-foreground leading-relaxed">
+                    <strong>Risco para você:</strong> Você está sozinho na negociação. 
+                    O corretor quer fechar rápido (não negocia desconto).
+                  </p>
+                </div>
+              </Card>
+
+              {/* Representação */}
+              <Card className="bg-white border-2 border-luxury-gold shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="bg-luxury-gold/10 p-4 md:p-6 border-b-[3px] border-luxury-gold text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">✅ Representação (Modelo PSI)</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground italic">Profissional como seu advogado</p>
+                </div>
+                <CardContent className="p-4 md:p-6">
+                  <div className="space-y-4 md:space-y-5">
+                    {[
+                      { label: "Lealdade", text: "Exclusiva ao comprador. Seu interesse é meu interesse.", highlight: true },
+                      { label: "Autoridade", text: "Poderes definidos em contrato. Posso negociar, propor e decidir em seu nome." },
+                      { label: "Incentivo Financeiro", text: "Taxa de sucesso atrelada ao desconto. Quanto mais você economiza, mais eu ganho.", highlight: true },
+                      { label: "Conflito de Interesse", text: "Eliminado. Meu ganho depende da sua economia." },
+                      { label: "Resultado Esperado", text: "Melhor preço possível + máxima segurança jurídica." },
+                    ].map((item, index) => (
+                      <div key={index} className="pb-4 border-b border-border last:border-b-0 last:pb-0">
+                        <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1 md:mb-2">{item.label}</span>
+                        <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+                <div className="bg-muted p-4 border-t border-border">
+                  <p className="text-xs md:text-sm text-foreground leading-relaxed">
+                    <strong>Proteção para você:</strong> Você tem um advogado negociando. 
+                    Meu ganho depende de conseguir desconto real.
+                  </p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Diferença Chave */}
+            <div className="bg-luxury-gold/10 p-5 md:p-8 rounded-xl md:rounded-2xl border-l-4 border-luxury-gold mb-8 md:mb-12">
+              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-4 md:mb-6">A Diferença-Chave</h3>
+              <div className="space-y-4 md:space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center pb-4 border-b border-luxury-gold/20">
+                  <div className="text-sm md:text-base font-semibold text-foreground">Intermediação</div>
+                  <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
+                  <div className="text-sm md:text-base text-muted-foreground">Você paga mais, corretor ganha mais. Conflito estrutural.</div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center">
+                  <div className="text-sm md:text-base font-semibold text-foreground">Representação (PSI)</div>
+                  <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
+                  <div className="text-sm md:text-base text-muted-foreground">Você economiza mais, eu ganho mais. Incentivos alinhados.</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Proteção Jurídica */}
+            <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-luxury-gold mb-8 md:mb-12">
+              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
+              <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed">
+                A representação não é apenas um modelo comercial. 
+                É um <strong className="text-foreground">vínculo jurídico</strong> que te protege.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {[
+                  { num: "1", title: "Dever Fiduciário", text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta." },
+                  { num: "2", title: "Contrato Blindado", text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades." },
+                  { num: "3", title: "Exclusividade", text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes." },
+                  { num: "4", title: "Responsabilidade", text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida." },
+                ].map((item) => (
+                  <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
+                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-bold text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
+                    <h4 className="text-sm md:text-base font-bold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Exemplo Prático */}
+            <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-destructive mb-8 md:mb-12">
+              <h3 className="text-lg md:text-xl font-bold text-destructive mb-4 md:mb-6">Exemplo Prático: A Diferença em Ação</h3>
+              
+              <div className="bg-muted p-4 md:p-6 rounded-lg mb-4 md:mb-6">
+                <h4 className="text-sm md:text-base font-bold text-foreground mb-1">Cenário: Imóvel anunciado por R$ 2.5M</h4>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">Você está negociando com o vendedor</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Com Intermediação */}
+                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-destructive">
+                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Intermediação</p>
+                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                      <p><strong className="text-foreground">Corretor recebe:</strong> 2% = R$ 50k</p>
+                      <p><strong className="text-foreground">Incentivo do corretor:</strong> Fechar rápido. Quanto mais caro, melhor.</p>
+                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.5M (preço pedido).</p>
+                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 0</p>
+                    </div>
+                  </div>
+                  
+                  {/* Com Representação */}
+                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-luxury-gold">
+                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Representação (PSI)</p>
+                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                      <p><strong className="text-foreground">Meu ganho:</strong> 30% do desconto = R$ 45k (se conseguir R$ 150k de desconto)</p>
+                      <p><strong className="text-foreground">Meu incentivo:</strong> Negociar duro. Quanto maior o desconto, melhor.</p>
+                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.35M (após negociação).</p>
+                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 150k</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-luxury-gold/10 p-4 md:p-5 rounded-lg border-l-4 border-luxury-gold">
+                <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                  <strong className="text-foreground">Com intermediação:</strong> Você paga preço cheio. Corretor ganha R$ 50k.
+                </p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-3">
+                  <strong className="text-foreground">Com representação:</strong> Você economiza R$ 150k. Eu ganho R$ 45k. 
+                  Você fica com R$ 105k de economia líquida.
+                </p>
+                <p className="text-sm md:text-base font-semibold text-luxury-navy">
+                  Qual modelo você prefere?
+                </p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center bg-gradient-to-br from-luxury-gold/10 to-background p-6 md:p-10 rounded-xl md:rounded-2xl">
+              <p className="text-base md:text-lg text-foreground mb-4 md:mb-6 leading-relaxed">
+                Representação não é apenas um modelo comercial.
+                <br />
+                <strong className="text-luxury-navy">É proteção jurídica + alinhamento de interesses.</strong>
+              </p>
+              <Button
+                variant="gold"
+                size="xl"
+                className="shadow-gold transition-all duration-300 hover:scale-105 group"
+                asChild
+              >
+                <a
+                  href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick("representacao")}
+                >
+                  Entender Melhor a Representação Exclusiva
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Differentiation Section */}
       <section id="diferenciacao" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
