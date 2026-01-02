@@ -1211,11 +1211,8 @@ const LandingPage = () => {
                     </ul>
 
                     <Button
-                      variant={plan.popular ? "gold" : "outline"}
-                      className={cn(
-                        "w-full text-sm md:text-base",
-                        !plan.popular && "border-white/30 text-white hover:bg-white/10",
-                      )}
+                      variant={plan.popular ? "gold" : "luxury-outline"}
+                      className="w-full text-sm md:text-base py-3"
                       asChild
                     >
                       <a
@@ -1237,29 +1234,29 @@ const LandingPage = () => {
       </section>
 
       {/* Authority Section */}
-      <section id="autoridade" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="autoridade" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-luxury-navy rounded-2xl p-8 md:p-12 shadow-luxury">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Experiência Profissional</h3>
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-12 shadow-luxury">
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-6 md:mb-8 text-center">Experiência Profissional</h3>
 
-              <div className="space-y-6 mb-8">
-                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
-                  <Award className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+              <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
+                <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
+                  <Award className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
                   <span>
                     <strong className="text-luxury-gold">Atuação focada</strong> em imóveis de alto padrão na Barra da
                     Tijuca e Recreio dos Bandeirantes
                   </span>
                 </p>
-                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
-                  <Shield className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
+                  <Shield className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
                   <span>
                     <strong className="text-luxury-gold">Representação exclusiva</strong> do comprador em transações
                     acima de R$ 1.5 milhão
                   </span>
                 </p>
-                <p className="text-white/90 text-lg leading-relaxed flex items-start gap-3">
-                  <Target className="h-6 w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
+                <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
+                  <Target className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
                   <span>
                     <strong className="text-luxury-gold">Método proprietário</strong> baseado em dados reais, curadoria
                     técnica e negociação estratégica
@@ -1267,8 +1264,8 @@ const LandingPage = () => {
                 </p>
               </div>
 
-              <div className="bg-luxury-gold/20 rounded-xl p-6 border border-luxury-gold/30">
-                <p className="text-xl md:text-2xl text-white text-center font-medium">
+              <div className="bg-luxury-gold/20 rounded-lg md:rounded-xl p-4 md:p-6 border border-luxury-gold/30">
+                <p className="text-base md:text-2xl text-white text-center font-medium">
                   Meu compromisso: <span className="text-luxury-gold">seu patrimônio está protegido</span>. Sua economia
                   é real.
                 </p>
@@ -1279,17 +1276,17 @@ const LandingPage = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section id="depoimentos" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="depoimentos" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
                 Ouça Quem Já <span className="text-luxury-gold">Protegeu Seu Patrimônio</span>
               </h2>
-              <p className="text-xl text-muted-foreground">O que diz quem já contratou?</p>
+              <p className="text-base md:text-xl text-muted-foreground">O que diz quem já contratou?</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {[
                 {
                   quote:
@@ -1307,23 +1304,23 @@ const LandingPage = () => {
                 },
               ].map((testimonial, index) => (
                 <Card key={index} className="border-0 shadow-luxury bg-white">
-                  <CardContent className="p-8">
-                    <div className="flex mb-4">
+                  <CardContent className="p-5 md:p-8">
+                    <div className="flex mb-3 md:mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-luxury-gold text-luxury-gold" />
+                        <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-luxury-gold text-luxury-gold" />
                       ))}
                     </div>
 
-                    <blockquote className="text-lg text-foreground mb-6 italic leading-relaxed">
+                    <blockquote className="text-sm md:text-lg text-foreground mb-4 md:mb-6 italic leading-relaxed">
                       "{testimonial.quote}"
                     </blockquote>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
-                        <p className="font-semibold text-foreground">{testimonial.author}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <p className="font-semibold text-foreground text-sm md:text-base">{testimonial.author}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5">
+                      <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5 text-xs w-fit">
                         Economizou {testimonial.savings}
                       </Badge>
                     </div>
@@ -1336,33 +1333,33 @@ const LandingPage = () => {
       </section>
 
       {/* Origin Story Section - Resumida */}
-      <section id="sobre" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="sobre" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-luxury-navy leading-tight">
                 Sobre <span className="text-luxury-gold">Marcus Godoy</span>
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
+            <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
-                <p className="text-lg leading-relaxed mb-6">
+                <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">
                   Minha experiência como Corretor revelou uma realidade frustrante: o modelo tradicional privilegia
                   vendedores e deixa compradores desprotegidos. A remuneração por comissão cria um{" "}
                   <strong>conflito de interesses estrutural</strong>.
                 </p>
 
-                <p className="text-lg leading-relaxed mb-6">
+                <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">
                   Estudei modelos internacionais de representação exclusiva do comprador e desenvolvi um método próprio:{" "}
                   <strong>curadoria técnica + dados reais + negociação estratégica</strong>.
                 </p>
 
-                <div className="bg-luxury-navy text-white rounded-xl p-8 text-center">
-                  <p className="text-xl font-bold mb-4">
+                <div className="bg-luxury-navy text-white rounded-lg md:rounded-xl p-5 md:p-8 text-center">
+                  <p className="text-base md:text-xl font-bold mb-3 md:mb-4">
                     Meu compromisso: ser o defensor exclusivo dos seus interesses, com lealdade total.
                   </p>
-                  <Button variant="gold" className="mt-4" asChild>
+                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
                     <a
                       href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                       target="_blank"
@@ -1381,42 +1378,42 @@ const LandingPage = () => {
       </section>
 
       {/* Guarantees Section */}
-      <section id="garantias" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="garantias" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+            <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
               Garantias
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-luxury-navy">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-luxury-navy leading-tight">
               Sua Segurança é <span className="text-luxury-gold">Prioridade</span>
             </h2>
 
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-luxury">
-              <ul className="text-left space-y-6 mb-8">
-                <li className="flex items-start space-x-3">
+            <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-12 shadow-luxury">
+              <ul className="text-left space-y-4 md:space-y-6 mb-6 md:mb-8">
+                <li className="flex items-start space-x-2 md:space-x-3">
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                  <div>
+                  <div className="text-sm md:text-base">
                     <strong className="text-luxury-navy">Lealdade Exclusiva:</strong>
                     <span className="text-luxury-navy"> Defendo apenas seus interesses, sem conflitos.</span>
                   </div>
                 </li>
-                <li className="flex items-start space-x-3">
+                <li className="flex items-start space-x-2 md:space-x-3">
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                  <div>
+                  <div className="text-sm md:text-base">
                     <strong className="text-luxury-navy">Confidencialidade Total:</strong>
                     <span className="text-luxury-navy"> Suas informações e estratégias são protegidas.</span>
                   </div>
                 </li>
-                <li className="flex items-start space-x-3">
+                <li className="flex items-start space-x-2 md:space-x-3">
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                  <div>
+                  <div className="text-sm md:text-base">
                     <strong className="text-luxury-navy">Remuneração por Performance:</strong>
                     <span className="text-luxury-navy"> Se não houver economia, você não paga success fee.</span>
                   </div>
                 </li>
-                <li className="flex items-start space-x-3">
+                <li className="flex items-start space-x-2 md:space-x-3">
                   <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                  <div>
+                  <div className="text-sm md:text-base">
                     <strong className="text-luxury-navy">Contrato Formalizado:</strong>
                     <span className="text-luxury-navy">
                       {" "}
@@ -1426,7 +1423,7 @@ const LandingPage = () => {
                 </li>
               </ul>
 
-              <Button asChild variant="gold" className="h-14 px-10 text-lg font-semibold">
+              <Button asChild variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto">
                 <a
                   href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                   target="_blank"
@@ -1434,7 +1431,7 @@ const LandingPage = () => {
                   onClick={() => trackWhatsAppClick("garantias")}
                 >
                   Garantir Minha Vaga Agora
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </a>
               </Button>
             </div>
@@ -1443,170 +1440,60 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="faq" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+            <div className="text-center mb-8 md:mb-16">
+              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Perguntas Frequentes
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
                 <span className="text-luxury-gold">Respostas Diretas</span> para Suas Dúvidas
               </h2>
             </div>
 
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              <AccordionItem
-                value="item-1"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      1
+            <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
+              {[
+                { q: "O que é um Personal Shopper Imobiliário?", a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você." },
+                { q: "Qual a diferença para um corretor tradicional?", a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados." },
+                { q: "Como funciona a remuneração?", a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee." },
+                { q: "Para quais imóveis o serviço é indicado?", a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor." },
+                { q: "Como garantir que você está do meu lado?", a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato." },
+                { q: "Como iniciar?", a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso." },
+              ].map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index + 1}`}
+                  className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
+                >
+                  <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
+                    <div className="flex items-center gap-3 md:gap-4 text-left">
+                      <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-luxury-gold text-luxury-navy text-xs md:text-sm font-bold flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <h3 className="text-sm md:text-lg font-semibold text-luxury-navy pr-2">{item.q}</h3>
                     </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">O que é um Personal Shopper Imobiliário?</h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus
-                      interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o
-                      vendedor, o PSI busca o melhor negócio para você.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-2"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      2
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
+                    <div className="pl-10 md:pl-12">
+                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: item.a }} />
                     </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">
-                      Qual a diferença para um corretor tradicional?
-                    </h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu
-                      ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho).
-                      Nossos interesses estão 100% alinhados.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-3"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      3
-                    </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">Como funciona a remuneração?</h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      <strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).
-                      <br />
-                      <strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga
-                      success fee.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-4"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      4
-                    </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">Para quais imóveis o serviço é indicado?</h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos
-                      Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-5"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      5
-                    </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">Como garantir que você está do meu lado?</h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o
-                      desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados
-                      em contrato.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-6"
-                className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-              >
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-luxury-gold text-luxury-navy text-sm font-bold flex-shrink-0">
-                      6
-                    </div>
-                    <h3 className="text-lg font-semibold text-luxury-navy">Como iniciar?</h3>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <div className="pl-12">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas
-                      necessidades e explicamos como podemos ajudar. Sem compromisso.
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta-final" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="cta-final" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-luxury-navy rounded-2xl p-8 md:p-16 text-center shadow-luxury">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Pronto Para Encontrar o Imóvel Certo?</h2>
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-16 text-center shadow-luxury">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">Pronto Para Encontrar o Imóvel Certo?</h2>
 
-              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-base md:text-2xl text-white/90 mb-6 md:mb-8 leading-relaxed">
                 O maior risco não é pagar por estratégia.
                 <br />
                 <strong className="text-luxury-gold">É comprar mal achando que está seguro.</strong>
@@ -1614,7 +1501,7 @@ const LandingPage = () => {
 
               <Button
                 variant="gold"
-                className="mb-6 h-14 px-10 text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group"
+                className="mb-4 md:mb-6 h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
                 asChild
               >
                 <a
@@ -1624,11 +1511,11 @@ const LandingPage = () => {
                   onClick={() => trackWhatsAppClick("cta-final")}
                 >
                   Agendar Diagnóstico Estratégico (Gratuito)
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
 
-              <p className="text-white/70">Conversa direta. Sem compromisso. Sem venda de imóveis.</p>
+              <p className="text-white/70 text-sm md:text-base">Conversa direta. Sem compromisso. Sem venda de imóveis.</p>
             </div>
           </div>
         </div>
@@ -1636,19 +1523,19 @@ const LandingPage = () => {
 
 
       {/* Footer */}
-      <footer className="bg-luxury-navy text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
+      <footer className="bg-luxury-navy text-white py-10 md:py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
             {/* Company Info */}
-            <div className="md:col-span-2">
-              <div className="mb-6">
-                <div className="flex items-center space-x-3 mb-4">
-                  <img src={godoyLogo} alt="Godoy Prime Realty" className="h-16 w-16" />
-                  <span className="text-2xl font-bold text-white">Godoy Prime Realty</span>
+            <div className="sm:col-span-2">
+              <div className="mb-4 md:mb-6">
+                <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
+                  <img src={godoyLogo} alt="Godoy Prime Realty" className="h-12 w-12 md:h-16 md:w-16" />
+                  <span className="text-lg md:text-2xl font-bold text-white">Godoy Prime Realty</span>
                 </div>
-                <h3 className="text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
-                <p className="text-white/80 mb-4">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
+                <p className="text-white/80 mb-3 md:mb-4 text-sm md:text-base">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
+                <p className="text-white/70 text-xs md:text-sm leading-relaxed">
                   Representação exclusiva do comprador em imóveis de alto padrão. Economia garantida e transparência
                   total.
                 </p>
@@ -1657,34 +1544,30 @@ const LandingPage = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Contato</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
+              <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Contato</h4>
+              <div className="space-y-2 md:space-y-3">
+                <a href="tel:+552140400067" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
                   <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm">(21) 4040-0067</p>
-                    <p className="text-white/60 text-xs">Telefone</p>
+                    <p className="text-white text-xs md:text-sm">(21) 4040-0067</p>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
+                </a>
+                <a href="https://wa.me/5521964075124" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
                   <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm">(21) 96407-5124</p>
-                    <p className="text-white/60 text-xs">WhatsApp</p>
+                    <p className="text-white text-xs md:text-sm">(21) 96407-5124</p>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
+                </a>
+                <a href="mailto:marcus@godoyprime.com.br" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
                   <Mail className="h-4 w-4 text-luxury-gold flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm">marcus@godoyprime.com.br</p>
-                    <p className="text-white/60 text-xs">E-mail</p>
+                    <p className="text-white text-xs md:text-sm">marcus@godoyprime.com.br</p>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-1" />
+                </a>
+                <div className="flex items-start space-x-2 md:space-x-3">
+                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white text-sm">Barra da Tijuca</p>
-                    <p className="text-white/60 text-xs">Rio de Janeiro - RJ</p>
+                    <p className="text-white text-xs md:text-sm">Barra da Tijuca, RJ</p>
                   </div>
                 </div>
               </div>
@@ -1692,24 +1575,21 @@ const LandingPage = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Links Úteis</h4>
+              <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Links Úteis</h4>
               <div className="space-y-2">
-                <a
-                  href="#como-funciona"
-                  className="block text-white/80 hover:text-luxury-gold transition-colors text-sm"
-                >
+                <a href="#como-funciona" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
                   Como Funciona
                 </a>
-                <a href="#economia" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                <a href="#economia" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
                   Economia
                 </a>
-                <a href="#precos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                <a href="#precos" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
                   Serviços
                 </a>
-                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
                   Sobre Marcus
                 </a>
-                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-sm">
+                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
                   Depoimentos
                 </a>
               </div>
@@ -1717,23 +1597,23 @@ const LandingPage = () => {
           </div>
 
           {/* Stats Section */}
-          <div className="border-t border-white/20 pt-8 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center max-w-2xl mx-auto">
+          <div className="border-t border-white/20 pt-6 md:pt-8 mb-6 md:mb-8">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 text-center max-w-2xl mx-auto">
               <div>
-                <p className="text-3xl font-bold text-luxury-gold mb-1">100%</p>
-                <p className="text-white/70 text-sm">Representação do Comprador</p>
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-1">100%</p>
+                <p className="text-white/70 text-xs md:text-sm">Representação do Comprador</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-luxury-gold mb-1">Zero</p>
-                <p className="text-white/70 text-sm">Conflito de Interesses</p>
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-1">Zero</p>
+                <p className="text-white/70 text-xs md:text-sm">Conflito de Interesses</p>
               </div>
             </div>
           </div>
 
           {/* Legal Links & Copyright */}
-          <div className="border-t border-white/20 pt-8">
+          <div className="border-t border-white/20 pt-6 md:pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm text-white/60">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 md:space-x-6 text-xs md:text-sm text-white/60">
                 <a href="/privacidade" className="hover:text-luxury-gold transition-colors">
                   Política de Privacidade
                 </a>
@@ -1750,7 +1630,7 @@ const LandingPage = () => {
                 </a>
               </div>
 
-              <p className="text-white/60 text-sm text-center md:text-right">
+              <p className="text-white/60 text-xs md:text-sm text-center md:text-right">
                 © 2025 Godoy Prime Realty. Todos os direitos reservados.
                 <br />
                 CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
