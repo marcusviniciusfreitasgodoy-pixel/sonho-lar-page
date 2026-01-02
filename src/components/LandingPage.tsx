@@ -743,14 +743,15 @@ const LandingPage = () => {
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight max-w-5xl mx-auto">
-                Existe uma diferença legal entre intermediação e representação. Intermediação deixa você sozinho — e ganha mais se você pagar caro. Representação te protege — e ganha mais se você economizar. Ela muda tudo.
+                Existe uma diferença legal entre intermediação e representação que a maioria não conhece.
               </h2>
-              <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4">
-                Não é semântica. É estrutural. E muda tudo — para você.
+              <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4 leading-relaxed max-w-3xl mx-auto">
+                Com intermediação, quanto mais você paga, mais o corretor ganha. 
+                Com representação, quanto mais você economiza, mais eu ganho. 
+                Ela muda tudo.
               </p>
               <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                A maioria dos corretores usa intermediação. O PSI usa representação. 
-                E essa diferença muda completamente como você é protegido.
+                Não é semântica. É estrutural. E muda completamente como você é protegido.
               </p>
             </div>
 
