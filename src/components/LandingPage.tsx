@@ -390,6 +390,74 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section id="processo" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+                Como Funciona: 4 Passos Simples
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+                  1
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Diagnóstico Estratégico</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Você define seu perfil: localização, tamanho, acabamento, 
+                    orçamento, critérios especiais. Eu entendo exatamente o que você quer.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+                  2
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Curadoria Profissional</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    EU visito dezenas de imóveis, faço análise técnica completa, 
+                    e filtro apenas aqueles que atendem 100% seu critério. 
+                    <em className="text-luxury-gold"> (Você não vê essa parte)</em>
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+                  3
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Decisão Clara</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Você visita apenas 5-8 imóveis PRÉ-SELECIONADOS. 
+                    Análise técnica já está pronta. Sua decisão é 100% baseada em fatos.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+                  4
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Negociação Profissional</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Estratégia de negociação baseada em dados reais. 
+                    Múltiplas rodadas de contra-proposta até conseguir o melhor preço possível.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
