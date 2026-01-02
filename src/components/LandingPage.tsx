@@ -715,7 +715,7 @@ const LandingPage = () => {
                   <li className="flex items-start gap-2 md:gap-3">
                     <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                     <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Seu Ganho:</strong> Você fica com 70% do delta. Eu fico com 30% do delta.
+                      <strong>Seu Ganho:</strong> Você fica com 70% do desconto negociado.
                     </span>
                   </li>
                 </ul>
