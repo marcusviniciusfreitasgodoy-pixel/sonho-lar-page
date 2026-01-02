@@ -53,36 +53,36 @@ const LandingPage = () => {
   return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-12 w-12" />
-              <span className="text-xl font-bold text-luxury-navy">Godoy Prime Realty</span>
+            <div className="flex items-center space-x-2 md:space-x-3">
+              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-9 w-9 md:h-12 md:w-12" />
+              <span className="text-base md:text-xl font-bold text-luxury-navy">Godoy Prime Realty</span>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+              <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Como Funciona
               </a>
-              <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+              <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Economia
               </a>
-              <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+              <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Serviços
               </a>
-              <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+              <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Sobre
               </a>
-              <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium">
+              <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 FAQ
               </a>
             </nav>
 
             {/* Contact Info & Mobile Menu */}
-            <div className="flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-6 text-sm">
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <div className="hidden xl:flex items-center space-x-4 text-sm">
                 <div className="flex items-center space-x-2 text-luxury-navy">
                   <Phone className="h-4 w-4" />
                   <span>(21) 4040-0067</span>
@@ -94,41 +94,41 @@ const LandingPage = () => {
               </div>
 
               {/* Mobile menu button */}
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors" aria-label="Toggle menu">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors" aria-label="Toggle menu">
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          {mobileMenuOpen && <div className="md:hidden py-4 border-t border-border bg-white">
-              <nav className="flex flex-col space-y-4">
-                <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+          {mobileMenuOpen && <div className="lg:hidden py-4 border-t border-border bg-white animate-fade-in">
+              <nav className="flex flex-col space-y-3">
+                <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Como Funciona
                 </a>
-                <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Economia
                 </a>
-                <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Serviços
                 </a>
-                <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Sobre
                 </a>
-                <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium" onClick={() => setMobileMenuOpen(false)}>
+                <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   FAQ
                 </a>
 
                 {/* Mobile Contact Info */}
                 <div className="pt-4 border-t border-border space-y-3">
-                  <div className="flex items-center space-x-2 text-luxury-navy text-sm">
+                  <a href="tel:+552140400067" className="flex items-center space-x-2 text-luxury-navy text-sm py-1">
                     <Phone className="h-4 w-4" />
                     <span>(21) 4040-0067</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-luxury-navy text-sm">
+                  </a>
+                  <a href="https://wa.me/5521997250515" className="flex items-center space-x-2 text-luxury-navy text-sm py-1">
                     <MessageCircle className="h-4 w-4" />
                     <span>(21) 99725-0515</span>
-                  </div>
+                  </a>
                 </div>
               </nav>
             </div>}
@@ -136,35 +136,35 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url(${heroImage})`
       }}>
-          <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-hero opacity-85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-6 text-center text-white">
+        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-8">
           <div className="animate-fade-in">
-            <Badge variant="outline" className="mb-6 border-luxury-gold text-luxury-gold bg-white/10">
+            <Badge variant="outline" className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs md:text-sm">
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-5xl mx-auto">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight max-w-5xl mx-auto">
               Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
             
-            <p className="text-xl md:text-2xl mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed px-2">
               Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da Tijuca e Recreio — 
               usando dados reais, curadoria técnica e negociação profissional.
             </p>
 
-            <p className="text-lg md:text-xl mb-8 text-white/80 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto px-2">
               Sem conflito de interesses. Sem perda de tempo. Sem risco de erro caro.
             </p>
 
             <Button 
               variant="gold" 
-              className="mb-4 h-12 px-8 text-base font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" 
+              className="mb-3 md:mb-4 h-12 px-6 text-sm font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm" 
               asChild
             >
               <a 
@@ -173,12 +173,12 @@ const LandingPage = () => {
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick('hero')}
               >
-                Agendar Diagnóstico Estratégico (Gratuito)
+                Agendar Diagnóstico (Gratuito)
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
-            <p className="text-sm text-white/70">
+            <p className="text-xs sm:text-sm text-white/70">
               Conversa direta. Sem compromisso. Sem venda de imóveis.
             </p>
           </div>
@@ -186,18 +186,18 @@ const LandingPage = () => {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="video" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
               A verdade sobre o mercado e como o{" "}
-              <span className="text-luxury-gold">Personal Shopper Imobiliário te ajuda a resolver seus problemas</span>
+              <span className="text-luxury-gold">Personal Shopper Imobiliário te ajuda</span>
             </h2>
-            <p className="text-xl text-luxury-text-muted mb-12">
+            <p className="text-base md:text-xl text-luxury-text-muted mb-6 md:mb-12 px-2">
               Descubra como posso ajudar você a fazer a melhor compra da sua vida
             </p>
 
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/20">
+            <div className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-luxury border-2 md:border-4 border-luxury-gold/20">
               <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/AQY1LYo-neA" title="Serviços do Personal Shopper Imobiliário" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
           </div>
@@ -205,25 +205,25 @@ const LandingPage = () => {
       </section>
 
       {/* Market Problem Section */}
-      <section id="mercado" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="mercado" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
                 O Mercado Imobiliário Não Foi Feito Para Proteger o Comprador
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
                 Corretores são pagos para vender. Imobiliárias trabalham com estoque. 
                 E quem compra sozinho acredita que está no controle — <strong className="text-foreground">até errar caro</strong>.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">⚠️</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Conflito de Interesse Estrutural</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">⚠️</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-2 md:mb-3">Conflito de Interesse Estrutural</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Quanto mais caro você paga, mais o corretor ganha. 
                     Nenhum incentivo para negociar menor.
                   </p>
@@ -231,10 +231,10 @@ const LandingPage = () => {
               </Card>
 
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">💸</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Preços Inflados Sem Critério</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">💸</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-2 md:mb-3">Preços Inflados Sem Critério</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Você não tem acesso a transações reais. Paga baseado em "feeling" 
                     e informação assimétrica.
                   </p>
@@ -242,10 +242,10 @@ const LandingPage = () => {
               </Card>
 
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">⏱️</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Tempo Desperdiçado</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">⏱️</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-2 md:mb-3">Tempo Desperdiçado</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Visita 30-40 imóveis errados em 2-3 meses. 
                     80-120 horas perdidas (R$ 40-60k se você ganha R$ 500/h).
                   </p>
@@ -253,10 +253,10 @@ const LandingPage = () => {
               </Card>
 
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">🚨</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Risco de Erro Invisível</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                <CardContent className="p-4 md:p-6">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">🚨</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-2 md:mb-3">Risco de Erro Invisível</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Problemas estruturais, condomínio em litígio, documentação irregular. 
                     Descobertos tarde demais.
                   </p>
@@ -264,8 +264,8 @@ const LandingPage = () => {
               </Card>
             </div>
 
-            <div className="bg-luxury-navy rounded-2xl p-8 text-center">
-              <p className="text-xl md:text-2xl text-white leading-relaxed">
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-8 text-center">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed">
                 <strong className="text-luxury-gold">No alto padrão, um erro custa R$ 100k a R$ 500k.</strong><br />
                 E você só descobre depois de assinar.
               </p>
@@ -275,69 +275,69 @@ const LandingPage = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solucao" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="solucao" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
                 A Solução: Personal Shopper Imobiliário
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
                 Eu <strong className="text-luxury-navy">não vendo imóveis</strong>. Eu <strong className="text-luxury-navy">represento compradores</strong>.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
+              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg md:text-xl font-bold flex-shrink-0">
                     1
                   </div>
-                  <h3 className="text-xl font-bold text-luxury-navy">Identifico o Imóvel EXATO</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy">Identifico o Imóvel EXATO</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   Você não vê "opções do mercado". Você define seu critério 
                   (localização, tamanho, acabamento, orçamento), e EU identifico 
                   qual imóvel realmente atende isso.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg md:text-xl font-bold flex-shrink-0">
                     2
                   </div>
-                  <h3 className="text-xl font-bold text-luxury-navy">Você Visita Apenas os Certos</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy">Você Visita Apenas os Certos</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   EU visito dezenas de imóveis, faço due diligence completa 
                   (estrutura, documentação, condomínio), e apresento apenas 
                   aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg md:text-xl font-bold flex-shrink-0">
                     3
                   </div>
-                  <h3 className="text-xl font-bold text-luxury-navy">Due Diligence Profissional</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy">Due Diligence Profissional</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   Antes de você pisar no imóvel, eu já analisei estrutura, fachada, 
                   acabamento, saúde do condomínio, regularidade de documentação, 
                   e comparei preço com transações reais. <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl font-bold">
+              <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg md:text-xl font-bold flex-shrink-0">
                     4
                   </div>
-                  <h3 className="text-xl font-bold text-luxury-navy">Negociação Baseada em Dados</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy">Negociação Baseada em Dados</h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   Estratégia profissional, múltiplas rodadas de contra-proposta, 
                   baseada em análise real de mercado. Meu incentivo é o desconto. 
                   <strong className="text-luxury-navy"> Seu incentivo também.</strong>
@@ -345,8 +345,8 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <div className="bg-luxury-navy rounded-2xl p-8 text-center">
-              <p className="text-xl md:text-2xl text-white leading-relaxed">
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-8 text-center">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed">
                 A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
               </p>
             </div>
@@ -355,39 +355,39 @@ const LandingPage = () => {
       </section>
 
       {/* Process Section - Como Funciona */}
-      <section id="como-funciona" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="como-funciona" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+            <div className="text-center mb-8 md:mb-12">
+              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Método Exclusivo
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
                 Como Funciona: 4 Passos Simples
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
                   1
                 </div>
-                <div className="pt-4">
-                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Diagnóstico Estratégico</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="pt-3 md:pt-4">
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Diagnóstico Estratégico</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     Você define seu perfil: localização, tamanho, acabamento, 
                     orçamento, critérios especiais. Eu entendo exatamente o que você quer.
                   </p>
                 </div>
               </div>
 
-              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
                   2
                 </div>
-                <div className="pt-4">
-                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Curadoria Profissional</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="pt-3 md:pt-4">
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Curadoria Profissional</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     EU visito dezenas de imóveis, faço análise técnica completa, 
                     e filtro apenas aqueles que atendem 100% seu critério. 
                     <em className="text-luxury-gold"> (Você não vê essa parte)</em>
@@ -395,26 +395,26 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
                   3
                 </div>
-                <div className="pt-4">
-                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Decisão Clara</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="pt-3 md:pt-4">
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Decisão Clara</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     Você visita apenas 5-8 imóveis PRÉ-SELECIONADOS. 
                     Análise técnica já está pronta. Sua decisão é 100% baseada em fatos.
                   </p>
                 </div>
               </div>
 
-              <div className="relative bg-card rounded-2xl p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-4 left-6 w-10 h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-lg font-bold shadow-md">
+              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
+                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
                   4
                 </div>
-                <div className="pt-4">
-                  <h3 className="text-lg font-bold text-luxury-navy mb-3">Negociação Profissional</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="pt-3 md:pt-4">
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Negociação Profissional</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
                     Estratégia de negociação baseada em dados reais. 
                     Múltiplas rodadas de contra-proposta até conseguir o melhor preço possível.
                   </p>
@@ -426,80 +426,80 @@ const LandingPage = () => {
       </section>
 
       {/* Savings Section */}
-      <section id="economia" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="economia" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
                 Sua Economia Real: Tempo + Risco + Desconto
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
               <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl mb-4">⏱️</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Economia de Tempo</h3>
-                  <div className="text-3xl font-bold text-luxury-gold mb-4">80-120h</div>
-                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                <CardContent className="p-5 md:p-8">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">⏱️</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Economia de Tempo</h3>
+                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">80-120h</div>
+                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
                     Você não visita 30-40 imóveis errados. Visita apenas 5-8 certos.
                   </p>
-                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
                     R$ 40-60k (se você ganha R$ 500/h)
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl mb-4">🛡️</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Risco Evitado</h3>
-                  <div className="text-3xl font-bold text-luxury-gold mb-4">R$ 75-300k</div>
-                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                <CardContent className="p-5 md:p-8">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">🛡️</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Risco Evitado</h3>
+                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 75-300k</div>
+                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
                     Evita erros caros: estrutura, litígio, documentação irregular, 
                     preço acima do mercado.
                   </p>
-                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
                     Due diligence completa
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-8">
-                  <div className="text-5xl mb-4">💰</div>
-                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Desconto Negociado</h3>
-                  <div className="text-3xl font-bold text-luxury-gold mb-4">R$ 90-360k</div>
-                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                <CardContent className="p-5 md:p-8">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">💰</div>
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Desconto Negociado</h3>
+                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 90-360k</div>
+                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
                     Negociação profissional consegue 4-8% acima do que você 
                     consegue sozinho.
                   </p>
-                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
                     Você fica com 70%
                   </p>
                 </CardContent>
               </Card>
             </div>
 
-            <div className="bg-luxury-navy rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-6 md:mb-8">
                 Economia Total do Cliente
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-2">Imóvel R$ 2M</p>
-                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 195-340k</p>
-                  <p className="text-sm text-white/70">ROI: 2.5-3.8x</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 2M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 195-340k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 2.5-3.8x</p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-2">Imóvel R$ 3.5M</p>
-                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 287-520k</p>
-                  <p className="text-sm text-white/70">ROI: 2.9-4.4x</p>
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 3.5M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 287-520k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 2.9-4.4x</p>
                 </div>
-                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-2">Imóvel R$ 6M</p>
-                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 502-780k</p>
-                  <p className="text-sm text-white/70">ROI: 3.7-5.2x</p>
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 6M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 502-780k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 3.7-5.2x</p>
                 </div>
               </div>
             </div>
@@ -508,61 +508,61 @@ const LandingPage = () => {
       </section>
 
       {/* Concrete Example Section */}
-      <section id="exemplo" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="exemplo" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
                 Exemplo Concreto: Imóvel R$ 2.5M na Barra
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden">
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden">
               {/* Values Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
-                <div className="p-6 text-center">
-                  <p className="text-muted-foreground mb-2">Valor Anunciado (Baseline)</p>
-                  <p className="text-2xl font-bold text-luxury-navy">R$ 2.500.000</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
+                <div className="p-4 md:p-6 text-center">
+                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Valor Anunciado (Baseline)</p>
+                  <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 2.500.000</p>
                 </div>
-                <div className="p-6 text-center">
-                  <p className="text-muted-foreground mb-2">Compra Real (Após PSI)</p>
-                  <p className="text-2xl font-bold text-luxury-navy">R$ 2.350.000</p>
+                <div className="p-4 md:p-6 text-center">
+                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Compra Real (Após PSI)</p>
+                  <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 2.350.000</p>
                 </div>
               </div>
 
               {/* Discount Highlight */}
-              <div className="bg-luxury-gold p-6 text-center">
-                <p className="text-luxury-navy font-medium mb-1">Desconto Comprovado</p>
-                <p className="text-3xl md:text-4xl font-bold text-luxury-navy">R$ 150.000</p>
+              <div className="bg-luxury-gold p-4 md:p-6 text-center">
+                <p className="text-luxury-navy font-medium mb-1 text-sm md:text-base">Desconto Comprovado</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-navy">R$ 150.000</p>
               </div>
 
               {/* Fee Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
-                <div className="p-6 text-center">
-                  <p className="text-muted-foreground mb-2">Fee Fixo (Consultoria)</p>
-                  <p className="text-xl font-bold text-luxury-navy">R$ 10.000</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
+                <div className="p-4 md:p-6 text-center">
+                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Fee Fixo (Consultoria)</p>
+                  <p className="text-lg md:text-xl font-bold text-luxury-navy">R$ 10.000</p>
                 </div>
-                <div className="p-6 text-center">
-                  <p className="text-muted-foreground mb-2">Success Fee (30% Desconto)</p>
-                  <p className="text-xl font-bold text-luxury-navy">R$ 45.000</p>
+                <div className="p-4 md:p-6 text-center">
+                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Success Fee (30% Desconto)</p>
+                  <p className="text-lg md:text-xl font-bold text-luxury-navy">R$ 45.000</p>
                 </div>
               </div>
 
               {/* Total PSI */}
-              <div className="bg-luxury-cream p-6 text-center border-t border-border">
-                <p className="text-muted-foreground mb-1">Você Paga Comigo</p>
-                <p className="text-2xl font-bold text-luxury-navy">R$ 55.000</p>
+              <div className="bg-luxury-cream p-4 md:p-6 text-center border-t border-border">
+                <p className="text-sm md:text-base text-muted-foreground mb-1">Você Paga Comigo</p>
+                <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 55.000</p>
               </div>
 
               {/* Final Savings */}
-              <div className="bg-luxury-navy p-8 text-center">
-                <p className="text-white/80 mb-2">Você Economiza Líquido</p>
-                <p className="text-4xl md:text-5xl font-bold text-luxury-gold mb-2">R$ 95.000</p>
-                <p className="text-white/70">ROI: 1.73x em uma negociação</p>
+              <div className="bg-luxury-navy p-6 md:p-8 text-center">
+                <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Você Economiza Líquido</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 95.000</p>
+                <p className="text-white/70 text-sm md:text-base">ROI: 1.73x em uma negociação</p>
               </div>
             </div>
 
-            <p className="text-center text-muted-foreground mt-8 italic">
+            <p className="text-center text-muted-foreground mt-6 md:mt-8 italic text-sm md:text-base px-2">
               Este exemplo assume desconto de 6%. Descontos maiores geram 
               economia ainda mais significativa para você.
             </p>
@@ -571,35 +571,35 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Model Section */}
-      <section id="remuneracao" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="remuneracao" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy mb-6">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy mb-4 md:mb-6 leading-tight">
                 Modelo de Remuneração: 100% Transparente
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
                 Meu interesse está <strong className="text-luxury-navy">100% alinhado ao seu</strong>: 
                 quanto maior seu desconto, maior meu ganho. 
                 Nenhum incentivo para você pagar caro.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-8">
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-6 md:mb-8">
               {/* Fee Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
-                <div className="p-8 text-center">
-                  <h3 className="text-xl font-bold text-luxury-navy mb-4">1. Fee de Consultoria</h3>
-                  <div className="text-4xl font-bold text-luxury-gold mb-4">R$ 10.000</div>
-                  <p className="text-muted-foreground leading-relaxed">
+              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
+                <div className="p-5 md:p-8 text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">1. Fee de Consultoria</h3>
+                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 10.000</div>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Cobre análise técnica profunda, curadoria de imóveis, 
                     pesquisa de mercado e toda estratégia de negociação.
                   </p>
                 </div>
-                <div className="p-8 text-center">
-                  <h3 className="text-xl font-bold text-luxury-navy mb-4">2. Success Fee</h3>
-                  <div className="text-4xl font-bold text-luxury-gold mb-4">30% do desconto</div>
-                  <p className="text-muted-foreground leading-relaxed">
+                <div className="p-5 md:p-8 text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">2. Success Fee</h3>
+                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">30% do desconto</div>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Você paga apenas sobre a diferença entre o valor anunciado 
                     e o valor que efetivamente negocia.
                   </p>
@@ -607,31 +607,31 @@ const LandingPage = () => {
               </div>
 
               {/* How It's Calculated */}
-              <div className="bg-luxury-cream p-8 border-t border-border">
-                <h3 className="text-xl font-bold text-luxury-navy mb-6 text-center">Como é Calculado</h3>
-                <ul className="space-y-4 max-w-2xl mx-auto">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-luxury-navy"><strong>Baseline (Valor Anunciado):</strong> Quanto está no anúncio público do imóvel.</span>
+              <div className="bg-luxury-cream p-5 md:p-8 border-t border-border">
+                <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-4 md:mb-6 text-center">Como é Calculado</h3>
+                <ul className="space-y-3 md:space-y-4 max-w-2xl mx-auto">
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-sm md:text-base text-luxury-navy"><strong>Baseline (Valor Anunciado):</strong> Quanto está no anúncio público do imóvel.</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-luxury-navy"><strong>Compra Real (Valor Negociado):</strong> Quanto você efetivamente paga após minha negociação.</span>
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-sm md:text-base text-luxury-navy"><strong>Compra Real (Valor Negociado):</strong> Quanto você efetivamente paga após minha negociação.</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-luxury-navy"><strong>Delta:</strong> Baseline - Compra Real = seu desconto comprovado.</span>
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-sm md:text-base text-luxury-navy"><strong>Delta:</strong> Baseline - Compra Real = seu desconto comprovado.</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-luxury-navy"><strong>Seu Ganho:</strong> Você fica com 70% do delta. Eu fico com 30% do delta.</span>
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-sm md:text-base text-luxury-navy"><strong>Seu Ganho:</strong> Você fica com 70% do delta. Eu fico com 30% do delta.</span>
                   </li>
                 </ul>
               </div>
 
               {/* Guarantee */}
-              <div className="bg-luxury-navy p-6 text-center">
-                <p className="text-white text-lg leading-relaxed">
+              <div className="bg-luxury-navy p-4 md:p-6 text-center">
+                <p className="text-white text-sm md:text-lg leading-relaxed">
                   <strong className="text-luxury-gold">Se não houver desconto comprovado, você não paga success fee.</strong><br />
                   Apenas os R$ 10.000 de consultoria.
                 </p>
@@ -642,46 +642,46 @@ const LandingPage = () => {
       </section>
 
       {/* Differentiation Section */}
-      <section id="diferenciacao" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section id="diferenciacao" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
                 Por Que PSI é Diferente
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {/* Traditional Realtor */}
               <Card className="bg-white border-2 border-red-200 shadow-luxury">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center gap-2">
-                    <span className="text-3xl">❌</span> Corretor Tradicional
+                <CardContent className="p-5 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-red-600 mb-4 md:mb-6 flex items-center gap-2">
+                    <span className="text-2xl md:text-3xl">❌</span> Corretor Tradicional
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Ganha % do preço final (quanto mais caro, mais ganha)</span>
+                  <ul className="space-y-3 md:space-y-4">
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Ganha % do preço final (quanto mais caro, mais ganha)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Trabalha para o vendedor (quem paga a comissão)</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Trabalha para o vendedor (quem paga a comissão)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Incentivo: vender imóvel CARO</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Incentivo: vender imóvel CARO</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Mostra estoque (não filtra)</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Mostra estoque (não filtra)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Você visita 30-40 imóveis</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Você visita 30-40 imóveis</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Risco de erro estrutural</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Risco de erro estrutural</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -689,34 +689,34 @@ const LandingPage = () => {
 
               {/* PSI */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-luxury-navy mb-6 flex items-center gap-2">
-                    <span className="text-3xl">✅</span> Personal Shopper Imobiliário
+                <CardContent className="p-5 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-4 md:mb-6 flex items-center gap-2">
+                    <span className="text-2xl md:text-3xl">✅</span> Personal Shopper Imobiliário
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Ganha % do DESCONTO (quanto maior economia, mais ganha)</span>
+                  <ul className="space-y-3 md:space-y-4">
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Ganha % do DESCONTO (quanto maior economia, mais ganha)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Trabalha PARA VOCÊ (você paga, não vendedor)</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Trabalha PARA VOCÊ (você paga, não vendedor)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Incentivo: conseguir imóvel BARATO</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Incentivo: conseguir imóvel BARATO</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Filtra e curada (você vê apenas certos)</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Filtra e curada (você vê apenas certos)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Você visita 5-8 imóveis certos</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Você visita 5-8 imóveis certos</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Due diligence completa protege você</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Due diligence completa protege você</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -727,46 +727,46 @@ const LandingPage = () => {
       </section>
 
       {/* For Who Section */}
-      <section id="para-quem" className="py-20 bg-luxury-cream">
-        <div className="container mx-auto px-6">
+      <section id="para-quem" className="py-12 md:py-20 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
                 Para Quem É / Para Quem Não É
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {/* For Who It Is */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-luxury-navy mb-6 flex items-center gap-2">
-                    <CheckCircle className="h-7 w-7 text-luxury-gold" /> Para Quem É
+                <CardContent className="p-5 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-4 md:mb-6 flex items-center gap-2">
+                    <CheckCircle className="h-6 w-6 md:h-7 md:w-7 text-luxury-gold" /> Para Quem É
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Compradores exigentes que valorizam dados e segurança</span>
+                  <ul className="space-y-3 md:space-y-4">
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Compradores exigentes que valorizam dados e segurança</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Executivos que não têm tempo para visitar 30 imóveis</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Executivos que não têm tempo para visitar 30 imóveis</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Quem entende que errar custa caro</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem entende que errar custa caro</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Quem quer representação exclusiva do seu lado</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem quer representação exclusiva do seu lado</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Investidores que buscam melhor preço + análise profunda</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Investidores que buscam melhor preço + análise profunda</span>
                     </li>
-                    <li className="flex items-start gap-3 text-luxury-navy">
-                      <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span>Imóveis a partir de R$ 1.5M na Barra ou Recreio</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Imóveis a partir de R$ 1.5M na Barra ou Recreio</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -774,30 +774,30 @@ const LandingPage = () => {
 
               {/* For Who It Is Not */}
               <Card className="bg-white border-2 border-red-200 shadow-luxury">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center gap-2">
-                    <X className="h-7 w-7 text-red-500" /> Para Quem Não É
+                <CardContent className="p-5 md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-red-600 mb-4 md:mb-6 flex items-center gap-2">
+                    <X className="h-6 w-6 md:h-7 md:w-7 text-red-500" /> Para Quem Não É
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Quem quer apenas "ver opções" sem compromisso</span>
+                  <ul className="space-y-3 md:space-y-4">
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem quer apenas "ver opções" sem compromisso</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Quem busca corretor gratuito (do lado do vendedor)</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem busca corretor gratuito (do lado do vendedor)</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Quem não está pronto para decidir em 90 dias</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem não está pronto para decidir em 90 dias</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Quem acha que tempo e segurança não importam</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Quem acha que tempo e segurança não importam</span>
                     </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span>Imóveis abaixo de R$ 1.5M</span>
+                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base">Imóveis abaixo de R$ 1.5M</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -808,22 +808,22 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section - 3 Packages */}
-      <section id="precos" className="py-20 bg-luxury-navy text-white">
-        <div className="container mx-auto px-6">
+      <section id="precos" className="py-12 md:py-20 bg-luxury-navy text-white">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+            <div className="text-center mb-10 md:mb-16">
+              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Serviços Exclusivos
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto px-2">
                 Serviços desenhados para suas necessidades, garantindo segurança, exclusividade e retorno.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
               {[{
               name: "Parecer Godoy Prime",
               subtitle: "Atestado de Valor",
@@ -848,27 +848,27 @@ const LandingPage = () => {
               features: ["Tudo do Compra Blindada", "Mapeamento completo do seu perfil", "Curadoria exclusiva de imóveis (on e off-market)", "Visitas técnicas prévias (você visita apenas os certos)", "Análise de valor real de cada opção", "Acompanhamento pós-aquisição"],
               cta: "Quero a Experiência Completa",
               popular: true
-            }].map((plan, index) => <Card key={index} className={cn("border-2 transition-all duration-300 hover:scale-105 bg-white/5 backdrop-blur-sm", plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50")}>
-                  <CardContent className="p-8">
-                    {plan.popular && <Badge className="mb-4 bg-luxury-gold text-luxury-navy">Mais Completo</Badge>}
+            }].map((plan, index) => <Card key={index} className={cn("border-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 bg-white/5 backdrop-blur-sm", plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50")}>
+                  <CardContent className="p-5 md:p-8">
+                    {plan.popular && <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">Mais Completo</Badge>}
 
-                    <h3 className="text-2xl font-bold text-white mb-1">{plan.name}</h3>
-                    <p className="text-luxury-gold mb-4">{plan.subtitle}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{plan.name}</h3>
+                    <p className="text-luxury-gold mb-3 md:mb-4 text-sm md:text-base">{plan.subtitle}</p>
 
-                    <div className="mb-4">
-                      <span className="text-xl font-bold text-white">{plan.price}</span>
+                    <div className="mb-3 md:mb-4">
+                      <span className="text-lg md:text-xl font-bold text-white">{plan.price}</span>
                     </div>
 
-                    <p className="text-white/80 mb-6 text-sm leading-relaxed">{plan.description}</p>
+                    <p className="text-white/80 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed">{plan.description}</p>
 
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, fIndex) => <li key={fIndex} className="flex items-start gap-3 text-white/90 text-sm">
-                          <CheckCircle className="h-4 w-4 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
+                      {plan.features.map((feature, fIndex) => <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
+                          <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-luxury-gold mt-0.5 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>)}
                     </ul>
 
-                    <Button variant={plan.popular ? "gold" : "outline"} className={cn("w-full", !plan.popular && "border-white/30 text-white hover:bg-white/10")} asChild>
+                    <Button variant={plan.popular ? "gold" : "outline"} className={cn("w-full text-sm md:text-base", !plan.popular && "border-white/30 text-white hover:bg-white/10")} asChild>
                       <a 
                         href="https://wa.me/5521997250515?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o" 
                         target="_blank" 
@@ -876,7 +876,7 @@ const LandingPage = () => {
                         onClick={() => trackWhatsAppClick('precos')}
                       >
                         {plan.cta}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
                       </a>
                     </Button>
                   </CardContent>
