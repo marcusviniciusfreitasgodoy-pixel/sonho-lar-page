@@ -147,36 +147,37 @@ const LandingPage = () => {
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Descubra O Segredo dos Compradores Inteligentes
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight max-w-5xl mx-auto">
+              Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
-            <h2 className="text-3xl md:text-5xl font-semibold mb-8 leading-tight text-luxury-gold">
-              Economize R$ 100 mil a R$ 500 mil na Compra do Seu Imóvel de Alto Padrão na Barra da Tijuca
-            </h2>
+            
+            <p className="text-xl md:text-2xl mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
+              Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da Tijuca e Recreio — 
+              usando dados reais, curadoria técnica e negociação profissional.
+            </p>
 
-            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
-              O Personal Shopper Imobiliário representa apenas você na compra, defende somente os seus interesses e ele
-              só ganha se você economizar.
+            <p className="text-lg md:text-xl mb-8 text-white/80 max-w-3xl mx-auto">
+              Sem conflito de interesses. Sem perda de tempo. Sem risco de erro caro.
             </p>
 
             <Button 
               variant="gold" 
-              className="mb-4 h-10 px-6 text-sm font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" 
+              className="mb-4 h-12 px-8 text-base font-semibold md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group" 
               asChild
             >
               <a 
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" 
+                href="https://wa.me/5521997250515?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => trackCalendlyClick('hero')}
+                onClick={() => trackWhatsAppClick('hero')}
               >
-                Desbloquear minha Consultoria Exclusiva
+                Agendar Diagnóstico Estratégico (Gratuito)
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
-            <p className="text-sm text-white/80">
-              <strong>Economia e Compromisso Garantidos.</strong>
+            <p className="text-sm text-white/70">
+              Conversa direta. Sem compromisso. Sem venda de imóveis.
             </p>
           </div>
         </div>
