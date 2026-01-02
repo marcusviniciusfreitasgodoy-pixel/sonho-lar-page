@@ -804,13 +804,13 @@ const LandingPage = () => {
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <span className="text-sm md:text-base">
-                        Incentivo: conseguir imóvel pelo preço JUSTO e mais barato do que no modelo TRADICIONAL
+                        Incentivo: conseguir imóvel com preço JUSTO e com mais descontos que o modelo TRADICIONAL
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <span className="text-sm md:text-base">
-                        Maior Filtro e curadoria do imóveis (você vê apenas certos)
+                        Melhor filtro e curadoria dos imóveis (você vê apenas certos)
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
@@ -850,7 +850,7 @@ const LandingPage = () => {
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <span className="text-sm md:text-base">
-                        Compradores exigentes que valorizam seu tempo e buscam segurança
+                        Compradores exigentes que valorizam dados e segurança
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
@@ -896,7 +896,7 @@ const LandingPage = () => {
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem não está pronto para decidir em até 90 dias</span>
+                      <span className="text-sm md:text-base">Quem não está pronto para decidir em 90 dias</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
