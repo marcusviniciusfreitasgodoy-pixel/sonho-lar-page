@@ -603,6 +603,77 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Pricing Model Section */}
+      <section id="remuneracao" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy mb-6">
+                Modelo de Remuneração: 100% Transparente
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Meu interesse está <strong className="text-luxury-navy">100% alinhado ao seu</strong>: 
+                quanto maior seu desconto, maior meu ganho. 
+                Nenhum incentivo para você pagar caro.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-8">
+              {/* Fee Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+                <div className="p-8 text-center">
+                  <h3 className="text-xl font-bold text-luxury-navy mb-4">1. Fee de Consultoria</h3>
+                  <div className="text-4xl font-bold text-luxury-gold mb-4">R$ 10.000</div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Cobre análise técnica profunda, curadoria de imóveis, 
+                    pesquisa de mercado e toda estratégia de negociação.
+                  </p>
+                </div>
+                <div className="p-8 text-center">
+                  <h3 className="text-xl font-bold text-luxury-navy mb-4">2. Success Fee</h3>
+                  <div className="text-4xl font-bold text-luxury-gold mb-4">30% do desconto</div>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Você paga apenas sobre a diferença entre o valor anunciado 
+                    e o valor que efetivamente negocia.
+                  </p>
+                </div>
+              </div>
+
+              {/* How It's Calculated */}
+              <div className="bg-luxury-cream p-8 border-t border-border">
+                <h3 className="text-xl font-bold text-luxury-navy mb-6 text-center">Como é Calculado</h3>
+                <ul className="space-y-4 max-w-2xl mx-auto">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-luxury-navy"><strong>Baseline (Valor Anunciado):</strong> Quanto está no anúncio público do imóvel.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-luxury-navy"><strong>Compra Real (Valor Negociado):</strong> Quanto você efetivamente paga após minha negociação.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-luxury-navy"><strong>Delta:</strong> Baseline - Compra Real = seu desconto comprovado.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-luxury-navy"><strong>Seu Ganho:</strong> Você fica com 70% do delta. Eu fico com 30% do delta.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Guarantee */}
+              <div className="bg-luxury-navy p-6 text-center">
+                <p className="text-white text-lg leading-relaxed">
+                  <strong className="text-luxury-gold">Se não houver desconto comprovado, você não paga success fee.</strong><br />
+                  Apenas os R$ 10.000 de consultoria.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
