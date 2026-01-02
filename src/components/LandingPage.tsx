@@ -243,7 +243,7 @@ const LandingPage = () => {
               asChild
             >
               <a
-                href="https://calendly.com/godoyprimerealty"
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackCalendlyClick("hero")}
@@ -1361,7 +1361,7 @@ const LandingPage = () => {
                   </p>
                   <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
                     <a
-                      href="https://calendly.com/godoyprimerealty"
+                      href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackCalendlyClick("sobre")}
@@ -1505,7 +1505,7 @@ const LandingPage = () => {
                 asChild
               >
                 <a
-                  href="https://calendly.com/godoyprimerealty"
+                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackCalendlyClick("cta-final")}
