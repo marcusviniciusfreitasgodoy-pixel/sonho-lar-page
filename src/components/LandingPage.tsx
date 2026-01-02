@@ -458,6 +458,88 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Savings Section */}
+      <section id="economia" className="py-20 bg-luxury-cream">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-luxury-navy">
+                Sua Economia Real: Tempo + Risco + Desconto
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
+                <CardContent className="p-8">
+                  <div className="text-5xl mb-4">⏱️</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Economia de Tempo</h3>
+                  <div className="text-3xl font-bold text-luxury-gold mb-4">80-120h</div>
+                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                    Você não visita 30-40 imóveis errados. Visita apenas 5-8 certos.
+                  </p>
+                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                    R$ 40-60k (se você ganha R$ 500/h)
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
+                <CardContent className="p-8">
+                  <div className="text-5xl mb-4">🛡️</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Risco Evitado</h3>
+                  <div className="text-3xl font-bold text-luxury-gold mb-4">R$ 75-300k</div>
+                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                    Evita erros caros: estrutura, litígio, documentação irregular, 
+                    preço acima do mercado.
+                  </p>
+                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                    Due diligence completa
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
+                <CardContent className="p-8">
+                  <div className="text-5xl mb-4">💰</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-2">Desconto Negociado</h3>
+                  <div className="text-3xl font-bold text-luxury-gold mb-4">R$ 90-360k</div>
+                  <p className="text-muted-foreground mb-3 leading-relaxed">
+                    Negociação profissional consegue 4-8% acima do que você 
+                    consegue sozinho.
+                  </p>
+                  <p className="text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-4">
+                    Você fica com 70%
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="bg-luxury-navy rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+                Economia Total do Cliente
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-2">Imóvel R$ 2M</p>
+                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 195-340k</p>
+                  <p className="text-sm text-white/70">ROI: 2.5-3.8x</p>
+                </div>
+                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-2">Imóvel R$ 3.5M</p>
+                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 287-520k</p>
+                  <p className="text-sm text-white/70">ROI: 2.9-4.4x</p>
+                </div>
+                <div className="bg-white/10 rounded-xl p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-2">Imóvel R$ 6M</p>
+                  <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-2">R$ 502-780k</p>
+                  <p className="text-sm text-white/70">ROI: 3.7-5.2x</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section id="solucao" className="py-20 bg-luxury-cream">
         <div className="container mx-auto px-6">
