@@ -202,6 +202,76 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Market Problem Section */}
+      <section id="mercado" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-navy">
+                O Mercado Imobiliário Não Foi Feito Para Proteger o Comprador
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Corretores são pagos para vender. Imobiliárias trabalham com estoque. 
+                E quem compra sozinho acredita que está no controle — <strong className="text-foreground">até errar caro</strong>.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">⚠️</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Conflito de Interesse Estrutural</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Quanto mais caro você paga, mais o corretor ganha. 
+                    Nenhum incentivo para negociar menor.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">💸</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Preços Inflados Sem Critério</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Você não tem acesso a transações reais. Paga baseado em "feeling" 
+                    e informação assimétrica.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">⏱️</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Tempo Desperdiçado</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Visita 30-40 imóveis errados em 2-3 meses. 
+                    80-120 horas perdidas (R$ 40-60k se você ganha R$ 500/h).
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="text-4xl mb-4">🚨</div>
+                  <h3 className="text-xl font-bold text-luxury-navy mb-3">Risco de Erro Invisível</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Problemas estruturais, condomínio em litígio, documentação irregular. 
+                    Descobertos tarde demais.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="bg-luxury-navy rounded-2xl p-8 text-center">
+              <p className="text-xl md:text-2xl text-white leading-relaxed">
+                <strong className="text-luxury-gold">No alto padrão, um erro custa R$ 100k a R$ 500k.</strong><br />
+                E você só descobre depois de assinar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section id="problema" className="py-20 bg-background">
         <div className="container mx-auto px-6">
