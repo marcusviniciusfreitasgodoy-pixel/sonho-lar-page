@@ -24,21 +24,29 @@ const HeygenAvatar = () => {
     const stylesheet = document.createElement("style");
     stylesheet.innerHTML = `
       #heygen-streaming-embed {
-        z-index: 9998;
+        z-index: 9997;
         position: fixed;
-        left: 16px;
-        bottom: 80px;
-        width: 70px;
-        height: 70px;
+        left: 12px;
+        bottom: 70px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
         border: 2px solid #fff;
-        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
-        transition: all linear 0.1s;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+        transition: all linear 0.15s;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
       }
       @media (min-width: 640px) {
+        #heygen-streaming-embed {
+          left: 20px;
+          bottom: 20px;
+          width: 80px;
+          height: 80px;
+        }
+      }
+      @media (min-width: 1024px) {
         #heygen-streaming-embed {
           left: 24px;
           bottom: 24px;
@@ -52,8 +60,8 @@ const HeygenAvatar = () => {
       }
       #heygen-streaming-embed.expand {
         ${clientWidth < 540 
-          ? "height: 60vh; max-height: 380px; width: 92%; left: 50%; transform: translateX(-50%); bottom: 80px;" 
-          : "height: 366px; width: calc(366px * 16 / 9); bottom: 24px;"}
+          ? "height: 55vh; max-height: 350px; width: 90%; left: 50%; transform: translateX(-50%); bottom: 70px;" 
+          : "height: 366px; width: calc(366px * 16 / 9); bottom: 24px; left: 24px; transform: none;"}
         border: 0;
         border-radius: 12px;
         z-index: 9999;
