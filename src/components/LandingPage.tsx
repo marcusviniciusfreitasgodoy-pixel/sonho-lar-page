@@ -633,29 +633,6 @@ const LandingPage = () => {
                 </CardContent>
               </Card>
             </div>
-
-            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-6 md:mb-8">
-                Economia Total do Cliente
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 2M</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 195-340k</p>
-                  <p className="text-xs md:text-sm text-white/70">ROI: 2.5-3.8x</p>
-                </div>
-                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 3.5M</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 287-520k</p>
-                  <p className="text-xs md:text-sm text-white/70">ROI: 2.9-4.4x</p>
-                </div>
-                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
-                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 6M</p>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 502-780k</p>
-                  <p className="text-xs md:text-sm text-white/70">ROI: 3.7-5.2x</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
