@@ -243,7 +243,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-[85svh] sm:min-h-[75svh] md:min-h-[85svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
+        className="relative min-h-[75svh] sm:min-h-[70svh] md:min-h-[80svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -254,31 +254,31 @@ const LandingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/70 to-luxury-navy/85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-4 sm:py-5 md:py-8">
+        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-3 sm:py-4 md:py-6">
           <div className="animate-fade-in">
             <Badge
               variant="outline"
-              className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1"
+              className="mb-3 md:mb-5 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1"
             >
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-[1.2] max-w-5xl mx-auto">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-5 leading-[1.2] max-w-5xl mx-auto">
               Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-3 md:mb-5 text-white/90 max-w-4xl mx-auto leading-relaxed">
               Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da
               Tijuca e Recreio — usando dados reais, curadoria técnica e negociação profissional.
             </p>
 
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-5 md:mb-6 text-white/80 max-w-3xl mx-auto">
               Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuízos e surpresas futuras.
             </p>
 
             <Button
               variant="gold"
-              className="mb-3 md:mb-4 h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-10 text-sm sm:text-base md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-xs sm:max-w-sm touch-manipulation"
+              className="mb-2 md:mb-3 h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-[280px] sm:max-w-sm touch-manipulation"
               asChild
             >
               <a
@@ -286,9 +286,9 @@ const LandingPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackCalendlyClick("hero")}
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-1.5 sm:gap-2"
               >
-                <span className="whitespace-nowrap">Agendar Diagnóstico Estratégico (Gratuito)</span>
+                <span className="whitespace-nowrap">Agendar Diagnóstico (Gratuito)</span>
                 <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </a>
             </Button>
@@ -299,7 +299,7 @@ const LandingPage = () => {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="video" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
@@ -324,7 +324,7 @@ const LandingPage = () => {
       </section>
 
       {/* Market Problem Section */}
-      <section id="mercado" className="py-12 md:py-20 bg-background">
+      <section id="mercado" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -396,7 +396,7 @@ const LandingPage = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solucao" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="solucao" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -475,7 +475,7 @@ const LandingPage = () => {
       </section>
 
       {/* About Marcus Section - Repositioned */}
-      <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
+      <section id="sobre-marcus" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center">
@@ -542,7 +542,7 @@ const LandingPage = () => {
       </section>
 
       {/* Process Section - Como Funciona */}
-      <section id="como-funciona" className="py-12 md:py-20 bg-background">
+      <section id="como-funciona" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -619,7 +619,7 @@ const LandingPage = () => {
       </section>
 
       {/* Savings Section */}
-      <section id="economia" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="economia" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -676,7 +676,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Model Section */}
-      <section id="remuneracao" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="remuneracao" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -725,13 +725,13 @@ const LandingPage = () => {
                 <Button 
                   size="lg" 
                   variant="luxury"
-                  className="group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation"
+                  className="group w-full sm:w-auto h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-lg touch-manipulation"
                   onClick={() => {
                     trackCalendlyClick("pricing_section");
                     window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
                   }}
                 >
-                  <span className="whitespace-nowrap">Agendar Minha Conversa Gratuita</span>
+                  <span className="whitespace-nowrap">Agendar Conversa Gratuita</span>
                   <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Button>
                 <p className="text-xs md:text-sm text-muted-foreground mt-4">
@@ -799,14 +799,15 @@ const LandingPage = () => {
               </p>
               <Button 
                 variant="luxury-outline"
-                size="lg"
+                size="default"
+                className="h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base"
                 onClick={() => {
                   trackWhatsAppClick("pricing_model_inquiry");
                   window.open("https://wa.me/5521999461868?text=Olá! Gostaria de entender melhor o modelo de remuneração do PSI antes de agendar o diagnóstico.", "_blank");
                 }}
               >
-                <MessageCircle className="h-5 w-5 mr-2" />
-                Entenda se este modelo serve para você
+                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-1.5 sm:mr-2 flex-shrink-0" />
+                <span className="whitespace-nowrap">Entenda se serve para você</span>
               </Button>
               <p className="text-xs text-muted-foreground mt-4 italic">
                 Você decide só após entender exatamente o que está contratando.
@@ -817,7 +818,7 @@ const LandingPage = () => {
       </section>
 
       {/* Representação vs Intermediação Section */}
-      <section id="representacao" className="py-12 md:py-20 bg-gradient-to-br from-muted to-background border-b border-border">
+      <section id="representacao" className="py-10 md:py-16 bg-gradient-to-br from-muted to-background border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -947,8 +948,8 @@ const LandingPage = () => {
               </p>
               <Button
                 variant="gold"
-                size="lg"
-                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation"
+                size="default"
+                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-lg touch-manipulation"
                 asChild
               >
                 <a
@@ -956,9 +957,9 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick("representacao")}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2"
                 >
-                  <span className="whitespace-nowrap">Entender a Representação Exclusiva</span>
+                  <span className="whitespace-nowrap">Entender a Representação</span>
                   <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
@@ -968,7 +969,7 @@ const LandingPage = () => {
       </section>
 
       {/* Differentiation Section */}
-      <section id="diferenciacao" className="py-12 md:py-20 bg-background">
+      <section id="diferenciacao" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1061,7 +1062,7 @@ const LandingPage = () => {
       </section>
 
       {/* For Who Section */}
-      <section id="para-quem" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="para-quem" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1146,7 +1147,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section - 3 Packages */}
-      <section id="precos" className="py-12 md:py-20 bg-luxury-navy text-white">
+      <section id="precos" className="py-10 md:py-16 bg-luxury-navy text-white">
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1268,7 +1269,7 @@ const LandingPage = () => {
       </section>
 
       {/* Authority Section */}
-      <section id="autoridade" className="py-12 md:py-20 bg-background">
+      <section id="autoridade" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-12 shadow-luxury">
@@ -1310,7 +1311,7 @@ const LandingPage = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section id="depoimentos" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="depoimentos" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1388,7 +1389,7 @@ const LandingPage = () => {
       </section>
 
       {/* Origin Story Section - Resumida */}
-      <section id="sobre" className="py-12 md:py-20 bg-background">
+      <section id="sobre" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1417,15 +1418,16 @@ const LandingPage = () => {
                   <p className="text-white/80 text-sm md:text-base mb-4">
                     Agende um diagnóstico gratuito — sem compromisso financeiro.
                   </p>
-                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
+                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto h-11 sm:h-12 px-4 sm:px-6 text-xs sm:text-sm" asChild>
                     <a
                       href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackCalendlyClick("sobre")}
+                      className="flex items-center justify-center gap-1.5 sm:gap-2"
                     >
-                      Agendar Diagnóstico Gratuito
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <span className="whitespace-nowrap">Agendar Diagnóstico</span>
+                      <ArrowRight className="h-4 w-4 flex-shrink-0" />
                     </a>
                   </Button>
                 </div>
@@ -1436,7 +1438,7 @@ const LandingPage = () => {
       </section>
 
       {/* Guarantees Section */}
-      <section id="garantias" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="garantias" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
@@ -1481,15 +1483,16 @@ const LandingPage = () => {
                 </li>
               </ul>
 
-              <Button variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
+              <Button variant="gold" className="h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
                 <a
                   href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick("garantias")}
+                  className="flex items-center justify-center gap-1.5 sm:gap-2"
                 >
-                  Garantir Minha Vaga Agora
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                  <span className="whitespace-nowrap">Garantir Minha Vaga</span>
+                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
                 </a>
               </Button>
             </div>
@@ -1498,7 +1501,7 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-12 md:py-20 bg-background">
+      <section id="faq" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1545,7 +1548,7 @@ const LandingPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta-final" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="cta-final" className="py-10 md:py-16 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-16 text-center shadow-luxury">
@@ -1559,7 +1562,7 @@ const LandingPage = () => {
 
               <Button
                 variant="gold"
-                className="mb-4 md:mb-6 h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
+                className="mb-3 md:mb-5 h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-[280px] sm:max-w-none"
                 asChild
               >
                 <a
@@ -1567,9 +1570,10 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackCalendlyClick("cta-final")}
+                  className="flex items-center justify-center gap-1.5 sm:gap-2"
                 >
-                  Agendar Diagnóstico Estratégico (Gratuito)
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                  <span className="whitespace-nowrap">Agendar Diagnóstico (Gratuito)</span>
+                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
 
