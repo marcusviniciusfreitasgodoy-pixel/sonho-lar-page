@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel } from "lucide-react";
+import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel, Calendar } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
@@ -633,27 +633,62 @@ const LandingPage = () => {
             </div>
 
             <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-6 md:mb-8">
-              {/* Free Diagnosis Highlight */}
-              <div className="bg-luxury-gold/10 p-4 md:p-6 border-b border-luxury-gold/30 text-center">
-                <p className="text-sm md:text-base text-luxury-navy font-medium">
-                  🎯 <strong>Primeiro passo:</strong> Diagnóstico Estratégico <span className="text-luxury-gold font-bold">100% GRATUITO</span> — sem compromisso financeiro
+              {/* Free Diagnosis Highlight - Enhanced */}
+              <div className="bg-gradient-to-r from-luxury-gold/20 to-luxury-gold/10 p-6 md:p-8 border-b border-luxury-gold/30 text-center">
+                <div className="inline-flex items-center gap-2 bg-luxury-gold text-luxury-navy px-4 py-1.5 rounded-full text-sm font-bold mb-4">
+                  <Calendar className="h-4 w-4" />
+                  PRIMEIRO PASSO
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3">
+                  Sessão de Diagnóstico <span className="text-luxury-gold">100% GRATUITA</span>
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mb-4">
+                  Descubra SE e COMO posso ajudar você — antes de qualquer compromisso financeiro.
+                </p>
+                <p className="text-xs md:text-sm text-luxury-navy/70 italic">
+                  45 minutos para analisar sua situação, mostrar oportunidades reais e você decidir se quer continuar.
                 </p>
               </div>
               
-              {/* Fee Grid */}
+              {/* How Diagnosis Works - New Section */}
+              <div className="bg-white p-5 md:p-6 border-b border-border">
+                <h4 className="text-sm md:text-base font-bold text-luxury-navy mb-4 text-center">Como funciona o Diagnóstico:</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+                  {[
+                    { step: "1", text: "Você agenda 45min gratuitos" },
+                    { step: "2", text: "Analisamos sua situação e objetivos" },
+                    { step: "3", text: "Identificamos oportunidades reais" },
+                    { step: "4", text: "Você decide sem pressão" }
+                  ].map((item) => (
+                    <div key={item.step} className="text-center">
+                      <div className="w-8 h-8 bg-luxury-gold/20 text-luxury-gold rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">
+                        {item.step}
+                      </div>
+                      <p className="text-xs md:text-sm text-muted-foreground">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Fee Grid - Contextualized */}
+              <div className="p-4 md:p-6 text-center border-b border-border">
+                <p className="text-xs md:text-sm text-muted-foreground mb-2">Após aprovação mútua no diagnóstico, se ambos entendermos que faz sentido trabalhar juntos:</p>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5 md:p-8 text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">1. Fee de Consultoria</h3>
-                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 10.000</div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Após aprovação no diagnóstico. Cobre análise técnica, curadoria e estratégia de negociação.
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">1. Fee de Consultoria</h3>
+                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2">R$ 10.000</div>
+                  <p className="text-xs text-muted-foreground mb-2">(Menos de 0.5% em um imóvel de R$ 2M)</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    Cobre análise técnica, curadoria e estratégia de negociação personalizada.
                   </p>
                 </div>
                 <div className="p-5 md:p-8 text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">2. Success Fee</h3>
-                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">30% do desconto</div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Só paga se houver economia. Se não conseguir desconto, não paga success fee.
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">2. Success Fee</h3>
+                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2">30% do desconto</div>
+                  <p className="text-xs text-muted-foreground mb-2">(Você fica com 70% da economia)</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    Só paga se houver economia comprovada. Sem desconto = sem success fee.
                   </p>
                 </div>
               </div>
@@ -694,13 +729,42 @@ const LandingPage = () => {
 
               {/* Guarantee */}
               <div className="bg-luxury-navy p-4 md:p-6 text-center">
-                <p className="text-white text-sm md:text-lg leading-relaxed">
+                <p className="text-white text-sm md:text-base leading-relaxed mb-4">
                   <strong className="text-luxury-gold">
                     Se não houver desconto comprovado, você não paga success fee.
                   </strong>
-                  <br />
-                  Apenas os R$ 10.000 de consultoria.
                 </p>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-xl mx-auto">
+                  <Button
+                    variant="gold"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                    onClick={() => {
+                      trackCalendlyClick("pricing_section");
+                      window.open("https://calendly.com/marcus-godoy-psi/diagnostico-estrategico", "_blank");
+                    }}
+                  >
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Agendar Diagnóstico Gratuito
+                  </Button>
+                  <Button
+                    variant="luxury-outline"
+                    size="lg"
+                    className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:text-white"
+                    onClick={() => {
+                      trackWhatsAppClick("pricing_section_consultive");
+                      window.open(
+                        "https://wa.me/5521999887766?text=Olá! Gostaria de entender melhor se o modelo PSI serve para minha situação antes de agendar o diagnóstico.",
+                        "_blank"
+                      );
+                    }}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Ainda tem dúvidas? Fale conosco
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
