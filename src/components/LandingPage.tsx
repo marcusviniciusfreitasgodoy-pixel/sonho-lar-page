@@ -30,6 +30,10 @@ import {
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
+import luxuryProperty1 from "@/assets/luxury-property-1.jpeg";
+import luxuryProperty2 from "@/assets/luxury-property-2.jpeg";
+import luxuryProperty3 from "@/assets/luxury-property-3.jpeg";
+import luxuryProperty4 from "@/assets/luxury-property-4.jpeg";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
@@ -474,7 +478,85 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* About Marcus Section - Repositioned */}
+      {/* Property Gallery Section */}
+      <section id="imoveis" className="py-10 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
+                Alto Padrão
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy mb-4 md:mb-6 leading-tight">
+                O Tipo de Imóvel Que <span className="text-luxury-gold">Buscamos Para Você</span>
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Exclusividade, design contemporâneo e localização privilegiada na Barra da Tijuca e Recreio.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+                <img 
+                  src={luxuryProperty1} 
+                  alt="Casa de alto padrão com piscina e jardim tropical" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm md:text-base">Casa com Design Moderno</p>
+                  <p className="text-white/80 text-xs md:text-sm">Piscina, jardim tropical e acabamento premium</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+                <img 
+                  src={luxuryProperty2} 
+                  alt="Mansão contemporânea ao pôr do sol" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm md:text-base">Arquitetura Contemporânea</p>
+                  <p className="text-white/80 text-xs md:text-sm">Linhas modernas e iluminação de destaque</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+                <img 
+                  src={luxuryProperty3} 
+                  alt="Sala de estar com vista panorâmica para o mar" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm md:text-base">Vista Panorâmica</p>
+                  <p className="text-white/80 text-xs md:text-sm">Integração total com a natureza</p>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+                <img 
+                  src={luxuryProperty4} 
+                  alt="Terraço de casa de luxo ao entardecer" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm md:text-base">Área Externa Premium</p>
+                  <p className="text-white/80 text-xs md:text-sm">Terraço com vista privilegiada</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8 md:mt-10">
+              <p className="text-sm md:text-base text-muted-foreground mb-4">
+                Imóveis a partir de <strong className="text-luxury-navy">R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="sobre-marcus" className="py-10 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
