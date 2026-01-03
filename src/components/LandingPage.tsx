@@ -474,8 +474,7 @@ const LandingPage = () => {
                   Marcus Godoy
                 </h2>
                 <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-                  <strong className="text-luxury-navy">Advogado e Corretor</strong> — uma combinação rara que garante 
-                  proteção jurídica completa e negociação profissional do seu lado.
+                  <strong className="text-luxury-navy">Perito Avaliador Judicial</strong>, credenciado pelo Tribunal de Justiça do Rio de Janeiro e <strong className="text-luxury-navy">Corretor</strong> — uma combinação rara que garante avaliação justa, baseada em metodologia, fatos e dados. Proteção jurídica e negociação profissional do seu lado.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6">
                   <div className="bg-luxury-cream rounded-lg p-4 text-left">
