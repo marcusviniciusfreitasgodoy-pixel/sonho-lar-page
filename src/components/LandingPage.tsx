@@ -6,9 +6,15 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel, Calendar } from "lucide-react";
-import heroImage from "@/assets/barra-beach-luxury.jpg";
+import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
+import luxuryProperty1 from "@/assets/luxury-property-1.jpg";
+import luxuryProperty2 from "@/assets/luxury-property-2.jpg";
+import luxuryProperty3 from "@/assets/luxury-property-3.jpg";
+import luxuryInterior1 from "@/assets/luxury-interior-1.jpg";
+import luxuryProperty5 from "@/assets/luxury-property-5.jpg";
+import luxuryProperty6 from "@/assets/luxury-property-6.jpg";
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -340,7 +346,46 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* About Marcus Section - Repositioned */}
+      {/* Property Showcase Gallery 1 */}
+      <section className="py-8 md:py-12 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="relative overflow-hidden rounded-xl shadow-luxury group">
+                <img 
+                  src={luxuryProperty1} 
+                  alt="Imóvel de luxo com vista panorâmica" 
+                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-luxury group">
+                <img 
+                  src={luxuryProperty2} 
+                  alt="Casa de alto padrão na Barra da Tijuca" 
+                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-luxury group">
+                <img 
+                  src={luxuryProperty3} 
+                  alt="Apartamento exclusivo com acabamento premium" 
+                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+            <p className="text-center text-muted-foreground text-sm mt-4 italic">
+              Exemplos de imóveis que curadoria e negociamos para nossos clientes
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
@@ -403,7 +448,38 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Process Section - Como Funciona */}
+      {/* Property Showcase Gallery 2 */}
+      <section className="py-8 md:py-12 bg-luxury-cream/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="relative overflow-hidden rounded-xl shadow-luxury group">
+                <img 
+                  src={luxuryInterior1} 
+                  alt="Interior de luxo com vista para o mar" 
+                  className="w-full h-56 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-4 left-4 bg-luxury-navy/90 text-white px-3 py-1.5 rounded-lg text-sm font-medium">
+                  Vista Mar Premium
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-xl shadow-luxury group">
+                <img 
+                  src={luxuryProperty5} 
+                  alt="Arquitetura mediterrânea de alto padrão" 
+                  className="w-full h-56 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-4 left-4 bg-luxury-gold text-luxury-navy px-3 py-1.5 rounded-lg text-sm font-medium">
+                  Design Contemporâneo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="como-funciona" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
