@@ -24,6 +24,8 @@ import {
   X,
   MapPin,
   MessageCircle,
+  Scale,
+  Gavel,
 } from "lucide-react";
 import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
@@ -212,7 +214,7 @@ const LandingPage = () => {
             backgroundImage: `url(${heroImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-hero opacity-85"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/60 via-luxury-navy/50 to-luxury-navy/70"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-6 md:py-8">
@@ -429,6 +431,74 @@ const LandingPage = () => {
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed">
                 A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Marcus Section - Repositioned */}
+      <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center">
+              {/* Photo */}
+              <div className="lg:col-span-2 flex justify-center">
+                <div className="relative">
+                  <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
+                    <img 
+                      src={marcusProfile} 
+                      alt="Marcus Godoy - Personal Shopper Imobiliário" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Credential badges */}
+                  <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex flex-col gap-2">
+                    <div className="bg-luxury-navy text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
+                      <Gavel className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
+                      <span className="text-xs md:text-sm font-bold">Advogado</span>
+                    </div>
+                    <div className="bg-luxury-gold text-luxury-navy px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
+                      <Scale className="h-4 w-4 md:h-5 md:w-5" />
+                      <span className="text-xs md:text-sm font-bold">Corretor</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="lg:col-span-3 text-center lg:text-left">
+                <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
+                  Quem Vai Te Representar
+                </Badge>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
+                  Marcus Godoy
+                </h2>
+                <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6 leading-relaxed">
+                  <strong className="text-luxury-navy">Advogado e Corretor</strong> — uma combinação rara que garante 
+                  proteção jurídica completa e negociação profissional do seu lado.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6">
+                  <div className="bg-luxury-cream rounded-lg p-4 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Shield className="h-5 w-5 text-luxury-gold" />
+                      <span className="font-semibold text-luxury-navy text-sm md:text-base">Segurança Jurídica</span>
+                    </div>
+                    <p className="text-xs md:text-sm text-muted-foreground">Contratos blindados e due diligence completa</p>
+                  </div>
+                  <div className="bg-luxury-cream rounded-lg p-4 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Target className="h-5 w-5 text-luxury-gold" />
+                      <span className="font-semibold text-luxury-navy text-sm md:text-base">Foco Exclusivo</span>
+                    </div>
+                    <p className="text-xs md:text-sm text-muted-foreground">Barra da Tijuca e Recreio, imóveis +R$1.5M</p>
+                  </div>
+                </div>
+                <div className="bg-luxury-navy rounded-xl p-4 md:p-6 text-center">
+                  <p className="text-white text-sm md:text-base">
+                    <strong className="text-luxury-gold">Meu compromisso:</strong> Ser o defensor exclusivo dos seus interesses, com lealdade total.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -668,21 +738,27 @@ const LandingPage = () => {
             </div>
 
             <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-6 md:mb-8">
+              {/* Free Diagnosis Highlight */}
+              <div className="bg-luxury-gold/10 p-4 md:p-6 border-b border-luxury-gold/30 text-center">
+                <p className="text-sm md:text-base text-luxury-navy font-medium">
+                  🎯 <strong>Primeiro passo:</strong> Diagnóstico Estratégico <span className="text-luxury-gold font-bold">100% GRATUITO</span> — sem compromisso financeiro
+                </p>
+              </div>
+              
               {/* Fee Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5 md:p-8 text-center">
                   <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">1. Fee de Consultoria</h3>
                   <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 10.000</div>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Cobre análise técnica profunda, curadoria de imóveis, pesquisa de mercado e toda estratégia de
-                    negociação.
+                    Após aprovação no diagnóstico. Cobre análise técnica, curadoria e estratégia de negociação.
                   </p>
                 </div>
                 <div className="p-5 md:p-8 text-center">
                   <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">2. Success Fee</h3>
                   <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">30% do desconto</div>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Você paga apenas sobre a diferença entre o valor anunciado e o valor que efetivamente negocia.
+                    Só paga se houver economia. Se não conseguir desconto, não paga success fee.
                   </p>
                 </div>
               </div>
@@ -766,23 +842,22 @@ const LandingPage = () => {
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-4 md:space-y-5">
                     {[
-                      { label: "Lealdade", text: "Equilibrada entre vendedor e comprador. Sem favor a ninguém." },
-                      { label: "Autoridade", text: "Sem poderes de decisão. Apenas facilita comunicação." },
-                      { label: "Incentivo Financeiro", text: "Comissão atrelada ao fechamento. Quanto mais caro você paga, mais o corretor ganha.", highlight: true },
-                      { label: "Conflito de Interesse", text: "Estrutural. O corretor ganha mais se você pagar mais." },
-                      { label: "Resultado Esperado", text: "Transação viabilizada. Preço: o que o mercado aceitar." },
+                      { label: "Lealdade", text: "Equilibrada. Sem favor a ninguém." },
+                      { label: "Autoridade", text: "Apenas facilita comunicação." },
+                      { label: "Incentivo", text: "Quanto mais você paga, mais ganha.", highlight: true },
+                      { label: "Conflito", text: "Estrutural. Ganha mais se você pagar mais." },
+                      { label: "Resultado", text: "Preço: o que o mercado aceitar." },
                     ].map((item, index) => (
-                      <div key={index} className="pb-4 border-b border-border last:border-b-0 last:pb-0">
-                        <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1 md:mb-2">{item.label}</span>
+                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                        <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
                       </div>
                     ))}
                   </div>
                 </CardContent>
-                <div className="bg-muted p-4 border-t border-border">
+                <div className="bg-muted p-3 md:p-4 border-t border-border">
                   <p className="text-xs md:text-sm text-foreground leading-relaxed">
-                    <strong>Risco para você:</strong> Você está sozinho na negociação. 
-                    O corretor quer fechar rápido (não negocia desconto).
+                    <strong>Risco:</strong> Você negocia sozinho. Corretor quer fechar rápido.
                   </p>
                 </div>
               </Card>
@@ -790,20 +865,20 @@ const LandingPage = () => {
               {/* Representação */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="bg-luxury-gold/10 p-4 md:p-6 border-b-[3px] border-luxury-gold text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">✅ Representação (Modelo PSI)</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground italic">Profissional como seu advogado</p>
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">✅ Representação (PSI)</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground italic">Advogado do seu lado</p>
                 </div>
                 <CardContent className="p-4 md:p-6">
-                  <div className="space-y-4 md:space-y-5">
+                  <div className="space-y-3 md:space-y-4">
                     {[
-                      { label: "Lealdade", text: "Exclusiva ao comprador. Seu interesse é meu interesse.", highlight: true },
-                      { label: "Autoridade", text: "Poderes definidos em contrato. Eu posso negociar por você, porém sempre com a sua ciência e autorização por escrito." },
-                      { label: "Incentivo Financeiro", text: "Taxa de sucesso atrelada ao desconto. Quanto mais você economiza, mais eu ganho.", highlight: true },
-                      { label: "Conflito de Interesse", text: "Eliminado. Meu ganho depende da sua economia." },
-                      { label: "Resultado Esperado", text: "Melhor preço possível + máxima segurança jurídica." },
+                      { label: "Lealdade", text: "100% exclusiva ao comprador.", highlight: true },
+                      { label: "Autoridade", text: "Negocio por você, com sua autorização." },
+                      { label: "Incentivo", text: "Quanto mais você economiza, mais ganho.", highlight: true },
+                      { label: "Conflito", text: "Eliminado. Interesses alinhados." },
+                      { label: "Resultado", text: "Melhor preço + segurança jurídica." },
                     ].map((item, index) => (
-                      <div key={index} className="pb-4 border-b border-border last:border-b-0 last:pb-0">
-                        <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1 md:mb-2">{item.label}</span>
+                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                        <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
                       </div>
                     ))}
@@ -1286,39 +1361,60 @@ const LandingPage = () => {
               <p className="text-base md:text-xl text-muted-foreground">O que diz quem já contratou?</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {[
                 {
                   quote:
-                    "Ele me convenceu ao me mostrar dados que provaram que o apartamento estava 15% acima do preço real de mercado. O Contratei e Economizei R$ 320 mil na negociação.",
-                  author: "Roberto Silva",
-                  role: "Empresário do Setor Financeiro",
+                    "Ele me mostrou dados que provaram que o apartamento estava 15% acima do mercado. Economizei R$ 320 mil na negociação.",
+                  author: "Roberto S.",
+                  role: "Empresário",
                   savings: "R$ 320.000",
+                  isWhatsApp: true,
                 },
                 {
                   quote:
-                    "Finalmente encontrei alguém que trabalha para mim, não para quem vende. O processo foi transparente do início ao fim.",
-                  author: "Ana Carolina",
-                  role: "Executiva de Multinacional",
+                    "Finalmente alguém que trabalha para mim, não para quem vende. Processo transparente do início ao fim.",
+                  author: "Ana Carolina M.",
+                  role: "Executiva",
                   savings: "R$ 450.000",
+                  isWhatsApp: true,
+                },
+                {
+                  quote:
+                    "Visitei apenas 6 imóveis em vez de 40. Cada um pré-aprovado tecnicamente. Fechei em 3 semanas.",
+                  author: "Pedro H.",
+                  role: "Médico",
+                  savings: "R$ 280.000",
+                  isWhatsApp: false,
                 },
               ].map((testimonial, index) => (
-                <Card key={index} className="border-0 shadow-luxury bg-white">
-                  <CardContent className="p-5 md:p-8">
-                    <div className="flex mb-3 md:mb-4">
+                <Card key={index} className={cn(
+                  "border-0 shadow-luxury bg-white relative overflow-hidden",
+                  testimonial.isWhatsApp && "border-l-4 border-green-500"
+                )}>
+                  {testimonial.isWhatsApp && (
+                    <div className="absolute top-3 right-3">
+                      <div className="bg-green-500 text-white px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1">
+                        <MessageCircle className="h-3 w-3" />
+                        Via WhatsApp
+                      </div>
+                    </div>
+                  )}
+                  <CardContent className="p-5 md:p-6">
+                    <div className="flex mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-luxury-gold text-luxury-gold" />
+                        <Star key={i} className="h-4 w-4 fill-luxury-gold text-luxury-gold" />
                       ))}
                     </div>
 
-                    <blockquote className="text-sm md:text-lg text-foreground mb-4 md:mb-6 italic leading-relaxed">
+                    <blockquote className="text-sm md:text-base text-foreground mb-4 italic leading-relaxed">
                       "{testimonial.quote}"
                     </blockquote>
 
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div className="flex flex-col gap-2">
                       <div>
-                        <p className="font-semibold text-foreground text-sm md:text-base">{testimonial.author}</p>
-                        <p className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</p>
+                        <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
+                        <p className="text-xs text-muted-foreground">{testimonial.role}</p>
                       </div>
                       <Badge variant="outline" className="border-luxury-gold text-luxury-gold bg-luxury-gold/5 text-xs w-fit">
                         Economizou {testimonial.savings}
@@ -1338,26 +1434,29 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-luxury-navy leading-tight">
-                Sobre <span className="text-luxury-gold">Marcus Godoy</span>
+                Por Que Criei o <span className="text-luxury-gold">PSI</span>
               </h2>
             </div>
 
             <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-12 shadow-luxury">
               <div className="prose prose-lg max-w-none text-luxury-navy">
                 <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">
-                  Minha experiência como Corretor revelou uma realidade frustrante: o modelo tradicional privilegia
-                  vendedores e deixa compradores desprotegidos. A remuneração por comissão cria um{" "}
+                  Como Corretor, vi uma realidade frustrante: o modelo tradicional privilegia
+                  vendedores e deixa compradores desprotegidos. A comissão cria{" "}
                   <strong>conflito de interesses estrutural</strong>.
                 </p>
 
                 <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">
-                  Estudei modelos internacionais de representação exclusiva do comprador e desenvolvi um método próprio:{" "}
+                  Estudei modelos internacionais e desenvolvi um método próprio:{" "}
                   <strong>curadoria técnica + dados reais + negociação estratégica</strong>.
                 </p>
 
                 <div className="bg-luxury-navy text-white rounded-lg md:rounded-xl p-5 md:p-8 text-center">
                   <p className="text-base md:text-xl font-bold mb-3 md:mb-4">
-                    Meu compromisso: ser o defensor exclusivo dos seus interesses, com lealdade total.
+                    Quer entender se o PSI faz sentido para você?
+                  </p>
+                  <p className="text-white/80 text-sm md:text-base mb-4">
+                    Agende um diagnóstico gratuito — sem compromisso financeiro.
                   </p>
                   <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
                     <a
@@ -1366,7 +1465,7 @@ const LandingPage = () => {
                       rel="noopener noreferrer"
                       onClick={() => trackCalendlyClick("sobre")}
                     >
-                      Agendar Diagnóstico Estratégico
+                      Agendar Diagnóstico Gratuito
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
