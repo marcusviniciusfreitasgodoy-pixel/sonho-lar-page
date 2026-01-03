@@ -454,8 +454,8 @@ const LandingPage = () => {
                   {/* Credential badges */}
                   <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex flex-col gap-2">
                     <div className="bg-luxury-navy text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
-                      <Gavel className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
-                      <span className="text-xs md:text-sm font-bold">Advogado</span>
+                      <Scale className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
+                      <span className="text-xs md:text-sm font-bold">Perito Avaliador</span>
                     </div>
                     <div className="bg-luxury-gold text-luxury-navy px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
                       <Scale className="h-4 w-4 md:h-5 md:w-5" />
