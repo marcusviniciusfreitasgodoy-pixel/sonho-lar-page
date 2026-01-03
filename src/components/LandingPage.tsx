@@ -65,18 +65,18 @@ const LandingPage = () => {
     const script = document.createElement("script");
     const clientWidth = document.body.clientWidth;
     const isMobile = clientWidth < 640;
-    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rX3B1%0D%0AYmxpYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzM0%0D%0AOGRkZjUwM2M2NTRiOWJiYmI4YmVhOWY5MjEwZWFkXzU1ODcwL3ByZXZpZXdfdGFyZ2V0LndlYnAi%0D%0ALCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiYWI2NmI1ZjNk%0D%0AYWRmNGQ1YmJkZTI3YmZiMDVhMzgwNjIiLCJ1c2VybmFtZSI6IjRiYjNhNThlMzlmNDQ4OTFiNzgy%0D%0ANWI3YzMyZWRhMDcxIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`
+    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rX3B1%0D%0AYmxpYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzM0%0D%0AOGRkZjUwM2M2NTRiOWJiYmI4YmVhOWY5MjEwZWFkXzU1ODcwL3ByZXZpZXdfdGFyZ2V0LndlYnAi%0D%0ALCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiYWI2NmI1ZjNk%0D%0AYWRmNGQ1YmJkZTI3YmZiMDVhMzgwNjIiLCJ1c2VybmFtZSI6IjRiYjNhNThlMzlmNDQ4OTFiNzgy%0D%0ANWI3YzMyZWRhMDcxIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,isMobile=clientWidth<640,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`
   #heygen-streaming-embed {
-    z-index: 9998;
+    z-index: 9997;
     position: fixed;
-    left: ${isMobile ? '16px' : '24px'};
-    bottom: ${isMobile ? '80px' : '24px'};
-    width: ${isMobile ? '70px' : '90px'};
-    height: ${isMobile ? '70px' : '90px'};
+    left: \${isMobile ? '12px' : '24px'};
+    bottom: \${isMobile ? '70px' : '24px'};
+    width: \${isMobile ? '56px' : '90px'};
+    height: \${isMobile ? '56px' : '90px'};
     border-radius: 50%;
     border: 2px solid #fff;
-    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
-    transition: all linear 0.1s;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+    transition: all linear 0.15s;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -86,7 +86,7 @@ const LandingPage = () => {
     visibility: visible;
   }
   #heygen-streaming-embed.expand {
-    \${clientWidth<540?"height: 60vh; max-height: 380px; width: 92%; left: 50%; transform: translateX(-50%); bottom: 80px;":"height: 366px; width: calc(366px * 16 / 9); bottom: 24px;"}
+    \${clientWidth<540?"height: 55vh; max-height: 350px; width: 90%; left: 50%; transform: translateX(-50%); bottom: 70px;":"height: 366px; width: calc(366px * 16 / 9); bottom: 24px; left: 24px; transform: none;"}
     border: 0;
     border-radius: 12px;
     z-index: 9999;
@@ -722,16 +722,16 @@ const LandingPage = () => {
                 </div>
 
                 <Button 
-                  size="xl" 
+                  size="lg" 
                   variant="luxury"
-                  className="group"
+                  className="group w-full sm:w-auto text-sm md:text-base"
                   onClick={() => {
                     trackCalendlyClick("pricing_section");
                     window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
                   }}
                 >
                   Agendar Minha Conversa Gratuita
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <p className="text-xs md:text-sm text-muted-foreground mt-4">
                   30 minutos · Online · Você decide depois
@@ -946,8 +946,8 @@ const LandingPage = () => {
               </p>
               <Button
                 variant="gold"
-                size="xl"
-                className="shadow-gold transition-all duration-300 hover:scale-105 group"
+                size="lg"
+                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto text-sm md:text-base"
                 asChild
               >
                 <a
@@ -975,39 +975,39 @@ const LandingPage = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pb-16 sm:pb-0">
               {/* Traditional Realtor */}
               <Card className="bg-white border-2 border-red-200 shadow-luxury">
-                <CardContent className="p-5 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-red-600 mb-4 md:mb-6 flex items-center gap-2">
-                    <span className="text-2xl md:text-3xl">❌</span> Corretor Tradicional
+                <CardContent className="p-4 sm:p-5 md:p-8">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                    <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-red-500 flex-shrink-0" /> Corretor Tradicional
                   </h3>
-                  <ul className="space-y-3 md:space-y-4">
+                  <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
                         Ganha % do preço final (quanto mais caro, mais ganha)
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Trabalha para o vendedor (quem paga a comissão)</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Trabalha para o vendedor (quem paga a comissão)</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Incentivo: vender imóvel CARO</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Incentivo: vender imóvel CARO</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Mostra estoque (não filtra)</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Mostra estoque (não filtra)</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Você visita 30-40 imóveis</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Você visita 30-40 imóveis</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
                       <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Risco de erro estrutural</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Risco de erro estrutural</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -1015,40 +1015,40 @@ const LandingPage = () => {
 
               {/* PSI */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
-                <CardContent className="p-5 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-4 md:mb-6 flex items-center gap-2">
-                    <span className="text-2xl md:text-3xl">✅</span> Personal Shopper Imobiliário
+                <CardContent className="p-4 sm:p-5 md:p-8">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-luxury-gold flex-shrink-0" /> Personal Shopper Imobiliário
                   </h3>
-                  <ul className="space-y-3 md:space-y-4">
+                  <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
                         Ganha % do DESCONTO (quanto maior economia, mais ganha)
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Trabalha PARA VOCÊ (você paga, não vendedor)</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Trabalha PARA VOCÊ (você paga, não vendedor)</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
-                        Incentivo: conseguir imóvel com preço JUSTO e com mais descontos que o modelo TRADICIONAL
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
+                        Incentivo: conseguir imóvel com preço JUSTO e com mais descontos
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
-                        Melhor filtro e curadoria dos imóveis (você vê apenas certos)
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
+                        Melhor filtro e curadoria dos imóveis
                       </span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Você visita 5-8 imóveis certos</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Você visita 5-8 imóveis certos</span>
                     </li>
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Due diligence completa protege você</span>
+                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Due diligence completa protege você</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -1701,11 +1701,11 @@ const LandingPage = () => {
         href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation"
+        className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 md:bottom-6 md:right-6 z-[9998] bg-green-500 hover:bg-green-600 text-white p-2.5 sm:p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation"
         onClick={() => trackWhatsAppClick("floating-button")}
         aria-label="Contato via WhatsApp"
       >
-        <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
       </a>
     </div>
   );
