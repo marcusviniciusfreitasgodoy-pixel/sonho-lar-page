@@ -6,9 +6,14 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale } from "lucide-react";
-import heroImage from "@/assets/barra-beach-luxury.jpg";
+import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
+import luxuryProperty1 from "@/assets/luxury-property-1.jpg";
+import luxuryProperty2 from "@/assets/luxury-property-2.jpg";
+import luxuryProperty3 from "@/assets/luxury-property-3.jpg";
+import luxuryInterior1 from "@/assets/luxury-interior-1.jpg";
+import luxuryProperty5 from "@/assets/luxury-property-5.jpg";
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -340,6 +345,52 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Property Showcase Gallery */}
+      <section className="py-12 md:py-16 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8">
+            <Badge variant="outline" className="mb-3 border-luxury-gold text-luxury-gold text-xs md:text-sm">
+              Portfólio Exclusivo
+            </Badge>
+            <h3 className="text-2xl md:text-3xl font-bold text-luxury-navy">
+              Imóveis de Alto Padrão na Barra e Recreio
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div className="relative group overflow-hidden rounded-2xl shadow-luxury">
+              <img 
+                src={luxuryProperty1} 
+                alt="Imóvel de luxo na Barra da Tijuca" 
+                className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <p className="text-white font-medium">Vista privilegiada</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-luxury">
+              <img 
+                src={luxuryProperty2} 
+                alt="Apartamento de alto padrão" 
+                className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <p className="text-white font-medium">Acabamento premium</p>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-luxury">
+              <img 
+                src={luxuryProperty3} 
+                alt="Casa de luxo no Recreio" 
+                className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <p className="text-white font-medium">Localização exclusiva</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Marcus Section - Repositioned */}
       <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -394,6 +445,38 @@ const LandingPage = () => {
                     <strong className="text-luxury-gold">Meu compromisso:</strong> Ser o defensor exclusivo dos seus interesses, com lealdade total.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Property Showcase */}
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+            <div className="relative group overflow-hidden rounded-2xl shadow-luxury">
+              <img 
+                src={luxuryInterior1} 
+                alt="Interior de luxo" 
+                className="w-full h-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute top-4 left-4">
+                <Badge className="bg-luxury-gold text-luxury-navy font-semibold">
+                  Design Exclusivo
+                </Badge>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl shadow-luxury">
+              <img 
+                src={luxuryProperty5} 
+                alt="Propriedade de alto padrão" 
+                className="w-full h-72 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute top-4 left-4">
+                <Badge className="bg-luxury-gold text-luxury-navy font-semibold">
+                  Vista Mar
+                </Badge>
               </div>
             </div>
           </div>
