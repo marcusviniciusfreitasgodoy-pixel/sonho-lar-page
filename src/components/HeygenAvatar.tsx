@@ -28,8 +28,8 @@ const HeygenAvatar = () => {
         position: fixed;
         left: 12px;
         bottom: 70px;
-        width: 56px;
-        height: 56px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         border: 2px solid #fff;
         box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);

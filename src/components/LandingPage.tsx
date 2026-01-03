@@ -71,8 +71,8 @@ const LandingPage = () => {
     position: fixed;
     left: \${isMobile ? '12px' : '24px'};
     bottom: \${isMobile ? '70px' : '24px'};
-    width: \${isMobile ? '56px' : '90px'};
-    height: \${isMobile ? '56px' : '90px'};
+    width: \${isMobile ? '70px' : '90px'};
+    height: \${isMobile ? '70px' : '90px'};
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
@@ -243,7 +243,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-[100svh] sm:min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
+        className="relative min-h-[85svh] sm:min-h-[75svh] md:min-h-[85svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -254,7 +254,7 @@ const LandingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/70 to-luxury-navy/85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-8 sm:py-6 md:py-8">
+        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-4 sm:py-5 md:py-8">
           <div className="animate-fade-in">
             <Badge
               variant="outline"
