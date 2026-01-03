@@ -27,7 +27,7 @@ import {
   Scale,
   Gavel,
 } from "lucide-react";
-import heroImage from "@/assets/barra-beach-luxury.jpg";
+import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
 
