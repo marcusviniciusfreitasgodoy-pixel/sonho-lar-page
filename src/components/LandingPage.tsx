@@ -690,7 +690,7 @@ const LandingPage = () => {
                   className="group"
                   onClick={() => {
                     trackCalendlyClick("pricing_section");
-                    window.open("https://calendly.com/godoyprime/diagnostico-godoy-prime", "_blank");
+                    window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
                   }}
                 >
                   Agendar Minha Conversa Gratuita
