@@ -1452,7 +1452,7 @@ const LandingPage = () => {
                 </li>
               </ul>
 
-              <Button asChild variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto">
+              <Button variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
                 <a
                   href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
                   target="_blank"

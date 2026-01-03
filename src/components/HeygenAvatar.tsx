@@ -53,6 +53,7 @@ const HeygenAvatar = () => {
       #heygen-streaming-container {
         width: 100%;
         height: 100%;
+        pointer-events: auto;
       }
       #heygen-streaming-container iframe {
         width: 100%;
