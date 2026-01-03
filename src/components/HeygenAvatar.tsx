@@ -26,10 +26,10 @@ const HeygenAvatar = () => {
       #heygen-streaming-embed {
         z-index: 9999;
         position: fixed;
-        left: 40px;
-        bottom: 40px;
-        width: 200px;
-        height: 200px;
+        left: 20px;
+        bottom: 20px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         border: 2px solid #fff;
         box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
