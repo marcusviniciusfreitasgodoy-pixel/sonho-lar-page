@@ -564,7 +564,7 @@ const LandingPage = () => {
               {/* Photo */}
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative">
-                  <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[340px] lg:h-[340px] rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
                     <img 
                       src={marcusProfile} 
                       alt="Marcus Godoy - Personal Shopper Imobiliário" 
