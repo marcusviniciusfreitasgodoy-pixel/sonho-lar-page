@@ -646,81 +646,133 @@ const LandingPage = () => {
                 Modelo de Remuneração: 100% Transparente
               </h2>
               <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
-                Meu interesse está <strong className="text-luxury-navy">100% alinhado ao seu</strong>: quanto maior seu
-                desconto, maior meu ganho. Nenhum incentivo para você pagar caro.
+                Antes de qualquer investimento, <strong className="text-luxury-navy">vamos conversar</strong>. 
+                O primeiro passo é uma consulta gratuita para entender se este modelo faz sentido para você.
               </p>
             </div>
 
+            {/* DESTAQUE PRINCIPAL: Diagnóstico Gratuito */}
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border-2 border-luxury-gold overflow-hidden mb-6 md:mb-8">
+              <div className="bg-gradient-to-r from-luxury-gold/20 to-luxury-gold/10 p-6 md:p-10 text-center">
+                <div className="inline-flex items-center gap-2 bg-luxury-gold/20 text-luxury-navy font-semibold text-xs md:text-sm px-4 py-2 rounded-full mb-4">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-luxury-gold opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-luxury-gold"></span>
+                  </span>
+                  PRIMEIRO PASSO
+                </div>
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-luxury-navy mb-3 md:mb-4">
+                  Diagnóstico Estratégico Gratuito
+                </h3>
+                <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
+                  Uma conversa sem compromisso onde analisamos juntos sua situação, seus objetivos e determinamos 
+                  se o PSI é a melhor solução para você. <strong className="text-luxury-navy">Sem custo. Sem pressão.</strong>
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 md:mb-8 max-w-3xl mx-auto">
+                  <div className="bg-white/70 rounded-lg p-4">
+                    <div className="text-2xl mb-2">📋</div>
+                    <p className="text-sm text-luxury-navy font-medium">Análise do seu momento</p>
+                  </div>
+                  <div className="bg-white/70 rounded-lg p-4">
+                    <div className="text-2xl mb-2">🎯</div>
+                    <p className="text-sm text-luxury-navy font-medium">Alinhamento de expectativas</p>
+                  </div>
+                  <div className="bg-white/70 rounded-lg p-4">
+                    <div className="text-2xl mb-2">✅</div>
+                    <p className="text-sm text-luxury-navy font-medium">Decisão sem pressão</p>
+                  </div>
+                </div>
+
+                <Button 
+                  size="xl" 
+                  variant="luxury"
+                  className="group"
+                  onClick={() => {
+                    trackCalendlyClick("pricing_section");
+                    window.open("https://calendly.com/godoyprime/diagnostico-godoy-prime", "_blank");
+                  }}
+                >
+                  Agendar Minha Conversa Gratuita
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <p className="text-xs md:text-sm text-muted-foreground mt-4">
+                  30 minutos · Online · Você decide depois
+                </p>
+              </div>
+            </div>
+
+            {/* INFORMAÇÃO TRANSPARENTE: Estrutura de Preços */}
             <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden mb-6 md:mb-8">
-              {/* Free Diagnosis Highlight */}
-              <div className="bg-luxury-gold/10 p-4 md:p-6 border-b border-luxury-gold/30 text-center">
-                <p className="text-sm md:text-base text-luxury-navy font-medium">
-                  🎯 <strong>Primeiro passo:</strong> Diagnóstico Estratégico <span className="text-luxury-gold font-bold">100% GRATUITO</span> — sem compromisso financeiro
+              <div className="bg-muted p-4 md:p-6 border-b border-border text-center">
+                <p className="text-sm md:text-base text-muted-foreground">
+                  <strong className="text-luxury-navy">Após o diagnóstico</strong>, se fizer sentido para ambos, 
+                  este é o modelo de remuneração:
                 </p>
               </div>
               
               {/* Fee Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5 md:p-8 text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">1. Fee de Consultoria</h3>
-                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 10.000</div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Após aprovação no diagnóstico. Cobre análise técnica, curadoria e estratégia de negociação.
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Fee de Consultoria</h3>
+                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2 md:mb-3">R$ 10.000</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Cobre análise técnica, curadoria e estratégia de negociação.
                   </p>
                 </div>
                 <div className="p-5 md:p-8 text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">2. Success Fee</h3>
-                  <div className="text-2xl md:text-4xl font-bold text-luxury-gold mb-3 md:mb-4">30% do desconto</div>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Só paga se houver economia. Se não conseguir desconto, não paga success fee.
+                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Success Fee</h3>
+                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2 md:mb-3">30% do desconto</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Só paga se houver economia comprovada. Você fica com 70%.
                   </p>
                 </div>
               </div>
 
-              {/* How It's Calculated */}
-              <div className="bg-luxury-cream p-5 md:p-8 border-t border-border">
-                <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-4 md:mb-6 text-center">
-                  Como é Calculado
-                </h3>
-                <ul className="space-y-3 md:space-y-4 max-w-2xl mx-auto">
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Baseline (Valor Anunciado):</strong> Quanto está no anúncio público do imóvel.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Compra Real (Valor Negociado):</strong> Quanto você efetivamente paga após minha
-                      negociação.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Delta:</strong> Baseline - Compra Real = seu desconto comprovado.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-sm md:text-base text-luxury-navy">
-                      <strong>Seu Ganho:</strong> Você fica com 70% do desconto negociado.
-                    </span>
-                  </li>
-                </ul>
+              {/* Como Funciona - Resumido */}
+              <div className="bg-luxury-cream p-4 md:p-6 border-t border-border">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-luxury-navy">
+                  <span className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-luxury-gold" />
+                    <strong>Baseline:</strong> Preço anunciado
+                  </span>
+                  <span className="hidden sm:block text-luxury-gold">→</span>
+                  <span className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-luxury-gold" />
+                    <strong>Negociado:</strong> Preço final
+                  </span>
+                  <span className="hidden sm:block text-luxury-gold">→</span>
+                  <span className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-luxury-gold" />
+                    <strong>Delta:</strong> Seu desconto
+                  </span>
+                </div>
               </div>
+            </div>
 
-              {/* Guarantee */}
-              <div className="bg-luxury-navy p-4 md:p-6 text-center">
-                <p className="text-white text-sm md:text-lg leading-relaxed">
-                  <strong className="text-luxury-gold">
-                    Se não houver desconto comprovado, você não paga success fee.
-                  </strong>
-                  <br />
-                  Apenas os R$ 10.000 de consultoria.
-                </p>
-              </div>
+            {/* CTA Consultivo */}
+            <div className="bg-luxury-navy/5 rounded-xl md:rounded-2xl p-6 md:p-8 text-center border border-luxury-navy/10">
+              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3">
+                Tem dúvidas sobre o modelo?
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground mb-5 max-w-xl mx-auto">
+                Entendo que é um investimento importante. Por isso, estou disponível para explicar cada detalhe 
+                antes de qualquer compromisso.
+              </p>
+              <Button 
+                variant="luxury-outline"
+                size="lg"
+                onClick={() => {
+                  trackWhatsAppClick("pricing_model_inquiry");
+                  window.open("https://wa.me/5521999461868?text=Olá! Gostaria de entender melhor o modelo de remuneração do PSI antes de agendar o diagnóstico.", "_blank");
+                }}
+              >
+                <MessageCircle className="h-5 w-5 mr-2" />
+                Entenda se este modelo serve para você
+              </Button>
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                Você decide só após entender exatamente o que está contratando.
+              </p>
             </div>
           </div>
         </div>
