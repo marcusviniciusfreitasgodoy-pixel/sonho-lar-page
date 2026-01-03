@@ -63,7 +63,44 @@ const LandingPage = () => {
   // Add HeyGen script to document
   useEffect(() => {
     const script = document.createElement("script");
-    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rX3B1%0D%0AYmxpYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzM0%0D%0AOGRkZjUwM2M2NTRiOWJiYmI4YmVhOWY5MjEwZWFkXzU1ODcwL3ByZXZpZXdfdGFyZ2V0LndlYnAi%0D%0ALCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiYWI2NmI1ZjNk%0D%0AYWRmNGQ1YmJkZTI3YmZiMDVhMzgwNjIiLCJ1c2VybmFtZSI6IjRiYjNhNThlMzlmNDQ4OTFiNzgy%0D%0ANWI3YzMyZWRhMDcxIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`\\n  #heygen-streaming-embed {\\n    z-index: 9999;\\n    position: fixed;\\n    left: 40px;\\n    bottom: 40px;\\n    width: 200px;\\n    height: 200px;\\n    border-radius: 50%;\\n    border: 2px solid #fff;\\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\\n    transition: all linear 0.1s;\\n    overflow: hidden;\\n\\n    opacity: 0;\\n    visibility: hidden;\\n  }\\n  #heygen-streaming-embed.show {\\n    opacity: 1;\\n    visibility: visible;\\n  }\\n  #heygen-streaming-embed.expand {\\n    \${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\\n    border: 0;\\n    border-radius: 8px;\\n  }\\n  #heygen-streaming-container {\\n    width: 100%;\\n    height: 100%;\\n  }\\n  #heygen-streaming-container iframe {\\n    width: 100%;\\n    height: 100%;\\n    border: 0;\\n  }\\n  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
+    const clientWidth = document.body.clientWidth;
+    const isMobile = clientWidth < 640;
+    script.innerHTML = `!function(window){const host="https://labs.heygen.com",url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJLYXR5YV9Qcm9mZXNzaW9uYWxMb29rX3B1%0D%0AYmxpYyIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzM0%0D%0AOGRkZjUwM2M2NTRiOWJiYmI4YmVhOWY5MjEwZWFkXzU1ODcwL3ByZXZpZXdfdGFyZ2V0LndlYnAi%0D%0ALCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6dHJ1ZSwia25vd2xlZGdlQmFzZUlkIjoiYWI2NmI1ZjNk%0D%0AYWRmNGQ1YmJkZTI3YmZiMDVhMzgwNjIiLCJ1c2VybmFtZSI6IjRiYjNhNThlMzlmNDQ4OTFiNzgy%0D%0ANWI3YzMyZWRhMDcxIn0%3D&inIFrame=1",clientWidth=document.body.clientWidth,wrapDiv=document.createElement("div");wrapDiv.id="heygen-streaming-embed";const container=document.createElement("div");container.id="heygen-streaming-container";const stylesheet=document.createElement("style");stylesheet.innerHTML=\`
+  #heygen-streaming-embed {
+    z-index: 9998;
+    position: fixed;
+    left: ${isMobile ? '16px' : '24px'};
+    bottom: ${isMobile ? '80px' : '24px'};
+    width: ${isMobile ? '70px' : '90px'};
+    height: ${isMobile ? '70px' : '90px'};
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+    transition: all linear 0.1s;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+  }
+  #heygen-streaming-embed.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #heygen-streaming-embed.expand {
+    \${clientWidth<540?"height: 60vh; max-height: 380px; width: 92%; left: 50%; transform: translateX(-50%); bottom: 80px;":"height: 366px; width: calc(366px * 16 / 9); bottom: 24px;"}
+    border: 0;
+    border-radius: 12px;
+    z-index: 9999;
+  }
+  #heygen-streaming-container {
+    width: 100%;
+    height: 100%;
+  }
+  #heygen-streaming-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  \`;const iframe=document.createElement("iframe");iframe.allowFullscreen=!1,iframe.title="Streaming Embed",iframe.role="dialog",iframe.allow="microphone",iframe.src=url;let visible=!1,initial=!1;window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)}(globalThis);`;
     document.body.appendChild(script);
     return () => {
       const heygenEmbed = document.getElementById("heygen-streaming-embed");
@@ -76,14 +113,14 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm safe-area-inset">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
+          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-2 md:space-x-3">
-              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-9 w-9 md:h-12 md:w-12" />
-              <span className="text-base md:text-xl font-bold text-luxury-navy">Godoy Prime Realty</span>
-            </div>
+            <a href="#hero" className="flex items-center space-x-2 md:space-x-3 min-w-0">
+              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-8 w-8 sm:h-9 sm:w-9 md:h-12 md:w-12 flex-shrink-0" />
+              <span className="text-sm sm:text-base md:text-xl font-bold text-luxury-navy truncate">Godoy Prime Realty</span>
+            </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -135,7 +172,7 @@ const LandingPage = () => {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors"
+                className="lg:hidden p-3 -mr-2 text-luxury-navy hover:text-luxury-gold transition-colors touch-manipulation"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -145,56 +182,56 @@ const LandingPage = () => {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border bg-white animate-fade-in">
-              <nav className="flex flex-col space-y-3">
+            <div className="lg:hidden py-2 border-t border-border bg-white animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
+              <nav className="flex flex-col">
                 <a
                   href="#como-funciona"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
+                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Como Funciona
                 </a>
                 <a
                   href="#economia"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
+                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Economia
                 </a>
                 <a
                   href="#precos"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
+                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Serviços
                 </a>
                 <a
                   href="#sobre"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
+                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Sobre
                 </a>
                 <a
                   href="#faq"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
+                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   FAQ
                 </a>
 
                 {/* Mobile Contact Info */}
-                <div className="pt-4 border-t border-border space-y-3">
-                  <a href="tel:+552140400067" className="flex items-center space-x-2 text-luxury-navy text-sm py-1">
-                    <Phone className="h-4 w-4" />
-                    <span>(21) 4040-0067</span>
+                <div className="pt-4 px-2 space-y-1">
+                  <a href="tel:+552140400067" className="flex items-center space-x-3 text-luxury-navy py-3 touch-manipulation">
+                    <Phone className="h-5 w-5 text-luxury-gold" />
+                    <span className="text-base">(21) 4040-0067</span>
                   </a>
                   <a
                     href="https://wa.me/5521964075124"
-                    className="flex items-center space-x-2 text-luxury-navy text-sm py-1"
+                    className="flex items-center space-x-3 text-luxury-navy py-3 touch-manipulation"
                   >
-                    <MessageCircle className="h-4 w-4" />
-                    <span>(21) 96407-5124</span>
+                    <MessageCircle className="h-5 w-5 text-green-500" />
+                    <span className="text-base">(21) 96407-5124</span>
                   </a>
                 </div>
               </nav>
@@ -206,7 +243,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24"
+        className="relative min-h-[100svh] sm:min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -214,34 +251,34 @@ const LandingPage = () => {
             backgroundImage: `url(${heroImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/75 via-luxury-navy/65 to-luxury-navy/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/70 to-luxury-navy/85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-6 md:py-8">
+        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-8 sm:py-6 md:py-8">
           <div className="animate-fade-in">
             <Badge
               variant="outline"
-              className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs md:text-sm"
+              className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1"
             >
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight max-w-5xl mx-auto">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-[1.2] max-w-5xl mx-auto">
               Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed px-2">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
               Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da
               Tijuca e Recreio — usando dados reais, curadoria técnica e negociação profissional.
             </p>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto px-2">
-              Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuizos e surpresas futuras.
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto">
+              Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuízos e surpresas futuras.
             </p>
 
             <Button
               variant="gold"
-              className="mb-3 md:mb-4 h-12 px-6 text-sm font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm"
+              className="mb-3 md:mb-4 h-14 px-6 text-base font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm touch-manipulation"
               asChild
             >
               <a
@@ -251,7 +288,7 @@ const LandingPage = () => {
                 onClick={() => trackCalendlyClick("hero")}
               >
                 Agendar Diagnóstico (Gratuito)
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
@@ -1108,21 +1145,21 @@ const LandingPage = () => {
 
       {/* Pricing Section - 3 Packages */}
       <section id="precos" className="py-12 md:py-20 bg-luxury-navy text-white">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-10 md:mb-16">
+            <div className="text-center mb-8 md:mb-16">
               <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Serviços Exclusivos
               </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 leading-tight">
                 Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
               </h2>
-              <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto px-2">
+              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-3xl mx-auto">
                 Serviços desenhados para suas necessidades, garantindo segurança, exclusividade e retorno.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
               {[
                 {
                   name: "Parecer Godoy Prime",
@@ -1176,11 +1213,11 @@ const LandingPage = () => {
                 <Card
                   key={index}
                   className={cn(
-                    "border-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 bg-white/5 backdrop-blur-sm",
+                    "border-2 transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] bg-white/5 backdrop-blur-sm",
                     plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50",
                   )}
                 >
-                  <CardContent className="p-5 md:p-8">
+                  <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
                     {plan.popular && (
                       <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
                         Mais Completo
@@ -1207,7 +1244,7 @@ const LandingPage = () => {
 
                     <Button
                       variant={plan.popular ? "gold" : "luxury-outline"}
-                      className="w-full text-sm md:text-base py-3"
+                      className="w-full text-sm md:text-base py-3 h-12 touch-manipulation"
                       asChild
                     >
                       <a
@@ -1217,7 +1254,7 @@ const LandingPage = () => {
                         onClick={() => trackWhatsAppClick("precos")}
                       >
                         {plan.cta}
-                        <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </CardContent>
@@ -1542,19 +1579,19 @@ const LandingPage = () => {
 
 
       {/* Footer */}
-      <footer className="bg-luxury-navy text-white py-10 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+      <footer className="bg-luxury-navy text-white py-8 sm:py-10 md:py-16">
+        <div className="container mx-auto px-4 sm:px-5 md:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
             {/* Company Info */}
-            <div className="sm:col-span-2">
+            <div className="col-span-2">
               <div className="mb-4 md:mb-6">
                 <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
-                  <img src={godoyLogo} alt="Godoy Prime Realty" className="h-12 w-12 md:h-16 md:w-16" />
-                  <span className="text-lg md:text-2xl font-bold text-white">Godoy Prime Realty</span>
+                  <img src={godoyLogo} alt="Godoy Prime Realty" className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16" />
+                  <span className="text-base sm:text-lg md:text-2xl font-bold text-white">Godoy Prime Realty</span>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
-                <p className="text-white/80 mb-3 md:mb-4 text-sm md:text-base">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
-                <p className="text-white/70 text-xs md:text-sm leading-relaxed">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
+                <p className="text-white/80 mb-3 md:mb-4 text-xs sm:text-sm md:text-base">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
+                <p className="text-white/70 text-xs md:text-sm leading-relaxed hidden sm:block">
                   Representação exclusiva do comprador em imóveis de alto padrão. Economia garantida e transparência
                   total.
                 </p>
@@ -1631,25 +1668,25 @@ const LandingPage = () => {
 
           {/* Legal Links & Copyright */}
           <div className="border-t border-white/20 pt-6 md:pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex flex-wrap justify-center md:justify-start gap-4 md:space-x-6 text-xs md:text-sm text-white/60">
-                <a href="/privacidade" className="hover:text-luxury-gold transition-colors">
+            <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 md:gap-6 text-xs md:text-sm text-white/60">
+                <a href="/privacidade" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
                   Política de Privacidade
                 </a>
                 <a
                   href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-luxury-gold transition-colors"
+                  className="hover:text-luxury-gold transition-colors py-1 touch-manipulation"
                 >
                   Termos de Uso
                 </a>
-                <a href="/lgpd" className="hover:text-luxury-gold transition-colors">
+                <a href="/lgpd" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
                   LGPD
                 </a>
               </div>
 
-              <p className="text-white/60 text-xs md:text-sm text-center md:text-right">
+              <p className="text-white/60 text-[10px] sm:text-xs md:text-sm text-center md:text-right">
                 © 2025 Godoy Prime Realty. Todos os direitos reservados.
                 <br />
                 CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
@@ -1664,11 +1701,11 @@ const LandingPage = () => {
         href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation"
         onClick={() => trackWhatsAppClick("floating-button")}
         aria-label="Contato via WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
       </a>
     </div>
   );
