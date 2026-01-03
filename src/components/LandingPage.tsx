@@ -30,6 +30,13 @@ import {
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
+import luxuryProperty1 from "@/assets/luxury-property-1.jpg";
+import luxuryProperty2 from "@/assets/luxury-property-2.jpg";
+import luxuryProperty3 from "@/assets/luxury-property-3.jpg";
+import luxuryProperty4 from "@/assets/luxury-property-4.jpg";
+import luxuryProperty5 from "@/assets/luxury-property-5.jpg";
+import luxuryProperty6 from "@/assets/luxury-property-6.jpg";
+import luxuryInterior1 from "@/assets/luxury-interior-1.jpg";
 
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
@@ -353,6 +360,38 @@ const LandingPage = () => {
                 <br />E você só descobre depois de assinar.
               </p>
             </div>
+
+            {/* Property Showcase */}
+            <div className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group">
+                <img 
+                  src={luxuryProperty1} 
+                  alt="Casa de luxo com vista para o mar" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group">
+                <img 
+                  src={luxuryProperty4} 
+                  alt="Mansão moderna ao entardecer" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group hidden md:block">
+                <img 
+                  src={luxuryProperty3} 
+                  alt="Casa de alto padrão com piscina" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-4 md:mt-6">Exemplos do tipo de imóvel que buscamos para nossos clientes</p>
           </div>
         </div>
       </section>
@@ -496,6 +535,40 @@ const LandingPage = () => {
                   <p className="text-white text-sm md:text-base">
                     <strong className="text-luxury-gold">Meu compromisso:</strong> Ser o defensor exclusivo dos seus interesses, com lealdade total.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Showcase Section */}
+      <section className="py-8 md:py-12 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-luxury group">
+                <img 
+                  src={luxuryInterior1} 
+                  alt="Interior de luxo com vista panorâmica para o oceano" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/50 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <Badge className="bg-luxury-gold text-luxury-navy font-semibold">Vista Mar Premium</Badge>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-luxury group">
+                <img 
+                  src={luxuryProperty2} 
+                  alt="Sala de estar luxuosa com pé direito duplo" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/50 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <Badge className="bg-luxury-gold text-luxury-navy font-semibold">Design Contemporâneo</Badge>
                 </div>
               </div>
             </div>
@@ -1027,6 +1100,43 @@ const LandingPage = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Gallery Section */}
+      <section className="py-8 md:py-12 bg-luxury-cream">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 md:gap-4">
+              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
+                <img 
+                  src={luxuryProperty5} 
+                  alt="Villa de luxo com piscina iluminada" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
+                <img 
+                  src={luxuryProperty6} 
+                  alt="Casa moderna à beira-mar" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
+                <img 
+                  src={luxuryProperty3} 
+                  alt="Residência com jardim tropical" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <p className="text-center text-xs md:text-sm text-muted-foreground mt-3 md:mt-4 italic">
+              Casas e apartamentos de alto padrão na Barra da Tijuca e Recreio
+            </p>
           </div>
         </div>
       </section>
