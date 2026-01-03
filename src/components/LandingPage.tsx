@@ -214,7 +214,7 @@ const LandingPage = () => {
             backgroundImage: `url(${heroImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/60 via-luxury-navy/50 to-luxury-navy/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/75 via-luxury-navy/65 to-luxury-navy/80"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-6 md:py-8">
