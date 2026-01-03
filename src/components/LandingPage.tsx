@@ -5,44 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import {
-  Shield,
-  Clock,
-  Key,
-  CircleCheck as CheckCircle,
-  Calculator,
-  Search,
-  Target,
-  Users,
-  TrendingUp,
-  Award,
-  Star,
-  ArrowRight,
-  Phone,
-  Mail,
-  Menu,
-  X,
-  MapPin,
-  MessageCircle,
-  Scale,
-  Gavel,
-} from "lucide-react";
+import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel } from "lucide-react";
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
-import luxuryProperty1 from "@/assets/luxury-property-1.jpeg";
-import luxuryProperty2 from "@/assets/luxury-property-2.jpeg";
-import luxuryProperty3 from "@/assets/luxury-property-3.jpeg";
-import luxuryProperty4 from "@/assets/luxury-property-4.jpeg";
-
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const toggleCardHighlight = (cardIndex: number) => {
-    setHighlightedCards((prev) =>
-      prev.includes(cardIndex) ? prev.filter((index) => index !== cardIndex) : [...prev, cardIndex],
-    );
+    setHighlightedCards(prev => prev.includes(cardIndex) ? prev.filter(index => index !== cardIndex) : [...prev, cardIndex]);
   };
 
   // Meta Pixel tracking functions
@@ -50,16 +21,15 @@ const LandingPage = () => {
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Lead", {
         content_name: "Consultoria Exclusiva",
-        button_location: buttonLocation,
+        button_location: buttonLocation
       });
     }
   };
-
   const trackWhatsAppClick = (buttonLocation: string) => {
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Contact", {
         content_name: "WhatsApp",
-        button_location: buttonLocation,
+        button_location: buttonLocation
       });
     }
   };
@@ -113,9 +83,7 @@ const LandingPage = () => {
       }
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm safe-area-inset">
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
@@ -128,34 +96,19 @@ const LandingPage = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              <a
-                href="#como-funciona"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Como Funciona
               </a>
-              <a
-                href="#economia"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Economia
               </a>
-              <a
-                href="#precos"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Serviços
               </a>
-              <a
-                href="#sobre"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Sobre
               </a>
-              <a
-                href="#faq"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 FAQ
               </a>
             </nav>
@@ -174,53 +127,28 @@ const LandingPage = () => {
               </div>
 
               {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-3 -mr-2 text-luxury-navy hover:text-luxury-gold transition-colors touch-manipulation"
-                aria-label="Toggle menu"
-              >
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-3 -mr-2 text-luxury-navy hover:text-luxury-gold transition-colors touch-manipulation" aria-label="Toggle menu">
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden py-2 border-t border-border bg-white animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
+          {mobileMenuOpen && <div className="lg:hidden py-2 border-t border-border bg-white animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
               <nav className="flex flex-col">
-                <a
-                  href="#como-funciona"
-                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation" onClick={() => setMobileMenuOpen(false)}>
                   Como Funciona
                 </a>
-                <a
-                  href="#economia"
-                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#economia" className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation" onClick={() => setMobileMenuOpen(false)}>
                   Economia
                 </a>
-                <a
-                  href="#precos"
-                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#precos" className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation" onClick={() => setMobileMenuOpen(false)}>
                   Serviços
                 </a>
-                <a
-                  href="#sobre"
-                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation" onClick={() => setMobileMenuOpen(false)}>
                   Sobre
                 </a>
-                <a
-                  href="#faq"
-                  className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#faq" className="text-luxury-navy hover:text-luxury-gold hover:bg-muted/50 transition-colors font-medium py-4 px-2 border-b border-border/50 touch-manipulation" onClick={() => setMobileMenuOpen(false)}>
                   FAQ
                 </a>
 
@@ -230,69 +158,46 @@ const LandingPage = () => {
                     <Phone className="h-5 w-5 text-luxury-gold" />
                     <span className="text-base">(21) 4040-0067</span>
                   </a>
-                  <a
-                    href="https://wa.me/5521964075124"
-                    className="flex items-center space-x-3 text-luxury-navy py-3 touch-manipulation"
-                  >
+                  <a href="https://wa.me/5521964075124" className="flex items-center space-x-3 text-luxury-navy py-3 touch-manipulation">
                     <MessageCircle className="h-5 w-5 text-green-500" />
                     <span className="text-base">(21) 96407-5124</span>
                   </a>
                 </div>
               </nav>
-            </div>
-          )}
+            </div>}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section
-        id="hero"
-        className="relative min-h-[75svh] sm:min-h-[70svh] md:min-h-[80svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
+      <section id="hero" className="relative min-h-[85svh] sm:min-h-[75svh] md:min-h-[85svh] flex items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/70 to-luxury-navy/85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-3 sm:py-4 md:py-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-4 sm:py-5 md:py-8">
           <div className="animate-fade-in">
-            <Badge
-              variant="outline"
-              className="mb-3 md:mb-5 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1"
-            >
+            <Badge variant="outline" className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1">
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-5 leading-[1.2] max-w-5xl mx-auto">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-[1.2] max-w-5xl mx-auto">
               Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-3 md:mb-5 text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
               Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da
               Tijuca e Recreio — usando dados reais, curadoria técnica e negociação profissional.
             </p>
 
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-5 md:mb-6 text-white/80 max-w-3xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto">
               Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuízos e surpresas futuras.
             </p>
 
-            <Button
-              variant="gold"
-              className="mb-2 md:mb-3 h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-[280px] sm:max-w-sm touch-manipulation"
-              asChild
-            >
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCalendlyClick("hero")}
-                className="flex items-center justify-center gap-1.5 sm:gap-2"
-              >
-                <span className="whitespace-nowrap">Agendar Diagnóstico (Gratuito)</span>
+            <Button variant="gold" className="mb-3 md:mb-4 h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-10 text-sm sm:text-base md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-xs sm:max-w-sm touch-manipulation" asChild>
+              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="flex items-center justify-center gap-2">
+                <span className="whitespace-nowrap">Agendar Diagnóstico Estratégico (Gratuito)</span>
                 <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </a>
             </Button>
@@ -303,7 +208,7 @@ const LandingPage = () => {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="video" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
@@ -315,20 +220,14 @@ const LandingPage = () => {
             </p>
 
             <div className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-luxury border-2 md:border-4 border-luxury-gold/20">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/AQY1LYo-neA"
-                title="Serviços do Personal Shopper Imobiliário"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/AQY1LYo-neA" title="Serviços do Personal Shopper Imobiliário" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
           </div>
         </div>
       </section>
 
       {/* Market Problem Section */}
-      <section id="mercado" className="py-10 md:py-16 bg-background">
+      <section id="mercado" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -400,7 +299,7 @@ const LandingPage = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solucao" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="solucao" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -478,98 +377,16 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Property Gallery Section */}
-      <section id="imoveis" className="py-10 md:py-16 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Alto Padrão
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy mb-4 md:mb-6 leading-tight">
-                O Tipo de Imóvel Que <span className="text-luxury-gold">Buscamos Para Você</span>
-              </h2>
-              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Exclusividade, design contemporâneo e localização privilegiada na Barra da Tijuca e Recreio.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
-                <img 
-                  src={luxuryProperty1} 
-                  alt="Casa de alto padrão com piscina e jardim tropical" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm md:text-base">Casa com Design Moderno</p>
-                  <p className="text-white/80 text-xs md:text-sm">Piscina, jardim tropical e acabamento premium</p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
-                <img 
-                  src={luxuryProperty2} 
-                  alt="Mansão contemporânea ao pôr do sol" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm md:text-base">Arquitetura Contemporânea</p>
-                  <p className="text-white/80 text-xs md:text-sm">Linhas modernas e iluminação de destaque</p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
-                <img 
-                  src={luxuryProperty3} 
-                  alt="Sala de estar com vista panorâmica para o mar" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm md:text-base">Vista Panorâmica</p>
-                  <p className="text-white/80 text-xs md:text-sm">Integração total com a natureza</p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
-                <img 
-                  src={luxuryProperty4} 
-                  alt="Terraço de casa de luxo ao entardecer" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm md:text-base">Área Externa Premium</p>
-                  <p className="text-white/80 text-xs md:text-sm">Terraço com vista privilegiada</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mt-8 md:mt-10">
-              <p className="text-sm md:text-base text-muted-foreground mb-4">
-                Imóveis a partir de <strong className="text-luxury-navy">R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre-marcus" className="py-10 md:py-16 bg-background">
+      {/* About Marcus Section - Repositioned */}
+      <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center">
               {/* Photo */}
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative">
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[340px] lg:h-[340px] rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
-                    <img 
-                      src={marcusProfile} 
-                      alt="Marcus Godoy - Personal Shopper Imobiliário" 
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
+                    <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="w-full h-full object-cover" />
                   </div>
                   {/* Credential badges */}
                   <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex flex-col gap-2">
@@ -609,7 +426,7 @@ const LandingPage = () => {
                       <Target className="h-5 w-5 text-luxury-gold" />
                       <span className="font-semibold text-luxury-navy text-sm md:text-base">Foco Exclusivo</span>
                     </div>
-                    <p className="text-xs md:text-sm text-muted-foreground">Barra da Tijuca e Recreio, imóveis +R$1.5M</p>
+                    
                   </div>
                 </div>
                 <div className="bg-luxury-navy rounded-xl p-4 md:p-6 text-center">
@@ -624,7 +441,7 @@ const LandingPage = () => {
       </section>
 
       {/* Process Section - Como Funciona */}
-      <section id="como-funciona" className="py-10 md:py-16 bg-background">
+      <section id="como-funciona" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -701,7 +518,7 @@ const LandingPage = () => {
       </section>
 
       {/* Savings Section */}
-      <section id="economia" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="economia" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -758,7 +575,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Model Section */}
-      <section id="remuneracao" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="remuneracao" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -804,16 +621,11 @@ const LandingPage = () => {
                   </div>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  variant="luxury"
-                  className="group w-full sm:w-auto h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-lg touch-manipulation"
-                  onClick={() => {
-                    trackCalendlyClick("pricing_section");
-                    window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
-                  }}
-                >
-                  <span className="whitespace-nowrap">Agendar Conversa Gratuita</span>
+                <Button size="lg" variant="luxury" className="group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation" onClick={() => {
+                trackCalendlyClick("pricing_section");
+                window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
+              }}>
+                  <span className="whitespace-nowrap">Agendar Minha Conversa Gratuita</span>
                   <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Button>
                 <p className="text-xs md:text-sm text-muted-foreground mt-4">
@@ -879,17 +691,12 @@ const LandingPage = () => {
                 Entendo que é um investimento importante. Por isso, estou disponível para explicar cada detalhe 
                 antes de qualquer compromisso.
               </p>
-              <Button 
-                variant="luxury-outline"
-                size="default"
-                className="h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base"
-                onClick={() => {
-                  trackWhatsAppClick("pricing_model_inquiry");
-                  window.open("https://wa.me/5521999461868?text=Olá! Gostaria de entender melhor o modelo de remuneração do PSI antes de agendar o diagnóstico.", "_blank");
-                }}
-              >
-                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-1.5 sm:mr-2 flex-shrink-0" />
-                <span className="whitespace-nowrap">Entenda se serve para você</span>
+              <Button variant="luxury-outline" size="lg" onClick={() => {
+              trackWhatsAppClick("pricing_model_inquiry");
+              window.open("https://wa.me/5521999461868?text=Olá! Gostaria de entender melhor o modelo de remuneração do PSI antes de agendar o diagnóstico.", "_blank");
+            }}>
+                <MessageCircle className="h-5 w-5 mr-2" />
+                Entenda se este modelo serve para você
               </Button>
               <p className="text-xs text-muted-foreground mt-4 italic">
                 Você decide só após entender exatamente o que está contratando.
@@ -900,7 +707,7 @@ const LandingPage = () => {
       </section>
 
       {/* Representação vs Intermediação Section */}
-      <section id="representacao" className="py-10 md:py-16 bg-gradient-to-br from-muted to-background border-b border-border">
+      <section id="representacao" className="py-12 md:py-20 bg-gradient-to-br from-muted to-background border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -928,18 +735,26 @@ const LandingPage = () => {
                 </div>
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-4 md:space-y-5">
-                    {[
-                      { label: "Lealdade", text: "Equilibrada. Sem favor a ninguém." },
-                      { label: "Autoridade", text: "Apenas facilita comunicação." },
-                      { label: "Incentivo", text: "Quanto mais você paga, mais ganha.", highlight: true },
-                      { label: "Conflito", text: "Estrutural. Ganha mais se você pagar mais." },
-                      { label: "Resultado", text: "Preço: o que o mercado aceitar." },
-                    ].map((item, index) => (
-                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                    {[{
+                    label: "Lealdade",
+                    text: "Equilibrada. Sem favor a ninguém."
+                  }, {
+                    label: "Autoridade",
+                    text: "Apenas facilita comunicação."
+                  }, {
+                    label: "Incentivo",
+                    text: "Quanto mais você paga, mais ganha.",
+                    highlight: true
+                  }, {
+                    label: "Conflito",
+                    text: "Estrutural. Ganha mais se você pagar mais."
+                  }, {
+                    label: "Resultado",
+                    text: "Preço: o que o mercado aceitar."
+                  }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
                         <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-3 md:p-4 border-t border-border">
@@ -957,18 +772,27 @@ const LandingPage = () => {
                 </div>
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-3 md:space-y-4">
-                    {[
-                      { label: "Lealdade", text: "100% exclusiva ao comprador.", highlight: true },
-                      { label: "Autoridade", text: "Negocio por você, com sua autorização." },
-                      { label: "Incentivo", text: "Quanto mais você economiza, mais ganho.", highlight: true },
-                      { label: "Conflito", text: "Eliminado. Interesses alinhados." },
-                      { label: "Resultado", text: "Melhor preço + segurança jurídica." },
-                    ].map((item, index) => (
-                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                    {[{
+                    label: "Lealdade",
+                    text: "100% exclusiva ao comprador.",
+                    highlight: true
+                  }, {
+                    label: "Autoridade",
+                    text: "Negocio por você, com sua autorização."
+                  }, {
+                    label: "Incentivo",
+                    text: "Quanto mais você economiza, mais ganho.",
+                    highlight: true
+                  }, {
+                    label: "Conflito",
+                    text: "Eliminado. Interesses alinhados."
+                  }, {
+                    label: "Resultado",
+                    text: "Melhor preço + segurança jurídica."
+                  }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
                         <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-4 border-t border-border">
@@ -1005,18 +829,27 @@ const LandingPage = () => {
                 É um <strong className="text-foreground">vínculo jurídico</strong> que te protege.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                {[
-                  { num: "1", title: "Dever Fiduciário", text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta." },
-                  { num: "2", title: "Contrato Blindado", text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades." },
-                  { num: "3", title: "Exclusividade", text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes." },
-                  { num: "4", title: "Responsabilidade", text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida." },
-                ].map((item) => (
-                  <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
+                {[{
+                num: "1",
+                title: "Dever Fiduciário",
+                text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta."
+              }, {
+                num: "2",
+                title: "Contrato Blindado",
+                text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades."
+              }, {
+                num: "3",
+                title: "Exclusividade",
+                text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes."
+              }, {
+                num: "4",
+                title: "Responsabilidade",
+                text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida."
+              }].map(item => <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
                     <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-bold text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
                     <h4 className="text-sm md:text-base font-bold text-foreground mb-2">{item.title}</h4>
                     <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -1028,20 +861,9 @@ const LandingPage = () => {
                 <br />
                 <strong className="text-luxury-navy">É proteção jurídica + alinhamento de interesses.</strong>
               </p>
-              <Button
-                variant="gold"
-                size="default"
-                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-lg touch-manipulation"
-                asChild
-              >
-                <a
-                  href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("representacao")}
-                  className="flex items-center justify-center gap-1.5 sm:gap-2"
-                >
-                  <span className="whitespace-nowrap">Entender a Representação</span>
+              <Button variant="gold" size="lg" className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation" asChild>
+                <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")} className="flex items-center justify-center gap-2">
+                  <span className="whitespace-nowrap">Entender a Representação Exclusiva</span>
                   <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
@@ -1051,7 +873,7 @@ const LandingPage = () => {
       </section>
 
       {/* Differentiation Section */}
-      <section id="diferenciacao" className="py-10 md:py-16 bg-background">
+      <section id="diferenciacao" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1144,7 +966,7 @@ const LandingPage = () => {
       </section>
 
       {/* For Who Section */}
-      <section id="para-quem" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="para-quem" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1229,7 +1051,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section - 3 Packages */}
-      <section id="precos" className="py-10 md:py-16 bg-luxury-navy text-white">
+      <section id="precos" className="py-12 md:py-20 bg-luxury-navy text-white">
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1245,69 +1067,35 @@ const LandingPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              {[
-                {
-                  name: "Parecer Godoy Prime",
-                  subtitle: "Atestado de Valor",
-                  price: "À partir de R$ 5.000,00",
-                  description:
-                    "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas.",
-                  features: [
-                    "Consulta de alinhamento estratégico",
-                    "Inspeção e Vistoria Técnica local detalhada",
-                    "Relatório comparativo com análise de mercado e parecer de preço justo",
-                    "Pack de Conhecimento exclusivo",
-                  ],
-                  cta: "Quero Meu Parecer",
-                  popular: false,
-                },
-                {
-                  name: "Compra Blindada",
-                  subtitle: "Validação & Negociação",
-                  price: "À partir de R$ 10.000,00",
-                  description:
-                    "Para quem já tem um imóvel em vista e quer garantir a melhor negociação e proteção total na transação.",
-                  features: [
-                    "Tudo do Parecer Godoy Prime",
-                    "Estratégia de negociação personalizada",
-                    "Representação exclusiva na mesa de negociação",
-                    "Coordenação de Due Diligence completa",
-                    "Acompanhamento até a assinatura",
-                  ],
-                  cta: "Quero Blindar Minha Compra",
-                  popular: false,
-                },
-                {
-                  name: "Prime Buyer Experience",
-                  subtitle: "Busca Completa",
-                  price: "Sob consulta",
-                  description:
-                    "Para quem ainda está buscando o imóvel ideal e quer um serviço completo de representação exclusiva.",
-                  features: [
-                    "Tudo do Compra Blindada",
-                    "Mapeamento completo do seu perfil",
-                    "Curadoria exclusiva de imóveis (on e off-market)",
-                    "Visitas técnicas prévias (você visita apenas os certos)",
-                    "Análise de valor real de cada opção",
-                    "Acompanhamento pós-aquisição",
-                  ],
-                  cta: "Quero a Experiência Completa",
-                  popular: true,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={cn(
-                    "border-2 transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] bg-white/5 backdrop-blur-sm",
-                    plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50",
-                  )}
-                >
+              {[{
+              name: "Parecer Godoy Prime",
+              subtitle: "Atestado de Valor",
+              price: "À partir de R$ 5.000,00",
+              description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas.",
+              features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo", "Pack de Conhecimento exclusivo"],
+              cta: "Quero Meu Parecer",
+              popular: false
+            }, {
+              name: "Compra Blindada",
+              subtitle: "Validação & Negociação",
+              price: "À partir de R$ 10.000,00",
+              description: "Para quem já tem um imóvel em vista e quer garantir a melhor negociação e proteção total na transação.",
+              features: ["Tudo do Parecer Godoy Prime", "Estratégia de negociação personalizada", "Representação exclusiva na mesa de negociação", "Coordenação de Due Diligence completa", "Acompanhamento até a assinatura"],
+              cta: "Quero Blindar Minha Compra",
+              popular: false
+            }, {
+              name: "Prime Buyer Experience",
+              subtitle: "Busca Completa",
+              price: "Sob consulta",
+              description: "Para quem ainda está buscando o imóvel ideal e quer um serviço completo de representação exclusiva.",
+              features: ["Tudo do Compra Blindada", "Mapeamento completo do seu perfil", "Curadoria exclusiva de imóveis (on e off-market)", "Visitas técnicas prévias (você visita apenas os certos)", "Análise de valor real de cada opção", "Acompanhamento pós-aquisição"],
+              cta: "Quero a Experiência Completa",
+              popular: true
+            }].map((plan, index) => <Card key={index} className={cn("border-2 transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] bg-white/5 backdrop-blur-sm", plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50")}>
                   <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
-                    {plan.popular && (
-                      <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
+                    {plan.popular && <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
                         Mais Completo
-                      </Badge>
-                    )}
+                      </Badge>}
 
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{plan.name}</h3>
                     <p className="text-luxury-gold mb-3 md:mb-4 text-sm md:text-base">{plan.subtitle}</p>
@@ -1319,39 +1107,27 @@ const LandingPage = () => {
                     <p className="text-white/80 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed">{plan.description}</p>
 
                     <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                      {plan.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
+                      {plan.features.map((feature, fIndex) => <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
                           <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-luxury-gold mt-0.5 flex-shrink-0" />
                           <span>{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
 
-                    <Button
-                      variant={plan.popular ? "gold" : "luxury-outline"}
-                      className="w-full text-sm md:text-base py-3 h-12 touch-manipulation"
-                      asChild
-                    >
-                      <a
-                        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => trackWhatsAppClick("precos")}
-                      >
+                    <Button variant={plan.popular ? "gold" : "luxury-outline"} className="w-full text-sm md:text-base py-3 h-12 touch-manipulation" asChild>
+                      <a href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("precos")}>
                         {plan.cta}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
       </section>
 
       {/* Authority Section */}
-      <section id="autoridade" className="py-10 md:py-16 bg-background">
+      <section id="autoridade" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-12 shadow-luxury">
@@ -1393,7 +1169,7 @@ const LandingPage = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section id="depoimentos" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="depoimentos" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1404,49 +1180,34 @@ const LandingPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {[
-                {
-                  quote:
-                    "Ele me mostrou dados que provaram que o apartamento estava 15% acima do mercado. Economizei R$ 320 mil na negociação.",
-                  author: "Roberto S.",
-                  role: "Empresário",
-                  savings: "R$ 320.000",
-                  isWhatsApp: true,
-                },
-                {
-                  quote:
-                    "Finalmente alguém que trabalha para mim, não para quem vende. Processo transparente do início ao fim.",
-                  author: "Ana Carolina M.",
-                  role: "Executiva",
-                  savings: "R$ 450.000",
-                  isWhatsApp: true,
-                },
-                {
-                  quote:
-                    "Visitei apenas 6 imóveis em vez de 40. Cada um pré-aprovado tecnicamente. Fechei em 3 semanas.",
-                  author: "Pedro H.",
-                  role: "Médico",
-                  savings: "R$ 280.000",
-                  isWhatsApp: false,
-                },
-              ].map((testimonial, index) => (
-                <Card key={index} className={cn(
-                  "border-0 shadow-luxury bg-white relative overflow-hidden",
-                  testimonial.isWhatsApp && "border-l-4 border-green-500"
-                )}>
-                  {testimonial.isWhatsApp && (
-                    <div className="absolute top-3 right-3">
+              {[{
+              quote: "Ele me mostrou dados que provaram que o apartamento estava 15% acima do mercado. Economizei R$ 320 mil na negociação.",
+              author: "Roberto S.",
+              role: "Empresário",
+              savings: "R$ 320.000",
+              isWhatsApp: true
+            }, {
+              quote: "Finalmente alguém que trabalha para mim, não para quem vende. Processo transparente do início ao fim.",
+              author: "Ana Carolina M.",
+              role: "Executiva",
+              savings: "R$ 450.000",
+              isWhatsApp: true
+            }, {
+              quote: "Visitei apenas 6 imóveis em vez de 40. Cada um pré-aprovado tecnicamente. Fechei em 3 semanas.",
+              author: "Pedro H.",
+              role: "Médico",
+              savings: "R$ 280.000",
+              isWhatsApp: false
+            }].map((testimonial, index) => <Card key={index} className={cn("border-0 shadow-luxury bg-white relative overflow-hidden", testimonial.isWhatsApp && "border-l-4 border-green-500")}>
+                  {testimonial.isWhatsApp && <div className="absolute top-3 right-3">
                       <div className="bg-green-500 text-white px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1">
                         <MessageCircle className="h-3 w-3" />
                         Via WhatsApp
                       </div>
-                    </div>
-                  )}
+                    </div>}
                   <CardContent className="p-5 md:p-6">
                     <div className="flex mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-luxury-gold text-luxury-gold" />
-                      ))}
+                      {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-luxury-gold text-luxury-gold" />)}
                     </div>
 
                     <blockquote className="text-sm md:text-base text-foreground mb-4 italic leading-relaxed">
@@ -1463,15 +1224,14 @@ const LandingPage = () => {
                       </Badge>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
       </section>
 
       {/* Origin Story Section - Resumida */}
-      <section id="sobre" className="py-10 md:py-16 bg-background">
+      <section id="sobre" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1500,16 +1260,10 @@ const LandingPage = () => {
                   <p className="text-white/80 text-sm md:text-base mb-4">
                     Agende um diagnóstico gratuito — sem compromisso financeiro.
                   </p>
-                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto h-11 sm:h-12 px-4 sm:px-6 text-xs sm:text-sm" asChild>
-                    <a
-                      href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackCalendlyClick("sobre")}
-                      className="flex items-center justify-center gap-1.5 sm:gap-2"
-                    >
-                      <span className="whitespace-nowrap">Agendar Diagnóstico</span>
-                      <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
+                    <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("sobre")}>
+                      Agendar Diagnóstico Gratuito
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
                 </div>
@@ -1520,7 +1274,7 @@ const LandingPage = () => {
       </section>
 
       {/* Guarantees Section */}
-      <section id="garantias" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="garantias" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
@@ -1565,16 +1319,10 @@ const LandingPage = () => {
                 </li>
               </ul>
 
-              <Button variant="gold" className="h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
-                <a
-                  href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("garantias")}
-                  className="flex items-center justify-center gap-1.5 sm:gap-2"
-                >
-                  <span className="whitespace-nowrap">Garantir Minha Vaga</span>
-                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <Button variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
+                <a href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("garantias")}>
+                  Garantir Minha Vaga Agora
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </a>
               </Button>
             </div>
@@ -1583,7 +1331,7 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-10 md:py-16 bg-background">
+      <section id="faq" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1596,19 +1344,25 @@ const LandingPage = () => {
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
-              {[
-                { q: "O que é um Personal Shopper Imobiliário?", a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você." },
-                { q: "Qual a diferença para um corretor tradicional?", a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados." },
-                { q: "Como funciona a remuneração?", a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee." },
-                { q: "Para quais imóveis o serviço é indicado?", a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor." },
-                { q: "Como garantir que você está do meu lado?", a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato." },
-                { q: "Como iniciar?", a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso." },
-              ].map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index + 1}`}
-                  className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-                >
+              {[{
+              q: "O que é um Personal Shopper Imobiliário?",
+              a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você."
+            }, {
+              q: "Qual a diferença para um corretor tradicional?",
+              a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
+            }, {
+              q: "Como funciona a remuneração?",
+              a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
+            }, {
+              q: "Para quais imóveis o serviço é indicado?",
+              a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
+            }, {
+              q: "Como garantir que você está do meu lado?",
+              a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
+            }, {
+              q: "Como iniciar?",
+              a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso."
+            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                   <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
                     <div className="flex items-center gap-3 md:gap-4 text-left">
                       <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-luxury-gold text-luxury-navy text-xs md:text-sm font-bold flex-shrink-0">
@@ -1619,18 +1373,19 @@ const LandingPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
                     <div className="pl-10 md:pl-12">
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: item.a }} />
+                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{
+                    __html: item.a
+                  }} />
                     </div>
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta-final" className="py-10 md:py-16 bg-luxury-cream">
+      <section id="cta-final" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-16 text-center shadow-luxury">
@@ -1642,20 +1397,10 @@ const LandingPage = () => {
                 <strong className="text-luxury-gold">É comprar mal achando que está seguro.</strong>
               </p>
 
-              <Button
-                variant="gold"
-                className="mb-3 md:mb-5 h-11 sm:h-12 md:h-14 px-4 sm:px-6 md:px-10 text-xs sm:text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-[280px] sm:max-w-none"
-                asChild
-              >
-                <a
-                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackCalendlyClick("cta-final")}
-                  className="flex items-center justify-center gap-1.5 sm:gap-2"
-                >
-                  <span className="whitespace-nowrap">Agendar Diagnóstico (Gratuito)</span>
-                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+              <Button variant="gold" className="mb-4 md:mb-6 h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto" asChild>
+                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("cta-final")}>
+                  Agendar Diagnóstico Estratégico (Gratuito)
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
 
@@ -1761,12 +1506,7 @@ const LandingPage = () => {
                 <a href="/privacidade" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
                   Política de Privacidade
                 </a>
-                <a
-                  href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-luxury-gold transition-colors py-1 touch-manipulation"
-                >
+                <a href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
                   Termos de Uso
                 </a>
                 <a href="/lgpd" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
@@ -1785,18 +1525,9 @@ const LandingPage = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 md:bottom-6 md:right-6 z-[9998] bg-green-500 hover:bg-green-600 text-white p-2.5 sm:p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation"
-        onClick={() => trackWhatsAppClick("floating-button")}
-        aria-label="Contato via WhatsApp"
-      >
+      <a href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio" target="_blank" rel="noopener noreferrer" className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 md:bottom-6 md:right-6 z-[9998] bg-green-500 hover:bg-green-600 text-white p-2.5 sm:p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 touch-manipulation" onClick={() => trackWhatsAppClick("floating-button")} aria-label="Contato via WhatsApp">
         <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
       </a>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
