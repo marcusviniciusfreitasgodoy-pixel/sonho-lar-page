@@ -9,6 +9,9 @@ import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Tar
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
+import luxuryProperty1 from "@/assets/luxury-property-1.jpeg";
+import luxuryProperty2 from "@/assets/luxury-property-2.jpeg";
+import luxuryProperty3 from "@/assets/luxury-property-3.jpeg";
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -377,15 +380,76 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Property Gallery Section */}
+      <section id="imoveis" className="py-10 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-12">
+            <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
+              Portfólio de Busca
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-luxury-navy leading-tight">
+              Imóveis que Buscamos
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Alto padrão na Barra da Tijuca e Recreio — a partir de <strong className="text-luxury-navy">R$ 1.5 milhão</strong>
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+              <img 
+                src={luxuryProperty1} 
+                alt="Casa de alto padrão com piscina" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="font-semibold text-lg">Mansão com Piscina</p>
+                  <p className="text-sm text-white/80">Barra da Tijuca</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+              <img 
+                src={luxuryProperty2} 
+                alt="Residência moderna de luxo" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="font-semibold text-lg">Residência Moderna</p>
+                  <p className="text-sm text-white/80">Condomínio Fechado</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-luxury aspect-[4/3]">
+              <img 
+                src={luxuryProperty3} 
+                alt="Apartamento com vista para o mar" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="font-semibold text-lg">Cobertura Vista Mar</p>
+                  <p className="text-sm text-white/80">Frente Praia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Marcus Section - Repositioned */}
-      <section id="sobre-marcus" className="py-12 md:py-20 bg-background">
+      <section id="sobre-marcus" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center">
               {/* Photo */}
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative">
-                  <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
                     <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="w-full h-full object-cover" />
                   </div>
                   {/* Credential badges */}
