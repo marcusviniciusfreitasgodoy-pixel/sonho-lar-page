@@ -711,16 +711,14 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5 md:p-8 text-center">
                   <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Fee de Consultoria</h3>
-                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2 md:mb-3">R$ 10.000</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Cobre análise técnica, curadoria e estratégia de negociação.
                   </p>
                 </div>
                 <div className="p-5 md:p-8 text-center">
                   <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Success Fee</h3>
-                  <div className="text-xl md:text-2xl font-bold text-luxury-gold mb-2 md:mb-3">30% do desconto</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Só paga se houver economia comprovada. Você fica com 70%.
+                    Só paga se houver economia comprovada.
                   </p>
                 </div>
               </div>
