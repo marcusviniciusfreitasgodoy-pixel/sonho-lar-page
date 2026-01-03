@@ -5,47 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import {
-  Shield,
-  Clock,
-  Key,
-  CircleCheck as CheckCircle,
-  Calculator,
-  Search,
-  Target,
-  Users,
-  TrendingUp,
-  Award,
-  Star,
-  ArrowRight,
-  Phone,
-  Mail,
-  Menu,
-  X,
-  MapPin,
-  MessageCircle,
-  Scale,
-  Gavel,
-} from "lucide-react";
-import heroImage from "@/assets/barra-hero-new.jpg";
+import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel } from "lucide-react";
+import heroImage from "@/assets/barra-beach-luxury.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
 import godoyLogo from "@/assets/godoy-logo.png";
-import luxuryProperty1 from "@/assets/luxury-property-1.jpg";
-import luxuryProperty2 from "@/assets/luxury-property-2.jpg";
-import luxuryProperty3 from "@/assets/luxury-property-3.jpg";
-import luxuryProperty4 from "@/assets/luxury-property-4.jpg";
-import luxuryProperty5 from "@/assets/luxury-property-5.jpg";
-import luxuryProperty6 from "@/assets/luxury-property-6.jpg";
-import luxuryInterior1 from "@/assets/luxury-interior-1.jpg";
-
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const toggleCardHighlight = (cardIndex: number) => {
-    setHighlightedCards((prev) =>
-      prev.includes(cardIndex) ? prev.filter((index) => index !== cardIndex) : [...prev, cardIndex],
-    );
+    setHighlightedCards(prev => prev.includes(cardIndex) ? prev.filter(index => index !== cardIndex) : [...prev, cardIndex]);
   };
 
   // Meta Pixel tracking functions
@@ -53,16 +21,15 @@ const LandingPage = () => {
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Lead", {
         content_name: "Consultoria Exclusiva",
-        button_location: buttonLocation,
+        button_location: buttonLocation
       });
     }
   };
-
   const trackWhatsAppClick = (buttonLocation: string) => {
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Contact", {
         content_name: "WhatsApp",
-        button_location: buttonLocation,
+        button_location: buttonLocation
       });
     }
   };
@@ -79,9 +46,7 @@ const LandingPage = () => {
       }
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="container mx-auto px-4 md:px-6">
@@ -94,34 +59,19 @@ const LandingPage = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              <a
-                href="#como-funciona"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Como Funciona
               </a>
-              <a
-                href="#economia"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Economia
               </a>
-              <a
-                href="#precos"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Serviços
               </a>
-              <a
-                href="#sobre"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 Sobre
               </a>
-              <a
-                href="#faq"
-                className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base"
-              >
+              <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium text-sm xl:text-base">
                 FAQ
               </a>
             </nav>
@@ -140,53 +90,28 @@ const LandingPage = () => {
               </div>
 
               {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors"
-                aria-label="Toggle menu"
-              >
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 text-luxury-navy hover:text-luxury-gold transition-colors" aria-label="Toggle menu">
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-border bg-white animate-fade-in">
+          {mobileMenuOpen && <div className="lg:hidden py-4 border-t border-border bg-white animate-fade-in">
               <nav className="flex flex-col space-y-3">
-                <a
-                  href="#como-funciona"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#como-funciona" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Como Funciona
                 </a>
-                <a
-                  href="#economia"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#economia" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Economia
                 </a>
-                <a
-                  href="#precos"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#precos" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Serviços
                 </a>
-                <a
-                  href="#sobre"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#sobre" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   Sobre
                 </a>
-                <a
-                  href="#faq"
-                  className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                <a href="#faq" className="text-luxury-navy hover:text-luxury-gold transition-colors font-medium py-2" onClick={() => setMobileMenuOpen(false)}>
                   FAQ
                 </a>
 
@@ -196,40 +121,27 @@ const LandingPage = () => {
                     <Phone className="h-4 w-4" />
                     <span>(21) 4040-0067</span>
                   </a>
-                  <a
-                    href="https://wa.me/5521964075124"
-                    className="flex items-center space-x-2 text-luxury-navy text-sm py-1"
-                  >
+                  <a href="https://wa.me/5521964075124" className="flex items-center space-x-2 text-luxury-navy text-sm py-1">
                     <MessageCircle className="h-4 w-4" />
                     <span>(21) 96407-5124</span>
                   </a>
                 </div>
               </nav>
-            </div>
-          )}
+            </div>}
         </div>
       </header>
 
       {/* Hero Section */}
-      <section
-        id="hero"
-        className="relative min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24"
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
+      <section id="hero" className="relative min-h-[85svh] md:min-h-[90svh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/60 via-luxury-navy/50 to-luxury-navy/70"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 md:px-6 text-center text-white py-6 md:py-8">
           <div className="animate-fade-in">
-            <Badge
-              variant="outline"
-              className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs md:text-sm"
-            >
+            <Badge variant="outline" className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs md:text-sm">
               Personal Shopper Imobiliário
             </Badge>
 
@@ -246,17 +158,8 @@ const LandingPage = () => {
               Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuizos e surpresas futuras.
             </p>
 
-            <Button
-              variant="gold"
-              className="mb-3 md:mb-4 h-12 px-6 text-sm font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm"
-              asChild
-            >
-              <a
-                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackCalendlyClick("hero")}
-              >
+            <Button variant="gold" className="mb-3 md:mb-4 h-12 px-6 text-sm font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm" asChild>
+              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")}>
                 Agendar Diagnóstico (Gratuito)
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -280,13 +183,7 @@ const LandingPage = () => {
             </p>
 
             <div className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-luxury border-2 md:border-4 border-luxury-gold/20">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/AQY1LYo-neA"
-                title="Serviços do Personal Shopper Imobiliário"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/AQY1LYo-neA" title="Serviços do Personal Shopper Imobiliário" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
           </div>
         </div>
@@ -360,38 +257,6 @@ const LandingPage = () => {
                 <br />E você só descobre depois de assinar.
               </p>
             </div>
-
-            {/* Property Showcase */}
-            <div className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group">
-                <img 
-                  src={luxuryProperty1} 
-                  alt="Casa de luxo com vista para o mar" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group">
-                <img 
-                  src={luxuryProperty4} 
-                  alt="Mansão moderna ao entardecer" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-luxury group hidden md:block">
-                <img 
-                  src={luxuryProperty3} 
-                  alt="Casa de alto padrão com piscina" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-4 md:mt-6">Exemplos do tipo de imóvel que buscamos para nossos clientes</p>
           </div>
         </div>
       </section>
@@ -484,17 +349,13 @@ const LandingPage = () => {
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
-                    <img 
-                      src={marcusProfile} 
-                      alt="Marcus Godoy - Personal Shopper Imobiliário" 
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="w-full h-full object-cover" />
                   </div>
                   {/* Credential badges */}
                   <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex flex-col gap-2">
                     <div className="bg-luxury-navy text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
-                      <Scale className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
-                      <span className="text-xs md:text-sm font-bold">Perito Avaliador</span>
+                      <Gavel className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
+                      <span className="text-xs md:text-sm font-bold">Advogado</span>
                     </div>
                     <div className="bg-luxury-gold text-luxury-navy px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
                       <Scale className="h-4 w-4 md:h-5 md:w-5" />
@@ -542,40 +403,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Property Showcase Section */}
-      <section className="py-8 md:py-12 bg-luxury-cream">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-luxury group">
-                <img 
-                  src={luxuryInterior1} 
-                  alt="Interior de luxo com vista panorâmica para o oceano" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <Badge className="bg-luxury-gold text-luxury-navy font-semibold">Vista Mar Premium</Badge>
-                </div>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-luxury group">
-                <img 
-                  src={luxuryProperty2} 
-                  alt="Sala de estar luxuosa com pé direito duplo" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/50 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <Badge className="bg-luxury-gold text-luxury-navy font-semibold">Design Contemporâneo</Badge>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Process Section - Como Funciona */}
       <section id="como-funciona" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -584,9 +411,7 @@ const LandingPage = () => {
               <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Método Exclusivo
               </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
-                Como Funciona: 4 Passos Simples
-              </h2>
+              
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -705,6 +530,29 @@ const LandingPage = () => {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+
+            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center mb-6 md:mb-8">
+                Economia Total do Cliente
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 2M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 195-340k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 2.5-3.8x</p>
+                </div>
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 3.5M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 287-520k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 2.9-4.4x</p>
+                </div>
+                <div className="bg-white/10 rounded-lg md:rounded-xl p-4 md:p-6 text-center border border-luxury-gold/30">
+                  <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Imóvel R$ 6M</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 502-780k</p>
+                  <p className="text-xs md:text-sm text-white/70">ROI: 3.7-5.2x</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -890,18 +738,26 @@ const LandingPage = () => {
                 </div>
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-4 md:space-y-5">
-                    {[
-                      { label: "Lealdade", text: "Equilibrada. Sem favor a ninguém." },
-                      { label: "Autoridade", text: "Apenas facilita comunicação." },
-                      { label: "Incentivo", text: "Quanto mais você paga, mais ganha.", highlight: true },
-                      { label: "Conflito", text: "Estrutural. Ganha mais se você pagar mais." },
-                      { label: "Resultado", text: "Preço: o que o mercado aceitar." },
-                    ].map((item, index) => (
-                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                    {[{
+                    label: "Lealdade",
+                    text: "Equilibrada. Sem favor a ninguém."
+                  }, {
+                    label: "Autoridade",
+                    text: "Apenas facilita comunicação."
+                  }, {
+                    label: "Incentivo",
+                    text: "Quanto mais você paga, mais ganha.",
+                    highlight: true
+                  }, {
+                    label: "Conflito",
+                    text: "Estrutural. Ganha mais se você pagar mais."
+                  }, {
+                    label: "Resultado",
+                    text: "Preço: o que o mercado aceitar."
+                  }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
                         <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-3 md:p-4 border-t border-border">
@@ -919,18 +775,27 @@ const LandingPage = () => {
                 </div>
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-3 md:space-y-4">
-                    {[
-                      { label: "Lealdade", text: "100% exclusiva ao comprador.", highlight: true },
-                      { label: "Autoridade", text: "Negocio por você, com sua autorização." },
-                      { label: "Incentivo", text: "Quanto mais você economiza, mais ganho.", highlight: true },
-                      { label: "Conflito", text: "Eliminado. Interesses alinhados." },
-                      { label: "Resultado", text: "Melhor preço + segurança jurídica." },
-                    ].map((item, index) => (
-                      <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
+                    {[{
+                    label: "Lealdade",
+                    text: "100% exclusiva ao comprador.",
+                    highlight: true
+                  }, {
+                    label: "Autoridade",
+                    text: "Negocio por você, com sua autorização."
+                  }, {
+                    label: "Incentivo",
+                    text: "Quanto mais você economiza, mais ganho.",
+                    highlight: true
+                  }, {
+                    label: "Conflito",
+                    text: "Eliminado. Interesses alinhados."
+                  }, {
+                    label: "Resultado",
+                    text: "Melhor preço + segurança jurídica."
+                  }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
                         <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-4 border-t border-border">
@@ -967,21 +832,76 @@ const LandingPage = () => {
                 É um <strong className="text-foreground">vínculo jurídico</strong> que te protege.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                {[
-                  { num: "1", title: "Dever Fiduciário", text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta." },
-                  { num: "2", title: "Contrato Blindado", text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades." },
-                  { num: "3", title: "Exclusividade", text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes." },
-                  { num: "4", title: "Responsabilidade", text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida." },
-                ].map((item) => (
-                  <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
+                {[{
+                num: "1",
+                title: "Dever Fiduciário",
+                text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta."
+              }, {
+                num: "2",
+                title: "Contrato Blindado",
+                text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades."
+              }, {
+                num: "3",
+                title: "Exclusividade",
+                text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes."
+              }, {
+                num: "4",
+                title: "Responsabilidade",
+                text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida."
+              }].map(item => <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
                     <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-bold text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
                     <h4 className="text-sm md:text-base font-bold text-foreground mb-2">{item.title}</h4>
                     <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
+            {/* Exemplo Prático */}
+            <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-destructive mb-8 md:mb-12">
+              <h3 className="text-lg md:text-xl font-bold text-destructive mb-4 md:mb-6">Exemplo Prático: A Diferença em Ação</h3>
+              
+              <div className="bg-muted p-4 md:p-6 rounded-lg mb-4 md:mb-6">
+                <h4 className="text-sm md:text-base font-bold text-foreground mb-1">Cenário: Imóvel anunciado por R$ 2.5M</h4>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">Você está negociando com o vendedor</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Com Intermediação */}
+                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-destructive">
+                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Intermediação</p>
+                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                      <p><strong className="text-foreground">Corretor recebe:</strong> 2% = R$ 50k</p>
+                      <p><strong className="text-foreground">Incentivo do corretor:</strong> Fechar rápido. Quanto mais caro, melhor.</p>
+                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.5M (preço pedido).</p>
+                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 0</p>
+                    </div>
+                  </div>
+                  
+                  {/* Com Representação */}
+                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-luxury-gold">
+                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Representação (PSI)</p>
+                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
+                      <p><strong className="text-foreground">Meu ganho:</strong> 30% do desconto = R$ 45k (se conseguir R$ 150k de desconto)</p>
+                      <p><strong className="text-foreground">Meu incentivo:</strong> Negociar duro. Quanto maior o desconto, melhor.</p>
+                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.35M (após negociação).</p>
+                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 150k</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-luxury-gold/10 p-4 md:p-5 rounded-lg border-l-4 border-luxury-gold">
+                <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                  <strong className="text-foreground">Com intermediação:</strong> Você paga preço cheio. Corretor ganha R$ 50k.
+                </p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-3">
+                  <strong className="text-foreground">Com representação:</strong> Você economiza R$ 150k. Eu ganho R$ 45k. 
+                  Você fica com R$ 105k de economia líquida.
+                </p>
+                <p className="text-sm md:text-base font-semibold text-luxury-navy">
+                  Qual modelo você prefere?
+                </p>
+              </div>
+            </div>
 
             {/* CTA */}
             <div className="text-center bg-gradient-to-br from-luxury-gold/10 to-background p-6 md:p-10 rounded-xl md:rounded-2xl">
@@ -990,18 +910,8 @@ const LandingPage = () => {
                 <br />
                 <strong className="text-luxury-navy">É proteção jurídica + alinhamento de interesses.</strong>
               </p>
-              <Button
-                variant="gold"
-                size="xl"
-                className="shadow-gold transition-all duration-300 hover:scale-105 group"
-                asChild
-              >
-                <a
-                  href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("representacao")}
-                >
+              <Button variant="gold" size="xl" className="shadow-gold transition-all duration-300 hover:scale-105 group" asChild>
+                <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")}>
                   Entender Melhor a Representação Exclusiva
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </a>
@@ -1104,43 +1014,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Property Gallery Section */}
-      <section className="py-8 md:py-12 bg-luxury-cream">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-3 gap-2 md:gap-4">
-              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
-                <img 
-                  src={luxuryProperty5} 
-                  alt="Villa de luxo com piscina iluminada" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
-                <img 
-                  src={luxuryProperty6} 
-                  alt="Casa moderna à beira-mar" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div className="relative rounded-xl overflow-hidden aspect-square shadow-luxury group">
-                <img 
-                  src={luxuryProperty3} 
-                  alt="Residência com jardim tropical" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <p className="text-center text-xs md:text-sm text-muted-foreground mt-3 md:mt-4 italic">
-              Casas e apartamentos de alto padrão na Barra da Tijuca e Recreio
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* For Who Section */}
       <section id="para-quem" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
@@ -1165,10 +1038,7 @@ const LandingPage = () => {
                         Compradores exigentes que valorizam dados e segurança
                       </span>
                     </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Executivos que não têm tempo para visitar 30 imóveis</span>
-                    </li>
+                    
                     <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
                       <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
                       <span className="text-sm md:text-base">Quem entende que errar custa caro</span>
@@ -1243,69 +1113,35 @@ const LandingPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-              {[
-                {
-                  name: "Parecer Godoy Prime",
-                  subtitle: "Atestado de Valor",
-                  price: "À partir de R$ 5.000,00",
-                  description:
-                    "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas.",
-                  features: [
-                    "Consulta de alinhamento estratégico",
-                    "Inspeção e Vistoria Técnica local detalhada",
-                    "Relatório comparativo com análise de mercado e parecer de preço justo",
-                    "Pack de Conhecimento exclusivo",
-                  ],
-                  cta: "Quero Meu Parecer",
-                  popular: false,
-                },
-                {
-                  name: "Compra Blindada",
-                  subtitle: "Validação & Negociação",
-                  price: "À partir de R$ 10.000,00",
-                  description:
-                    "Para quem já tem um imóvel em vista e quer garantir a melhor negociação e proteção total na transação.",
-                  features: [
-                    "Tudo do Parecer Godoy Prime",
-                    "Estratégia de negociação personalizada",
-                    "Representação exclusiva na mesa de negociação",
-                    "Coordenação de Due Diligence completa",
-                    "Acompanhamento até a assinatura",
-                  ],
-                  cta: "Quero Blindar Minha Compra",
-                  popular: false,
-                },
-                {
-                  name: "Prime Buyer Experience",
-                  subtitle: "Busca Completa",
-                  price: "Sob consulta",
-                  description:
-                    "Para quem ainda está buscando o imóvel ideal e quer um serviço completo de representação exclusiva.",
-                  features: [
-                    "Tudo do Compra Blindada",
-                    "Mapeamento completo do seu perfil",
-                    "Curadoria exclusiva de imóveis (on e off-market)",
-                    "Visitas técnicas prévias (você visita apenas os certos)",
-                    "Análise de valor real de cada opção",
-                    "Acompanhamento pós-aquisição",
-                  ],
-                  cta: "Quero a Experiência Completa",
-                  popular: true,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={cn(
-                    "border-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 bg-white/5 backdrop-blur-sm",
-                    plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50",
-                  )}
-                >
+              {[{
+              name: "Parecer Godoy Prime",
+              subtitle: "Atestado de Valor",
+              price: "À partir de R$ 5.000,00",
+              description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas.",
+              features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo", "Pack de Conhecimento exclusivo"],
+              cta: "Quero Meu Parecer",
+              popular: false
+            }, {
+              name: "Compra Blindada",
+              subtitle: "Validação & Negociação",
+              price: "À partir de R$ 10.000,00",
+              description: "Para quem já tem um imóvel em vista e quer garantir a melhor negociação e proteção total na transação.",
+              features: ["Tudo do Parecer Godoy Prime", "Estratégia de negociação personalizada", "Representação exclusiva na mesa de negociação", "Coordenação de Due Diligence completa", "Acompanhamento até a assinatura"],
+              cta: "Quero Blindar Minha Compra",
+              popular: false
+            }, {
+              name: "Prime Buyer Experience",
+              subtitle: "Busca Completa",
+              price: "Sob consulta",
+              description: "Para quem ainda está buscando o imóvel ideal e quer um serviço completo de representação exclusiva.",
+              features: ["Tudo do Compra Blindada", "Mapeamento completo do seu perfil", "Curadoria exclusiva de imóveis (on e off-market)", "Visitas técnicas prévias (você visita apenas os certos)", "Análise de valor real de cada opção", "Acompanhamento pós-aquisição"],
+              cta: "Quero a Experiência Completa",
+              popular: true
+            }].map((plan, index) => <Card key={index} className={cn("border-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-105 bg-white/5 backdrop-blur-sm", plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50")}>
                   <CardContent className="p-5 md:p-8">
-                    {plan.popular && (
-                      <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
+                    {plan.popular && <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
                         Mais Completo
-                      </Badge>
-                    )}
+                      </Badge>}
 
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{plan.name}</h3>
                     <p className="text-luxury-gold mb-3 md:mb-4 text-sm md:text-base">{plan.subtitle}</p>
@@ -1317,32 +1153,20 @@ const LandingPage = () => {
                     <p className="text-white/80 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed">{plan.description}</p>
 
                     <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                      {plan.features.map((feature, fIndex) => (
-                        <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
+                      {plan.features.map((feature, fIndex) => <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
                           <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-luxury-gold mt-0.5 flex-shrink-0" />
                           <span>{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
 
-                    <Button
-                      variant={plan.popular ? "gold" : "luxury-outline"}
-                      className="w-full text-sm md:text-base py-3"
-                      asChild
-                    >
-                      <a
-                        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => trackWhatsAppClick("precos")}
-                      >
+                    <Button variant={plan.popular ? "gold" : "luxury-outline"} className="w-full text-sm md:text-base py-3" asChild>
+                      <a href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("precos")}>
                         {plan.cta}
                         <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
                       </a>
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -1402,49 +1226,34 @@ const LandingPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {[
-                {
-                  quote:
-                    "Ele me mostrou dados que provaram que o apartamento estava 15% acima do mercado. Economizei R$ 320 mil na negociação.",
-                  author: "Roberto S.",
-                  role: "Empresário",
-                  savings: "R$ 320.000",
-                  isWhatsApp: true,
-                },
-                {
-                  quote:
-                    "Finalmente alguém que trabalha para mim, não para quem vende. Processo transparente do início ao fim.",
-                  author: "Ana Carolina M.",
-                  role: "Executiva",
-                  savings: "R$ 450.000",
-                  isWhatsApp: true,
-                },
-                {
-                  quote:
-                    "Visitei apenas 6 imóveis em vez de 40. Cada um pré-aprovado tecnicamente. Fechei em 3 semanas.",
-                  author: "Pedro H.",
-                  role: "Médico",
-                  savings: "R$ 280.000",
-                  isWhatsApp: false,
-                },
-              ].map((testimonial, index) => (
-                <Card key={index} className={cn(
-                  "border-0 shadow-luxury bg-white relative overflow-hidden",
-                  testimonial.isWhatsApp && "border-l-4 border-green-500"
-                )}>
-                  {testimonial.isWhatsApp && (
-                    <div className="absolute top-3 right-3">
+              {[{
+              quote: "Ele me mostrou dados que provaram que o apartamento estava 15% acima do mercado. Economizei R$ 320 mil na negociação.",
+              author: "Roberto S.",
+              role: "Empresário",
+              savings: "R$ 320.000",
+              isWhatsApp: true
+            }, {
+              quote: "Finalmente alguém que trabalha para mim, não para quem vende. Processo transparente do início ao fim.",
+              author: "Ana Carolina M.",
+              role: "Executiva",
+              savings: "R$ 450.000",
+              isWhatsApp: true
+            }, {
+              quote: "Visitei apenas 6 imóveis em vez de 40. Cada um pré-aprovado tecnicamente. Fechei em 3 semanas.",
+              author: "Pedro H.",
+              role: "Médico",
+              savings: "R$ 280.000",
+              isWhatsApp: false
+            }].map((testimonial, index) => <Card key={index} className={cn("border-0 shadow-luxury bg-white relative overflow-hidden", testimonial.isWhatsApp && "border-l-4 border-green-500")}>
+                  {testimonial.isWhatsApp && <div className="absolute top-3 right-3">
                       <div className="bg-green-500 text-white px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1">
                         <MessageCircle className="h-3 w-3" />
                         Via WhatsApp
                       </div>
-                    </div>
-                  )}
+                    </div>}
                   <CardContent className="p-5 md:p-6">
                     <div className="flex mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-luxury-gold text-luxury-gold" />
-                      ))}
+                      {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-luxury-gold text-luxury-gold" />)}
                     </div>
 
                     <blockquote className="text-sm md:text-base text-foreground mb-4 italic leading-relaxed">
@@ -1461,8 +1270,7 @@ const LandingPage = () => {
                       </Badge>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -1499,12 +1307,7 @@ const LandingPage = () => {
                     Agende um diagnóstico gratuito — sem compromisso financeiro.
                   </p>
                   <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
-                    <a
-                      href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackCalendlyClick("sobre")}
-                    >
+                    <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("sobre")}>
                       Agendar Diagnóstico Gratuito
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
@@ -1562,13 +1365,8 @@ const LandingPage = () => {
                 </li>
               </ul>
 
-              <Button variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
-                <a
-                  href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick("garantias")}
-                >
+              <Button asChild variant="gold" className="h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto">
+                <a href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("garantias")}>
                   Garantir Minha Vaga Agora
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </a>
@@ -1592,19 +1390,25 @@ const LandingPage = () => {
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
-              {[
-                { q: "O que é um Personal Shopper Imobiliário?", a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você." },
-                { q: "Qual a diferença para um corretor tradicional?", a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados." },
-                { q: "Como funciona a remuneração?", a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee." },
-                { q: "Para quais imóveis o serviço é indicado?", a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor." },
-                { q: "Como garantir que você está do meu lado?", a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato." },
-                { q: "Como iniciar?", a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso." },
-              ].map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index + 1}`}
-                  className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300"
-                >
+              {[{
+              q: "O que é um Personal Shopper Imobiliário?",
+              a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você."
+            }, {
+              q: "Qual a diferença para um corretor tradicional?",
+              a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
+            }, {
+              q: "Como funciona a remuneração?",
+              a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
+            }, {
+              q: "Para quais imóveis o serviço é indicado?",
+              a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
+            }, {
+              q: "Como garantir que você está do meu lado?",
+              a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
+            }, {
+              q: "Como iniciar?",
+              a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso."
+            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                   <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
                     <div className="flex items-center gap-3 md:gap-4 text-left">
                       <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-luxury-gold text-luxury-navy text-xs md:text-sm font-bold flex-shrink-0">
@@ -1615,11 +1419,12 @@ const LandingPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
                     <div className="pl-10 md:pl-12">
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: item.a }} />
+                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{
+                    __html: item.a
+                  }} />
                     </div>
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </div>
@@ -1638,17 +1443,8 @@ const LandingPage = () => {
                 <strong className="text-luxury-gold">É comprar mal achando que está seguro.</strong>
               </p>
 
-              <Button
-                variant="gold"
-                className="mb-4 md:mb-6 h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto"
-                asChild
-              >
-                <a
-                  href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackCalendlyClick("cta-final")}
-                >
+              <Button variant="gold" className="mb-4 md:mb-6 h-12 md:h-14 px-6 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto" asChild>
+                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("cta-final")}>
                   Agendar Diagnóstico Estratégico (Gratuito)
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
                 </a>
@@ -1756,12 +1552,7 @@ const LandingPage = () => {
                 <a href="/privacidade" className="hover:text-luxury-gold transition-colors">
                   Política de Privacidade
                 </a>
-                <a
-                  href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-luxury-gold transition-colors"
-                >
+                <a href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors">
                   Termos de Uso
                 </a>
                 <a href="/lgpd" className="hover:text-luxury-gold transition-colors">
@@ -1780,18 +1571,9 @@ const LandingPage = () => {
       </footer>
 
       {/* WhatsApp Floating Button */}
-      <a
-        href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-        onClick={() => trackWhatsAppClick("floating-button")}
-        aria-label="Contato via WhatsApp"
-      >
+      <a href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20Personal%20Shopper%20Imobili%C3%A1rio" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110" onClick={() => trackWhatsAppClick("floating-button")} aria-label="Contato via WhatsApp">
         <MessageCircle className="h-6 w-6" />
       </a>
-    </div>
-  );
+    </div>;
 };
-
 export default LandingPage;
