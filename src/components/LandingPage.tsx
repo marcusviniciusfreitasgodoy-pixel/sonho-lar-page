@@ -909,52 +909,6 @@ const LandingPage = () => {
               </div>
             </div>
 
-            {/* Exemplo Prático */}
-            <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-destructive mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-destructive mb-4 md:mb-6">Exemplo Prático: A Diferença em Ação</h3>
-              
-              <div className="bg-muted p-4 md:p-6 rounded-lg mb-4 md:mb-6">
-                <h4 className="text-sm md:text-base font-bold text-foreground mb-1">Cenário: Imóvel anunciado por R$ 2.5M</h4>
-                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">Você está negociando com o vendedor</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {/* Com Intermediação */}
-                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-destructive">
-                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Intermediação</p>
-                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
-                      <p><strong className="text-foreground">Corretor recebe:</strong> 2% = R$ 50k</p>
-                      <p><strong className="text-foreground">Incentivo do corretor:</strong> Fechar rápido. Quanto mais caro, melhor.</p>
-                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.5M (preço pedido).</p>
-                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 0</p>
-                    </div>
-                  </div>
-                  
-                  {/* Com Representação */}
-                  <div className="bg-white p-4 md:p-5 rounded-md border-l-4 border-luxury-gold">
-                    <p className="text-xs font-bold uppercase text-foreground mb-3 md:mb-4">Com Representação (PSI)</p>
-                    <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
-                      <p><strong className="text-foreground">Meu ganho:</strong> 30% do desconto = R$ 45k (se conseguir R$ 150k de desconto)</p>
-                      <p><strong className="text-foreground">Meu incentivo:</strong> Negociar duro. Quanto maior o desconto, melhor.</p>
-                      <p><strong className="text-foreground">Resultado:</strong> Você paga R$ 2.35M (após negociação).</p>
-                      <p><strong className="text-foreground">Seu ganho:</strong> R$ 150k</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-luxury-gold/10 p-4 md:p-5 rounded-lg border-l-4 border-luxury-gold">
-                <p className="text-xs md:text-sm text-muted-foreground mb-2">
-                  <strong className="text-foreground">Com intermediação:</strong> Você paga preço cheio. Corretor ganha R$ 50k.
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground mb-3">
-                  <strong className="text-foreground">Com representação:</strong> Você economiza R$ 150k. Eu ganho R$ 45k. 
-                  Você fica com R$ 105k de economia líquida.
-                </p>
-                <p className="text-sm md:text-base font-semibold text-luxury-navy">
-                  Qual modelo você prefere?
-                </p>
-              </div>
-            </div>
 
             {/* CTA */}
             <div className="text-center bg-gradient-to-br from-luxury-gold/10 to-background p-6 md:p-10 rounded-xl md:rounded-2xl">
