@@ -637,68 +637,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Concrete Example Section */}
-      <section id="exemplo" className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-navy leading-tight">
-                Exemplo Concreto: Imóvel R$ 2.5M na Barra
-              </h2>
-            </div>
-
-            <div className="bg-white rounded-xl md:rounded-2xl shadow-luxury border border-luxury-gold/20 overflow-hidden">
-              {/* Values Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
-                <div className="p-4 md:p-6 text-center">
-                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Valor Anunciado (Baseline)</p>
-                  <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 2.500.000</p>
-                </div>
-                <div className="p-4 md:p-6 text-center">
-                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Compra Real (Após PSI)</p>
-                  <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 2.350.000</p>
-                </div>
-              </div>
-
-              {/* Discount Highlight */}
-              <div className="bg-luxury-gold p-4 md:p-6 text-center">
-                <p className="text-luxury-navy font-medium mb-1 text-sm md:text-base">Desconto Comprovado</p>
-                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-luxury-navy">R$ 150.000</p>
-              </div>
-
-              {/* Fee Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
-                <div className="p-4 md:p-6 text-center">
-                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Fee Fixo (Consultoria)</p>
-                  <p className="text-lg md:text-xl font-bold text-luxury-navy">R$ 10.000</p>
-                </div>
-                <div className="p-4 md:p-6 text-center">
-                  <p className="text-sm md:text-base text-muted-foreground mb-1 md:mb-2">Success Fee (30% Desconto)</p>
-                  <p className="text-lg md:text-xl font-bold text-luxury-navy">R$ 45.000</p>
-                </div>
-              </div>
-
-              {/* Total PSI */}
-              <div className="bg-luxury-cream p-4 md:p-6 text-center border-t border-border">
-                <p className="text-sm md:text-base text-muted-foreground mb-1">Você Paga Comigo</p>
-                <p className="text-xl md:text-2xl font-bold text-luxury-navy">R$ 55.000</p>
-              </div>
-
-              {/* Final Savings */}
-              <div className="bg-luxury-navy p-6 md:p-8 text-center">
-                <p className="text-white/80 mb-1 md:mb-2 text-sm md:text-base">Você Economiza Líquido</p>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-luxury-gold mb-1 md:mb-2">R$ 95.000</p>
-                <p className="text-white/70 text-sm md:text-base">ROI: 1.73x em uma negociação</p>
-              </div>
-            </div>
-
-            <p className="text-center text-muted-foreground mt-6 md:mt-8 italic text-sm md:text-base px-2">
-              Este exemplo assume desconto de 6%. Descontos maiores geram economia ainda mais significativa para você.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Model Section */}
       <section id="remuneracao" className="py-12 md:py-20 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
