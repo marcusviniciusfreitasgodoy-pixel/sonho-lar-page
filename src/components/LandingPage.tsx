@@ -278,7 +278,7 @@ const LandingPage = () => {
 
             <Button
               variant="gold"
-              className="mb-3 md:mb-4 h-14 px-6 text-base font-semibold sm:h-12 sm:px-8 sm:text-base md:h-14 md:px-10 md:text-lg shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-sm touch-manipulation"
+              className="mb-3 md:mb-4 h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-10 text-sm sm:text-base md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-xs sm:max-w-sm touch-manipulation"
               asChild
             >
               <a
@@ -286,9 +286,10 @@ const LandingPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackCalendlyClick("hero")}
+                className="flex items-center justify-center gap-2"
               >
-                Agendar Diagnóstico (Gratuito)
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                <span className="whitespace-nowrap">Agendar Diagnóstico Estratégico (Gratuito)</span>
+                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </a>
             </Button>
 
@@ -724,14 +725,14 @@ const LandingPage = () => {
                 <Button 
                   size="lg" 
                   variant="luxury"
-                  className="group w-full sm:w-auto text-sm md:text-base"
+                  className="group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation"
                   onClick={() => {
                     trackCalendlyClick("pricing_section");
                     window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
                   }}
                 >
-                  Agendar Minha Conversa Gratuita
-                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+                  <span className="whitespace-nowrap">Agendar Minha Conversa Gratuita</span>
+                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Button>
                 <p className="text-xs md:text-sm text-muted-foreground mt-4">
                   30 minutos · Online · Você decide depois
@@ -947,7 +948,7 @@ const LandingPage = () => {
               <Button
                 variant="gold"
                 size="lg"
-                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto text-sm md:text-base"
+                className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-12 sm:h-12 md:h-14 px-5 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg touch-manipulation"
                 asChild
               >
                 <a
@@ -955,9 +956,10 @@ const LandingPage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick("representacao")}
+                  className="flex items-center justify-center gap-2"
                 >
-                  Entender Melhor a Representação Exclusiva
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                  <span className="whitespace-nowrap">Entender a Representação Exclusiva</span>
+                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
             </div>
