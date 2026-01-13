@@ -1474,114 +1474,157 @@ const LandingPage = () => {
 
 
       {/* Footer */}
-      <footer className="bg-luxury-navy text-white py-8 sm:py-10 md:py-16">
-        <div className="container mx-auto px-4 sm:px-5 md:px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
-            {/* Company Info */}
-            <div className="col-span-2">
-              <div className="mb-4 md:mb-6">
-                <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-4">
-                  <img src={godoyLogo} alt="Godoy Prime Realty" className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16" />
-                  <span className="text-base sm:text-lg md:text-2xl font-bold text-white">Godoy Prime Realty</span>
+      <footer className="bg-luxury-navy text-white">
+        {/* Main Footer Content */}
+        <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+            
+            {/* Brand Section */}
+            <div className="md:col-span-5">
+              <div className="flex items-center space-x-3 mb-4">
+                <img src={godoyLogo} alt="Godoy Prime Realty" className="h-12 w-12 md:h-14 md:w-14" />
+                <div>
+                  <span className="text-xl md:text-2xl font-bold text-white block">Godoy Prime Realty</span>
+                  <span className="text-luxury-gold text-sm md:text-base font-medium">Marcus Godoy</span>
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-luxury-gold mb-2">Marcus Godoy</h3>
-                <p className="text-white/80 mb-3 md:mb-4 text-xs sm:text-sm md:text-base">Personal Shopper Imobiliário Exclusivo da Barra da Tijuca</p>
-                <p className="text-white/70 text-xs md:text-sm leading-relaxed hidden sm:block">
-                  Representação exclusiva do comprador em imóveis de alto padrão. Economia garantida e transparência
-                  total.
-                </p>
               </div>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Contato</h4>
-              <div className="space-y-2 md:space-y-3">
-                <a href="tel:+552140400067" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
-                  <Phone className="h-4 w-4 text-luxury-gold flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-xs md:text-sm">(21) 4040-0067</p>
-                  </div>
-                </a>
-                <a href="https://wa.me/5521964075124" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
-                  <MessageCircle className="h-4 w-4 text-luxury-gold flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-xs md:text-sm">(21) 96407-5124</p>
-                  </div>
-                </a>
-                <a href="mailto:marcus@godoyprime.com.br" className="flex items-center space-x-2 md:space-x-3 hover:text-luxury-gold transition-colors">
-                  <Mail className="h-4 w-4 text-luxury-gold flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-xs md:text-sm">marcus@godoyprime.com.br</p>
-                  </div>
-                </a>
-                <div className="flex items-start space-x-2 md:space-x-3">
-                  <MapPin className="h-4 w-4 text-luxury-gold flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-white text-xs md:text-sm">Barra da Tijuca, RJ</p>
-                  </div>
+              <p className="text-white/80 text-sm md:text-base mb-4 max-w-md leading-relaxed">
+                Personal Shopper Imobiliário — Representação exclusiva do comprador em imóveis de alto padrão na Barra da Tijuca e Recreio.
+              </p>
+              
+              {/* Credentials */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                <div className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2">
+                  <Scale className="h-4 w-4 text-luxury-gold" />
+                  <span className="text-xs md:text-sm font-medium">Perito Avaliador</span>
+                </div>
+                <div className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 flex items-center gap-2">
+                  <Award className="h-4 w-4 text-luxury-gold" />
+                  <span className="text-xs md:text-sm font-medium">CRECI 80199</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Links Úteis</h4>
-              <div className="space-y-2">
-                <a href="#como-funciona" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
+            <div className="md:col-span-3">
+              <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="w-1 h-5 bg-luxury-gold rounded-full"></div>
+                Navegação
+              </h4>
+              <nav className="grid grid-cols-2 md:grid-cols-1 gap-2">
+                <a href="#como-funciona" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
                   Como Funciona
                 </a>
-                <a href="#economia" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
+                <a href="#economia" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
                   Economia
                 </a>
-                <a href="#precos" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
+                <a href="#precos" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
                   Serviços
                 </a>
-                <a href="#sobre" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
-                  Sobre Marcus
+                <a href="#sobre" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
+                  Sobre
                 </a>
-                <a href="#depoimentos" className="block text-white/80 hover:text-luxury-gold transition-colors text-xs md:text-sm">
+                <a href="#faq" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
+                  FAQ
+                </a>
+                <a href="#depoimentos" className="text-white/70 hover:text-luxury-gold transition-colors text-sm py-1">
                   Depoimentos
                 </a>
+              </nav>
+            </div>
+
+            {/* Contact Section */}
+            <div className="md:col-span-4">
+              <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="w-1 h-5 bg-luxury-gold rounded-full"></div>
+                Contato
+              </h4>
+              <div className="space-y-3">
+                <a href="tel:+552140400067" className="flex items-center gap-3 text-white/70 hover:text-luxury-gold transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-luxury-gold/20 transition-colors">
+                    <Phone className="h-4 w-4 text-luxury-gold" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50">Telefone</p>
+                    <p className="text-sm font-medium text-white">(21) 4040-0067</p>
+                  </div>
+                </a>
+                <a href="https://wa.me/5521964075124" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/70 hover:text-luxury-gold transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
+                    <MessageCircle className="h-4 w-4 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50">WhatsApp</p>
+                    <p className="text-sm font-medium text-white">(21) 96407-5124</p>
+                  </div>
+                </a>
+                <a href="mailto:marcus@godoyprime.com.br" className="flex items-center gap-3 text-white/70 hover:text-luxury-gold transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-luxury-gold/20 transition-colors">
+                    <Mail className="h-4 w-4 text-luxury-gold" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50">E-mail</p>
+                    <p className="text-sm font-medium text-white">marcus@godoyprime.com.br</p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <MapPin className="h-4 w-4 text-luxury-gold" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/50">Localização</p>
+                    <p className="text-sm font-medium text-white">Barra da Tijuca, Rio de Janeiro</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Stats Section */}
-          <div className="border-t border-white/20 pt-6 md:pt-8 mb-6 md:mb-8">
-            <div className="grid grid-cols-2 gap-4 md:gap-6 text-center max-w-2xl mx-auto">
+        {/* Stats Bar */}
+        <div className="bg-luxury-gold/10 border-y border-luxury-gold/20">
+          <div className="container mx-auto px-4 md:px-6 py-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-1">100%</p>
-                <p className="text-white/70 text-xs md:text-sm">Representação do Comprador</p>
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold">100%</p>
+                <p className="text-white/70 text-xs md:text-sm">Representação Exclusiva</p>
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-luxury-gold mb-1">Zero</p>
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold">Zero</p>
                 <p className="text-white/70 text-xs md:text-sm">Conflito de Interesses</p>
               </div>
+              <div className="hidden md:block">
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold">R$ 1.5M+</p>
+                <p className="text-white/70 text-xs md:text-sm">Imóveis de Alto Padrão</p>
+              </div>
+              <div className="hidden md:block">
+                <p className="text-2xl md:text-3xl font-bold text-luxury-gold">5-8</p>
+                <p className="text-white/70 text-xs md:text-sm">Visitas Necessárias</p>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Legal Links & Copyright */}
-          <div className="border-t border-white/20 pt-6 md:pt-8">
-            <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-              <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4 md:gap-6 text-xs md:text-sm text-white/60">
-                <a href="/privacidade" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
-                  Política de Privacidade
-                </a>
-                <a href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
-                  Termos de Uso
-                </a>
-                <a href="/lgpd" className="hover:text-luxury-gold transition-colors py-1 touch-manipulation">
-                  LGPD
-                </a>
-              </div>
-
-              <p className="text-white/60 text-[10px] sm:text-xs md:text-sm text-center md:text-right">
-                © 2025 Godoy Prime Realty. Todos os direitos reservados.
-                <br />
-                CRECI/RJ: 11841 PJ RJ e 80199 PF RJ
-              </p>
+        {/* Bottom Bar */}
+        <div className="container mx-auto px-4 md:px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Legal Links */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-xs md:text-sm">
+              <a href="/privacidade" className="text-white/60 hover:text-luxury-gold transition-colors">
+                Privacidade
+              </a>
+              <a href="https://docs.google.com/document/d/1JqColkt5uzQnajZDWVPTdy423kJlVDEpQepGRGlGFp8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-luxury-gold transition-colors">
+                Termos
+              </a>
+              <a href="/lgpd" className="text-white/60 hover:text-luxury-gold transition-colors">
+                LGPD
+              </a>
             </div>
+
+            {/* Copyright */}
+            <p className="text-white/50 text-xs md:text-sm text-center md:text-right">
+              © 2025 Godoy Prime Realty · CRECI/RJ: 11841 PJ | 80199 PF
+            </p>
           </div>
         </div>
       </footer>
