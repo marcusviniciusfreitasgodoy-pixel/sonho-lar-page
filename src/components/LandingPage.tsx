@@ -201,7 +201,7 @@ const LandingPage = () => {
             <Button variant="gold" className="mb-3 md:mb-4 h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-xs sm:max-w-sm touch-manipulation" asChild>
               <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="flex items-center justify-center gap-2 text-center">
                 <span>Agendar Diagnóstico Estratégico (Gratuito)</span>
-                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </a>
             </Button>
 
@@ -690,7 +690,7 @@ const LandingPage = () => {
                 window.open("https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario", "_blank");
               }}>
                   <span>Agendar Minha Conversa Gratuita</span>
-                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+                  <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Button>
                 <p className="text-xs md:text-sm text-muted-foreground mt-4">
                   30 minutos · Online · Você decide depois
@@ -757,7 +757,7 @@ const LandingPage = () => {
               trackWhatsAppClick("pricing_model_inquiry");
               window.open("https://wa.me/5521999461868?text=Olá! Gostaria de entender melhor o modelo de remuneração do PSI antes de agendar o diagnóstico.", "_blank");
             }}>
-                <MessageCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                <MessageCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 flex-shrink-0" />
                 <span>Entenda se este modelo serve para você</span>
               </Button>
               <p className="text-xs text-muted-foreground mt-4 italic">
@@ -926,7 +926,7 @@ const LandingPage = () => {
               <Button variant="gold" size="lg" className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg touch-manipulation" asChild>
                 <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")} className="flex items-center justify-center gap-2 text-center">
                   <span>Entender a Representação Exclusiva</span>
-                  <ArrowRight className="h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                  <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
             </div>
@@ -1322,10 +1322,10 @@ const LandingPage = () => {
                   <p className="text-white/80 text-sm md:text-base mb-4">
                     Agende um diagnóstico gratuito — sem compromisso financeiro.
                   </p>
-                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto" asChild>
-                    <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("sobre")}>
-                      Agendar Diagnóstico Gratuito
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="gold" className="mt-2 md:mt-4 w-full sm:w-auto h-auto py-3 px-5 md:py-4 md:px-8 text-sm md:text-base" asChild>
+                    <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("sobre")} className="flex items-center justify-center gap-2">
+                      <span>Agendar Diagnóstico Gratuito</span>
+                      <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
                     </a>
                   </Button>
                 </div>
@@ -1382,9 +1382,9 @@ const LandingPage = () => {
               </ul>
 
               <Button variant="gold" className="h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
-                <a href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("garantias")}>
-                  Garantir Minha Vaga Agora
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                <a href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("garantias")} className="flex items-center justify-center gap-2">
+                  <span>Garantir Minha Vaga Agora</span>
+                  <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5" />
                 </a>
               </Button>
             </div>
@@ -1460,9 +1460,9 @@ const LandingPage = () => {
               </p>
 
               <Button variant="gold" className="mb-4 md:mb-6 h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto" asChild>
-                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("cta-final")}>
-                  Agendar Diagnóstico Estratégico (Gratuito)
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("cta-final")} className="flex items-center justify-center gap-2">
+                  <span>Agendar Diagnóstico Estratégico (Gratuito)</span>
+                  <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
                 </a>
               </Button>
 
