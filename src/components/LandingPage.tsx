@@ -1623,7 +1623,7 @@ const LandingPage = () => {
 
             {/* Copyright */}
             <p className="text-white/50 text-xs md:text-sm text-center md:text-right">
-              © 2025 Godoy Prime Realty · CRECI/RJ: 11841 PJ | 80199 PF
+              © {new Date().getFullYear()} Godoy Prime Realty · CRECI/RJ: 11841 PJ | 80199 PF
             </p>
           </div>
         </div>
