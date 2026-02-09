@@ -1408,22 +1408,22 @@ const LandingPage = () => {
             <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
               {[{
               q: "O que é um Personal Shopper Imobiliário?",
-              a: "Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você."
+              answer: <>Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você.</>
             }, {
               q: "Qual a diferença para um corretor tradicional?",
-              a: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
+              answer: <>O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados.</>
             }, {
               q: "Como funciona a remuneração?",
-              a: "<strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
+              answer: <><strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee.</>
             }, {
               q: "Para quais imóveis o serviço é indicado?",
-              a: "Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
+              answer: <>Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor.</>
             }, {
               q: "Como garantir que você está do meu lado?",
-              a: "Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
+              answer: <>Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato.</>
             }, {
               q: "Como iniciar?",
-              a: "Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso."
+              answer: <>Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso.</>
             }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
                   <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
                     <div className="flex items-center gap-3 md:gap-4 text-left">
@@ -1435,9 +1435,9 @@ const LandingPage = () => {
                   </AccordionTrigger>
                   <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
                     <div className="pl-10 md:pl-12">
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{
-                    __html: item.a
-                  }} />
+                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
+                        {item.answer}
+                      </p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>)}
