@@ -834,26 +834,91 @@ const LandingPage = () => {
       </section>
 
       {/* 10b. CTA Final — #0F1118 */}
-      <section id="cta-final" className="py-20 md:py-32 bg-luxury-navy">
+      <section id="cta-final" className="py-16 md:py-24 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-16 text-center shadow-luxury">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">Pronto Para Encontrar o Imóvel Certo?</h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+              {/* Coluna esquerda — Texto */}
+              <div>
+                <span className="font-['Cormorant_Garamond',serif] font-light text-white block" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>Se você está avaliando uma compra relevante,</span>
+                <span className="font-['Cormorant_Garamond',serif] font-light italic text-white/55 block" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>o próximo passo não é visitar imóveis.</span>
+                <span className="font-['Cormorant_Garamond',serif] font-light text-luxury-gold block mt-2" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>É entender o cenário.</span>
 
-              <p className="text-xl md:text-2xl text-white/90 mb-6 md:mb-8 leading-relaxed">
-                O maior risco não é pagar por estratégia.
-                <br />
-                <strong className="text-luxury-gold">É comprar mal achando que está seguro.</strong>
-              </p>
+                <div className="w-12 mt-9 mb-9" style={{ borderTop: '0.5px solid #C9A84C' }}></div>
 
-              <Button variant="gold" className="mb-4 md:mb-6 h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto" asChild>
-                <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("cta-final")} className="flex items-center justify-center gap-2">
-                  <span>Agendar Diagnóstico Estratégico (Gratuito)</span>
-                  <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
-                </a>
-              </Button>
+                <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-white/35">
+                  Preencha ao lado. Entraremos em contato com uma análise inicial sobre seu momento.
+                </p>
+              </div>
 
-              <p className="text-white/70 text-base md:text-lg">Conversa direta. Sem compromisso. Sem venda de imóveis.</p>
+              {/* Coluna direita — Formulário */}
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  required
+                  maxLength={100}
+                  placeholder="Nome completo"
+                  value={formData.nome}
+                  onChange={e => setFormData(p => ({ ...p, nome: e.target.value }))}
+                  className="w-full font-['DM_Sans',sans-serif] text-[13px] text-white rounded-sm px-4 py-3.5 outline-none transition-colors placeholder:text-white/25 focus:border-luxury-gold"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.1)' }}
+                />
+                <input
+                  type="tel"
+                  required
+                  maxLength={20}
+                  placeholder="WhatsApp"
+                  value={formData.whatsapp}
+                  onChange={e => setFormData(p => ({ ...p, whatsapp: e.target.value }))}
+                  className="w-full font-['DM_Sans',sans-serif] text-[13px] text-white rounded-sm px-4 py-3.5 outline-none transition-colors placeholder:text-white/25 focus:border-luxury-gold"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.1)' }}
+                />
+                <select
+                  required
+                  value={formData.faixa}
+                  onChange={e => setFormData(p => ({ ...p, faixa: e.target.value }))}
+                  className="w-full font-['DM_Sans',sans-serif] text-[13px] text-white rounded-sm px-4 py-3.5 outline-none transition-colors appearance-none focus:border-luxury-gold"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.1)', color: formData.faixa ? '#FFFFFF' : 'rgba(255,255,255,0.25)' }}
+                >
+                  <option value="" disabled className="bg-luxury-navy text-white/25">Faixa de investimento</option>
+                  <option value="R$ 1,5M a R$ 2,5M" className="bg-luxury-navy text-white">R$ 1,5M a R$ 2,5M</option>
+                  <option value="R$ 2,5M a R$ 5M" className="bg-luxury-navy text-white">R$ 2,5M a R$ 5M</option>
+                  <option value="Acima de R$ 5M" className="bg-luxury-navy text-white">Acima de R$ 5M</option>
+                </select>
+                <select
+                  required
+                  value={formData.tipo}
+                  onChange={e => setFormData(p => ({ ...p, tipo: e.target.value }))}
+                  className="w-full font-['DM_Sans',sans-serif] text-[13px] text-white rounded-sm px-4 py-3.5 outline-none transition-colors appearance-none focus:border-luxury-gold"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.1)', color: formData.tipo ? '#FFFFFF' : 'rgba(255,255,255,0.25)' }}
+                >
+                  <option value="" disabled className="bg-luxury-navy text-white/25">Tipo de imóvel</option>
+                  <option value="Apartamento" className="bg-luxury-navy text-white">Apartamento</option>
+                  <option value="Casa / Mansão" className="bg-luxury-navy text-white">Casa / Mansão</option>
+                  <option value="Cobertura" className="bg-luxury-navy text-white">Cobertura</option>
+                  <option value="Ainda indefinido" className="bg-luxury-navy text-white">Ainda indefinido</option>
+                </select>
+                <select
+                  required
+                  value={formData.momento}
+                  onChange={e => setFormData(p => ({ ...p, momento: e.target.value }))}
+                  className="w-full font-['DM_Sans',sans-serif] text-[13px] text-white rounded-sm px-4 py-3.5 outline-none transition-colors appearance-none focus:border-luxury-gold"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.1)', color: formData.momento ? '#FFFFFF' : 'rgba(255,255,255,0.25)' }}
+                >
+                  <option value="" disabled className="bg-luxury-navy text-white/25">Momento da compra</option>
+                  <option value="Pronto para comprar" className="bg-luxury-navy text-white">Pronto para comprar</option>
+                  <option value="Nos próximos 3 meses" className="bg-luxury-navy text-white">Nos próximos 3 meses</option>
+                  <option value="Nos próximos 6 meses" className="bg-luxury-navy text-white">Nos próximos 6 meses</option>
+                  <option value="Ainda pesquisando" className="bg-luxury-navy text-white">Ainda pesquisando</option>
+                </select>
+                <button
+                  type="submit"
+                  className="w-full bg-luxury-gold text-luxury-navy font-['DM_Sans',sans-serif] uppercase tracking-[0.18em] text-[10px] font-medium py-3.5 rounded-sm transition-colors hover:bg-luxury-gold/85"
+                >
+                  Solicitar análise estratégica
+                </button>
+                <p className="font-['DM_Sans',sans-serif] text-[10px] text-white/20 text-center">Retorno em até 24 horas.</p>
+              </form>
             </div>
           </div>
         </div>
