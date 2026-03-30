@@ -554,7 +554,7 @@ const LandingPage = () => {
                 { num: '05', title: 'Acompanhamento até a decisão', desc: 'Conduzimos a negociação em seu nome até a assinatura. Sem surpresas.' },
               ].map((item, i, arr) => (
                 <div key={i}>
-                  <div className="py-7">
+                  <div className="fade-up py-7" style={{ transitionDelay: `${i * 100}ms` }}>
                     <span className="font-['Cormorant_Garamond',serif] text-[13px] text-luxury-gold block mb-3">{item.num}</span>
                     <h3 className="font-['DM_Sans',sans-serif] text-[18px] font-normal text-white mb-2">{item.title}</h3>
                     <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.8] text-white/45">{item.desc}</p>
