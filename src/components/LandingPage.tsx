@@ -229,7 +229,7 @@ const LandingPage = () => {
             </p>
 
             <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="inline-flex items-center gap-2 mb-3 md:mb-4 py-3 px-5 md:py-4 md:px-10 border border-luxury-gold text-luxury-gold bg-transparent uppercase tracking-[0.18em] text-[10px] md:text-[11px] font-medium transition-all duration-300 hover:bg-luxury-gold hover:text-luxury-navy rounded-md group touch-manipulation">
-              <span>Agendar conversa gratuita</span>
+              <span>Agendar Diagnóstico Estratégico Gratuito</span>
               <ArrowRight className="h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1 flex-shrink-0" />
             </a>
 
@@ -832,7 +832,7 @@ const LandingPage = () => {
               answer: "Minha remuneração é baseada na economia que gero para você. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
             }, {
               q: "Como iniciar?",
-              answer: "Agende um Diagnóstico Estratégico gratuito e sem compromisso. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar e também analisaremos se faz sentido para ambos seguirem em frente."
+              answer: "Agende um Diagnóstico Estratégico Gratuito e sem compromisso. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar e também analisaremos se faz sentido para ambos seguirem em frente."
             }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border-b border-border/50 rounded-none bg-transparent">
                   <AccordionTrigger className="px-0 py-5 text-left hover:no-underline">
                     <h3 className="font-['DM_Sans',sans-serif] text-[14px] md:text-[15px] font-normal text-luxury-navy pr-4">{item.q}</h3>
@@ -930,7 +930,7 @@ const LandingPage = () => {
                   type="submit"
                   className="w-full bg-luxury-gold text-luxury-navy font-['DM_Sans',sans-serif] uppercase tracking-[0.18em] text-[10px] font-medium py-3.5 rounded-sm transition-colors hover:bg-luxury-gold/85"
                 >
-                  Solicitar análise estratégica
+                  Solicitar Diagnóstico Estratégico
                 </button>
                 <p className="font-['DM_Sans',sans-serif] text-[10px] text-white/20 text-center">Retorno em até 24 horas.</p>
               </form>
