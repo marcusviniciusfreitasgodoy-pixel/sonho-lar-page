@@ -351,10 +351,9 @@ const LandingPage = () => {
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Due Diligence Profissional</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Due Diligence Profissional</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio, regularidade de documentação, e comparei preço com transações reais.{" "}
-                    <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
+                    Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio, regularidade de documentação, e comparei preço com transações reais. Zero surpresas pós-compra.
                   </p>
                 </div>
 
