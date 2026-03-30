@@ -737,7 +737,7 @@ const LandingPage = () => {
                 </p>
 
                 <div className="space-y-4 mb-9">
-                  {['CRECI 80.199 PF | 11.841 PJ', 'Perito Avaliador credenciado pelo TJRJ', 'Avaliações baseadas em dados reais de ITBI'].map((item, i) => (
+                  {['CRECI 80.199 PF | 11.841 PJ', 'Perito Avaliador credenciado pelo TJRJ', 'Avaliações baseadas em dados de transações reais '].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-4 flex-shrink-0" style={{ borderTop: '0.5px solid #C9A84C' }}></div>
                       <span className="font-['DM_Sans',sans-serif] text-[13px] text-white/50">{item}</span>
