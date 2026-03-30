@@ -853,7 +853,7 @@ const LandingPage = () => {
               answer: "Minha remuneração é baseada na economia que gero para você. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
             }, {
               q: "Como iniciar?",
-              answer: "Agende um Diagnóstico Estratégico Gratuito e sem compromisso. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar e também analisaremos se faz sentido para ambos seguirem em frente."
+              answer: "Agende um Diagnóstico Estratégico Gratuito — sem compromisso e sem venda de imóveis. Em 30 minutos, entendemos suas necessidades, avaliamos seu momento de compra e explicamos como podemos atuar ao seu lado. Se fizer sentido para ambos, definimos os próximos passos."
             }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border-b border-border/50 rounded-none bg-transparent">
                   <AccordionTrigger className="px-0 py-5 text-left hover:no-underline">
                     <h3 className="font-['DM_Sans',sans-serif] text-[14px] md:text-[15px] font-normal text-luxury-navy pr-4">{item.q}</h3>
