@@ -229,7 +229,7 @@ const LandingPage = () => {
             </p>
 
             <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="inline-flex items-center gap-2 mb-3 md:mb-4 py-3 px-5 md:py-4 md:px-10 border border-luxury-gold text-luxury-gold bg-transparent uppercase tracking-[0.18em] text-[10px] md:text-[11px] font-medium transition-all duration-300 hover:bg-luxury-gold hover:text-luxury-navy rounded-md group touch-manipulation">
-              <span>Agendar conversa gratuita</span>
+              <span>Agendar Diagnóstico Estratégico Gratuito</span>
               <ArrowRight className="h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1 flex-shrink-0" />
             </a>
 
