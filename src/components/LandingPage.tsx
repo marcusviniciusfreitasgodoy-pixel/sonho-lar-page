@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel } from "lucide-react";
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
+import ScenariosBlock from "@/components/ScenariosBlock";
 import godoyLogo from "@/assets/godoy-logo.png";
 
 const LandingPage = () => {
