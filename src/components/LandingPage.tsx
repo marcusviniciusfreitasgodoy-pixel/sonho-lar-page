@@ -301,7 +301,7 @@ const LandingPage = () => {
 
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center">
               <p className="text-xl md:text-2xl text-white leading-relaxed">
-                <strong className="text-luxury-gold">No alto padrão, um erro custa R$ 100k a R$ 500k.</strong>
+                <span className="text-luxury-gold font-medium">No alto padrão, um erro custa R$ 100k a R$ 500k.</span>
                 <br />E você só descobre depois de assinar.
               </p>
             </div>
