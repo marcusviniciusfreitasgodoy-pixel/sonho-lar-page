@@ -930,7 +930,7 @@ const LandingPage = () => {
                   type="submit"
                   className="w-full bg-luxury-gold text-luxury-navy font-['DM_Sans',sans-serif] uppercase tracking-[0.18em] text-[10px] font-medium py-3.5 rounded-sm transition-colors hover:bg-luxury-gold/85"
                 >
-                  Solicitar análise estratégica
+                  Solicitar Diagnóstico Estratégico
                 </button>
                 <p className="font-['DM_Sans',sans-serif] text-[10px] text-white/20 text-center">Retorno em até 24 horas.</p>
               </form>
