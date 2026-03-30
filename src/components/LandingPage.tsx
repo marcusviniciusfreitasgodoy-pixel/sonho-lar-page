@@ -317,7 +317,7 @@ const LandingPage = () => {
             {/* — Bloco Solução — */}
             <div className="py-16 md:py-24">
               {/* Bloco 1 — Declaração */}
-              <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-left border-l-2 border-luxury-gold pl-6 mb-12" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-left border-l-2 border-luxury-gold pl-6 mb-12" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
                 Aqui, o interesse é um só: o seu.
               </h2>
 
