@@ -541,7 +541,7 @@ const LandingPage = () => {
       <section id="como-funciona" className="py-16 md:py-24 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[640px] mx-auto">
-            <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-14">
+            <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-14">
               Como trabalhamos
             </p>
 
