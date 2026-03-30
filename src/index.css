@@ -122,7 +122,62 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  /* === TYPOGRAPHY SYSTEM === */
+
+  /* H1 & H2 — Cormorant Garamond serif */
+  h1, h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.02em;
+    line-height: 1.1 !important;
+  }
+
+  /* H3 — DM Sans card titles */
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  /* Body paragraphs */
+  p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* No heavy bold in body text — cap at 500 */
+  p strong, p b {
+    font-weight: 500 !important;
+  }
+
+  /* Blockquotes inherit paragraph style */
+  blockquote {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* Navigation links — eyebrow style */
+  header nav a {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 300 !important;
+    font-size: 10px !important;
+  }
+
+  /* List items inherit body weight */
+  li span {
+    font-weight: 300;
+  }
+  li strong {
+    font-weight: 500 !important;
   }
 
   /* Safe area for notched devices */
