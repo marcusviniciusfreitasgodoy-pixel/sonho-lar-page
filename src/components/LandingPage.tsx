@@ -209,16 +209,15 @@ const LandingPage = () => {
       </section>
 
       {/* 2. Mercado — #F7F6F3 */}
-      <section id="mercado" className="py-20 md:py-32 bg-luxury-cream">
+      <section id="mercado" className="py-16 md:py-24 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
-                O Mercado Imobiliário Não Foi Feito Para Proteger o Comprador
+            <div className="text-left mb-14">
+              <h2 className="font-['Cormorant_Garamond',serif] font-light tracking-[-0.02em] leading-[1.1] text-luxury-navy mb-5" style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
+                O mercado imobiliário não foi desenhado<br />para o comprador.
               </h2>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
-                Corretores são pagos para vender. Imobiliárias trabalham com estoque. E quem compra sozinho acredita que
-                está no controle — <strong className="text-foreground">até errar caro</strong>.
+              <p className="font-['DM_Sans',sans-serif] font-light leading-[1.85] text-[#8A8A8A] max-w-[560px]">
+                A maioria das recomendações vem de quem está vendendo — não de quem está protegendo sua decisão. E é exatamente aí que começam os erros caros.
               </p>
             </div>
 
