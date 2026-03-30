@@ -506,32 +506,16 @@ const LandingPage = () => {
             {/* Proteção Jurídica */}
             <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-luxury-gold mb-8 md:mb-12">
               <h3 className="text-lg md:text-xl font-medium text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
-              <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-                A representação não é apenas um modelo comercial. 
-                É um <span className="text-foreground font-medium">vínculo jurídico</span> que te protege.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                {[{
-                num: "1",
-                title: "Dever Fiduciário",
-                text: "Obrigação legal de lealdade, diligência e confidencialidade. Você é minha prioridade absoluta."
-              }, {
-                num: "2",
-                title: "Contrato Blindado",
-                text: "Tudo por escrito. Escopo, poderes, remuneração, prazos. Sem ambiguidades."
-              }, {
-                num: "3",
-                title: "Exclusividade",
-                text: "Você é meu único cliente neste negócio. Nenhum conflito com outras partes."
-              }, {
-                num: "4",
-                title: "Responsabilidade",
-                text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida."
-              }].map(item => <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
-                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-medium text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
-                    <h4 className="text-sm md:text-base font-medium text-foreground mb-2">{item.title}</h4>
-                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                  </div>)}
+              <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p>
+                  Na representação, há um contrato antes de qualquer ação. Nele estão: o escopo exato do trabalho, meus poderes de negociação, os honorários e os prazos. Sem ambiguidades.
+                </p>
+                <p>
+                  Minha remuneração depende da sua economia real — não do fechamento. Se não houver resultado concreto, não há cobrança.
+                </p>
+                <p>
+                  Você tem um profissional com CRECI ativo e credenciamento como Perito Avaliador pelo TJRJ respondendo pelo trabalho. Isso é diferente de uma consultoria informal.
+                </p>
               </div>
             </div>
 
