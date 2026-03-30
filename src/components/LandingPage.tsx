@@ -551,7 +551,7 @@ const LandingPage = () => {
             <div className="space-y-0">
               {[
                 { num: '01', title: 'Entendimento do seu momento', desc: 'Mapeamos seu perfil, orçamento, prioridades e prazo antes de qualquer busca.' },
-                { num: '02', title: 'Leitura de mercado', desc: 'Analisamos transações reais registradas no ITBI — não anúncios — para identificar o valor justo.' },
+                { num: '02', title: 'Leitura de mercado', desc: 'Analisamos transações reais registradas — não somente anúncios com preços sem critérios — para identificar o valor justo.' },
                 { num: '03', title: 'Curadoria estratégica', desc: 'Visitamos e filtramos os imóveis. Você vê apenas os que realmente fazem sentido.' },
                 { num: '04', title: 'Análise comparativa', desc: 'Cada opção avaliada com metodologia técnica: estrutura, documentação, valor por m².' },
                 { num: '05', title: 'Acompanhamento até a decisão', desc: 'Conduzimos a negociação em seu nome até a assinatura. Sem surpresas.' },
