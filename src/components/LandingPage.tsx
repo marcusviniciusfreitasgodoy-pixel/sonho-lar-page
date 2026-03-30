@@ -243,10 +243,10 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-left mb-14">
-              <h2 className="font-['Cormorant_Garamond',serif] font-light tracking-[-0.02em] leading-[1.1] text-luxury-navy mb-5" style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light tracking-[-0.02em] leading-[1.1] text-luxury-navy mb-5" style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
                 O mercado imobiliário não foi desenhado<br />para o comprador.
               </h2>
-              <p className="font-['DM_Sans',sans-serif] font-light leading-[1.85] text-[#8A8A8A] max-w-[560px]">
+              <p className="fade-up font-['DM_Sans',sans-serif] font-light leading-[1.85] text-[#8A8A8A] max-w-[560px]">
                 A maioria das recomendações vem de quem está vendendo — não de quem está protegendo sua decisão. E é exatamente aí que começam os erros caros.
               </p>
             </div>
