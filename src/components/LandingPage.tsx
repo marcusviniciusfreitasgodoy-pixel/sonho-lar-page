@@ -670,7 +670,7 @@ const LandingPage = () => {
               {/* PSI */}
               <Card className="bg-white shadow-none" style={{ border: '0.5px solid rgba(0,0,0,0.08)' }}>
                 <CardContent className="p-4 sm:p-5 md:p-8">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-luxury-gold flex-shrink-0" /> Personal Shopper Imobiliário
                   </h3>
                   <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
