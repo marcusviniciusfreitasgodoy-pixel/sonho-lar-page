@@ -826,7 +826,7 @@ const LandingPage = () => {
               answer: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o desconto que consigo para você (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
             }, {
               q: "Para quais imóveis o serviço é indicado?",
-              answer: "Imóveis de alto padrão a partir de R$ 1.5 milhão na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
+              answer: "Imóveis de alto padrão a partir de R$ 1.5 milhão na Barra da Tijuca e Recreio dos Bandeirantes. Quanto maior o valor do imóvel, mais o modelo de economia faz sentido."
             }, {
               q: "Como garantir que você está do meu lado?",
               answer: "Minha remuneração é baseada na economia que gero para você. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
