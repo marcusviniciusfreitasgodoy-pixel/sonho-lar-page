@@ -280,81 +280,69 @@ const LandingPage = () => {
       </section>
 
       {/* 3. Conceito — Fusão de solucao + representacao */}
-      <section id="conceito" className="py-20 md:py-32 bg-luxury-charcoal">
+      <section id="conceito" className="bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
 
-            {/* — Conteúdo ex-solucao — */}
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight">
-                A Solução: Personal Shopper Imobiliário
+            {/* — Bloco Solução — */}
+            <div className="py-16 md:py-24">
+              {/* Bloco 1 — Declaração */}
+              <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-left border-l-2 border-luxury-gold pl-6 mb-12" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
+                Aqui, o interesse é um só: o seu.
               </h2>
-              <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed px-2">
-                Eu <strong className="text-white">não vendo imóveis</strong>. Eu{" "}
-                <strong className="text-white">represento compradores</strong>.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-              <div className="bg-white rounded-xl md:rounded-2xl p-8 md:p-12 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl md:text-2xl font-bold flex-shrink-0">
-                    1
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy">Identifico o Imóvel EXATO</h3>
-                </div>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Você não vê "opções do mercado". Você define seu critério (localização, tamanho, acabamento,
-                  orçamento), e EU identifico qual imóvel realmente atende isso.
+              {/* Bloco 2 — Parágrafos */}
+              <div className="max-w-[600px] text-left mb-16 space-y-6">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A]">
+                  Atuamos ao seu lado durante toda a jornada de compra, sem conflito, sem pressão e sem viés comercial. Nosso papel é estruturar a melhor decisão possível, com base em leitura de mercado, análise técnica e curadoria estratégica.
+                </p>
+                <p className="font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A]">
+                  Este modelo existe há décadas em mercados maduros: o Buyer's Agent na Austrália e nos EUA, o Personal Shopper Inmobiliario na Espanha. No Rio de Janeiro, chegou agora.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl md:rounded-2xl p-8 md:p-12 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl md:text-2xl font-bold flex-shrink-0">
-                    2
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy">Você Visita Apenas os Certos</h3>
+              {/* Bloco 3 — Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
+                <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                  <div className="w-6 h-px bg-luxury-gold mb-6"></div>
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Identifico o Imóvel EXATO</h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    Você não vê "opções do mercado". Você define seu critério (localização, tamanho, acabamento, orçamento), e EU identifico qual imóvel realmente atende isso.
+                  </p>
                 </div>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  EU visito dezenas de imóveis, faço due diligence completa (estrutura, documentação, condomínio), e
-                  apresento apenas aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
-                </p>
+
+                <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                  <div className="w-6 h-px bg-luxury-gold mb-6"></div>
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Você Visita Apenas os Certos</h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    EU visito dezenas de imóveis, faço due diligence completa (estrutura, documentação, condomínio), e apresento apenas aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
+                  </p>
+                </div>
+
+                <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                  <div className="w-6 h-px bg-luxury-gold mb-6"></div>
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Due Diligence Profissional</h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio, regularidade de documentação, e comparei preço com transações reais.{" "}
+                    <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
+                  </p>
+                </div>
+
+                <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                  <div className="w-6 h-px bg-luxury-gold mb-6"></div>
+                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Negociação Baseada em Dados</h3>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu incentivo é o desconto.
+                    <strong className="text-luxury-navy"> Seu incentivo também.</strong>
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-white rounded-xl md:rounded-2xl p-8 md:p-12 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl md:text-2xl font-bold flex-shrink-0">
-                    3
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy">Due Diligence Profissional</h3>
-                </div>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio,
-                  regularidade de documentação, e comparei preço com transações reais.{" "}
-                  <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
+              <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center">
+                <p className="text-xl md:text-2xl text-white leading-relaxed">
+                  A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
                 </p>
               </div>
-
-              <div className="bg-white rounded-xl md:rounded-2xl p-8 md:p-12 shadow-luxury border border-luxury-gold/20 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-xl md:text-2xl font-bold flex-shrink-0">
-                    4
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy">Negociação Baseada em Dados</h3>
-                </div>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu
-                  incentivo é o desconto.
-                  <strong className="text-luxury-navy"> Seu incentivo também.</strong>
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center mb-16 md:mb-24">
-              <p className="text-xl md:text-2xl text-white leading-relaxed">
-                A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
-              </p>
             </div>
 
             {/* — Conteúdo ex-representacao — */}
