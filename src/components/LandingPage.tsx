@@ -511,8 +511,8 @@ const LandingPage = () => {
                 title: "Responsabilidade",
                 text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida."
               }].map(item => <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
-                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-bold text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
-                    <h4 className="text-sm md:text-base font-bold text-foreground mb-2">{item.title}</h4>
+                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-medium text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
+                    <h4 className="text-sm md:text-base font-medium text-foreground mb-2">{item.title}</h4>
                     <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
                   </div>)}
               </div>
