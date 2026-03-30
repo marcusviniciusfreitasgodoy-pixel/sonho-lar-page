@@ -343,7 +343,7 @@ const LandingPage = () => {
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Você Visita Apenas os Certos</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Você Visita Apenas os Certos</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     EU visito dezenas de imóveis, faço due diligence completa (estrutura, documentação, condomínio), e apresento apenas aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
                   </p>
