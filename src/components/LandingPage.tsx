@@ -599,7 +599,7 @@ const LandingPage = () => {
                   cta: 'Solicitar Proposta',
                 },
               ].map((plan, i) => (
-                <div key={i} className="p-9 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.08)' }}>
+                <div key={i} className="fade-up p-9 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.08)', transitionDelay: `${i * 100}ms` }}>
                   <div className="w-8 h-px bg-luxury-gold mb-5"></div>
                   <h3 className="font-['Cormorant_Garamond',serif] text-[24px] text-white mb-2">{plan.name}</h3>
                   <p className="font-['DM_Sans',sans-serif] uppercase text-[9px] tracking-[0.15em] text-luxury-gold mb-4">{plan.category}</p>
