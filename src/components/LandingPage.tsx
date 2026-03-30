@@ -725,11 +725,11 @@ const LandingPage = () => {
 
               {/* Texto */}
               <div className="text-left">
-                <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[9px] text-luxury-gold mb-6">
+                <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[9px] text-luxury-gold mb-6">
                   Marcus Godoy — Personal Shopper Imobiliário
                 </p>
 
-                <p className="font-['Cormorant_Garamond',serif] font-light text-white leading-[1.4] mb-9" style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}>
+                <p className="fade-up font-['Cormorant_Garamond',serif] font-light text-white leading-[1.4] mb-9" style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}>
                   Atuação focada em clientes que valorizam precisão, discrição e consistência. Leitura aprofundada do mercado e relacionamento com os players relevantes.
                 </p>
 
