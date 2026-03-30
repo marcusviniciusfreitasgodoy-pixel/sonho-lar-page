@@ -801,52 +801,49 @@ const LandingPage = () => {
       </section>
 
       {/* 10a. FAQ — #FFFFFF */}
-      <section id="faq" className="py-20 md:py-32 bg-white">
+      <section id="faq" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-16">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Perguntas Frequentes
-              </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
-                <span className="text-luxury-gold">Respostas Diretas</span> para Suas Dúvidas
-              </h2>
+          <div className="max-w-[640px] mx-auto">
+            {/* Logo */}
+            <div className="flex justify-center mb-10">
+              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-10 w-10 md:h-12 md:w-12 opacity-30" />
             </div>
 
-            <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
+            <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-10 text-center">
+              Perguntas frequentes
+            </p>
+
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-center mb-14" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+              Respostas diretas para suas dúvidas
+            </h2>
+
+            <Accordion type="single" collapsible className="w-full space-y-0">
               {[{
               q: "O que é um Personal Shopper Imobiliário?",
-              answer: <>Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você.</>
+              answer: "Um profissional que atua exclusivamente em nome do comprador, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você."
             }, {
               q: "Qual a diferença para um corretor tradicional?",
-              answer: <>O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados.</>
+              answer: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o desconto que consigo para você (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
             }, {
               q: "Como funciona a remuneração?",
-              answer: <><strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee.</>
+              answer: "Fee de Consultoria: R$ 10.000 (cobre análise, curadoria e estratégia). Success Fee: 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
             }, {
               q: "Para quais imóveis o serviço é indicado?",
-              answer: <>Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor.</>
+              answer: "Imóveis de alto padrão a partir de R$ 1.5 milhão na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
             }, {
               q: "Como garantir que você está do meu lado?",
-              answer: <>Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato.</>
+              answer: "Minha remuneração é baseada na economia que gero para você. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
             }, {
               q: "Como iniciar?",
-              answer: <>Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso.</>
-            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
-                  <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
-                    <div className="flex items-center gap-3 md:gap-4 text-left">
-                      <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-luxury-gold text-luxury-navy text-xs md:text-sm font-bold flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-sm md:text-lg font-semibold text-luxury-navy pr-2">{item.q}</h3>
-                    </div>
+              answer: "Agende um Diagnóstico Estratégico gratuito. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso."
+            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border-b border-border/50 rounded-none bg-transparent">
+                  <AccordionTrigger className="px-0 py-5 text-left hover:no-underline">
+                    <h3 className="font-['DM_Sans',sans-serif] text-[14px] md:text-[15px] font-normal text-luxury-navy pr-4">{item.q}</h3>
                   </AccordionTrigger>
-                  <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
-                    <div className="pl-10 md:pl-12">
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </div>
+                  <AccordionContent className="px-0 pb-5">
+                    <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-[#8A8A8A]">
+                      {item.answer}
+                    </p>
                   </AccordionContent>
                 </AccordionItem>)}
             </Accordion>
