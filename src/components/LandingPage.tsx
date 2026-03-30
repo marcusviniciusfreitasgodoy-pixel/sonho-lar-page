@@ -267,7 +267,7 @@ const LandingPage = () => {
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-4xl md:text-5xl mb-3 md:mb-4">💸</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-2 md:mb-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-2 md:mb-3">
                     Preços Inflados Sem Critério
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
