@@ -599,90 +599,54 @@ const LandingPage = () => {
       </section>
 
       {/* 6. Diferenciação — #F7F6F3 */}
-      <section id="diferenciacao" className="py-20 md:py-32 bg-luxury-cream">
+      <section id="diferenciacao" className="py-16 md:py-24 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-luxury-navy leading-tight">
-                Por Que PSI é Diferente
+            {/* Abertura */}
+            <div className="text-left mb-0">
+              <h2 className="font-['Cormorant_Garamond',serif] font-light italic leading-[1.1] tracking-[-0.02em] text-luxury-navy" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
+                A maioria compra baseado em percepção.
               </h2>
+              <p className="font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A] max-w-[520px] mt-5">
+                Nós trabalhamos com leitura real de mercado, dados e contexto. Isso reduz risco e melhora o resultado da decisão.
+              </p>
             </div>
 
+            {/* Separador */}
+            <div className="my-14" style={{ borderTop: '0.5px solid rgba(0,0,0,0.08)' }}></div>
+
+            {/* Tabela comparativa */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pb-16 sm:pb-0">
               {/* Traditional Realtor */}
-              <Card className="bg-white border-2 border-red-200 shadow-luxury">
+              <Card className="bg-white shadow-none" style={{ border: '0.5px solid rgba(0,0,0,0.08)' }}>
                 <CardContent className="p-4 sm:p-5 md:p-8">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
-                    <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-red-500 flex-shrink-0" /> Corretor Tradicional
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                    <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-[#8A8A8A] flex-shrink-0" /> Corretor Tradicional
                   </h3>
                   <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
-                        Ganha % do preço final (quanto mais caro, mais ganha)
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Trabalha para o vendedor (quem paga a comissão)</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Incentivo: vender imóvel CARO</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Mostra estoque (não filtra)</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Você visita 30-40 imóveis</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Risco de erro estrutural</span>
-                    </li>
+                    {['Ganha % do preço final (quanto mais caro, mais ganha)', 'Trabalha para o vendedor (quem paga a comissão)', 'Incentivo: vender imóvel CARO', 'Mostra estoque (não filtra)', 'Você visita 30-40 imóveis', 'Risco de erro estrutural'].map((text, i) => (
+                      <li key={i} className="flex items-start gap-2 md:gap-3 text-muted-foreground">
+                        <X className="h-4 w-4 md:h-5 md:w-5 text-[#8A8A8A] mt-0.5 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm md:text-base leading-relaxed">{text}</span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
 
               {/* PSI */}
-              <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
+              <Card className="bg-white shadow-none" style={{ border: '0.5px solid rgba(0,0,0,0.08)' }}>
                 <CardContent className="p-4 sm:p-5 md:p-8">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-luxury-gold flex-shrink-0" /> Personal Shopper Imobiliário
                   </h3>
                   <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
-                        Ganha % do DESCONTO (quanto maior economia, mais ganha)
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Trabalha PARA VOCÊ (você paga, não vendedor)</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
-                        Incentivo: conseguir imóvel com preço JUSTO e com mais descontos
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">
-                        Melhor filtro e curadoria dos imóveis
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Você visita 5-8 imóveis certos</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base leading-relaxed">Due diligence completa protege você</span>
-                    </li>
+                    {['Ganha % do DESCONTO (quanto maior economia, mais ganha)', 'Trabalha PARA VOCÊ (você paga, não vendedor)', 'Incentivo: conseguir imóvel com preço JUSTO e com mais descontos', 'Melhor filtro e curadoria dos imóveis', 'Você visita 5-8 imóveis certos', 'Due diligence completa protege você'].map((text, i) => (
+                      <li key={i} className="flex items-start gap-2 md:gap-3 text-luxury-navy">
+                        <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm md:text-base leading-relaxed">{text}</span>
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
