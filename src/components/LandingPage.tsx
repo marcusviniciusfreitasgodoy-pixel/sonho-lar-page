@@ -583,7 +583,7 @@ const LandingPage = () => {
                 {
                   name: 'Parecer Godoy Prime',
                   category: 'Atestado de Valor',
-                  desc: 'Análise técnica e estratégica para validar o valor real de um imóvel que você já identificou. Com dados reais, não somente de anúncios, informações da região, histórico de valorização, liquidez e muito mais.',
+                  desc: 'Análise técnica e estratégica para validar o valor real de um imóvel que você já identificou. Analisamos dados reais, não somente de anúncios, levantamos informações da região, histórico de valorização, liquidez e muito mais.',
                   price: 'A partir de R$ 4.900',
                   cta: 'Solicitar Parecer',
                 },
