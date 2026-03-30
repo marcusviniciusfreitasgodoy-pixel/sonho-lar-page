@@ -368,7 +368,7 @@ const LandingPage = () => {
 
               <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center">
                 <p className="text-xl md:text-2xl text-white leading-relaxed">
-                  A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
+                  A tecnologia analisa. <span className="text-luxury-gold font-medium">Eu decido.</span>
                 </p>
               </div>
             </div>
