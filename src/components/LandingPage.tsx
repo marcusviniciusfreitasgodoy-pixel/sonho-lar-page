@@ -488,10 +488,10 @@ const LandingPage = () => {
 
             {/* Proteção Jurídica */}
             <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-luxury-gold mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
+              <h3 className="text-lg md:text-xl font-medium text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
               <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed">
                 A representação não é apenas um modelo comercial. 
-                É um <strong className="text-foreground">vínculo jurídico</strong> que te protege.
+                É um <span className="text-foreground font-medium">vínculo jurídico</span> que te protege.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 {[{
