@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Shield, Clock, Key, CircleCheck as CheckCircle, Calculator, Search, Target, Users, TrendingUp, Award, Star, ArrowRight, Phone, Mail, Menu, X, MapPin, MessageCircle, Scale, Gavel } from "lucide-react";
 import heroImage from "@/assets/barra-hero-new.jpg";
 import marcusProfile from "@/assets/marcus-profile.jpg";
+import ScenariosBlock from "@/components/ScenariosBlock";
 import godoyLogo from "@/assets/godoy-logo.png";
 
 const LandingPage = () => {
@@ -567,6 +568,25 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cenários — Na prática */}
+      <section className="py-16 md:py-24 bg-luxury-navy border-t border-white/5">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-4">
+              Na prática
+            </p>
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white mb-4" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+              O que muda quando há <em className="text-luxury-gold not-italic font-light italic">alguém do seu lado</em>
+            </h2>
+            <p className="fade-up font-['DM_Sans',sans-serif] text-[13px] md:text-[15px] font-light leading-[1.8] text-white/60 max-w-3xl mb-12">
+              Três situações que ilustram como a representação exclusiva do comprador muda o resultado de uma compra de alto padrão.
+            </p>
+
+            <ScenariosBlock trackCalendlyClick={trackCalendlyClick} />
           </div>
         </div>
       </section>
