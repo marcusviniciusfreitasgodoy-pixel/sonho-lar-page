@@ -538,76 +538,61 @@ const LandingPage = () => {
       </section>
 
       {/* 5. Preços — #0F1118 */}
-      <section id="precos" className="py-20 md:py-32 bg-luxury-navy text-white">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6">
+      <section id="precos" className="py-16 md:py-24 bg-luxury-navy">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-16">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Serviços Exclusivos
-              </Badge>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 leading-tight">
-                Sua Jornada Imobiliária de <span className="text-luxury-gold">Alto Padrão</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-3xl mx-auto">
-                Serviços desenhados para suas necessidades, garantindo segurança, exclusividade e retorno.
-              </p>
+            <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left mb-16" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+              Três formas de atuar ao seu lado
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10">
+              {[
+                {
+                  name: 'Parecer Godoy Prime',
+                  category: 'Atestado de Valor',
+                  desc: 'Análise técnica e estratégica para validar o valor real de um imóvel que você já identificou. Com dados reais de cartório, não de anúncio.',
+                  price: 'A partir de R$ 4.900',
+                  cta: 'Solicitar Parecer',
+                },
+                {
+                  name: 'Compra Blindada',
+                  category: 'Validação e Negociação',
+                  desc: 'Para quem já tem um imóvel em vista e quer negociação profissional com representação exclusiva. Da análise até a assinatura.',
+                  price: 'A partir de R$ 10.000',
+                  cta: 'Blindar Minha Compra',
+                },
+                {
+                  name: 'Prime Buyer Experience',
+                  category: 'Busca Completa',
+                  desc: 'Assessoria integral para quem ainda está buscando. Curadoria ativa, visitas técnicas prévias e gestão completa até as chaves.',
+                  price: 'Sob consulta',
+                  cta: 'Solicitar Proposta',
+                },
+              ].map((plan, i) => (
+                <div key={i} className="p-9 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.08)' }}>
+                  <div className="w-8 h-px bg-luxury-gold mb-5"></div>
+                  <h3 className="font-['Cormorant_Garamond',serif] text-[24px] text-white mb-2">{plan.name}</h3>
+                  <p className="font-['DM_Sans',sans-serif] uppercase text-[9px] tracking-[0.15em] text-luxury-gold mb-4">{plan.category}</p>
+                  <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.8] text-white/45 mb-6">{plan.desc}</p>
+                  <p className="font-['DM_Sans',sans-serif] text-[13px] text-white/40 mb-6">{plan.price}</p>
+                  <a
+                    href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("precos")}
+                    className="inline-block uppercase tracking-[0.15em] text-[10px] text-luxury-gold px-5 py-2.5 rounded-sm bg-transparent transition-all duration-300 hover:bg-luxury-gold hover:text-luxury-navy"
+                    style={{ border: '0.5px solid rgba(201,168,76,0.4)' }}
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              {[{
-              name: "Parecer Godoy Prime",
-              subtitle: "Atestado de Valor",
-              price: "À partir de R$ 1.500,00",
-              description: "Para quem já tem um imóvel em vista e precisa de validação independente sobre seu valor, potencial e histórico de vendas.",
-              features: ["Consulta de alinhamento estratégico", "Inspeção e Vistoria Técnica local detalhada", "Relatório comparativo com análise de mercado e parecer de preço justo", "Pack de Conhecimento exclusivo"],
-              cta: "Quero Meu Parecer",
-              popular: false
-            }, {
-              name: "Compra Blindada",
-              subtitle: "Validação & Negociação",
-              price: "À partir de R$ 10.000,00",
-              description: "Para quem já tem um imóvel em vista e quer garantir a melhor negociação e proteção total na transação.",
-              features: ["Tudo do Parecer Godoy Prime", "Estratégia de negociação personalizada", "Representação exclusiva na mesa de negociação", "Coordenação de Due Diligence completa", "Acompanhamento até a assinatura"],
-              cta: "Quero Blindar Minha Compra",
-              popular: false
-            }, {
-              name: "Prime Buyer Experience",
-              subtitle: "Busca Completa",
-              price: "Sob consulta",
-              description: "Para quem ainda está buscando o imóvel ideal e quer um serviço completo de representação exclusiva.",
-              features: ["Tudo do Compra Blindada", "Mapeamento completo do seu perfil", "Curadoria exclusiva de imóveis (on e off-market)", "Visitas técnicas prévias (você visita apenas os certos)", "Análise de valor real de cada opção", "Acompanhamento pós-aquisição"],
-              cta: "Quero a Experiência Completa",
-              popular: true
-            }].map((plan, index) => <Card key={index} className={cn("border-2 transition-all duration-300 hover:scale-[1.01] sm:hover:scale-[1.02] bg-white/5 backdrop-blur-sm", plan.popular ? "border-luxury-gold shadow-gold" : "border-white/20 hover:border-luxury-gold/50")}>
-                  <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
-                    {plan.popular && <Badge className="mb-3 md:mb-4 bg-luxury-gold text-luxury-navy text-xs md:text-sm">
-                        Mais Completo
-                      </Badge>}
-
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{plan.name}</h3>
-                    <p className="text-luxury-gold mb-3 md:mb-4 text-sm md:text-base">{plan.subtitle}</p>
-
-                    <div className="mb-3 md:mb-4">
-                      <span className="text-lg md:text-xl font-bold text-white">{plan.price}</span>
-                    </div>
-
-                    <p className="text-white/80 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed">{plan.description}</p>
-
-                    <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                      {plan.features.map((feature, fIndex) => <li key={fIndex} className="flex items-start gap-2 md:gap-3 text-white/90 text-xs md:text-sm">
-                          <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-luxury-gold mt-0.5 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>)}
-                    </ul>
-
-                    <Button variant={plan.popular ? "gold" : "luxury-outline"} className="w-full text-sm md:text-base py-3 h-12 touch-manipulation" asChild>
-                      <a href="https://wa.me/5521964075124?text=Quero%20saber%20mais%20sobre%20o%20servi%C3%A7o" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("precos")}>
-                        {plan.cta}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>)}
+            <div className="text-center pt-6" style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)' }}>
+              <p className="font-['DM_Sans',sans-serif] text-[11px] text-white/25 leading-[1.7] max-w-2xl mx-auto">
+                O valor pago no Parecer é integralmente abatido na Compra Blindada. O valor da Compra Blindada é abatido no Prime Buyer Experience.
+              </p>
             </div>
           </div>
         </div>
