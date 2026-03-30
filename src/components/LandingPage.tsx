@@ -825,9 +825,6 @@ const LandingPage = () => {
               q: "Qual a diferença para um corretor tradicional?",
               answer: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o desconto que consigo para você (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
             }, {
-              q: "Como funciona a remuneração?",
-              answer: "Fee de Consultoria: R$ 10.000 (cobre análise, curadoria e estratégia). Success Fee: 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
-            }, {
               q: "Para quais imóveis o serviço é indicado?",
               answer: "Imóveis de alto padrão a partir de R$ 1.5 milhão na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
             }, {
