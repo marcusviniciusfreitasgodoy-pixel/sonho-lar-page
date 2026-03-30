@@ -480,7 +480,7 @@ const LandingPage = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center">
                   <div className="text-sm md:text-base font-semibold text-white">Representação (PSI)</div>
-                  <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
+                  <div className="hidden md:block text-center text-luxury-gold font-medium">→</div>
                   <div className="text-sm md:text-base text-white/70">Você economiza mais, eu ganho mais. Incentivos alinhados.</div>
                 </div>
               </div>
