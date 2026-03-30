@@ -13,8 +13,20 @@ import godoyLogo from "@/assets/godoy-logo.png";
 const LandingPage = () => {
   const [highlightedCards, setHighlightedCards] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({ nome: '', whatsapp: '', faixa: '', tipo: '', momento: '' });
   const toggleCardHighlight = (cardIndex: number) => {
     setHighlightedCards(prev => prev.includes(cardIndex) ? prev.filter(index => index !== cardIndex) : [...prev, cardIndex]);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const nome = encodeURIComponent(formData.nome.trim().slice(0, 100));
+    const faixa = encodeURIComponent(formData.faixa);
+    const tipo = encodeURIComponent(formData.tipo);
+    const momento = encodeURIComponent(formData.momento);
+    const text = `Olá Marcus. Tenho interesse no PSI. Nome: ${nome} Faixa: ${faixa} Tipo: ${tipo} Momento: ${momento}`;
+    window.open(`https://wa.me/5521964075124?text=${text}`, '_blank');
+    trackWhatsAppClick("cta-final-form");
   };
 
   // Meta Pixel tracking functions
