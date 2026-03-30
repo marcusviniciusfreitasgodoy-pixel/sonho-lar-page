@@ -96,6 +96,24 @@ const LandingPage = () => {
       }
     };
   }, []);
+
+  // Fade-in on scroll with IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    const elements = document.querySelectorAll('.fade-up, .eyebrow-animated');
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
   return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm safe-area-inset">
@@ -225,10 +243,10 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-left mb-14">
-              <h2 className="font-['Cormorant_Garamond',serif] font-light tracking-[-0.02em] leading-[1.1] text-luxury-navy mb-5" style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light tracking-[-0.02em] leading-[1.1] text-luxury-navy mb-5" style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
                 O mercado imobiliário não foi desenhado<br />para o comprador.
               </h2>
-              <p className="font-['DM_Sans',sans-serif] font-light leading-[1.85] text-[#8A8A8A] max-w-[560px]">
+              <p className="fade-up font-['DM_Sans',sans-serif] font-light leading-[1.85] text-[#8A8A8A] max-w-[560px]">
                 A maioria das recomendações vem de quem está vendendo — não de quem está protegendo sua decisão. E é exatamente aí que começam os erros caros.
               </p>
             </div>
@@ -299,7 +317,7 @@ const LandingPage = () => {
             {/* — Bloco Solução — */}
             <div className="py-16 md:py-24">
               {/* Bloco 1 — Declaração */}
-              <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-left border-l-2 border-luxury-gold pl-6 mb-12" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-left border-l-2 border-luxury-gold pl-6 mb-12" style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}>
                 Aqui, o interesse é um só: o seu.
               </h2>
 
@@ -523,7 +541,7 @@ const LandingPage = () => {
       <section id="como-funciona" className="py-16 md:py-24 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[640px] mx-auto">
-            <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-14">
+            <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-14">
               Como trabalhamos
             </p>
 
@@ -536,7 +554,7 @@ const LandingPage = () => {
                 { num: '05', title: 'Acompanhamento até a decisão', desc: 'Conduzimos a negociação em seu nome até a assinatura. Sem surpresas.' },
               ].map((item, i, arr) => (
                 <div key={i}>
-                  <div className="py-7">
+                  <div className="fade-up py-7" style={{ transitionDelay: `${i * 100}ms` }}>
                     <span className="font-['Cormorant_Garamond',serif] text-[13px] text-luxury-gold block mb-3">{item.num}</span>
                     <h3 className="font-['DM_Sans',sans-serif] text-[18px] font-normal text-white mb-2">{item.title}</h3>
                     <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.8] text-white/45">{item.desc}</p>
@@ -553,7 +571,7 @@ const LandingPage = () => {
       <section id="precos" className="py-16 md:py-24 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left mb-16" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left mb-16" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
               Três formas de atuar ao seu lado
             </h2>
 
@@ -581,7 +599,7 @@ const LandingPage = () => {
                   cta: 'Solicitar Proposta',
                 },
               ].map((plan, i) => (
-                <div key={i} className="p-9 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.08)' }}>
+                <div key={i} className="fade-up p-9 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '0.5px solid rgba(255,255,255,0.08)', transitionDelay: `${i * 100}ms` }}>
                   <div className="w-8 h-px bg-luxury-gold mb-5"></div>
                   <h3 className="font-['Cormorant_Garamond',serif] text-[24px] text-white mb-2">{plan.name}</h3>
                   <p className="font-['DM_Sans',sans-serif] uppercase text-[9px] tracking-[0.15em] text-luxury-gold mb-4">{plan.category}</p>
@@ -616,10 +634,10 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             {/* Abertura */}
             <div className="text-left mb-0">
-              <h2 className="font-['Cormorant_Garamond',serif] font-light italic leading-[1.1] tracking-[-0.02em] text-luxury-navy" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light italic leading-[1.1] tracking-[-0.02em] text-luxury-navy" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
                 A maioria compra baseado em percepção.
               </h2>
-              <p className="font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A] max-w-[520px] mt-5">
+              <p className="fade-up font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A] max-w-[520px] mt-5">
                 Nós trabalhamos com leitura real de mercado, dados e contexto. Isso reduz risco e melhora o resultado da decisão.
               </p>
             </div>
@@ -671,7 +689,7 @@ const LandingPage = () => {
       <section id="economia" className="py-16 md:py-24 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[640px]">
-            <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left max-w-[560px] mb-16" style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}>
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left max-w-[560px] mb-16" style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}>
               O que muda quando há alguém exclusivamente do seu lado
             </h2>
 
@@ -707,11 +725,11 @@ const LandingPage = () => {
 
               {/* Texto */}
               <div className="text-left">
-                <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[9px] text-luxury-gold mb-6">
+                <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[9px] text-luxury-gold mb-6">
                   Marcus Godoy — Personal Shopper Imobiliário
                 </p>
 
-                <p className="font-['Cormorant_Garamond',serif] font-light text-white leading-[1.4] mb-9" style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}>
+                <p className="fade-up font-['Cormorant_Garamond',serif] font-light text-white leading-[1.4] mb-9" style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}>
                   Atuação focada em clientes que valorizam precisão, discrição e consistência. Leitura aprofundada do mercado e relacionamento com os players relevantes.
                 </p>
 
@@ -739,7 +757,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
 
             {/* Bloco 1 — Declaração */}
-            <div className="text-left mb-[72px]">
+            <div className="fade-up text-left mb-[72px]">
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Nosso trabalho não é vender imóveis.</span>
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>É garantir que você tome a decisão certa.</span>
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-[#8A8A8A] block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Se não fizer sentido, você não compra.</span>
