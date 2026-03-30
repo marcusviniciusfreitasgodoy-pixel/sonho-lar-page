@@ -96,6 +96,24 @@ const LandingPage = () => {
       }
     };
   }, []);
+
+  // Fade-in on scroll with IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    const elements = document.querySelectorAll('.fade-up, .eyebrow-animated');
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
   return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm safe-area-inset">
