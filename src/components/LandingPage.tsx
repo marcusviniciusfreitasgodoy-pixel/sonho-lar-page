@@ -721,140 +721,45 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 9. Antivenda — Fusão de para-quem + garantias */}
-      <section id="antivenda" className="py-20 md:py-32 bg-luxury-cream">
+      {/* 9. Antivenda — #F7F6F3 */}
+      <section id="antivenda" className="py-16 md:py-24 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
 
-            {/* — Conteúdo ex-para-quem — */}
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-luxury-navy leading-tight">
-                Para Quem É / Para Quem Não É
-              </h2>
+            {/* Bloco 1 — Declaração */}
+            <div className="text-left mb-[72px]">
+              <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Nosso trabalho não é vender imóveis.</span>
+              <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>É garantir que você tome a decisão certa.</span>
+              <span className="font-['Cormorant_Garamond',serif] font-light italic text-[#8A8A8A] block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Se não fizer sentido, você não compra.</span>
+              <span className="font-['Cormorant_Garamond',serif] font-light not-italic text-luxury-gold block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Simples assim.</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-16 md:mb-24">
-              {/* For Who It Is */}
-              <Card className="bg-white border-2 border-luxury-gold shadow-luxury">
-                <CardContent className="p-5 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-4 md:mb-6 flex items-center gap-2">
-                    <CheckCircle className="h-6 w-6 md:h-7 md:w-7 text-luxury-gold" /> Para Quem É
-                  </h3>
-                  <ul className="space-y-3 md:space-y-4">
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
-                        Compradores exigentes que valorizam dados e segurança
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Executivos que não têm tempo para visitar 30 imóveis</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem entende que errar custa caro</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem quer representação exclusiva do seu lado</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">
-                        Investidores que buscam melhor preço + análise profunda
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-luxury-navy">
-                      <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Imóveis a partir de R$ 1.5M na Barra ou Recreio</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* For Who It Is Not */}
-              <Card className="bg-white border-2 border-red-200 shadow-luxury">
-                <CardContent className="p-5 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-red-600 mb-4 md:mb-6 flex items-center gap-2">
-                    <X className="h-6 w-6 md:h-7 md:w-7 text-red-500" /> Para Quem Não É
-                  </h3>
-                  <ul className="space-y-3 md:space-y-4">
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem quer apenas "ver opções" sem compromisso</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem busca corretor gratuito (do lado do vendedor)</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem não está pronto para decidir em 90 dias</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Quem acha que tempo e segurança não importam</span>
-                    </li>
-                    <li className="flex items-start gap-2 md:gap-3 text-muted-foreground">
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Imóveis abaixo de R$ 1.5M</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* — Conteúdo ex-garantias — */}
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Garantias
-              </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-luxury-navy leading-tight">
-                Sua Segurança é <span className="text-luxury-gold">Prioridade</span>
-              </h2>
-
-              <div className="bg-white rounded-xl md:rounded-2xl p-8 md:p-12 shadow-luxury">
-                <ul className="text-left space-y-4 md:space-y-6 mb-6 md:mb-8">
-                  <li className="flex items-start space-x-2 md:space-x-3">
-                    <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                    <div className="text-base md:text-lg">
-                      <strong className="text-luxury-navy">Lealdade Exclusiva:</strong>
-                      <span className="text-luxury-navy"> Defendo apenas seus interesses, sem conflitos.</span>
+            {/* Blocos 2 e 3 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+              {/* Bloco 2 */}
+              <div>
+                <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.18em] font-light text-[10px] text-[#8A8A8A] mb-6">Para quem faz sentido</p>
+                <div className="space-y-4">
+                  {['Compradores de imóveis acima de R$ 1,5M', 'Quem valoriza dados e análise técnica', 'Executivos sem tempo para 30 visitas', 'Quem entende representação como investimento'].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-luxury-gold text-[13px]">—</span>
+                      <span className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-[#8A8A8A]">{item}</span>
                     </div>
-                  </li>
-                  <li className="flex items-start space-x-2 md:space-x-3">
-                    <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                    <div className="text-base md:text-lg">
-                      <strong className="text-luxury-navy">Confidencialidade Total:</strong>
-                      <span className="text-luxury-navy"> Suas informações e estratégias são protegidas.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-2 md:space-x-3">
-                    <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                    <div className="text-base md:text-lg">
-                      <strong className="text-luxury-navy">Remuneração por Performance:</strong>
-                      <span className="text-luxury-navy"> Se não houver economia, você não paga success fee.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start space-x-2 md:space-x-3">
-                    <div className="w-2 h-2 rounded-full bg-luxury-gold mt-2 flex-shrink-0"></div>
-                    <div className="text-base md:text-lg">
-                      <strong className="text-luxury-navy">Contrato Formalizado:</strong>
-                      <span className="text-luxury-navy">
-                        {" "}
-                        Todos os compromissos de ética e defesa dos seus interesses estão assegurados em contrato.
-                      </span>
-                    </div>
-                  </li>
-                </ul>
+                  ))}
+                </div>
+              </div>
 
-                <Button variant="gold" className="h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold w-full sm:w-auto" asChild>
-                  <a href="https://wa.me/5521964075124?text=Quero%20agendar%20um%20Diagn%C3%B3stico%20Estrat%C3%A9gico" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("garantias")} className="flex items-center justify-center gap-2">
-                    <span>Garantir Minha Vaga Agora</span>
-                    <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5" />
-                  </a>
-                </Button>
+              {/* Bloco 3 */}
+              <div>
+                <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.18em] font-light text-[10px] text-[#8A8A8A] mb-6">O que está garantido em contrato</p>
+                <div className="space-y-4">
+                  {['Lealdade exclusiva — apenas para você', 'Confidencialidade total sobre sua estratégia', 'Success fee apenas se houver economia', 'Tudo formalizado antes de qualquer ação'].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-luxury-gold text-[13px]">—</span>
+                      <span className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-[#8A8A8A]">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
