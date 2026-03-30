@@ -424,7 +424,7 @@ const LandingPage = () => {
                 </CardContent>
                 <div className="bg-muted p-3 md:p-4 border-t border-border">
                   <p className="text-xs md:text-sm text-foreground leading-relaxed">
-                    <strong>Risco:</strong> Você negocia sozinho. Corretor quer fechar rápido.
+                    <span className="font-medium">Risco:</span> Você negocia sozinho. Corretor quer fechar rápido.
                   </p>
                 </div>
               </Card>
