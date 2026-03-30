@@ -375,9 +375,11 @@ const LandingPage = () => {
               </div>
             </div>
 
-            {/* — Conteúdo ex-representacao — */}
+          {/* — Conteúdo ex-representacao — dark sub-section */}
+          <div className="bg-luxury-navy rounded-none -mx-4 md:-mx-6 px-4 md:px-6 py-16 md:py-24">
+            <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight max-w-5xl mx-auto">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mb-4 md:mb-6 text-white leading-tight max-w-5xl mx-auto">
                 Existe uma diferença legal entre intermediação e representação que a maioria não conhece.
               </h2>
               <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4 leading-relaxed max-w-3xl mx-auto">
