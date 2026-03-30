@@ -471,7 +471,7 @@ const LandingPage = () => {
 
             {/* Diferença Chave */}
             <div className="bg-white/5 p-5 md:p-8 rounded-xl md:rounded-2xl border-l-4 border-luxury-gold mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">A Diferença-Chave</h3>
+              <h3 className="text-lg md:text-xl font-medium text-white mb-4 md:mb-6">A Diferença-Chave</h3>
               <div className="space-y-4 md:space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center pb-4 border-b border-luxury-gold/20">
                   <div className="text-sm md:text-base font-semibold text-white">Intermediação</div>
