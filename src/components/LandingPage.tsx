@@ -571,7 +571,7 @@ const LandingPage = () => {
       <section id="precos" className="py-16 md:py-24 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left mb-16" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left mb-16" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
               Três formas de atuar ao seu lado
             </h2>
 
