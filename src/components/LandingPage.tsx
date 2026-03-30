@@ -255,7 +255,7 @@ const LandingPage = () => {
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-4xl md:text-5xl mb-3 md:mb-4">⚠️</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-2 md:mb-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-2 md:mb-3">
                     Conflito de Interesse Estrutural
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -267,7 +267,7 @@ const LandingPage = () => {
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-4xl md:text-5xl mb-3 md:mb-4">💸</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-2 md:mb-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-2 md:mb-3">
                     Preços Inflados Sem Critério
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -279,7 +279,7 @@ const LandingPage = () => {
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-4xl md:text-5xl mb-3 md:mb-4">⏱️</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-2 md:mb-3">Tempo Desperdiçado</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-2 md:mb-3">Tempo Desperdiçado</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     Visita 30-40 imóveis errados em 2-3 meses. 80-120 horas perdidas (R$ 40-60k se você ganha R$ 500/h).
                   </p>
@@ -289,7 +289,7 @@ const LandingPage = () => {
               <Card className="bg-card border border-border shadow-luxury hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-4xl md:text-5xl mb-3 md:mb-4">🚨</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-2 md:mb-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-2 md:mb-3">
                     Risco de Erro Invisível
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -301,7 +301,7 @@ const LandingPage = () => {
 
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center">
               <p className="text-xl md:text-2xl text-white leading-relaxed">
-                <strong className="text-luxury-gold">No alto padrão, um erro custa R$ 100k a R$ 500k.</strong>
+                <span className="text-luxury-gold font-medium">No alto padrão, um erro custa R$ 100k a R$ 500k.</span>
                 <br />E você só descobre depois de assinar.
               </p>
             </div>
@@ -335,7 +335,7 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Identifico o Imóvel EXATO</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Identifico o Imóvel EXATO</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     Você não vê "opções do mercado". Você define seu critério (localização, tamanho, acabamento, orçamento), e EU identifico qual imóvel realmente atende isso.
                   </p>
@@ -343,7 +343,7 @@ const LandingPage = () => {
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Você Visita Apenas os Certos</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Você Visita Apenas os Certos</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     EU visito dezenas de imóveis, faço due diligence completa (estrutura, documentação, condomínio), e apresento apenas aqueles que atendem 100% seu critério. Você visita 5-8, não 30-40.
                   </p>
@@ -351,33 +351,33 @@ const LandingPage = () => {
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Due Diligence Profissional</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Due Diligence Profissional</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio, regularidade de documentação, e comparei preço com transações reais.{" "}
-                    <strong className="text-luxury-navy">Zero surpresas pós-compra.</strong>
+                    Antes de você pisar no imóvel, eu já analisei estrutura, fachada, acabamento, saúde do condomínio, regularidade de documentação, e comparei preço com transações reais. Zero surpresas pós-compra.
                   </p>
                 </div>
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Negociação Baseada em Dados</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Negociação Baseada em Dados</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu incentivo é o desconto.
-                    <strong className="text-luxury-navy"> Seu incentivo também.</strong>
+                    Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu incentivo é o desconto. Seu incentivo também.
                   </p>
                 </div>
               </div>
 
               <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-8 md:p-12 text-center">
                 <p className="text-xl md:text-2xl text-white leading-relaxed">
-                  A tecnologia analisa. <strong className="text-luxury-gold">Eu decido.</strong>
+                  A tecnologia analisa. <span className="text-luxury-gold font-medium">Eu decido.</span>
                 </p>
               </div>
             </div>
 
-            {/* — Conteúdo ex-representacao — */}
+          {/* — Conteúdo ex-representacao — dark sub-section */}
+          <div className="bg-luxury-navy rounded-none -mx-4 md:-mx-6 px-4 md:px-6 py-16 md:py-24">
+            <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight max-w-5xl mx-auto">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mb-4 md:mb-6 text-white leading-tight max-w-5xl mx-auto">
                 Existe uma diferença legal entre intermediação e representação que a maioria não conhece.
               </h2>
               <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -395,7 +395,7 @@ const LandingPage = () => {
               {/* Intermediação */}
               <Card className="bg-white border-2 border-destructive/30 shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="bg-destructive/10 p-4 md:p-6 border-b-[3px] border-destructive text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">❌ Intermediação (Modelo Tradicional)</h3>
+                  <h3 className="text-lg md:text-xl font-medium text-foreground mb-1">❌ Intermediação (Modelo Tradicional)</h3>
                   <p className="text-xs md:text-sm text-muted-foreground italic">Corretor como mediador neutro</p>
                 </div>
                 <CardContent className="p-4 md:p-6">
@@ -417,14 +417,14 @@ const LandingPage = () => {
                     label: "Resultado",
                     text: "Preço: o que o mercado aceitar."
                   }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
-                        <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1">{item.label}</span>
+                        <span className="block text-[10px] md:text-xs font-medium uppercase text-destructive mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
                       </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-3 md:p-4 border-t border-border">
                   <p className="text-xs md:text-sm text-foreground leading-relaxed">
-                    <strong>Risco:</strong> Você negocia sozinho. Corretor quer fechar rápido.
+                    <span className="font-medium">Risco:</span> Você negocia sozinho. Corretor quer fechar rápido.
                   </p>
                 </div>
               </Card>
@@ -432,7 +432,7 @@ const LandingPage = () => {
               {/* Representação */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="bg-luxury-gold/10 p-4 md:p-6 border-b-[3px] border-luxury-gold text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">✅ Representação (PSI)</h3>
+                  <h3 className="text-lg md:text-xl font-medium text-foreground mb-1">✅ Representação (PSI)</h3>
                   <p className="text-xs md:text-sm text-muted-foreground italic">Advogado do seu lado</p>
                 </div>
                 <CardContent className="p-4 md:p-6">
@@ -455,14 +455,14 @@ const LandingPage = () => {
                     label: "Resultado",
                     text: "Melhor preço + segurança jurídica."
                   }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
-                        <span className="block text-[10px] md:text-xs font-bold uppercase text-luxury-gold mb-1">{item.label}</span>
+                        <span className="block text-[10px] md:text-xs font-medium uppercase text-luxury-gold mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
                       </div>)}
                   </div>
                 </CardContent>
                 <div className="bg-muted p-4 border-t border-border">
                   <p className="text-xs md:text-sm text-foreground leading-relaxed">
-                    <strong>Proteção para você:</strong> Você tem um advogado negociando. 
+                    <span className="font-medium">Proteção para você:</span> Você tem um advogado negociando. 
                     Meu ganho depende de conseguir desconto real.
                   </p>
                 </div>
@@ -471,16 +471,16 @@ const LandingPage = () => {
 
             {/* Diferença Chave */}
             <div className="bg-white/5 p-5 md:p-8 rounded-xl md:rounded-2xl border-l-4 border-luxury-gold mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">A Diferença-Chave</h3>
+              <h3 className="text-lg md:text-xl font-medium text-white mb-4 md:mb-6">A Diferença-Chave</h3>
               <div className="space-y-4 md:space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center pb-4 border-b border-luxury-gold/20">
                   <div className="text-sm md:text-base font-semibold text-white">Intermediação</div>
-                  <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
+                  <div className="hidden md:block text-center text-luxury-gold font-medium">→</div>
                   <div className="text-sm md:text-base text-white/70">Você paga mais, corretor ganha mais. Conflito estrutural.</div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center">
                   <div className="text-sm md:text-base font-semibold text-white">Representação (PSI)</div>
-                  <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
+                  <div className="hidden md:block text-center text-luxury-gold font-medium">→</div>
                   <div className="text-sm md:text-base text-white/70">Você economiza mais, eu ganho mais. Incentivos alinhados.</div>
                 </div>
               </div>
@@ -488,10 +488,10 @@ const LandingPage = () => {
 
             {/* Proteção Jurídica */}
             <div className="bg-white p-5 md:p-8 rounded-xl md:rounded-2xl border-2 border-luxury-gold mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
+              <h3 className="text-lg md:text-xl font-medium text-luxury-navy mb-3 md:mb-4">Proteção Jurídica</h3>
               <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed">
                 A representação não é apenas um modelo comercial. 
-                É um <strong className="text-foreground">vínculo jurídico</strong> que te protege.
+                É um <span className="text-foreground font-medium">vínculo jurídico</span> que te protege.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 {[{
@@ -511,8 +511,8 @@ const LandingPage = () => {
                 title: "Responsabilidade",
                 text: "Se eu errar, você tem recourse legal. Minha responsabilidade é clara e definida."
               }].map(item => <div key={item.num} className="p-4 md:p-6 bg-muted rounded-lg border-l-4 border-luxury-gold">
-                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-bold text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
-                    <h4 className="text-sm md:text-base font-bold text-foreground mb-2">{item.title}</h4>
+                    <div className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-luxury-navy text-white rounded-full font-medium text-sm md:text-lg mb-3 md:mb-4">{item.num}</div>
+                    <h4 className="text-sm md:text-base font-medium text-foreground mb-2">{item.title}</h4>
                     <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.text}</p>
                   </div>)}
               </div>
@@ -523,7 +523,7 @@ const LandingPage = () => {
               <p className="text-base md:text-lg text-white mb-4 md:mb-6 leading-relaxed">
                 Representação não é apenas um modelo comercial.
                 <br />
-                <strong className="text-white">É proteção jurídica + alinhamento de interesses.</strong>
+                <span className="text-white font-medium">É proteção jurídica + alinhamento de interesses.</span>
               </p>
               <Button variant="gold" size="lg" className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg touch-manipulation" asChild>
                 <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")} className="flex items-center justify-center gap-2 text-center">
@@ -532,6 +532,9 @@ const LandingPage = () => {
                 </a>
               </Button>
             </div>
+
+            </div>
+          </div>
 
           </div>
         </div>
@@ -650,7 +653,7 @@ const LandingPage = () => {
               {/* Traditional Realtor */}
               <Card className="bg-white shadow-none" style={{ border: '0.5px solid rgba(0,0,0,0.08)' }}>
                 <CardContent className="p-4 sm:p-5 md:p-8">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
                     <X className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-[#8A8A8A] flex-shrink-0" /> Corretor Tradicional
                   </h3>
                   <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
@@ -667,7 +670,7 @@ const LandingPage = () => {
               {/* PSI */}
               <Card className="bg-white shadow-none" style={{ border: '0.5px solid rgba(0,0,0,0.08)' }}>
                 <CardContent className="p-4 sm:p-5 md:p-8">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-luxury-navy mb-3 sm:mb-4 md:mb-6 flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-luxury-gold flex-shrink-0" /> Personal Shopper Imobiliário
                   </h3>
                   <ul className="space-y-2.5 sm:space-y-3 md:space-y-4">
@@ -798,52 +801,49 @@ const LandingPage = () => {
       </section>
 
       {/* 10a. FAQ — #FFFFFF */}
-      <section id="faq" className="py-20 md:py-32 bg-white">
+      <section id="faq" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-16">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Perguntas Frequentes
-              </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-foreground leading-tight">
-                <span className="text-luxury-gold">Respostas Diretas</span> para Suas Dúvidas
-              </h2>
+          <div className="max-w-[640px] mx-auto">
+            {/* Logo */}
+            <div className="flex justify-center mb-10">
+              <img src={godoyLogo} alt="Godoy Prime Realty" className="h-10 w-10 md:h-12 md:w-12 opacity-30" />
             </div>
 
-            <Accordion type="single" collapsible className="w-full space-y-3 md:space-y-4">
+            <p className="eyebrow-animated font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-10 text-center">
+              Perguntas frequentes
+            </p>
+
+            <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-luxury-navy text-center mb-14" style={{ fontSize: 'clamp(28px, 3.5vw, 44px)' }}>
+              Respostas diretas para suas dúvidas
+            </h2>
+
+            <Accordion type="single" collapsible className="w-full space-y-0">
               {[{
               q: "O que é um Personal Shopper Imobiliário?",
-              answer: <>Um profissional que atua <strong>exclusivamente em nome do comprador</strong>, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você.</>
+              answer: "Um profissional que atua exclusivamente em nome do comprador, defendendo seus interesses em todas as etapas da aquisição. Diferente do corretor tradicional que trabalha para o vendedor, o PSI busca o melhor negócio para você."
             }, {
               q: "Qual a diferença para um corretor tradicional?",
-              answer: <>O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o <strong>desconto que consigo para você</strong> (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados.</>
+              answer: "O corretor tradicional ganha comissão sobre o valor da venda (quanto mais caro, mais ganha). Eu ganho sobre o desconto que consigo para você (quanto mais economia, mais ganho). Nossos interesses estão 100% alinhados."
             }, {
               q: "Como funciona a remuneração?",
-              answer: <><strong>Fee de Consultoria:</strong> R$ 10.000 (cobre análise, curadoria e estratégia).<br /><strong>Success Fee:</strong> 30% do desconto comprovado. Se não houver desconto, você não paga success fee.</>
+              answer: "Fee de Consultoria: R$ 10.000 (cobre análise, curadoria e estratégia). Success Fee: 30% do desconto comprovado. Se não houver desconto, você não paga success fee."
             }, {
               q: "Para quais imóveis o serviço é indicado?",
-              answer: <>Imóveis de alto padrão <strong>a partir de R$ 1.5 milhão</strong> na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor.</>
+              answer: "Imóveis de alto padrão a partir de R$ 1.5 milhão na Barra da Tijuca e Recreio dos Bandeirantes. O modelo de economia faz mais sentido em transações de maior valor."
             }, {
               q: "Como garantir que você está do meu lado?",
-              answer: <>Minha remuneração é baseada na <strong>economia que gero para você</strong>. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato.</>
+              answer: "Minha remuneração é baseada na economia que gero para você. Quanto maior o desconto, mais eu ganho. Além disso, todos os compromissos de ética e lealdade estão formalizados em contrato."
             }, {
               q: "Como iniciar?",
-              answer: <>Agende um <strong>Diagnóstico Estratégico gratuito</strong>. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso.</>
-            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border rounded-lg bg-white shadow-sm hover:shadow-luxury transition-all duration-300">
-                  <AccordionTrigger className="px-4 md:px-6 py-3 md:py-4 text-left hover:no-underline">
-                    <div className="flex items-center gap-3 md:gap-4 text-left">
-                      <div className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-luxury-gold text-luxury-navy text-xs md:text-sm font-bold flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-sm md:text-lg font-semibold text-luxury-navy pr-2">{item.q}</h3>
-                    </div>
+              answer: "Agende um Diagnóstico Estratégico gratuito. Nesta conversa, entendemos suas necessidades e explicamos como podemos ajudar. Sem compromisso."
+            }].map((item, index) => <AccordionItem key={index} value={`item-${index + 1}`} className="border-b border-border/50 rounded-none bg-transparent">
+                  <AccordionTrigger className="px-0 py-5 text-left hover:no-underline">
+                    <h3 className="font-['DM_Sans',sans-serif] text-[14px] md:text-[15px] font-normal text-luxury-navy pr-4">{item.q}</h3>
                   </AccordionTrigger>
-                  <AccordionContent className="px-4 md:px-6 pb-3 md:pb-4">
-                    <div className="pl-10 md:pl-12">
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
-                        {item.answer}
-                      </p>
-                    </div>
+                  <AccordionContent className="px-0 pb-5">
+                    <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-[#8A8A8A]">
+                      {item.answer}
+                    </p>
                   </AccordionContent>
                 </AccordionItem>)}
             </Accordion>
