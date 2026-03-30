@@ -757,7 +757,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
 
             {/* Bloco 1 — Declaração */}
-            <div className="text-left mb-[72px]">
+            <div className="fade-up text-left mb-[72px]">
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Nosso trabalho não é vender imóveis.</span>
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-luxury-navy block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>É garantir que você tome a decisão certa.</span>
               <span className="font-['Cormorant_Garamond',serif] font-light italic text-[#8A8A8A] block" style={{ fontSize: 'clamp(24px, 3.5vw, 44px)' }}>Se não fizer sentido, você não compra.</span>
