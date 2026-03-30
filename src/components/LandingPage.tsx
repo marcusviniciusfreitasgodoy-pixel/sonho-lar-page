@@ -417,7 +417,7 @@ const LandingPage = () => {
                     label: "Resultado",
                     text: "Preço: o que o mercado aceitar."
                   }].map((item, index) => <div key={index} className="pb-3 border-b border-border last:border-b-0 last:pb-0">
-                        <span className="block text-[10px] md:text-xs font-bold uppercase text-destructive mb-1">{item.label}</span>
+                        <span className="block text-[10px] md:text-xs font-medium uppercase text-destructive mb-1">{item.label}</span>
                         <p className={cn("text-xs md:text-sm text-muted-foreground leading-relaxed", item.highlight && "font-semibold text-foreground")}>{item.text}</p>
                       </div>)}
                   </div>
