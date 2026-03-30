@@ -876,14 +876,12 @@ const LandingPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               {/* Coluna esquerda — Texto */}
               <div>
-                <span className="font-['Cormorant_Garamond',serif] font-light text-white block" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>Se você está avaliando uma compra relevante,</span>
-                <span className="font-['Cormorant_Garamond',serif] font-light italic text-white/55 block" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>o próximo passo não é visitar imóveis.</span>
-                <span className="font-['Cormorant_Garamond',serif] font-light text-luxury-gold block mt-2" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>É entender o cenário.</span>
+                <span className="font-['Cormorant_Garamond',serif] font-light text-white block" style={{ fontSize: 'clamp(22px, 3vw, 38px)' }}>O próximo passo não é visitar imóveis.</span>
 
                 <div className="w-12 mt-9 mb-9" style={{ borderTop: '0.5px solid #C9A84C' }}></div>
 
                 <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-white/35">
-                  Preencha ao lado. Entraremos em contato com uma análise inicial sobre seu momento.
+                  É entender o cenário. Preencha abaixo e entraremos em contato em até 24 horas para agendar seu Diagnóstico Estratégico Gratuito.
                 </p>
               </div>
 
