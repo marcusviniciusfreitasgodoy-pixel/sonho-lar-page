@@ -681,106 +681,42 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 8. Autoridade Final — Fusão de sobre-marcus + autoridade */}
-      <section id="autoridade-final" className="py-20 md:py-32 bg-luxury-charcoal">
+      {/* 8. Autoridade Final — #1A1E2A */}
+      <section id="autoridade-final" className="py-16 md:py-24 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
-
-            {/* — Conteúdo ex-sobre-marcus — */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center mb-16 md:mb-24">
-              {/* Photo */}
-              <div className="lg:col-span-2 flex justify-center">
-                <div className="relative">
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-luxury border-4 border-luxury-gold/30">
-                    <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="w-full h-full object-cover" />
-                  </div>
-                  {/* Credential badges */}
-                  <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex flex-col gap-2">
-                    <div className="bg-luxury-navy text-white px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
-                      <Scale className="h-4 w-4 md:h-5 md:w-5 text-luxury-gold" />
-                      <span className="text-xs md:text-sm font-bold">Perito Avaliador</span>
-                    </div>
-                    <div className="bg-luxury-gold text-luxury-navy px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg flex items-center gap-2">
-                      <Scale className="h-4 w-4 md:h-5 md:w-5" />
-                      <span className="text-xs md:text-sm font-bold">Corretor</span>
-                    </div>
-                  </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+              {/* Foto */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="w-[300px] h-[380px] md:w-[380px] md:h-[480px] overflow-hidden">
+                  <img src={marcusProfile} alt="Marcus Godoy - Personal Shopper Imobiliário" className="w-full h-full object-cover" />
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="lg:col-span-3 text-center lg:text-left">
-                <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                  Quem Vai Te Representar
-                </Badge>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight">
-                  Marcus Godoy
-                </h2>
-                <p className="text-xl md:text-2xl text-white/70 mb-4 md:mb-6 leading-relaxed">
-                  <strong className="text-white">Perito Avaliador Judicial</strong>, credenciado pelo Tribunal de Justiça do Rio de Janeiro e <strong className="text-white">Corretor</strong> — uma combinação rara que garante avaliação justa, baseada em metodologia, fatos e dados. Proteção jurídica e negociação profissional do seu lado.
+              {/* Texto */}
+              <div className="text-left">
+                <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[9px] text-luxury-gold mb-6">
+                  Marcus Godoy — Personal Shopper Imobiliário
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6">
-                  <div className="bg-white/10 rounded-lg p-4 text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Shield className="h-5 w-5 text-luxury-gold" />
-                      <span className="font-semibold text-white text-sm md:text-base">Segurança Jurídica</span>
+
+                <p className="font-['Cormorant_Garamond',serif] font-light text-white leading-[1.4] mb-9" style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}>
+                  Atuação focada em clientes que valorizam precisão, discrição e consistência. Leitura aprofundada do mercado e relacionamento com os players relevantes.
+                </p>
+
+                <div className="space-y-4 mb-9">
+                  {['CRECI 80.199 PF | 11.841 PJ', 'Perito Avaliador credenciado pelo TJRJ', 'Avaliações baseadas em dados reais de ITBI'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-4 flex-shrink-0" style={{ borderTop: '0.5px solid #C9A84C' }}></div>
+                      <span className="font-['DM_Sans',sans-serif] text-[13px] text-white/50">{item}</span>
                     </div>
-                    <p className="text-xs md:text-sm text-white/60">Contratos blindados e due diligence completa</p>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-4 text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Target className="h-5 w-5 text-luxury-gold" />
-                      <span className="font-semibold text-white text-sm md:text-base">Foco Exclusivo</span>
-                    </div>
-                    
-                  </div>
+                  ))}
                 </div>
-                <div className="bg-luxury-navy rounded-xl p-4 md:p-6 text-center">
-                  <p className="text-white text-sm md:text-base">
-                    <strong className="text-luxury-gold">Meu compromisso:</strong> Ser o defensor exclusivo dos seus interesses, com lealdade total.
-                  </p>
-                </div>
+
+                <p className="font-['DM_Sans',sans-serif] text-[12px] font-light leading-[1.8] text-white/30">
+                  Formação em Administração, Marketing e MBA em Inteligência Empresarial.
+                </p>
               </div>
             </div>
-
-            {/* — Conteúdo ex-autoridade — */}
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-12 shadow-luxury">
-                <h3 className="text-xl md:text-3xl font-bold text-white mb-6 md:mb-8 text-center">Experiência Profissional</h3>
-
-                <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
-                  <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
-                    <Award className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong className="text-luxury-gold">Atuação focada</strong> em imóveis de alto padrão na Barra da
-                      Tijuca e Recreio dos Bandeirantes
-                    </span>
-                  </p>
-                  <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
-                    <Shield className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong className="text-luxury-gold">Representação exclusiva</strong> do comprador em transações
-                      acima de R$ 1.5 milhão
-                    </span>
-                  </p>
-                  <p className="text-white/90 text-sm md:text-lg leading-relaxed flex items-start gap-2 md:gap-3">
-                    <Target className="h-5 w-5 md:h-6 md:w-6 text-luxury-gold mt-0.5 flex-shrink-0" />
-                    <span>
-                      <strong className="text-luxury-gold">Método proprietário</strong> baseado em dados reais, curadoria
-                      técnica e negociação estratégica
-                    </span>
-                  </p>
-                </div>
-
-                <div className="bg-luxury-gold/20 rounded-lg md:rounded-xl p-4 md:p-6 border border-luxury-gold/30">
-                  <p className="text-base md:text-2xl text-white text-center font-medium">
-                    Meu compromisso: <span className="text-luxury-gold">seu patrimônio está protegido</span>. Sua economia
-                    é real.
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
