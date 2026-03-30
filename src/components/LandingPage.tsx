@@ -462,7 +462,7 @@ const LandingPage = () => {
                 </CardContent>
                 <div className="bg-muted p-4 border-t border-border">
                   <p className="text-xs md:text-sm text-foreground leading-relaxed">
-                    <strong>Proteção para você:</strong> Você tem um advogado negociando. 
+                    <span className="font-medium">Proteção para você:</span> Você tem um advogado negociando. 
                     Meu ganho depende de conseguir desconto real.
                   </p>
                 </div>
