@@ -211,7 +211,7 @@ const LandingPage = () => {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="video" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
@@ -230,7 +230,7 @@ const LandingPage = () => {
       </section>
 
       {/* Market Problem Section */}
-      <section id="mercado" className="py-12 md:py-20 bg-background">
+      <section id="mercado" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -302,7 +302,7 @@ const LandingPage = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solucao" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="solucao" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -381,7 +381,7 @@ const LandingPage = () => {
       </section>
 
       {/* Property Gallery Section */}
-      <section id="imoveis" className="py-10 md:py-16 bg-background">
+      <section id="imoveis" className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-12">
             <Badge variant="outline" className="mb-4 border-luxury-gold text-luxury-gold">
@@ -442,7 +442,7 @@ const LandingPage = () => {
       </section>
 
       {/* About Marcus Section - Repositioned */}
-      <section id="sobre-marcus" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="sobre-marcus" className="py-20 md:py-32 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 items-center">
@@ -471,24 +471,24 @@ const LandingPage = () => {
                 <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                   Quem Vai Te Representar
                 </Badge>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white leading-tight">
                   Marcus Godoy
                 </h2>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-                  <strong className="text-luxury-navy">Perito Avaliador Judicial</strong>, credenciado pelo Tribunal de Justiça do Rio de Janeiro e <strong className="text-luxury-navy">Corretor</strong> — uma combinação rara que garante avaliação justa, baseada em metodologia, fatos e dados. Proteção jurídica e negociação profissional do seu lado.
+                <p className="text-xl md:text-2xl text-white/70 mb-4 md:mb-6 leading-relaxed">
+                  <strong className="text-white">Perito Avaliador Judicial</strong>, credenciado pelo Tribunal de Justiça do Rio de Janeiro e <strong className="text-white">Corretor</strong> — uma combinação rara que garante avaliação justa, baseada em metodologia, fatos e dados. Proteção jurídica e negociação profissional do seu lado.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6">
-                  <div className="bg-luxury-cream rounded-lg p-4 text-left">
+                  <div className="bg-white/10 rounded-lg p-4 text-left">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="h-5 w-5 text-luxury-gold" />
-                      <span className="font-semibold text-luxury-navy text-sm md:text-base">Segurança Jurídica</span>
+                      <span className="font-semibold text-white text-sm md:text-base">Segurança Jurídica</span>
                     </div>
-                    <p className="text-xs md:text-sm text-muted-foreground">Contratos blindados e due diligence completa</p>
+                    <p className="text-xs md:text-sm text-white/60">Contratos blindados e due diligence completa</p>
                   </div>
-                  <div className="bg-luxury-cream rounded-lg p-4 text-left">
+                  <div className="bg-white/10 rounded-lg p-4 text-left">
                     <div className="flex items-center gap-2 mb-2">
                       <Target className="h-5 w-5 text-luxury-gold" />
-                      <span className="font-semibold text-luxury-navy text-sm md:text-base">Foco Exclusivo</span>
+                      <span className="font-semibold text-white text-sm md:text-base">Foco Exclusivo</span>
                     </div>
                     
                   </div>
@@ -505,14 +505,14 @@ const LandingPage = () => {
       </section>
 
       {/* Process Section - Como Funciona */}
-      <section id="como-funciona" className="py-12 md:py-20 bg-background">
+      <section id="como-funciona" className="py-20 md:py-32 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
                 Método Exclusivo
               </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold text-luxury-navy leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                 Como Funciona: 4 Passos Simples
               </h2>
             </div>
@@ -582,11 +582,11 @@ const LandingPage = () => {
       </section>
 
       {/* Savings Section */}
-      <section id="economia" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="economia" className="py-20 md:py-32 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-luxury-navy leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                 Sua Economia Real: Tempo + Risco + Desconto
               </h2>
             </div>
@@ -639,7 +639,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Model Section */}
-      <section id="remuneracao" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="remuneracao" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -769,12 +769,12 @@ const LandingPage = () => {
       </section>
 
       {/* Representação vs Intermediação Section */}
-      <section id="representacao" className="py-12 md:py-20 bg-gradient-to-br from-muted to-background border-b border-border">
+      <section id="representacao" className="py-20 md:py-32 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-luxury-navy leading-tight max-w-5xl mx-auto">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-white leading-tight max-w-5xl mx-auto">
                 Existe uma diferença legal entre intermediação e representação que a maioria não conhece.
               </h2>
               <p className="text-luxury-gold font-semibold italic text-base md:text-lg mb-4 leading-relaxed max-w-3xl mx-auto">
@@ -782,7 +782,7 @@ const LandingPage = () => {
                 Com representação, quanto mais você economiza, mais eu ganho. 
                 Ela muda tudo.
               </p>
-              <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-sm md:text-base text-white/60 max-w-3xl mx-auto leading-relaxed">
                 Não é semântica. É estrutural. E muda completamente como você é protegido.
               </p>
             </div>
@@ -867,18 +867,18 @@ const LandingPage = () => {
             </div>
 
             {/* Diferença Chave */}
-            <div className="bg-luxury-gold/10 p-5 md:p-8 rounded-xl md:rounded-2xl border-l-4 border-luxury-gold mb-8 md:mb-12">
-              <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-4 md:mb-6">A Diferença-Chave</h3>
+            <div className="bg-white/5 p-5 md:p-8 rounded-xl md:rounded-2xl border-l-4 border-luxury-gold mb-8 md:mb-12">
+              <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">A Diferença-Chave</h3>
               <div className="space-y-4 md:space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center pb-4 border-b border-luxury-gold/20">
-                  <div className="text-sm md:text-base font-semibold text-foreground">Intermediação</div>
+                  <div className="text-sm md:text-base font-semibold text-white">Intermediação</div>
                   <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
-                  <div className="text-sm md:text-base text-muted-foreground">Você paga mais, corretor ganha mais. Conflito estrutural.</div>
+                  <div className="text-sm md:text-base text-white/70">Você paga mais, corretor ganha mais. Conflito estrutural.</div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-[200px_30px_1fr] gap-2 md:gap-5 items-center">
                   <div className="text-sm md:text-base font-semibold text-foreground">Representação (PSI)</div>
                   <div className="hidden md:block text-center text-luxury-gold font-bold">→</div>
-                  <div className="text-sm md:text-base text-muted-foreground">Você economiza mais, eu ganho mais. Incentivos alinhados.</div>
+                  <div className="text-sm md:text-base text-white/70">Você economiza mais, eu ganho mais. Incentivos alinhados.</div>
                 </div>
               </div>
             </div>
@@ -917,11 +917,11 @@ const LandingPage = () => {
 
 
             {/* CTA */}
-            <div className="text-center bg-gradient-to-br from-luxury-gold/10 to-background p-6 md:p-10 rounded-xl md:rounded-2xl">
-              <p className="text-base md:text-lg text-foreground mb-4 md:mb-6 leading-relaxed">
+            <div className="text-center bg-white/5 p-6 md:p-10 rounded-xl md:rounded-2xl">
+              <p className="text-base md:text-lg text-white mb-4 md:mb-6 leading-relaxed">
                 Representação não é apenas um modelo comercial.
                 <br />
-                <strong className="text-luxury-navy">É proteção jurídica + alinhamento de interesses.</strong>
+                <strong className="text-white">É proteção jurídica + alinhamento de interesses.</strong>
               </p>
               <Button variant="gold" size="lg" className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg touch-manipulation" asChild>
                 <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")} className="flex items-center justify-center gap-2 text-center">
@@ -935,7 +935,7 @@ const LandingPage = () => {
       </section>
 
       {/* Differentiation Section */}
-      <section id="diferenciacao" className="py-12 md:py-20 bg-background">
+      <section id="diferenciacao" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1028,7 +1028,7 @@ const LandingPage = () => {
       </section>
 
       {/* For Who Section */}
-      <section id="para-quem" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="para-quem" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1113,7 +1113,7 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section - 3 Packages */}
-      <section id="precos" className="py-12 md:py-20 bg-luxury-navy text-white">
+      <section id="precos" className="py-20 md:py-32 bg-luxury-navy text-white">
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1189,7 +1189,7 @@ const LandingPage = () => {
       </section>
 
       {/* Authority Section */}
-      <section id="autoridade" className="py-12 md:py-20 bg-background">
+      <section id="autoridade" className="py-20 md:py-32 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-12 shadow-luxury">
@@ -1231,7 +1231,7 @@ const LandingPage = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section id="depoimentos" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="depoimentos" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1293,7 +1293,7 @@ const LandingPage = () => {
       </section>
 
       {/* Origin Story Section - Resumida */}
-      <section id="sobre" className="py-12 md:py-20 bg-background">
+      <section id="sobre" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
@@ -1336,7 +1336,7 @@ const LandingPage = () => {
       </section>
 
       {/* Guarantees Section */}
-      <section id="garantias" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="garantias" className="py-20 md:py-32 bg-luxury-cream">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
@@ -1393,7 +1393,7 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-12 md:py-20 bg-background">
+      <section id="faq" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 md:mb-16">
@@ -1447,7 +1447,7 @@ const LandingPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta-final" className="py-12 md:py-20 bg-luxury-cream">
+      <section id="cta-final" className="py-20 md:py-32 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-luxury-navy rounded-xl md:rounded-2xl p-6 md:p-16 text-center shadow-luxury">

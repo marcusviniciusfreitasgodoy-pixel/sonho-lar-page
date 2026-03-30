@@ -39,17 +39,18 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Custom luxury design tokens */
-    --luxury-navy: 214 70% 16%;
-    --luxury-navy-light: 214 60% 26%;
-    --luxury-gold: 48 68% 53%;
-    --luxury-gold-light: 48 60% 63%;
-    --luxury-cream: 45 40% 96%;
-    --luxury-text-muted: 220 13% 60%;
+    --luxury-navy: 227 23% 8%;
+    --luxury-charcoal: 225 24% 13%;
+    --luxury-navy-light: 225 24% 13%;
+    --luxury-gold: 44 54% 54%;
+    --luxury-gold-light: 44 45% 62%;
+    --luxury-cream: 45 20% 96%;
+    --luxury-text-muted: 0 0% 54%;
     
     /* Gradients */
-    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-navy)), hsl(var(--luxury-navy-light)));
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--luxury-navy)), hsl(var(--luxury-charcoal)));
     --gradient-gold: linear-gradient(135deg, hsl(var(--luxury-gold)), hsl(var(--luxury-gold-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--luxury-navy)) 0%, hsl(var(--luxury-navy-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--luxury-navy)) 0%, hsl(var(--luxury-charcoal)) 100%);
     
     /* Shadows */
     --shadow-luxury: 0 20px 60px -10px hsl(var(--luxury-navy) / 0.3);
