@@ -305,6 +305,23 @@ const LandingPage = () => {
                 <br />E você só descobre depois de assinar.
               </p>
             </div>
+
+            <div className="mt-8 md:mt-12 text-center">
+              <p className="text-base md:text-lg text-foreground/80 mb-6 max-w-2xl mx-auto">
+                Se você está avaliando um imóvel acima de R$ 1,5M, a decisão mais segura é entender o cenário antes de visitar qualquer coisa.
+              </p>
+              <a
+                href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackCalendlyClick("mid-section-cta")}
+                className="inline-flex items-center gap-2 py-3 px-5 md:py-4 md:px-10 border border-luxury-gold text-luxury-gold bg-transparent uppercase tracking-[0.18em] text-[10px] md:text-[11px] font-medium transition-all duration-300 hover:bg-luxury-gold hover:text-luxury-navy rounded-md group touch-manipulation"
+              >
+                <span>Agendar Diagnóstico Estratégico Gratuito</span>
+                <ArrowRight className="h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+              </a>
+              <p className="mt-3 text-sm text-muted-foreground">30 minutos. Sem compromisso. Sem venda de imóveis.</p>
+            </div>
           </div>
         </div>
       </section>
