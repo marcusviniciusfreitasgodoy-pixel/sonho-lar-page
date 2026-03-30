@@ -508,77 +508,30 @@ const LandingPage = () => {
       </section>
 
       {/* 4. Como Funciona — #1A1E2A */}
-      <section id="como-funciona" className="py-20 md:py-32 bg-luxury-charcoal">
+      <section id="como-funciona" className="py-16 md:py-24 bg-luxury-charcoal">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <Badge variant="outline" className="mb-3 md:mb-4 border-luxury-gold text-luxury-gold text-xs md:text-sm">
-                Método Exclusivo
-              </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                Como Funciona: 4 Passos Simples
-              </h2>
-            </div>
+          <div className="max-w-[640px] mx-auto">
+            <p className="font-['DM_Sans',sans-serif] uppercase tracking-[0.2em] font-light text-[11px] text-luxury-gold mb-14">
+              Como trabalhamos
+            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
-                  1
+            <div className="space-y-0">
+              {[
+                { num: '01', title: 'Entendimento do seu momento', desc: 'Mapeamos seu perfil, orçamento, prioridades e prazo antes de qualquer busca.' },
+                { num: '02', title: 'Leitura de mercado', desc: 'Analisamos transações reais registradas no ITBI — não anúncios — para identificar o valor justo.' },
+                { num: '03', title: 'Curadoria estratégica', desc: 'Visitamos e filtramos os imóveis. Você vê apenas os que realmente fazem sentido.' },
+                { num: '04', title: 'Análise comparativa', desc: 'Cada opção avaliada com metodologia técnica: estrutura, documentação, valor por m².' },
+                { num: '05', title: 'Acompanhamento até a decisão', desc: 'Conduzimos a negociação em seu nome até a assinatura. Sem surpresas.' },
+              ].map((item, i, arr) => (
+                <div key={i}>
+                  <div className="py-7">
+                    <span className="font-['Cormorant_Garamond',serif] text-[13px] text-luxury-gold block mb-3">{item.num}</span>
+                    <h3 className="font-['DM_Sans',sans-serif] text-[18px] font-normal text-white mb-2">{item.title}</h3>
+                    <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.8] text-white/45">{item.desc}</p>
+                  </div>
+                  {i < arr.length - 1 && <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.08)', borderWidth: '0.5px' }}></div>}
                 </div>
-                <div className="pt-3 md:pt-4">
-                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">
-                    Diagnóstico Estratégico
-                  </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                    Você define seu perfil: localização, tamanho, acabamento, orçamento, critérios especiais. Eu entendo
-                    exatamente o que você quer.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
-                  2
-                </div>
-                <div className="pt-3 md:pt-4">
-                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">
-                    Curadoria Profissional
-                  </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                    EU visito dezenas de imóveis, faço análise técnica completa, e filtro apenas aqueles que atendem
-                    100% seu critério.
-                    <em className="text-luxury-gold"> (Você não vê essa parte)</em>
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
-                  3
-                </div>
-                <div className="pt-3 md:pt-4">
-                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">Decisão Clara</h3>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                    Você visita apenas 5-8 imóveis PRÉ-SELECIONADOS. Análise técnica já está pronta. Sua decisão é 100%
-                    baseada em fatos.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-6 shadow-luxury border border-border hover:border-luxury-gold/50 transition-all duration-300">
-                <div className="absolute -top-3 md:-top-4 left-5 md:left-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold text-luxury-navy flex items-center justify-center text-base md:text-lg font-bold shadow-md">
-                  4
-                </div>
-                <div className="pt-3 md:pt-4">
-                  <h3 className="text-base md:text-lg font-bold text-luxury-navy mb-2 md:mb-3">
-                    Negociação Profissional
-                  </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                    Estratégia de negociação baseada em dados reais. Múltiplas rodadas de contra-proposta até conseguir
-                    o melhor preço possível.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
