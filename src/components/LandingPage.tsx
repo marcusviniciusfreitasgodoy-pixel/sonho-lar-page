@@ -359,10 +359,9 @@ const LandingPage = () => {
 
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Negociação Baseada em Dados</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Negociação Baseada em Dados</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu incentivo é o desconto.
-                    <strong className="text-luxury-navy"> Seu incentivo também.</strong>
+                    Estratégia profissional, múltiplas rodadas de contra-proposta, baseada em análise real de mercado. Meu incentivo é o desconto. Seu incentivo também.
                   </p>
                 </div>
               </div>
