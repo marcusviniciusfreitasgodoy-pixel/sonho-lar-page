@@ -432,7 +432,7 @@ const LandingPage = () => {
               {/* Representação */}
               <Card className="bg-white border-2 border-luxury-gold shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="bg-luxury-gold/10 p-4 md:p-6 border-b-[3px] border-luxury-gold text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">✅ Representação (PSI)</h3>
+                  <h3 className="text-lg md:text-xl font-medium text-foreground mb-1">✅ Representação (PSI)</h3>
                   <p className="text-xs md:text-sm text-muted-foreground italic">Advogado do seu lado</p>
                 </div>
                 <CardContent className="p-4 md:p-6">
