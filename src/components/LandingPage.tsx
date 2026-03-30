@@ -714,7 +714,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-[640px]">
             <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left max-w-[560px] mb-16" style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}>
-              Quatro mudanças concretas na sua compra
+              Quatro mudanças concretas na sua experiência e jornada de compra
             </h2>
 
             <div className="space-y-10">
