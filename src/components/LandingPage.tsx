@@ -395,7 +395,7 @@ const LandingPage = () => {
               {/* Intermediação */}
               <Card className="bg-white border-2 border-destructive/30 shadow-luxury hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="bg-destructive/10 p-4 md:p-6 border-b-[3px] border-destructive text-center">
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-1">❌ Intermediação (Modelo Tradicional)</h3>
+                  <h3 className="text-lg md:text-xl font-medium text-foreground mb-1">❌ Intermediação (Modelo Tradicional)</h3>
                   <p className="text-xs md:text-sm text-muted-foreground italic">Corretor como mediador neutro</p>
                 </div>
                 <CardContent className="p-4 md:p-6">
