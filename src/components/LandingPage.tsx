@@ -335,7 +335,7 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
                 <div className="bg-luxury-cream rounded-xl md:rounded-2xl p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
                   <div className="w-6 h-px bg-luxury-gold mb-6"></div>
-                  <h3 className="text-xl md:text-2xl font-bold text-luxury-navy mb-3 md:mb-4">Identifico o Imóvel EXATO</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-luxury-navy mb-3 md:mb-4">Identifico o Imóvel EXATO</h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     Você não vê "opções do mercado". Você define seu critério (localização, tamanho, acabamento, orçamento), e EU identifico qual imóvel realmente atende isso.
                   </p>
