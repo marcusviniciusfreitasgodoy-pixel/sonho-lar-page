@@ -634,10 +634,10 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             {/* Abertura */}
             <div className="text-left mb-0">
-              <h2 className="font-['Cormorant_Garamond',serif] font-light italic leading-[1.1] tracking-[-0.02em] text-luxury-navy" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
+              <h2 className="fade-up font-['Cormorant_Garamond',serif] font-light italic leading-[1.1] tracking-[-0.02em] text-luxury-navy" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
                 A maioria compra baseado em percepção.
               </h2>
-              <p className="font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A] max-w-[520px] mt-5">
+              <p className="fade-up font-['DM_Sans',sans-serif] font-light text-[15px] leading-[1.85] text-[#8A8A8A] max-w-[520px] mt-5">
                 Nós trabalhamos com leitura real de mercado, dados e contexto. Isso reduz risco e melhora o resultado da decisão.
               </p>
             </div>
