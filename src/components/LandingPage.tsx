@@ -656,57 +656,26 @@ const LandingPage = () => {
       </section>
 
       {/* 7. Economia — #0F1118 */}
-      <section id="economia" className="py-20 md:py-32 bg-luxury-navy">
+      <section id="economia" className="py-16 md:py-24 bg-luxury-navy">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                Sua Economia Real: Tempo + Risco + Desconto
-              </h2>
-            </div>
+          <div className="max-w-[640px]">
+            <h2 className="font-['Cormorant_Garamond',serif] font-light leading-[1.1] tracking-[-0.02em] text-white text-left max-w-[560px] mb-16" style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}>
+              O que muda quando há alguém exclusivamente do seu lado
+            </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
-              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-5 md:p-8">
-                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">⏱️</div>
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Economia de Tempo</h3>
-                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">80-120h</div>
-                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
-                    Você não visita 30-40 imóveis errados. Visita apenas 5-8 certos.
-                  </p>
-                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
-                    R$ 40-60k (se você ganha R$ 500/h)
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-5 md:p-8">
-                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">🛡️</div>
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Risco Evitado</h3>
-                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 75-300k</div>
-                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
-                    Evita erros caros: estrutura, litígio, documentação irregular, preço acima do mercado.
-                  </p>
-                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
-                    Due diligence completa
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white border border-luxury-gold/20 shadow-luxury hover:shadow-xl transition-shadow duration-300 text-center">
-                <CardContent className="p-5 md:p-8">
-                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">💰</div>
-                  <h3 className="text-lg md:text-xl font-bold text-luxury-navy mb-1 md:mb-2">Desconto Negociado</h3>
-                  <div className="text-2xl md:text-3xl font-bold text-luxury-gold mb-3 md:mb-4">R$ 90-360k</div>
-                  <p className="text-sm md:text-base text-muted-foreground mb-2 md:mb-3 leading-relaxed">
-                    Negociação profissional consegue 4-8% acima do que você consegue sozinho.
-                  </p>
-                  <p className="text-xs md:text-sm font-semibold text-luxury-navy bg-luxury-cream rounded-lg py-2 px-3 md:px-4">
-                    Você fica com 70%
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="space-y-10">
+              {[
+                { num: '01', title: 'Menos conflito de interesse', desc: 'Trabalhamos exclusivamente para você. Sem comissão atrelada ao preço do imóvel.' },
+                { num: '02', title: 'Mais clareza na decisão', desc: 'Cada imóvel avaliado com dados reais de mercado. Você decide com informação, não com pressão.' },
+                { num: '03', title: 'Proteção de capital', desc: 'Identificamos riscos antes da compra — documentação, estrutura, histórico de preços.' },
+                { num: '04', title: 'Acesso qualificado ao mercado', desc: 'Imóveis on e off-market. Você acessa oportunidades que não aparecem nos portais.' },
+              ].map((item, i) => (
+                <div key={i}>
+                  <div className="mb-5" style={{ borderTop: '0.5px solid #C9A84C' }}></div>
+                  <h3 className="font-['DM_Sans',sans-serif] text-[17px] font-normal text-white mb-2">{item.title}</h3>
+                  <p className="font-['DM_Sans',sans-serif] text-[13px] font-light leading-[1.85] text-white/[0.42]">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
