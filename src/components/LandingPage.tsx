@@ -177,31 +177,31 @@ const LandingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/80 via-luxury-navy/70 to-luxury-navy/85"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-center text-white py-4 sm:py-5 md:py-8">
+        <div className="relative z-10 container mx-auto px-4 sm:px-5 md:px-6 text-left text-white py-4 sm:py-5 md:py-8">
           <div className="animate-fade-in">
             <Badge variant="outline" className="mb-4 md:mb-6 border-luxury-gold text-luxury-gold bg-white/10 text-xs sm:text-sm px-3 py-1">
               Personal Shopper Imobiliário
             </Badge>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.2] max-w-5xl mx-auto">
+            <div className="w-12 h-px bg-luxury-gold mb-4 md:mb-6"></div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-[1.2] max-w-5xl">
               Comprar imóvel de alto padrão sem representação exclusiva é o erro mais caro do mercado imobiliário.
             </h1>
 
-            <p className="text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6 text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6 text-white/90 max-w-4xl leading-relaxed">
               Eu represento <span className="text-luxury-gold font-semibold">compradores exigentes</span> na Barra da
               Tijuca e Recreio — usando dados reais, curadoria técnica e negociação profissional.
             </p>
 
-            <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/80 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/80 max-w-3xl">
               Sem conflito de interesses. Sem perda de tempo. Sem risco de prejuízos e surpresas futuras.
             </p>
 
-            <Button variant="gold" className="mb-3 md:mb-4 h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg font-semibold shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto max-w-xs sm:max-w-sm touch-manipulation" asChild>
-              <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="flex items-center justify-center gap-2 text-center">
-                <span>Agendar Diagnóstico Estratégico (Gratuito)</span>
-                <ArrowRight className="h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
-              </a>
-            </Button>
+            <a href="https://calendly.com/personalshopperimobiliario/entrevista-personal-shopper-imobiliario" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick("hero")} className="inline-flex items-center gap-2 mb-3 md:mb-4 py-3 px-5 md:py-4 md:px-10 border border-luxury-gold text-luxury-gold bg-transparent uppercase tracking-[0.18em] text-[10px] md:text-[11px] font-medium transition-all duration-300 hover:bg-luxury-gold hover:text-luxury-navy rounded-md group touch-manipulation">
+              <span>Agendar conversa gratuita</span>
+              <ArrowRight className="h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+            </a>
 
             <p className="text-sm md:text-base text-white/70">Conversa direta. Sem compromisso. Sem venda de imóveis.</p>
           </div>
