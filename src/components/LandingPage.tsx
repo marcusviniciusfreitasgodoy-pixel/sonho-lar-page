@@ -525,7 +525,7 @@ const LandingPage = () => {
               <p className="text-base md:text-lg text-white mb-4 md:mb-6 leading-relaxed">
                 Representação não é apenas um modelo comercial.
                 <br />
-                <strong className="text-white">É proteção jurídica + alinhamento de interesses.</strong>
+                <span className="text-white font-medium">É proteção jurídica + alinhamento de interesses.</span>
               </p>
               <Button variant="gold" size="lg" className="shadow-gold transition-all duration-300 hover:scale-105 group w-full sm:w-auto h-auto py-3 px-5 md:py-4 md:px-10 text-sm md:text-lg touch-manipulation" asChild>
                 <a href="https://wa.me/5521964075124?text=Quero%20entender%20melhor%20a%20representacao%20exclusiva%20do%20PSI" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("representacao")} className="flex items-center justify-center gap-2 text-center">
@@ -534,6 +534,9 @@ const LandingPage = () => {
                 </a>
               </Button>
             </div>
+
+            </div>
+          </div>
 
           </div>
         </div>
