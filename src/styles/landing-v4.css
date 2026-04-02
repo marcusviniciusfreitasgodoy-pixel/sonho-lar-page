@@ -128,13 +128,23 @@ strong{font-weight:500}
 .pill-gold{color:var(--gold3);background:rgba(200,164,94,.08);border:1px solid rgba(200,164,94,.2)}
 .compare-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bd-ink)}
 .compare-cell{padding:16px 28px}
-.compare-cell:first-child{border-right:1px solid var(--bd-ink);background:rgba(255,255,255,.01)}
-.compare-cell:last-child{background:rgba(200,164,94,.02)}
+.compare-cell.cell-neg{border-right:1px solid var(--bd-ink);background:rgba(255,255,255,.01)}
+.compare-cell.cell-pos{background:rgba(200,164,94,.02)}
 .cc-lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-ink3);margin-bottom:6px}
 .cc-val{font-size:13px;line-height:1.65}
 .cc-val.neg{color:var(--txt-ink3)}
 .cc-val.pos{color:var(--txt-ink2)}
-@media(max-width:640px){.compare-heads{grid-template-columns:1fr}.compare-head:first-child{border-right:none;border-bottom:1px solid var(--bd-ink2)}.compare-row{grid-template-columns:1fr}.compare-cell:first-child{border-right:none;border-bottom:1px solid var(--bd-ink)}}
+.cc-source-tag{display:none}
+@media(max-width:640px){
+  .compare-heads{display:none}
+  .compare-row{grid-template-columns:1fr}
+  .compare-cell.cell-neg{border-right:none;border-bottom:1px solid var(--bd-ink)}
+  .compare-cell.cell-pos{border-left:2px solid var(--gold3)}
+  .cc-source-tag{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:1px;margin-bottom:8px}
+  .tag-muted{color:var(--txt-ink3);background:rgba(255,255,255,.04);border:1px solid var(--bd-ink)}
+  .tag-gold{color:var(--gold3);background:rgba(200,164,94,.08);border:1px solid rgba(200,164,94,.2)}
+  .compare-head,.compare-cell{padding:14px 18px}
+}
 
 /* STEPS — VELLUM2 */
 .steps-intro{display:grid;grid-template-columns:1fr 340px;gap:clamp(32px,5vw,64px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
