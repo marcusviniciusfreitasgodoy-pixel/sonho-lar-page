@@ -287,15 +287,23 @@ const LandingPageV4 = () => {
               </div>
             </div>
             {[
-              { lbl: ['Para quem trabalha', 'Para quem trabalha'], neg: 'Para o vendedor. Contrato com quem quer vender pelo maior preço.', pos: 'Para você. Contrato com quem quer comprar pelo melhor preço.' },
-              { lbl: ['Remuneração', 'Remuneração'], neg: '% sobre o preço final — quanto mais caro, mais ganha.', pos: '% sobre a economia — quanto mais você economiza, mais ganho.' },
-              { lbl: ['Imóveis', 'Imóveis'], neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro — portais, off-market e rede direta.' },
-              { lbl: ['Vistoria técnica', 'Vistoria técnica'], neg: 'Não realiza.', pos: 'Antes de você visitar. Infiltrações, documentação, histórico.' },
-              { lbl: ['Negociação', 'Negociação'], neg: 'Para fechar rápido.', pos: 'Para obter o melhor preço com dados.' }
+              { lbl: 'Para quem trabalha', neg: 'Para o vendedor. Contrato com quem quer vender pelo maior preço.', pos: 'Para você. Contrato com quem quer comprar pelo melhor preço.' },
+              { lbl: 'Remuneração', neg: '% sobre o preço final — quanto mais caro, mais ganha.', pos: '% sobre a economia — quanto mais você economiza, mais ganho.' },
+              { lbl: 'Imóveis', neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro — portais, off-market e rede direta.' },
+              { lbl: 'Vistoria técnica', neg: 'Não realiza.', pos: 'Antes de você visitar. Infiltrações, documentação, histórico.' },
+              { lbl: 'Negociação', neg: 'Para fechar rápido.', pos: 'Para obter o melhor preço com dados.' }
             ].map((r, i) => (
               <div key={i} className="compare-row">
-                <div className="compare-cell"><div className="cc-lbl">{r.lbl[0]}</div><div className="cc-val neg">{r.neg}</div></div>
-                <div className="compare-cell"><div className="cc-lbl">{r.lbl[1]}</div><div className="cc-val pos">{r.pos}</div></div>
+                <div className="compare-cell cell-neg">
+                  <div className="cc-lbl">{r.lbl}</div>
+                  <span className="cc-source-tag tag-muted">Corretor Tradicional</span>
+                  <div className="cc-val neg">{r.neg}</div>
+                </div>
+                <div className="compare-cell cell-pos">
+                  <div className="cc-lbl">{r.lbl}</div>
+                  <span className="cc-source-tag tag-gold">Godoy Prime</span>
+                  <div className="cc-val pos">{r.pos}</div>
+                </div>
               </div>
             ))}
           </div>
