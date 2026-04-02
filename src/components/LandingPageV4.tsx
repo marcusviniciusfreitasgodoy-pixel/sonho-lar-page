@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, type RefCallback } from 'react';
 import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
