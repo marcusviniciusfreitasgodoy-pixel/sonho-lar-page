@@ -110,6 +110,7 @@ function useScrollReveal(): RefCallback<HTMLElement> {
 const LandingPageV4 = () => {
   const [activeScenario, setActiveScenario] = useState(0);
   const [navSolid, setNavSolid] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const reveal = useScrollReveal();
