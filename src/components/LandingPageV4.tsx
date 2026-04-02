@@ -282,12 +282,12 @@ const LandingPageV4 = () => {
           <div style={{ border: '1px solid rgba(200,164,94,.2)', borderRadius: 2, padding: 'clamp(28px,4vw,48px)', marginBottom: 'clamp(48px,6vw,72px)', background: 'rgba(200,164,94,.04)' }}>
             <div style={{ fontSize: 10, letterSpacing: '.22em', textTransform: 'uppercase' as const, color: 'var(--gold3)', marginBottom: 16 }}>A pergunta que todo comprador faz</div>
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 300, fontSize: 'clamp(24px,3.5vw,40px)', lineHeight: 1.15, color: 'var(--txt-ink)', letterSpacing: '-.01em', marginBottom: 20 }}>"Por que preciso pagar por você se <em>o corretor não me cobra nada?"</em></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px,4vw,48px)', alignItems: 'start' }}>
+            <div className="objection-grid">
               <div>
                 <p style={{ fontSize: 15, color: 'var(--txt-ink2)', lineHeight: 1.85, marginBottom: 16 }}>O corretor <strong style={{ color: 'var(--txt-ink)' }}>não é gratuito para você.</strong> Ele é pago pelo vendedor — geralmente entre 4% e 6% do valor do imóvel.</p>
                 <p style={{ fontSize: 15, color: 'var(--txt-ink2)', lineHeight: 1.85 }}>E quem paga o corretor, dita os interesses do corretor. O contrato que ele assina é com o vendedor, para vender pelo maior preço possível, no menor tempo possível.</p>
               </div>
-              <div style={{ borderLeft: '1px solid rgba(200,164,94,.2)', paddingLeft: 'clamp(24px,4vw,48px)' }}>
+              <div className="objection-right">
                 <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(17px,2.2vw,22px)', fontStyle: 'italic', color: 'rgba(200,164,94,.9)', lineHeight: 1.6, marginBottom: 16 }}>Você está na negociação mais cara da sua vida sem nenhum profissional do seu lado.</p>
                 <p style={{ fontSize: 13, color: 'var(--txt-ink3)', lineHeight: 1.7 }}>O corretor não é seu inimigo. Mas o modelo no qual ele opera é estruturalmente contrário aos seus interesses como comprador.</p>
               </div>
