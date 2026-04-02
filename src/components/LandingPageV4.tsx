@@ -63,11 +63,36 @@ function emailParaCliente(dados: any) {
   </div>`;
 }
 
+// Scroll-reveal hook
+function useScrollReveal(): RefCallback<HTMLElement> {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  return useCallback((node: HTMLElement | null) => {
+    if (node) observerRef.current?.observe(node);
+  }, []);
+}
+
 const LandingPageV4 = () => {
   const [activeScenario, setActiveScenario] = useState(0);
   const [navSolid, setNavSolid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const reveal = useScrollReveal();
 
   useEffect(() => {
     const handler = () => setNavSolid(window.scrollY > 50);
