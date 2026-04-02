@@ -231,7 +231,7 @@ const LandingPageV4 = () => {
       {/* MISSION / INTERNATIONAL CONTEXT */}
       <section className="sec sec-ink3" id="missao">
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'end', marginBottom: 'clamp(52px,7vw,80px)' }}>
+          <div className="grid-2col-mission">
             <div>
               <span className="overline" style={{ color: 'var(--gold3)', display: 'block', marginBottom: 20 }}>Um modelo testado. Uma missão clara.</span>
               <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 300, fontSize: 'clamp(30px,4.5vw,50px)', lineHeight: 1.1, color: 'var(--txt-ink)', letterSpacing: '-.01em' }}>O comprador já tem quem o represente exclusivamente nos maiores mercados do mundo. <em>Agora também no Rio de Janeiro.</em></h2>
@@ -243,15 +243,15 @@ const LandingPageV4 = () => {
           </div>
 
           {/* 3 market cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 2, overflow: 'hidden', marginBottom: 1 }}>
+          <div className="market-cards">
             {[
               { country: 'Estados Unidos', stat: '+50%', desc: 'das transações imobiliárias envolvem um buyer\'s agent. O modelo está consolidado há mais de três décadas.', ref: 'Exclusive Buyer\'s Agent (EBA)' },
               { country: 'Austrália', stat: '85%', desc: 'dos compradores que usaram um buyer\'s agent disseram ter conseguido um negócio melhor do que conseguiriam sozinhos.', ref: 'Buyer\'s Agent / REBAA' },
               { country: 'Espanha', stat: '20+', desc: 'anos de mercado maduro de representação exclusiva do comprador, especialmente nos segmentos de luxo de Madrid e Barcelona.', ref: 'Personal Shopper Inmobiliario' }
             ].map((m, i) => (
-              <div key={i} style={{ background: 'var(--ink2)', padding: 'clamp(28px,4vw,40px)', borderRight: i < 2 ? '1px solid rgba(255,255,255,.06)' : 'none' }}>
+              <div key={i} className="market-card">
                 <div style={{ fontSize: 10, letterSpacing: '.2em', textTransform: 'uppercase' as const, color: 'var(--gold3)', marginBottom: 16 }}>{m.country}</div>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: 48, fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: 8, letterSpacing: '-.02em' }}>{m.stat}</div>
+                <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(36px,8vw,48px)', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: 8, letterSpacing: '-.02em' }}>{m.stat}</div>
                 <p style={{ fontSize: 13, color: 'var(--txt-ink2)', lineHeight: 1.65, marginBottom: 20 }}>{m.desc}</p>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,.07)', paddingTop: 16 }}>
                   <div style={{ fontSize: 11, color: 'var(--txt-ink3)', letterSpacing: '.04em' }}>Referência local</div>
@@ -262,12 +262,12 @@ const LandingPageV4 = () => {
           </div>
 
           {/* Brazil statement */}
-          <div style={{ background: 'rgba(200,164,94,.05)', border: '1px solid rgba(200,164,94,.15)', borderRadius: 2, padding: 'clamp(28px,4vw,44px)', display: 'flex', alignItems: 'center', gap: 'clamp(24px,4vw,48px)', flexWrap: 'wrap' as const }}>
+          <div className="brazil-box">
             <div style={{ flex: 1, minWidth: 240 }}>
               <div style={{ fontSize: 10, letterSpacing: '.2em', textTransform: 'uppercase' as const, color: 'var(--gold3)', marginBottom: 12 }}>Brasil — 2024</div>
               <div style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: 'var(--txt-ink)', lineHeight: 1.3 }}>O mercado imobiliário do Rio de Janeiro movimenta <em>R$8 bilhões por ano</em> só na Barra da Tijuca. Sem nenhuma estrutura de representação exclusiva para o comprador.</div>
             </div>
-            <div style={{ flex: 1, minWidth: 240, borderLeft: '1px solid rgba(200,164,94,.2)', paddingLeft: 'clamp(24px,4vw,48px)' }}>
+            <div className="brazil-box-right">
               <p style={{ fontSize: 14, color: 'var(--txt-ink2)', lineHeight: 1.85, marginBottom: 16 }}>A Godoy Prime Realty nasce para preencher essa lacuna — com o mesmo rigor técnico, a mesma estrutura contratual e o mesmo alinhamento de interesses que protegem compradores nos mercados mais sofisticados do mundo.</p>
               <p style={{ fontFamily: 'var(--serif)', fontSize: 16, fontStyle: 'italic', color: 'rgba(200,164,94,.8)', lineHeight: 1.6 }}>Você não precisa ser o primeiro a confiar nesse modelo. Apenas o primeiro no Rio de Janeiro a ter acesso a ele.</p>
             </div>
@@ -282,12 +282,12 @@ const LandingPageV4 = () => {
           <div style={{ border: '1px solid rgba(200,164,94,.2)', borderRadius: 2, padding: 'clamp(28px,4vw,48px)', marginBottom: 'clamp(48px,6vw,72px)', background: 'rgba(200,164,94,.04)' }}>
             <div style={{ fontSize: 10, letterSpacing: '.22em', textTransform: 'uppercase' as const, color: 'var(--gold3)', marginBottom: 16 }}>A pergunta que todo comprador faz</div>
             <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 300, fontSize: 'clamp(24px,3.5vw,40px)', lineHeight: 1.15, color: 'var(--txt-ink)', letterSpacing: '-.01em', marginBottom: 20 }}>"Por que preciso pagar por você se <em>o corretor não me cobra nada?"</em></h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px,4vw,48px)', alignItems: 'start' }}>
+            <div className="objection-grid">
               <div>
                 <p style={{ fontSize: 15, color: 'var(--txt-ink2)', lineHeight: 1.85, marginBottom: 16 }}>O corretor <strong style={{ color: 'var(--txt-ink)' }}>não é gratuito para você.</strong> Ele é pago pelo vendedor — geralmente entre 4% e 6% do valor do imóvel.</p>
                 <p style={{ fontSize: 15, color: 'var(--txt-ink2)', lineHeight: 1.85 }}>E quem paga o corretor, dita os interesses do corretor. O contrato que ele assina é com o vendedor, para vender pelo maior preço possível, no menor tempo possível.</p>
               </div>
-              <div style={{ borderLeft: '1px solid rgba(200,164,94,.2)', paddingLeft: 'clamp(24px,4vw,48px)' }}>
+              <div className="objection-right">
                 <p style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(17px,2.2vw,22px)', fontStyle: 'italic', color: 'rgba(200,164,94,.9)', lineHeight: 1.6, marginBottom: 16 }}>Você está na negociação mais cara da sua vida sem nenhum profissional do seu lado.</p>
                 <p style={{ fontSize: 13, color: 'var(--txt-ink3)', lineHeight: 1.7 }}>O corretor não é seu inimigo. Mas o modelo no qual ele opera é estruturalmente contrário aos seus interesses como comprador.</p>
               </div>
@@ -312,9 +312,9 @@ const LandingPageV4 = () => {
                 { tag: 'Documentação irregular', text: '"Havia uma penhora na matrícula. O corretor não verificou. Só descobrimos quando fomos ao cartório para assinar."', sub: 'Due diligence documental completa protege você de problemas que podem travar ou anular a compra após a assinatura.' }
               ]
             ].map((row, ri) => (
-              <div key={ri} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', borderBottom: ri === 0 ? 'none' : undefined, borderTop: ri === 1 ? 'none' : undefined, overflow: 'hidden' }}>
+              <div key={ri} className="dores-row" style={{ borderBottom: ri === 0 ? 'none' : undefined, borderTop: ri === 1 ? 'none' : undefined }}>
                 {row.map((item, ci) => (
-                  <div key={ci} style={{ background: 'var(--ink2)', padding: '28px 24px', borderRight: ci < 2 ? '1px solid rgba(255,255,255,.06)' : 'none' }}>
+                  <div key={ci} className="dores-card">
                     <div style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase' as const, color: '#c05050', marginBottom: 14 }}>{item.tag}</div>
                     <p style={{ fontSize: 13.5, color: 'var(--txt-ink2)', lineHeight: 1.75, marginBottom: 14 }}>{item.text}</p>
                     <p style={{ fontSize: 12, color: 'var(--txt-ink3)', lineHeight: 1.6 }}>{item.sub}</p>
