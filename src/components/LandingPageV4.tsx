@@ -312,9 +312,9 @@ const LandingPageV4 = () => {
                 { tag: 'Documentação irregular', text: '"Havia uma penhora na matrícula. O corretor não verificou. Só descobrimos quando fomos ao cartório para assinar."', sub: 'Due diligence documental completa protege você de problemas que podem travar ou anular a compra após a assinatura.' }
               ]
             ].map((row, ri) => (
-              <div key={ri} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', borderBottom: ri === 0 ? 'none' : undefined, borderTop: ri === 1 ? 'none' : undefined, overflow: 'hidden' }}>
+              <div key={ri} className="dores-row" style={{ borderBottom: ri === 0 ? 'none' : undefined, borderTop: ri === 1 ? 'none' : undefined }}>
                 {row.map((item, ci) => (
-                  <div key={ci} style={{ background: 'var(--ink2)', padding: '28px 24px', borderRight: ci < 2 ? '1px solid rgba(255,255,255,.06)' : 'none' }}>
+                  <div key={ci} className="dores-card">
                     <div style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase' as const, color: '#c05050', marginBottom: 14 }}>{item.tag}</div>
                     <p style={{ fontSize: 13.5, color: 'var(--txt-ink2)', lineHeight: 1.75, marginBottom: 14 }}>{item.text}</p>
                     <p style={{ fontSize: 12, color: 'var(--txt-ink3)', lineHeight: 1.6 }}>{item.sub}</p>
