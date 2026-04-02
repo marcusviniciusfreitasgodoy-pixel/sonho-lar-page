@@ -67,7 +67,27 @@ strong{font-weight:500}
 .nav-menu a:hover{color:var(--txt-ink2)}
 .nav-cta{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;border:1px solid var(--gold3);color:var(--gold);background:transparent;cursor:pointer;border-radius:1px;transition:all .25s;text-decoration:none;font-weight:400}
 .nav-cta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-@media(max-width:760px){.nav-menu{display:none}}
+@media(max-width:760px){.nav-menu{display:none}.nav-cta{display:none}}
+
+/* NAV LOGO SUB */
+.nav-logo-sub{color:var(--txt-ink2);font-size:14px;font-weight:300}
+
+/* HAMBURGER */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:210}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--txt-ink);transition:all .3s ease}
+@media(max-width:760px){.nav-hamburger{display:flex}}
+
+/* Menu open hamburger animation */
+.menu-open .nav-hamburger span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.menu-open .nav-hamburger span:nth-child(2){opacity:0}
+.menu-open .nav-hamburger span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE MENU */
+.mobile-menu{display:flex;flex-direction:column;padding:16px var(--pad) 24px;background:rgba(5,5,10,.97);border-top:1px solid var(--bd-ink);gap:4px}
+.mobile-menu a{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-ink2);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--bd-ink);transition:color .2s;font-weight:400}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--txt-ink)}
+.mobile-menu-cta{color:var(--gold) !important;border:1px solid var(--gold3) !important;border-bottom:1px solid var(--gold3) !important;text-align:center;padding:12px !important;margin-top:8px;border-radius:2px}
 
 /* HERO */
 .hero{position:relative;height:100svh;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}

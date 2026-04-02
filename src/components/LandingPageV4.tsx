@@ -110,6 +110,7 @@ function useScrollReveal(): RefCallback<HTMLElement> {
 const LandingPageV4 = () => {
   const [activeScenario, setActiveScenario] = useState(0);
   const [navSolid, setNavSolid] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const reveal = useScrollReveal();
@@ -184,11 +185,11 @@ const LandingPageV4 = () => {
   return (
     <div className="landing-v4">
       {/* NAV */}
-      <nav className={navSolid ? 'solid' : ''}>
+      <nav className={`${navSolid ? 'solid' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-inner">
           <a href="#" className="nav-logo" onClick={handleAnchorClick}>
-            <img src={godoyLogo} alt="Godoy Prime" />
-            <span className="nav-logo-text">Godoy <span>Prime</span></span>
+            <img src={godoyLogo} alt="Godoy Prime Realty" />
+            <span className="nav-logo-text">Godoy <span>Prime</span> <span className="nav-logo-sub">Realty</span></span>
           </a>
           <ul className="nav-menu">
             <li><a href="#conceito" onClick={handleAnchorClick}>Conceito</a></li>
@@ -198,7 +199,20 @@ const LandingPageV4 = () => {
             <li><a href="#faq" onClick={handleAnchorClick}>FAQ</a></li>
           </ul>
           <a href="#contato" className="nav-cta" onClick={handleAnchorClick}>Diagnóstico Gratuito</a>
+          <button className="nav-hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
+            <span /><span /><span />
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="mobile-menu">
+            <a href="#conceito" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>Conceito</a>
+            <a href="#como-funciona" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>Processo</a>
+            <a href="#servicos" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>Serviços</a>
+            <a href="#sobre" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>Sobre</a>
+            <a href="#faq" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>FAQ</a>
+            <a href="#contato" className="mobile-menu-cta" onClick={(e) => { handleAnchorClick(e); setMobileMenuOpen(false); }}>Diagnóstico Gratuito</a>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
