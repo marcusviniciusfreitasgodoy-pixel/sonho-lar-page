@@ -3,20 +3,17 @@ import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
 import godoyLogo from '@/assets/godoy-logo.png';
+import { supabase } from '@/integrations/supabase/client';
 
-const RESEND_API_KEY = 're_cvfSpBzs_L6RxSps1Ks73z6i3snYGT7h8';
-const FROM_EMAIL = 'noreply@godoyprime.com.br';
 const MARCUS_EMAIL = 'marcus@godoyprime.com.br';
 const MARCUS_WA = '5521964075124';
 
 async function sendEmail(to: string, _toName: string, subject: string, htmlBody: string) {
-  if (!RESEND_API_KEY) return;
   try {
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + RESEND_API_KEY },
-      body: JSON.stringify({ from: 'Marcus Godoy — Godoy Prime <' + FROM_EMAIL + '>', to: [to], subject, html: htmlBody })
+    const { error } = await supabase.functions.invoke('send-email', {
+      body: { to, subject, html: htmlBody }
     });
+    if (error) console.warn('Email send failed:', error);
   } catch (e) { console.warn('Email send failed:', e); }
 }
 
