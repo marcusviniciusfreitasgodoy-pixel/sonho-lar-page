@@ -207,10 +207,6 @@ const LandingPageV4 = () => {
         <div className="hero-gradient"></div>
         <div className="hero-gradient2"></div>
         <div className="hero-content">
-          <div className="hero-issue">
-            <div className="hero-issue-line"></div>
-            <span className="hero-issue-text">Personal Shopper Imobiliário · Barra da Tijuca e Recreio</span>
-          </div>
           <h1 className="hero-headline">Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado imobiliário.</h1>
           <p className="hero-sub">Eu represento compradores exigentes — usando dados de transações reais da região, curadoria técnica e negociação profissional. Sem conflito de interesses.</p>
           <div className="hero-actions">
