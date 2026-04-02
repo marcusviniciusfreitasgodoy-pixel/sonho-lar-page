@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, type RefCallback } from 'react';
 import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
@@ -63,11 +63,36 @@ function emailParaCliente(dados: any) {
   </div>`;
 }
 
+// Scroll-reveal hook
+function useScrollReveal(): RefCallback<HTMLElement> {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    return () => observerRef.current?.disconnect();
+  }, []);
+
+  return useCallback((node: HTMLElement | null) => {
+    if (node) observerRef.current?.observe(node);
+  }, []);
+}
+
 const LandingPageV4 = () => {
   const [activeScenario, setActiveScenario] = useState(0);
   const [navSolid, setNavSolid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const reveal = useScrollReveal();
 
   useEffect(() => {
     const handler = () => setNavSolid(window.scrollY > 50);
@@ -182,7 +207,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 2. O PROBLEMA + POR QUE PAGAR (merged) */}
-      <section className="sec sec-vellum" id="conceito">
+      <section ref={reveal} className="sec sec-vellum scroll-reveal" id="conceito">
         <div className="wrap">
           <span className="overline" style={{ color: 'var(--gold3)', display: 'block', marginBottom: 20 }}>O problema</span>
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 300, fontSize: 'clamp(28px,4.5vw,46px)', lineHeight: 1.1, color: 'var(--txt-vel)', letterSpacing: '-.01em', marginBottom: 32 }}>
@@ -220,7 +245,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 3. O MODELO (condensed mission) */}
-      <section className="sec sec-ink" id="representacao">
+      <section ref={reveal} className="sec sec-ink scroll-reveal" id="representacao">
         <div className="wrap">
           <span className="overline" style={{ color: 'var(--gold3)', display: 'block', marginBottom: 20 }}>O modelo</span>
           <h2 style={{ fontFamily: 'var(--serif)', fontWeight: 300, fontSize: 'clamp(28px,4.5vw,46px)', lineHeight: 1.1, color: 'var(--txt-ink)', letterSpacing: '-.01em', marginBottom: 16 }}>
@@ -262,7 +287,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 4. PROCESS */}
-      <section className="sec sec-vellum2" id="como-funciona">
+      <section ref={reveal} className="sec sec-vellum2 scroll-reveal" id="como-funciona">
         <div className="wrap">
           <div className="steps-intro">
             <div>
@@ -286,7 +311,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 5. NA PRÁTICA (3 scenarios, shortened) */}
-      <section className="sec sec-ink2" id="na-pratica">
+      <section ref={reveal} className="sec sec-ink2 scroll-reveal" id="na-pratica">
         <div className="wrap">
           <div className="sc-header">
             <span className="overline">Na prática</span>
@@ -326,7 +351,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 6. SERVIÇOS + GARANTIA (integrated) */}
-      <section className="sec sec-vellum" id="servicos">
+      <section ref={reveal} className="sec sec-vellum scroll-reveal" id="servicos">
         <div className="wrap">
           <div className="prod-header">
             <span className="overline">Serviços</span>
@@ -374,7 +399,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 7. MARCUS (shortened) */}
-      <section className="sec sec-ink2" id="sobre">
+      <section ref={reveal} className="sec sec-ink2 scroll-reveal" id="sobre">
         <div className="wrap">
           <div className="marcus-section">
             <div className="marcus-img-wrap">
@@ -402,7 +427,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 8. FAQ */}
-      <section className="sec sec-ink" id="faq">
+      <section ref={reveal} className="sec sec-ink scroll-reveal" id="faq">
         <div className="wrap">
           <span className="overline" style={{ color: 'var(--gold3)', display: 'block', marginBottom: 20 }}>Perguntas frequentes</span>
           <h2 className="display display-md" style={{ color: 'var(--txt-ink)', marginBottom: 'clamp(40px,5vw,64px)' }}>Respostas <em>diretas</em></h2>
@@ -424,7 +449,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* 9. FORM */}
-      <section className="sec sec-vellum2" id="contato">
+      <section ref={reveal} className="sec sec-vellum2 scroll-reveal" id="contato">
         <div className="wrap">
           <div className="form-layout">
             <div className="form-intro">
