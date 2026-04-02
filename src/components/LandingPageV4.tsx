@@ -66,24 +66,44 @@ function emailParaCliente(dados: any) {
 // Scroll-reveal hook
 function useScrollReveal(): RefCallback<HTMLElement> {
   const observerRef = useRef<IntersectionObserver | null>(null);
-  
+  const pendingNodesRef = useRef<Set<HTMLElement>>(new Set());
+
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      pendingNodesRef.current.forEach((node) => node.classList.add('revealed'));
+      pendingNodesRef.current.clear();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            observerRef.current?.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
-    return () => observerRef.current?.disconnect();
+
+    observerRef.current = observer;
+    pendingNodesRef.current.forEach((node) => observer.observe(node));
+
+    return () => {
+      observer.disconnect();
+      observerRef.current = null;
+    };
   }, []);
 
   return useCallback((node: HTMLElement | null) => {
-    if (node) observerRef.current?.observe(node);
+    if (!node) return;
+
+    pendingNodesRef.current.add(node);
+
+    if (observerRef.current) {
+      observerRef.current.observe(node);
+    }
   }, []);
 }
 
