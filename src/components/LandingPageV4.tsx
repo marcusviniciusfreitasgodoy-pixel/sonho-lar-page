@@ -163,7 +163,7 @@ const LandingPageV4 = () => {
       btn: 'Executivo com prazo',
       av: 'RM', name: 'Ricardo M. — Diretor Executivo',
       detail: '52 anos · Barra da Tijuca · R$3,2M',
-      situacao: 'Tinha 90 dias para fechar. Visitou 4 imóveis sem conseguir comparar tecnicamente — o preço por m² variava 40% sem explicação.',
+      situacao: 'Tinha 90 dias para fechar. Visitou 4 imóveis sem conseguir comparar tecnicamente o preço por m² variava 40% sem explicação.',
       results: [{ val: 'R$340k', label: 'Economia na negociação' }, { val: 'R$180k', label: 'Risco evitado (vistoria)' }, { val: '6', label: 'Imóveis avaliados' }]
     },
     {
