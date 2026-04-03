@@ -163,7 +163,7 @@ const LandingPageV4 = () => {
       btn: 'Executivo com prazo',
       av: 'RM', name: 'Ricardo M. — Diretor Executivo',
       detail: '52 anos · Barra da Tijuca · R$3,2M',
-      situacao: 'Tinha 90 dias para fechar. Visitou 4 imóveis sem conseguir comparar tecnicamente — o preço por m² variava 40% sem explicação.',
+      situacao: 'Tinha 90 dias para fechar. Visitou 4 imóveis sem conseguir comparar tecnicamente o preço por m² variava 40% sem explicação.',
       results: [{ val: 'R$340k', label: 'Economia na negociação' }, { val: 'R$180k', label: 'Risco evitado (vistoria)' }, { val: '6', label: 'Imóveis avaliados' }]
     },
     {
@@ -267,7 +267,7 @@ const LandingPageV4 = () => {
           <div className="prob-callout" style={{ marginTop: 32 }}>
             <div>
               <p style={{ fontSize: 11, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--gold3)', marginBottom: 8 }}>A pergunta que todo comprador faz</p>
-              <p className="prob-callout-text">"O corretor não me cobra nada" — porque é pago pelo <strong>vendedor</strong>, para vender pelo maior preço possível. <em>Você está na negociação mais cara da sua vida sem ninguém do seu lado.</em></p>
+              <p className="prob-callout-text">"O corretor não me cobra nada"  porque é pago pelo <strong>vendedor</strong>, para vender pelo maior preço possível. <em>Você está na negociação mais cara da sua vida sem ninguém do seu lado.</em></p>
             </div>
             <a href="#contato" className="btn btn-outline-dark btn-sm" onClick={handleAnchorClick}>→ Diagnóstico Gratuito</a>
           </div>
@@ -302,8 +302,8 @@ const LandingPageV4 = () => {
             </div>
             {[
               { lbl: 'Para quem trabalha', neg: 'Para o vendedor. Contrato com quem quer vender pelo maior preço.', pos: 'Para você. Contrato com quem quer comprar pelo melhor preço.' },
-              { lbl: 'Remuneração', neg: '% sobre o preço final — quanto mais caro, mais ganha.', pos: '% sobre a economia — quanto mais você economiza, mais ganho.' },
-              { lbl: 'Imóveis', neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro — portais, off-market e rede direta.' },
+              { lbl: 'Remuneração', neg: '% sobre o preço final, quanto mais caro, mais ganha.', pos: '% sobre a economia, quanto mais você economiza, mais ganho.' },
+              { lbl: 'Imóveis', neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro, portais, off-market e rede direta.' },
               { lbl: 'Vistoria técnica', neg: 'Não realiza.', pos: 'Antes de você visitar. Infiltrações, documentação, histórico.' },
               { lbl: 'Negociação', neg: 'Para fechar rápido.', pos: 'Para obter o melhor preço com dados.' }
             ].map((r, i) => (
@@ -330,7 +330,7 @@ const LandingPageV4 = () => {
           <div className="steps-intro">
             <div>
               <span className="overline">Como trabalhamos</span>
-              <h2>Dados de transações reais — não anúncios — para determinar o <em>valor justo.</em></h2>
+              <h2>Dados de transações reais não anúncios para determinar o <em>valor justo.</em></h2>
             </div>
             <p>Cada etapa protege sua decisão e seu capital. Sem atalhos, sem pressão.</p>
           </div>
@@ -452,13 +452,13 @@ const LandingPageV4 = () => {
             <div className="marcus-content">
               <span className="overline">Quem está do seu lado</span>
               <h2>A decisão de representar <em>exclusivamente compradores</em></h2>
-              <p className="marcus-bio">Corretor com CRECI ativo e Perito Avaliador credenciado pelo TJRJ. Atuação exclusiva para compradores de imóveis de alto padrão na Barra da Tijuca e Recreio. O modelo tradicional cria um conflito estrutural — a Godoy Prime existe para eliminá-lo.</p>
+              <p className="marcus-bio">Corretor com CRECI ativo e Perito Avaliador credenciado pelo TJRJ. Atuação exclusiva para compradores de imóveis de alto padrão na Barra da Tijuca e Recreio. O modelo tradicional cria um conflito estrutural e nós existimos existimos para eliminá-lo.</p>
               <div className="marcus-creds">
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>CRECI/RJ: 80.199 PF | 11.841 PJ</div>
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>Perito Avaliador — TJRJ</div>
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>Especialização em alto padrão — Barra e Recreio</div>
               </div>
-              <div className="marcus-motto">"Meu trabalho não é vender imóveis. É garantir que você <strong>tome a decisão certa</strong> — com dados, sem pressão."</div>
+              <div className="marcus-motto">"Meu trabalho não é vender imóveis. É garantir que você <strong>tome a decisão certa</strong> com dados, sem pressão."</div>
             </div>
           </div>
         </div>
