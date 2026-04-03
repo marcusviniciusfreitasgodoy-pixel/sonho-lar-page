@@ -330,7 +330,7 @@ const LandingPageV4 = () => {
           <div className="steps-intro">
             <div>
               <span className="overline">Como trabalhamos</span>
-              <h2>Dados de transações reais — não anúncios — para determinar o <em>valor justo.</em></h2>
+              <h2>Dados de transações reais não anúncios para determinar o <em>valor justo.</em></h2>
             </div>
             <p>Cada etapa protege sua decisão e seu capital. Sem atalhos, sem pressão.</p>
           </div>
