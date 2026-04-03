@@ -222,7 +222,7 @@ const LandingPageV4 = () => {
         <div className="hero-gradient2"></div>
         <div className="hero-content">
           <h1 className="hero-headline">Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado imobiliário.</h1>
-          <p className="hero-sub">Eu represento compradores exigentes — usando dados de transações reais da região, curadoria técnica e negociação profissional. Sem conflito de interesses.</p>
+          <p className="hero-sub">Eu represento compradores exigentes usando dados de transações reais da região, curadoria técnica e negociação profissional. Sem conflito de interesses.</p>
           <div className="hero-actions">
             <a href="#contato" className="btn btn-gold" onClick={handleAnchorClick}>Agendar Diagnóstico Gratuito</a>
             <a href="#conceito" className="btn btn-outline" onClick={handleAnchorClick}>Entender o conceito</a>
