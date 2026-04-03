@@ -302,8 +302,8 @@ const LandingPageV4 = () => {
             </div>
             {[
               { lbl: 'Para quem trabalha', neg: 'Para o vendedor. Contrato com quem quer vender pelo maior preço.', pos: 'Para você. Contrato com quem quer comprar pelo melhor preço.' },
-              { lbl: 'Remuneração', neg: '% sobre o preço final — quanto mais caro, mais ganha.', pos: '% sobre a economia — quanto mais você economiza, mais ganho.' },
-              { lbl: 'Imóveis', neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro — portais, off-market e rede direta.' },
+              { lbl: 'Remuneração', neg: '% sobre o preço final, quanto mais caro, mais ganha.', pos: '% sobre a economia, quanto mais você economiza, mais ganho.' },
+              { lbl: 'Imóveis', neg: 'Apenas portfólio próprio.', pos: 'Mercado inteiro, portais, off-market e rede direta.' },
               { lbl: 'Vistoria técnica', neg: 'Não realiza.', pos: 'Antes de você visitar. Infiltrações, documentação, histórico.' },
               { lbl: 'Negociação', neg: 'Para fechar rápido.', pos: 'Para obter o melhor preço com dados.' }
             ].map((r, i) => (
