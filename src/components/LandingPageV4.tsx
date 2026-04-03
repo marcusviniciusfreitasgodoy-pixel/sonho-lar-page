@@ -458,7 +458,7 @@ const LandingPageV4 = () => {
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>Perito Avaliador — TJRJ</div>
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>Especialização em alto padrão — Barra e Recreio</div>
               </div>
-              <div className="marcus-motto">"Meu trabalho não é vender imóveis. É garantir que você <strong>tome a decisão certa</strong> — com dados, sem pressão."</div>
+              <div className="marcus-motto">"Meu trabalho não é vender imóveis. É garantir que você <strong>tome a decisão certa</strong> com dados, sem pressão."</div>
             </div>
           </div>
         </div>
