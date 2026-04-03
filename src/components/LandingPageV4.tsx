@@ -267,7 +267,7 @@ const LandingPageV4 = () => {
           <div className="prob-callout" style={{ marginTop: 32 }}>
             <div>
               <p style={{ fontSize: 11, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--gold3)', marginBottom: 8 }}>A pergunta que todo comprador faz</p>
-              <p className="prob-callout-text">"O corretor não me cobra nada" — porque é pago pelo <strong>vendedor</strong>, para vender pelo maior preço possível. <em>Você está na negociação mais cara da sua vida sem ninguém do seu lado.</em></p>
+              <p className="prob-callout-text">"O corretor não me cobra nada"  porque é pago pelo <strong>vendedor</strong>, para vender pelo maior preço possível. <em>Você está na negociação mais cara da sua vida sem ninguém do seu lado.</em></p>
             </div>
             <a href="#contato" className="btn btn-outline-dark btn-sm" onClick={handleAnchorClick}>→ Diagnóstico Gratuito</a>
           </div>
