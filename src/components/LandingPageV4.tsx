@@ -207,20 +207,6 @@ const LandingPageV4 = () => {
             <a href="#conceito" className="btn btn-outline" onClick={handleAnchorClick}>Entender o conceito</a>
           </div>
           <p className="hero-note">Conversa direta · Sem compromisso · Sem venda de imóveis</p>
-          <div className="hero-creds">
-            <div className="hero-cred-item">
-              <span className="hero-cred-check">✓</span>
-              <span className="hero-cred-text">Perito Avaliador credenciado pelo TJRJ, a mesma metodologia técnica usada em disputas judiciais de alto valor</span>
-            </div>
-            <div className="hero-cred-item">
-              <span className="hero-cred-check">✓</span>
-              <span className="hero-cred-text">Acesso a dados reais de transações realizadas na região, não anúncios inflados pelo vendedor</span>
-            </div>
-            <div className="hero-cred-item">
-              <span className="hero-cred-check">✓</span>
-              <span className="hero-cred-text">CRECI/RJ 80.199 PF | 11.841 PJ, representação legal, auditável e contratualmente vinculada aos seus interesses</span>
-            </div>
-          </div>
         </div>
       </section>
 
