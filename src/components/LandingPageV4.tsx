@@ -3,14 +3,35 @@ import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
 import godoyLogo from '@/assets/godoy-logo.png';
-import { supabase } from '@/integrations/supabase/client';
 
 const MARCUS_EMAIL = 'marcus@godoyprime.com.br';
 const MARCUS_WA = '5521964075124';
+const BACKEND_URL = import.meta.env.VITE_SUPABASE_URL;
+const BACKEND_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
+type BackendClient = (typeof import('@/integrations/supabase/client'))['supabase'];
+
+let backendClientPromise: Promise<BackendClient> | null = null;
+
+async function getBackendClient() {
+  if (!BACKEND_URL || !BACKEND_PUBLISHABLE_KEY) return null;
+
+  if (!backendClientPromise) {
+    backendClientPromise = import('@/integrations/supabase/client').then(({ supabase }) => supabase);
+  }
+
+  return backendClientPromise;
+}
 
 async function sendEmail(to: string, _toName: string, subject: string, htmlBody: string) {
   try {
-    const { error } = await supabase.functions.invoke('send-email', {
+    const client = await getBackendClient();
+    if (!client) {
+      console.warn('Email send skipped: backend client env not available in this build.');
+      return;
+    }
+
+    const { error } = await client.functions.invoke('send-email', {
       body: { to, subject, html: htmlBody }
     });
     if (error) console.warn('Email send failed:', error);
