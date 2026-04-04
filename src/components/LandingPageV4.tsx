@@ -458,7 +458,7 @@ const LandingPageV4 = () => {
       <section ref={reveal} className="sec sec-ink scroll-reveal" id="faq">
         <div className="wrap">
           <span className="overline" style={{ color: 'var(--gold3)', display: 'block', marginBottom: 20 }}>Perguntas frequentes</span>
-          <h2 className="display display-md" style={{ color: 'var(--txt-ink)', marginBottom: 'clamp(40px,5vw,64px)' }}>As perguntas que todo comprador de alto padrão faz — respondidas com <em>dados, não com promessas.</em></h2>
+          <h2 className="display display-md" style={{ color: 'var(--txt-ink)', marginBottom: 'clamp(40px,5vw,64px)' }}>As perguntas que todo comprador de alto padrão faz, respondidas com <em>dados, não com promessas.</em></h2>
           <div className="faq-wrap">
             {[
               {
