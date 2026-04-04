@@ -197,7 +197,7 @@ const LandingPageV4 = () => {
         <div className="hero-gradient"></div>
         <div className="hero-gradient2"></div>
         <div className="hero-content">
-          <h1 className="hero-headline text-3xl">Comprar imóvel de alto padrão sem representation exclusiva é o <em>erro mais caro</em> do mercado imobiliário.</h1>
+          <h1 className="hero-headline text-3xl">Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado imobiliário.</h1>
           <div className="hero-sub-wrap">
             <p className="hero-sub">No mercado tradicional, três pessoas ganham mais quando você paga mais caro: o vendedor, o corretor e a imobiliária. Você é o único sem ninguém realmente do seu lado.</p>
             <p className="hero-sub">Eu mudo essa equação. Represento exclusivamente o comprador e meus honorários crescem quando sua economia cresce.</p>
