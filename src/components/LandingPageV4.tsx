@@ -473,7 +473,7 @@ const LandingPageV4 = () => {
             <div className="marcus-content">
               <span className="overline">Quem está do seu lado</span>
               <h2>A decisão de representar <em>exclusivamente compradores</em></h2>
-              <p className="marcus-bio">Corretor com CRECI ativo e Perito Avaliador credenciado pelo TJRJ. Atuação exclusiva para compradores de imóveis de alto padrão na Barra da Tijuca e Recreio. O modelo tradicional cria um conflito estrutural e nós existimos existimos para eliminá-lo.</p>
+              <p className="marcus-bio">Corretor com CRECI ativo e Perito Avaliador credenciado pelo TJRJ. Atuação exclusiva para compradores de imóveis de alto padrão na Barra da Tijuca e Recreio. O modelo tradicional cria um conflito estrutural <p className="marcus-bio">Corretor com CRECI ativo e Perito Avaliador credenciado pelo TJRJ. Atuação exclusiva para compradores de imóveis de alto padrão na Barra da Tijuca e Recreio. O modelo tradicional cria um conflito estrutural e nós existimos para eliminá-lo.</p></p>
               <div className="marcus-creds">
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>CRECI/RJ: 80.199 PF | 11.841 PJ</div>
                 <div className="marcus-cred"><div className="marcus-cred-dot"></div>Perito Avaliador — TJRJ</div>
