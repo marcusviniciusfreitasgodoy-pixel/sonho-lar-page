@@ -133,7 +133,10 @@ const LandingPageV4 = () => {
     const dados = {
       nome: (form.querySelector('#nome') as HTMLInputElement).value,
       whatsapp: (form.querySelector('#whatsapp') as HTMLInputElement).value,
+      email: (form.querySelector('#email') as HTMLInputElement).value,
       orcamento: (form.querySelector('#orcamento') as HTMLSelectElement).value,
+      tipoImovel: (form.querySelector('#tipo-imovel') as HTMLSelectElement).value,
+      momento: (form.querySelector('#momento') as HTMLSelectElement).value,
       mensagem: (form.querySelector('#mensagem') as HTMLTextAreaElement).value,
       servico: 'Diagnóstico Estratégico',
       origem: 'formulario_principal',
