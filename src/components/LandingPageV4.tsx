@@ -40,7 +40,10 @@ function emailParaMarcus(dados: any) {
         <tr><td style="padding:8px 0;color:#666;font-size:13px;width:140px">Serviço</td><td style="padding:8px 0;font-size:13px;font-weight:bold;color:#C9A96E">${dados.servico || 'Diagnóstico Estratégico'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Nome</td><td style="padding:8px 0;font-size:13px">${dados.nome}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">WhatsApp</td><td style="padding:8px 0;font-size:13px">${dados.whatsapp || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de valor</td><td style="padding:8px 0;font-size:13px">${dados.orcamento || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">E-mail</td><td style="padding:8px 0;font-size:13px">${dados.email || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de investimento</td><td style="padding:8px 0;font-size:13px">${dados.orcamento || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Tipo de imóvel</td><td style="padding:8px 0;font-size:13px">${dados.tipoImovel || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Momento da compra</td><td style="padding:8px 0;font-size:13px">${dados.momento || '-'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Mensagem</td><td style="padding:8px 0;font-size:13px">${dados.mensagem || '-'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Data</td><td style="padding:8px 0;font-size:13px">${dados.data}</td></tr>
       </table>
