@@ -200,7 +200,7 @@ const LandingPageV4 = () => {
           <h1 className="hero-headline">Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado imobiliário.</h1>
           <div className="hero-sub-wrap">
             <p className="hero-sub">No mercado tradicional, três pessoas ganham mais quando você paga mais caro: o vendedor, o corretor e a imobiliária. Você é o único sem ninguém realmente do seu lado.</p>
-            <p className="hero-sub">Eu mudo essa equação. Represento exclusivamente compradores de alto padrão na Barra da Tijuca, com dados de transações reais realizadas, curadoria técnica e negociação onde meus honorários crescem quando sua economia cresce.</p>
+            <p className="hero-sub">Eu mudo essa equação. Represento exclusivamente o comprador e meus honorários crescem quando sua economia cresce.</p>
           </div>
           <div className="hero-actions">
             <a href="#contato" className="btn btn-gold" onClick={handleAnchorClick}>Agendar Diagnóstico Estratégico Gratuito</a>
