@@ -441,7 +441,7 @@ const LandingPageV4 = () => {
               <p className="marcus-bio">Sou Marcus Godoy. Trabalhei dentro do mercado imobiliário tradicional tempo suficiente para entender exatamente como ele funciona e por que ele opera estruturalmente contra o comprador.</p>
               <p className="marcus-bio">A decisão de representar exclusivamente compradores foi a estratégia de posicionamento que me permitiu oferecer um serviço diferenciado, justo e qualificado para o Comprador de Alto Padrão.</p>
               <p className="marcus-bio">Minha remuneração está contratualmente vinculada à sua economia real.</p>
-              <p className="marcus-bio"><strong>Quando você paga menos, eu ganho mais. Quando você paga o preço cheio, quase não ganho nada.</strong></p>
+              <p className="marcus-bio"><strong>Quando você paga menos, eu ganho mais.</strong></p>
               <p className="marcus-bio">Esse alinhamento não é promessa. É matemática contratual auditável, documentada, irrevogável.</p>
               <p className="marcus-bio">O modelo tradicional cria um conflito estrutural. Existimos para eliminá-lo.</p>
               <div className="marcus-creds">
