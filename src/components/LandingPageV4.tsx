@@ -40,7 +40,10 @@ function emailParaMarcus(dados: any) {
         <tr><td style="padding:8px 0;color:#666;font-size:13px;width:140px">Serviço</td><td style="padding:8px 0;font-size:13px;font-weight:bold;color:#C9A96E">${dados.servico || 'Diagnóstico Estratégico'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Nome</td><td style="padding:8px 0;font-size:13px">${dados.nome}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">WhatsApp</td><td style="padding:8px 0;font-size:13px">${dados.whatsapp || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de valor</td><td style="padding:8px 0;font-size:13px">${dados.orcamento || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">E-mail</td><td style="padding:8px 0;font-size:13px">${dados.email || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de investimento</td><td style="padding:8px 0;font-size:13px">${dados.orcamento || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Tipo de imóvel</td><td style="padding:8px 0;font-size:13px">${dados.tipoImovel || '-'}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Momento da compra</td><td style="padding:8px 0;font-size:13px">${dados.momento || '-'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Mensagem</td><td style="padding:8px 0;font-size:13px">${dados.mensagem || '-'}</td></tr>
         <tr><td style="padding:8px 0;color:#666;font-size:13px">Data</td><td style="padding:8px 0;font-size:13px">${dados.data}</td></tr>
       </table>
@@ -133,7 +136,10 @@ const LandingPageV4 = () => {
     const dados = {
       nome: (form.querySelector('#nome') as HTMLInputElement).value,
       whatsapp: (form.querySelector('#whatsapp') as HTMLInputElement).value,
+      email: (form.querySelector('#email') as HTMLInputElement).value,
       orcamento: (form.querySelector('#orcamento') as HTMLSelectElement).value,
+      tipoImovel: (form.querySelector('#tipo-imovel') as HTMLSelectElement).value,
+      momento: (form.querySelector('#momento') as HTMLSelectElement).value,
       mensagem: (form.querySelector('#mensagem') as HTMLTextAreaElement).value,
       servico: 'Diagnóstico Estratégico',
       origem: 'formulario_principal',
@@ -514,10 +520,13 @@ const LandingPageV4 = () => {
               <div className="form-card">
                 {!formSubmitted ? (
                   <form ref={formRef} onSubmit={handleFormSubmit}>
-                    <div className="form-group"><label className="form-label" htmlFor="nome">Nome</label><input className="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" required /></div>
-                    <div className="form-group"><label className="form-label" htmlFor="whatsapp">Telefone</label><input className="form-input" type="tel" id="whatsapp" name="whatsapp" placeholder="(21) 9 0000-0000" required /></div>
-                    <div className="form-group"><label className="form-label" htmlFor="orcamento">Faixa de valor do imóvel</label><select className="form-select" id="orcamento" name="orcamento" required defaultValue=""><option value="" disabled>Selecione</option><option>R$1,5M a R$2,5M</option><option>R$2,5M a R$5M</option><option>R$5M a R$10M</option><option>Acima de R$10M</option></select></div>
-                    <div className="form-group"><label className="form-label" htmlFor="mensagem">Mensagem</label><textarea className="form-input form-textarea" id="mensagem" name="mensagem" placeholder="Conte brevemente o que procura..." rows={3}></textarea></div>
+                    <div className="form-group"><label className="form-label" htmlFor="nome">Nome completo</label><input className="form-input" type="text" id="nome" name="nome" placeholder="Seu nome completo" required /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="whatsapp">WhatsApp</label><input className="form-input" type="tel" id="whatsapp" name="whatsapp" placeholder="(21) 9 0000-0000" required /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="email">E-mail</label><input className="form-input" type="email" id="email" name="email" placeholder="seu@email.com" required /></div>
+                    <div className="form-group"><label className="form-label" htmlFor="orcamento">Faixa de investimento</label><select className="form-select" id="orcamento" name="orcamento" required defaultValue=""><option value="" disabled>Selecione</option><option>R$1,5M a R$2,5M</option><option>R$2,5M a R$5M</option><option>R$5M a R$10M</option><option>Acima de R$10M</option></select></div>
+                    <div className="form-group"><label className="form-label" htmlFor="tipo-imovel">Tipo de imóvel</label><select className="form-select" id="tipo-imovel" name="tipo-imovel" required defaultValue=""><option value="" disabled>Selecione</option><option>Apartamento</option><option>Cobertura</option><option>Casa / Mansão</option><option>Terreno / Lote</option><option>Sala Comercial</option><option>Outro</option></select></div>
+                    <div className="form-group"><label className="form-label" htmlFor="momento">Momento da compra</label><select className="form-select" id="momento" name="momento" required defaultValue=""><option value="" disabled>Selecione</option><option>Quero comprar nos próximos 30 dias</option><option>Estou pesquisando (1–3 meses)</option><option>Planejando para os próximos 6 meses</option><option>Apenas explorando opções</option></select></div>
+                    <div className="form-group"><label className="form-label" htmlFor="mensagem">Mensagem <span style={{ fontWeight: 400, color: 'var(--txt-vel3)' }}>(opcional)</span></label><textarea className="form-input form-textarea" id="mensagem" name="mensagem" placeholder="Conte brevemente o que procura..." rows={3}></textarea></div>
                     <button type="submit" className="btn btn-gold form-submit">Agendar Diagnóstico Estratégico Gratuito</button>
                     <p className="form-note">Retorno em até 24 horas · Sem compromisso</p>
                   </form>
