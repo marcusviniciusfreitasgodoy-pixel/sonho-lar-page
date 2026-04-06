@@ -158,7 +158,7 @@ const LandingPageV4 = () => {
       <nav className={`${navSolid ? 'solid' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-inner">
           <a href="#" className="nav-logo" onClick={handleAnchorClick}>
-            <img src={godoyLogo} alt="Godoy Prime Realty" />
+            <img src={godoyLogo} alt="" />
             <span className="nav-logo-text">Godoy <span>Prime</span> Realty</span>
           </a>
           <ul className="nav-menu">
@@ -545,7 +545,7 @@ const LandingPageV4 = () => {
           <div className="footer-grid">
             <div>
               <div className="footer-brand-row">
-                <img src={godoyLogo} alt="Godoy Prime" />
+                <img src={godoyLogo} alt="" />
                 <span className="footer-brand-name">Godoy <span>Prime</span> Realty</span>
               </div>
               <p className="footer-desc">Personal Shopper Imobiliário — Representação Exclusiva do Comprador<br/>Barra da Tijuca e Recreio · Rio de Janeiro</p>
