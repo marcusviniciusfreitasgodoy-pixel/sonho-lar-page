@@ -159,7 +159,7 @@ const LandingPageV4 = () => {
         <div className="nav-inner">
           <a href="#" className="nav-logo" onClick={handleAnchorClick}>
             <img src={godoyLogo} alt="Godoy Prime Realty" />
-            <span className="nav-logo-text">Godoy <span>Prime</span></span>
+            <span className="nav-logo-text">Godoy <span>Prime</span> Realty</span>
           </a>
           <ul className="nav-menu">
             <li><a href="#conceito" onClick={handleAnchorClick}>Conceito</a></li>
