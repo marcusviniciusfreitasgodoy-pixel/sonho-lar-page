@@ -190,7 +190,7 @@ const LandingPageV4 = () => {
         <div className="hero-left">
           <div className="hero-text">
             <div className="hero-eyebrow scroll-reveal" ref={reveal}>
-              <span className="hero-eyebrow-text">Personal Shopper Imobiliário · Barra da Tijuca e Recreio</span>
+              <span className="hero-eyebrow-text">PERSONAL SHOPPER IMOBILIÁRIO<br />BARRA DA TIJUCA E RECREIO</span>
             </div>
             <h1 className="hero-h1 scroll-reveal" ref={reveal}>Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado.</h1>
             <p className="hero-sub scroll-reveal" ref={reveal}>Você é o único na negociação sem ninguém <em>realmente</em> do seu lado. Eu mudo essa equação.</p>
