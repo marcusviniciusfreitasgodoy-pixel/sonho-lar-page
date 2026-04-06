@@ -230,7 +230,7 @@ const LandingPageV4 = () => {
       </div>
 
       {/* PROBLEMA */}
-      <section ref={reveal} className="sec sec-white scroll-reveal" id="conceito">
+      <section className="sec sec-white" id="conceito">
         <div className="wrap">
           <div className="prob-header">
             <span className="prob-eyebrow">O problema</span>
