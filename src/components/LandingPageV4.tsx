@@ -230,7 +230,7 @@ const LandingPageV4 = () => {
       </div>
 
       {/* PROBLEMA */}
-      <section ref={reveal} className="sec sec-white scroll-reveal" id="conceito">
+      <section className="sec sec-white" id="conceito">
         <div className="wrap">
           <div className="prob-header">
             <span className="prob-eyebrow">O problema</span>
@@ -269,7 +269,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* MODELO COMPARATIVO */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="representacao">
+      <section className="sec sec-dark" id="representacao">
         <div className="wrap">
           <span className="modelo-eyebrow">O modelo</span>
           <h2 className="modelo-h2">Aqui, o interesse é <em>um só: o seu.</em></h2>
@@ -333,7 +333,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* PROCESSO */}
-      <section ref={reveal} className="sec sec-cream scroll-reveal" id="processo">
+      <section className="sec sec-cream" id="processo">
         <div className="wrap">
           <div className="proc-header">
             <span className="proc-eyebrow scroll-reveal" ref={reveal}>Como trabalhamos</span>
@@ -360,7 +360,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* DADOS */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="dados">
+      <section className="sec sec-dark" id="dados">
         <div className="wrap">
           <div className="dados-header">
             <span className="dados-eyebrow scroll-reveal" ref={reveal}>Na prática</span>
@@ -392,7 +392,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* SERVIÇOS */}
-      <section ref={reveal} className="sec sec-white scroll-reveal" id="servicos">
+      <section className="sec sec-white" id="servicos">
         <div className="wrap">
           <div className="serv-header">
             <span className="serv-eyebrow scroll-reveal" ref={reveal}>Serviços</span>
@@ -456,7 +456,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* SOBRE */}
-      <section ref={reveal} className="sec sec-cream scroll-reveal" id="sobre">
+      <section className="sec sec-cream" id="sobre">
         <div className="wrap">
           <div className="sobre-grid">
             <div className="sobre-photo-col scroll-reveal" ref={reveal}>
@@ -488,7 +488,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* FAQ */}
-      <section ref={reveal} className="sec sec-white scroll-reveal" id="faq">
+      <section className="sec sec-white" id="faq">
         <div className="wrap">
           <div className="faq-header">
             <span className="faq-eyebrow">Perguntas frequentes</span>
@@ -514,7 +514,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* FORMULÁRIO */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="diagnostico">
+      <section className="sec sec-dark" id="diagnostico">
         <div className="wrap">
           <div className="form-grid">
             <div>
