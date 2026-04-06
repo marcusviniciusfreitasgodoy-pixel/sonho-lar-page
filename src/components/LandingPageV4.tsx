@@ -360,7 +360,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* DADOS */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="dados">
+      <section className="sec sec-dark" id="dados">
         <div className="wrap">
           <div className="dados-header">
             <span className="dados-eyebrow scroll-reveal" ref={reveal}>Na prática</span>
