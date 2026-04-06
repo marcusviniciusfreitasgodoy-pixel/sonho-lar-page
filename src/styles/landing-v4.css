@@ -219,6 +219,7 @@ em{font-style:italic;color:inherit}
 .intl-list{display:flex;gap:clamp(24px,3vw,48px);flex-wrap:wrap}
 .intl-item-name{display:block;font-size:15px;font-weight:700;color:var(--light);margin-bottom:2px}
 .intl-item-sub{font-size:11px;color:var(--light3);letter-spacing:.04em;font-weight:400}
+@media(max-width:800px){.intl{text-align:center}.intl-list{justify-content:center}}
 
 @media(max-width:760px){
   .compare-table-head{display:none}
