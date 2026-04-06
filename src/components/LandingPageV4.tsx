@@ -185,8 +185,8 @@ const LandingPageV4 = () => {
         )}
       </nav>
 
-      {/* HERO — SPLIT */}
-      <section className="hero">
+      {/* HERO — BACKGROUND IMAGE */}
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero-left">
           <div className="hero-text">
             <div className="hero-eyebrow scroll-reveal" ref={reveal}>
@@ -214,9 +214,6 @@ const LandingPageV4 = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="hero-right">
-          <img src={heroImage} alt="Barra da Tijuca — Imóveis de alto padrão" />
         </div>
       </section>
 
