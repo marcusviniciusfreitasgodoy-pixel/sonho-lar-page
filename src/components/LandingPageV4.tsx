@@ -488,7 +488,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* FAQ */}
-      <section ref={reveal} className="sec sec-white scroll-reveal" id="faq">
+      <section className="sec sec-white" id="faq">
         <div className="wrap">
           <div className="faq-header">
             <span className="faq-eyebrow">Perguntas frequentes</span>
