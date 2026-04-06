@@ -1,45 +1,20 @@
 
 
-## Corrigir Responsividade Mobile (375px) — Seções Invisíveis e Hero Quebrado
+## Adicionar imagem da Barra da Tijuca como background do Hero
 
-### Problemas Identificados
+Atualmente o hero usa um layout split: lado esquerdo com texto (fundo `--charcoal`) e lado direito com a imagem. A proposta é usar a imagem como background de toda a seção hero, removendo o split, e adicionar um overlay escuro para garantir legibilidade dos textos.
 
-1. **Seções intermediárias invisíveis**: Todas as seções entre Hero e Footer estão no DOM mas invisíveis. O `scroll-reveal` (opacity:0) aplicado em `<section>` inteiras nunca recebe a classe `revealed` porque o IntersectionObserver não dispara corretamente no mobile — provavelmente porque as seções com opacity:0 e transform ainda ocupam espaço mas o observer com threshold 0.12 não as detecta quando o scroll pula diretamente do hero para o footer.
+### Alterações
 
-2. **Hero sem breakpoint mobile**: O grid `55% 45%` permanece em 375px, cortando texto atrás da imagem.
+#### 1. `src/components/LandingPageV4.tsx`
+- Remover a `div.hero-right` com a `<img>` separada
+- Adicionar `style={{ backgroundImage: url(heroImage) }}` na `<section className="hero">` (ou via classe)
+- Manter toda a estrutura de `.hero-left` com os textos
 
-3. **Footer com grid de 3 colunas** sem breakpoint mobile.
-
----
-
-### Correções Planejadas
-
-#### 1. `src/styles/landing-v4.css` — Adicionar media queries mobile
-
-**Hero mobile** (max-width: 780px):
-- Mudar grid para `1fr` (coluna única)
-- Hero-left: padding ajustado, align-items center
-- Hero-right: max-height 300px, order -1 (imagem em cima)
-- Hero-credentials: flex-wrap, gap reduzido
-- Hero-ctas: flex-direction column, width 100%
-
-**Footer mobile** (max-width: 780px):
-- Grid 1 coluna
-
-#### 2. `src/components/LandingPageV4.tsx` — Corrigir scroll-reveal nas sections
-
-O problema principal é que `scroll-reveal` está no `<section>` externo, tornando seções inteiras invisíveis. A correção:
-- **Remover** `scroll-reveal` e `ref={reveal}` dos elementos `<section>` externos (linhas 233, 272, 336, 363, 395, 459, 491, 517)
-- Manter `scroll-reveal` apenas nos elementos internos (headers, cards, steps) que já têm seus próprios `ref={reveal}`
-
-Isso garante que as seções são sempre visíveis e apenas os elementos internos fazem a animação de reveal.
-
----
-
-### Resumo
-
-| Arquivo | Mudança |
-|---------|---------|
-| `LandingPageV4.tsx` | Remover `scroll-reveal`/`ref={reveal}` de 8 `<section>` wrappers |
-| `landing-v4.css` | Adicionar `@media(max-width:780px)` para hero (grid 1col, imagem em cima) e footer (1col) |
+#### 2. `src/styles/landing-v4.css`
+- `.hero`: remover `grid-template-columns: 55% 45%` e `display:grid`. Usar `position:relative; background-size:cover; background-position:center 30%`
+- Adicionar pseudo-elemento `.hero::before` com overlay gradient escuro (ex: `linear-gradient(to right, rgba(22,20,18,0.92) 0%, rgba(22,20,18,0.7) 100%)`) para garantir contraste do texto
+- `.hero-left`: largura máxima ~60%, padding generoso, `position:relative; z-index:1`
+- Remover `.hero-right` e suas regras
+- **Mobile** (`max-width:780px`): `.hero-left` ocupa 100%, overlay mais opaco (~0.85) para legibilidade, texto centralizado
 
