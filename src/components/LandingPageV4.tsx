@@ -333,7 +333,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* PROCESSO */}
-      <section ref={reveal} className="sec sec-cream scroll-reveal" id="processo">
+      <section className="sec sec-cream" id="processo">
         <div className="wrap">
           <div className="proc-header">
             <span className="proc-eyebrow scroll-reveal" ref={reveal}>Como trabalhamos</span>
