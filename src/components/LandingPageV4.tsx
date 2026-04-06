@@ -359,37 +359,6 @@ const LandingPageV4 = () => {
         </div>
       </section>
 
-      {/* DADOS */}
-      <section className="sec sec-dark" id="dados">
-        <div className="wrap">
-          <div className="dados-header">
-            <span className="dados-eyebrow scroll-reveal" ref={reveal}>Na prática</span>
-            <h2 className="dados-h2 scroll-reveal" ref={reveal}>O que os dados do mercado revelam sobre compradores <em>sem representação exclusiva</em></h2>
-            <p className="dados-sub scroll-reveal" ref={reveal}>O mercado de alto padrão da Barra da Tijuca e Recreio tem padrões documentados em transações reais.</p>
-          </div>
-          <div className="dados-grid">
-            <div className="dado-card scroll-reveal" ref={reveal}>
-              <div className="dado-card-val"><em>+</em> R$1,5M</div>
-              <div className="dado-card-label">Ticket mínimo</div>
-              <p className="dado-card-text">Operamos exclusivamente no segmento de alto padrão. Cada processo recebe dedicação integral — por isso limitamos o volume de clientes ativos.</p>
-            </div>
-            <div className="dado-card scroll-reveal" ref={reveal}>
-              <div className="dado-card-val"><em>100%</em></div>
-              <div className="dado-card-label">Representação exclusiva</div>
-              <p className="dado-card-text">Não representamos vendedores. Não fazemos intermediação. O contrato é com você e os interesses protegidos são exclusivamente os seus.</p>
-            </div>
-            <div className="dado-card scroll-reveal" ref={reveal}>
-              <div className="dado-card-val">TJRJ</div>
-              <div className="dado-card-label">Perito Avaliador credenciado</div>
-              <p className="dado-card-text">Credencial técnica independente emitida pelo Tribunal de Justiça do Rio de Janeiro. O mesmo padrão usado em disputas judiciais de alto valor.</p>
-            </div>
-          </div>
-          <div className="dado-note scroll-reveal" ref={reveal}>
-            <span className="dado-note-icon">✦</span>
-            <p className="dado-note-text">Estes dados refletem padrões documentados em transações reais da Barra da Tijuca e Recreio. São o retrato do que o mercado faz sistematicamente com compradores <strong>sem representação exclusiva</strong>.</p>
-          </div>
-        </div>
-      </section>
 
       {/* SERVIÇOS */}
       <section className="sec sec-white" id="servicos">
