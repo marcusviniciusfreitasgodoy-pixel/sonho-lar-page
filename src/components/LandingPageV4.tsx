@@ -158,7 +158,7 @@ const LandingPageV4 = () => {
       <nav className={`${navSolid ? 'solid' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-inner">
           <a href="#" className="nav-logo" onClick={handleAnchorClick}>
-            <img src={godoyLogo} alt="Godoy Prime Realty" />
+            <img src={godoyLogo} alt="" />
             <span className="nav-logo-text">Godoy <span>Prime</span> Realty</span>
           </a>
           <ul className="nav-menu">
