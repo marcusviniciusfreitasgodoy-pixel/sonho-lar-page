@@ -485,7 +485,7 @@ const LandingPageV4 = () => {
             <div>
               <span className="form-l-eyebrow">Próximo passo</span>
               <h2 className="form-l-h2">O próximo passo não é visitar um imóvel. Em apenas 30 minutos <em>tudo ficará mais claro e seguro para você.</em></h2>
-              <p className="form-l-sub">São 30 minutos para definir como você vai comprar. Uma sessão estruturada para mapear seu momento, esclarecer suas dúvidas e identificar qual nível de representação faz sentido para o seu caso.</p>
+              
               <div className="form-l-note">Conversa direta com Marcus Godoy. Sem equipe. Sem roteiro de fechamento. Você sai sabendo se faz sentido avançar, ou não.</div>
               <div className="form-l-highlight">
                 <p>Cada semana pesquisando sem dados reais de transações é uma semana negociando no escuro. O mercado não espera, e o vendedor já tem as informações que você não tem.</p>
