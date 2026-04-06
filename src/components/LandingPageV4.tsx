@@ -269,7 +269,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* MODELO COMPARATIVO */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="representacao">
+      <section className="sec sec-dark" id="representacao">
         <div className="wrap">
           <span className="modelo-eyebrow">O modelo</span>
           <h2 className="modelo-h2">Aqui, o interesse é <em>um só: o seu.</em></h2>
