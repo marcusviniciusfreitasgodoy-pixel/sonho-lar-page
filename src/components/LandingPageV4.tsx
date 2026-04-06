@@ -488,7 +488,7 @@ const LandingPageV4 = () => {
               
               <div className="form-l-note">Conversa direta com Marcus Godoy. Sem equipe. Sem roteiro de fechamento. Você sai sabendo se faz sentido avançar, ou não.</div>
               <div className="form-l-highlight">
-                <p>Cada semana pesquisando sem dados reais de transações é uma semana negociando no escuro. O mercado não espera, e o vendedor já tem as informações que você não tem.</p>
+                <p>Cada semana pesquisando sem uma assessoria como essa, é uma semana negociando no escuro. O mercado não espera, e o vendedor já tem as informações que você não tem.</p>
               </div>
             </div>
             <div>
