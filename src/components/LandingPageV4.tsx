@@ -456,7 +456,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* SOBRE */}
-      <section ref={reveal} className="sec sec-cream scroll-reveal" id="sobre">
+      <section className="sec sec-cream" id="sobre">
         <div className="wrap">
           <div className="sobre-grid">
             <div className="sobre-photo-col scroll-reveal" ref={reveal}>
