@@ -83,7 +83,7 @@ em{font-style:italic;color:inherit}
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:510}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
 .landing-v4 nav:not(.solid) .nav-hamburger span{background:var(--white)}
-@media(max-width:800px){.nav-hamburger{display:flex}}
+@media(max-width:800px){.nav-hamburger{display:flex}.nav-inner{justify-content:center}.nav-hamburger{position:absolute;right:var(--pad)}}
 .menu-open .nav-hamburger span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .menu-open .nav-hamburger span:nth-child(2){opacity:0}
 .menu-open .nav-hamburger span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
