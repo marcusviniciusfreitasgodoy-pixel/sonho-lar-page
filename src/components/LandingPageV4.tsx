@@ -514,7 +514,7 @@ const LandingPageV4 = () => {
       </section>
 
       {/* FORMULÁRIO */}
-      <section ref={reveal} className="sec sec-dark scroll-reveal" id="diagnostico">
+      <section className="sec sec-dark" id="diagnostico">
         <div className="wrap">
           <div className="form-grid">
             <div>
