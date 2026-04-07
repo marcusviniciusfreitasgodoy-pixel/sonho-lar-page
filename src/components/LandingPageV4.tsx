@@ -296,7 +296,6 @@ const LandingPageV4 = () => {
               { lbl: 'Acompanhamento', neg: 'Encerra na assinatura do contrato. A partir daí, você está sozinho.', pos: 'Acompanha <strong>até a transferência do imóvel</strong>: documentação, cartório e vistoria final.' }
             ].map((r, i) => (
               <div key={i} className="compare-table-row">
-                <div><span>{r.lbl}</span></div>
                 <div><p>{r.neg}</p></div>
                 <div><p dangerouslySetInnerHTML={{ __html: r.pos }} /></div>
               </div>
