@@ -303,7 +303,7 @@ const LandingPageV4 = () => {
 
             {/* Foot */}
             <div className="compare-table-foot">
-              <div></div>
+
               <div>
                 <p className="compare-foot-quote">"Você está na negociação mais cara da sua vida. O profissional na sala foi contratado pelo lado oposto ao seu. Em qualquer outro contexto, você chamaria isso de conflito de interesse."</p>
               </div>
