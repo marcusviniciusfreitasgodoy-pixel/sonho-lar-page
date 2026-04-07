@@ -221,10 +221,18 @@ em{font-style:italic;color:inherit}
 .intl-item-sub{font-size:11px;color:var(--light3);letter-spacing:.04em;font-weight:400}
 @media(max-width:800px){.intl{text-align:center}.intl-list{justify-content:center}}
 
+/* Mobile column labels (hidden on desktop) */
+.compare-table-row > div:nth-child(2)::before,
+.compare-table-row > div:nth-child(3)::before{display:none;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.compare-table-row > div:nth-child(2)::before{content:'Modelo tradicional · Intermediação · Corretor de mercado';color:var(--light3)}
+.compare-table-row > div:nth-child(3)::before{content:'Personal Shopper · Representação · Exclusivo para o comprador';color:var(--gold2)}
+
 @media(max-width:760px){
   .compare-table-head{display:none}
   .compare-table-row{grid-template-columns:1fr 1fr}
   .compare-table-row > div:first-child{display:none}
+  .compare-table-row > div:nth-child(2)::before,
+  .compare-table-row > div:nth-child(3)::before{display:block}
   .compare-table-foot{grid-template-columns:1fr}
   .compare-table-foot > div:first-child{display:none}
 }
