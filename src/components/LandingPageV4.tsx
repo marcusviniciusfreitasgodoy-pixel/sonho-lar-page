@@ -274,7 +274,6 @@ const LandingPageV4 = () => {
           <div className="compare-table">
             {/* Head */}
             <div className="compare-table-head">
-              <div></div>
               <div>
                 <span className="compare-head-label">Corretor Tradicional</span>
                 <span className="compare-head-pill pill-muted">Modelo atual</span>
