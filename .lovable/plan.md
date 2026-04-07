@@ -1,20 +1,24 @@
 
 
-## Adicionar imagem da Barra da Tijuca como background do Hero
+## Plan: Add Google Tag Manager + Google Analytics (GA4)
 
-Atualmente o hero usa um layout split: lado esquerdo com texto (fundo `--charcoal`) e lado direito com a imagem. A proposta é usar a imagem como background de toda a seção hero, removendo o split, e adicionar um overlay escuro para garantir legibilidade dos textos.
+### What will be done
+Add both Google Tag Manager (GTM) and Google Analytics GA4 (ID: `G-2ZS12MZVQ1`) to the site. GTM will serve as a centralized tag management system, and GA4 will track pageviews and events directly.
 
-### Alterações
+### Technical Changes
 
-#### 1. `src/components/LandingPageV4.tsx`
-- Remover a `div.hero-right` com a `<img>` separada
-- Adicionar `style={{ backgroundImage: url(heroImage) }}` na `<section className="hero">` (ou via classe)
-- Manter toda a estrutura de `.hero-left` com os textos
+**File: `index.html`**
 
-#### 2. `src/styles/landing-v4.css`
-- `.hero`: remover `grid-template-columns: 55% 45%` e `display:grid`. Usar `position:relative; background-size:cover; background-position:center 30%`
-- Adicionar pseudo-elemento `.hero::before` com overlay gradient escuro (ex: `linear-gradient(to right, rgba(22,20,18,0.92) 0%, rgba(22,20,18,0.7) 100%)`) para garantir contraste do texto
-- `.hero-left`: largura máxima ~60%, padding generoso, `position:relative; z-index:1`
-- Remover `.hero-right` e suas regras
-- **Mobile** (`max-width:780px`): `.hero-left` ocupa 100%, overlay mais opaco (~0.85) para legibilidade, texto centralizado
+1. Add **GA4 script** in `<head>` (before the Meta Pixel):
+   - `gtag.js` async script with measurement ID `G-2ZS12MZVQ1`
+   - `gtag('config', 'G-2ZS12MZVQ1')` initialization
+
+2. Add **GTM script** in `<head>` (before GA4):
+   - Standard GTM container snippet
+   - Will need user's GTM Container ID (format: `GTM-XXXXXXX`)
+
+3. Add **GTM `<noscript>` iframe** in `<body>` (after existing Meta Pixel noscript)
+
+### Question needed
+GTM requires a Container ID (e.g., `GTM-XXXXXXX`). GA4 is ready to go, but I'll need this GTM ID to complete the setup.
 
