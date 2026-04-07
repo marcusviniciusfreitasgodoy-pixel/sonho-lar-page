@@ -274,7 +274,6 @@ const LandingPageV4 = () => {
           <div className="compare-table">
             {/* Head */}
             <div className="compare-table-head">
-              <div></div>
               <div>
                 <span className="compare-head-label">Corretor Tradicional</span>
                 <span className="compare-head-pill pill-muted">Modelo atual</span>
@@ -297,7 +296,6 @@ const LandingPageV4 = () => {
               { lbl: 'Acompanhamento', neg: 'Encerra na assinatura do contrato. A partir daí, você está sozinho.', pos: 'Acompanha <strong>até a transferência do imóvel</strong>: documentação, cartório e vistoria final.' }
             ].map((r, i) => (
               <div key={i} className="compare-table-row">
-                <div><span>{r.lbl}</span></div>
                 <div><p>{r.neg}</p></div>
                 <div><p dangerouslySetInnerHTML={{ __html: r.pos }} /></div>
               </div>
@@ -305,7 +303,7 @@ const LandingPageV4 = () => {
 
             {/* Foot */}
             <div className="compare-table-foot">
-              <div></div>
+
               <div>
                 <p className="compare-foot-quote">"Você está na negociação mais cara da sua vida. O profissional na sala foi contratado pelo lado oposto ao seu. Em qualquer outro contexto, você chamaria isso de conflito de interesse."</p>
               </div>
