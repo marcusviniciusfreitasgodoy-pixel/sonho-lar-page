@@ -157,7 +157,7 @@ const LandingPageV4 = () => {
     sendEmail(MARCUS_EMAIL, 'Marcus Godoy', '🏠 Novo lead — ' + dados.nome + ' | ' + dados.servico, emailParaMarcus(dados));
     
     // Send WhatsApp via Z-API to the lead
-    const whatsappMsg = `Olá ${dados.nome}! 👋\n\nObrigado pelo seu interesse no *Diagnóstico Estratégico Gratuito* da Godoy Prime Realty.\n\nRecebemos seus dados e em breve entraremos em contato para agendar sua consultoria personalizada.\n\nSe preferir, pode me chamar diretamente aqui neste WhatsApp.\n\nAbraço,\n*Marcus Godoy*\nPersonal Shopper Imobiliário\nCRECI/RJ 80.199`;
+    const whatsappMsg = `Olá ${dados.nome}! 👋\n\nObrigado pelo seu interesse no *Diagnóstico Estratégico Gratuito* da Godoy Prime Realty.\n\nRecebemos seus dados e em breve entraremos em contato para agendar sua consultoria personalizada.\n\n🏠 Enquanto isso, conheça mais sobre nossos serviços:\nhttps://personalshopperimobiliario.godoyprime.com.br\n\nSe preferir, pode me chamar diretamente aqui neste WhatsApp.\n\nAbraço,\n*Marcus Godoy*\nPersonal Shopper Imobiliário\nCRECI/RJ 80.199`;
     sendWhatsApp(dados.whatsapp, whatsappMsg);
     
     // Also notify Marcus via WhatsApp
