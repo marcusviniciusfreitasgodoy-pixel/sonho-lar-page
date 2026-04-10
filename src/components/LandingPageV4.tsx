@@ -155,6 +155,15 @@ const LandingPageV4 = () => {
     };
     if (typeof (window as any).fbq !== 'undefined') (window as any).fbq('track', 'Lead', { currency: 'BRL', value: 10000 });
     sendEmail(MARCUS_EMAIL, 'Marcus Godoy', '🏠 Novo lead — ' + dados.nome + ' | ' + dados.servico, emailParaMarcus(dados));
+    
+    // Send WhatsApp via Z-API to the lead
+    const whatsappMsg = `Olá ${dados.nome}! 👋\n\nObrigado pelo seu interesse no *Diagnóstico Estratégico Gratuito* da Godoy Prime Realty.\n\nRecebemos seus dados e em breve entraremos em contato para agendar sua consultoria personalizada.\n\nSe preferir, pode me chamar diretamente aqui neste WhatsApp.\n\nAbraço,\n*Marcus Godoy*\nPersonal Shopper Imobiliário\nCRECI/RJ 80.199`;
+    sendWhatsApp(dados.whatsapp, whatsappMsg);
+    
+    // Also notify Marcus via WhatsApp
+    const marcusMsg = `🏠 *Novo lead — Godoy Prime*\n\n*Nome:* ${dados.nome}\n*WhatsApp:* ${dados.whatsapp}\n*E-mail:* ${dados.email}\n*Faixa:* ${dados.orcamento}\n*Momento:* ${dados.momento}\n*Mensagem:* ${dados.mensagem || '-'}\n*Data:* ${dados.data}`;
+    sendWhatsApp(MARCUS_WA, marcusMsg);
+    
     setFormSubmitted(true);
   };
 
