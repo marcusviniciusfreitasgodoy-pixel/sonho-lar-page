@@ -1,24 +1,17 @@
 
 
-## Plan: Add Google Tag Manager + Google Analytics (GA4)
+## Plan: Enviar mensagens de teste via Z-API
 
-### What will be done
-Add both Google Tag Manager (GTM) and Google Analytics GA4 (ID: `G-2ZS12MZVQ1`) to the site. GTM will serve as a centralized tag management system, and GA4 will track pageviews and events directly.
+Vou invocar a Edge Function `send-whatsapp` para enviar as duas mensagens configuradas no sistema para o número **21964075124**:
 
-### Technical Changes
+1. **Mensagem de boas-vindas ao lead** — a mesma que um lead receberia ao preencher o formulário
+2. **Mensagem de notificação ao consultor** — com dados fictícios de um lead de teste
 
-**File: `index.html`**
+### Execução técnica
 
-1. Add **GA4 script** in `<head>` (before the Meta Pixel):
-   - `gtag.js` async script with measurement ID `G-2ZS12MZVQ1`
-   - `gtag('config', 'G-2ZS12MZVQ1')` initialization
+- Usar `supabase--curl_edge_functions` para chamar `send-whatsapp` duas vezes com o número `21964075124`
+- Mensagem 1: template de boas-vindas com nome "Teste Plataforma"
+- Mensagem 2: template de notificação com dados fictícios de lead
 
-2. Add **GTM script** in `<head>` (before GA4):
-   - Standard GTM container snippet
-   - Will need user's GTM Container ID (format: `GTM-XXXXXXX`)
-
-3. Add **GTM `<noscript>` iframe** in `<body>` (after existing Meta Pixel noscript)
-
-### Question needed
-GTM requires a Container ID (e.g., `GTM-XXXXXXX`). GA4 is ready to go, but I'll need this GTM ID to complete the setup.
+Nenhum arquivo será alterado — apenas chamadas à função já existente.
 
