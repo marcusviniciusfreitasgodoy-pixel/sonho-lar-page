@@ -30,6 +30,15 @@ async function sendEmail(to: string, _toName: string, subject: string, htmlBody:
   } catch (e) { console.warn('Email send failed:', e); }
 }
 
+async function sendWhatsApp(phone: string, message: string) {
+  try {
+    const client = await getBackendClient();
+    if (!client) { console.warn('WhatsApp send skipped: backend client env not available.'); return; }
+    const { error } = await client.functions.invoke('send-whatsapp', { body: { phone, message } });
+    if (error) console.warn('WhatsApp send failed:', error);
+  } catch (e) { console.warn('WhatsApp send failed:', e); }
+}
+
 function emailParaMarcus(dados: any) {
   return `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a1a1a">
     <div style="background:#161412;padding:24px 32px;border-bottom:2px solid #9E7B2A">
