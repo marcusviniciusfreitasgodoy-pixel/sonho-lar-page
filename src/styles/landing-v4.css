@@ -77,13 +77,13 @@ em{font-style:italic;color:inherit}
 .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
 .landing-v4 nav:not(.solid) .nav-cta{border-color:rgba(250,250,248,.5);color:var(--white)}
 .landing-v4 nav:not(.solid) .nav-cta:hover{background:var(--gold2);border-color:var(--gold2);color:var(--white)}
-@media(max-width:800px){.nav-menu{display:none}.nav-cta{display:none}}
+@media(max-width:900px){.nav-menu{display:none}.nav-cta{display:none}}
 
 /* HAMBURGER */
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:510}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s ease}
 .landing-v4 nav:not(.solid) .nav-hamburger span{background:var(--white)}
-@media(max-width:800px){.nav-hamburger{display:flex}.nav-inner{justify-content:center}.nav-hamburger{position:absolute;right:var(--pad)}}
+@media(max-width:900px){.nav-hamburger{display:flex}.nav-inner{justify-content:center}.nav-hamburger{position:absolute;right:var(--pad)}}
 .menu-open .nav-hamburger span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .menu-open .nav-hamburger span:nth-child(2){opacity:0}
 .menu-open .nav-hamburger span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
@@ -100,8 +100,9 @@ em{font-style:italic;color:inherit}
 ══════════════════════════════════════ */
 .hero{position:relative;min-height:100vh;padding-top:0;background-size:cover;background-position:center 30%;background-repeat:no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(22,20,18,.92) 0%,rgba(22,20,18,.7) 60%,rgba(22,20,18,.45) 100%);z-index:0}
-.hero-left{position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-start;padding:0 var(--pad);min-height:100vh}
-.hero-text{max-width:560px}
+.hero-left{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:72px var(--pad) 0 var(--pad);min-height:100vh}
+.hero-text{max-width:560px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.hero-credentials{padding-bottom:clamp(32px,5vw,56px)}
 .hero-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:clamp(28px,4vw,44px)}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--gold2)}
 .hero-eyebrow-text{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--gold2)}
