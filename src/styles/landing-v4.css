@@ -100,7 +100,7 @@ em{font-style:italic;color:inherit}
 ══════════════════════════════════════ */
 .hero{position:relative;min-height:100vh;padding-top:0;background-size:cover;background-position:center 30%;background-repeat:no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(22,20,18,.92) 0%,rgba(22,20,18,.7) 60%,rgba(22,20,18,.45) 100%);z-index:0}
-.hero-left{position:relative;z-index:1;display:flex;align-items:flex-end;padding:72px var(--pad) clamp(64px,9vw,100px) var(--pad);min-height:100vh}
+.hero-left{position:relative;z-index:1;display:flex;align-items:center;padding:72px var(--pad) clamp(64px,9vw,100px) var(--pad);min-height:100vh}
 .hero-text{max-width:560px}
 .hero-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:clamp(28px,4vw,44px)}
 .hero-eyebrow-line{width:40px;height:1px;background:var(--gold2)}
