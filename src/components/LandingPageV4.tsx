@@ -217,19 +217,19 @@ const LandingPageV4 = () => {
               <a href="#conceito" className="btn-outline-light" onClick={handleAnchorClick}>Ver como funciona</a>
             </div>
             <p className="hero-footnote scroll-reveal" ref={reveal}>Conversa direta · Sem compromisso · Sem venda de imóveis</p>
-            <div className="hero-credentials scroll-reveal" ref={reveal}>
-              <div className="hero-cred">
-                <div className="hero-cred-val"><em>+</em> R$1,5M</div>
-                <div className="hero-cred-label">Ticket mínimo<br/>dos imóveis representados</div>
-              </div>
-              <div className="hero-cred">
-                <div className="hero-cred-val"><em>100%</em></div>
-                <div className="hero-cred-label">Exclusivo<br/>para o comprador</div>
-              </div>
-              <div className="hero-cred">
-                <div className="hero-cred-val">TJRJ</div>
-                <div className="hero-cred-label">Perito Avaliador<br/>credenciado</div>
-              </div>
+          </div>
+          <div className="hero-credentials scroll-reveal" ref={reveal}>
+            <div className="hero-cred">
+              <div className="hero-cred-val"><em>+</em> R$1,5M</div>
+              <div className="hero-cred-label">Ticket mínimo<br/>dos imóveis representados</div>
+            </div>
+            <div className="hero-cred">
+              <div className="hero-cred-val"><em>100%</em></div>
+              <div className="hero-cred-label">Exclusivo<br/>para o comprador</div>
+            </div>
+            <div className="hero-cred">
+              <div className="hero-cred-val">TJRJ</div>
+              <div className="hero-cred-label">Perito Avaliador<br/>credenciado</div>
             </div>
           </div>
         </div>
