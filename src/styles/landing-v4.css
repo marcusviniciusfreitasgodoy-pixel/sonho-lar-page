@@ -269,7 +269,7 @@ em{font-style:italic;color:inherit}
     border-bottom:1px solid var(--bd-dark2);
   }
   .compare-table-row > div:first-child::before{content:'Tradicional'}
-  .compare-table-row > div:nth-child(2)::before{content:'Godoy Prime'}
+  .compare-table-row > div:nth-child(2)::before{content:'Personal Shopper Imobiliário'}
   .compare-table-row > div:first-child::before,
   .compare-table-row > div:nth-child(2)::before{display:block;width:max-content;max-width:100%;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:12px;padding:5px 9px;border-radius:2px;line-height:1.3}
   .compare-table-row > div:first-child p,

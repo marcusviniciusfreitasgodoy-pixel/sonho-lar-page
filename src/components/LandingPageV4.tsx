@@ -298,7 +298,7 @@ const LandingPageV4 = () => {
               </div>
               <div>
                 <span className="compare-head-label highlight">Personal Shopper — Godoy Prime</span>
-                <span className="compare-head-pill pill-gold">Godoy Prime</span>
+                <span className="compare-head-pill pill-gold">Personal Shopper Imobiliário</span>
               </div>
             </div>
 
