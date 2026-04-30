@@ -124,8 +124,12 @@ em{font-style:italic;color:inherit}
   .hero-left{padding:100px var(--pad) 48px;align-items:center;text-align:center;min-height:auto}
   .hero-text{max-width:100%}
   .hero-eyebrow{justify-content:center}
-  .hero-h1{font-size:clamp(28px,7vw,40px)}
-  .hero-sub{font-size:15px}
+  .hero-h1{font-size:clamp(32px,8.5vw,44px)}
+  .hero-sub{font-size:17px;line-height:1.7}
+  .hero-eyebrow-text{font-size:11px}
+  .hero-footnote{font-size:12px}
+  .hero-cred-val{font-size:24px}
+  .hero-cred-label{font-size:11px}
   .hero-ctas{flex-direction:column;width:100%}
   .hero-ctas a{width:100%;text-align:center;justify-content:center}
   .hero-footnote{text-align:center}
@@ -175,6 +179,21 @@ em{font-style:italic;color:inherit}
 .prob-card-text{font-size:13px;color:var(--text2);line-height:1.75;font-weight:300}
 
 @media(max-width:780px){.prob-body{grid-template-columns:1fr;gap:28px}.prob-cards{grid-template-columns:1fr}}
+
+/* Mobile font-size bump for body readability */
+@media(max-width:560px){
+  .prob-body-text p{font-size:16px;line-height:1.8}
+  .prob-callout-q{font-size:18px}
+  .prob-callout-a{font-size:15px}
+  .prob-card-title{font-size:15px}
+  .prob-card-text{font-size:14px}
+  .modelo-sub,.proc-sub,.dados-sub{font-size:16px;line-height:1.75}
+  .step-title{font-size:15px}
+  .step-text{font-size:14px}
+  .statement-text{font-size:18px}
+  .compare-foot-quote{font-size:16px;line-height:1.65}
+  .compare-foot-cta-text{font-size:15px}
+}
 
 /* ══════════════════════════════════════
    MODELO COMPARATIVO — fundo escuro
@@ -233,8 +252,31 @@ em{font-style:italic;color:inherit}
   .compare-table-foot > div:first-child{display:none}
 }
 @media(max-width:500px){
-  .compare-table-row{grid-template-columns:1fr}
+  .compare-table-row{grid-template-columns:1fr;position:relative;padding-top:8px}
   .compare-table-foot{grid-template-columns:1fr}
+  /* Criterion title at top of each row */
+  .compare-table-row::before{
+    content:attr(data-lbl);
+    display:block;
+    font-family:var(--serif);
+    font-size:18px;
+    font-weight:700;
+    color:var(--gold2);
+    padding:18px 24px 4px;
+    letter-spacing:-.01em;
+    line-height:1.3;
+    background:rgba(255,255,255,.02);
+    border-bottom:1px solid var(--bd-dark);
+  }
+  /* Only show category badges on the FIRST row to avoid repetition */
+  .compare-table-row[data-first="false"] > div:first-child::before,
+  .compare-table-row[data-first="false"] > div:nth-child(2)::before{display:none}
+  /* Bump font sizes for mobile readability */
+  .compare-table-row > div:first-child p,
+  .compare-table-row > div:nth-child(2) p{font-size:15px;line-height:1.7}
+  .compare-table-row > div:first-child,
+  .compare-table-row > div:nth-child(2){padding:16px 24px}
+  .compare-table-row > div:first-child{border-right:none;border-bottom:1px solid var(--bd-dark)}
 }
 
 /* ══════════════════════════════════════
