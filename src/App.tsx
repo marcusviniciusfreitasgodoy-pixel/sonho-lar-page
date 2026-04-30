@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
 import LGPD from "./pages/LGPD";
 import Confirmacao from "./pages/Confirmacao";
-import HeygenAvatar from "./components/HeygenAvatar";
+// import HeygenAvatar from "./components/HeygenAvatar";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +17,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HeygenAvatar />
+      {/* Avatar Sofia (HeyGen) temporariamente oculto até atualização da base de conhecimento */}
+      {/* <HeygenAvatar /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
