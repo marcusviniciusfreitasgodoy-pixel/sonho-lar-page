@@ -257,8 +257,8 @@ const LandingPageV4 = () => {
               <p>Você é o único beneficiado quando o preço cai. E o único sem ninguém pago para defender esse lado.</p>
             </div>
             <div className="prob-callout">
-              <span className="prob-callout-label">A pergunta que todo comprador faz</span>
-              <p className="prob-callout-q">"O corretor não me cobra nada." Simplesmente porque é pago pelo vendedor, para vender pelo maior preço possível. <em>Você está na negociação mais cara da sua vida sem ninguém realmente do seu lado.</em></p>
+              <span className="prob-callout-label">A ilusão do "serviço gratuito"</span>
+              <p className="prob-callout-q">"O corretor não me cobra nada." Ele não cobra porque é pago pelo vendedor — e quanto maior o preço final, maior a comissão dele. <em>Você está na negociação mais cara da sua vida sem ninguém realmente do seu lado.</em></p>
               <p className="prob-callout-a">O corretor não é seu inimigo. Mas o modelo no qual ele opera é estruturalmente contrário aos seus interesses como comprador.</p>
             </div>
           </div>
