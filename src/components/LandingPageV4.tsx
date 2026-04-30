@@ -313,7 +313,7 @@ const LandingPageV4 = () => {
               { lbl: 'Negociação', neg: 'Para fechar pelo maior valor no menor tempo. É o que o contrato dele com o vendedor exige.', pos: 'Para obter o melhor preço e condições para você. É o que o <strong>contrato com você</strong> exige.' },
               { lbl: 'Acompanhamento', neg: 'Encerra na assinatura do contrato. A partir daí, você está sozinho.', pos: 'Acompanha <strong>até a transferência do imóvel</strong>: documentação, cartório e vistoria final.' }
             ].map((r, i) => (
-              <div key={i} className="compare-table-row">
+              <div key={i} className="compare-table-row" data-lbl={r.lbl} data-first={i === 0 ? 'true' : 'false'}>
                 <div><p>{r.neg}</p></div>
                 <div><p dangerouslySetInnerHTML={{ __html: r.pos }} /></div>
               </div>
