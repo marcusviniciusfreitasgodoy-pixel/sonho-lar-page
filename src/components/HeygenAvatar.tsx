@@ -26,7 +26,7 @@ const HeygenAvatar = () => {
       #heygen-streaming-embed {
         z-index: 9997;
         position: fixed;
-        left: 12px;
+        right: 12px;
         bottom: 70px;
         width: 70px;
         height: 70px;
@@ -40,7 +40,7 @@ const HeygenAvatar = () => {
       }
       @media (min-width: 640px) {
         #heygen-streaming-embed {
-          left: 20px;
+          right: 20px;
           bottom: 20px;
           width: 80px;
           height: 80px;
@@ -48,7 +48,7 @@ const HeygenAvatar = () => {
       }
       @media (min-width: 1024px) {
         #heygen-streaming-embed {
-          left: 24px;
+          right: 24px;
           bottom: 24px;
           width: 90px;
           height: 90px;
@@ -61,7 +61,7 @@ const HeygenAvatar = () => {
       #heygen-streaming-embed.expand {
         ${clientWidth < 540 
           ? "height: 55vh; max-height: 350px; width: 90%; left: 50%; transform: translateX(-50%); bottom: 70px;" 
-          : "height: 366px; width: calc(366px * 16 / 9); bottom: 24px; left: 24px; transform: none;"}
+          : "height: 366px; width: calc(366px * 16 / 9); bottom: 24px; right: 24px; left: auto; transform: none;"}
         border: 0;
         border-radius: 12px;
         z-index: 9999;
