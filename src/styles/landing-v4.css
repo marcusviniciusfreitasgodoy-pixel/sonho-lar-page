@@ -180,6 +180,21 @@ em{font-style:italic;color:inherit}
 
 @media(max-width:780px){.prob-body{grid-template-columns:1fr;gap:28px}.prob-cards{grid-template-columns:1fr}}
 
+/* Mobile font-size bump for body readability */
+@media(max-width:560px){
+  .prob-body-text p{font-size:16px;line-height:1.8}
+  .prob-callout-q{font-size:18px}
+  .prob-callout-a{font-size:15px}
+  .prob-card-title{font-size:15px}
+  .prob-card-text{font-size:14px}
+  .modelo-sub,.proc-sub,.dados-sub{font-size:16px;line-height:1.75}
+  .step-title{font-size:15px}
+  .step-text{font-size:14px}
+  .statement-text{font-size:18px}
+  .compare-foot-quote{font-size:16px;line-height:1.65}
+  .compare-foot-cta-text{font-size:15px}
+}
+
 /* ══════════════════════════════════════
    MODELO COMPARATIVO — fundo escuro
 ══════════════════════════════════════ */
