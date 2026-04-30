@@ -287,7 +287,7 @@ const LandingPageV4 = () => {
         <div className="wrap">
           <span className="modelo-eyebrow">O modelo</span>
           <h2 className="modelo-h2">Aqui, o interesse é <em>um só: o seu.</em></h2>
-          <p className="modelo-sub">Modelo consolidado nos EUA, Austrália e Espanha há décadas. Agora com estrutura formal no Rio de Janeiro. Não vendo imóveis. Represento compradores com contrato exclusivo, dados reais e alinhamento total de interesses.</p>
+          <p className="modelo-sub">Não vendo imóveis. Represento compradores com contrato exclusivo, dados reais e alinhamento total de interesses.</p>
 
           <div className="compare-table">
             {/* Head */}
@@ -338,7 +338,7 @@ const LandingPageV4 = () => {
               <div><span className="intl-item-name">Estados Unidos</span><span className="intl-item-sub">Exclusive Buyer's Agent · NAEBA</span></div>
               <div><span className="intl-item-name">Austrália</span><span className="intl-item-sub">Buyer's Agent · REBAA</span></div>
               <div><span className="intl-item-name">Espanha</span><span className="intl-item-sub">Personal Shopper Inmobiliario</span></div>
-              <div><span className="intl-item-name">Rio de Janeiro</span><span className="intl-item-sub">Personal Shopper Imobiliário · Godoy Prime Realty</span></div>
+              <div><span className="intl-item-name">Rio de Janeiro</span><span className="intl-item-sub">Personal Shopper Imobiliário</span></div>
             </div>
           </div>
         </div>
