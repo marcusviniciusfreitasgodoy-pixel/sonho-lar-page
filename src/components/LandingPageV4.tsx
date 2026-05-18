@@ -40,26 +40,28 @@ async function sendWhatsApp(phone: string, message: string) {
 }
 
 function emailParaMarcus(dados: any) {
+  const esc = (s: any) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   return `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a1a1a">
     <div style="background:#161412;padding:24px 32px;border-bottom:2px solid #9E7B2A">
       <h2 style="color:#C4993A;font-weight:400;margin:0;font-size:20px">Novo lead — Godoy Prime Realty</h2>
     </div>
     <div style="padding:28px 32px;background:#fafaf8;border:1px solid #eee">
       <table style="width:100%;border-collapse:collapse">
-        <tr><td style="padding:8px 0;color:#666;font-size:13px;width:140px">Serviço</td><td style="padding:8px 0;font-size:13px;font-weight:bold;color:#9E7B2A">${dados.servico || 'Diagnóstico Estratégico'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Nome</td><td style="padding:8px 0;font-size:13px">${dados.nome}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">WhatsApp</td><td style="padding:8px 0;font-size:13px">${dados.whatsapp || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">E-mail</td><td style="padding:8px 0;font-size:13px">${dados.email || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de investimento</td><td style="padding:8px 0;font-size:13px">${dados.orcamento || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Momento da compra</td><td style="padding:8px 0;font-size:13px">${dados.momento || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Mensagem</td><td style="padding:8px 0;font-size:13px">${dados.mensagem || '-'}</td></tr>
-        <tr><td style="padding:8px 0;color:#666;font-size:13px">Data</td><td style="padding:8px 0;font-size:13px">${dados.data}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px;width:140px">Serviço</td><td style="padding:8px 0;font-size:13px;font-weight:bold;color:#9E7B2A">${esc(dados.servico || 'Diagnóstico Estratégico')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Nome</td><td style="padding:8px 0;font-size:13px">${esc(dados.nome)}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">WhatsApp</td><td style="padding:8px 0;font-size:13px">${esc(dados.whatsapp || '-')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">E-mail</td><td style="padding:8px 0;font-size:13px">${esc(dados.email || '-')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Faixa de investimento</td><td style="padding:8px 0;font-size:13px">${esc(dados.orcamento || '-')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Momento da compra</td><td style="padding:8px 0;font-size:13px">${esc(dados.momento || '-')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Mensagem</td><td style="padding:8px 0;font-size:13px">${esc(dados.mensagem || '-')}</td></tr>
+        <tr><td style="padding:8px 0;color:#666;font-size:13px">Data</td><td style="padding:8px 0;font-size:13px">${esc(dados.data)}</td></tr>
       </table>
     </div>
   </div>`;
 }
 
 function emailParaCliente(dados: any) {
+  const esc = (s: any) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   const servico = dados.servico || 'Diagnóstico Estratégico Gratuito';
   const proximosPassos: Record<string, string> = {
     'Parecer Godoy Prime': 'Em até 24 horas Marcus entrará em contato para entender o imóvel que você identificou e apresentar a proposta completa do Parecer Godoy Prime.',
@@ -73,11 +75,11 @@ function emailParaCliente(dados: any) {
       <h2 style="color:#C4993A;font-weight:400;margin:0;font-size:20px">Godoy Prime Realty</h2>
     </div>
     <div style="padding:32px;background:#fafaf8;border:1px solid #eee">
-      <p style="font-size:16px;color:#1a1a1a;margin-bottom:16px">Olá, <strong>${dados.nome}</strong>.</p>
-      <p style="font-size:14px;color:#444;line-height:1.8;margin-bottom:20px">Sua solicitação referente ao <strong style="color:#9E7B2A">${servico}</strong> foi recebida.</p>
+      <p style="font-size:16px;color:#1a1a1a;margin-bottom:16px">Olá, <strong>${esc(dados.nome)}</strong>.</p>
+      <p style="font-size:14px;color:#444;line-height:1.8;margin-bottom:20px">Sua solicitação referente ao <strong style="color:#9E7B2A">${esc(servico)}</strong> foi recebida.</p>
       <div style="background:#fff;border:1px solid #e0d8cc;border-left:3px solid #9E7B2A;padding:20px 24px;margin-bottom:24px">
         <p style="font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px">Próximo passo</p>
-        <p style="font-size:14px;color:#333;line-height:1.75;margin:0">${msgProximos}</p>
+        <p style="font-size:14px;color:#333;line-height:1.75;margin:0">${esc(msgProximos)}</p>
       </div>
       <p style="font-size:13px;color:#666;line-height:1.7">Se preferir contato imediato:</p>
       <a href="https://wa.me/${MARCUS_WA}" style="display:inline-block;margin-top:12px;padding:12px 24px;background:#25D366;color:#fff;text-decoration:none;font-size:13px;border-radius:2px">WhatsApp (21) 96407-5124</a>
