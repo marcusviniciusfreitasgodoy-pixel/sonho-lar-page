@@ -5,7 +5,8 @@ const corsHeaders = {
 
 import { z } from 'npm:zod@3.25.76'
 
-const CRM_URL = 'https://crm-b2b-interface-clone-9bbb1.shrd00.internal.goskip.dev/backend/v1/webhook_external'
+const CRM_URL = 'https://crm-b2b-interface-clone-9bbb1.shrd00.internal.goskip.dev/backend/v1/webhook-external'
+const TIPO_FUNIL = 'GPR'
 
 const BodySchema = z.object({
   nome: z.string().min(1).max(200),
@@ -43,13 +44,27 @@ Deno.serve(async (req) => {
 
     const lead = parsed.data
 
+    // Map to CRM expected payload
+    const crmPayload = {
+      name: lead.nome,
+      email: lead.email,
+      phone: lead.whatsapp,
+      tipo_funil: TIPO_FUNIL,
+      message: lead.mensagem,
+      orcamento: lead.orcamento,
+      momento: lead.momento,
+      servico: lead.servico,
+      origem: lead.origem,
+      data: lead.data,
+    }
+
     const res = await fetch(CRM_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
+        'x-api-key': API_KEY,
       },
-      body: JSON.stringify(lead),
+      body: JSON.stringify(crmPayload),
     })
 
     const text = await res.text()
