@@ -39,6 +39,15 @@ async function sendWhatsApp(phone: string, message: string) {
   } catch (e) { console.warn('WhatsApp send failed:', e); }
 }
 
+async function sendCrmLead(dados: any) {
+  try {
+    const client = await getBackendClient();
+    if (!client) { console.warn('CRM send skipped: backend client env not available.'); return; }
+    const { error } = await client.functions.invoke('send-crm-lead', { body: dados });
+    if (error) console.warn('CRM send failed:', error);
+  } catch (e) { console.warn('CRM send failed:', e); }
+}
+
 function emailParaMarcus(dados: any) {
   const esc = (s: any) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   return `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a1a1a">
@@ -157,6 +166,9 @@ const LandingPageV4 = () => {
     };
     if (typeof (window as any).fbq !== 'undefined') (window as any).fbq('track', 'Lead', { currency: 'BRL', value: 10000 });
     sendEmail(MARCUS_EMAIL, 'Marcus Godoy', '🏠 Novo lead — ' + dados.nome + ' | ' + dados.servico, emailParaMarcus(dados));
+
+    // Send to CRM webhook
+    sendCrmLead(dados);
     
     // Send WhatsApp via Z-API to the lead
     const whatsappMsg = `Olá ${dados.nome}! 👋\n\nObrigado pelo seu interesse no *Diagnóstico Estratégico Gratuito* da Godoy Prime Realty.\n\nRecebemos seus dados e em breve entraremos em contato para agendar sua consultoria personalizada.\n\n🏠 Enquanto isso, conheça mais sobre nossos serviços:\nhttps://personalshopperimobiliario.godoyprime.com.br\n\nSe preferir, pode me chamar diretamente aqui neste WhatsApp.\n\nAbraço,\n*Marcus Godoy*\nPersonal Shopper Imobiliário\nCRECI/RJ 80.199`;
