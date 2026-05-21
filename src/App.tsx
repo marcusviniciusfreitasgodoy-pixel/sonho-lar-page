@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
 import LGPD from "./pages/LGPD";
 import Confirmacao from "./pages/Confirmacao";
+import Auth from "./pages/Auth";
+import AdminLeads from "./pages/AdminLeads";
+import { RequireAdmin } from "./components/RequireAdmin";
 // import HeygenAvatar from "./components/HeygenAvatar";
 
 const queryClient = new QueryClient();
@@ -25,6 +28,8 @@ const App = () => (
           <Route path="/privacidade" element={<Privacidade />} />
           <Route path="/lgpd" element={<LGPD />} />
           <Route path="/confirmacao" element={<Confirmacao />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
