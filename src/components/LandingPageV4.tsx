@@ -153,6 +153,8 @@ const LandingPageV4 = () => {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
+    // Capture UTMs + landing context
+    const params = new URLSearchParams(window.location.search);
     const dados = {
       nome: (form.querySelector('#nome') as HTMLInputElement).value,
       whatsapp: (form.querySelector('#whatsapp') as HTMLInputElement).value,
@@ -162,9 +164,17 @@ const LandingPageV4 = () => {
       mensagem: (form.querySelector('#mensagem') as HTMLTextAreaElement).value,
       servico: 'Diagnóstico Estratégico',
       origem: 'formulario_principal',
-      data: new Date().toLocaleString('pt-BR')
+      data: new Date().toLocaleString('pt-BR'),
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || '',
+      referrer: document.referrer || '',
+      landing_path: window.location.pathname || '',
     };
     if (typeof (window as any).fbq !== 'undefined') (window as any).fbq('track', 'Lead', { currency: 'BRL', value: 10000 });
+    if (typeof (window as any).gtag !== 'undefined') (window as any).gtag('event', 'generate_lead', { currency: 'BRL', value: 10000 });
     sendEmail(MARCUS_EMAIL, 'Marcus Godoy', '🏠 Novo lead — ' + dados.nome + ' | ' + dados.servico, emailParaMarcus(dados));
 
     // Send to CRM webhook

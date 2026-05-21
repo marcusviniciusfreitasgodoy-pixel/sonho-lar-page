@@ -14,7 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          created_at: string
+          crm_response: Json | null
+          crm_status: string
+          email: string | null
+          id: string
+          ip_hash: string | null
+          landing_path: string | null
+          mensagem: string | null
+          momento: string | null
+          nome: string
+          orcamento: string | null
+          origem: string | null
+          referrer: string | null
+          servico: string | null
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+          whatsapp: string | null
+        }
+        Insert: {
+          created_at?: string
+          crm_response?: Json | null
+          crm_status?: string
+          email?: string | null
+          id?: string
+          ip_hash?: string | null
+          landing_path?: string | null
+          mensagem?: string | null
+          momento?: string | null
+          nome: string
+          orcamento?: string | null
+          origem?: string | null
+          referrer?: string | null
+          servico?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          whatsapp?: string | null
+        }
+        Update: {
+          created_at?: string
+          crm_response?: Json | null
+          crm_status?: string
+          email?: string | null
+          id?: string
+          ip_hash?: string | null
+          landing_path?: string | null
+          mensagem?: string | null
+          momento?: string | null
+          nome?: string
+          orcamento?: string | null
+          origem?: string | null
+          referrer?: string | null
+          servico?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          whatsapp?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
