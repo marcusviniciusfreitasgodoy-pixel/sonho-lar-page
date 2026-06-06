@@ -209,6 +209,7 @@ const AdminLeads = () => {
               <SelectItem value="sent">Enviados</SelectItem>
               <SelectItem value="failed">Falharam</SelectItem>
               <SelectItem value="pending">Pendentes</SelectItem>
+              <SelectItem value="skipped">Cliques WhatsApp</SelectItem>
             </SelectContent>
           </Select>
           <Select value={servico} onValueChange={(v) => { setServico(v); setPage(0); }}>
