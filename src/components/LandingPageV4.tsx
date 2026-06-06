@@ -231,6 +231,10 @@ const LandingPageV4 = () => {
   const waLink = (servico: string, msg: string) =>
     `https://wa.me/${MARCUS_WA}?text=${encodeURIComponent(msg)}`;
 
+  const handleWaClick = (servico: string, origem: string) => () => {
+    trackWaClick(servico, origem);
+  };
+
   return (
     <div className="landing-v4">
       {/* NAV */}
