@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getBackendClient, type BackendClient } from "@/lib/backend";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,10 +62,22 @@ const AdminLeads = () => {
   const [total, setTotal] = useState(0);
   const [selected, setSelected] = useState<Lead | null>(null);
   const [retrying, setRetrying] = useState<string | null>(null);
+  const [client, setClient] = useState<BackendClient | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getBackendClient().then((backendClient) => {
+      if (cancelled) return;
+      setClient(backendClient);
+      if (!backendClient) setLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, []);
 
   const fetchLeads = async () => {
+    if (!client) { setLoading(false); return; }
     setLoading(true);
-    let q = supabase.from("leads").select("*", { count: "exact" }).order("created_at", { ascending: false });
+    let q = client.from("leads").select("*", { count: "exact" }).order("created_at", { ascending: false });
     if (period !== "all") {
       const since = new Date(Date.now() - parseInt(period) * 24 * 60 * 60 * 1000).toISOString();
       q = q.gte("created_at", since);
@@ -83,15 +95,16 @@ const AdminLeads = () => {
     setTotal(count || 0);
   };
 
-  useEffect(() => { fetchLeads(); }, [period, status, page]);
+  useEffect(() => { if (client) fetchLeads(); }, [client, period, status, page]);
 
   // KPIs computed from current page; for accurate totals we use count fetch
   const [kpis, setKpis] = useState({ total: 0, sent: 0, failed: 0, dupes: 0 });
   useEffect(() => {
     (async () => {
+      if (!client) return;
       const since = period === "all" ? null : new Date(Date.now() - parseInt(period) * 24 * 60 * 60 * 1000).toISOString();
       const base = () => {
-        let q = supabase.from("leads").select("id", { count: "exact", head: true });
+        let q = client.from("leads").select("id", { count: "exact", head: true });
         if (since) q = q.gte("created_at", since);
         return q;
       };
@@ -103,13 +116,14 @@ const AdminLeads = () => {
       ]);
       setKpis({ total: t.count || 0, sent: s.count || 0, failed: f.count || 0, dupes: d.count || 0 });
     })();
-  }, [period, leads]);
+  }, [client, period, leads]);
 
   const successRate = kpis.total > 0 ? Math.round((kpis.sent / kpis.total) * 100) : 0;
 
   const handleRetry = async (lead: Lead) => {
+    if (!client) return;
     setRetrying(lead.id);
-    const { data, error } = await supabase.functions.invoke("retry-crm-lead", { body: { lead_id: lead.id } });
+    const { data, error } = await client.functions.invoke("retry-crm-lead", { body: { lead_id: lead.id } });
     setRetrying(null);
     if (error) { toast({ title: "Erro no reenvio", description: error.message, variant: "destructive" }); return; }
     toast({ title: (data as any)?.success ? "Reenviado ao CRM" : "Reenvio falhou", description: JSON.stringify((data as any)?.crm_status || data) });
@@ -133,7 +147,7 @@ const AdminLeads = () => {
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    if (client) await client.auth.signOut();
     window.location.href = "/";
   };
 
