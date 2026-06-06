@@ -6,7 +6,7 @@ export function RequireAdmin({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const isAdmin = useUserRole(user?.id);
 
-  if (loading || (user && isAdmin === null)) {
+  if (loading || isAdmin === null) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
         <p className="text-sm text-muted-foreground">Carregando…</p>
@@ -14,6 +14,6 @@ export function RequireAdmin({ children }: { children: React.ReactNode }) {
     );
   }
   if (!user) return <Navigate to="/auth" replace />;
-  if (!isAdmin) return <Navigate to="/" replace />;
+  if (isAdmin === false) return <Navigate to="/" replace />;
   return <>{children}</>;
 }

@@ -5,8 +5,10 @@ export function useUserRole(userId: string | undefined) {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (!userId) { setIsAdmin(false); return; }
     let cancelled = false;
+    setIsAdmin(null);
+    if (userId === undefined) return; // auth still resolving
+    if (userId === null) { setIsAdmin(false); return; }
     (async () => {
       const client = await getBackendClient();
       if (!client) {
