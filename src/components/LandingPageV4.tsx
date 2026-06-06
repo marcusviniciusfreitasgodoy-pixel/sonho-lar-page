@@ -49,6 +49,27 @@ async function sendCrmLead(dados: any) {
   } catch (e) { console.warn('CRM send failed:', e); }
 }
 
+async function trackWaClick(servico: string, origem: string) {
+  try {
+    const client = await getBackendClient();
+    if (!client) return;
+    const params = new URLSearchParams(window.location.search);
+    await client.functions.invoke('track-wa-click', {
+      body: {
+        servico,
+        origem,
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_content: params.get('utm_content') || '',
+        utm_term: params.get('utm_term') || '',
+        referrer: document.referrer || '',
+        landing_path: window.location.pathname || '',
+      },
+    });
+  } catch (e) { /* fire-and-forget */ }
+}
+
 function emailParaMarcus(dados: any) {
   const esc = (s: any) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
   return `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a1a1a">
