@@ -17,6 +17,20 @@ Deno.serve(async (req) => {
   const API_KEY = Deno.env.get('CRM_WEBHOOK_API_KEY')
   if (!API_KEY) return new Response(JSON.stringify({ error: 'CRM not configured' }), { status: 500 })
 
+  // Require shared secret — only callable by scheduled cron or admin tooling
+  const CRON_SECRET = Deno.env.get('CRON_SECRET')
+  const SERVICE_ROLE_FOR_AUTH = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+  const authHeader = req.headers.get('Authorization') || ''
+  const token = authHeader.replace(/^Bearer\s+/i, '').trim()
+  const allowed =
+    (CRON_SECRET && token && token === CRON_SECRET) ||
+    (token && token === SERVICE_ROLE_FOR_AUTH)
+  if (!allowed) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
+  }
+
   const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!
   const SERVICE_ROLE = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
   const db = createClient(SUPABASE_URL, SERVICE_ROLE)
@@ -37,7 +51,8 @@ Deno.serve(async (req) => {
     return new Response(JSON.stringify({ error }), { status: 500 })
   }
 
-  const results: any[] = []
+  let okCount = 0
+  let failCount = 0
   for (const lead of leads || []) {
     try {
       const res = await fetch(CRM_URL, {
@@ -61,14 +76,14 @@ Deno.serve(async (req) => {
         crm_last_attempt_at: new Date().toISOString(),
       }).eq('id', lead.id)
 
-      results.push({ id: lead.id, ok: res.ok, status: res.status })
+      if (res.ok) okCount++; else failCount++
     } catch (e) {
       console.error('retry error', lead.id, e)
-      results.push({ id: lead.id, ok: false, error: String(e) })
+      failCount++
     }
   }
 
-  return new Response(JSON.stringify({ processed: results.length, results }), {
+  return new Response(JSON.stringify({ processed: okCount + failCount, ok: okCount, failed: failCount }), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
   })
 })
