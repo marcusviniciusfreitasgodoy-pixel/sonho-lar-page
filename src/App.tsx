@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
 import LGPD from "./pages/LGPD";
 import Confirmacao from "./pages/Confirmacao";
+import Obrigado from "./pages/Obrigado";
 // Lazy load any route that touches the Supabase client so the landing page
 // never crashes if env vars are missing at runtime.
 const Auth = lazy(() => import("./pages/Auth"));
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/privacidade" element={<Privacidade />} />
           <Route path="/lgpd" element={<LGPD />} />
           <Route path="/confirmacao" element={<Confirmacao />} />
+          <Route path="/obrigado" element={<Obrigado />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

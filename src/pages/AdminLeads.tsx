@@ -57,6 +57,10 @@ const AdminLeads = () => {
   const [loading, setLoading] = useState(true);
   const [period, setPeriod] = useState("30");
   const [status, setStatus] = useState<string>("all");
+  const [servico, setServico] = useState<string>("all");
+  const [origem, setOrigem] = useState<string>("all");
+  const [servicoOptions, setServicoOptions] = useState<string[]>([]);
+  const [origemOptions, setOrigemOptions] = useState<string[]>([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
@@ -83,6 +87,8 @@ const AdminLeads = () => {
       q = q.gte("created_at", since);
     }
     if (status !== "all") q = q.eq("crm_status", status);
+    if (servico !== "all") q = q.eq("servico", servico);
+    if (origem !== "all") q = q.eq("origem", origem);
     if (search.trim()) {
       const s = `%${search.trim()}%`;
       q = q.or(`nome.ilike.${s},email.ilike.${s},whatsapp.ilike.${s}`);
@@ -95,7 +101,20 @@ const AdminLeads = () => {
     setTotal(count || 0);
   };
 
-  useEffect(() => { if (client) fetchLeads(); }, [client, period, status, page]);
+  useEffect(() => { if (client) fetchLeads(); }, [client, period, status, servico, origem, page]);
+
+  // Carrega valores distintos de serviço/origem para popular dropdowns
+  useEffect(() => {
+    if (!client) return;
+    (async () => {
+      const { data } = await client.from("leads").select("servico, origem").limit(1000);
+      if (!data) return;
+      const servicos = Array.from(new Set(data.map((r: any) => r.servico).filter(Boolean))).sort();
+      const origens = Array.from(new Set(data.map((r: any) => r.origem).filter(Boolean))).sort();
+      setServicoOptions(servicos as string[]);
+      setOrigemOptions(origens as string[]);
+    })();
+  }, [client]);
 
   // KPIs computed from current page; for accurate totals we use count fetch
   const [kpis, setKpis] = useState({ total: 0, sent: 0, failed: 0, dupes: 0 });
@@ -192,6 +211,20 @@ const AdminLeads = () => {
               <SelectItem value="pending">Pendentes</SelectItem>
             </SelectContent>
           </Select>
+          <Select value={servico} onValueChange={(v) => { setServico(v); setPage(0); }}>
+            <SelectTrigger className="w-52"><SelectValue placeholder="Serviço" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos os serviços</SelectItem>
+              {servicoOptions.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <Select value={origem} onValueChange={(v) => { setOrigem(v); setPage(0); }}>
+            <SelectTrigger className="w-52"><SelectValue placeholder="Origem" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todas as origens</SelectItem>
+              {origemOptions.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
+            </SelectContent>
+          </Select>
           <Input
             placeholder="Buscar nome, e-mail ou WhatsApp…"
             className="max-w-xs"
@@ -205,6 +238,11 @@ const AdminLeads = () => {
           <Button variant="outline" size="sm" onClick={handleExportCsv} disabled={leads.length === 0}>
             <Download className="w-4 h-4 mr-2" />CSV
           </Button>
+          {(servico !== "all" || origem !== "all" || status !== "all" || search.trim()) && (
+            <Button variant="ghost" size="sm" onClick={() => { setServico("all"); setOrigem("all"); setStatus("all"); setSearch(""); setPage(0); }}>
+              Limpar filtros
+            </Button>
+          )}
         </div>
 
         {/* Table */}

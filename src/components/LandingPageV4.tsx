@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback, type RefCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
@@ -133,6 +134,7 @@ const LandingPageV4 = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const reveal = useScrollReveal();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handler = () => setNavSolid(window.scrollY > 50);
@@ -189,6 +191,20 @@ const LandingPageV4 = () => {
     sendWhatsApp(MARCUS_WA, marcusMsg);
     
     setFormSubmitted(true);
+
+    // Redireciona para página de Obrigado com resumo do lead
+    navigate('/obrigado', {
+      state: {
+        lead: {
+          nome: dados.nome,
+          email: dados.email,
+          whatsapp: dados.whatsapp,
+          servico: dados.servico,
+          orcamento: dados.orcamento,
+          momento: dados.momento,
+        },
+      },
+    });
   };
 
   const waLink = (servico: string, msg: string) =>
