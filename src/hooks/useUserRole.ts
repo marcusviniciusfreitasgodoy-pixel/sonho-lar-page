@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getBackendClient } from "@/lib/backend";
 
 export function useUserRole(userId: string | undefined) {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
@@ -8,7 +8,13 @@ export function useUserRole(userId: string | undefined) {
     if (!userId) { setIsAdmin(false); return; }
     let cancelled = false;
     (async () => {
-      const { data, error } = await supabase
+      const client = await getBackendClient();
+      if (!client) {
+        if (!cancelled) setIsAdmin(false);
+        return;
+      }
+
+      const { data, error } = await client
         .from("user_roles")
         .select("role")
         .eq("user_id", userId)

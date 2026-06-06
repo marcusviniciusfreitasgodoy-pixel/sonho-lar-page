@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
+import { getBackendClient, isBackendConfigured } from "@/lib/backend";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,7 +23,13 @@ const Auth = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const client = await getBackendClient();
+    if (!client) {
+      setLoading(false);
+      toast({ title: "Backend indisponível", description: "Configuração de autenticação ausente nesta publicação.", variant: "destructive" });
+      return;
+    }
+    const { error } = await client.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
     else navigate("/admin/leads", { replace: true });
@@ -33,7 +38,13 @@ const Auth = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
+    const client = await getBackendClient();
+    if (!client) {
+      setLoading(false);
+      toast({ title: "Backend indisponível", description: "Configuração de autenticação ausente nesta publicação.", variant: "destructive" });
+      return;
+    }
+    const { error } = await client.auth.signUp({
       email,
       password,
       options: { emailRedirectTo: `${window.location.origin}/admin/leads`, data: { full_name: name } },
@@ -45,6 +56,12 @@ const Auth = () => {
 
   const handleGoogle = async () => {
     setLoading(true);
+    if (!isBackendConfigured()) {
+      setLoading(false);
+      toast({ title: "Backend indisponível", description: "Configuração de autenticação ausente nesta publicação.", variant: "destructive" });
+      return;
+    }
+    const { lovable } = await import("@/integrations/lovable");
     const result = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/admin/leads" });
     if (result.error) {
       setLoading(false);
