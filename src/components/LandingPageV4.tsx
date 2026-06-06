@@ -458,7 +458,7 @@ const LandingPageV4 = () => {
               </div>
               <div className="serv-price">R$ 4.900</div>
               <div className="serv-price-note">A partir de · Entrega em até 7 dias úteis</div>
-              <a href={waLink('Parecer Godoy Prime', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nQuero solicitar o *Parecer Godoy Prime* para análise de um imóvel que estou avaliando.\n\nPoderia me informar os próximos passos?')} className="btn-serv-dark" target="_blank" rel="noopener noreferrer">Solicitar via WhatsApp</a>
+              <a href={waLink('Parecer Godoy Prime', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nQuero solicitar o *Parecer Godoy Prime* para análise de um imóvel que estou avaliando.\n\nPoderia me informar os próximos passos?')} onClick={handleWaClick('Parecer Godoy Prime', 'whatsapp_card_parecer')} className="btn-serv-dark" target="_blank" rel="noopener noreferrer">Solicitar via WhatsApp</a>
             </div>
             {/* Card 2 */}
             <div className="serv-card scroll-reveal" ref={reveal}>
@@ -472,7 +472,7 @@ const LandingPageV4 = () => {
               </div>
               <div className="serv-price">R$ 10.000</div>
               <div className="serv-price-note">A partir de · Sujeito à disponibilidade</div>
-              <a href={waLink('Compra Blindada', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nTenho interesse no serviço *Compra Blindada*. Já tenho um imóvel em vista e preciso de representação exclusiva para a negociação.\n\nQual é a disponibilidade atual?')} className="btn-serv-dark" target="_blank" rel="noopener noreferrer">Falar com Marcus</a>
+              <a href={waLink('Compra Blindada', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nTenho interesse no serviço *Compra Blindada*. Já tenho um imóvel em vista e preciso de representação exclusiva para a negociação.\n\nQual é a disponibilidade atual?')} onClick={handleWaClick('Compra Blindada', 'whatsapp_card_compra_blindada')} className="btn-serv-dark" target="_blank" rel="noopener noreferrer">Falar com Marcus</a>
             </div>
             {/* Card 3 — featured */}
             <div className="serv-card featured scroll-reveal" ref={reveal}>
@@ -483,7 +483,7 @@ const LandingPageV4 = () => {
               <p className="serv-desc">Inclui busca ativa on e off-market, curadoria com vistoria técnica prévia à sua visita, análise comparativa de valor, condução da negociação e acompanhamento documental até a transferência do imóvel. Você visita 5 a 8 imóveis qualificados, não 30 a 40.</p>
               <div className="serv-price">Sob consulta</div>
               <div className="serv-price-note">Proposta personalizada</div>
-              <a href={waLink('Prime Buyer Experience', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nTenho interesse no *Prime Buyer Experience*. Ainda estou na fase de busca e quero delegar o processo completo a um representante exclusivo.\n\nPoderia me enviar uma proposta?')} className="btn-serv-gold" target="_blank" rel="noopener noreferrer">Solicitar Proposta</a>
+              <a href={waLink('Prime Buyer Experience', 'Olá Marcus, vim pelo site da Godoy Prime Realty.\n\nTenho interesse no *Prime Buyer Experience*. Ainda estou na fase de busca e quero delegar o processo completo a um representante exclusivo.\n\nPoderia me enviar uma proposta?')} onClick={handleWaClick('Prime Buyer Experience', 'whatsapp_card_prime_buyer')} className="btn-serv-gold" target="_blank" rel="noopener noreferrer">Solicitar Proposta</a>
             </div>
           </div>
 
@@ -634,7 +634,7 @@ const LandingPageV4 = () => {
             <div className="footer-col">
               <span className="footer-col-label">Contato</span>
               <a href="tel:+552140400067">(21) 4040-0067</a>
-              <a href={`https://wa.me/${MARCUS_WA}`}>WhatsApp (21) 96407-5124</a>
+              <a href={`https://wa.me/${MARCUS_WA}`} onClick={handleWaClick('Contato Geral', 'whatsapp_footer')}>WhatsApp (21) 96407-5124</a>
               <a href={`mailto:${MARCUS_EMAIL}`}>marcus@godoyprime.com.br</a>
             </div>
             <div className="footer-col">
