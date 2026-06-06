@@ -48,6 +48,7 @@ const PERIODS = [
 function statusBadge(s: string) {
   if (s === "sent") return <Badge className="bg-emerald-600 hover:bg-emerald-600">Enviado</Badge>;
   if (s === "failed") return <Badge variant="destructive">Falhou</Badge>;
+  if (s === "skipped") return <Badge variant="outline">Clique WA</Badge>;
   return <Badge variant="secondary">Pendente</Badge>;
 }
 
