@@ -669,6 +669,7 @@ const LandingPageV4 = () => {
             <div className="footer-legal">
               <a href="/privacidade">Privacidade</a>
               <a href="/lgpd">Termos de Uso</a>
+              {isAdmin && <a href="/admin/leads">Admin</a>}
             </div>
             <span className="footer-creci">CRECI/RJ 80.199 PF · 11.841 PJ · Perito Avaliador TJRJ · CNPJ 58.409.058/0001-73</span>
           </div>
