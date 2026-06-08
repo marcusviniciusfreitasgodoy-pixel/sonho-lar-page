@@ -132,6 +132,10 @@ Deno.serve(async (req) => {
             ddd,
             phone,
             message: buildDateAHomeMessage(lead),
+            timestamp: new Date().toISOString(),
+            originLeadId: lead.id,
+            originListingId: 'godoyprime-landing',
+            clientListingId: lead.landing_path || 'godoyprime-landing',
           }),
         })
         const text = await res.text()
