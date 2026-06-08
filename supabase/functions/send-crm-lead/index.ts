@@ -8,6 +8,32 @@ import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const CRM_URL = 'https://crm-b2b-interface-clone-9bbb1.shrd00.internal.goskip.dev/backend/v1/webhook-external'
 const TIPO_FUNIL = 'GPR'
+const DATEAHOME_URL = 'https://api.dateahome.com/webhook/lead/b00e8651-dd31-41fc-a0f0-32a06044f3ee'
+const LEAD_ORIGIN = 'Godoy Prime - Personal Shopper Imobiliário'
+
+function splitPhone(raw: string): { ddd: string; phone: string } {
+  let digits = (raw || '').replace(/\D/g, '')
+  if (digits.startsWith('55') && digits.length > 11) digits = digits.slice(2)
+  if (digits.length < 10) return { ddd: '', phone: digits }
+  return { ddd: digits.slice(0, 2), phone: digits.slice(2) }
+}
+
+function buildDateAHomeMessage(lead: any): string {
+  const parts: string[] = []
+  if (lead.mensagem) parts.push(lead.mensagem)
+  const meta: string[] = []
+  if (lead.servico) meta.push(`Serviço: ${lead.servico}`)
+  if (lead.orcamento) meta.push(`Orçamento: ${lead.orcamento}`)
+  if (lead.momento) meta.push(`Momento: ${lead.momento}`)
+  if (lead.origem) meta.push(`Origem: ${lead.origem}`)
+  const utm: string[] = []
+  if (lead.utm_source) utm.push(`source=${lead.utm_source}`)
+  if (lead.utm_medium) utm.push(`medium=${lead.utm_medium}`)
+  if (lead.utm_campaign) utm.push(`campaign=${lead.utm_campaign}`)
+  if (meta.length) parts.push(meta.join(' | '))
+  if (utm.length) parts.push(`UTM: ${utm.join(', ')}`)
+  return parts.join('\n') || '(sem mensagem)'
+}
 
 const BodySchema = z.object({
   nome: z.string().min(1).max(200),
@@ -40,6 +66,7 @@ Deno.serve(async (req) => {
 
   try {
     const API_KEY = Deno.env.get('CRM_WEBHOOK_API_KEY')
+    const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
     if (!API_KEY) {
       return new Response(JSON.stringify({ error: 'CRM not configured' }), {
         status: 500,
@@ -113,27 +140,60 @@ Deno.serve(async (req) => {
       data: lead.data,
     }
 
-    const res = await fetch(CRM_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
-      },
-      body: JSON.stringify(crmPayload),
-    })
+    // Build DateAHome payload
+    const { ddd, phone } = splitPhone(lead.whatsapp || '')
+    const dateAHomePayload = {
+      leadOrigin: LEAD_ORIGIN,
+      name: lead.nome,
+      email: lead.email,
+      ddd,
+      phone,
+      message: buildDateAHomeMessage(lead),
+      timestamp: new Date().toISOString(),
+      originLeadId: leadId || `gp-${Date.now()}`,
+      originListingId: 'godoyprime-landing',
+      clientListingId: lead.landing_path || 'godoyprime-landing',
+    }
 
-    const text = await res.text()
-    let data: unknown = text
-    try { data = JSON.parse(text) } catch { /* keep raw */ }
+    // Fire both CRMs in parallel
+    const [crmResult, dahResult] = await Promise.allSettled([
+      fetch(CRM_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
+        body: JSON.stringify(crmPayload),
+      }).then(async (r) => {
+        const t = await r.text()
+        let b: unknown = t; try { b = JSON.parse(t) } catch {}
+        return { ok: r.ok, status: r.status, body: b }
+      }),
+      DATEAHOME_API_KEY
+        ? fetch(DATEAHOME_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-API-Key': DATEAHOME_API_KEY },
+            body: JSON.stringify(dateAHomePayload),
+          }).then(async (r) => {
+            const t = await r.text()
+            let b: unknown = t; try { b = JSON.parse(t) } catch {}
+            return { ok: r.ok, status: r.status, body: b }
+          })
+        : Promise.resolve({ ok: false, status: 0, body: 'DATEAHOME_API_KEY not configured' }),
+    ])
 
-    // Update lead with CRM result
+    const crm = crmResult.status === 'fulfilled' ? crmResult.value : { ok: false, status: 0, body: String((crmResult as PromiseRejectedResult).reason) }
+    const dah = dahResult.status === 'fulfilled' ? dahResult.value : { ok: false, status: 0, body: String((dahResult as PromiseRejectedResult).reason) }
+
+    // Update lead row with both statuses
     if (leadId) {
       try {
         await db
           .from('leads')
           .update({
-            crm_status: res.ok ? 'sent' : 'failed',
-            crm_response: { status: res.status, body: data },
+            crm_status: crm.ok ? 'sent' : 'failed',
+            crm_response: { status: crm.status, body: crm.body },
+            dateahome_status: dah.ok ? 'sent' : 'failed',
+            dateahome_response: { status: dah.status, body: dah.body },
+            dateahome_attempts: 1,
+            dateahome_last_attempt_at: new Date().toISOString(),
           })
           .eq('id', leadId)
       } catch (e) {
@@ -141,17 +201,17 @@ Deno.serve(async (req) => {
       }
     }
 
-    if (!res.ok) {
-      console.error('CRM webhook error:', res.status, data)
-      return new Response(JSON.stringify({ error: 'CRM send failed', status: res.status, details: data }), {
-        status: res.status,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      })
-    }
+    if (!crm.ok) console.error('CRM webhook error:', crm.status, crm.body)
+    if (!dah.ok) console.error('DateAHome webhook error:', dah.status, dah.body)
 
-    return new Response(JSON.stringify({ success: true, data, lead_id: leadId }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    })
+    // We return 200 as long as the lead was persisted; partial CRM failures retried by cron.
+    return new Response(JSON.stringify({
+      success: true,
+      lead_id: leadId,
+      crm: { ok: crm.ok, status: crm.status },
+      dateahome: { ok: dah.ok, status: dah.status },
+      data: crm.body,
+    }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } })
   } catch (error) {
     console.error('Edge function error:', error)
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
