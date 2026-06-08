@@ -153,6 +153,7 @@ const LandingPageV4 = () => {
   const [navSolid, setNavSolid] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const reveal = useScrollReveal();
   const navigate = useNavigate();
@@ -161,6 +162,24 @@ const LandingPageV4 = () => {
     const handler = () => setNavSolid(window.scrollY > 50);
     window.addEventListener('scroll', handler);
     return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const client = await getBackendClient();
+      if (!client) return;
+      const { data: { user } } = await client.auth.getUser();
+      if (!user || cancelled) return;
+      const { data } = await client
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      if (!cancelled && data) setIsAdmin(true);
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   const handleAnchorClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -650,6 +669,7 @@ const LandingPageV4 = () => {
             <div className="footer-legal">
               <a href="/privacidade">Privacidade</a>
               <a href="/lgpd">Termos de Uso</a>
+              {isAdmin && <a href="/admin/leads">Admin</a>}
             </div>
             <span className="footer-creci">CRECI/RJ 80.199 PF · 11.841 PJ · Perito Avaliador TJRJ · CNPJ 58.409.058/0001-73</span>
           </div>
