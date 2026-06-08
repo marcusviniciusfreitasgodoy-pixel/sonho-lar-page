@@ -21,6 +21,10 @@ export type Database = {
           crm_last_attempt_at: string | null
           crm_response: Json | null
           crm_status: string
+          dateahome_attempts: number
+          dateahome_last_attempt_at: string | null
+          dateahome_response: Json | null
+          dateahome_status: string
           dedupe_key: string | null
           duplicate_of: string | null
           email: string | null
@@ -49,6 +53,10 @@ export type Database = {
           crm_last_attempt_at?: string | null
           crm_response?: Json | null
           crm_status?: string
+          dateahome_attempts?: number
+          dateahome_last_attempt_at?: string | null
+          dateahome_response?: Json | null
+          dateahome_status?: string
           dedupe_key?: string | null
           duplicate_of?: string | null
           email?: string | null
@@ -77,6 +85,10 @@ export type Database = {
           crm_last_attempt_at?: string | null
           crm_response?: Json | null
           crm_status?: string
+          dateahome_attempts?: number
+          dateahome_last_attempt_at?: string | null
+          dateahome_response?: Json | null
+          dateahome_status?: string
           dedupe_key?: string | null
           duplicate_of?: string | null
           email?: string | null
