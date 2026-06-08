@@ -149,6 +149,10 @@ Deno.serve(async (req) => {
       ddd,
       phone,
       message: buildDateAHomeMessage(lead),
+      timestamp: new Date().toISOString(),
+      originLeadId: leadId || `gp-${Date.now()}`,
+      originListingId: 'godoyprime-landing',
+      clientListingId: lead.landing_path || 'godoyprime-landing',
     }
 
     // Fire both CRMs in parallel
