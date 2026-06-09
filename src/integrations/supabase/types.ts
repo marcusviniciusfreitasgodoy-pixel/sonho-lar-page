@@ -123,6 +123,33 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_settings: {
+        Row: {
+          cta_botao_texto: string
+          cta_subtitulo: string
+          cta_titulo: string
+          id: boolean
+          updated_at: string
+          whatsapp_url: string
+        }
+        Insert: {
+          cta_botao_texto?: string
+          cta_subtitulo?: string
+          cta_titulo?: string
+          id?: boolean
+          updated_at?: string
+          whatsapp_url?: string
+        }
+        Update: {
+          cta_botao_texto?: string
+          cta_subtitulo?: string
+          cta_titulo?: string
+          id?: boolean
+          updated_at?: string
+          whatsapp_url?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           created_at: string
