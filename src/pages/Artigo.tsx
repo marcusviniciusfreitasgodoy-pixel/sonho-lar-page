@@ -125,7 +125,10 @@ const ArtigoPage = () => {
               </>
             ) : null}
             <span className="article-meta-sep" aria-hidden="true" />
-            <span className="article-meta-item">{readingTime(artigo.conteudo)}</span>
+            <span className="article-meta-item article-meta-reading">
+              <Clock size={14} aria-hidden="true" />
+              {readingTimeLabel(artigo.conteudo)}
+            </span>
           </div>
         </div>
         {artigo.imagem_capa && (
