@@ -1,0 +1,1 @@
+UPDATE public.artigos SET autor_foto = '/__l5e/assets-v1/f5e7ecc8-a013-48a5-9a37-68a8f9210b9e/marcus-godoy.jpg' WHERE autor_nome = 'Marcus Godoy';
