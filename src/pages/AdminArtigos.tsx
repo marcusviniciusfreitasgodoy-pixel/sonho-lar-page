@@ -244,6 +244,44 @@ const AdminArtigos = () => {
     });
   }
 
+  // 1 ano em segundos (máximo permitido pelo Storage para signed URL).
+  const COVER_SIGNED_URL_TTL = 60 * 60 * 24 * 365;
+
+  async function handleCoverUpload(file: File) {
+    if (!client) return;
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Selecione um arquivo de imagem.", variant: "destructive" });
+      return;
+    }
+    if (file.size > 8 * 1024 * 1024) {
+      toast({ title: "Imagem muito grande (máx. 8 MB).", variant: "destructive" });
+      return;
+    }
+    setUploadingCover(true);
+    try {
+      const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+      const path = `${new Date().getFullYear()}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error: upErr } = await client.storage
+        .from("artigos-capas")
+        .upload(path, file, { contentType: file.type, upsert: false });
+      if (upErr) throw upErr;
+      const { data: signed, error: signErr } = await client.storage
+        .from("artigos-capas")
+        .createSignedUrl(path, COVER_SIGNED_URL_TTL);
+      if (signErr || !signed?.signedUrl) throw signErr ?? new Error("Falha ao gerar URL");
+      setForm((f) => ({ ...f, imagem_capa: signed.signedUrl }));
+      toast({ title: "Imagem enviada." });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao enviar imagem",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setUploadingCover(false);
+    }
+  }
+
   async function handleImportPdf(file: File) {
     if (!client) return;
     if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
