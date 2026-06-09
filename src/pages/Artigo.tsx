@@ -9,6 +9,7 @@ import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
 import ArticleShare from "@/components/blog/ArticleShare";
 import RelatedArticles from "@/components/blog/RelatedArticles";
+import ArticleAuthor from "@/components/blog/ArticleAuthor";
 import { readingTimeLabel } from "@/lib/readingTime";
 import { Clock, Eye } from "lucide-react";
 
@@ -22,6 +23,10 @@ type Artigo = {
   data_publicacao: string;
   categoria: string | null;
   visualizacoes: number | null;
+  autor_nome: string | null;
+  autor_foto: string | null;
+  autor_bio: string | null;
+  autor_link: string | null;
 };
 
 function formatDate(iso: string) {
@@ -59,7 +64,7 @@ const ArtigoPage = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes, autor_nome, autor_foto, autor_bio, autor_link")
         .eq("slug", slug)
         .eq("ativo", true)
         .maybeSingle();
@@ -173,6 +178,12 @@ const ArtigoPage = () => {
           <p className="article-resumo">{artigo.resumo}</p>
           <div className="article-content">{renderArticleContent(artigo.conteudo)}</div>
           <ArticleShare title={artigo.titulo} />
+          <ArticleAuthor
+            nome={artigo.autor_nome}
+            foto={artigo.autor_foto}
+            bio={artigo.autor_bio}
+            link={artigo.autor_link}
+          />
           <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>

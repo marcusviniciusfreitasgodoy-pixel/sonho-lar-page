@@ -31,6 +31,10 @@ type Artigo = {
   ativo: boolean;
   created_at: string;
   categoria: string | null;
+  autor_nome: string | null;
+  autor_foto: string | null;
+  autor_bio: string | null;
+  autor_link: string | null;
 };
 
 type FormState = {
@@ -42,6 +46,10 @@ type FormState = {
   data_publicacao: string; // yyyy-mm-dd
   ativo: boolean;
   categoria: string;
+  autor_nome: string;
+  autor_foto: string;
+  autor_bio: string;
+  autor_link: string;
 };
 
 function slugify(s: string) {
@@ -70,6 +78,10 @@ const emptyForm: FormState = {
   data_publicacao: new Date().toISOString().slice(0, 10),
   ativo: true,
   categoria: "",
+  autor_nome: "Marcus Godoy",
+  autor_foto: "https://storage.googleapis.com/gpt-engineer-file-uploads/BBFgKw5VGEMBOR5chHp4mTx4SWQ2/uploads/1762304652528-11 - Perfil Circular 02.png",
+  autor_bio: "Personal Shopper Imobiliário de Alto Padrão, especialista em Barra da Tijuca, Portugal e Flórida.",
+  autor_link: "https://www.linkedin.com/in/marcusgodoy/",
 };
 
 const AdminArtigos = () => {
@@ -122,6 +134,10 @@ const AdminArtigos = () => {
       data_publicacao: toDateInput(a.data_publicacao),
       ativo: a.ativo,
       categoria: a.categoria ?? "",
+      autor_nome: a.autor_nome ?? "",
+      autor_foto: a.autor_foto ?? "",
+      autor_bio: a.autor_bio ?? "",
+      autor_link: a.autor_link ?? "",
     });
     setDialogOpen(true);
   }
@@ -143,6 +159,10 @@ const AdminArtigos = () => {
       data_publicacao: new Date(form.data_publicacao + "T12:00:00").toISOString(),
       ativo: form.ativo,
       categoria: form.categoria.trim() || null,
+      autor_nome: form.autor_nome.trim() || null,
+      autor_foto: form.autor_foto.trim() || null,
+      autor_bio: form.autor_bio.trim() || null,
+      autor_link: form.autor_link.trim() || null,
     };
 
     if (form.id) {
@@ -238,6 +258,10 @@ const AdminArtigos = () => {
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
         categoria: "",
+        autor_nome: emptyForm.autor_nome,
+        autor_foto: emptyForm.autor_foto,
+        autor_bio: emptyForm.autor_bio,
+        autor_link: emptyForm.autor_link,
       });
       setDialogOpen(true);
       toast({
@@ -421,6 +445,48 @@ const AdminArtigos = () => {
                 value={form.conteudo}
                 onChange={(e) => setForm({ ...form, conteudo: e.target.value })}
               />
+            </div>
+            <div className="grid gap-3 rounded-md border p-4 bg-muted/30">
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                Autor do artigo
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="grid gap-2">
+                  <Label htmlFor="autor_nome">Nome do autor</Label>
+                  <Input
+                    id="autor_nome"
+                    value={form.autor_nome}
+                    onChange={(e) => setForm({ ...form, autor_nome: e.target.value })}
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="autor_foto">Link da foto</Label>
+                  <Input
+                    id="autor_foto"
+                    placeholder="https://..."
+                    value={form.autor_foto}
+                    onChange={(e) => setForm({ ...form, autor_foto: e.target.value })}
+                  />
+                </div>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="autor_bio">Mini bio</Label>
+                <Textarea
+                  id="autor_bio"
+                  rows={3}
+                  value={form.autor_bio}
+                  onChange={(e) => setForm({ ...form, autor_bio: e.target.value })}
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="autor_link">Link do LinkedIn ou Instagram</Label>
+                <Input
+                  id="autor_link"
+                  placeholder="https://www.linkedin.com/in/..."
+                  value={form.autor_link}
+                  onChange={(e) => setForm({ ...form, autor_link: e.target.value })}
+                />
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">

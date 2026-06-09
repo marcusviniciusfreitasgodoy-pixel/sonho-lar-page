@@ -84,6 +84,10 @@ export type Database = {
       artigos: {
         Row: {
           ativo: boolean
+          autor_bio: string | null
+          autor_foto: string | null
+          autor_link: string | null
+          autor_nome: string | null
           categoria: string | null
           conteudo: string
           created_at: string
@@ -98,6 +102,10 @@ export type Database = {
         }
         Insert: {
           ativo?: boolean
+          autor_bio?: string | null
+          autor_foto?: string | null
+          autor_link?: string | null
+          autor_nome?: string | null
           categoria?: string | null
           conteudo: string
           created_at?: string
@@ -112,6 +120,10 @@ export type Database = {
         }
         Update: {
           ativo?: boolean
+          autor_bio?: string | null
+          autor_foto?: string | null
+          autor_link?: string | null
+          autor_nome?: string | null
           categoria?: string | null
           conteudo?: string
           created_at?: string
