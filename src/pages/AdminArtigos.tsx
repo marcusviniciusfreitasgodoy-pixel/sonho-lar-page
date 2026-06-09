@@ -17,7 +17,7 @@ const CATEGORIAS = [
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
@@ -97,6 +97,7 @@ const AdminArtigos = () => {
   const [confirmDelete, setConfirmDelete] = useState<Artigo | null>(null);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [uploadingCover, setUploadingCover] = useState(false);
 
   useEffect(() => {
     document.title = "Admin · Artigos";
@@ -241,6 +242,44 @@ const AdminArtigos = () => {
       reader.onerror = () => reject(reader.error);
       reader.readAsDataURL(file);
     });
+  }
+
+  // 1 ano em segundos (máximo permitido pelo Storage para signed URL).
+  const COVER_SIGNED_URL_TTL = 60 * 60 * 24 * 365;
+
+  async function handleCoverUpload(file: File) {
+    if (!client) return;
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Selecione um arquivo de imagem.", variant: "destructive" });
+      return;
+    }
+    if (file.size > 8 * 1024 * 1024) {
+      toast({ title: "Imagem muito grande (máx. 8 MB).", variant: "destructive" });
+      return;
+    }
+    setUploadingCover(true);
+    try {
+      const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+      const path = `${new Date().getFullYear()}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+      const { error: upErr } = await client.storage
+        .from("artigos-capas")
+        .upload(path, file, { contentType: file.type, upsert: false });
+      if (upErr) throw upErr;
+      const { data: signed, error: signErr } = await client.storage
+        .from("artigos-capas")
+        .createSignedUrl(path, COVER_SIGNED_URL_TTL);
+      if (signErr || !signed?.signedUrl) throw signErr ?? new Error("Falha ao gerar URL");
+      setForm((f) => ({ ...f, imagem_capa: signed.signedUrl }));
+      toast({ title: "Imagem enviada." });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao enviar imagem",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setUploadingCover(false);
+    }
   }
 
   async function handleImportPdf(file: File) {
@@ -421,13 +460,60 @@ const AdminArtigos = () => {
               <Input id="titulo" value={form.titulo} onChange={(e) => setForm({ ...form, titulo: e.target.value })} />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="imagem">Link da imagem de capa</Label>
-              <Input
-                id="imagem"
-                placeholder="https://..."
-                value={form.imagem_capa}
-                onChange={(e) => setForm({ ...form, imagem_capa: e.target.value })}
-              />
+              <Label htmlFor="imagem">Imagem de capa</Label>
+              <div className="flex gap-3 items-start">
+                <div className="w-28 h-20 rounded-md border bg-muted/40 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                  {form.imagem_capa ? (
+                    <img src={form.imagem_capa} alt="Capa" className="w-full h-full object-cover" />
+                  ) : (
+                    <ImagePlus className="h-5 w-5 text-muted-foreground" />
+                  )}
+                </div>
+                <div className="flex-1 grid gap-2">
+                  <div className="flex gap-2 flex-wrap">
+                    <Button type="button" variant="outline" size="sm" asChild>
+                      <label className={`cursor-pointer ${uploadingCover ? "opacity-60 pointer-events-none" : ""}`}>
+                        {uploadingCover ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (
+                          <ImagePlus className="mr-2 h-4 w-4" />
+                        )}
+                        {uploadingCover ? "Enviando…" : form.imagem_capa ? "Trocar imagem" : "Enviar imagem"}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          disabled={uploadingCover}
+                          onChange={(e) => {
+                            const f = e.target.files?.[0];
+                            e.target.value = "";
+                            if (f) handleCoverUpload(f);
+                          }}
+                        />
+                      </label>
+                    </Button>
+                    {form.imagem_capa ? (
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setForm({ ...form, imagem_capa: "" })}
+                      >
+                        <X className="mr-2 h-4 w-4" /> Remover
+                      </Button>
+                    ) : null}
+                  </div>
+                  <Input
+                    id="imagem"
+                    placeholder="Ou cole um link https://..."
+                    value={form.imagem_capa}
+                    onChange={(e) => setForm({ ...form, imagem_capa: e.target.value })}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    JPG, PNG ou WebP até 8 MB. A imagem fica salva no storage do projeto.
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="categoria">Categoria</Label>
