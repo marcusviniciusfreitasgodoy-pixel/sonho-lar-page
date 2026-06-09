@@ -157,6 +157,11 @@ const ArtigoPage = () => {
               <Clock size={14} aria-hidden="true" />
               {readingTimeLabel(artigo.conteudo)}
             </span>
+            <span className="article-meta-sep" aria-hidden="true" />
+            <span className="article-meta-item article-meta-reading">
+              <Eye size={14} aria-hidden="true" />
+              {formatViews(artigo.visualizacoes)}
+            </span>
           </div>
         </div>
         {artigo.imagem_capa && (
