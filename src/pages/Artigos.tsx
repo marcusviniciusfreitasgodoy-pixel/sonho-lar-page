@@ -148,6 +148,11 @@ const Artigos = () => {
                         <Clock size={12} aria-hidden="true" />
                         {readingTimeLabel(a.conteudo)}
                       </span>
+                      <span className="blog-card-meta-dot" aria-hidden="true">·</span>
+                      <span className="blog-card-reading">
+                        <Eye size={12} aria-hidden="true" />
+                        {(a.visualizacoes || 0).toLocaleString("pt-BR")}
+                      </span>
                     </span>
                     <h2 className="blog-card-title">{a.titulo}</h2>
                     <p className="blog-card-resumo">{a.resumo}</p>
