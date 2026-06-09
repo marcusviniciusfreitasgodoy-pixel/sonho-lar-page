@@ -90,6 +90,8 @@ const AdminConfiguracoes = () => {
           <span className="opacity-30">·</span>
           <Link to="/admin/comentarios" className="hover:text-foreground transition-colors">Comentários</Link>
           <span className="opacity-30">·</span>
+          <Link to="/admin/newsletter" className="hover:text-foreground transition-colors">Newsletter</Link>
+          <span className="opacity-30">·</span>
           <Link to="/admin/leads" className="hover:text-foreground transition-colors">Leads</Link>
         </nav>
 
