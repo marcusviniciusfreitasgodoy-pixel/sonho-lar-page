@@ -64,7 +64,7 @@ const ArtigoPage = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes, autor_nome, autor_foto, autor_bio, autor_link")
         .eq("slug", slug)
         .eq("ativo", true)
         .maybeSingle();
