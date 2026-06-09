@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
