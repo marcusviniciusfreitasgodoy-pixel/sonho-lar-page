@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import { readingTimeLabel } from "@/lib/readingTime";
-import { Clock } from "lucide-react";
+import { Clock, Eye } from "lucide-react";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 
@@ -17,6 +17,7 @@ type ArtigoCard = {
   conteudo: string;
   data_publicacao: string;
   categoria: string | null;
+  visualizacoes: number | null;
 };
 
 const CATEGORIAS = [
@@ -53,7 +54,7 @@ const Artigos = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
         .eq("ativo", true)
         .order("data_publicacao", { ascending: false });
       if (!cancelled) setItems((data as ArtigoCard[]) ?? []);
