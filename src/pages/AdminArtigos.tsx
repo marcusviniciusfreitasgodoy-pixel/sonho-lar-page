@@ -98,6 +98,7 @@ const AdminArtigos = () => {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [importing, setImporting] = useState(false);
   const [uploadingCover, setUploadingCover] = useState(false);
+  const [generatingAi, setGeneratingAi] = useState(false);
 
   useEffect(() => {
     document.title = "Admin · Artigos";
