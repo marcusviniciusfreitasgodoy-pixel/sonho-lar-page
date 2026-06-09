@@ -150,6 +150,7 @@ const Artigos = () => {
           <div style={{ marginTop: 80, textAlign: "center" }}>
             <Link to="/" className="article-back">← Voltar para o site</Link>
           </div>
+          <NewsletterSignup />
         </div>
       </main>
     </div>
