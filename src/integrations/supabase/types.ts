@@ -17,6 +17,7 @@ export type Database = {
       artigos: {
         Row: {
           ativo: boolean
+          categoria: string | null
           conteudo: string
           created_at: string
           data_publicacao: string
@@ -29,6 +30,7 @@ export type Database = {
         }
         Insert: {
           ativo?: boolean
+          categoria?: string | null
           conteudo: string
           created_at?: string
           data_publicacao?: string
@@ -41,6 +43,7 @@ export type Database = {
         }
         Update: {
           ativo?: boolean
+          categoria?: string | null
           conteudo?: string
           created_at?: string
           data_publicacao?: string

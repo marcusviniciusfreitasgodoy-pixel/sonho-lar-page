@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2 } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
@@ -22,6 +22,7 @@ type Artigo = {
   data_publicacao: string;
   ativo: boolean;
   created_at: string;
+  categoria: string | null;
 };
 
 type FormState = {
@@ -32,6 +33,7 @@ type FormState = {
   conteudo: string;
   data_publicacao: string; // yyyy-mm-dd
   ativo: boolean;
+  categoria: string;
 };
 
 function slugify(s: string) {
@@ -59,6 +61,7 @@ const emptyForm: FormState = {
   conteudo: "",
   data_publicacao: new Date().toISOString().slice(0, 10),
   ativo: true,
+  categoria: "",
 };
 
 const AdminArtigos = () => {
@@ -110,6 +113,7 @@ const AdminArtigos = () => {
       conteudo: a.conteudo,
       data_publicacao: toDateInput(a.data_publicacao),
       ativo: a.ativo,
+      categoria: a.categoria ?? "",
     });
     setDialogOpen(true);
   }
@@ -130,6 +134,7 @@ const AdminArtigos = () => {
       conteudo: form.conteudo,
       data_publicacao: new Date(form.data_publicacao + "T12:00:00").toISOString(),
       ativo: form.ativo,
+      categoria: form.categoria.trim() || null,
     };
 
     if (form.id) {
@@ -224,6 +229,7 @@ const AdminArtigos = () => {
         conteudo: data.conteudo ?? "",
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
+        categoria: "",
       });
       setDialogOpen(true);
       toast({
@@ -244,6 +250,15 @@ const AdminArtigos = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-10">
+        <nav className="mb-6 flex items-center gap-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <Link to="/" className="inline-flex items-center gap-1 hover:text-foreground transition-colors">
+            <ArrowLeft className="h-3.5 w-3.5" /> Voltar ao site
+          </Link>
+          <span className="opacity-30">·</span>
+          <Link to="/artigos" className="hover:text-foreground transition-colors">Blog público</Link>
+          <span className="opacity-30">·</span>
+          <Link to="/admin/leads" className="hover:text-foreground transition-colors">Leads</Link>
+        </nav>
         <div className="admin-art-toolbar">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">Artigos</h1>
@@ -252,9 +267,6 @@ const AdminArtigos = () => {
             </p>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" asChild>
-              <Link to="/admin/leads">Leads</Link>
-            </Button>
             <Button variant="outline" asChild>
               <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
                 {importing ? (
@@ -305,6 +317,11 @@ const AdminArtigos = () => {
                     ) : (
                       <Badge variant="secondary">Inativo</Badge>
                     )}
+                  {a.categoria ? (
+                    <Badge variant="outline" className="text-[10px] tracking-[0.18em] uppercase">
+                      {a.categoria}
+                    </Badge>
+                  ) : null}
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
                     {new Date(a.data_publicacao).toLocaleDateString("pt-BR")} · /artigos/{a.slug}
@@ -355,6 +372,15 @@ const AdminArtigos = () => {
                 placeholder="https://..."
                 value={form.imagem_capa}
                 onChange={(e) => setForm({ ...form, imagem_capa: e.target.value })}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="categoria">Categoria</Label>
+              <Input
+                id="categoria"
+                placeholder="Ex.: Mercado, Investimento, Compra na planta"
+                value={form.categoria}
+                onChange={(e) => setForm({ ...form, categoria: e.target.value })}
               />
             </div>
             <div className="grid gap-2">
