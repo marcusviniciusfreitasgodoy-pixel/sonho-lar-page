@@ -14,6 +14,73 @@ export type Database = {
   }
   public: {
     Tables: {
+      artigo_comentarios: {
+        Row: {
+          artigo_id: string
+          created_at: string
+          email: string
+          id: string
+          mensagem: string
+          nome: string
+          status: Database["public"]["Enums"]["comentario_status"]
+          updated_at: string
+        }
+        Insert: {
+          artigo_id: string
+          created_at?: string
+          email: string
+          id?: string
+          mensagem: string
+          nome: string
+          status?: Database["public"]["Enums"]["comentario_status"]
+          updated_at?: string
+        }
+        Update: {
+          artigo_id?: string
+          created_at?: string
+          email?: string
+          id?: string
+          mensagem?: string
+          nome?: string
+          status?: Database["public"]["Enums"]["comentario_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "artigo_comentarios_artigo_id_fkey"
+            columns: ["artigo_id"]
+            isOneToOne: false
+            referencedRelation: "artigos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      artigo_likes: {
+        Row: {
+          artigo_id: string
+          created_at: string
+          id: string
+        }
+        Insert: {
+          artigo_id: string
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          artigo_id?: string
+          created_at?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "artigo_likes_artigo_id_fkey"
+            columns: ["artigo_id"]
+            isOneToOne: false
+            referencedRelation: "artigos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       artigos: {
         Row: {
           ativo: boolean
@@ -226,6 +293,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "viewer"
+      comentario_status: "pendente" | "aprovado" | "rejeitado"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -354,6 +422,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "viewer"],
+      comentario_status: ["pendente", "aprovado", "rejeitado"],
     },
   },
 } as const

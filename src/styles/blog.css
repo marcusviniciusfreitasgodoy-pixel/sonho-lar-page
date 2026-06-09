@@ -89,3 +89,49 @@
 
 /* ============== ADMIN ============== */
 .admin-art-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+/* ============== ENGAJAMENTO (likes + comentários) ============== */
+.article-engagement{margin-top:72px;padding-top:48px;border-top:1px solid var(--bd-light)}
+
+/* Likes */
+.engage-likes{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:64px}
+.like-btn{appearance:none;display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--bd-light);border-radius:999px;padding:12px 22px;color:var(--charcoal);font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .3s ease}
+.like-btn:hover:not(:disabled){border-color:var(--gold-border);background:var(--cream2);transform:translateY(-1px)}
+.like-btn:disabled{cursor:default}
+.like-btn.is-liked{border-color:var(--charcoal);background:var(--charcoal);color:var(--white)}
+.like-btn.is-liked .like-icon{color:#e7506b}
+.like-btn .like-count{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:2px 8px;background:var(--cream2);color:var(--charcoal);border-radius:999px;font-size:11px;letter-spacing:.05em;font-weight:700}
+.like-btn.is-liked .like-count{background:rgba(255,255,255,.14);color:var(--white)}
+.engage-hint{font-size:13px;color:var(--text3);font-style:italic;font-family:var(--serif)}
+
+/* Comentários */
+.engage-title{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1.2;color:var(--charcoal);margin:0 0 8px;letter-spacing:-.012em}
+.engage-title::before{content:"";display:block;width:36px;height:2px;background:var(--gold);margin-bottom:18px}
+.engage-empty{color:var(--text3);font-style:italic;font-family:var(--serif);font-size:16px;margin:24px 0 32px}
+
+.comment-list{list-style:none;padding:0;margin:32px 0 56px;display:flex;flex-direction:column;gap:0}
+.comment-item{padding:26px 0;border-bottom:1px solid var(--bd-light)}
+.comment-item:first-child{padding-top:0}
+.comment-item:last-child{border-bottom:none}
+.comment-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.comment-author{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--charcoal)}
+.comment-date{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.comment-msg{font-size:16px;line-height:1.75;color:var(--text);margin:0;white-space:pre-wrap}
+
+/* Form */
+.comment-form{background:var(--cream2);border:1px solid var(--bd-light);border-radius:14px;padding:34px 32px;margin-top:24px}
+.comment-form-title{font-family:var(--serif);font-weight:600;font-size:22px;color:var(--charcoal);margin:0 0 6px}
+.comment-form-note{font-size:13.5px;color:var(--text3);font-style:italic;font-family:var(--serif);margin:0 0 22px}
+.comment-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.cf-field{display:flex;flex-direction:column;gap:8px}
+.cf-field>span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--text3)}
+.cf-field input,.cf-field textarea{font-family:var(--sans);font-size:15px;color:var(--charcoal);background:#fff;border:1px solid var(--bd-light);border-radius:8px;padding:12px 14px;transition:border-color .25s,box-shadow .25s;resize:vertical}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(158,123,42,.12)}
+.cf-field-full{margin-bottom:18px}
+.comment-submit{appearance:none;background:var(--charcoal);color:var(--white);border:none;border-radius:999px;padding:13px 28px;font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .3s ease}
+.comment-submit:hover:not(:disabled){background:#000;transform:translateY(-1px);box-shadow:0 10px 24px -14px rgba(22,20,18,.6)}
+.comment-submit:disabled{opacity:.6;cursor:default}
+
+@media (max-width:640px){
+  .comment-form{padding:26px 22px}
+  .comment-form-grid{grid-template-columns:1fr}
+}
