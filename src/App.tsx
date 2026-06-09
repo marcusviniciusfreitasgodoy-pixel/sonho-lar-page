@@ -17,6 +17,7 @@ import Artigo from "./pages/Artigo";
 const Auth = lazy(() => import("./pages/Auth"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminArtigos = lazy(() => import("./pages/AdminArtigos"));
+const AdminComentarios = lazy(() => import("./pages/AdminComentarios"));
 const RequireAdmin = lazy(() =>
   import("./components/RequireAdmin").then((m) => ({ default: m.RequireAdmin }))
 );
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
           <Route path="/admin/artigos" element={<RequireAdmin><AdminArtigos /></RequireAdmin>} />
+          <Route path="/admin/comentarios" element={<RequireAdmin><AdminComentarios /></RequireAdmin>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
          </Routes>
