@@ -1,0 +1,2 @@
+ALTER TABLE public.artigos ADD COLUMN IF NOT EXISTS destaque boolean NOT NULL DEFAULT false;
+CREATE UNIQUE INDEX IF NOT EXISTS artigos_unique_destaque ON public.artigos ((destaque)) WHERE destaque = true;

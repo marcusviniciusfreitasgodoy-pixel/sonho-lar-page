@@ -92,6 +92,7 @@ export type Database = {
           conteudo: string
           created_at: string
           data_publicacao: string
+          destaque: boolean
           id: string
           imagem_capa: string | null
           resumo: string
@@ -110,6 +111,7 @@ export type Database = {
           conteudo: string
           created_at?: string
           data_publicacao?: string
+          destaque?: boolean
           id?: string
           imagem_capa?: string | null
           resumo: string
@@ -128,6 +130,7 @@ export type Database = {
           conteudo?: string
           created_at?: string
           data_publicacao?: string
+          destaque?: boolean
           id?: string
           imagem_capa?: string | null
           resumo?: string
