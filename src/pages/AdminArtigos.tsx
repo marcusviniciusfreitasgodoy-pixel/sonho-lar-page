@@ -446,6 +446,48 @@ const AdminArtigos = () => {
                 onChange={(e) => setForm({ ...form, conteudo: e.target.value })}
               />
             </div>
+            <div className="grid gap-3 rounded-md border p-4 bg-muted/30">
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                Autor do artigo
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="grid gap-2">
+                  <Label htmlFor="autor_nome">Nome do autor</Label>
+                  <Input
+                    id="autor_nome"
+                    value={form.autor_nome}
+                    onChange={(e) => setForm({ ...form, autor_nome: e.target.value })}
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="autor_foto">Link da foto</Label>
+                  <Input
+                    id="autor_foto"
+                    placeholder="https://..."
+                    value={form.autor_foto}
+                    onChange={(e) => setForm({ ...form, autor_foto: e.target.value })}
+                  />
+                </div>
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="autor_bio">Mini bio</Label>
+                <Textarea
+                  id="autor_bio"
+                  rows={3}
+                  value={form.autor_bio}
+                  onChange={(e) => setForm({ ...form, autor_bio: e.target.value })}
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="autor_link">Link do LinkedIn ou Instagram</Label>
+                <Input
+                  id="autor_link"
+                  placeholder="https://www.linkedin.com/in/..."
+                  value={form.autor_link}
+                  onChange={(e) => setForm({ ...form, autor_link: e.target.value })}
+                />
+              </div>
+            </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="data">Data de publicação</Label>
