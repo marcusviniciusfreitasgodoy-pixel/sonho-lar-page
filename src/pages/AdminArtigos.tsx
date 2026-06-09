@@ -9,7 +9,8 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2 } from "lucide-react";
+import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
   id: string;
@@ -68,6 +69,8 @@ const AdminArtigos = () => {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [saving, setSaving] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState<Artigo | null>(null);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [importing, setImporting] = useState(false);
 
   useEffect(() => {
     document.title = "Admin · Artigos";
@@ -182,6 +185,62 @@ const AdminArtigos = () => {
     }
   }
 
+  function fileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result as string;
+        // strip "data:...;base64," prefix
+        const comma = result.indexOf(",");
+        resolve(comma >= 0 ? result.slice(comma + 1) : result);
+      };
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function handleImportPdf(file: File) {
+    if (!client) return;
+    if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
+      toast({ title: "Selecione um arquivo PDF.", variant: "destructive" });
+      return;
+    }
+    if (file.size > 12 * 1024 * 1024) {
+      toast({ title: "PDF muito grande (máx. 12 MB).", variant: "destructive" });
+      return;
+    }
+    setImporting(true);
+    try {
+      const file_base64 = await fileToBase64(file);
+      const { data, error } = await client.functions.invoke("import-pdf-artigo", {
+        body: { file_base64, filename: file.name },
+      });
+      if (error) throw error;
+      if (!data?.ok) throw new Error(data?.error || "Falha ao importar PDF");
+      setForm({
+        titulo: data.titulo ?? "",
+        imagem_capa: "",
+        resumo: data.resumo ?? "",
+        conteudo: data.conteudo ?? "",
+        data_publicacao: new Date().toISOString().slice(0, 10),
+        ativo: false,
+      });
+      setDialogOpen(true);
+      toast({
+        title: "PDF importado.",
+        description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
+      });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao importar PDF",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setImporting(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-10">
@@ -195,6 +254,27 @@ const AdminArtigos = () => {
           <div className="flex gap-2">
             <Button variant="outline" asChild>
               <Link to="/admin/leads">Leads</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
+                {importing ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <FileUp className="mr-2 h-4 w-4" />
+                )}
+                {importing ? "Importando…" : "Importar PDF"}
+                <input
+                  type="file"
+                  accept="application/pdf,.pdf"
+                  className="hidden"
+                  disabled={importing}
+                  onChange={(e) => {
+                    const f = e.target.files?.[0];
+                    e.target.value = "";
+                    if (f) handleImportPdf(f);
+                  }}
+                />
+              </label>
             </Button>
             <Button onClick={openNew}>
               <Plus className="mr-2 h-4 w-4" /> Novo artigo
@@ -315,6 +395,15 @@ const AdminArtigos = () => {
             </div>
           </div>
           <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setPreviewOpen(true)}
+              disabled={saving}
+              className="mr-auto"
+            >
+              <Eye className="mr-2 h-4 w-4" /> Pré-visualizar
+            </Button>
             <Button variant="outline" onClick={() => setDialogOpen(false)} disabled={saving}>
               Cancelar
             </Button>
@@ -324,6 +413,16 @@ const AdminArtigos = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <ArtigoPreview
+        open={previewOpen}
+        onClose={() => setPreviewOpen(false)}
+        titulo={form.titulo}
+        resumo={form.resumo}
+        conteudo={form.conteudo}
+        imagem_capa={form.imagem_capa}
+        data_publicacao={form.data_publicacao}
+      />
 
       <Dialog open={!!confirmDelete} onOpenChange={(o) => !o && setConfirmDelete(null)}>
         <DialogContent>
