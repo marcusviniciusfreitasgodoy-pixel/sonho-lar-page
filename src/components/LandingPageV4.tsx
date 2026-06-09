@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback, type RefCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
@@ -268,6 +268,7 @@ const LandingPageV4 = () => {
             <li><a href="#processo" onClick={handleAnchorClick}>Processos</a></li>
             <li><a href="#servicos" onClick={handleAnchorClick}>Serviços</a></li>
             <li><a href="#sobre" onClick={handleAnchorClick}>Sobre</a></li>
+            <li><Link to="/artigos">Artigos</Link></li>
             <li><a href="#faq" onClick={handleAnchorClick}>FAQ</a></li>
           </ul>
           <a href="#diagnostico" className="nav-cta" onClick={handleAnchorClick}>Diagnóstico Gratuito</a>
@@ -281,6 +282,7 @@ const LandingPageV4 = () => {
             <a href="#processo" onClick={handleAnchorClick}>Processos</a>
             <a href="#servicos" onClick={handleAnchorClick}>Serviços</a>
             <a href="#sobre" onClick={handleAnchorClick}>Sobre</a>
+            <Link to="/artigos" onClick={() => setMobileMenuOpen(false)}>Artigos</Link>
             <a href="#faq" onClick={handleAnchorClick}>FAQ</a>
             <a href="#diagnostico" className="mobile-menu-cta" onClick={handleAnchorClick}>Diagnóstico Gratuito</a>
           </div>

@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      artigos: {
+        Row: {
+          ativo: boolean
+          conteudo: string
+          created_at: string
+          data_publicacao: string
+          id: string
+          imagem_capa: string | null
+          resumo: string
+          slug: string
+          titulo: string
+          updated_at: string
+        }
+        Insert: {
+          ativo?: boolean
+          conteudo: string
+          created_at?: string
+          data_publicacao?: string
+          id?: string
+          imagem_capa?: string | null
+          resumo: string
+          slug: string
+          titulo: string
+          updated_at?: string
+        }
+        Update: {
+          ativo?: boolean
+          conteudo?: string
+          created_at?: string
+          data_publicacao?: string
+          id?: string
+          imagem_capa?: string | null
+          resumo?: string
+          slug?: string
+          titulo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           created_at: string
