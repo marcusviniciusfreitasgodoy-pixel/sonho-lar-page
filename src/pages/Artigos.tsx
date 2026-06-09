@@ -67,6 +67,18 @@ const Artigos = () => {
 
   return (
     <div className="landing-v4">
+      <Helmet>
+        <title>Artigos e Dicas Imobiliárias — Personal Shopper de Alto Padrão | Godoy Prime Realty</title>
+        <meta
+          name="description"
+          content="Conteúdo exclusivo sobre o mercado imobiliário de luxo na Barra da Tijuca e Recreio: análises, dicas de compra, venda e investimento em imóveis de alto padrão."
+        />
+        <link rel="canonical" href="https://personalshopperimobiliario.godoyprime.com.br/artigos" />
+        <meta property="og:title" content="Artigos e Dicas Imobiliárias — Personal Shopper de Alto Padrão" />
+        <meta property="og:description" content="Inteligência aplicada ao mercado imobiliário de alto padrão. Artigos exclusivos sobre compra, venda e investimento em imóveis de luxo." />
+        <meta property="og:url" content="https://personalshopperimobiliario.godoyprime.com.br/artigos" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <main className="blog-page">
         <div className="blog-wrap">
           <div className="blog-eyebrow">
