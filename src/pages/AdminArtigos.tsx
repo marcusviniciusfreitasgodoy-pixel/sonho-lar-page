@@ -17,7 +17,7 @@ const CATEGORIAS = [
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Sparkles } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
@@ -98,6 +98,7 @@ const AdminArtigos = () => {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [importing, setImporting] = useState(false);
   const [uploadingCover, setUploadingCover] = useState(false);
+  const [generatingAi, setGeneratingAi] = useState(false);
 
   useEffect(() => {
     document.title = "Admin · Artigos";
@@ -330,6 +331,48 @@ const AdminArtigos = () => {
     }
   }
 
+  async function handleGenerateAi() {
+    if (!client) return;
+    const texto = form.conteudo.trim();
+    if (texto.length < 80) {
+      toast({
+        title: "Texto insuficiente",
+        description: "Cole ou importe o conteúdo bruto no campo 'Conteúdo completo' antes de gerar.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setGeneratingAi(true);
+    try {
+      const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
+        body: {
+          titulo: form.titulo,
+          categoria: form.categoria,
+          texto,
+        },
+      });
+      if (error) throw error;
+      if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+      setForm((f) => ({
+        ...f,
+        resumo: data.resumo ?? f.resumo,
+        conteudo: data.conteudo ?? f.conteudo,
+      }));
+      toast({
+        title: "Resumo e conteúdo gerados.",
+        description: "Revise o texto antes de salvar.",
+      });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao gerar com IA",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setGeneratingAi(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-10">
@@ -532,13 +575,33 @@ const AdminArtigos = () => {
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="resumo">Resumo curto</Label>
+              <div className="flex items-center justify-between gap-2">
+                <Label htmlFor="resumo">Resumo curto</Label>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={handleGenerateAi}
+                  disabled={generatingAi || !form.conteudo.trim()}
+                  title="Gera resumo curto e reformata o conteúdo a partir do texto bruto no campo 'Conteúdo completo'."
+                >
+                  {generatingAi ? (
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                  ) : (
+                    <Sparkles className="h-3.5 w-3.5" />
+                  )}
+                  {generatingAi ? "Gerando…" : "Gerar com IA"}
+                </Button>
+              </div>
               <Textarea
                 id="resumo"
                 rows={2}
                 value={form.resumo}
                 onChange={(e) => setForm({ ...form, resumo: e.target.value })}
               />
+              <p className="text-xs text-muted-foreground">
+                O botão usa o texto do campo "Conteúdo completo" abaixo (ex.: texto bruto do PDF) para gerar um resumo curto e reescrever o conteúdo em Markdown leve.
+              </p>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="conteudo">Conteúdo completo</Label>
