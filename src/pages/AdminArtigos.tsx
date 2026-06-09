@@ -653,7 +653,7 @@ const AdminArtigos = () => {
                   variant="outline"
                   size="sm"
                   onClick={handleGenerateAi}
-                  disabled={generatingAi}
+                  disabled={generatingAi || form.conteudo.trim().length < 80}
                   title="Gera resumo curto e reformata o conteúdo a partir do texto bruto no campo 'Conteúdo completo'."
                 >
                   {generatingAi ? (
@@ -664,6 +664,11 @@ const AdminArtigos = () => {
                   {generatingAi ? "Gerando…" : "Gerar com IA"}
                 </Button>
               </div>
+              {form.conteudo.trim().length < 80 && (
+                <p className="text-xs text-amber-600">
+                  Preencha o campo <strong>Conteúdo completo</strong> (mínimo 80 caracteres) para habilitar a geração com IA.
+                </p>
+              )}
               <Textarea
                 id="resumo"
                 rows={2}
