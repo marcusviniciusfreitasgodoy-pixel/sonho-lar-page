@@ -257,6 +257,27 @@ export type Database = {
           },
         ]
       }
+      newsletter_assinantes: {
+        Row: {
+          data_cadastro: string
+          email: string
+          id: string
+          nome: string | null
+        }
+        Insert: {
+          data_cadastro?: string
+          email: string
+          id?: string
+          nome?: string | null
+        }
+        Update: {
+          data_cadastro?: string
+          email?: string
+          id?: string
+          nome?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

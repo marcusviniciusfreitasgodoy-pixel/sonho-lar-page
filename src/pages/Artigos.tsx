@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
+import NewsletterSignup from "@/components/blog/NewsletterSignup";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 
@@ -149,6 +150,7 @@ const Artigos = () => {
           <div style={{ marginTop: 80, textAlign: "center" }}>
             <Link to="/" className="article-back">← Voltar para o site</Link>
           </div>
+          <NewsletterSignup />
         </div>
       </main>
     </div>
