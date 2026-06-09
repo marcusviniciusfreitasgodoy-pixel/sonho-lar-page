@@ -14,6 +14,7 @@ type ArtigoCard = {
   slug: string;
   imagem_capa: string | null;
   resumo: string;
+  conteudo: string;
   data_publicacao: string;
   categoria: string | null;
 };
