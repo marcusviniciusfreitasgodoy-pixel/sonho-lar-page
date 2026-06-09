@@ -35,6 +35,7 @@ type Artigo = {
   autor_foto: string | null;
   autor_bio: string | null;
   autor_link: string | null;
+  destaque: boolean;
 };
 
 type FormState = {
@@ -50,6 +51,7 @@ type FormState = {
   autor_foto: string;
   autor_bio: string;
   autor_link: string;
+  destaque: boolean;
 };
 
 function slugify(s: string) {
@@ -82,6 +84,7 @@ const emptyForm: FormState = {
   autor_foto: "https://storage.googleapis.com/gpt-engineer-file-uploads/BBFgKw5VGEMBOR5chHp4mTx4SWQ2/uploads/1762304652528-11 - Perfil Circular 02.png",
   autor_bio: "Personal Shopper Imobiliário de Alto Padrão, especialista em Barra da Tijuca, Portugal e Flórida.",
   autor_link: "https://www.linkedin.com/in/marcusgodoy/",
+  destaque: false,
 };
 
 const AdminArtigos = () => {
@@ -138,6 +141,7 @@ const AdminArtigos = () => {
       autor_foto: a.autor_foto ?? "",
       autor_bio: a.autor_bio ?? "",
       autor_link: a.autor_link ?? "",
+      destaque: !!a.destaque,
     });
     setDialogOpen(true);
   }
@@ -163,9 +167,13 @@ const AdminArtigos = () => {
       autor_foto: form.autor_foto.trim() || null,
       autor_bio: form.autor_bio.trim() || null,
       autor_link: form.autor_link.trim() || null,
+      destaque: form.destaque,
     };
 
     if (form.id) {
+      if (form.destaque) {
+        await client.from("artigos").update({ destaque: false }).neq("id", form.id);
+      }
       const { error } = await client.from("artigos").update(payload).eq("id", form.id);
       if (error) {
         toast({ title: "Erro ao salvar", description: error.message, variant: "destructive" });
@@ -183,6 +191,9 @@ const AdminArtigos = () => {
         let n = 2;
         while (taken.has(`${slug}-${n}`)) n++;
         slug = `${slug}-${n}`;
+      }
+      if (form.destaque) {
+        await client.from("artigos").update({ destaque: false }).eq("destaque", true);
       }
       const { error } = await client.from("artigos").insert({ ...payload, slug });
       if (error) {
