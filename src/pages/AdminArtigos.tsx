@@ -460,13 +460,60 @@ const AdminArtigos = () => {
               <Input id="titulo" value={form.titulo} onChange={(e) => setForm({ ...form, titulo: e.target.value })} />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="imagem">Link da imagem de capa</Label>
-              <Input
-                id="imagem"
-                placeholder="https://..."
-                value={form.imagem_capa}
-                onChange={(e) => setForm({ ...form, imagem_capa: e.target.value })}
-              />
+              <Label htmlFor="imagem">Imagem de capa</Label>
+              <div className="flex gap-3 items-start">
+                <div className="w-28 h-20 rounded-md border bg-muted/40 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                  {form.imagem_capa ? (
+                    <img src={form.imagem_capa} alt="Capa" className="w-full h-full object-cover" />
+                  ) : (
+                    <ImagePlus className="h-5 w-5 text-muted-foreground" />
+                  )}
+                </div>
+                <div className="flex-1 grid gap-2">
+                  <div className="flex gap-2 flex-wrap">
+                    <Button type="button" variant="outline" size="sm" asChild>
+                      <label className={`cursor-pointer ${uploadingCover ? "opacity-60 pointer-events-none" : ""}`}>
+                        {uploadingCover ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (
+                          <ImagePlus className="mr-2 h-4 w-4" />
+                        )}
+                        {uploadingCover ? "Enviando…" : form.imagem_capa ? "Trocar imagem" : "Enviar imagem"}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          disabled={uploadingCover}
+                          onChange={(e) => {
+                            const f = e.target.files?.[0];
+                            e.target.value = "";
+                            if (f) handleCoverUpload(f);
+                          }}
+                        />
+                      </label>
+                    </Button>
+                    {form.imagem_capa ? (
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setForm({ ...form, imagem_capa: "" })}
+                      >
+                        <X className="mr-2 h-4 w-4" /> Remover
+                      </Button>
+                    ) : null}
+                  </div>
+                  <Input
+                    id="imagem"
+                    placeholder="Ou cole um link https://..."
+                    value={form.imagem_capa}
+                    onChange={(e) => setForm({ ...form, imagem_capa: e.target.value })}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    JPG, PNG ou WebP até 8 MB. A imagem fica salva no storage do projeto.
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="categoria">Categoria</Label>
