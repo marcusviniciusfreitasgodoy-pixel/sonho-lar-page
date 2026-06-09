@@ -1,33 +1,61 @@
-## Problema
+## Objetivo
 
-Ao importar o PDF "artigos Personal Shopper Imobiliário.pdf", a toast exibida foi *"PDF importado. Revise o texto…"* — ramo executado quando `rawConteudo.trim().length < 80`. Ou seja, a edge function `import-pdf-artigo` retornou conteúdo (não vazio, por isso não deu erro 422), mas curto demais para alimentar o campo **Conteúdo completo** e disparar o encadeamento automático da IA.
+Hoje, ao importar o HTML, perdemos informações (categoria, capa, blocos especiais) e o blog renderiza com um CSS diferente do arquivo. Vou ajustar **importador + sanitizador + CSS do blog** para que o artigo publicado fique visualmente igual ao arquivo de origem.
 
-Causa raiz: a função usa apenas o `unpdf` (parser puro JS). Em PDFs majoritariamente escaneados/com imagens/colunas complexas, o `unpdf` devolve pouquíssimo texto, mas não vazio — então a validação atual (`if (!rawText.trim())`) não dispara, e o frontend recebe um conteúdo insuficiente.
+## Lacunas identificadas no fluxo atual
 
-## Solução
+Comparando `Artigo_01_-_Personal_Shopper_Imobiliario.html` com o que hoje é importado e renderizado:
 
-Implementar extração em cascata na edge function `import-pdf-artigo`:
+| Elemento no arquivo | Hoje | Após ajuste |
+|---|---|---|
+| `<h1>` do hero | ✅ vira título | mantém |
+| `<meta description>` | ✅ vira resumo | mantém |
+| `.hero-eyebrow` ("Educacional") | ❌ descartado | → preenche **Categoria** |
+| `<header><img>` da capa | ❌ ignorado (URL relativa) | extrai `src`+`alt`; se relativa, mostra aviso pedindo upload manual |
+| `<h2>`, `<h3>`, `<p>`, `<ul>`, `<ol>` | ✅ parcial (ol vira ul) | preserva `<ol>` com numeração |
+| `<strong>`, `<em>`, `<a>` | ✅ | mantém |
+| `<blockquote>` | ❌ removido pelo sanitizador | preservado |
+| `.callout` / `.callout-label` | ❌ removido | preservado com classes |
+| `.stat-row` / `.stat-cell` | ❌ removido | preservado |
+| `.comparison-table` (table/thead/tbody) | ❌ removido | preservado |
+| `<nav>`, `<footer>`, `.article-cta`, `.related-nav` | ✅ descartado | continua descartando |
 
-1. **Tentativa nativa** com `unpdf` (já existente).
-2. **Avaliação de qualidade**: considerar ruim se `rawText.length < 500` **ou** menos de 100 caracteres alfabéticos (regex `/[a-zA-Zà-úÀ-Ú]/g`).
-3. **Fallback OCR via Lovable AI Gateway** (`google/gemini-2.5-flash`) — envia o PDF inteiro como `inline_data` (`application/pdf`) com instrução: *"Extraia todo o texto deste documento PDF, preservando títulos, parágrafos e listas. Devolva apenas o texto extraído, em português."*. Usa `LOVABLE_API_KEY` (já cadastrada).
-4. **Limites/guardas**:
-   - Se PDF > 8 MB no fallback, recusar e instruir comprimir.
-   - Tratar `429` (rate limit) e `402` (créditos) devolvendo mensagem clara para a toast do frontend.
-5. **Pós-processamento**: rodar `textToMarkdown` + `extractTituloResumo` no texto final (nativo OU OCR), de forma que o retorno (`titulo`, `resumo`, `conteudo`) permaneça igual ao formato atual — sem mudanças no frontend.
-6. **Logs**: `console.info("[import-pdf-artigo] extraction=", strategy, "chars=", n)` para diagnosticar futuras importações nos logs da função.
+## Mudanças
 
-Resultado esperado: para o mesmo PDF, `conteudo` virá > 80 chars, o `setForm` preenche o campo, e o encadeamento automático para `gerar-artigo-ia` é executado, formatando o artigo sem ação manual.
+### 1. Importador — `src/pages/AdminArtigos.tsx` (`parseHtmlToArtigo`)
+- Ler `<meta name="description">` para resumo (já feito, manter).
+- Pegar `.hero-eyebrow` (texto) → retornar `categoria`.
+- Pegar `header.article-hero img` → retornar `{capaUrl, capaAlt}`. Se for URL absoluta (`http(s)://`), preencher `form.imagem_capa`. Se relativa (`../assets/...`), mostrar toast: "Capa não importada automaticamente — envie a imagem manualmente".
+- Para o corpo, em vez de reconstruir tag a tag, **clonar `.article-body`** (ou `<main>` se não houver), **remover** `.article-cta`, `.related-nav`, `script`, `style`, `nav`, `footer`, e devolver o `innerHTML` resultante (já sem inline styles após sanitização).
+- Continuar normalizando travessões/em-dash em nós de texto.
 
-## Detalhes técnicos
+### 2. Sanitizador — `src/lib/renderArticleContent.tsx`
+- Ampliar whitelist de tags: adicionar `div, span, table, thead, tbody, tr, th, td, figure, figcaption`.
+- Permitir atributo `class` apenas se valor estiver em allowlist: `article-lead`, `callout`, `callout-label`, `stat-row`, `stat-cell`, `stat-n`, `stat-l`, `comparison-table`.
+- Remover todo `style=`, `id=`, `onclick=` etc. (já é o comportamento; apenas garantir).
+- Manter renderização via `dangerouslySetInnerHTML` no wrapper `.article-html`.
 
-- Arquivo único alterado: `supabase/functions/import-pdf-artigo/index.ts`.
-- Sem mudanças de schema, RLS, secrets ou frontend.
-- Endpoint do gateway: `POST https://ai.gateway.lovable.dev/v1/chat/completions` com mensagens multimodais (`type: "file"`, `mime_type: "application/pdf"`, `data: base64`). Caso o modelo `gemini-2.5-flash` rejeite PDF direto, alternativa: usar `google/gemini-2.5-flash` com `image_url` apontando para data-URL `data:application/pdf;base64,...` (formato suportado pelo gateway Lovable).
-- Função `extractTextWithAi(bytes, filename)` isolada para fácil manutenção/teste.
+### 3. CSS do blog público — `src/pages/Artigo.tsx` (ou folha associada)
+Adicionar regras dentro de `.article-html` espelhando o arquivo original:
+- `h2`: Cormorant Garamond 700, borda superior fina, margem 52px.
+- `h3`: Montserrat 600, uppercase leve.
+- `p.article-lead`: 19px, line-height 1.9.
+- `ul li`: bullet dourado (#9E7B2A) com `::before` redondo.
+- `ol`: counter `decimal-leading-zero` em dourado Cormorant.
+- `blockquote`: borda esquerda dourada, itálico Cormorant.
+- `.callout`: caixa creme com borda dourada e label monospace.
+- `.stat-row`/`.stat-cell`/`.stat-n`/`.stat-l`: grid de estatísticas.
+- `.comparison-table`: tabela com tipografia Montserrat no head.
 
-## Validação
+A paleta já é Warm Luxury (#FAFAF8 / #161412 / #9E7B2A), então o resultado fica idêntico sem importar o `<style>` original.
 
-1. Reimportar o mesmo PDF pelo dialog `Novo artigo → Importar PDF`.
-2. Confirmar que o campo **Conteúdo completo** é preenchido (> 80 chars) e que a toast final é *"PDF importado e formatado com IA."*.
-3. Conferir nos logs da edge function a linha `extraction= ocr-ai chars= …`.
+### 4. Reprocessar artigo de teste
+Após implementar, importar `Artigo_01...html` no admin para validar visualmente que o preview e a página pública `/blog/<slug>` ficam iguais ao arquivo.
+
+## O que **não** muda
+- Schema do banco (campos atuais bastam).
+- Nenhuma exclusão de artigos existentes — eles já estão em HTML limpo e continuam funcionando.
+- Não importamos `<style>` do arquivo (segurança); a paridade visual vem do CSS do blog.
+
+## Limitação a comunicar ao usuário
+A imagem de capa só é importada automaticamente quando o `src` for URL absoluta. Imagens com caminho relativo (`../assets/...`) precisam ser enviadas manualmente pelo campo "Imagem de capa".
