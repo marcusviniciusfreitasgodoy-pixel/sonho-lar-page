@@ -121,6 +121,7 @@ const ArtigoPage = () => {
         <article className="article-wrap">
           <p className="article-resumo">{artigo.resumo}</p>
           <div className="article-content">{renderArticleContent(artigo.conteudo)}</div>
+          <ArticleShare title={artigo.titulo} />
           <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>
