@@ -301,11 +301,14 @@ const AdminArtigos = () => {
       });
       if (error) throw error;
       if (!data?.ok) throw new Error(data?.error || "Falha ao importar PDF");
+      const rawTitulo: string = data.titulo ?? "";
+      const rawResumo: string = data.resumo ?? "";
+      const rawConteudo: string = data.conteudo ?? "";
       setForm({
-        titulo: data.titulo ?? "",
+        titulo: rawTitulo,
         imagem_capa: "",
-        resumo: data.resumo ?? "",
-        conteudo: data.conteudo ?? "",
+        resumo: rawResumo,
+        conteudo: rawConteudo,
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
         categoria: "",
@@ -316,10 +319,38 @@ const AdminArtigos = () => {
         destaque: false,
       });
       setDialogOpen(true);
-      toast({
-        title: "PDF importado.",
-        description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
-      });
+
+      // Encadeia automaticamente a IA para limpar/formatar o conteúdo bruto
+      if (rawConteudo.trim().length >= 80) {
+        try {
+          setGeneratingAi(true);
+          const ai = await runAiOnText(rawConteudo, { titulo: rawTitulo, categoria: "" });
+          setForm((f) => ({
+            ...f,
+            resumo: ai.resumo || f.resumo,
+            conteudo: ai.conteudo || f.conteudo,
+          }));
+          toast({
+            title: "PDF importado e formatado com IA.",
+            description: "Revise o texto e adicione a imagem de capa antes de ativar.",
+          });
+        } catch (aiErr: any) {
+          toast({
+            title: "Formatação automática indisponível",
+            description:
+              (aiErr?.message ? aiErr.message + " " : "") +
+              "Usando o texto bruto do PDF. Você pode clicar em 'Gerar com IA' depois.",
+            variant: "destructive",
+          });
+        } finally {
+          setGeneratingAi(false);
+        }
+      } else {
+        toast({
+          title: "PDF importado.",
+          description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
+        });
+      }
     } catch (err: any) {
       toast({
         title: "Erro ao importar PDF",
@@ -329,6 +360,26 @@ const AdminArtigos = () => {
     } finally {
       setImporting(false);
     }
+  }
+
+  async function runAiOnText(
+    texto: string,
+    opts: { titulo?: string; categoria?: string } = {}
+  ): Promise<{ resumo: string; conteudo: string }> {
+    if (!client) throw new Error("Cliente indisponível");
+    const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
+      body: {
+        titulo: opts.titulo ?? "",
+        categoria: opts.categoria ?? "",
+        texto,
+      },
+    });
+    if (error) throw error;
+    if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+    return {
+      resumo: (data.resumo ?? "").toString(),
+      conteudo: (data.conteudo ?? "").toString(),
+    };
   }
 
   async function handleGenerateAi() {
@@ -344,19 +395,11 @@ const AdminArtigos = () => {
     }
     setGeneratingAi(true);
     try {
-      const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
-        body: {
-          titulo: form.titulo,
-          categoria: form.categoria,
-          texto,
-        },
-      });
-      if (error) throw error;
-      if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+      const ai = await runAiOnText(texto, { titulo: form.titulo, categoria: form.categoria });
       setForm((f) => ({
         ...f,
-        resumo: data.resumo ?? f.resumo,
-        conteudo: data.conteudo ?? f.conteudo,
+        resumo: ai.resumo || f.resumo,
+        conteudo: ai.conteudo || f.conteudo,
       }));
       toast({
         title: "Resumo e conteúdo gerados.",
@@ -406,7 +449,7 @@ const AdminArtigos = () => {
                 ) : (
                   <FileUp className="mr-2 h-4 w-4" />
                 )}
-                {importing ? "Importando…" : "Importar PDF"}
+                {importing ? (generatingAi ? "Formatando com IA…" : "Importando…") : "Importar PDF"}
                 <input
                   type="file"
                   accept="application/pdf,.pdf"
