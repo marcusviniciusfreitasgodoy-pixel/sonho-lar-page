@@ -4,6 +4,7 @@ import '@/styles/landing-v4.css';
 import heroImage from '@/assets/barra-hero-new.jpg';
 import marcusProfile from '@/assets/marcus-profile.jpg';
 import godoyLogo from '@/assets/godoy-logo.png';
+import FeaturedArticles from '@/components/FeaturedArticles';
 
 const MARCUS_EMAIL = 'marcus@godoyprime.com.br';
 const MARCUS_WA = '5521964075124';
