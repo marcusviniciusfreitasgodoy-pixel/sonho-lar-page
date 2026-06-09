@@ -1,25 +1,42 @@
 ## Objetivo
 
-Após qualquer import de PDF no admin de artigos, o campo "Conteúdo completo" deve aparecer já preenchido e formatado pela IA, sem precisar clicar em mais nada.
+Permitir que você (e qualquer admin autorizado) recupere a senha por e-mail, sem precisar de senha temporária trafegando pelo chat. A conta `marcus@godoyprime.com.br` continua existindo e com role `admin` — só precisamos do caminho de reset.
 
-## Mudanças
+## O que será feito
 
-Apenas em `src/pages/AdminArtigos.tsx`:
+### 1. Link "Esqueci minha senha" em `/auth`
+- Adicionar link abaixo do botão **Entrar** em `src/pages/Auth.tsx`.
+- Ao clicar, abre uma aba "Recuperar senha" (ou um pequeno formulário inline) pedindo apenas o e-mail.
+- Chama `supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/reset-password' })`.
+- Mostra toast confirmando o envio (sem revelar se o e-mail existe ou não, por segurança).
 
-1. Extrair o núcleo da chamada da IA da função `handleGenerateAi` em uma função interna `runAiOnText(texto, { titulo, categoria })` que devolve `{ resumo, conteudo }` ou lança erro.
-2. Em `handleImportPdf`, após preencher o formulário com o texto bruto extraído do PDF:
-   - Manter o `setForm` atual (texto bruto já entra no campo, garantindo que nunca fique vazio).
-   - Se o texto extraído tiver pelo menos 80 caracteres, chamar `runAiOnText` em sequência e, em caso de sucesso, atualizar `resumo` e `conteudo` no formulário com a versão limpa pela IA.
-   - Mostrar **um único toast** ao final: "PDF importado e formatado com IA. Revise antes de ativar."
-3. Tratamento de erro da IA dentro do import:
-   - Se a IA falhar (créditos 402, rate limit 429, falha de rede ou resposta inválida), manter o texto bruto já no campo e mostrar um toast de aviso: "Formatação automática indisponível — usando o texto bruto do PDF. Você pode clicar em 'Gerar com IA' depois."
-   - Se o texto extraído vier vazio ou menor que 80 caracteres (PDF escaneado), pular a IA e manter a mensagem atual.
-4. Estado de loading: enquanto a IA roda durante o import, exibir indicação no botão de import ("Importando e formatando…") usando o `importing` existente, sem adicionar novos estados visíveis.
+### 2. Nova página pública `/reset-password`
+- Criar `src/pages/ResetPassword.tsx` e registrar rota pública (sem `RequireAdmin`) em `src/App.tsx`.
+- Detecta o token de recovery na URL (Supabase entrega via hash `#access_token=...&type=recovery`).
+- Mostra formulário com **nova senha** + **confirmar senha** (mínimo 8 caracteres, validação de igualdade).
+- Chama `supabase.auth.updateUser({ password })`.
+- Em sucesso: toast + redireciona para `/auth`.
+- Em erro (link expirado, etc.): mensagem clara com botão para pedir novo link.
 
-O botão "Gerar com IA" continua existindo como reprocessamento manual quando você editar o texto à mão.
+### 3. E-mails de autenticação com a marca Godoy Prime (opcional, recomendado)
+Hoje o reset usaria o template padrão da Lovable. Se você quiser, eu também:
+- Verifico se já existe domínio de e-mail configurado para o projeto.
+- Se sim, faço scaffold dos templates de auth (signup, recovery, magic link, etc.) já estilizados com a paleta Warm Luxury (cream #FAFAF8, charcoal #161412, gold #9E7B2A) e fonte Lato.
+- Se não houver domínio, sigo só com o template padrão e te ofereço o setup de domínio depois.
 
-## Fora de escopo
+## Detalhes técnicos
 
-- Sem mudanças no banco.
-- Sem mudanças nas edge functions `import-pdf-artigo` e `gerar-artigo-ia`.
-- Sem alteração no layout do formulário.
+- `Auth.tsx`: nova função `handleForgotPassword`, controle de loading próprio.
+- `ResetPassword.tsx`: usa `getBackendClient()` (mesmo padrão lazy do projeto). Lê `window.location.hash` no mount; se `type !== 'recovery'`, mostra estado vazio com link para `/auth`.
+- `App.tsx`: adicionar `<Route path="/reset-password" element={<ResetPassword />} />` antes das rotas admin.
+- Nenhuma alteração de banco, RLS ou edge function. Sua role `admin` continua intacta.
+
+## O que NÃO será feito
+
+- Não vou mexer em `user_roles` nem na sua conta (ela está OK no banco).
+- Não vou criar senha temporária nem trocar sua senha pelo banco.
+- Não vou tocar em `src/integrations/supabase/client.ts` (auto-gerado).
+
+## Pergunta única antes de implementar
+
+Quer que eu **também faça o scaffold dos templates de e-mail de auth** com a marca Godoy Prime (item 3), ou prefere usar o template padrão da Lovable por enquanto e cuidar disso depois?
