@@ -34,11 +34,8 @@ function formatDate(iso: string) {
   }
 }
 
-function readingTime(text: string) {
-  const words = (text || "").trim().split(/\s+/).filter(Boolean).length;
-  const min = Math.max(1, Math.round(words / 220));
-  return `${min} min de leitura`;
-}
+
+
 
 const ArtigoPage = () => {
   const { slug } = useParams<{ slug: string }>();
