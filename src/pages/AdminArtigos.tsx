@@ -229,6 +229,7 @@ const AdminArtigos = () => {
         conteudo: data.conteudo ?? "",
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
+        categoria: "",
       });
       setDialogOpen(true);
       toast({
