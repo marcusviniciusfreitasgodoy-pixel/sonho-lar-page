@@ -540,6 +540,34 @@ const AdminArtigos = () => {
               Use ## para subtítulos, - para listas e **texto** para negrito.
             </DialogDescription>
           </DialogHeader>
+          {!form.id && (
+            <div className="rounded-md border border-dashed bg-muted/30 p-3 flex items-center justify-between gap-3">
+              <div className="text-xs text-muted-foreground">
+                Importe um PDF para preencher <strong>Título</strong>, <strong>Resumo</strong> e <strong>Conteúdo completo</strong> automaticamente (formatado com IA).
+              </div>
+              <Button type="button" variant="outline" size="sm" asChild>
+                <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
+                  {importing ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <FileUp className="mr-2 h-4 w-4" />
+                  )}
+                  {importing ? (generatingAi ? "Formatando com IA…" : "Importando…") : "Importar PDF"}
+                  <input
+                    type="file"
+                    accept="application/pdf,.pdf"
+                    className="hidden"
+                    disabled={importing}
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      e.target.value = "";
+                      if (f) handleImportPdf(f);
+                    }}
+                  />
+                </label>
+              </Button>
+            </div>
+          )}
           <div className="grid gap-4 py-2">
             <div className="grid gap-2">
               <Label htmlFor="titulo">Título</Label>
