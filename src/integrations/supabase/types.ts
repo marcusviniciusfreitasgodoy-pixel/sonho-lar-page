@@ -346,7 +346,38 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      artigo_comentarios_publicos: {
+        Row: {
+          artigo_id: string | null
+          created_at: string | null
+          id: string | null
+          mensagem: string | null
+          nome: string | null
+        }
+        Insert: {
+          artigo_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          mensagem?: string | null
+          nome?: string | null
+        }
+        Update: {
+          artigo_id?: string | null
+          created_at?: string | null
+          id?: string | null
+          mensagem?: string | null
+          nome?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "artigo_comentarios_artigo_id_fkey"
+            columns: ["artigo_id"]
+            isOneToOne: false
+            referencedRelation: "artigos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       has_role: {
