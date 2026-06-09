@@ -703,29 +703,7 @@ const AdminArtigos = () => {
               </Select>
             </div>
             <div className="grid gap-2">
-              <div className="flex items-center justify-between gap-2">
-                <Label htmlFor="resumo">Resumo curto</Label>
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  onClick={handleGenerateAi}
-                  disabled={generatingAi || form.conteudo.trim().length < 80}
-                  title="Gera resumo curto e reformata o conteúdo a partir do texto bruto no campo 'Conteúdo completo'."
-                >
-                  {generatingAi ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                  ) : (
-                    <Sparkles className="h-3.5 w-3.5" />
-                  )}
-                  {generatingAi ? "Gerando…" : "Gerar com IA"}
-                </Button>
-              </div>
-              {form.conteudo.trim().length < 80 && (
-                <p className="text-xs text-amber-600">
-                  Preencha o campo <strong>Conteúdo completo</strong> (mínimo 80 caracteres) para habilitar a geração com IA.
-                </p>
-              )}
+              <Label htmlFor="resumo">Resumo curto</Label>
               <Textarea
                 id="resumo"
                 rows={2}
@@ -733,7 +711,7 @@ const AdminArtigos = () => {
                 onChange={(e) => setForm({ ...form, resumo: e.target.value })}
               />
               <p className="text-xs text-muted-foreground">
-                O botão usa o texto do campo "Conteúdo completo" abaixo (ex.: texto bruto do PDF) para gerar um resumo curto e reescrever o conteúdo em Markdown leve.
+                Resumo que aparece na listagem do blog e em cards de compartilhamento.
               </p>
             </div>
             <div className="grid gap-2">
