@@ -328,37 +328,46 @@ const AdminArtigos = () => {
       return out;
     };
 
+    // Normaliza pontuação: troca travessões/em-dash usados como bullets ou
+    // separadores soltos por hífen comum, evita ## colados etc.
+    const cleanText = (s: string) =>
+      s
+        .replace(/[\u2013\u2014\u2212]/g, "-") // – — −  ->  -
+        .replace(/[•·●◦‣▪]/g, "-")             // bullets unicode -> -
+        .replace(/\s+-\s+/g, " — ")            // " - " entre palavras vira travessão tipográfico real? não: deixa hífen
+        .replace(/\s+/g, " ")
+        .trim();
+
     const blocks: string[] = [];
     const walk = (node: Element) => {
       Array.from(node.children).forEach((el) => {
         const tag = el.tagName.toLowerCase();
         if (tag === "h1") {
-          // Primeiro h1 já virou título; subsequentes viram ##
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t && t !== titulo) blocks.push(`## ${t}`);
         } else if (tag === "h2") {
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t) blocks.push(`## ${t}`);
         } else if (tag === "h3" || tag === "h4") {
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t) blocks.push(`### ${t}`);
         } else if (tag === "p") {
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t) blocks.push(t);
         } else if (tag === "ul" || tag === "ol") {
           const items: string[] = [];
           Array.from(el.querySelectorAll(":scope > li")).forEach((li) => {
-            const t = inline(li).trim().replace(/\s+/g, " ");
+            const t = cleanText(inline(li));
             if (t) items.push(`- ${t}`);
           });
           if (items.length) blocks.push(items.join("\n"));
         } else if (tag === "blockquote") {
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t) blocks.push(`> ${t}`);
         } else if (tag === "div" || tag === "section" || tag === "article") {
           walk(el);
         } else {
-          const t = inline(el).trim();
+          const t = cleanText(inline(el));
           if (t && t.length > 20) blocks.push(t);
         }
       });
