@@ -53,7 +53,7 @@ const Artigos = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, data_publicacao, categoria")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
         .eq("ativo", true)
         .order("data_publicacao", { ascending: false });
       if (!cancelled) setItems((data as ArtigoCard[]) ?? []);
