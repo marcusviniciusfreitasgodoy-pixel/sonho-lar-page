@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Sparkles, Code2 } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Code2 } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
@@ -100,7 +100,6 @@ const AdminArtigos = () => {
   const [importing, setImporting] = useState(false);
   const [htmlPaste, setHtmlPaste] = useState("");
   const [uploadingCover, setUploadingCover] = useState(false);
-  const [generatingAi, setGeneratingAi] = useState(false);
 
   useEffect(() => {
     document.title = "Admin · Artigos";
@@ -440,59 +439,6 @@ const AdminArtigos = () => {
     }
   }
 
-  async function runAiOnText(
-    texto: string,
-    opts: { titulo?: string; categoria?: string } = {}
-  ): Promise<{ resumo: string; conteudo: string }> {
-    if (!client) throw new Error("Cliente indisponível");
-    const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
-      body: {
-        titulo: opts.titulo ?? "",
-        categoria: opts.categoria ?? "",
-        texto,
-      },
-    });
-    if (error) throw error;
-    if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
-    return {
-      resumo: (data.resumo ?? "").toString(),
-      conteudo: (data.conteudo ?? "").toString(),
-    };
-  }
-
-  async function handleGenerateAi() {
-    if (!client) return;
-    const texto = form.conteudo.trim();
-    if (texto.length < 80) {
-      toast({
-        title: "Texto insuficiente",
-        description: "Cole ou importe o conteúdo bruto no campo 'Conteúdo completo' antes de gerar.",
-        variant: "destructive",
-      });
-      return;
-    }
-    setGeneratingAi(true);
-    try {
-      const ai = await runAiOnText(texto, { titulo: form.titulo, categoria: form.categoria });
-      setForm((f) => ({
-        ...f,
-        resumo: ai.resumo || f.resumo,
-        conteudo: ai.conteudo || f.conteudo,
-      }));
-      toast({
-        title: "Resumo e conteúdo gerados.",
-        description: "Revise o texto antes de salvar.",
-      });
-    } catch (err: any) {
-      toast({
-        title: "Erro ao gerar com IA",
-        description: err?.message || String(err),
-        variant: "destructive",
-      });
-    } finally {
-      setGeneratingAi(false);
-    }
-  }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
