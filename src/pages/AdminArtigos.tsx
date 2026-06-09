@@ -17,7 +17,7 @@ const CATEGORIAS = [
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X } from "lucide-react";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Sparkles } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
