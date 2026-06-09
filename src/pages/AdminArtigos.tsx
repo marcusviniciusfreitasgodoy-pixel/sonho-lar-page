@@ -6,6 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
+const CATEGORIAS = [
+  "Compra de Imóveis",
+  "Venda de Imóveis",
+  "Investimentos",
+  "Dicas de Alto Padrão",
+] as const;
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
@@ -376,12 +384,19 @@ const AdminArtigos = () => {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="categoria">Categoria</Label>
-              <Input
-                id="categoria"
-                placeholder="Ex.: Mercado, Investimento, Compra na planta"
-                value={form.categoria}
-                onChange={(e) => setForm({ ...form, categoria: e.target.value })}
-              />
+              <Select
+                value={form.categoria || undefined}
+                onValueChange={(v) => setForm({ ...form, categoria: v })}
+              >
+                <SelectTrigger id="categoria">
+                  <SelectValue placeholder="Selecione uma categoria" />
+                </SelectTrigger>
+                <SelectContent>
+                  {CATEGORIAS.map((c) => (
+                    <SelectItem key={c} value={c}>{c}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div className="grid gap-2">
               <Label htmlFor="resumo">Resumo curto</Label>
