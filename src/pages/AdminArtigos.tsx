@@ -255,8 +255,8 @@ const AdminArtigos = () => {
             <Button variant="outline" asChild>
               <Link to="/admin/leads">Leads</Link>
             </Button>
-            <Button variant="outline" asChild disabled={importing}>
-              <label className="cursor-pointer">
+            <Button variant="outline" asChild>
+              <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
                 {importing ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
