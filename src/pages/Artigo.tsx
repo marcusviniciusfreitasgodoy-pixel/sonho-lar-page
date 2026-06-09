@@ -8,6 +8,7 @@ import "@/styles/blog.css";
 import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
 import ArticleShare from "@/components/blog/ArticleShare";
+import RelatedArticles from "@/components/blog/RelatedArticles";
 import { readingTimeLabel } from "@/lib/readingTime";
 import { Clock } from "lucide-react";
 
@@ -143,6 +144,7 @@ const ArtigoPage = () => {
           <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>
+        <RelatedArticles currentId={artigo.id} categoria={artigo.categoria} />
       </main>
     </div>
   );
