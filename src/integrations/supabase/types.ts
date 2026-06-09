@@ -94,6 +94,7 @@ export type Database = {
           slug: string
           titulo: string
           updated_at: string
+          visualizacoes: number
         }
         Insert: {
           ativo?: boolean
@@ -107,6 +108,7 @@ export type Database = {
           slug: string
           titulo: string
           updated_at?: string
+          visualizacoes?: number
         }
         Update: {
           ativo?: boolean
@@ -120,6 +122,7 @@ export type Database = {
           slug?: string
           titulo?: string
           updated_at?: string
+          visualizacoes?: number
         }
         Relationships: []
       }
@@ -338,6 +341,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      increment_artigo_views: { Args: { p_id: string }; Returns: undefined }
     }
     Enums: {
       app_role: "admin" | "viewer"
