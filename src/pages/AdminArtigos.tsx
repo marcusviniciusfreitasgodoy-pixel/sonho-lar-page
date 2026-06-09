@@ -31,6 +31,10 @@ type Artigo = {
   ativo: boolean;
   created_at: string;
   categoria: string | null;
+  autor_nome: string | null;
+  autor_foto: string | null;
+  autor_bio: string | null;
+  autor_link: string | null;
 };
 
 type FormState = {
@@ -42,6 +46,10 @@ type FormState = {
   data_publicacao: string; // yyyy-mm-dd
   ativo: boolean;
   categoria: string;
+  autor_nome: string;
+  autor_foto: string;
+  autor_bio: string;
+  autor_link: string;
 };
 
 function slugify(s: string) {
@@ -70,6 +78,10 @@ const emptyForm: FormState = {
   data_publicacao: new Date().toISOString().slice(0, 10),
   ativo: true,
   categoria: "",
+  autor_nome: "Marcus Godoy",
+  autor_foto: "https://storage.googleapis.com/gpt-engineer-file-uploads/BBFgKw5VGEMBOR5chHp4mTx4SWQ2/uploads/1762304652528-11 - Perfil Circular 02.png",
+  autor_bio: "Personal Shopper Imobiliário de Alto Padrão, especialista em Barra da Tijuca, Portugal e Flórida.",
+  autor_link: "https://www.linkedin.com/in/marcusgodoy/",
 };
 
 const AdminArtigos = () => {
