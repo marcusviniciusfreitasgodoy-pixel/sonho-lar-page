@@ -144,6 +144,7 @@ const ArtigoPage = () => {
           <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>
+        <RelatedArticles currentId={artigo.id} categoria={artigo.categoria} />
       </main>
     </div>
   );
