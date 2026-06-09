@@ -6,6 +6,7 @@ import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
+import ArticleShare from "@/components/blog/ArticleShare";
 
 type Artigo = {
   id: string;
@@ -120,6 +121,7 @@ const ArtigoPage = () => {
         <article className="article-wrap">
           <p className="article-resumo">{artigo.resumo}</p>
           <div className="article-content">{renderArticleContent(artigo.conteudo)}</div>
+          <ArticleShare title={artigo.titulo} />
           <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>
