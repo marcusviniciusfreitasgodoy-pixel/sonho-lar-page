@@ -10,7 +10,7 @@ import ArticleCta from "@/components/blog/ArticleCta";
 import ArticleShare from "@/components/blog/ArticleShare";
 import RelatedArticles from "@/components/blog/RelatedArticles";
 import { readingTimeLabel } from "@/lib/readingTime";
-import { Clock } from "lucide-react";
+import { Clock, Eye } from "lucide-react";
 
 type Artigo = {
   id: string;
@@ -21,6 +21,7 @@ type Artigo = {
   conteudo: string;
   data_publicacao: string;
   categoria: string | null;
+  visualizacoes: number | null;
 };
 
 function formatDate(iso: string) {
@@ -35,6 +36,12 @@ function formatDate(iso: string) {
   }
 }
 
+function formatViews(n: number | null | undefined) {
+  const count = n || 0;
+  return `${count.toLocaleString("pt-BR")} ${count === 1 ? "leitura" : "leituras"}`;
+}
+
+const VIEW_DEDUP_MS = 30 * 60 * 1000; // 30 minutes
 
 
 
@@ -52,14 +59,34 @@ const ArtigoPage = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
         .eq("slug", slug)
         .eq("ativo", true)
         .maybeSingle();
       if (!cancelled) {
         if (data) {
-          setArtigo(data as Artigo);
-          document.title = `${(data as Artigo).titulo} | Godoy Prime Realty`;
+          const art = data as Artigo;
+          setArtigo(art);
+          document.title = `${art.titulo} | Godoy Prime Realty`;
+          // Dedup: only count one view per visitor per 30min
+          try {
+            const storageKey = `artigo_viewed_${art.id}`;
+            const last = Number(localStorage.getItem(storageKey) || 0);
+            if (!last || Date.now() - last > VIEW_DEDUP_MS) {
+              localStorage.setItem(storageKey, String(Date.now()));
+              client.rpc("increment_artigo_views", { p_id: art.id }).then(() => {
+                if (!cancelled) {
+                  setArtigo((prev) =>
+                    prev && prev !== "notfound"
+                      ? { ...prev, visualizacoes: (prev.visualizacoes || 0) + 1 }
+                      : prev
+                  );
+                }
+              });
+            }
+          } catch {
+            // localStorage unavailable; skip dedup
+          }
         } else {
           setArtigo("notfound");
         }
@@ -129,6 +156,11 @@ const ArtigoPage = () => {
             <span className="article-meta-item article-meta-reading">
               <Clock size={14} aria-hidden="true" />
               {readingTimeLabel(artigo.conteudo)}
+            </span>
+            <span className="article-meta-sep" aria-hidden="true" />
+            <span className="article-meta-item article-meta-reading">
+              <Eye size={14} aria-hidden="true" />
+              {formatViews(artigo.visualizacoes)}
             </span>
           </div>
         </div>
