@@ -9,6 +9,7 @@ import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
 import ArticleShare from "@/components/blog/ArticleShare";
 import RelatedArticles from "@/components/blog/RelatedArticles";
+import ArticleAuthor from "@/components/blog/ArticleAuthor";
 import { readingTimeLabel } from "@/lib/readingTime";
 import { Clock, Eye } from "lucide-react";
 
@@ -22,6 +23,10 @@ type Artigo = {
   data_publicacao: string;
   categoria: string | null;
   visualizacoes: number | null;
+  autor_nome: string | null;
+  autor_foto: string | null;
+  autor_bio: string | null;
+  autor_link: string | null;
 };
 
 function formatDate(iso: string) {
