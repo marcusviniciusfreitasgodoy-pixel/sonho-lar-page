@@ -5,6 +5,7 @@ import { renderArticleContent } from "@/lib/renderArticleContent";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 import ArticleEngagement from "@/components/blog/ArticleEngagement";
+import ArticleCta from "@/components/blog/ArticleCta";
 
 type Artigo = {
   id: string;
@@ -119,6 +120,7 @@ const ArtigoPage = () => {
         <article className="article-wrap">
           <p className="article-resumo">{artigo.resumo}</p>
           <div className="article-content">{renderArticleContent(artigo.conteudo)}</div>
+          <ArticleCta />
           <ArticleEngagement artigoId={artigo.id} />
         </article>
       </main>
