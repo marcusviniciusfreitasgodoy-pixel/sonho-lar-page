@@ -159,6 +159,10 @@ const AdminArtigos = () => {
       data_publicacao: new Date(form.data_publicacao + "T12:00:00").toISOString(),
       ativo: form.ativo,
       categoria: form.categoria.trim() || null,
+      autor_nome: form.autor_nome.trim() || null,
+      autor_foto: form.autor_foto.trim() || null,
+      autor_bio: form.autor_bio.trim() || null,
+      autor_link: form.autor_link.trim() || null,
     };
 
     if (form.id) {
