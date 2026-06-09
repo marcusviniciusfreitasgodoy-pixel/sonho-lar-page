@@ -81,19 +81,27 @@ const Artigos = () => {
             não com pressa.
           </p>
 
-          <div className="blog-filters" role="tablist" aria-label="Filtrar por categoria">
-            {(["Todas", ...CATEGORIAS] as const).map((c) => (
-              <button
-                key={c}
-                type="button"
-                role="tab"
-                aria-selected={filtro === c}
-                className={`blog-filter${filtro === c ? " is-active" : ""}`}
-                onClick={() => setFiltro(c)}
-              >
-                {c}
-              </button>
-            ))}
+          <div className="blog-toolbar">
+            <div className="blog-filters" role="tablist" aria-label="Filtrar por categoria">
+              {(["Todas", ...CATEGORIAS] as const).map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  role="tab"
+                  aria-selected={filtro === c}
+                  className={`blog-filter${filtro === c ? " is-active" : ""}`}
+                  onClick={() => setFiltro(c)}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
+            {filtrados && filtrados.length > 0 ? (
+              <span className="blog-count">
+                <strong>{filtrados.length}</strong>{" "}
+                {filtrados.length === 1 ? "artigo" : "artigos"}
+              </span>
+            ) : null}
           </div>
 
           {filtrados === null ? (
@@ -106,16 +114,16 @@ const Artigos = () => {
             <div className="blog-grid">
               {filtrados.map((a) => (
                 <Link key={a.id} to={`/artigos/${a.slug}`} className="blog-card">
-                  {a.imagem_capa ? (
-                    <img src={a.imagem_capa} alt={a.titulo} className="blog-card-img" loading="lazy" />
-                  ) : (
-                    <div className="blog-card-img" />
-                  )}
+                  <div className="blog-card-media">
+                    {a.categoria ? (
+                      <span className="blog-card-cat-badge">{a.categoria}</span>
+                    ) : null}
+                    {a.imagem_capa ? (
+                      <img src={a.imagem_capa} alt={a.titulo} className="blog-card-img" loading="lazy" />
+                    ) : null}
+                  </div>
                   <div className="blog-card-body">
-                    <span className="blog-card-date">
-                      {formatDate(a.data_publicacao)}
-                      {a.categoria ? <span className="blog-card-cat"> · {a.categoria}</span> : null}
-                    </span>
+                    <span className="blog-card-date">{formatDate(a.data_publicacao)}</span>
                     <h2 className="blog-card-title">{a.titulo}</h2>
                     <p className="blog-card-resumo">{a.resumo}</p>
                     <span className="blog-card-cta">Ler artigo →</span>
