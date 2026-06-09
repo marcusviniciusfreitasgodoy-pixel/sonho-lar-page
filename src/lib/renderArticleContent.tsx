@@ -9,6 +9,18 @@ const HEADING3_RE = /^\s*###\s*/;
 const ALLOWED_TAGS = new Set([
   "h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "b", "i",
   "blockquote", "a", "br", "hr",
+  "div", "span",
+  "table", "thead", "tbody", "tfoot", "tr", "th", "td",
+  "figure", "figcaption",
+]);
+
+// Classes permitidas (preservadas no atributo class) — espelham o design original.
+const ALLOWED_CLASSES = new Set([
+  "article-lead",
+  "callout", "callout-label",
+  "stat-row", "stat-cell", "stat-n", "stat-l",
+  "comparison-table",
+  "hero-eyebrow",
 ]);
 
 function sanitizeHtml(html: string): string {
@@ -27,9 +39,18 @@ function sanitizeHtml(html: string): string {
         walk(replacement);
         return;
       }
-      // Remove todos os atributos exceto href em <a>
+      // Remove todos os atributos exceto href em <a> e class na allowlist.
       Array.from(child.attributes).forEach((attr) => {
         if (tag === "a" && attr.name === "href") return;
+        if (attr.name === "class") {
+          const kept = attr.value
+            .split(/\s+/)
+            .filter((c) => ALLOWED_CLASSES.has(c))
+            .join(" ");
+          if (kept) child.setAttribute("class", kept);
+          else child.removeAttribute("class");
+          return;
+        }
         child.removeAttribute(attr.name);
       });
       if (tag === "a") {
@@ -45,7 +66,7 @@ function sanitizeHtml(html: string): string {
 
 function looksLikeHtml(s: string): boolean {
   const t = s.trimStart();
-  return /^<(h[1-6]|p|ul|ol|div|article|section|blockquote|strong|em|br)\b/i.test(t);
+  return /^<(h[1-6]|p|ul|ol|div|article|section|blockquote|strong|em|br|table|figure)\b/i.test(t);
 }
 
 function renderInline(text: string, keyPrefix: string): ReactNode[] {

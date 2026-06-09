@@ -284,104 +284,78 @@ const AdminArtigos = () => {
     }
   }
 
-  function parseHtmlToArtigo(html: string): { titulo: string; resumo: string; conteudo: string } {
+  function parseHtmlToArtigo(html: string): {
+    titulo: string;
+    resumo: string;
+    conteudo: string;
+    categoria: string;
+    capaUrl: string;
+    capaRelativa: boolean;
+  } {
     const doc = new DOMParser().parseFromString(html, "text/html");
 
-    // Remove elementos não-conteúdo
-    doc.querySelectorAll("script, style, noscript, nav, header, footer, aside, form, iframe").forEach((n) => n.remove());
-
-    const titulo =
-      doc.querySelector("title")?.textContent?.trim() ||
-      doc.querySelector("h1")?.textContent?.trim() ||
-      "";
+    // Título: prioriza <h1>, faz fallback para <title> (removendo sufixos comuns).
+    const h1 = doc.querySelector("h1")?.textContent?.trim() || "";
+    const titleTag = (doc.querySelector("title")?.textContent || "")
+      .replace(/\s*[—–|·-]\s*Godoy Prime Realty.*$/i, "")
+      .trim();
+    const titulo = h1 || titleTag;
 
     const metaDesc =
       doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
       doc.querySelector('meta[property="og:description"]')?.getAttribute("content")?.trim() ||
       "";
 
-    // Escolhe raiz de conteúdo: <article>, <main>, ou <body>
+    // Categoria via .hero-eyebrow / [class*=eyebrow]
+    const eyebrow =
+      doc.querySelector(".hero-eyebrow")?.textContent?.trim() ||
+      doc.querySelector("[class*='eyebrow']")?.textContent?.trim() ||
+      "";
+
+    // Imagem de capa via header.article-hero img (ou primeira img dentro do <header>).
+    const heroImg =
+      (doc.querySelector("header.article-hero img") as HTMLImageElement | null) ||
+      (doc.querySelector("header img") as HTMLImageElement | null);
+    const rawSrc = heroImg?.getAttribute("src")?.trim() || "";
+    const isAbsolute = /^(https?:)?\/\//i.test(rawSrc) || rawSrc.startsWith("data:");
+    const capaUrl = isAbsolute ? rawSrc : "";
+    const capaRelativa = !!rawSrc && !isAbsolute;
+
+    // Escolhe raiz do conteúdo: .article-body > article > main > body.
     const root: Element =
+      doc.querySelector(".article-body") ||
       doc.querySelector("article") ||
       doc.querySelector("main") ||
       doc.body ||
       doc.documentElement;
 
-    // Limpa pontuação dentro do texto inline (travessões, bullets, espaços).
-    const cleanText = (s: string) =>
-      s
-        .replace(/[\u2013\u2014\u2212]/g, "-")
-        .replace(/[•·●◦‣▪]/g, "-")
-        .replace(/\s+/g, " ")
-        .trim();
+    // Clona e remove o que não é conteúdo.
+    const clone = root.cloneNode(true) as Element;
+    clone.querySelectorAll(
+      "script, style, noscript, nav, header, footer, aside, form, iframe, " +
+      ".article-cta, .related-nav, .site-nav, .site-footer, .nav-back, .nav-cta",
+    ).forEach((n) => n.remove());
 
-    const escapeHtml = (s: string) =>
-      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-    const renderInline = (el: Element | ChildNode): string => {
-      let out = "";
+    // Limpa travessões/bullets soltos nos nós de texto.
+    const cleanTextNodes = (el: Node) => {
       el.childNodes.forEach((child) => {
         if (child.nodeType === Node.TEXT_NODE) {
-          out += escapeHtml((child.textContent || "").replace(/\s+/g, " "));
+          child.textContent = (child.textContent || "")
+            .replace(/[\u2013\u2014\u2212]/g, "-")
+            .replace(/[•·●◦‣▪]/g, "");
         } else if (child.nodeType === Node.ELEMENT_NODE) {
-          const e = child as Element;
-          const tag = e.tagName.toLowerCase();
-          if (tag === "strong" || tag === "b") out += `<strong>${renderInline(e)}</strong>`;
-          else if (tag === "em" || tag === "i") out += `<em>${renderInline(e)}</em>`;
-          else if (tag === "br") out += "<br />";
-          else if (tag === "a") out += renderInline(e); // mantém apenas o texto
-          else out += renderInline(e);
-        }
-      });
-      return out
-        .replace(/[\u2013\u2014\u2212]/g, "-")
-        .replace(/[•·●◦‣▪]/g, "-")
-        .replace(/\s+/g, " ")
-        .trim();
-    };
-
-    const blocks: string[] = [];
-    const walk = (node: Element) => {
-      Array.from(node.children).forEach((el) => {
-        const tag = el.tagName.toLowerCase();
-        if (tag === "h1") {
-          const t = renderInline(el);
-          if (t && cleanText(el.textContent || "") !== titulo) blocks.push(`<h2>${t}</h2>`);
-        } else if (tag === "h2") {
-          const t = renderInline(el);
-          if (t) blocks.push(`<h2>${t}</h2>`);
-        } else if (tag === "h3" || tag === "h4") {
-          const t = renderInline(el);
-          if (t) blocks.push(`<h3>${t}</h3>`);
-        } else if (tag === "p") {
-          const t = renderInline(el);
-          if (t) blocks.push(`<p>${t}</p>`);
-        } else if (tag === "ul" || tag === "ol") {
-          const items: string[] = [];
-          Array.from(el.querySelectorAll(":scope > li")).forEach((li) => {
-            const t = renderInline(li);
-            if (t) items.push(`  <li>${t}</li>`);
-          });
-          if (items.length) blocks.push(`<${tag}>\n${items.join("\n")}\n</${tag}>`);
-        } else if (tag === "blockquote") {
-          const t = renderInline(el);
-          if (t) blocks.push(`<blockquote>${t}</blockquote>`);
-        } else if (tag === "div" || tag === "section" || tag === "article") {
-          walk(el);
-        } else {
-          const t = renderInline(el);
-          if (t && t.length > 20) blocks.push(`<p>${t}</p>`);
+          cleanTextNodes(child);
         }
       });
     };
-    walk(root);
+    cleanTextNodes(clone);
 
-    const conteudo = blocks.join("\n\n").trim();
+    const conteudo = clone.innerHTML.trim();
 
-    const plain = (root.textContent || "").replace(/\s+/g, " ").trim();
+    const plain = (clone.textContent || "").replace(/\s+/g, " ").trim();
     const resumo = (metaDesc || plain.slice(0, 200)).slice(0, 280);
 
-    return { titulo, resumo, conteudo };
+    return { titulo, resumo, conteudo, categoria: eyebrow, capaUrl, capaRelativa };
   }
 
   function applyHtmlImport(html: string) {
@@ -391,7 +365,7 @@ const AdminArtigos = () => {
       return;
     }
     try {
-      const { titulo, resumo, conteudo } = parseHtmlToArtigo(trimmed);
+      const { titulo, resumo, conteudo, categoria, capaUrl, capaRelativa } = parseHtmlToArtigo(trimmed);
       if (!titulo && !conteudo) {
         toast({
           title: "Não foi possível extrair o conteúdo",
@@ -400,15 +374,27 @@ const AdminArtigos = () => {
         });
         return;
       }
+      // Mapeia categoria importada (ex.: "Educacional") para a lista oficial; só aplica se houver match.
+      const categoriaNorm = categoria.trim().toLowerCase();
+      const matchedCat =
+        CATEGORIAS.find((c) => c.toLowerCase() === categoriaNorm) ||
+        CATEGORIAS.find((c) => c.toLowerCase().includes(categoriaNorm) && categoriaNorm.length > 2) ||
+        "";
+
       setForm((f) => ({
         ...f,
         titulo: titulo || f.titulo,
         resumo: resumo || f.resumo,
         conteudo: conteudo || f.conteudo,
+        categoria: matchedCat || f.categoria,
+        imagem_capa: capaUrl || f.imagem_capa,
       }));
+
       toast({
         title: "HTML importado.",
-        description: "Revise o título, resumo e conteúdo antes de salvar.",
+        description: capaRelativa
+          ? "Conteúdo importado. A imagem de capa tinha caminho relativo — envie-a manualmente."
+          : "Revise título, resumo, categoria e conteúdo antes de salvar.",
       });
     } catch (err: any) {
       toast({
