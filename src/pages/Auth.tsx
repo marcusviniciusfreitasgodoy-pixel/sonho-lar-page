@@ -69,6 +69,32 @@ const Auth = () => {
     }
   };
 
+  const handleForgotPassword = async () => {
+    if (!email) {
+      toast({ title: "Informe seu e-mail", description: "Preencha o campo de e-mail antes de pedir o link.", variant: "destructive" });
+      return;
+    }
+    setLoading(true);
+    const client = await getBackendClient();
+    if (!client) {
+      setLoading(false);
+      toast({ title: "Backend indisponível", variant: "destructive" });
+      return;
+    }
+    const { error } = await client.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+    setLoading(false);
+    if (error) {
+      toast({ title: "Erro ao enviar link", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({
+      title: "Verifique seu e-mail",
+      description: "Se houver conta com este e-mail, você receberá o link para redefinir a senha.",
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background via-background to-muted/20 px-4 py-12">
       <div className="w-full max-w-md">
@@ -100,6 +126,14 @@ const Auth = () => {
                 <Button type="submit" className="w-full" disabled={loading}>
                   {loading ? "Entrando…" : "Entrar"}
                 </Button>
+                <button
+                  type="button"
+                  onClick={handleForgotPassword}
+                  className="w-full text-xs text-muted-foreground hover:text-foreground transition text-center"
+                  disabled={loading}
+                >
+                  Esqueci minha senha
+                </button>
               </form>
             </TabsContent>
 
