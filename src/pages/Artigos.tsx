@@ -18,6 +18,7 @@ type ArtigoCard = {
   data_publicacao: string;
   categoria: string | null;
   visualizacoes: number | null;
+  destaque: boolean | null;
 };
 
 const CATEGORIAS = [
@@ -54,7 +55,7 @@ const Artigos = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes, destaque")
         .eq("ativo", true)
         .order("data_publicacao", { ascending: false });
       if (!cancelled) setItems((data as ArtigoCard[]) ?? []);
@@ -69,6 +70,17 @@ const Artigos = () => {
     if (filtro === "Todas") return items;
     return items.filter((a) => (a.categoria ?? "") === filtro);
   }, [items, filtro]);
+
+  const destaque = useMemo(() => {
+    if (!items || filtro !== "Todas") return null;
+    return items.find((a) => a.destaque) ?? null;
+  }, [items, filtro]);
+
+  const listaSemDestaque = useMemo(() => {
+    if (!filtrados) return null;
+    if (!destaque) return filtrados;
+    return filtrados.filter((a) => a.id !== destaque.id);
+  }, [filtrados, destaque]);
 
   return (
     <div className="landing-v4">
@@ -122,15 +134,51 @@ const Artigos = () => {
             ) : null}
           </div>
 
-          {filtrados === null ? (
+          {destaque ? (
+            <Link to={`/artigos/${destaque.slug}`} className="blog-featured">
+              <div className="blog-featured-media">
+                <span className="blog-featured-badge">Em Destaque</span>
+                {destaque.imagem_capa ? (
+                  <img
+                    src={destaque.imagem_capa}
+                    alt={destaque.titulo}
+                    className="blog-featured-img"
+                  />
+                ) : null}
+              </div>
+              <div className="blog-featured-body">
+                {destaque.categoria ? (
+                  <span className="blog-featured-cat">{destaque.categoria}</span>
+                ) : null}
+                <h2 className="blog-featured-title">{destaque.titulo}</h2>
+                <p className="blog-featured-resumo">{destaque.resumo}</p>
+                <span className="blog-featured-meta">
+                  <span>{formatDate(destaque.data_publicacao)}</span>
+                  <span aria-hidden="true">·</span>
+                  <span className="blog-card-reading">
+                    <Clock size={12} aria-hidden="true" />
+                    {readingTimeLabel(destaque.conteudo)}
+                  </span>
+                  <span aria-hidden="true">·</span>
+                  <span className="blog-card-reading">
+                    <Eye size={12} aria-hidden="true" />
+                    {(destaque.visualizacoes || 0).toLocaleString("pt-BR")}
+                  </span>
+                </span>
+                <span className="blog-featured-cta">Ler artigo em destaque →</span>
+              </div>
+            </Link>
+          ) : null}
+
+          {listaSemDestaque === null ? (
             <div className="blog-empty">Carregando…</div>
-          ) : filtrados.length === 0 ? (
+          ) : listaSemDestaque.length === 0 && !destaque ? (
             <div className="blog-empty">
               {filtro === "Todas" ? "Em breve, novos artigos." : "Nenhum artigo nesta categoria ainda."}
             </div>
-          ) : (
+          ) : listaSemDestaque.length === 0 ? null : (
             <div className="blog-grid">
-              {filtrados.map((a) => (
+              {listaSemDestaque.map((a) => (
                 <Link key={a.id} to={`/artigos/${a.slug}`} className="blog-card">
                   <div className="blog-card-media">
                     {a.categoria ? (
