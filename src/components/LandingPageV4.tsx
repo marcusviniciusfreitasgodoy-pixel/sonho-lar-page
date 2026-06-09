@@ -581,6 +581,9 @@ const LandingPageV4 = () => {
         </div>
       </section>
 
+      {/* ARTIGOS EM DESTAQUE */}
+      <FeaturedArticles />
+
       {/* FORMULÁRIO */}
       <section className="sec sec-dark" id="diagnostico">
         <div className="wrap">
