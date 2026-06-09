@@ -140,7 +140,14 @@ const Artigos = () => {
                     ) : null}
                   </div>
                   <div className="blog-card-body">
-                    <span className="blog-card-date">{formatDate(a.data_publicacao)}</span>
+                    <span className="blog-card-meta">
+                      <span className="blog-card-date">{formatDate(a.data_publicacao)}</span>
+                      <span className="blog-card-meta-dot" aria-hidden="true">·</span>
+                      <span className="blog-card-reading">
+                        <Clock size={12} aria-hidden="true" />
+                        {readingTimeLabel(a.conteudo)}
+                      </span>
+                    </span>
                     <h2 className="blog-card-title">{a.titulo}</h2>
                     <p className="blog-card-resumo">{a.resumo}</p>
                     <span className="blog-card-cta">Ler artigo →</span>
