@@ -59,14 +59,34 @@ const ArtigoPage = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria, visualizacoes")
         .eq("slug", slug)
         .eq("ativo", true)
         .maybeSingle();
       if (!cancelled) {
         if (data) {
-          setArtigo(data as Artigo);
-          document.title = `${(data as Artigo).titulo} | Godoy Prime Realty`;
+          const art = data as Artigo;
+          setArtigo(art);
+          document.title = `${art.titulo} | Godoy Prime Realty`;
+          // Dedup: only count one view per visitor per 30min
+          try {
+            const storageKey = `artigo_viewed_${art.id}`;
+            const last = Number(localStorage.getItem(storageKey) || 0);
+            if (!last || Date.now() - last > VIEW_DEDUP_MS) {
+              localStorage.setItem(storageKey, String(Date.now()));
+              client.rpc("increment_artigo_views", { p_id: art.id }).then(() => {
+                if (!cancelled) {
+                  setArtigo((prev) =>
+                    prev && prev !== "notfound"
+                      ? { ...prev, visualizacoes: (prev.visualizacoes || 0) + 1 }
+                      : prev
+                  );
+                }
+              });
+            }
+          } catch {
+            // localStorage unavailable; skip dedup
+          }
         } else {
           setArtigo("notfound");
         }
