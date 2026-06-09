@@ -134,6 +134,10 @@ const AdminArtigos = () => {
       data_publicacao: toDateInput(a.data_publicacao),
       ativo: a.ativo,
       categoria: a.categoria ?? "",
+      autor_nome: a.autor_nome ?? "",
+      autor_foto: a.autor_foto ?? "",
+      autor_bio: a.autor_bio ?? "",
+      autor_link: a.autor_link ?? "",
     });
     setDialogOpen(true);
   }
