@@ -6,6 +6,7 @@ import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
+import ArticleShare from "@/components/blog/ArticleShare";
 
 type Artigo = {
   id: string;
