@@ -301,11 +301,14 @@ const AdminArtigos = () => {
       });
       if (error) throw error;
       if (!data?.ok) throw new Error(data?.error || "Falha ao importar PDF");
+      const rawTitulo: string = data.titulo ?? "";
+      const rawResumo: string = data.resumo ?? "";
+      const rawConteudo: string = data.conteudo ?? "";
       setForm({
-        titulo: data.titulo ?? "",
+        titulo: rawTitulo,
         imagem_capa: "",
-        resumo: data.resumo ?? "",
-        conteudo: data.conteudo ?? "",
+        resumo: rawResumo,
+        conteudo: rawConteudo,
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
         categoria: "",
@@ -316,10 +319,38 @@ const AdminArtigos = () => {
         destaque: false,
       });
       setDialogOpen(true);
-      toast({
-        title: "PDF importado.",
-        description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
-      });
+
+      // Encadeia automaticamente a IA para limpar/formatar o conteúdo bruto
+      if (rawConteudo.trim().length >= 80) {
+        try {
+          setGeneratingAi(true);
+          const ai = await runAiOnText(rawConteudo, { titulo: rawTitulo, categoria: "" });
+          setForm((f) => ({
+            ...f,
+            resumo: ai.resumo || f.resumo,
+            conteudo: ai.conteudo || f.conteudo,
+          }));
+          toast({
+            title: "PDF importado e formatado com IA.",
+            description: "Revise o texto e adicione a imagem de capa antes de ativar.",
+          });
+        } catch (aiErr: any) {
+          toast({
+            title: "Formatação automática indisponível",
+            description:
+              (aiErr?.message ? aiErr.message + " " : "") +
+              "Usando o texto bruto do PDF. Você pode clicar em 'Gerar com IA' depois.",
+            variant: "destructive",
+          });
+        } finally {
+          setGeneratingAi(false);
+        }
+      } else {
+        toast({
+          title: "PDF importado.",
+          description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
+        });
+      }
     } catch (err: any) {
       toast({
         title: "Erro ao importar PDF",
