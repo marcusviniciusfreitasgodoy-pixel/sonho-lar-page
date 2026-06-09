@@ -6,6 +6,48 @@ const BULLET_RE = /^\s*([-*•·●◦‣▪–—]|\d+[.)])\s+/;
 const HEADING2_RE = /^\s*##\s*/;
 const HEADING3_RE = /^\s*###\s*/;
 
+const ALLOWED_TAGS = new Set([
+  "h2", "h3", "h4", "p", "ul", "ol", "li", "strong", "em", "b", "i",
+  "blockquote", "a", "br", "hr",
+]);
+
+function sanitizeHtml(html: string): string {
+  if (typeof window === "undefined" || typeof DOMParser === "undefined") return html;
+  const doc = new DOMParser().parseFromString(`<div>${html}</div>`, "text/html");
+  const root = doc.body.firstElementChild as HTMLElement | null;
+  if (!root) return "";
+  const walk = (node: Element) => {
+    Array.from(node.children).forEach((child) => {
+      const tag = child.tagName.toLowerCase();
+      if (!ALLOWED_TAGS.has(tag)) {
+        // Mantém o texto/filhos, remove o wrapper
+        const replacement = doc.createElement(tag === "h1" ? "h2" : "p");
+        replacement.innerHTML = child.innerHTML;
+        child.replaceWith(replacement);
+        walk(replacement);
+        return;
+      }
+      // Remove todos os atributos exceto href em <a>
+      Array.from(child.attributes).forEach((attr) => {
+        if (tag === "a" && attr.name === "href") return;
+        child.removeAttribute(attr.name);
+      });
+      if (tag === "a") {
+        child.setAttribute("rel", "noopener noreferrer");
+        child.setAttribute("target", "_blank");
+      }
+      walk(child);
+    });
+  };
+  walk(root);
+  return root.innerHTML;
+}
+
+function looksLikeHtml(s: string): boolean {
+  const t = s.trimStart();
+  return /^<(h[1-6]|p|ul|ol|div|article|section|blockquote|strong|em|br)\b/i.test(t);
+}
+
 function renderInline(text: string, keyPrefix: string): ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((p, i) => {
@@ -17,6 +59,16 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
 }
 
 export function renderArticleContent(content: string): ReactNode {
+  // Conteúdo em HTML (novo formato do importador) — renderiza direto.
+  if (looksLikeHtml(content)) {
+    return (
+      <div
+        className="article-html"
+        dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
+      />
+    );
+  }
+
   const blocks = content.replace(/\r\n/g, "\n").split(/\n\n+/);
   const out: ReactNode[] = [];
   blocks.forEach((blk, idx) => {
