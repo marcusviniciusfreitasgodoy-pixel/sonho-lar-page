@@ -308,73 +308,76 @@ const AdminArtigos = () => {
       doc.body ||
       doc.documentElement;
 
-    const inline = (el: Element | ChildNode): string => {
+    // Limpa pontuação dentro do texto inline (travessões, bullets, espaços).
+    const cleanText = (s: string) =>
+      s
+        .replace(/[\u2013\u2014\u2212]/g, "-")
+        .replace(/[•·●◦‣▪]/g, "-")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const escapeHtml = (s: string) =>
+      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    const renderInline = (el: Element | ChildNode): string => {
       let out = "";
       el.childNodes.forEach((child) => {
         if (child.nodeType === Node.TEXT_NODE) {
-          out += (child.textContent || "").replace(/\s+/g, " ");
+          out += escapeHtml((child.textContent || "").replace(/\s+/g, " "));
         } else if (child.nodeType === Node.ELEMENT_NODE) {
           const e = child as Element;
           const tag = e.tagName.toLowerCase();
-          if (tag === "strong" || tag === "b") out += `**${inline(e).trim()}**`;
-          else if (tag === "em" || tag === "i") out += `*${inline(e).trim()}*`;
-          else if (tag === "br") out += "\n";
-          else if (tag === "a") {
-            const txt = inline(e).trim();
-            out += txt;
-          } else out += inline(e);
+          if (tag === "strong" || tag === "b") out += `<strong>${renderInline(e)}</strong>`;
+          else if (tag === "em" || tag === "i") out += `<em>${renderInline(e)}</em>`;
+          else if (tag === "br") out += "<br />";
+          else if (tag === "a") out += renderInline(e); // mantém apenas o texto
+          else out += renderInline(e);
         }
       });
-      return out;
-    };
-
-    // Normaliza pontuação: troca travessões/em-dash usados como bullets ou
-    // separadores soltos por hífen comum, evita ## colados etc.
-    const cleanText = (s: string) =>
-      s
-        .replace(/[\u2013\u2014\u2212]/g, "-") // – — −  ->  -
-        .replace(/[•·●◦‣▪]/g, "-")             // bullets unicode -> -
-        .replace(/\s+-\s+/g, " — ")            // " - " entre palavras vira travessão tipográfico real? não: deixa hífen
+      return out
+        .replace(/[\u2013\u2014\u2212]/g, "-")
+        .replace(/[•·●◦‣▪]/g, "-")
         .replace(/\s+/g, " ")
         .trim();
+    };
 
     const blocks: string[] = [];
     const walk = (node: Element) => {
       Array.from(node.children).forEach((el) => {
         const tag = el.tagName.toLowerCase();
         if (tag === "h1") {
-          const t = cleanText(inline(el));
-          if (t && t !== titulo) blocks.push(`## ${t}`);
+          const t = renderInline(el);
+          if (t && cleanText(el.textContent || "") !== titulo) blocks.push(`<h2>${t}</h2>`);
         } else if (tag === "h2") {
-          const t = cleanText(inline(el));
-          if (t) blocks.push(`## ${t}`);
+          const t = renderInline(el);
+          if (t) blocks.push(`<h2>${t}</h2>`);
         } else if (tag === "h3" || tag === "h4") {
-          const t = cleanText(inline(el));
-          if (t) blocks.push(`### ${t}`);
+          const t = renderInline(el);
+          if (t) blocks.push(`<h3>${t}</h3>`);
         } else if (tag === "p") {
-          const t = cleanText(inline(el));
-          if (t) blocks.push(t);
+          const t = renderInline(el);
+          if (t) blocks.push(`<p>${t}</p>`);
         } else if (tag === "ul" || tag === "ol") {
           const items: string[] = [];
           Array.from(el.querySelectorAll(":scope > li")).forEach((li) => {
-            const t = cleanText(inline(li));
-            if (t) items.push(`- ${t}`);
+            const t = renderInline(li);
+            if (t) items.push(`  <li>${t}</li>`);
           });
-          if (items.length) blocks.push(items.join("\n"));
+          if (items.length) blocks.push(`<${tag}>\n${items.join("\n")}\n</${tag}>`);
         } else if (tag === "blockquote") {
-          const t = cleanText(inline(el));
-          if (t) blocks.push(`> ${t}`);
+          const t = renderInline(el);
+          if (t) blocks.push(`<blockquote>${t}</blockquote>`);
         } else if (tag === "div" || tag === "section" || tag === "article") {
           walk(el);
         } else {
-          const t = cleanText(inline(el));
-          if (t && t.length > 20) blocks.push(t);
+          const t = renderInline(el);
+          if (t && t.length > 20) blocks.push(`<p>${t}</p>`);
         }
       });
     };
     walk(root);
 
-    const conteudo = blocks.join("\n\n").replace(/\n{3,}/g, "\n\n").trim();
+    const conteudo = blocks.join("\n\n").trim();
 
     const plain = (root.textContent || "").replace(/\s+/g, " ").trim();
     const resumo = (metaDesc || plain.slice(0, 200)).slice(0, 280);
