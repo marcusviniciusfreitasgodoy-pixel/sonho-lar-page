@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
 import { renderArticleContent } from "@/lib/renderArticleContent";
 import "@/styles/landing-v4.css";
@@ -95,8 +96,23 @@ const ArtigoPage = () => {
     );
   }
 
+  const canonical = `https://personalshopperimobiliario.godoyprime.com.br/artigos/${artigo.slug}`;
+  const metaDescription = (artigo.resumo || "").slice(0, 160);
+
   return (
     <div className="landing-v4">
+      <Helmet>
+        <title>{`${artigo.titulo} | Godoy Prime Realty`}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={artigo.titulo} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonical} />
+        {artigo.imagem_capa ? <meta property="og:image" content={artigo.imagem_capa} /> : null}
+        {artigo.categoria ? <meta property="article:section" content={artigo.categoria} /> : null}
+        <meta property="article:published_time" content={artigo.data_publicacao} />
+      </Helmet>
       <main className="article-page">
         <div className="article-wrap">
           <Link to="/artigos" className="article-back">← Voltar para Artigos</Link>
