@@ -79,6 +79,59 @@
 .article-content li{margin-bottom:10px;line-height:1.8}
 .article-content strong{font-weight:700;color:var(--charcoal)}
 
+/* ============== HTML importado (.article-html) ============== */
+/* Espelha o design do arquivo-fonte (Warm Luxury) sem importar o <style> bruto. */
+.article-content .article-html h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3vw,34px);line-height:1.2;letter-spacing:-.012em;color:var(--charcoal);margin:52px 0 18px;padding-top:36px;border-top:1px solid var(--bd-light)}
+.article-content .article-html h2::before{display:none}
+.article-content .article-html h3{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.02em;color:var(--charcoal);text-transform:none;margin:32px 0 12px}
+.article-content .article-html p{font-size:17px;line-height:1.85;color:var(--text);margin:0 0 22px}
+.article-content .article-html p strong{font-weight:600;color:var(--charcoal)}
+.article-content .article-html .article-lead{font-size:19px;line-height:1.9;color:var(--text2);margin-bottom:36px}
+.article-content .article-html a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+/* Listas com bullet dourado */
+.article-content .article-html ul{list-style:none;padding:0;margin:18px 0 26px;display:flex;flex-direction:column;gap:12px}
+.article-content .article-html ul li{position:relative;padding-left:22px;font-size:17px;line-height:1.7;color:var(--text);margin:0}
+.article-content .article-html ul li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* Listas numeradas com counter Cormorant */
+.article-content .article-html ol{list-style:none;counter-reset:item;padding:0;margin:20px 0 30px;display:flex;flex-direction:column;gap:24px}
+.article-content .article-html ol li{display:flex;gap:22px;font-size:17px;line-height:1.7;color:var(--text);margin:0;padding:0}
+.article-content .article-html ol li::before{counter-increment:item;content:counter(item,decimal-leading-zero);font-family:var(--serif);font-size:28px;font-weight:700;color:var(--gold);line-height:1;min-width:36px;padding-top:2px}
+.article-content .article-html ol li strong{color:var(--charcoal);font-weight:600}
+
+/* Blockquote */
+.article-content .article-html blockquote{border-left:2px solid var(--gold);padding:4px 0 4px 22px;margin:30px 0;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.55;color:#7A5E1E}
+.article-content .article-html blockquote p{font-family:var(--serif);font-style:italic;color:#7A5E1E;font-size:21px;margin:0}
+
+/* Callout */
+.article-content .article-html .callout{background:rgba(158,123,42,.06);border:1px solid rgba(158,123,42,.22);padding:22px 26px;margin:30px 0;border-radius:2px}
+.article-content .article-html .callout-label{font-family:var(--mono,'JetBrains Mono',monospace);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.article-content .article-html .callout p{font-size:16px;margin-bottom:0;color:var(--text)}
+
+/* Stat row */
+.article-content .article-html .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;margin:36px 0;border:1px solid var(--bd-light)}
+.article-content .article-html .stat-cell{padding:26px 22px;border-right:1px solid var(--bd-light)}
+.article-content .article-html .stat-cell:last-child{border-right:none}
+.article-content .article-html .stat-n{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--gold);letter-spacing:-.03em;line-height:1;display:block}
+.article-content .article-html .stat-l{font-family:var(--mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:6px;display:block}
+
+/* Tabela de comparação */
+.article-content .article-html .comparison-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px}
+.article-content .article-html .comparison-table thead th{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px 16px;text-align:left;border-bottom:2px solid var(--bd);color:var(--charcoal)}
+.article-content .article-html .comparison-table thead th:last-child{color:var(--gold)}
+.article-content .article-html .comparison-table td{padding:14px 16px;border-bottom:1px solid var(--bd-light);color:var(--text);vertical-align:top}
+.article-content .article-html .comparison-table td:first-child{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3)}
+.article-content .article-html .comparison-table tr:last-child td{border-bottom:none}
+
+@media (max-width:760px){
+  .article-content .article-html h2{font-size:24px;margin:40px 0 14px;padding-top:28px}
+  .article-content .article-html p,.article-content .article-html ul li,.article-content .article-html ol li{font-size:16px}
+  .article-content .article-html .article-lead{font-size:17px}
+  .article-content .article-html .stat-cell{border-right:none;border-bottom:1px solid var(--bd-light)}
+  .article-content .article-html .stat-cell:last-child{border-bottom:none}
+}
+
 @media (max-width:760px){
   .article-page{padding:120px 0 90px}
   .article-cover-wrap{margin-bottom:40px}
