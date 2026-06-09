@@ -582,7 +582,7 @@ const AdminArtigos = () => {
                   variant="outline"
                   size="sm"
                   onClick={handleGenerateAi}
-                  disabled={generatingAi || !form.conteudo.trim()}
+                  disabled={generatingAi}
                   title="Gera resumo curto e reformata o conteúdo a partir do texto bruto no campo 'Conteúdo completo'."
                 >
                   {generatingAi ? (
