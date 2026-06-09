@@ -13,6 +13,7 @@ type Artigo = {
   resumo: string;
   conteudo: string;
   data_publicacao: string;
+  categoria: string | null;
 };
 
 function formatDate(iso: string) {
@@ -25,6 +26,12 @@ function formatDate(iso: string) {
   } catch {
     return "";
   }
+}
+
+function readingTime(text: string) {
+  const words = (text || "").trim().split(/\s+/).filter(Boolean).length;
+  const min = Math.max(1, Math.round(words / 220));
+  return `${min} min de leitura`;
 }
 
 const ArtigoPage = () => {
@@ -41,7 +48,7 @@ const ArtigoPage = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
         .eq("slug", slug)
         .eq("ativo", true)
         .maybeSingle();
@@ -88,13 +95,27 @@ const ArtigoPage = () => {
   return (
     <div className="landing-v4">
       <main className="article-page">
-        <article className="article-wrap">
+        <div className="article-wrap">
           <Link to="/artigos" className="article-back">← Voltar para Artigos</Link>
-          <span className="article-date">{formatDate(artigo.data_publicacao)}</span>
           <h1 className="article-title">{artigo.titulo}</h1>
-          {artigo.imagem_capa && (
+          <div className="article-meta">
+            <span className="article-meta-item">{formatDate(artigo.data_publicacao)}</span>
+            {artigo.categoria ? (
+              <>
+                <span className="article-meta-sep" aria-hidden="true" />
+                <span className="article-meta-item is-accent">{artigo.categoria}</span>
+              </>
+            ) : null}
+            <span className="article-meta-sep" aria-hidden="true" />
+            <span className="article-meta-item">{readingTime(artigo.conteudo)}</span>
+          </div>
+        </div>
+        {artigo.imagem_capa && (
+          <div className="article-cover-wrap">
             <img src={artigo.imagem_capa} alt={artigo.titulo} className="article-cover" />
-          )}
+          </div>
+        )}
+        <article className="article-wrap">
           <p className="article-resumo">{artigo.resumo}</p>
           <div className="article-content">{renderArticleContent(artigo.conteudo)}</div>
         </article>
