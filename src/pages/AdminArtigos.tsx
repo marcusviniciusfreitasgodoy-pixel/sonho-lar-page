@@ -372,6 +372,11 @@ const AdminArtigos = () => {
                       {a.categoria}
                     </Badge>
                   ) : null}
+                  {a.destaque ? (
+                    <Badge className="bg-amber-600 hover:bg-amber-600 text-[10px] tracking-[0.18em] uppercase">
+                      Em destaque
+                    </Badge>
+                  ) : null}
                   </div>
                   <p className="text-xs text-muted-foreground mb-1">
                     {new Date(a.data_publicacao).toLocaleDateString("pt-BR")} · /artigos/{a.slug}
@@ -517,6 +522,20 @@ const AdminArtigos = () => {
                   <span className="text-sm">{form.ativo ? "Ativo (publicado)" : "Inativo (rascunho)"}</span>
                 </div>
               </div>
+            </div>
+            <div className="grid gap-2 rounded-md border p-4 bg-muted/30">
+              <Label className="flex items-center justify-between gap-3 cursor-pointer">
+                <span>
+                  <span className="block text-sm font-medium">Destaque Principal</span>
+                  <span className="block text-xs text-muted-foreground mt-1">
+                    Aparece no topo da listagem com um visual ampliado. Apenas um artigo pode estar em destaque por vez — ao ativar aqui, o anterior é desmarcado automaticamente.
+                  </span>
+                </span>
+                <Switch
+                  checked={form.destaque}
+                  onCheckedChange={(v) => setForm({ ...form, destaque: v })}
+                />
+              </Label>
             </div>
           </div>
           <DialogFooter>
