@@ -19,6 +19,80 @@ function base64ToUint8Array(b64: string): Uint8Array {
   return out
 }
 
+function uint8ToBase64(bytes: Uint8Array): string {
+  let binary = ''
+  const chunk = 0x8000
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode.apply(
+      null,
+      Array.from(bytes.subarray(i, i + chunk)),
+    )
+  }
+  return btoa(binary)
+}
+
+function isTextGoodEnough(text: string): boolean {
+  if (!text) return false
+  if (text.length < 500) return false
+  const letters = (text.match(/[a-zA-ZÀ-ÿ]/g) || []).length
+  return letters >= 100
+}
+
+async function extractTextWithAi(bytes: Uint8Array, filename?: string): Promise<string> {
+  const apiKey = Deno.env.get('LOVABLE_API_KEY')
+  if (!apiKey) throw new Error('LOVABLE_API_KEY ausente para fallback OCR')
+
+  if (bytes.length > 8 * 1024 * 1024) {
+    throw new Error('PDF muito grande para OCR (máx. 8 MB). Comprima o arquivo e tente novamente.')
+  }
+
+  const base64 = uint8ToBase64(bytes)
+  const dataUrl = `data:application/pdf;base64,${base64}`
+
+  const res = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: 'google/gemini-2.5-flash',
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text:
+                'Extraia TODO o texto deste documento PDF em português, preservando a ordem, títulos, parágrafos e listas. ' +
+                'Não resuma, não adicione comentários, não inclua marcações de página. Devolva apenas o texto extraído.',
+            },
+            {
+              type: 'file',
+              file: {
+                filename: filename || 'documento.pdf',
+                file_data: dataUrl,
+              },
+            },
+          ],
+        },
+      ],
+    }),
+  })
+
+  if (res.status === 429) throw new Error('Limite de uso da IA atingido. Tente novamente em instantes.')
+  if (res.status === 402) throw new Error('Créditos de IA esgotados. Adicione créditos no workspace.')
+  if (!res.ok) {
+    const detail = await res.text().catch(() => '')
+    throw new Error(`Falha no OCR via IA (${res.status}): ${detail.slice(0, 300)}`)
+  }
+
+  const data = await res.json()
+  const text: string = data?.choices?.[0]?.message?.content ?? ''
+  if (!text.trim()) throw new Error('IA não retornou texto extraído.')
+  return text
+}
+
 /**
  * Heurística para converter texto puro do PDF em Markdown leve:
  * - Quebra em parágrafos por linhas em branco.
@@ -164,19 +238,36 @@ Deno.serve(async (req) => {
       })
     }
 
-    const pdf = await getDocumentProxy(bytes)
-    const { text } = await extractText(pdf, { mergePages: true })
-    const rawText = Array.isArray(text) ? text.join('\n\n') : String(text ?? '')
-
-    if (!rawText.trim()) {
-      return new Response(
-        JSON.stringify({
-          error:
-            'Não foi possível extrair texto do PDF. Pode ser um PDF escaneado (imagem). Nesse caso será necessário OCR.',
-        }),
-        { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      )
+    let rawText = ''
+    let strategy: 'native' | 'ocr-ai' = 'native'
+    try {
+      const pdf = await getDocumentProxy(bytes)
+      const { text } = await extractText(pdf, { mergePages: true })
+      rawText = Array.isArray(text) ? text.join('\n\n') : String(text ?? '')
+    } catch (nativeErr) {
+      console.warn('[import-pdf-artigo] native extraction failed:', nativeErr)
     }
+
+    if (!isTextGoodEnough(rawText)) {
+      console.info('[import-pdf-artigo] native insufficient, falling back to OCR. chars=', rawText.length)
+      try {
+        rawText = await extractTextWithAi(bytes, filename)
+        strategy = 'ocr-ai'
+      } catch (aiErr: any) {
+        if (!rawText.trim()) {
+          return new Response(
+            JSON.stringify({
+              error: `Não foi possível extrair texto do PDF. ${aiErr?.message ?? ''}`.trim(),
+            }),
+            { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          )
+        }
+        // mantém o texto nativo se OCR falhou mas tínhamos algum conteúdo
+        console.warn('[import-pdf-artigo] OCR fallback failed, using partial native text:', aiErr)
+      }
+    }
+
+    console.info('[import-pdf-artigo] extraction=', strategy, 'chars=', rawText.length)
 
     const markdown = textToMarkdown(rawText)
     const { titulo, resumo, conteudo } = extractTituloResumo(markdown)

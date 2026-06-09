@@ -1,42 +1,33 @@
-## Objetivo
+## Problema
 
-Permitir que você (e qualquer admin autorizado) recupere a senha por e-mail, sem precisar de senha temporária trafegando pelo chat. A conta `marcus@godoyprime.com.br` continua existindo e com role `admin` — só precisamos do caminho de reset.
+Ao importar o PDF "artigos Personal Shopper Imobiliário.pdf", a toast exibida foi *"PDF importado. Revise o texto…"* — ramo executado quando `rawConteudo.trim().length < 80`. Ou seja, a edge function `import-pdf-artigo` retornou conteúdo (não vazio, por isso não deu erro 422), mas curto demais para alimentar o campo **Conteúdo completo** e disparar o encadeamento automático da IA.
 
-## O que será feito
+Causa raiz: a função usa apenas o `unpdf` (parser puro JS). Em PDFs majoritariamente escaneados/com imagens/colunas complexas, o `unpdf` devolve pouquíssimo texto, mas não vazio — então a validação atual (`if (!rawText.trim())`) não dispara, e o frontend recebe um conteúdo insuficiente.
 
-### 1. Link "Esqueci minha senha" em `/auth`
-- Adicionar link abaixo do botão **Entrar** em `src/pages/Auth.tsx`.
-- Ao clicar, abre uma aba "Recuperar senha" (ou um pequeno formulário inline) pedindo apenas o e-mail.
-- Chama `supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/reset-password' })`.
-- Mostra toast confirmando o envio (sem revelar se o e-mail existe ou não, por segurança).
+## Solução
 
-### 2. Nova página pública `/reset-password`
-- Criar `src/pages/ResetPassword.tsx` e registrar rota pública (sem `RequireAdmin`) em `src/App.tsx`.
-- Detecta o token de recovery na URL (Supabase entrega via hash `#access_token=...&type=recovery`).
-- Mostra formulário com **nova senha** + **confirmar senha** (mínimo 8 caracteres, validação de igualdade).
-- Chama `supabase.auth.updateUser({ password })`.
-- Em sucesso: toast + redireciona para `/auth`.
-- Em erro (link expirado, etc.): mensagem clara com botão para pedir novo link.
+Implementar extração em cascata na edge function `import-pdf-artigo`:
 
-### 3. E-mails de autenticação com a marca Godoy Prime (opcional, recomendado)
-Hoje o reset usaria o template padrão da Lovable. Se você quiser, eu também:
-- Verifico se já existe domínio de e-mail configurado para o projeto.
-- Se sim, faço scaffold dos templates de auth (signup, recovery, magic link, etc.) já estilizados com a paleta Warm Luxury (cream #FAFAF8, charcoal #161412, gold #9E7B2A) e fonte Lato.
-- Se não houver domínio, sigo só com o template padrão e te ofereço o setup de domínio depois.
+1. **Tentativa nativa** com `unpdf` (já existente).
+2. **Avaliação de qualidade**: considerar ruim se `rawText.length < 500` **ou** menos de 100 caracteres alfabéticos (regex `/[a-zA-Zà-úÀ-Ú]/g`).
+3. **Fallback OCR via Lovable AI Gateway** (`google/gemini-2.5-flash`) — envia o PDF inteiro como `inline_data` (`application/pdf`) com instrução: *"Extraia todo o texto deste documento PDF, preservando títulos, parágrafos e listas. Devolva apenas o texto extraído, em português."*. Usa `LOVABLE_API_KEY` (já cadastrada).
+4. **Limites/guardas**:
+   - Se PDF > 8 MB no fallback, recusar e instruir comprimir.
+   - Tratar `429` (rate limit) e `402` (créditos) devolvendo mensagem clara para a toast do frontend.
+5. **Pós-processamento**: rodar `textToMarkdown` + `extractTituloResumo` no texto final (nativo OU OCR), de forma que o retorno (`titulo`, `resumo`, `conteudo`) permaneça igual ao formato atual — sem mudanças no frontend.
+6. **Logs**: `console.info("[import-pdf-artigo] extraction=", strategy, "chars=", n)` para diagnosticar futuras importações nos logs da função.
+
+Resultado esperado: para o mesmo PDF, `conteudo` virá > 80 chars, o `setForm` preenche o campo, e o encadeamento automático para `gerar-artigo-ia` é executado, formatando o artigo sem ação manual.
 
 ## Detalhes técnicos
 
-- `Auth.tsx`: nova função `handleForgotPassword`, controle de loading próprio.
-- `ResetPassword.tsx`: usa `getBackendClient()` (mesmo padrão lazy do projeto). Lê `window.location.hash` no mount; se `type !== 'recovery'`, mostra estado vazio com link para `/auth`.
-- `App.tsx`: adicionar `<Route path="/reset-password" element={<ResetPassword />} />` antes das rotas admin.
-- Nenhuma alteração de banco, RLS ou edge function. Sua role `admin` continua intacta.
+- Arquivo único alterado: `supabase/functions/import-pdf-artigo/index.ts`.
+- Sem mudanças de schema, RLS, secrets ou frontend.
+- Endpoint do gateway: `POST https://ai.gateway.lovable.dev/v1/chat/completions` com mensagens multimodais (`type: "file"`, `mime_type: "application/pdf"`, `data: base64`). Caso o modelo `gemini-2.5-flash` rejeite PDF direto, alternativa: usar `google/gemini-2.5-flash` com `image_url` apontando para data-URL `data:application/pdf;base64,...` (formato suportado pelo gateway Lovable).
+- Função `extractTextWithAi(bytes, filename)` isolada para fácil manutenção/teste.
 
-## O que NÃO será feito
+## Validação
 
-- Não vou mexer em `user_roles` nem na sua conta (ela está OK no banco).
-- Não vou criar senha temporária nem trocar sua senha pelo banco.
-- Não vou tocar em `src/integrations/supabase/client.ts` (auto-gerado).
-
-## Pergunta única antes de implementar
-
-Quer que eu **também faça o scaffold dos templates de e-mail de auth** com a marca Godoy Prime (item 3), ou prefere usar o template padrão da Lovable por enquanto e cuidar disso depois?
+1. Reimportar o mesmo PDF pelo dialog `Novo artigo → Importar PDF`.
+2. Confirmar que o campo **Conteúdo completo** é preenchido (> 80 chars) e que a toast final é *"PDF importado e formatado com IA."*.
+3. Conferir nos logs da edge function a linha `extraction= ocr-ai chars= …`.
