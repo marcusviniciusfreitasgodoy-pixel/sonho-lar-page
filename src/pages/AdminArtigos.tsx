@@ -17,7 +17,8 @@ const CATEGORIAS = [
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Sparkles } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Plus, Pencil, Trash2, ExternalLink, Eye, FileUp, Loader2, ArrowLeft, ImagePlus, X, Sparkles, Code2 } from "lucide-react";
 import ArtigoPreview from "@/components/admin/ArtigoPreview";
 
 type Artigo = {
@@ -97,6 +98,7 @@ const AdminArtigos = () => {
   const [confirmDelete, setConfirmDelete] = useState<Artigo | null>(null);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [importing, setImporting] = useState(false);
+  const [htmlPaste, setHtmlPaste] = useState("");
   const [uploadingCover, setUploadingCover] = useState(false);
   const [generatingAi, setGeneratingAi] = useState(false);
 
@@ -283,80 +285,144 @@ const AdminArtigos = () => {
     }
   }
 
-  async function handleImportPdf(file: File) {
-    if (!client) return;
-    if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
-      toast({ title: "Selecione um arquivo PDF.", variant: "destructive" });
+  function parseHtmlToArtigo(html: string): { titulo: string; resumo: string; conteudo: string } {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    // Remove elementos não-conteúdo
+    doc.querySelectorAll("script, style, noscript, nav, header, footer, aside, form, iframe").forEach((n) => n.remove());
+
+    const titulo =
+      doc.querySelector("title")?.textContent?.trim() ||
+      doc.querySelector("h1")?.textContent?.trim() ||
+      "";
+
+    const metaDesc =
+      doc.querySelector('meta[name="description"]')?.getAttribute("content")?.trim() ||
+      doc.querySelector('meta[property="og:description"]')?.getAttribute("content")?.trim() ||
+      "";
+
+    // Escolhe raiz de conteúdo: <article>, <main>, ou <body>
+    const root: Element =
+      doc.querySelector("article") ||
+      doc.querySelector("main") ||
+      doc.body ||
+      doc.documentElement;
+
+    const inline = (el: Element | ChildNode): string => {
+      let out = "";
+      el.childNodes.forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          out += (child.textContent || "").replace(/\s+/g, " ");
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          const e = child as Element;
+          const tag = e.tagName.toLowerCase();
+          if (tag === "strong" || tag === "b") out += `**${inline(e).trim()}**`;
+          else if (tag === "em" || tag === "i") out += `*${inline(e).trim()}*`;
+          else if (tag === "br") out += "\n";
+          else if (tag === "a") {
+            const txt = inline(e).trim();
+            out += txt;
+          } else out += inline(e);
+        }
+      });
+      return out;
+    };
+
+    const blocks: string[] = [];
+    const walk = (node: Element) => {
+      Array.from(node.children).forEach((el) => {
+        const tag = el.tagName.toLowerCase();
+        if (tag === "h1") {
+          // Primeiro h1 já virou título; subsequentes viram ##
+          const t = inline(el).trim();
+          if (t && t !== titulo) blocks.push(`## ${t}`);
+        } else if (tag === "h2") {
+          const t = inline(el).trim();
+          if (t) blocks.push(`## ${t}`);
+        } else if (tag === "h3" || tag === "h4") {
+          const t = inline(el).trim();
+          if (t) blocks.push(`### ${t}`);
+        } else if (tag === "p") {
+          const t = inline(el).trim();
+          if (t) blocks.push(t);
+        } else if (tag === "ul" || tag === "ol") {
+          const items: string[] = [];
+          Array.from(el.querySelectorAll(":scope > li")).forEach((li) => {
+            const t = inline(li).trim().replace(/\s+/g, " ");
+            if (t) items.push(`- ${t}`);
+          });
+          if (items.length) blocks.push(items.join("\n"));
+        } else if (tag === "blockquote") {
+          const t = inline(el).trim();
+          if (t) blocks.push(`> ${t}`);
+        } else if (tag === "div" || tag === "section" || tag === "article") {
+          walk(el);
+        } else {
+          const t = inline(el).trim();
+          if (t && t.length > 20) blocks.push(t);
+        }
+      });
+    };
+    walk(root);
+
+    const conteudo = blocks.join("\n\n").replace(/\n{3,}/g, "\n\n").trim();
+
+    const plain = (root.textContent || "").replace(/\s+/g, " ").trim();
+    const resumo = (metaDesc || plain.slice(0, 200)).slice(0, 280);
+
+    return { titulo, resumo, conteudo };
+  }
+
+  function applyHtmlImport(html: string) {
+    const trimmed = html.trim();
+    if (!trimmed) {
+      toast({ title: "Cole o HTML antes de importar.", variant: "destructive" });
       return;
     }
-    if (file.size > 12 * 1024 * 1024) {
-      toast({ title: "PDF muito grande (máx. 12 MB).", variant: "destructive" });
+    try {
+      const { titulo, resumo, conteudo } = parseHtmlToArtigo(trimmed);
+      if (!titulo && !conteudo) {
+        toast({
+          title: "Não foi possível extrair o conteúdo",
+          description: "O HTML enviado não possui uma estrutura clara (título, parágrafos ou cabeçalhos). Verifique o arquivo e tente novamente.",
+          variant: "destructive",
+        });
+        return;
+      }
+      setForm((f) => ({
+        ...f,
+        titulo: titulo || f.titulo,
+        resumo: resumo || f.resumo,
+        conteudo: conteudo || f.conteudo,
+      }));
+      toast({
+        title: "HTML importado.",
+        description: "Revise o título, resumo e conteúdo antes de salvar.",
+      });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao processar HTML",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    }
+  }
+
+  async function handleImportHtmlFile(file: File) {
+    if (!file.name.toLowerCase().endsWith(".html") && !file.name.toLowerCase().endsWith(".htm")) {
+      toast({ title: "Selecione um arquivo .html", variant: "destructive" });
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast({ title: "Arquivo muito grande (máx. 5 MB).", variant: "destructive" });
       return;
     }
     setImporting(true);
     try {
-      const file_base64 = await fileToBase64(file);
-      const { data, error } = await client.functions.invoke("import-pdf-artigo", {
-        body: { file_base64, filename: file.name },
-      });
-      if (error) throw error;
-      if (!data?.ok) throw new Error(data?.error || "Falha ao importar PDF");
-      const rawTitulo: string = data.titulo ?? "";
-      const rawResumo: string = data.resumo ?? "";
-      const rawConteudo: string = data.conteudo ?? "";
-      setForm({
-        titulo: rawTitulo,
-        imagem_capa: "",
-        resumo: rawResumo,
-        conteudo: rawConteudo,
-        data_publicacao: new Date().toISOString().slice(0, 10),
-        ativo: false,
-        categoria: "",
-        autor_nome: emptyForm.autor_nome,
-        autor_foto: emptyForm.autor_foto,
-        autor_bio: emptyForm.autor_bio,
-        autor_link: emptyForm.autor_link,
-        destaque: false,
-      });
-      setDialogOpen(true);
-
-      // Encadeia automaticamente a IA para limpar/formatar o conteúdo bruto
-      if (rawConteudo.trim().length >= 80) {
-        try {
-          setGeneratingAi(true);
-          const ai = await runAiOnText(rawConteudo, { titulo: rawTitulo, categoria: "" });
-          setForm((f) => ({
-            ...f,
-            resumo: ai.resumo || f.resumo,
-            conteudo: ai.conteudo || f.conteudo,
-          }));
-          toast({
-            title: "PDF importado e formatado com IA.",
-            description: "Revise o texto e adicione a imagem de capa antes de ativar.",
-          });
-        } catch (aiErr: any) {
-          toast({
-            title: "Formatação automática indisponível",
-            description:
-              (aiErr?.message ? aiErr.message + " " : "") +
-              "Usando o texto bruto do PDF. Você pode clicar em 'Gerar com IA' depois.",
-            variant: "destructive",
-          });
-        } finally {
-          setGeneratingAi(false);
-        }
-      } else {
-        toast({
-          title: "PDF importado.",
-          description: "Revise o texto, ajuste a formatação e adicione a imagem de capa antes de ativar.",
-        });
-      }
+      const text = await file.text();
+      applyHtmlImport(text);
     } catch (err: any) {
-      toast({
-        title: "Erro ao importar PDF",
-        description: err?.message || String(err),
-        variant: "destructive",
-      });
+      toast({ title: "Erro ao ler arquivo", description: err?.message || String(err), variant: "destructive" });
     } finally {
       setImporting(false);
     }
@@ -442,27 +508,6 @@ const AdminArtigos = () => {
             </p>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" asChild>
-              <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
-                {importing ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                ) : (
-                  <FileUp className="mr-2 h-4 w-4" />
-                )}
-                {importing ? (generatingAi ? "Formatando com IA…" : "Importando…") : "Importar PDF"}
-                <input
-                  type="file"
-                  accept="application/pdf,.pdf"
-                  className="hidden"
-                  disabled={importing}
-                  onChange={(e) => {
-                    const f = e.target.files?.[0];
-                    e.target.value = "";
-                    if (f) handleImportPdf(f);
-                  }}
-                />
-              </label>
-            </Button>
             <Button onClick={openNew}>
               <Plus className="mr-2 h-4 w-4" /> Novo artigo
             </Button>
@@ -540,34 +585,88 @@ const AdminArtigos = () => {
               Use ## para subtítulos, - para listas e **texto** para negrito.
             </DialogDescription>
           </DialogHeader>
-          {!form.id && (
-            <div className="rounded-md border border-dashed bg-muted/30 p-3 flex items-center justify-between gap-3">
-              <div className="text-xs text-muted-foreground">
-                Importe um PDF para preencher <strong>Título</strong>, <strong>Resumo</strong> e <strong>Conteúdo completo</strong> automaticamente (formatado com IA).
-              </div>
-              <Button type="button" variant="outline" size="sm" asChild>
-                <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
-                  {importing ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <FileUp className="mr-2 h-4 w-4" />
-                  )}
-                  {importing ? (generatingAi ? "Formatando com IA…" : "Importando…") : "Importar PDF"}
-                  <input
-                    type="file"
-                    accept="application/pdf,.pdf"
-                    className="hidden"
-                    disabled={importing}
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      e.target.value = "";
-                      if (f) handleImportPdf(f);
-                    }}
-                  />
-                </label>
-              </Button>
+          <div className="rounded-md border bg-muted/20 p-4 grid gap-3">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              <Code2 className="h-3.5 w-3.5" /> Importar HTML
             </div>
-          )}
+            <p className="text-xs text-muted-foreground -mt-1">
+              Preenche <strong>Título</strong>, <strong>Resumo</strong> e <strong>Conteúdo completo</strong> a partir de um HTML.
+            </p>
+            <Tabs defaultValue="paste">
+              <TabsList className="grid grid-cols-2 w-full max-w-sm">
+                <TabsTrigger value="paste">Colar HTML</TabsTrigger>
+                <TabsTrigger value="file">Enviar arquivo</TabsTrigger>
+              </TabsList>
+              <TabsContent value="paste" className="grid gap-2">
+                <Textarea
+                  rows={6}
+                  placeholder="<html>... cole o código HTML aqui ...</html>"
+                  value={htmlPaste}
+                  onChange={(e) => setHtmlPaste(e.target.value)}
+                  className="font-mono text-xs"
+                />
+                <div className="flex gap-2 flex-wrap">
+                  <Button
+                    type="button"
+                    size="sm"
+                    onClick={() => applyHtmlImport(htmlPaste)}
+                    disabled={!htmlPaste.trim()}
+                  >
+                    <Code2 className="mr-2 h-4 w-4" /> Importar conteúdo
+                  </Button>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    onClick={() => setPreviewOpen(true)}
+                    disabled={!form.titulo && !form.conteudo}
+                  >
+                    <Eye className="mr-2 h-4 w-4" /> Visualizar
+                  </Button>
+                  {htmlPaste ? (
+                    <Button type="button" size="sm" variant="ghost" onClick={() => setHtmlPaste("")}>
+                      <X className="mr-2 h-4 w-4" /> Limpar
+                    </Button>
+                  ) : null}
+                </div>
+              </TabsContent>
+              <TabsContent value="file" className="grid gap-2">
+                <div className="flex gap-2 flex-wrap items-center">
+                  <Button type="button" size="sm" variant="outline" asChild>
+                    <label className={`cursor-pointer ${importing ? "opacity-60 pointer-events-none" : ""}`}>
+                      {importing ? (
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      ) : (
+                        <FileUp className="mr-2 h-4 w-4" />
+                      )}
+                      {importing ? "Enviando…" : "Enviar arquivo"}
+                      <input
+                        type="file"
+                        accept=".html,.htm,text/html"
+                        className="hidden"
+                        disabled={importing}
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          e.target.value = "";
+                          if (f) handleImportHtmlFile(f);
+                        }}
+                      />
+                    </label>
+                  </Button>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    onClick={() => setPreviewOpen(true)}
+                    disabled={!form.titulo && !form.conteudo}
+                  >
+                    <Eye className="mr-2 h-4 w-4" /> Visualizar
+                  </Button>
+                  <span className="text-xs text-muted-foreground">Aceita apenas .html (máx. 5 MB).</span>
+                </div>
+              </TabsContent>
+            </Tabs>
+          </div>
           <div className="grid gap-4 py-2">
             <div className="grid gap-2">
               <Label htmlFor="titulo">Título</Label>
