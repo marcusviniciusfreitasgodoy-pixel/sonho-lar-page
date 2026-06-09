@@ -331,6 +331,48 @@ const AdminArtigos = () => {
     }
   }
 
+  async function handleGenerateAi() {
+    if (!client) return;
+    const texto = form.conteudo.trim();
+    if (texto.length < 80) {
+      toast({
+        title: "Texto insuficiente",
+        description: "Cole ou importe o conteúdo bruto no campo 'Conteúdo completo' antes de gerar.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setGeneratingAi(true);
+    try {
+      const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
+        body: {
+          titulo: form.titulo,
+          categoria: form.categoria,
+          texto,
+        },
+      });
+      if (error) throw error;
+      if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+      setForm((f) => ({
+        ...f,
+        resumo: data.resumo ?? f.resumo,
+        conteudo: data.conteudo ?? f.conteudo,
+      }));
+      toast({
+        title: "Resumo e conteúdo gerados.",
+        description: "Revise o texto antes de salvar.",
+      });
+    } catch (err: any) {
+      toast({
+        title: "Erro ao gerar com IA",
+        description: err?.message || String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setGeneratingAi(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-10">
