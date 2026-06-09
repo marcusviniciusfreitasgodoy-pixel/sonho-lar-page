@@ -102,6 +102,8 @@ const AdminComentarios = () => {
           <span className="opacity-30">·</span>
           <Link to="/admin/configuracoes" className="hover:text-foreground transition-colors">Configurações</Link>
           <span className="opacity-30">·</span>
+          <Link to="/admin/newsletter" className="hover:text-foreground transition-colors">Newsletter</Link>
+          <span className="opacity-30">·</span>
           <Link to="/admin/leads" className="hover:text-foreground transition-colors">Leads</Link>
         </nav>
 
