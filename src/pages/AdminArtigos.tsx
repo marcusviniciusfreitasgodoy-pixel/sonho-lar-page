@@ -362,6 +362,26 @@ const AdminArtigos = () => {
     }
   }
 
+  async function runAiOnText(
+    texto: string,
+    opts: { titulo?: string; categoria?: string } = {}
+  ): Promise<{ resumo: string; conteudo: string }> {
+    if (!client) throw new Error("Cliente indisponível");
+    const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
+      body: {
+        titulo: opts.titulo ?? "",
+        categoria: opts.categoria ?? "",
+        texto,
+      },
+    });
+    if (error) throw error;
+    if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+    return {
+      resumo: (data.resumo ?? "").toString(),
+      conteudo: (data.conteudo ?? "").toString(),
+    };
+  }
+
   async function handleGenerateAi() {
     if (!client) return;
     const texto = form.conteudo.trim();
@@ -375,19 +395,11 @@ const AdminArtigos = () => {
     }
     setGeneratingAi(true);
     try {
-      const { data, error } = await client.functions.invoke("gerar-artigo-ia", {
-        body: {
-          titulo: form.titulo,
-          categoria: form.categoria,
-          texto,
-        },
-      });
-      if (error) throw error;
-      if (!data?.ok) throw new Error(data?.error || "Falha ao gerar com IA");
+      const ai = await runAiOnText(texto, { titulo: form.titulo, categoria: form.categoria });
       setForm((f) => ({
         ...f,
-        resumo: data.resumo ?? f.resumo,
-        conteudo: data.conteudo ?? f.conteudo,
+        resumo: ai.resumo || f.resumo,
+        conteudo: ai.conteudo || f.conteudo,
       }));
       toast({
         title: "Resumo e conteúdo gerados.",
