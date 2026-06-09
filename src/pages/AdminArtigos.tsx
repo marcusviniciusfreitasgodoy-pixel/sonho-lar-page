@@ -254,6 +254,10 @@ const AdminArtigos = () => {
         data_publicacao: new Date().toISOString().slice(0, 10),
         ativo: false,
         categoria: "",
+        autor_nome: emptyForm.autor_nome,
+        autor_foto: emptyForm.autor_foto,
+        autor_bio: emptyForm.autor_bio,
+        autor_link: emptyForm.autor_link,
       });
       setDialogOpen(true);
       toast({
