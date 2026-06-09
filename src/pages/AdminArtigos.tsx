@@ -273,6 +273,7 @@ const AdminArtigos = () => {
         autor_foto: emptyForm.autor_foto,
         autor_bio: emptyForm.autor_bio,
         autor_link: emptyForm.autor_link,
+        destaque: false,
       });
       setDialogOpen(true);
       toast({
