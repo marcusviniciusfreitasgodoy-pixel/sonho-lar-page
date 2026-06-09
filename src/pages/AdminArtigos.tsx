@@ -449,7 +449,7 @@ const AdminArtigos = () => {
                 ) : (
                   <FileUp className="mr-2 h-4 w-4" />
                 )}
-                {importing ? "Importando…" : "Importar PDF"}
+                {importing ? (generatingAi ? "Formatando com IA…" : "Importando…") : "Importar PDF"}
                 <input
                   type="file"
                   accept="application/pdf,.pdf"
