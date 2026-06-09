@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
+import { readingTimeLabel } from "@/lib/readingTime";
+import { Clock } from "lucide-react";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 
@@ -12,6 +14,7 @@ type ArtigoCard = {
   slug: string;
   imagem_capa: string | null;
   resumo: string;
+  conteudo: string;
   data_publicacao: string;
   categoria: string | null;
 };
@@ -50,7 +53,7 @@ const Artigos = () => {
       }
       const { data } = await client
         .from("artigos")
-        .select("id, titulo, slug, imagem_capa, resumo, data_publicacao, categoria")
+        .select("id, titulo, slug, imagem_capa, resumo, conteudo, data_publicacao, categoria")
         .eq("ativo", true)
         .order("data_publicacao", { ascending: false });
       if (!cancelled) setItems((data as ArtigoCard[]) ?? []);
@@ -137,7 +140,14 @@ const Artigos = () => {
                     ) : null}
                   </div>
                   <div className="blog-card-body">
-                    <span className="blog-card-date">{formatDate(a.data_publicacao)}</span>
+                    <span className="blog-card-meta">
+                      <span className="blog-card-date">{formatDate(a.data_publicacao)}</span>
+                      <span className="blog-card-meta-dot" aria-hidden="true">·</span>
+                      <span className="blog-card-reading">
+                        <Clock size={12} aria-hidden="true" />
+                        {readingTimeLabel(a.conteudo)}
+                      </span>
+                    </span>
                     <h2 className="blog-card-title">{a.titulo}</h2>
                     <p className="blog-card-resumo">{a.resumo}</p>
                     <span className="blog-card-cta">Ler artigo →</span>

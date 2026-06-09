@@ -8,6 +8,8 @@ import "@/styles/blog.css";
 import ArticleEngagement from "@/components/blog/ArticleEngagement";
 import ArticleCta from "@/components/blog/ArticleCta";
 import ArticleShare from "@/components/blog/ArticleShare";
+import { readingTimeLabel } from "@/lib/readingTime";
+import { Clock } from "lucide-react";
 
 type Artigo = {
   id: string;
@@ -32,11 +34,8 @@ function formatDate(iso: string) {
   }
 }
 
-function readingTime(text: string) {
-  const words = (text || "").trim().split(/\s+/).filter(Boolean).length;
-  const min = Math.max(1, Math.round(words / 220));
-  return `${min} min de leitura`;
-}
+
+
 
 const ArtigoPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -126,7 +125,10 @@ const ArtigoPage = () => {
               </>
             ) : null}
             <span className="article-meta-sep" aria-hidden="true" />
-            <span className="article-meta-item">{readingTime(artigo.conteudo)}</span>
+            <span className="article-meta-item article-meta-reading">
+              <Clock size={14} aria-hidden="true" />
+              {readingTimeLabel(artigo.conteudo)}
+            </span>
           </div>
         </div>
         {artigo.imagem_capa && (

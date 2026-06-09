@@ -302,3 +302,17 @@
 @media (max-width:640px){
   .newsletter-block{padding:48px 24px;border-radius:14px;margin-top:64px}
 }
+
+/* Reading time refinements */
+.article-meta-reading{display:inline-flex;align-items:center;gap:6px}
+.article-meta-reading svg{opacity:.7}
+
+.blog-card-meta{
+  display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-family:'Lato',sans-serif;font-weight:300;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text2,#6b6660);
+}
+.blog-card-meta-dot{opacity:.45}
+.blog-card-reading{display:inline-flex;align-items:center;gap:5px}
+.blog-card-reading svg{opacity:.65}
