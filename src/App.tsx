@@ -15,6 +15,7 @@ import Artigo from "./pages/Artigo";
 // Lazy load any route that touches the Supabase client so the landing page
 // never crashes if env vars are missing at runtime.
 const Auth = lazy(() => import("./pages/Auth"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const AdminLeads = lazy(() => import("./pages/AdminLeads"));
 const AdminArtigos = lazy(() => import("./pages/AdminArtigos"));
 const AdminComentarios = lazy(() => import("./pages/AdminComentarios"));
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/artigos" element={<Artigos />} />
           <Route path="/artigos/:slug" element={<Artigo />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
           <Route path="/admin/artigos" element={<RequireAdmin><AdminArtigos /></RequireAdmin>} />
           <Route path="/admin/comentarios" element={<RequireAdmin><AdminComentarios /></RequireAdmin>} />
