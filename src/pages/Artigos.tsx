@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { getBackendClient } from "@/lib/backend";
 import NewsletterSignup from "@/components/blog/NewsletterSignup";
+import { readingTimeLabel } from "@/lib/readingTime";
+import { Clock } from "lucide-react";
 import "@/styles/landing-v4.css";
 import "@/styles/blog.css";
 
