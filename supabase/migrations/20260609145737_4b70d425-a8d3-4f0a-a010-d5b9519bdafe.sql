@@ -1,0 +1,5 @@
+ALTER TABLE public.artigos
+  ADD COLUMN IF NOT EXISTS autor_nome TEXT,
+  ADD COLUMN IF NOT EXISTS autor_foto TEXT,
+  ADD COLUMN IF NOT EXISTS autor_bio TEXT,
+  ADD COLUMN IF NOT EXISTS autor_link TEXT;
