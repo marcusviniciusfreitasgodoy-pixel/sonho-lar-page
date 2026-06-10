@@ -5,8 +5,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const CRM_URL = 'https://crm-b2b-interface-clone-9bbb1.shrd00.internal.goskip.dev/backend/v1/webhook-external'
-const TIPO_FUNIL = 'GPR'
 const DATEAHOME_URL = 'https://api.dateahome.com/webhook/lead/b00e8651-dd31-41fc-a0f0-32a06044f3ee'
 const LEAD_ORIGIN = 'Godoy Prime - Personal Shopper Imobiliário'
 
@@ -36,9 +34,8 @@ Deno.serve(async (req) => {
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!
     const SERVICE_ROLE = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     const ANON = Deno.env.get('SUPABASE_ANON_KEY')!
-    const API_KEY = Deno.env.get('CRM_WEBHOOK_API_KEY')
     const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
-    if (!API_KEY) return j({ error: 'CRM not configured' }, 500)
+    if (!DATEAHOME_API_KEY) return j({ error: 'CRM not configured' }, 500)
 
     // Verify caller is authenticated admin
     const authHeader = req.headers.get('Authorization') || ''
@@ -57,7 +54,6 @@ Deno.serve(async (req) => {
 
     const reqBody = await req.json()
     const lead_id: string | undefined = reqBody?.lead_id
-    const target: 'crm' | 'dateahome' | 'both' = reqBody?.target === 'dateahome' || reqBody?.target === 'both' ? reqBody.target : 'crm'
     if (!lead_id || typeof lead_id !== 'string') return j({ error: 'lead_id required' }, 400)
 
     const { data: lead, error: leadErr } = await db.from('leads').select('*').eq('id', lead_id).maybeSingle()
@@ -66,30 +62,13 @@ Deno.serve(async (req) => {
     const out: any = { success: true }
     const update: any = {}
 
-    if (target === 'crm' || target === 'both') {
-      const r = await sendToCrm(lead, API_KEY)
-      update.crm_status = r.ok ? 'sent' : 'failed'
-      update.crm_response = { status: r.status, body: r.body }
-      update.crm_attempts = (lead.crm_attempts || 0) + 1
-      update.crm_last_attempt_at = new Date().toISOString()
-      out.crm = { ok: r.ok, status: r.status, body: r.body }
-      if (!r.ok) out.success = false
-    }
-
-    if (target === 'dateahome' || target === 'both') {
-      if (!DATEAHOME_API_KEY) {
-        out.dateahome = { ok: false, error: 'DATEAHOME_API_KEY not configured' }
-        out.success = false
-      } else {
-        const r = await sendToDateAHome(lead, DATEAHOME_API_KEY)
-        update.dateahome_status = r.ok ? 'sent' : 'failed'
-        update.dateahome_response = { status: r.status, body: r.body }
-        update.dateahome_attempts = (lead.dateahome_attempts || 0) + 1
-        update.dateahome_last_attempt_at = new Date().toISOString()
-        out.dateahome = { ok: r.ok, status: r.status, body: r.body }
-        if (!r.ok) out.success = false
-      }
-    }
+    const r = await sendToDateAHome(lead, DATEAHOME_API_KEY)
+    update.dateahome_status = r.ok ? 'sent' : 'failed'
+    update.dateahome_response = { status: r.status, body: r.body }
+    update.dateahome_attempts = (lead.dateahome_attempts || 0) + 1
+    update.dateahome_last_attempt_at = new Date().toISOString()
+    out.dateahome = { ok: r.ok, status: r.status, body: r.body }
+    if (!r.ok) out.success = false
 
     await db.from('leads').update(update).eq('id', lead.id)
     return j(out, 200)
@@ -102,29 +81,6 @@ Deno.serve(async (req) => {
     return new Response(JSON.stringify(obj), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } })
   }
 })
-
-async function sendToCrm(lead: any, apiKey: string) {
-  const payload = {
-    name: lead.nome,
-    email: lead.email,
-    phone: lead.whatsapp,
-    tipo_funil: TIPO_FUNIL,
-    message: lead.mensagem,
-    orcamento: lead.orcamento,
-    momento: lead.momento,
-    servico: lead.servico,
-    origem: lead.origem,
-  }
-  const res = await fetch(CRM_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey },
-    body: JSON.stringify(payload),
-  })
-  const text = await res.text()
-  let body: unknown = text
-  try { body = JSON.parse(text) } catch { /* keep raw */ }
-  return { ok: res.ok, status: res.status, body }
-}
 
 async function sendToDateAHome(lead: any, apiKey: string) {
   const { ddd, phone } = splitPhone(lead.whatsapp || '')
