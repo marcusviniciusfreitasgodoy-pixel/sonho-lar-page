@@ -1,45 +1,38 @@
-## Contexto
+## Objetivo
 
-A URL e o payload que você enviou são do **DateAHome**, que **já está integrado** no projeto:
+A URL do webhook é única e a chave foi gerada no mesmo workspace, mas o DateAHome continua respondendo `404 "Account not found"`. Isso aponta para um problema **no valor da chave armazenada** (espaço/quebra de linha invisível colada no formulário, ou a chave salva não é a que você acha que é). Vamos provar isso e blindar.
 
-- Edge function `send-crm-lead` hoje dispara em paralelo para 2 webhooks: GoSkip (antigo) e DateAHome.
-- A secret `DATEAHOME_API_KEY` já está cadastrada no backend.
-- A tabela `leads` já tem colunas `dateahome_status`, `dateahome_response`, `dateahome_attempts`, `dateahome_last_attempt_at`.
+## Passo 1 — Função de diagnóstico `debug-dateahome`
 
-Como você pediu "substituir o atual", o plano abaixo **desliga o CRM antigo** e mantém **apenas o DateAHome** em todos os fluxos.
+Nova edge function (pública, sem JWT) que:
 
-## O que muda
+1. Lê `DATEAHOME_API_KEY` do ambiente.
+2. Retorna metadados **seguros** (sem expor a chave):
+   - `length` da chave bruta
+   - `length` da chave após `.trim()`
+   - `hasWhitespace` (true se houver espaço/`\n`/`\r`/`\t`)
+   - `prefix` (primeiros 4 chars) e `suffix` (últimos 4 chars)
+3. Faz um POST de teste para o webhook do DateAHome usando a chave **trimada** e devolve `status` + `body` da resposta.
 
-### 1. `supabase/functions/send-crm-lead/index.ts`
-- Remover variáveis e chamada do CRM antigo (`CRM_URL`, `TIPO_FUNIL`, `crmPayload`, header `x-api-key`, leitura de `CRM_WEBHOOK_API_KEY`).
-- Remover o `Promise.allSettled` paralelo: deixar apenas o `fetch` para `DATEAHOME_URL`.
-- Continuar persistindo o lead na tabela `leads` (fonte da verdade) antes do envio.
-- Atualizar a `leads` apenas com `dateahome_status` / `dateahome_response` / `dateahome_attempts` / `dateahome_last_attempt_at`.
-- Resposta JSON da função passa a retornar só `{ success, lead_id, dateahome: { ok, status } }`.
+Você chama essa função uma vez e a gente vê na hora se:
+- A chave salva está com whitespace → confirma erro de cópia.
+- A chave tem o tamanho esperado → confirma que o secret está correto.
+- O DateAHome aceita a versão trimada → resolve o 404.
 
-### 2. `supabase/functions/retry-crm-lead/index.ts` e `retry-crm-leads-cron/index.ts`
-- Tirar a tentativa de reenvio para o CRM antigo.
-- Manter apenas o retry do DateAHome (já existe a lógica usando `dateahome_attempts` e `dateahome_last_attempt_at`).
-- Cron continua rodando a cada 15 min como hoje.
+## Passo 2 — Blindar `send-crm-lead` e `retry-crm-lead`
 
-### 3. Painel admin `/admin/leads`
-- Remover colunas/badges do CRM antigo (`crm_status`, `crm_response`) da UI; manter visível só o status DateAHome.
-- Dados antigos permanecem no banco (sem migration destrutiva).
+Em ambas as funções, aplicar `.trim()` no valor de `DATEAHOME_API_KEY` antes de montar o header `X-API-Key`. Custo zero e elimina de vez qualquer espaço/newline invisível vindo do secret.
 
-### 4. Secrets
-- Manter `DATEAHOME_API_KEY` como está. Se quiser usar uma chave nova, depois eu peço a atualização pelo formulário seguro (`update_secret`) — confirme se é o caso.
-- `CRM_WEBHOOK_API_KEY` (do CRM antigo) deixa de ser usada. Posso removê-la depois que validarmos o novo fluxo em produção, para não quebrar nada se precisarmos reverter.
+## Passo 3 — Teste de validação
 
-## O que NÃO muda
+Após o deploy:
+1. Chamo `debug-dateahome` e te mostro o JSON (sem expor a chave).
+2. Se o POST de teste retornar 200, reenvio um lead real via `send-crm-lead` para confirmar ponta-a-ponta.
+3. Se continuar 404 mesmo com a chave trimada e com tamanho coerente, aí sim o problema é no DateAHome (chave revogada / webhook órfão) e você abre chamado no suporte deles com o `prefix`/`suffix` em mãos.
 
-- Formulário público (`LandingPageV4.tsx`) continua chamando `send-crm-lead` igual.
-- Disparo de email (Resend) e WhatsApp (Z-API) ao Marcus seguem normais.
-- Dedupe de 24h, captura de UTM/referrer, hash de IP e auditoria em `leads` continuam idênticos.
+## Detalhes técnicos
 
-## Validação após implementação
-
-1. `curl` na função `send-crm-lead` com um payload de teste e conferir resposta `{ dateahome: { ok: true } }`.
-2. Verificar no `/admin/leads` que o registro aparece com `dateahome_status = sent`.
-3. Submeter o formulário real na landing e validar a chegada no painel do DateAHome.
-
-Confirma que posso seguir com a remoção do CRM antigo?
+- Nova função: `supabase/functions/debug-dateahome/index.ts` com CORS aberto, sem JWT.
+- Edit em `supabase/functions/send-crm-lead/index.ts` linha ~66: `const DATEAHOME_API_KEY = (Deno.env.get('DATEAHOME_API_KEY') ?? '').trim()`.
+- Mesma alteração em `supabase/functions/retry-crm-lead/index.ts` e `supabase/functions/retry-crm-leads-cron/index.ts` se aplicável.
+- Nada muda no frontend nem no fluxo do usuário final.
