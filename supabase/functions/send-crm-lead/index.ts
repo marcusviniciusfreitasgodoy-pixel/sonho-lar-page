@@ -63,7 +63,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
+    const DATEAHOME_API_KEY = (Deno.env.get('DATEAHOME_API_KEY') ?? '').trim()
     if (!DATEAHOME_API_KEY) {
       return new Response(JSON.stringify({ error: 'CRM not configured' }), {
         status: 500,
