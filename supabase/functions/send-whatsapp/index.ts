@@ -3,6 +3,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 import { z } from 'npm:zod@3.25.76'
+import { createClient } from 'npm:@supabase/supabase-js@2'
 
 const BodySchema = z.object({
   phone: z.string().min(10).max(20).regex(/^[+\d\s()-]+$/),
@@ -36,6 +37,27 @@ Deno.serve(async (req) => {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
+    }
+
+    // Require authentication: only logged-in users or internal server-to-server
+    // calls bearing INTERNAL_FUNCTION_SECRET can invoke this function.
+    const internalSecret = Deno.env.get('INTERNAL_FUNCTION_SECRET')
+    const internalHeader = req.headers.get('x-internal-secret')
+    const isInternal = !!internalSecret && internalHeader === internalSecret
+    if (!isInternal) {
+      const authHeader = req.headers.get('Authorization') ?? ''
+      const supabaseUrl = Deno.env.get('SUPABASE_URL')!
+      const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!
+      const supabase = createClient(supabaseUrl, anonKey, {
+        global: { headers: { Authorization: authHeader } },
+      })
+      const { data, error } = await supabase.auth.getUser()
+      if (error || !data?.user) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        })
+      }
     }
 
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown'
