@@ -41,7 +41,19 @@ function sanitizeHtml(html: string): string {
       }
       // Remove todos os atributos exceto href em <a> e class na allowlist.
       Array.from(child.attributes).forEach((attr) => {
-        if (tag === "a" && attr.name === "href") return;
+        if (tag === "a" && attr.name === "href") {
+          const v = (attr.value || "").trim();
+          const lower = v.toLowerCase();
+          const safe =
+            lower.startsWith("http://") ||
+            lower.startsWith("https://") ||
+            lower.startsWith("mailto:") ||
+            lower.startsWith("tel:") ||
+            v.startsWith("/") ||
+            v.startsWith("#");
+          if (!safe) child.removeAttribute("href");
+          return;
+        }
         if (attr.name === "class") {
           const kept = attr.value
             .split(/\s+/)
