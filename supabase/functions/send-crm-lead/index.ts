@@ -6,8 +6,6 @@ const corsHeaders = {
 import { z } from 'npm:zod@3.25.76'
 import { createClient } from 'npm:@supabase/supabase-js@2'
 
-const CRM_URL = 'https://crm-b2b-interface-clone-9bbb1.shrd00.internal.goskip.dev/backend/v1/webhook-external'
-const TIPO_FUNIL = 'GPR'
 const DATEAHOME_URL = 'https://api.dateahome.com/webhook/lead/b00e8651-dd31-41fc-a0f0-32a06044f3ee'
 const LEAD_ORIGIN = 'Godoy Prime - Personal Shopper Imobiliário'
 
@@ -65,9 +63,8 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const API_KEY = Deno.env.get('CRM_WEBHOOK_API_KEY')
     const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
-    if (!API_KEY) {
+    if (!DATEAHOME_API_KEY) {
       return new Response(JSON.stringify({ error: 'CRM not configured' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -126,20 +123,6 @@ Deno.serve(async (req) => {
       console.error('DB insert exception:', e)
     }
 
-    // Map to CRM expected payload
-    const crmPayload = {
-      name: lead.nome,
-      email: lead.email,
-      phone: lead.whatsapp,
-      tipo_funil: TIPO_FUNIL,
-      message: lead.mensagem,
-      orcamento: lead.orcamento,
-      momento: lead.momento,
-      servico: lead.servico,
-      origem: lead.origem,
-      data: lead.data,
-    }
-
     // Build DateAHome payload
     const { ddd, phone } = splitPhone(lead.whatsapp || '')
     const dateAHomePayload = {
@@ -155,32 +138,21 @@ Deno.serve(async (req) => {
       clientListingId: lead.landing_path || 'godoyprime-landing',
     }
 
-    // Fire both CRMs in parallel
-    const [crmResult, dahResult] = await Promise.allSettled([
-      fetch(CRM_URL, {
+    // Send to DateAHome (sole CRM)
+    let dah: { ok: boolean; status: number; body: unknown }
+    try {
+      const r = await fetch(DATEAHOME_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
-        body: JSON.stringify(crmPayload),
-      }).then(async (r) => {
-        const t = await r.text()
-        let b: unknown = t; try { b = JSON.parse(t) } catch {}
-        return { ok: r.ok, status: r.status, body: b }
-      }),
-      DATEAHOME_API_KEY
-        ? fetch(DATEAHOME_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'X-API-Key': DATEAHOME_API_KEY },
-            body: JSON.stringify(dateAHomePayload),
-          }).then(async (r) => {
-            const t = await r.text()
-            let b: unknown = t; try { b = JSON.parse(t) } catch {}
-            return { ok: r.ok, status: r.status, body: b }
-          })
-        : Promise.resolve({ ok: false, status: 0, body: 'DATEAHOME_API_KEY not configured' }),
-    ])
-
-    const crm = crmResult.status === 'fulfilled' ? crmResult.value : { ok: false, status: 0, body: String((crmResult as PromiseRejectedResult).reason) }
-    const dah = dahResult.status === 'fulfilled' ? dahResult.value : { ok: false, status: 0, body: String((dahResult as PromiseRejectedResult).reason) }
+        headers: { 'Content-Type': 'application/json', 'X-API-Key': DATEAHOME_API_KEY },
+        body: JSON.stringify(dateAHomePayload),
+      })
+      const t = await r.text()
+      let b: unknown = t
+      try { b = JSON.parse(t) } catch {}
+      dah = { ok: r.ok, status: r.status, body: b }
+    } catch (e) {
+      dah = { ok: false, status: 0, body: String(e) }
+    }
 
     // Update lead row with both statuses
     if (leadId) {
@@ -188,8 +160,6 @@ Deno.serve(async (req) => {
         await db
           .from('leads')
           .update({
-            crm_status: crm.ok ? 'sent' : 'failed',
-            crm_response: { status: crm.status, body: crm.body },
             dateahome_status: dah.ok ? 'sent' : 'failed',
             dateahome_response: { status: dah.status, body: dah.body },
             dateahome_attempts: 1,
@@ -201,16 +171,14 @@ Deno.serve(async (req) => {
       }
     }
 
-    if (!crm.ok) console.error('CRM webhook error:', crm.status, crm.body)
     if (!dah.ok) console.error('DateAHome webhook error:', dah.status, dah.body)
 
     // We return 200 as long as the lead was persisted; partial CRM failures retried by cron.
     return new Response(JSON.stringify({
       success: true,
       lead_id: leadId,
-      crm: { ok: crm.ok, status: crm.status },
       dateahome: { ok: dah.ok, status: dah.status },
-      data: crm.body,
+      data: dah.body,
     }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } })
   } catch (error) {
     console.error('Edge function error:', error)
