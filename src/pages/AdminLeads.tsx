@@ -27,10 +27,6 @@ type Lead = {
   utm_term: string | null;
   referrer: string | null;
   landing_path: string | null;
-  crm_status: string;
-  crm_response: any;
-  crm_attempts: number;
-  crm_last_attempt_at: string | null;
   dateahome_status: string;
   dateahome_response: any;
   dateahome_attempts: number;
@@ -70,7 +66,6 @@ const AdminLeads = () => {
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [selected, setSelected] = useState<Lead | null>(null);
-  const [retrying, setRetrying] = useState<string | null>(null);
   const [retryingDah, setRetryingDah] = useState<string | null>(null);
   const [client, setClient] = useState<BackendClient | null>(null);
 
@@ -92,7 +87,7 @@ const AdminLeads = () => {
       const since = new Date(Date.now() - parseInt(period) * 24 * 60 * 60 * 1000).toISOString();
       q = q.gte("created_at", since);
     }
-    if (status !== "all") q = q.eq("crm_status", status);
+    if (status !== "all") q = q.eq("dateahome_status", status);
     if (servico !== "all") q = q.eq("servico", servico);
     if (origem !== "all") q = q.eq("origem", origem);
     if (search.trim()) {
@@ -123,7 +118,7 @@ const AdminLeads = () => {
   }, [client]);
 
   // KPIs computed from current page; for accurate totals we use count fetch
-  const [kpis, setKpis] = useState({ total: 0, sent: 0, failed: 0, dupes: 0, dahSent: 0, dahFailed: 0 });
+  const [kpis, setKpis] = useState({ total: 0, dupes: 0, dahSent: 0, dahFailed: 0 });
   useEffect(() => {
     (async () => {
       if (!client) return;
@@ -133,25 +128,23 @@ const AdminLeads = () => {
         if (since) q = q.gte("created_at", since);
         return q;
       };
-      const [t, s, f, d, ds, df] = await Promise.all([
+      const [t, d, ds, df] = await Promise.all([
         base(),
-        base().eq("crm_status", "sent"),
-        base().eq("crm_status", "failed"),
         base().eq("is_duplicate", true),
         base().eq("dateahome_status", "sent"),
         base().eq("dateahome_status", "failed"),
       ]);
-      setKpis({ total: t.count || 0, sent: s.count || 0, failed: f.count || 0, dupes: d.count || 0, dahSent: ds.count || 0, dahFailed: df.count || 0 });
+      setKpis({ total: t.count || 0, dupes: d.count || 0, dahSent: ds.count || 0, dahFailed: df.count || 0 });
     })();
   }, [client, period, leads]);
 
-  const successRate = kpis.total > 0 ? Math.round((kpis.sent / kpis.total) * 100) : 0;
+  const successRate = kpis.total > 0 ? Math.round((kpis.dahSent / kpis.total) * 100) : 0;
 
-  const handleRetry = async (lead: Lead, target: 'crm' | 'dateahome' | 'both' = 'crm') => {
+  const handleRetry = async (lead: Lead) => {
     if (!client) return;
-    if (target === 'dateahome') setRetryingDah(lead.id); else setRetrying(lead.id);
-    const { data, error } = await client.functions.invoke("retry-crm-lead", { body: { lead_id: lead.id, target } });
-    if (target === 'dateahome') setRetryingDah(null); else setRetrying(null);
+    setRetryingDah(lead.id);
+    const { data, error } = await client.functions.invoke("retry-crm-lead", { body: { lead_id: lead.id } });
+    setRetryingDah(null);
     if (error) { toast({ title: "Erro no reenvio", description: error.message, variant: "destructive" }); return; }
     toast({ title: (data as any)?.success ? "Reenvio concluído" : "Reenvio falhou", description: JSON.stringify(data) });
     fetchLeads();
@@ -159,11 +152,11 @@ const AdminLeads = () => {
   };
 
   const handleExportCsv = () => {
-    const headers = ["data","nome","email","whatsapp","servico","orcamento","momento","mensagem","origem","utm_source","utm_medium","utm_campaign","crm_status","dateahome_status","is_duplicate"];
+    const headers = ["data","nome","email","whatsapp","servico","orcamento","momento","mensagem","origem","utm_source","utm_medium","utm_campaign","dateahome_status","is_duplicate"];
     const rows = leads.map(l => [
       new Date(l.created_at).toISOString(), l.nome, l.email, l.whatsapp, l.servico, l.orcamento,
       l.momento, (l.mensagem || "").replace(/\n/g, " "), l.origem, l.utm_source, l.utm_medium,
-      l.utm_campaign, l.crm_status, l.dateahome_status, l.is_duplicate ? "sim" : "nao",
+      l.utm_campaign, l.dateahome_status, l.is_duplicate ? "sim" : "nao",
     ].map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","));
     const csv = [headers.join(","), ...rows].join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
@@ -197,12 +190,10 @@ const AdminLeads = () => {
 
       <main className="max-w-7xl mx-auto px-6 py-6">
         {/* KPIs */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <KpiCard label="Total" value={kpis.total} />
-          <KpiCard label="Enviados ao CRM" value={kpis.sent} sub={`${successRate}% sucesso`} />
-          <KpiCard label="Falhas CRM" value={kpis.failed} accent={kpis.failed > 0 ? "destructive" : undefined} />
-          <KpiCard label="Enviados DateAHome" value={kpis.dahSent} />
-          <KpiCard label="Falhas DateAHome" value={kpis.dahFailed} accent={kpis.dahFailed > 0 ? "destructive" : undefined} />
+          <KpiCard label="Enviados ao CRM" value={kpis.dahSent} sub={`${successRate}% sucesso`} />
+          <KpiCard label="Falhas CRM" value={kpis.dahFailed} accent={kpis.dahFailed > 0 ? "destructive" : undefined} />
           <KpiCard label="Duplicados" value={kpis.dupes} sub={kpis.total > 0 ? `${Math.round((kpis.dupes/kpis.total)*100)}%` : ""} />
         </div>
 
@@ -269,15 +260,14 @@ const AdminLeads = () => {
                   <th className="text-left px-4 py-3">Momento</th>
                   <th className="text-left px-4 py-3">UTM</th>
                   <th className="text-left px-4 py-3">CRM</th>
-                  <th className="text-left px-4 py-3">DateAHome</th>
                   <th className="text-left px-4 py-3">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan={9} className="text-center py-8 text-muted-foreground">Carregando…</td></tr>
+                  <tr><td colSpan={8} className="text-center py-8 text-muted-foreground">Carregando…</td></tr>
                 ) : leads.length === 0 ? (
-                  <tr><td colSpan={9} className="text-center py-8 text-muted-foreground">Nenhum lead no filtro</td></tr>
+                  <tr><td colSpan={8} className="text-center py-8 text-muted-foreground">Nenhum lead no filtro</td></tr>
                 ) : leads.map(l => (
                   <tr key={l.id} className="border-t border-border hover:bg-muted/30 cursor-pointer" onClick={() => setSelected(l)}>
                     <td className="px-4 py-3 text-xs whitespace-nowrap">{new Date(l.created_at).toLocaleString("pt-BR")}</td>
@@ -296,26 +286,15 @@ const AdminLeads = () => {
                       {l.utm_campaign && <div className="text-muted-foreground">{l.utm_campaign}</div>}
                     </td>
                     <td className="px-4 py-3">
-                      {statusBadge(l.crm_status)}
-                      {l.crm_attempts > 0 && <div className="text-[10px] text-muted-foreground mt-1">{l.crm_attempts} tent.</div>}
-                    </td>
-                    <td className="px-4 py-3">
                       {statusBadge(l.dateahome_status)}
                       {l.dateahome_attempts > 0 && <div className="text-[10px] text-muted-foreground mt-1">{l.dateahome_attempts} tent.</div>}
                     </td>
                     <td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
-                      <div className="flex flex-col gap-1">
-                        {l.crm_status === "failed" && (
-                          <Button size="sm" variant="outline" disabled={retrying === l.id} onClick={() => handleRetry(l, 'crm')}>
-                            {retrying === l.id ? "..." : "CRM"}
-                          </Button>
-                        )}
-                        {l.dateahome_status === "failed" && (
-                          <Button size="sm" variant="outline" disabled={retryingDah === l.id} onClick={() => handleRetry(l, 'dateahome')}>
-                            {retryingDah === l.id ? "..." : "DateAHome"}
-                          </Button>
-                        )}
-                      </div>
+                      {l.dateahome_status === "failed" && (
+                        <Button size="sm" variant="outline" disabled={retryingDah === l.id} onClick={() => handleRetry(l)}>
+                          {retryingDah === l.id ? "..." : "Reenviar"}
+                        </Button>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -343,8 +322,7 @@ const AdminLeads = () => {
                 <p className="text-xs text-muted-foreground">{new Date(selected.created_at).toLocaleString("pt-BR")}</p>
               </SheetHeader>
               <div className="mt-6 space-y-4 text-sm">
-                <Row label="Status CRM">{statusBadge(selected.crm_status)} {selected.crm_attempts > 0 && <span className="ml-2 text-xs text-muted-foreground">{selected.crm_attempts} tentativa(s)</span>}</Row>
-                <Row label="Status DateAHome">{statusBadge(selected.dateahome_status)} {selected.dateahome_attempts > 0 && <span className="ml-2 text-xs text-muted-foreground">{selected.dateahome_attempts} tentativa(s)</span>}</Row>
+                <Row label="Status CRM">{statusBadge(selected.dateahome_status)} {selected.dateahome_attempts > 0 && <span className="ml-2 text-xs text-muted-foreground">{selected.dateahome_attempts} tentativa(s)</span>}</Row>
                 <Row label="E-mail">{selected.email}</Row>
                 <Row label="WhatsApp">
                   {selected.whatsapp}
@@ -374,25 +352,12 @@ const AdminLeads = () => {
                   <Row label="Duplicado de">{selected.duplicate_of}</Row>
                 )}
                 <Row label="Resposta CRM">
-                  <pre className="text-[11px] bg-muted/40 p-2 rounded overflow-x-auto max-h-40">{JSON.stringify(selected.crm_response, null, 2)}</pre>
-                </Row>
-                <Row label="Resposta DateAHome">
                   <pre className="text-[11px] bg-muted/40 p-2 rounded overflow-x-auto max-h-40">{JSON.stringify(selected.dateahome_response, null, 2)}</pre>
                 </Row>
                 <div className="flex gap-2 pt-4">
-                  {selected.crm_status === "failed" && (
-                    <Button size="sm" onClick={() => handleRetry(selected, 'crm')} disabled={retrying === selected.id}>
-                      <RefreshCw className="w-4 h-4 mr-2" />Reenviar ao CRM
-                    </Button>
-                  )}
                   {selected.dateahome_status === "failed" && (
-                    <Button size="sm" variant="secondary" onClick={() => handleRetry(selected, 'dateahome')} disabled={retryingDah === selected.id}>
-                      <RefreshCw className="w-4 h-4 mr-2" />Reenviar DateAHome
-                    </Button>
-                  )}
-                  {(selected.crm_status === "failed" || selected.dateahome_status === "failed") && (
-                    <Button size="sm" variant="outline" onClick={() => handleRetry(selected, 'both')} disabled={retrying === selected.id || retryingDah === selected.id}>
-                      <RefreshCw className="w-4 h-4 mr-2" />Reenviar ambos
+                    <Button size="sm" onClick={() => handleRetry(selected)} disabled={retryingDah === selected.id}>
+                      <RefreshCw className="w-4 h-4 mr-2" />Reenviar ao CRM
                     </Button>
                   )}
                   <Button size="sm" variant="outline" onClick={() => { navigator.clipboard.writeText(JSON.stringify(selected, null, 2)); toast({ title: "Copiado" }); }}>
