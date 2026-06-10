@@ -1,61 +1,45 @@
-## Objetivo
+## Contexto
 
-Hoje, ao importar o HTML, perdemos informações (categoria, capa, blocos especiais) e o blog renderiza com um CSS diferente do arquivo. Vou ajustar **importador + sanitizador + CSS do blog** para que o artigo publicado fique visualmente igual ao arquivo de origem.
+A URL e o payload que você enviou são do **DateAHome**, que **já está integrado** no projeto:
 
-## Lacunas identificadas no fluxo atual
+- Edge function `send-crm-lead` hoje dispara em paralelo para 2 webhooks: GoSkip (antigo) e DateAHome.
+- A secret `DATEAHOME_API_KEY` já está cadastrada no backend.
+- A tabela `leads` já tem colunas `dateahome_status`, `dateahome_response`, `dateahome_attempts`, `dateahome_last_attempt_at`.
 
-Comparando `Artigo_01_-_Personal_Shopper_Imobiliario.html` com o que hoje é importado e renderizado:
+Como você pediu "substituir o atual", o plano abaixo **desliga o CRM antigo** e mantém **apenas o DateAHome** em todos os fluxos.
 
-| Elemento no arquivo | Hoje | Após ajuste |
-|---|---|---|
-| `<h1>` do hero | ✅ vira título | mantém |
-| `<meta description>` | ✅ vira resumo | mantém |
-| `.hero-eyebrow` ("Educacional") | ❌ descartado | → preenche **Categoria** |
-| `<header><img>` da capa | ❌ ignorado (URL relativa) | extrai `src`+`alt`; se relativa, mostra aviso pedindo upload manual |
-| `<h2>`, `<h3>`, `<p>`, `<ul>`, `<ol>` | ✅ parcial (ol vira ul) | preserva `<ol>` com numeração |
-| `<strong>`, `<em>`, `<a>` | ✅ | mantém |
-| `<blockquote>` | ❌ removido pelo sanitizador | preservado |
-| `.callout` / `.callout-label` | ❌ removido | preservado com classes |
-| `.stat-row` / `.stat-cell` | ❌ removido | preservado |
-| `.comparison-table` (table/thead/tbody) | ❌ removido | preservado |
-| `<nav>`, `<footer>`, `.article-cta`, `.related-nav` | ✅ descartado | continua descartando |
+## O que muda
 
-## Mudanças
+### 1. `supabase/functions/send-crm-lead/index.ts`
+- Remover variáveis e chamada do CRM antigo (`CRM_URL`, `TIPO_FUNIL`, `crmPayload`, header `x-api-key`, leitura de `CRM_WEBHOOK_API_KEY`).
+- Remover o `Promise.allSettled` paralelo: deixar apenas o `fetch` para `DATEAHOME_URL`.
+- Continuar persistindo o lead na tabela `leads` (fonte da verdade) antes do envio.
+- Atualizar a `leads` apenas com `dateahome_status` / `dateahome_response` / `dateahome_attempts` / `dateahome_last_attempt_at`.
+- Resposta JSON da função passa a retornar só `{ success, lead_id, dateahome: { ok, status } }`.
 
-### 1. Importador — `src/pages/AdminArtigos.tsx` (`parseHtmlToArtigo`)
-- Ler `<meta name="description">` para resumo (já feito, manter).
-- Pegar `.hero-eyebrow` (texto) → retornar `categoria`.
-- Pegar `header.article-hero img` → retornar `{capaUrl, capaAlt}`. Se for URL absoluta (`http(s)://`), preencher `form.imagem_capa`. Se relativa (`../assets/...`), mostrar toast: "Capa não importada automaticamente — envie a imagem manualmente".
-- Para o corpo, em vez de reconstruir tag a tag, **clonar `.article-body`** (ou `<main>` se não houver), **remover** `.article-cta`, `.related-nav`, `script`, `style`, `nav`, `footer`, e devolver o `innerHTML` resultante (já sem inline styles após sanitização).
-- Continuar normalizando travessões/em-dash em nós de texto.
+### 2. `supabase/functions/retry-crm-lead/index.ts` e `retry-crm-leads-cron/index.ts`
+- Tirar a tentativa de reenvio para o CRM antigo.
+- Manter apenas o retry do DateAHome (já existe a lógica usando `dateahome_attempts` e `dateahome_last_attempt_at`).
+- Cron continua rodando a cada 15 min como hoje.
 
-### 2. Sanitizador — `src/lib/renderArticleContent.tsx`
-- Ampliar whitelist de tags: adicionar `div, span, table, thead, tbody, tr, th, td, figure, figcaption`.
-- Permitir atributo `class` apenas se valor estiver em allowlist: `article-lead`, `callout`, `callout-label`, `stat-row`, `stat-cell`, `stat-n`, `stat-l`, `comparison-table`.
-- Remover todo `style=`, `id=`, `onclick=` etc. (já é o comportamento; apenas garantir).
-- Manter renderização via `dangerouslySetInnerHTML` no wrapper `.article-html`.
+### 3. Painel admin `/admin/leads`
+- Remover colunas/badges do CRM antigo (`crm_status`, `crm_response`) da UI; manter visível só o status DateAHome.
+- Dados antigos permanecem no banco (sem migration destrutiva).
 
-### 3. CSS do blog público — `src/pages/Artigo.tsx` (ou folha associada)
-Adicionar regras dentro de `.article-html` espelhando o arquivo original:
-- `h2`: Cormorant Garamond 700, borda superior fina, margem 52px.
-- `h3`: Montserrat 600, uppercase leve.
-- `p.article-lead`: 19px, line-height 1.9.
-- `ul li`: bullet dourado (#9E7B2A) com `::before` redondo.
-- `ol`: counter `decimal-leading-zero` em dourado Cormorant.
-- `blockquote`: borda esquerda dourada, itálico Cormorant.
-- `.callout`: caixa creme com borda dourada e label monospace.
-- `.stat-row`/`.stat-cell`/`.stat-n`/`.stat-l`: grid de estatísticas.
-- `.comparison-table`: tabela com tipografia Montserrat no head.
+### 4. Secrets
+- Manter `DATEAHOME_API_KEY` como está. Se quiser usar uma chave nova, depois eu peço a atualização pelo formulário seguro (`update_secret`) — confirme se é o caso.
+- `CRM_WEBHOOK_API_KEY` (do CRM antigo) deixa de ser usada. Posso removê-la depois que validarmos o novo fluxo em produção, para não quebrar nada se precisarmos reverter.
 
-A paleta já é Warm Luxury (#FAFAF8 / #161412 / #9E7B2A), então o resultado fica idêntico sem importar o `<style>` original.
+## O que NÃO muda
 
-### 4. Reprocessar artigo de teste
-Após implementar, importar `Artigo_01...html` no admin para validar visualmente que o preview e a página pública `/blog/<slug>` ficam iguais ao arquivo.
+- Formulário público (`LandingPageV4.tsx`) continua chamando `send-crm-lead` igual.
+- Disparo de email (Resend) e WhatsApp (Z-API) ao Marcus seguem normais.
+- Dedupe de 24h, captura de UTM/referrer, hash de IP e auditoria em `leads` continuam idênticos.
 
-## O que **não** muda
-- Schema do banco (campos atuais bastam).
-- Nenhuma exclusão de artigos existentes — eles já estão em HTML limpo e continuam funcionando.
-- Não importamos `<style>` do arquivo (segurança); a paridade visual vem do CSS do blog.
+## Validação após implementação
 
-## Limitação a comunicar ao usuário
-A imagem de capa só é importada automaticamente quando o `src` for URL absoluta. Imagens com caminho relativo (`../assets/...`) precisam ser enviadas manualmente pelo campo "Imagem de capa".
+1. `curl` na função `send-crm-lead` com um payload de teste e conferir resposta `{ dateahome: { ok: true } }`.
+2. Verificar no `/admin/leads` que o registro aparece com `dateahome_status = sent`.
+3. Submeter o formulário real na landing e validar a chegada no painel do DateAHome.
+
+Confirma que posso seguir com a remoção do CRM antigo?
