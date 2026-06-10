@@ -34,7 +34,7 @@ function buildDateAHomeMessage(lead: any): string {
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders })
 
-  const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
+  const DATEAHOME_API_KEY = (Deno.env.get('DATEAHOME_API_KEY') ?? '').trim()
   if (!DATEAHOME_API_KEY) return new Response(JSON.stringify({ error: 'CRM not configured' }), { status: 500 })
 
   // Require shared secret — only callable by scheduled cron or admin tooling

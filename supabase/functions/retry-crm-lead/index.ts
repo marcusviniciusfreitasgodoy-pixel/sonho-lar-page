@@ -34,7 +34,7 @@ Deno.serve(async (req) => {
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!
     const SERVICE_ROLE = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     const ANON = Deno.env.get('SUPABASE_ANON_KEY')!
-    const DATEAHOME_API_KEY = Deno.env.get('DATEAHOME_API_KEY')
+    const DATEAHOME_API_KEY = (Deno.env.get('DATEAHOME_API_KEY') ?? '').trim()
     if (!DATEAHOME_API_KEY) return j({ error: 'CRM not configured' }, 500)
 
     // Verify caller is authenticated admin
