@@ -9,6 +9,19 @@ const cors = {
 }
 
 Deno.serve(async (req) => {
+  const url = new URL(req.url)
+  if (url.searchParams.get('check') === 'zapi') {
+    const INSTANCE_ID = Deno.env.get('ZAPI_INSTANCE_ID')!
+    const TOKEN = Deno.env.get('ZAPI_TOKEN')!
+    const CLIENT_TOKEN = Deno.env.get('ZAPI_CLIENT_TOKEN')!
+    const r = await fetch(`https://api.z-api.io/instances/${INSTANCE_ID}/token/${TOKEN}/status`, {
+      headers: { 'Client-Token': CLIENT_TOKEN },
+    })
+    const body = await r.text()
+    return new Response(JSON.stringify({ status: r.status, body }), {
+      headers: { 'Content-Type': 'application/json' },
+    })
+  }
   if (req.method === 'OPTIONS') return new Response(null, { headers: cors })
 
   const raw = Deno.env.get('DATEAHOME_API_KEY') ?? ''
