@@ -33,12 +33,13 @@ Deno.serve(async (req) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-API-Key': trimmed },
         body: JSON.stringify({
-          leadOrigin: 'Debug Lovable',
-          name: 'Debug Probe',
-          email: 'debug@godoyprime.com.br',
+          leadOrigin: 'Teste Date a Home',
+          name: 'Cateno Viglio Junior',
+          email: 'cateno@dateahome.com.br',
           ddd: '21',
-          phone: '999990000',
-          message: 'Probe de diagnostico da chave DateAHome',
+          phone: '29929992222',
+          message: 'TESTE XXXX',
+          clientListingId: 'BRRJ260617955',
         }),
       })
       const body = await res.text()
