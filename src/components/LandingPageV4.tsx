@@ -304,9 +304,14 @@ const LandingPageV4 = () => {
               <span className="hero-br" />
               sem representação exclusiva é o
               <span className="hero-br" />
-              <em>erro mais caro</em> do mercado.
+              <em className="hero-em">
+                erro mais caro
+                <svg className="hero-em-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" fill="transparent" strokeWidth="1" />
+                </svg>
+              </em>{' '}do mercado.
             </h1>
-            <p className="hero-sub scroll-reveal" ref={reveal}>Você é o único na negociação sem ninguém <em>realmente</em> do seu lado.<br />Eu mudo esse jogo.</p>
+            <p className="hero-sub scroll-reveal" ref={reveal}>Você é o único na negociação sem ninguém <em>realmente</em> do seu lado.<br /><span className="hero-sub-strong">Eu mudo esse jogo.</span></p>
             <div className="hero-ctas scroll-reveal" ref={reveal}>
               <a href="#diagnostico" className="btn-gold" onClick={handleAnchorClick}>Agendar Diagnóstico Gratuito</a>
               <a href="#conceito" className="btn-outline-light" onClick={handleAnchorClick}>Ver como funciona</a>
