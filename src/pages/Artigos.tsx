@@ -107,7 +107,7 @@ const Artigos = () => {
             Artigos & <em style={{ color: "var(--gold)", fontStyle: "italic" }}>Análises</em>
           </h1>
           <p className="blog-subtitle">
-            Inteligência aplicada ao mercado imobiliário de alto padrão — para quem compra com critério,
+            Inteligência aplicada ao mercado imobiliário de alto padrão para quem compra com critério,
             não com pressa.
           </p>
 
