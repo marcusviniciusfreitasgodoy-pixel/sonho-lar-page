@@ -295,9 +295,17 @@ const LandingPageV4 = () => {
         <div className="hero-left">
           <div className="hero-text">
             <div className="hero-eyebrow scroll-reveal" ref={reveal}>
+              <span className="hero-eyebrow-line" />
               <span className="hero-eyebrow-text">PERSONAL SHOPPER IMOBILIÁRIO</span>
+              <span className="hero-eyebrow-line" />
             </div>
-            <h1 className="hero-h1 scroll-reveal" ref={reveal}>Comprar imóvel de alto padrão sem representação exclusiva é o <em>erro mais caro</em> do mercado.</h1>
+            <h1 className="hero-h1 scroll-reveal" ref={reveal}>
+              Comprar imóvel de alto padrão
+              <span className="hero-br" />
+              sem representação exclusiva é o
+              <span className="hero-br" />
+              <em>erro mais caro</em> do mercado.
+            </h1>
             <p className="hero-sub scroll-reveal" ref={reveal}>Você é o único na negociação sem ninguém <em>realmente</em> do seu lado.<br />Eu mudo esse jogo.</p>
             <div className="hero-ctas scroll-reveal" ref={reveal}>
               <a href="#diagnostico" className="btn-gold" onClick={handleAnchorClick}>Agendar Diagnóstico Gratuito</a>
