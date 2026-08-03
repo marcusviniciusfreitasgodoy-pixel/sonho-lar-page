@@ -300,9 +300,9 @@ const LandingPageV4 = () => {
               <span className="hero-eyebrow-line" />
             </div>
             <h1 className="hero-h1 scroll-reveal" ref={reveal}>
-              Comprar imóvel de alto padrão
+              Comprar imóvel de alto padrão{' '}
               <span className="hero-br" />
-              sem representação exclusiva é o
+              sem representação exclusiva é o{' '}
               <span className="hero-br" />
               <em className="hero-em">
                 erro mais caro
