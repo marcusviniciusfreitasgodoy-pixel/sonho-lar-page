@@ -24,6 +24,21 @@ function formatDate(iso: string) {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const VISITOR_KEY = "artigo-visitor-id";
+
+// Identificador estável (por navegador) usado para impedir curtidas duplicadas.
+function getVisitorId(): string {
+  try {
+    const existing = localStorage.getItem(VISITOR_KEY);
+    if (existing && /^[A-Za-z0-9._-]{16,64}$/.test(existing)) return existing;
+  } catch {}
+  const id = `v-${crypto.randomUUID().replace(/-/g, "")}`;
+  try {
+    localStorage.setItem(VISITOR_KEY, id);
+  } catch {}
+  return id;
+}
+
 export default function ArticleEngagement({ artigoId }: { artigoId: string }) {
   const [likes, setLikes] = useState<number>(0);
   const [hasLiked, setHasLiked] = useState<boolean>(false);
@@ -124,8 +139,11 @@ export default function ArticleEngagement({ artigoId }: { artigoId: string }) {
     try {
       const client = await getBackendClient();
       if (!client) throw new Error("backend indisponível");
-      const { error } = await client.from("artigo_likes").insert({ artigo_id: artigoId });
-      if (error) throw error;
+      const { error } = await client
+        .from("artigo_likes")
+        .insert({ artigo_id: artigoId, visitor_id: getVisitorId() });
+      // 23505 = já curtido por este visitante; mantém o estado curtido
+      if (error && error.code !== "23505") throw error;
     } catch (err: any) {
       // rollback
       setHasLiked(false);
