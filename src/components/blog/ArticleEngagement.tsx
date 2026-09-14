@@ -139,7 +139,9 @@ export default function ArticleEngagement({ artigoId }: { artigoId: string }) {
     try {
       const client = await getBackendClient();
       if (!client) throw new Error("backend indisponível");
-      const { error } = await client.from("artigo_likes").insert({ artigo_id: artigoId });
+      const { error } = await client
+        .from("artigo_likes")
+        .insert({ artigo_id: artigoId, visitor_id: getVisitorId() });
       if (error) throw error;
     } catch (err: any) {
       // rollback
