@@ -24,6 +24,21 @@ function formatDate(iso: string) {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const VISITOR_KEY = "artigo-visitor-id";
+
+// Identificador estável (por navegador) usado para impedir curtidas duplicadas.
+function getVisitorId(): string {
+  try {
+    const existing = localStorage.getItem(VISITOR_KEY);
+    if (existing && /^[A-Za-z0-9._-]{16,64}$/.test(existing)) return existing;
+  } catch {}
+  const id = `v-${crypto.randomUUID().replace(/-/g, "")}`;
+  try {
+    localStorage.setItem(VISITOR_KEY, id);
+  } catch {}
+  return id;
+}
+
 export default function ArticleEngagement({ artigoId }: { artigoId: string }) {
   const [likes, setLikes] = useState<number>(0);
   const [hasLiked, setHasLiked] = useState<boolean>(false);
