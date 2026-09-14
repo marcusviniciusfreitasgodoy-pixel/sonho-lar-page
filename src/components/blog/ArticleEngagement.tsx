@@ -142,7 +142,8 @@ export default function ArticleEngagement({ artigoId }: { artigoId: string }) {
       const { error } = await client
         .from("artigo_likes")
         .insert({ artigo_id: artigoId, visitor_id: getVisitorId() });
-      if (error) throw error;
+      // 23505 = já curtido por este visitante; mantém o estado curtido
+      if (error && error.code !== "23505") throw error;
     } catch (err: any) {
       // rollback
       setHasLiked(false);
