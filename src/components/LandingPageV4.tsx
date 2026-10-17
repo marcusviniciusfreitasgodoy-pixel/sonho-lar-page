@@ -154,6 +154,8 @@ const LandingPageV4 = () => {
   const [navSolid, setNavSolid] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [heroStatus, setHeroStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [heroError, setHeroError] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const reveal = useScrollReveal();
@@ -248,6 +250,42 @@ const LandingPageV4 = () => {
     });
   };
 
+  const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const nome = String(fd.get('nome') || '').trim();
+    const email = String(fd.get('email') || '').trim();
+    const mensagem = String(fd.get('mensagem') || '').trim();
+    if (nome.length < 2 || nome.length > 100) return setHeroError('Informe seu nome.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 255) return setHeroError('Informe um e-mail válido.');
+    if (mensagem.length < 3 || mensagem.length > 1000) return setHeroError('Escreva uma mensagem curta.');
+    if (!fd.get('consent')) return setHeroError('Confirme a autorização de contato.');
+    setHeroError('');
+    setHeroStatus('sending');
+    const params = new URLSearchParams(window.location.search);
+    const dados = {
+      nome, email, mensagem, whatsapp: '',
+      servico: 'Contato Hero',
+      origem: 'formulario_hero',
+      data: new Date().toLocaleString('pt-BR'),
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || '',
+      referrer: document.referrer || '',
+      landing_path: window.location.pathname || '',
+    };
+    if (typeof (window as any).fbq !== 'undefined') (window as any).fbq('track', 'Lead');
+    if (typeof (window as any).gtag !== 'undefined') (window as any).gtag('event', 'generate_lead', { origem: 'hero' });
+    await Promise.all([
+      sendEmail(MARCUS_EMAIL, 'Marcus Godoy', 'Nova mensagem — ' + nome + ' | Hero', emailParaMarcus(dados)),
+      sendCrmLead(dados),
+      sendWhatsApp(MARCUS_WA, `🏠 *Nova mensagem (hero)*\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*Mensagem:* ${mensagem}\n*Data:* ${dados.data}`),
+    ]);
+    setHeroStatus('sent');
+  };
+
   const waLink = (servico: string, msg: string) =>
     `https://wa.me/${MARCUS_WA}?text=${encodeURIComponent(msg)}`;
 
@@ -312,11 +350,31 @@ const LandingPageV4 = () => {
               </em>{' '}do mercado.
             </h1>
             <p className="hero-sub scroll-reveal" ref={reveal}>Você é o único na negociação sem ninguém <em>realmente</em> do seu lado.<br /><span className="hero-sub-strong">Eu mudo esse jogo.</span></p>
-            <div className="hero-ctas scroll-reveal" ref={reveal}>
-              <a href="#diagnostico" className="btn-gold" onClick={handleAnchorClick}>Agendar Diagnóstico Gratuito</a>
-              <a href="#conceito" className="btn-outline-light" onClick={handleAnchorClick}>Ver como funciona</a>
+            <div className="hero-form-wrap scroll-reveal" ref={reveal}>
+              {heroStatus === 'sent' ? (
+                <div className="hero-form-success" role="status">
+                  <span className="hero-form-success-icon">✦</span>
+                  <p><strong>Mensagem recebida.</strong> Marcus retorna em até 24 horas.</p>
+                </div>
+              ) : (
+                <form className="hero-form" onSubmit={handleHeroSubmit} noValidate>
+                  <div className="hero-form-row">
+                    <input className="hero-form-input" name="nome" aria-label="Nome" placeholder="Seu nome" maxLength={100} required />
+                    <input className="hero-form-input" name="email" type="email" aria-label="E-mail" placeholder="seu@email.com" maxLength={255} required />
+                  </div>
+                  <textarea className="hero-form-input hero-form-textarea" name="mensagem" aria-label="Mensagem" placeholder="Conte brevemente o que está buscando" rows={2} maxLength={1000} required />
+                  <label className="hero-form-consent">
+                    <input type="checkbox" name="consent" required />
+                    <span>Concordo com a <a href="/privacidade">Política de Privacidade</a> e autorizo o contato.</span>
+                  </label>
+                  {heroError && <p className="hero-form-error" role="alert">{heroError}</p>}
+                  <button type="submit" className="btn-gold hero-form-submit" disabled={heroStatus === 'sending'}>
+                    {heroStatus === 'sending' ? 'Enviando…' : 'Falar com Marcus'}
+                  </button>
+                </form>
+              )}
             </div>
-            <p className="hero-footnote scroll-reveal" ref={reveal}>Conversa direta · Sem compromisso · Sem venda de imóveis</p>
+            <p className="hero-footnote scroll-reveal" ref={reveal}>Conversa direta · Sem compromisso · <a href="#conceito" onClick={handleAnchorClick}>Ver como funciona</a></p>
           </div>
           <div className="hero-credentials scroll-reveal" ref={reveal}>
             <div className="hero-cred">
