@@ -534,3 +534,22 @@ details[open] .faq-icon{background:var(--gold);border-color:var(--gold);color:va
   #artigos-destaque .featured-card-img-placeholder{aspect-ratio:16/10;min-height:0;height:auto}
   #artigos-destaque .featured-card-body{padding:26px 24px 30px}
 }
+
+/* Hero contact form */
+.hero-form-wrap{width:min(100%,620px);margin:0 auto 16px}
+.hero-form{display:flex;flex-direction:column;gap:10px;padding:18px;background:rgba(22,20,18,.55);border:1px solid rgba(196,153,58,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-align:left}
+.hero-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-form-input{width:100%;padding:12px 14px;background:rgba(250,250,248,.06);border:1px solid rgba(250,250,248,.18);color:var(--light,#FAFAF8);font-family:inherit;font-size:14px;font-weight:300;outline:none;transition:border-color .2s}
+.hero-form-input::placeholder{color:rgba(250,250,248,.5)}
+.hero-form-input:focus{border-color:#C4993A}
+.hero-form-textarea{resize:vertical;min-height:62px}
+.hero-form-consent{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:rgba(250,250,248,.7);line-height:1.5}
+.hero-form-consent a{color:#C4993A}
+.hero-form-error{font-size:12px;color:#f0a58a;margin:0}
+.hero-form-submit{width:100%;justify-content:center;border:none;cursor:pointer}
+.hero-form-submit:disabled{opacity:.6;cursor:wait}
+.hero-form-success{padding:22px;border:1px solid rgba(196,153,58,.45);background:rgba(22,20,18,.6);color:#FAFAF8;font-size:14px}
+.hero-form-success-icon{color:#C4993A;font-size:20px;display:block;margin-bottom:6px}
+.hero-form-success p{margin:0}
+.hero-footnote a{color:#C4993A;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:600px){.hero-form-row{grid-template-columns:1fr}.hero-form{padding:14px}}
